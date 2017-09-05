@@ -1,0 +1,94 @@
+/***** PRIMERA PARTE (mobile) *****/
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Helvetica;
+  margin: 0;
+}
+
+ul, ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.faqs{
+  padding: 0 10px;
+}
+
+.faqs h2{
+  font-size: 1.6em;
+}
+
+.faqs-search{
+  display: block;
+  margin: 0 7.5%;
+  text-align: center;
+  border: solid 1px #9c9c9c;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.form-faqs-search input[type=text]{
+  width: 80%;
+  padding: 10px;
+  font-size: 1.1em;
+  border: none;
+}
+
+.form-faqs-search input[type=submit]{
+  width: 15%;
+  padding: 15px 22px;
+  background-color: #fff;
+  border: none;
+  background-image: url(../images/search-icon.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*.faqs-preguntas section{
+  margin: 40px auto;
+}*/
+
+/*.faqs-preguntas section h3 {
+  border-top: solid 2px #9c9c9c;
+  border-bottom: solid 2px #9c9c9c;
+  padding: 10px 0;
+  text-align: center;
+}*/
+
+.faqs-preguntas-propietarios{
+  border-top: solid 2px #9c9c9c;
+}
+
+.faqs-preguntas-locatarios{
+  border-top: solid 2px #9c9c9c;
+}
+
+.pregunta h4, .pregunta p{
+  margin: 15px auto 5px;
+}
+
+.pregunta p{
+  margin: 15px auto 5px;
+}
+
+/***** SEGUNDA PARTE (tablet) *****/
+
+@@media (min-width: 700px) {
+
+}
+
+/***** TERCERA PARTE (desktop) *****/
+
+@@media (min-width: 960px) {
+
+}
