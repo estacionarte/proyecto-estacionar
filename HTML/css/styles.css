@@ -248,6 +248,10 @@ h3{
   float: right;
 }
 
+.faqs-form-search input[type=submit]:hover{
+  cursor: pointer;
+}
+
 .faqs-preguntas section{
   margin: 30px auto;
 }
@@ -284,6 +288,10 @@ h3{
   vertical-align: middle;
 }
 
+.recuperar-password div input[type=email]:focus{
+  border: solid 1px #48A8C1;
+}
+
 .recuperar-password div input[type=submit]{
   width: 100%;
   margin-top: 10px;
@@ -294,6 +302,11 @@ h3{
   border: solid 1px #9c9c9c;
   border-radius: 2px;
   background-color: #9c9c9c;
+}
+
+.recuperar-password div input[type=submit]:hover{
+  background-color: #8f8f8f;
+  cursor: pointer;
 }
 
 /************************************  T  A  B  L  E  T  **************************************/
