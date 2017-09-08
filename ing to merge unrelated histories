@@ -1,0 +1,118 @@
+[33mcommit 0bf07f04f672ffeb3a045d167894a2c4e71c517a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 73a4fd5 45039a3
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Fri Sep 8 10:42:54 2017 -0300
+
+    -mMerge branch 'joaquin'
+
+[33mcommit 45039a314124701bf96d74cec4a2a92954b00873[m
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Fri Sep 8 10:42:23 2017 -0300
+
+    update hoja estilos
+
+[33mcommit 73a4fd575c8e71a07b39ec3beaa7df4a5cc58275[m
+Merge: 2844aaa 509ebdd
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Fri Sep 8 01:12:54 2017 -0300
+
+    Merge branch 'joaquin'
+
+[33mcommit 509ebdd661bac4f54701ebe8cf19167180ccdbf1[m
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Fri Sep 8 01:11:05 2017 -0300
+
+    -m
+
+[33mcommit 2844aaa48e1d836e05129623582def337a574a59[m
+Merge: 1975ba2 f0f46d7
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Fri Sep 8 01:01:50 2017 -0300
+
+    Merge branch 'joaquin'
+    
+    -m
+
+[33mcommit f0f46d7d10b804ced04cddfa2cf72631bac945d2[m
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Fri Sep 8 00:47:34 2017 -0300
+
+    estilos
+
+[33mcommit b5212ceb5fe45ef615ec094a58d2d98138f9812b[m
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Thu Sep 7 19:31:59 2017 -0300
+
+    Fusion con rama Mariano. Ahora el master tiene la ultima version de todo.
+
+[33mcommit 1975ba20a9150630d788abc786dabbc17fce5c58[m
+Merge: 55c3f2e 225c2a3
+Author: joapanos <30601241+joapanos@users.noreply.github.com>
+Date:   Thu Sep 7 18:42:58 2017 -0300
+
+    Merge pull request #2 from estacionarte/joaquin
+    
+    Unificacion hoja .css
+
+[33mcommit 225c2a30f3bac4edc7a03c3dc070f46df8c916eb[m
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Thu Sep 7 18:35:37 2017 -0300
+
+    Unificacion hoja .css
+
+[33mcommit 55c3f2e53efd61e575f07f64f72bf5d81ac3a11f[m
+Merge: 5b9540c b824752
+Author: joapanos <30601241+joapanos@users.noreply.github.com>
+Date:   Wed Sep 6 20:34:06 2017 -0300
+
+    Merge pull request #1 from estacionarte/joaquin
+    
+    Última versión
+
+[33mcommit b824752869cc072336392043d831c4cddb3ecc7f[m
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Wed Sep 6 20:25:42 2017 -0300
+
+    prueba
+
+[33mcommit 5b9540c5f2b5134903da99bb04f8cb311527b84b[m
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Wed Sep 6 19:58:20 2017 -0300
+
+    sin cambios
+
+[33mcommit 5d46432ff125b0ff7cfc3145f22f1df85e31ffc1[m
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Wed Sep 6 19:48:18 2017 -0300
+
+    cambios
+
+[33mcommit 1b90b4a40e6ec574696debb8ba6bced0f58e235e[m
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Wed Sep 6 18:41:30 2017 -0300
+
+    Update de FAQs y recupero de contrasena
+
+[33mcommit 8715dad8956275cfd9bb03c1ed2c88c03d7aeae8[m
+Author: Joaquin Paños <joaquinpanos@Joaquins-MacBook-Pro.local>
+Date:   Mon Sep 4 21:46:04 2017 -0300
+
+    primer commit bitchies
+
+[33mcommit ef4eb8de8f270747e8ecad1725285390a87d718a[m[33m ([m[1;31morigin/faqs[m[33m)[m
+Author: SoyLaTrufa <31101693+SoyLaTrufa@users.noreply.github.com>
+Date:   Mon Sep 4 21:20:51 2017 -0300
+
+    Update README.md
+
+[33mcommit 34695326c8f6fb322d94248e78d2bfda044d0ea0[m
+Author: SoyLaTrufa <31101693+SoyLaTrufa@users.noreply.github.com>
+Date:   Mon Sep 4 21:19:37 2017 -0300
+
+    Update README.md
+
+[33mcommit d0d4471d13b8e02286074dceae8de15b11a15ca5[m
+Author: SoyLaTrufa <31101693+SoyLaTrufa@users.noreply.github.com>
+Date:   Mon Sep 4 21:14:22 2017 -0300
+
+    Initial commit
