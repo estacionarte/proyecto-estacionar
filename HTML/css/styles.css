@@ -248,6 +248,10 @@ h3{
   float: right;
 }
 
+.faqs-preguntas section{
+  margin: 30px auto;
+}
+
 .pregunta h3{
   font-size: 1.1em;
   margin: 20px auto 7px;
