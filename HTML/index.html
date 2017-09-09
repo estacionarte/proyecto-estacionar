@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width">
     <title>EstacionARte</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <div class="container">
+    <div class="home-container">
       <header class="main-header">
-        <img src="images/logo.png" alt="logotipo" class="logo">
-        <a href="#" class="toggle-nav">
-          <span class="ion-navicon-round"></span>
-        </a>
+          <h1>EstacionARte</h1>
+          <a href="#">
+            <img src="images/hamburguesa.png" alt="menu" class="toggle-nav">
+          </a>
         <nav class="main-nav">
           <ul>
             <li><a href="#"class="btn-iniciar">Iniciar Sesión</a></li>
@@ -25,12 +26,14 @@
         </nav>
       </header>
       <section class="banner-container">
-        <img src="images/bg-home-mobile.jpg" alt="" class="img-home">
+        <div class="banner-img"></div>
         <article class="shape">
           <h2>Encontrá y reservá tu estacionamiento privado</h2>
           <h3>Más de 100.000 mil usuario ya confian en nosotros</h3>
-          <input type="search" name="busqueda" value="" placeholder="¿Donde querés estacionar?" required>
-          <a href="#">BUSCAR</a>
+          <form action="" method="get">
+            <input type="search" name="busqueda" value="" placeholder="¿Dónde querés estacionar?" required>
+            <input type="submit" name="BUSCAR" value="BUSCAR">
+          </form>
         </article>
       </section>
       <section class="como-funciona">
@@ -61,9 +64,16 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   		<script>
   		$('.toggle-nav').click(function (){
+  			$('.main-nav').slideToggle(10);
+  		});
+  	</script>
+  	</script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  		<script>
+  		$('.toggle-nav').click(function (){
         $('.main-nav').toggleClass('open-nav');
   			$('.toggle-nav').toggleClass('rotate');
-  		});
+  		}); -->
   	</script>
   	</script>
   </body>
