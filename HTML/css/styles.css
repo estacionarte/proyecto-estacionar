@@ -139,6 +139,7 @@ h1{
 .como-funciona h2{
   text-align: center;
   font-size: 2em;
+  color: rgb(105, 105, 105);
 }
 
 .como-funciona .pasos{
@@ -289,7 +290,7 @@ h1{
 
 .main-nav{
   display: block !important;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .main-nav a{
@@ -309,8 +310,14 @@ h1{
 
 .faq-btn{
   right: 32%;
-  color: black !important;
+  color: rgb(105, 105, 105) !important;
   background-color: white !important;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.faq-btn:hover{
+  color: #48A8C1 !important;
 }
 
 .how-btn{
@@ -349,7 +356,7 @@ h1{
 /********* C O M O   F U N C I O N A******************/
 
 .como-funciona{
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .como-funciona h2{
@@ -414,4 +421,63 @@ h1{
 
 @media (min-width: 960px) {
 
+  /****************** HEADER*******************/
+  h1{
+    font-size: 2.5em;
+  }
+  .main-nav a{
+    font-size: 1.2em;
+  }
+
+  /****************** B A N N E R*******************/
+
+  .banner-container{
+    margin-top: -30px;
+    background-image: url(../images/bg-home2.jpg);
+    height: 860px;
+  }
+
+  .shape h2{
+    font-size: 5.3em;
+  }
+
+  .shape h3{
+    font-size: 2.1em;
+    margin-bottom: 95px;
+  }
+
+  .shape input[type=search]{
+    width: 60%;
+  }
+
+  .shape input[type=submit]{
+    width: 60%;
+    margin-bottom: 45px;
+  }
+
+  /********* C O M O   F U N C I O N A******************/
+
+  .como-funciona{
+    margin-top: 5%;
+  }
+
+  .como-funciona .pasos{
+    width: 33.33%;
+    margin: 5% 0 10%;
+    float: left;
+  }
+
+  .pasos img{
+    width: 40%;
+  }
+
+  .ultimo-paso{
+    width: 33.33%;
+    margin: 5% 0 10%;
+    float: right;
+  }
+
+  .ultimo-paso img{
+    width: 40%;
+  }
 }
