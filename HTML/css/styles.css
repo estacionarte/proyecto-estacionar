@@ -140,7 +140,7 @@ h3{
   left: 50%;
   transform: translateX(-50%);
   display: block;
-  background-color: #48A8C1;
+  background-color: red;
   color: white;
   font-size: 0.9em;
   width: 25%;
