@@ -133,13 +133,34 @@ h1{
 
 .como-funciona{
   position: relative;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .como-funciona h2{
   text-align: center;
   font-size: 2em;
   color: rgb(105, 105, 105);
+}
+
+.buscas{
+  text-align: center;
+  font-size: 1.5em;
+  color: #27658A;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.alquilas{
+  text-align: center;
+  font-size: 1.5em;
+  color: #DC4844;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.estacionas{
+  text-align: center;
+  font-size: 1.5em;
+  color: #FFF16E;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .como-funciona .pasos{
@@ -158,6 +179,7 @@ h1{
 .como-funciona p{
   margin: 15px 35px 60px;
   text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /****************** F O O T E R*******************/
@@ -228,6 +250,7 @@ h1{
 .pregunta h3{
   font-size: 1.1em;
   margin: 20px auto 7px;
+  cursor: pointer;
 }
 
 .pregunta p{
@@ -365,8 +388,9 @@ h1{
 
 .como-funciona .pasos{
   width: 50%;
-  margin: 10% 0 10%;
+  margin: 10% 0 5%;
   float: left;
+  /*border: solid 1px red;*/
 }
 
 .pasos img{
@@ -374,13 +398,16 @@ h1{
 }
 
 .ultimo-paso{
+  clear: both;
+  margin: 0 auto 10%;
   width: 50%;
-  margin: 0 auto 0;
+  /*border: solid 1px red;*/
 }
 
 .ultimo-paso img{
   width: 50%;
 }
+
 
 /****************** F A Q s *******************/
 
@@ -455,7 +482,7 @@ h1{
     margin-bottom: 45px;
   }
 
-  /********* C O M O   F U N C I O N A******************/
+  /********* C O M O  F U N C I O N A****************/
 
   .como-funciona{
     margin-top: 5%;
@@ -472,12 +499,17 @@ h1{
   }
 
   .ultimo-paso{
+    position: absolute;
     width: 33.33%;
     margin: 5% 0 10%;
-    float: right;
+    right: 0;
   }
 
   .ultimo-paso img{
     width: 40%;
   }
+}
+
+.main-footer{
+  clear: both;
 }
