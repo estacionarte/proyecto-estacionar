@@ -583,3 +583,31 @@ h1{
 .main-footer{
   clear: both;
 }
+
+/*
+  Sign In
+  Sign Up
+*/
+.recuperar-password div input[type=password],
+.recuperar-password div input[type=text],
+.recuperar-password div input[type=date],
+.recuperar-password div select
+ {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: solid 1px #9c9c9c;
+  border-radius: 2px;
+  background-color: #fff;
+  vertical-align: middle;
+}
+
+.recuperar-password input {
+	margin: 5px 0 5px 0;
+}
+
+.recuperar-main-content a {
+	margin: 0px auto;
+ 	display: block;
+	color: black;
+}
