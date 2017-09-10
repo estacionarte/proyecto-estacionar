@@ -34,44 +34,24 @@ h3{
   font-size: 1.1em;
 }
 
-/****************** H O M E *******************/
-
-.container{
-  position: relative;
-}
-
-.main-header{
-  background-color: white;
-  position: fixed;
-  display: block;
-  height: 17vh;
-  width: 100%;
-  top: 0;
-  right: 0;
-  z-index: 15;
-  color: white;
-}
+/****************** HEADER*******************/
 
 .logo{
+  width: 100%;
   position: fixed;
-  width: 65%;
-  left: 0;
-  top: 0;
-  z-index: 15;
-  max-width: 300px;
+  z-index: 10;
 }
 
 .toggle-nav{
   position: fixed;
-  display: block;
+  display: inline-block;
   text-align: right;
-  margin: 12px 15px;
   color: grey;
-  font-size: 2.5em;
+  font-size: 2em;
   float: right;
-  z-index: 15;
-  right: 9%;
-  top: 1%;
+  z-index: 20;
+  right: 2vw;
+  top: 2vh;
 }
 
 .main-nav{
@@ -82,7 +62,7 @@ h3{
   height: 100vh;
   transition: 300ms;
   opacity: 0;
-  z-index: 10;
+  z-index: 15;
   background-color: #48A8C1;
 }
 
@@ -111,9 +91,11 @@ h3{
 }
 
 .btn-iniciar{
-  margin-top: 17vh;
+  margin-top: 11vh;
   border-top: solid 2px white;
 }
+
+/****************** b a n n e r *******************/
 
 .img-home{
   width: 100%;
@@ -121,7 +103,7 @@ h3{
 
 .banner-container{
   position: relative;
-  top: 22vw;
+  top: 16vw;
 }
 
 .shape{
@@ -147,8 +129,9 @@ h3{
 }
 
 .shape input{
-  width: 60%;
-  height: 12%;
+  width: 80%;
+  height: 15%;
+  border-radius:  5PX;
   margin-bottom: 10px;
 }
 
@@ -165,9 +148,11 @@ h3{
   border-radius: 5px;
 }
 
+/********* C O M O   F U N C I O N A******************/
+
 .como-funciona{
-  position: absolute;
-  top: 140%;
+  position: relative;
+  margin-top: 35%;
 }
 
 .como-funciona h2{
@@ -192,9 +177,10 @@ h3{
   text-align: center;
 }
 
+/****************** F O O T E R*******************/
 .main-footer{
-  position: absolute;
-  top: 458%;
+  position: relative;
+  top: 258%;
   width: 100%;
   text-align: center;
 }
