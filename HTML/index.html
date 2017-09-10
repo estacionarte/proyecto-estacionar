@@ -5,47 +5,53 @@
     <meta name="viewport" content="width=device-width">
     <title>EstacionARte</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <div class="container">
+    <div class="home-container">
       <header class="main-header">
-        <img src="images/logo.png" alt="logotipo" class="logo">
-        <a href="#" class="toggle-nav">
-          <span class="ion-navicon-round"></span>
-        </a>
+        <a href="#"><h1>EstacionARte</h1></a>
+          <a href="#">
+            <img src="images/hamburguesa.png" alt="menu" class="toggle-nav">
+          </a>
         <nav class="main-nav">
           <ul>
-            <li><a href="#"class="btn-iniciar">Iniciar Sesión</a></li>
-            <li><a href="#">Registrate</a></li>
-            <li><a href="#">¿Como funciona?</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="#"class="iniciar-btn">Iniciar Sesión</a></li>
+            <li><a href="#" class="register-btn">Registrarse</a></li>
+            <li><a href="#" class="how-btn">¿Como funciona?</a></li>
+            <li class="ayuda-li"><a href="#" class="faq-btn">Ayuda</a></li>
           </ul>
         </nav>
       </header>
       <section class="banner-container">
-        <img src="images/bg-home-mobile.jpg" alt="" class="img-home">
         <article class="shape">
           <h2>Encontrá y reservá tu estacionamiento privado</h2>
           <h3>Más de 100.000 mil usuario ya confian en nosotros</h3>
-          <input type="search" name="busqueda" value="" placeholder="¿Donde querés estacionar?" required>
-          <a href="#">BUSCAR</a>
+          <form action="" method="get">
+            <input type="search" name="busqueda" value="" placeholder="¿Dónde querés estacionar?" required>
+            <input type="submit" name="BUSCAR" value="BUSCAR">
+          </form>
         </article>
       </section>
       <section class="como-funciona">
         <h2>¿Cómo funciona?</h2>
         <article class="pasos">
           <img src="images/search.jpg" alt="buscar">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <h3 class="buscas">BUSCÁS</h3>
+          <p>¿Necesitas un lugar donde estacionar? No te preocupes nosotros te ayudamos. Sólo decinos a donde queres ir y nosotros te encontramos la mejor cochera y al mejor precio.</p>
         </article>
         <article class="pasos">
           <img src="images/credit-card.jpg" alt="tarjeta">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <h3 class="alquilas">ALQUILÁS</h3>
+          <p>Elegí la cochera que mejor se adapte a vos. Alquilala de la forma más segura a travez de nuestro sistema.</p>
         </article>
-        <article class="pasos">
+        <article class="ultimo-paso">
           <img src="images/car.jpg" alt="auto">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <h3 class="estacionas">ESTACIONÁS</h3>
+          <p>Conducí hasta la cochera, ya es tuya por el tiempo que vos lo solicitaste. ¡Listo! No tenés que volver a preocuparte por buscar un lugar donde estacionar.</p>
         </article>
       </section>
       <footer class="main-footer">
@@ -62,9 +68,16 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   		<script>
   		$('.toggle-nav').click(function (){
+  			$('.main-nav').slideToggle(10);
+  		});
+  	</script>
+  	</script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  		<script>
+  		$('.toggle-nav').click(function (){
         $('.main-nav').toggleClass('open-nav');
   			$('.toggle-nav').toggleClass('rotate');
-  		});
+  		}); -->
   	</script>
   	</script>
   </body>
