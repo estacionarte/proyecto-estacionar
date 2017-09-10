@@ -184,18 +184,24 @@ h1{
 
 /****************** F O O T E R*******************/
 .main-footer{
-  position: relative;
-  top: 258%;
+  margin-top: 40px;
+  display: block;
   width: 100%;
   text-align: center;
+  background-color: #48A8C1;
+}
+
+.main-footer div h4{
+  display: none;
 }
 
 .main-footer a{
   display: block;
-  color: black;
+  color: #fff;
   padding: 10px 20px;
-  margin-bottom: 3px;
   font-size: 0.9em;
+  border-bottom: solid 1px #fff;
+  /*border-bottom-style: groove;*/
 }
 
 .last{
@@ -206,6 +212,11 @@ h1{
 
 .faqs-main-content{
   padding: 0 10px;
+}
+
+.faqs-main-content h1{
+  font-size: 1.8em;
+  padding: 10px 0 0;
 }
 
 .faqs-search{
@@ -265,6 +276,11 @@ h1{
   padding: 0 10px;
 }
 
+.recuperar-main-content h1{
+  font-size: 1.8em;
+  padding: 10px 0;
+}
+
 .recuperar-password div{
   margin: 20px 0%;
   text-align: center;
@@ -291,9 +307,9 @@ h1{
   font-size: 0.9em;
   font-weight: bold;
   color: #FFF;
-  border: solid 1px #9c9c9c;
+  border: solid 1px #48A8C1;
   border-radius: 2px;
-  background-color: #9c9c9c;
+  background-color: #48A8C1;
 }
 
 .recuperar-password div input[type=submit]:hover{
@@ -408,6 +424,50 @@ h1{
   width: 50%;
 }
 
+/****************** F O O T E R *******************/
+.main-footer{
+  margin-top: 60px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.main-footer div{
+  width: 50%;
+  margin: 15px 0px;
+}
+
+.main-footer-div-left{
+  float: left;
+}
+
+.main-footer-div-right{
+  float: right;
+}
+
+.main-footer div h4{
+  display: block;
+  color: #2b2b2b;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+.main-footer ul{
+  display: inline-block;
+  width: 80%;
+  border-top: solid 1px #fff;
+}
+
+.main-footer a{
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  border-bottom: none;
+  /*border-bottom-style: groove;*/
+}
+
+.last{
+  border-bottom: none !important;
+}
 
 /****************** F A Q s *******************/
 
@@ -415,6 +475,10 @@ h1{
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
+  }
+
+  .faqs-main-content h1{
+    margin-left: 2.5%;
   }
 
   hr{
@@ -486,7 +550,7 @@ h1{
     margin-bottom: 25px;
   }
 
-  /********* C O M O  F U N C I O N A****************/
+  /********* C O M O  F U N C I O N A ****************/
 
   .como-funciona{
     margin-top: 5%;
@@ -494,9 +558,11 @@ h1{
 
   .como-funciona .pasos{
     width: 33.33%;
-    margin: 5% 0 10%;
+    margin: 5% 0;
     float: left;
+    margin-bottom: 50px;
   }
+
 
   .pasos img{
     width: 40%;
@@ -505,7 +571,7 @@ h1{
   .ultimo-paso{
     position: absolute;
     width: 33.33%;
-    margin: 5% 0 10%;
+    margin: 5% 0;
     right: 0;
   }
 
