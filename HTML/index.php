@@ -12,20 +12,7 @@
   </head>
   <body>
     <div class="home-container">
-      <header class="main-header">
-        <a href="#"><h1>EstacionARte</h1></a>
-          <a href="#">
-            <img src="images/hamburguesa.png" alt="menu" class="toggle-nav">
-          </a>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="#"class="iniciar-btn">Iniciar Sesión</a></li>
-            <li><a href="#" class="register-btn">Registrarse</a></li>
-            <li><a href="#" class="how-btn">¿Como funciona?</a></li>
-            <li class="ayuda-li"><a href="#" class="faq-btn">Ayuda</a></li>
-          </ul>
-        </nav>
-      </header>
+      <?php require_once('header.php'); ?>
       <section class="banner-container">
         <article class="shape">
           <h2>Encontrá y reservá tu estacionamiento privado</h2>
@@ -54,24 +41,7 @@
           <p>Conducí hasta la cochera y dejá tu auto. ¡Listo! Ya es tuya por el tiempo que la solicitaste.</p>
         </article>
       </section>
-      <footer class="main-footer">
-        <div class="main-footer-div-left">
-          <h4>Empresa</h4>
-          <ul>
-            <li><a href="#">Quiénes somos</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="main-footer-div-right">
-          <h4>Ayuda</h4>
-          <ul>
-            <li><a href="#">Cómo funciona</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Términos y condiciones</a></li>
-            <li><a href="#" class="last">Políticas de privacidad</a></li>
-          </ul>
-        </div>
-      </footer>
+      <?php require_once('footer.php'); ?>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   		<script>
