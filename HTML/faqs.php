@@ -15,7 +15,7 @@
       <?php require_once('header.php'); ?>
       <div class="faqs-main-content">
 
-        <h1>Preguntas Frecuentes</h1>
+        <hr><h1>Preguntas Frecuentes</h1>
 
         <div class="faqs-search">
           <form class="faqs-form-search" action="" method="get">

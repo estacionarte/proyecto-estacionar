@@ -211,11 +211,16 @@ h1{
 
 .faqs-main-content{
   padding: 0 10px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .faqs-main-content h1{
+  margin-top: 30px;
   font-size: 1.8em;
   padding: 10px 0 0;
+  color: rgb(105, 105, 105);
+  font-weight: lighter;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .faqs-search{
@@ -253,6 +258,10 @@ h1{
   cursor: pointer;
 }
 
+.faqs-preguntas{
+  color: rgb(105, 105, 105);
+}
+
 .faqs-preguntas section{
   margin: 30px auto;
 }
@@ -275,10 +284,17 @@ h1{
   padding: 0 10px;
 }
 
+
 .recuperar-main-content h1{
-  font-size: 1.8em;
+  margin-top: 20px;
+  font-size: 1.4em;
   padding: 10px 0;
+  color: #8f8f8f;
+  font-weight: lighter;
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
 }
+
 
 .recuperar-password div{
   margin: 20px 0%;
@@ -314,6 +330,20 @@ h1{
 .recuperar-password div input[type=submit]:hover{
   background-color: #8f8f8f;
   cursor: pointer;
+}
+
+label{
+  color: #8f8f8f;
+}
+
+h5{
+  color: #8f8f8f;
+  font-weight: lighter;
+}
+
+.accede-btn a{
+  color: #8f8f8f;
+  text-decoration: underline;
 }
 
 /************************************  T  A  B  L  E  T  **************************************/
@@ -462,7 +492,6 @@ h1{
   padding: 10px 20px;
   font-size: 0.9em;
   border-bottom: none;
-  /*border-bottom-style: groove;*/
 }
 
 .last{
@@ -486,8 +515,8 @@ h1{
   }
 
   .faqs-preguntas section{
-    margin-left: 5%;
-    margin-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
   }
 
   .faqs-preguntas section article{
@@ -496,13 +525,13 @@ h1{
   }
 
 /****************** RECUPERO CONTRASEÑA *******************/
-  .tittle-signin{
-    color: rgba(57, 60, 61, 0.8);
+
+  .divisor{
+    display: none;
   }
+
   .recuperar-main-content{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
+    margin: 20px auto 0;
     max-width: 600px;
     border-radius: 5px;
     background-color: #EAEAEA;
@@ -593,8 +622,7 @@ h1{
 .recuperar-password div input[type=password],
 .recuperar-password div input[type=text],
 .recuperar-password div input[type=date],
-.recuperar-password div select
- {
+.recuperar-password div select{
   width: 100%;
   padding: 10px;
   font-size: 1em;

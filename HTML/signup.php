@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -15,7 +16,7 @@
     <?php require_once('header.php'); ?>
     <div class="recuperar-main-content">
       <section class="recuperar-password">
-        <h1>Crear una nueva cuenta</h1>
+        <hr class="divisor"><h1>Crea tu cuenta</h1>
         <div>
           <form action="#" method="post">
             <input type="text" class="form-control" placeholder="Nombre" name="firstName" required/>
@@ -41,7 +42,10 @@
             <input type="submit" name="" value="Continuar">
           </form>
         </div>
-        <a href="signin.php">Ya estoy registrado</a>
+        <div class="accede-btn">
+          <h5>¿Ya tenés una cuenta?</h5>
+          <a href="signin.php">Accedé ahora</a>
+        </div>
       </section>
     </div>
     <?php require_once('footer.php'); ?>
