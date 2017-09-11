@@ -1,33 +1,22 @@
-<!--
-http://www.free-css.com/assets/files/free-css-templates/preview/page210/adminlte/pages/examples/register.php
--->
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>estacionArte | Iniciar sesión</title>
-  <link href="css/stylesPablo.css" rel="stylesheet" type="text/css" />
-  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  <title>EstacionARte</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="container">
-    <header class="main-header">
-      <a href="#"><h1>EstacionARte</h1></a>
-      <a href="#">
-        <img src="images/hamburguesa.png" alt="menu" class="toggle-nav">
-      </a>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="signIn.html"class="iniciar-btn">Iniciar Sesión</a></li>
-          <li><a href="#" class="how-btn">¿Como funciona?</a></li>
-          <li class="ayuda-li"><a href="#" class="faq-btn">Ayuda</a></li>
-        </ul>
-      </nav>
-    </header>
+    <?php require_once('header.php'); ?>
     <div class="recuperar-main-content">
       <section class="recuperar-password">
-        <h1>Crear una nueva cuenta</h1>
+        <hr class="divisor"><h1>Crea tu cuenta</h1>
         <div>
           <form action="#" method="post">
             <input type="text" class="form-control" placeholder="Nombre" name="firstName" required/>
@@ -53,27 +42,13 @@ http://www.free-css.com/assets/files/free-css-templates/preview/page210/adminlte
             <input type="submit" name="" value="Continuar">
           </form>
         </div>
-        <a href="signIn.html">Ya estoy registrado</a>
+        <div class="accede-btn">
+          <h5>¿Ya tenés una cuenta?</h5>
+          <a href="signin.php">Accedé ahora</a>
+        </div>
       </section>
     </div>
-    <footer class="main-footer">
-      <div class="main-footer-div-left">
-        <h4>Empresa</h4>
-        <ul>
-          <li><a href="#">Quiénes somos</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="main-footer-div-right">
-        <h4>Ayuda</h4>
-        <ul>
-          <li><a href="#">Cómo funciona</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Términos y condiciones</a></li>
-          <li><a href="#" class="last">Políticas de privacidad</a></li>
-        </ul>
-      </div>
-    </footer>
+    <?php require_once('footer.php'); ?>
   </div>
   <script>
   function initMap() {
