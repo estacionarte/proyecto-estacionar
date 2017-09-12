@@ -70,6 +70,14 @@ h1{
   background-color: rgba(72, 168, 193, 0.7);
 }
 
+.modal-wrapper{
+  display: none;
+}
+
+.popup-link{
+  display: none;
+}
+
 /****************** b a n n e r *******************/
 .banner-container{
   position: relative;
@@ -346,6 +354,44 @@ h5{
   text-decoration: underline;
 }
 
+/*****************UNDER CONSTRUCTION********************/
+.construccion{
+ position: absolute;
+ left: 50%;
+ transform: translateX(-50%);
+}
+
+.cons-texto{
+  margin-top: 25%;
+}
+
+h2{
+  color: #48A8C1;
+  font-size: 2em;
+  text-align: center;
+}
+
+h3{
+  color: grey;
+  font-size: 1em;
+  text-align: center;
+}
+
+.volver-home{
+  display: block;
+  text-align: center;
+  padding: 5px;
+  margin-top: 20px;
+  color: white;
+  background-color: #48A8C1;
+  font-size: 1em;
+  width: 30%;
+  border-radius: 2px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /************************************  T  A  B  L  E  T  **************************************/
 
 @media (min-width: 700px) {
@@ -557,7 +603,77 @@ h5{
     font-size: 1.2em;
   }
 
-  /****************** B A N N E R*******************/
+  .iniciar-btn{
+    display: none !important;
+  }
+
+  .popup-link{
+    display: block;
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    width: 15%;
+    padding: 5px 15px;
+    background-color: #48A8C1;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .popup-link:hover{
+    background-color: rgba(72, 168, 193, 0.7);
+  }
+
+  .modal-wrapper{
+    display: block;
+    position: absolute;
+  }
+
+  #popup-iniciar {
+     visibility: hidden;
+     opacity: 0;
+     margin-top: -300px;
+  }
+
+  #popup-iniciar:target {
+     visibility: visible;
+     opacity: 1;
+     position: absolute;
+     top: 6%;
+     right: 0;
+     margin: 0;
+     z-index: 30;
+     transition: all 0.3s;
+  }
+
+  .popup-contenedor {
+     position: relative;
+     margin: 7% auto;
+     padding: 30px 30px;
+     background-color: #fafafa;
+     color:#333;
+     border-radius: 3px;
+     width: 40%;
+  }
+
+  a.popup-cerrar {
+     position: absolute;
+     top: 3px;
+     right: 3px;
+     background-color: #333;
+     padding: 7px 10px;
+     font-size: 20px;
+     text-decoration: none;
+     line-height: 1;
+     color:#fff;
+  }
+
+  .tittle-signin{
+    font-size: 1.2em;
+    padding: 0;
+  }
+
+    /****************** B A N N E R*******************/
 
   .banner-container{
     margin-top: -30px;

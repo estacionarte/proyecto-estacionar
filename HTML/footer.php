@@ -15,17 +15,17 @@
       <div class="main-footer-div-left">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="#">¿Quiénes somos?</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="underconstruction.php">¿Quiénes somos?</a></li>
+          <li><a href="underconstruction.php">Contacto</a></li>
         </ul>
       </div>
       <div class="main-footer-div-right">
         <h4>Ayuda</h4>
         <ul>
-          <li><a href="#">¿Cómo funciona?</a></li>
+          <li><a href="#comofunciona">¿Cómo funciona?</a></li>
           <li><a href="faqs.php">FAQs</a></li>
-          <li><a href="#">Términos y condiciones</a></li>
-          <li><a href="#" class="last">Políticas de privacidad</a></li>
+          <li><a href="underconstruction.php">Términos y condiciones</a></li>
+          <li><a href="underconstruction.php" class="last">Políticas de privacidad</a></li>
         </ul>
       </div>
     </footer>

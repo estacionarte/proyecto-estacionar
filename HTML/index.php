@@ -23,7 +23,7 @@
           </form>
         </article>
       </section>
-      <section class="como-funciona">
+      <section class="como-funciona" id="comofunciona">
         <h2>¿Cómo funciona?</h2>
         <article class="pasos">
           <img src="images/search.jpg" alt="buscar">

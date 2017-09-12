@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>En Construccion</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+      <img class="construccion" src="images/const.gif">
+
+        <h2>DISCULPE LAS MOLESTIAS</h2>
+        <h3>Estamos trabajando para usted <br>Atte. El equipo de <a href="faqs.php">PROYECTO ESTACIONAR</a></h3>
+        <a href="index.php" class="volver-home">VOLVER AL HOME</a>
+
+  </body>
+</html>
