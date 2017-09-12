@@ -525,17 +525,14 @@ h5{
   }
 
 /****************** RECUPERO CONTRASEÑA *******************/
-<<<<<<< HEAD
   .tittle-signin{
     color: rgba(57, 60, 61, 0.8);
   }
-=======
 
   .divisor{
     display: none;
   }
 
->>>>>>> 358900578ec1e98f554147892ccd1228b4439725
   .recuperar-main-content{
     margin: 20px auto 0;
     max-width: 600px;
@@ -623,8 +620,10 @@ h5{
 
 /*
   Sign In
+
   Sign Up
 */
+
 .recuperar-password div input[type=password],
 .recuperar-password div input[type=text],
 .recuperar-password div input[type=date],
