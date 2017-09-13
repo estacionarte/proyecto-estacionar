@@ -13,9 +13,12 @@
   <body>
     <div class="container">
       <?php require_once('header.php'); ?>
-      <div class="faqs-main-content">
 
-        <hr><h1>Preguntas Frecuentes</h1>
+      <div class="bodies-main-content">
+
+        <hr>
+
+        <h1>Preguntas Frecuentes</h1>
 
         <div class="faqs-search">
           <form class="faqs-form-search" action="" method="get">

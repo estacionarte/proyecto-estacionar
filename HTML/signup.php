@@ -12,40 +12,58 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
   <div class="container">
+
     <?php require_once('header.php'); ?>
-    <div class="recuperar-main-content">
-      <section class="recuperar-password">
-        <hr class="divisor"><h1>Crea tu cuenta</h1>
-        <div>
-          <form action="#" method="post">
-            <input type="text" class="form-control" placeholder="Nombre" name="firstName" required/>
-            <input type="text" class="form-control" placeholder="Apellido" name="lastName" required/>
-            <label>
-              Fecha de nacimiento
-              <input type="date" class="form-control" placeholder="Fecha de nacimiento" name="birthdate" required/>
-            </label>
-            <label>
-              Sexo
-              <select>
-                <option value="male">Femenino</option>
-                <option value="female">Masculino</option>
-                <option value="other">Otro</option>
-                <option value="" selected></option>
-              </select>
-            </label>
-            <input type="email" class="form-control" placeholder="Email" required/>
-            <input type="text" class="form-control" placeholder="Ubicación" id="pac-input" required/>
-            <input type="password" class="form-control" placeholder="Contraseña" required/>
-            <input type="password" class="form-control" placeholder="Repetir Contraseña" required/>
-            <input type="checkbox"> Acepto los términos y condiciones
-            <input type="submit" name="" value="Continuar">
+
+    <div class="bodies-main-content">
+
+      <hr>
+
+      <h1>Crear Cuenta Nueva</h1>
+
+      <section class="signup">
+
+        <div class="form-generico">
+
+          <form action="" method="post">
+            <input type="text" placeholder="Nombre" name="firstName" class="input-firstname" required>
+            <input type="text" placeholder="Apellido" name="lastName" class="input-lastname" required>
+            <input type="date" placeholder="Fecha de Nacimiento" name="birthDate" max="2002-12-31"required>
+            <select name="sexo" required>
+              <option value="" selected>Sexo</option>
+              <option value="male">Femenino</option>
+              <option value="female">Masculino</option>
+              <option value="other">Otro</option>
+            </select>
+            <input type="text" placeholder="Ciudad" name="ciudad" id="pac-input" required>
+            <select name="interes" required>
+              <option value="" selected>Interés Principal</option>
+              <option value="locatario">Buscar estacionamiento</option>
+              <option value="propietario">Ofrecer estacionamiento</option>
+              <option value="ambos">Ambos</option>
+            </select>
+            <input type="email" placeholder="E-Mail" name="email" required>
+            <input type="email" placeholder="Confirmar E-Mail" name="confirmar-email" required>
+            <input type="password" placeholder="Contraseña" name="password" required>
+            <input type="password" placeholder="Confirmar Contraseña" name="confirmar-password" required>
+            <input type="submit" name="boton-submit" value="CREAR CUENTA">
           </form>
+
         </div>
-        <div class="accede-btn">
-          <h5>¿Ya tenés una cuenta?</h5>
-          <a href="signin.php">Accedé ahora</a>
+
+        <p>Al hacer click en "Crear Cuenta", aceptas los términos y condiciones y la política de privacidad de EstacionARte.</p>
+
+        <a href="signin.php">¿Ya estás registrado?</a>
+
+        <div class="login-separador">
+          <span>O</span>
         </div>
+
+        <a href="#" class="facebook-login-button">Crear Cuenta con Facebook</a>
+        <a href="#" class="google-login-button">Crear Cuenta con Google</a>
+
       </section>
     </div>
     <?php require_once('footer.php'); ?>

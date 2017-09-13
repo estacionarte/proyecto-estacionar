@@ -16,11 +16,13 @@
       <section class="banner-container">
         <article class="shape">
           <h2>Encontrá y reservá tu estacionamiento privado</h2>
-          <h3>Más de 10.000 mil usuarios ya confían en nosotros</h3>
-          <form action="" method="get">
-            <input type="search" name="busqueda" value="" placeholder="¿Dónde querés estacionar?" required>
-            <input type="submit" name="BUSCAR" value="BUSCAR">
-          </form>
+          <h3>Más de 10.000 usuarios ya confían en nosotros</h3>
+          <div class="form-generico">
+            <form action="" method="get">
+              <input type="search" name="busqueda" value="" placeholder="¿Dónde querés estacionar?" required>
+              <input type="submit" name="BUSCAR" value="BUSCAR">
+            </form>
+          </div>
         </article>
       </section>
       <section class="como-funciona" id="comofunciona">

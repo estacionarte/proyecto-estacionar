@@ -13,20 +13,37 @@
 <body>
   <div class="container">
     <?php require_once('header.php'); ?>
-    <div class="recuperar-main-content">
-      <h1 class="tittle-signin">Iniciar sesión</h1>
-      <section class="recuperar-password">
-        <div>
+
+    <div class="bodies-main-content">
+
+      <hr>
+
+      <h1>Iniciar Sesión</h1>
+
+      <section class="signin">
+
+        <div class="form-generico">
+
           <form action="" method="post">
-            <input type="email" class="form-control" placeholder="Email"/>
-            <input type="password" class="form-control" placeholder="Contraseña"/>
-            <input type="checkbox"> Recordarme
-            <input type="submit" name="" value="Continuar">
+            <input type="email" name="email" placeholder="Email"/>
+            <input type="password" name="password" placeholder="Contraseña"/>
+            <input type="checkbox" name="recordarme" value="recordarme"> <label for="recordarme">Recordarme</label>
+            <input type="submit" name="" value="INICIAR SESIÓN">
           </form>
+
         </div>
+
+        <a href="forgot-password.php">¿Olvidaste tu e-mail o contraseña?</a>
+        <a href="signup.php">¿Aún no estás registrado?</a>
+
+        <div class="login-separador">
+          <span>O</span>
+        </div>
+
+        <a href="#" class="facebook-login-button">Iniciar con Facebook</a>
+        <a href="#" class="google-login-button">Iniciar con Google</a>
+
       </section>
-      <a href="forgot-password.php">Olvidé mi contraseña</a>
-      <a href="signup.php" class="text-center"> Registrate</a>
     </div>
     <?php require_once('footer.php'); ?>
   </div>
