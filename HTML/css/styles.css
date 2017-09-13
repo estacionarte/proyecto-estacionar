@@ -394,38 +394,46 @@ ul li .popup-link{
   color: #48A8C1;
 }
 
-/*****************UNDER CONSTRUCTION********************/
-.construccion{
- position: absolute;
- left: 50%;
- transform: translateX(-50%);
+/***************** UNDER CONSTRUCTION ********************/
+.bg{
+  background-image: url(../images/bg-construction.jpg);
+  background-repeat:repeat-y;
+  width: 100%;
+  height: 100vh;
 }
 
-.cons-texto{
-  margin-top: 25%;
+.constuction-txt{
+  background-color: rgba(255, 255, 255, 0.85);
+  position: absolute;
+  display: block;
+  top: 40%;
+  width: 100%;
+  font-size: 2.5em;
 }
 
-h2{
+.constuction-txt h2{
   color: #48A8C1;
-  font-size: 2em;
+  font-size: 1.6em;
   text-align: center;
+  padding: 20px 0;
 }
 
-h3{
+.constuction-txt h3{
   color: grey;
   font-size: 1em;
   text-align: center;
+  padding-bottom: 20px;
 }
 
 .volver-home{
   display: block;
   text-align: center;
-  padding: 5px;
+  padding: 15px 5px;
   margin-top: 20px;
   color: white;
   background-color: #48A8C1;
-  font-size: 1em;
-  width: 30%;
+  font-size: 1.2em;
+  width: 50%;
   border-radius: 2px;
   position: absolute;
   left: 50%;
@@ -789,4 +797,14 @@ h3{
 
 .main-footer{
   clear: both;
+}
+
+/***************** UNDER CONSTRUCTION ********************/
+.bg{
+  background-repeat:repeat;
+}
+
+.volver-home{
+  width: 40%;
+  font-size: 1em;
 }
