@@ -29,5 +29,16 @@
         </ul>
       </div>
     </footer>
+    <section class="redes-sociales">
+      <div class="facebook">
+        <a href="http://facebook.com" target="_blank"><img src="icons/facebook.png" alt=""></a>
+      </div>
+      <div class="twitter">
+        <a href="http://twitter.com" target="_blank"><img src="icons/twitter.png" alt=""></a>
+      </div>
+      <div class="instagram">
+        <a href="http://instagram.com" target="_blank"><img src="icons/instagram.png" alt=""></a>
+      </div>
+    </section>
   </body>
 </html>

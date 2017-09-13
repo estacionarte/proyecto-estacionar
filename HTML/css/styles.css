@@ -189,6 +189,33 @@ ul li .popup-link{
   border-bottom: none !important;
 }
 
+.redes-sociales{
+  background-color: #454545;
+  width: 100%;
+  position: relative;
+}
+
+.facebook img{
+  width: 30px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+.twitter img{
+  width: 30px;
+  position: absolute;
+  left: 40%;
+  top: 15%;
+}
+
+.instagram img{
+  width: 30px;
+  position: absolute;
+  right: 40%;
+  top: 15%;
+}
 /****************** F A Q s *******************/
 
  .bodies-main-content{
@@ -201,7 +228,7 @@ ul li .popup-link{
    padding: 10px 0;
    color: #8f8f8f;
    font-weight: lighter;
-   font-family: 'PT Sans', sans-serif;
+   font-family: 'Roboto Condensed', sans-serif;
    text-align: center;
  }
 
@@ -213,7 +240,6 @@ ul li .popup-link{
   border-radius: 5px;
   background-color: #fff;
   overflow: hidden;
-  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .faqs-form-search input[type=text]{
@@ -243,6 +269,7 @@ ul li .popup-link{
 
 .faqs-preguntas{
   color: rgb(105, 105, 105);
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .faqs-preguntas section{
@@ -300,6 +327,7 @@ ul li .popup-link{
 .form-generico label{
   border: none;
   background-color: transparent;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .form-generico input:focus, .form-generico select:focus{
@@ -325,6 +353,7 @@ ul li .popup-link{
   text-align: center;
   margin: 5px auto;
   color: #48A8C1;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .login-separador{
@@ -380,7 +409,9 @@ ul li .popup-link{
 
 .signup p{
   font-size: 0.8em;
+  font-weight: bold;
   color: #8f8f8f;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .signup a{
@@ -388,6 +419,7 @@ ul li .popup-link{
   text-align: center;
   margin-top: 25px;
   color: #48A8C1;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /****************** RECUPERO CONTRASEÑA *******************/
@@ -595,6 +627,34 @@ ul li .popup-link{
   border-bottom: none !important;
 }
 
+.redes-sociales{
+  background-color: #454545;
+  width: 100%;
+  position: relative;
+}
+
+.facebook img{
+  width: 30px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+.twitter img{
+  width: 30px;
+  position: absolute;
+  left: 43%;
+  top: 15%;
+}
+
+.instagram img{
+  width: 30px;
+  position: absolute;
+  right: 43%;
+  top: 15%;
+}
+
 /****************** F A Q s *******************/
 
   .bodies-main-content{
@@ -704,7 +764,7 @@ ul li .popup-link{
   #popup-iniciar:target {
      visibility: visible;
      opacity: 1;
-     top: 14.5%;
+     top: 16%;
      right: 0;
      margin: 0;
      z-index: 20;
