@@ -8,8 +8,8 @@
 
 body{
   font-size: 1em;
-  font-family: 'Cabin', sans-serif; /* probar con Helvetica */
-  min-width: 360px; /* por qué min width??? */
+  font-family: 'Cabin', sans-serif;
+  min-width: 360px;
 }
 
 ul, ol{
@@ -71,11 +71,11 @@ h1{
 /****************** b a n n e r *******************/
 .banner-container{
   position: relative;
-  background-image: url(../images/bg-home2.jpg);
+  background-image: url(../images/bg-home5.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
   width: 100%;
-  height: 300px;
+  height: 500px;
 }
 
 .shape{
@@ -111,7 +111,7 @@ h1{
 
 .como-funciona{
   position: relative;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .como-funciona h2{
@@ -347,11 +347,11 @@ h1{
 }
 
 .facebook-login-button{
-  background-color: #4267B2;
+  background-color: #4B6EA9;
 }
 
 .google-login-button{
-  background-color: #4285F4;
+  background-color: #D74D41;
 }
 
 /****************** SIGN UP *******************/
