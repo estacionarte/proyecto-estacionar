@@ -49,15 +49,9 @@
   		<script>
   		$('.toggle-nav').click(function (){
   			$('.main-nav').slideToggle(100);
+        $('.toggle-nav').toggleClass('rotate');
   		});
-  	</script>
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  		<script>
-  		$('.toggle-nav').click(function (){
-        $('.main-nav').toggleClass('open-nav');
-  			$('.toggle-nav').toggleClass('rotate');
-  		}); -->
-  	</script>
+  	  </script>
   	</script>
   </body>
 </html>
