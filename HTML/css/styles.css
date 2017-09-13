@@ -8,8 +8,8 @@
 
 body{
   font-size: 1em;
-  font-family: 'Cabin', sans-serif;
-  min-width: 360px;
+  font-family: 'Cabin', sans-serif; /* probar con Helvetica */
+  min-width: 360px; /* por qué min width??? */
 }
 
 ul, ol{
@@ -60,22 +60,22 @@ h1{
   background-color: rgba(72, 168, 193, 0.7);
 }
 
-/*.modal-wrapper{
+.modal-wrapper{
   display: none;
 }
 
 ul li .popup-link{
   display: none;
-}*/
+}
 
 /****************** b a n n e r *******************/
 .banner-container{
   position: relative;
-  background-image: url(../images/bg-home5.jpg);
+  background-image: url(../images/bg-home2.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
   width: 100%;
-  height: 500px;
+  height: 300px;
 }
 
 .shape{
@@ -111,7 +111,7 @@ ul li .popup-link{
 
 .como-funciona{
   position: relative;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 .como-funciona h2{
@@ -124,27 +124,25 @@ ul li .popup-link{
   text-align: center;
   font-size: 1.5em;
   color: #27658A;
-  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .alquilas{
   text-align: center;
   font-size: 1.5em;
   color: #DC4844;
-  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .estacionas{
   text-align: center;
   font-size: 1.5em;
   color: #FFF16E;
-  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .como-funciona .pasos{
   display: block;
   width: 100%;
   margin: 10px 0 50px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .como-funciona img{
@@ -157,7 +155,6 @@ ul li .popup-link{
 .como-funciona p{
   margin: 15px 35px 60px;
   text-align: center;
-  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /****************** F O O T E R*******************/
@@ -342,6 +339,7 @@ ul li .popup-link{
 .facebook-login-button, .google-login-button{
   width: 100%;
   padding: 10px;
+  font-size: 0.8em;
   text-transform: uppercase;
   color: #fff !important;
   font-weight: bold !important;
@@ -387,7 +385,9 @@ ul li .popup-link{
 }
 
 /****************** RECUPERO CONTRASEÑA *******************/
-
+.recuperar-password p{
+  font-family: 'Roboto Condensed', sans-serif;
+}
 .recuperar-password a{
   color: #48A8C1;
 }
@@ -630,8 +630,6 @@ h3{
 
 
 
-}
-
 /************************************  D  E  S  K  T  O  P  **************************************/
 
 @media (min-width: 960px) {
@@ -644,12 +642,12 @@ h3{
     font-size: 1.2em;
   }
 
-  /*ul li .iniciar-btn{
-    display: none;
+  .iniciar-btn{
+    display: none !important;
   }
 
-  ul li .popup-link{
-    display: block;
+  .popup-link{
+    display: block !important;
     position: absolute;
     top: 5%;
     right: 2%;
@@ -661,7 +659,7 @@ h3{
     text-align: center;
   }
 
-  .signin-popup a{
+  .signin-popup a{ /****esto que es ??*/
     display: block;
     text-align: center;
     margin: 5px auto;
@@ -686,22 +684,24 @@ h3{
   #popup-iniciar:target {
      visibility: visible;
      opacity: 1;
-     position: absolute;
-     top: 6%;
+     top: 14.5%;
      right: 0;
      margin: 0;
      z-index: 30;
      transition: all 0.3s;
+     /*border: solid 1px green;*/
+     width: 60%;
   }
 
   .popup-contenedor {
      position: relative;
-     margin: 7% auto;
-     padding: 30px 30px;
+     left: 57%;
+     padding: 10px 30px;
      background-color: #ededed;
      color:#333;
      border-radius: 3px;
      width: 40%;
+     /*border: solid 1px red;/*/
   }
 
   .popup-cerrar {
@@ -719,13 +719,13 @@ h3{
   .title-signin{
     font-size: 1.2em;
     padding: 0;
-  }*/
+  }
 
     /****************** B A N N E R*******************/
 
   .banner-container{
     margin-top: -30px;
-    background-image: url(../images/bg-home3.jpg);
+    background-image: url(../images/bg-home5.jpg);
     height: 450px;
   }
 

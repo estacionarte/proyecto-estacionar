@@ -21,14 +21,14 @@
       <nav class="main-nav">
         <ul>
           <li><a href="signin.php" class="iniciar-btn">Iniciar Sesión</a></li>
-          <!-- <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li> -->
+          <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li>
           <li><a href="signup.php" class="register-btn">Registrarse</a></li>
           <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>
           <li class="ayuda-li"><a href="faqs.php" class="faq-btn">Ayuda</a></li>
         </ul>
       </nav>
 
-      <!-- <div class="modal-wrapper" id="popup-iniciar">
+      <div class="modal-wrapper" id="popup-iniciar">
 
          <div class="popup-contenedor">
 
@@ -40,7 +40,7 @@
                 <form action="" method="post">
                   <input type="email" name="email" placeholder="Email"/>
                   <input type="password" name="password" placeholder="Contraseña"/>
-                  <input type="checkbox" name="recordarme" value="recordarme"> <label for="recordarme">Recordarme</label>
+                  <input type="checkbox" name="recordarme" value="recordarme"><label for="recordarme">Recordarme</label>
                   <input type="submit" name="" value="INICIAR SESIÓN">
                 </form>
 
@@ -53,14 +53,14 @@
                 <span>O</span>
               </div>
 
-              <a href="#" class="facebook-login-button">Iniciar con Facebook</a>
-              <a href="#" class="google-login-button">Iniciar con Google</a>
+              <a href="#" class="facebook-login-button">Iniciar sesion con Facebook</a>
+              <a href="#" class="google-login-button">Iniciar sesión con Google</a>
 
             </section>
 
          </div>
 
-      </div> -->
+      </div>
 
     </header>
   </body>
