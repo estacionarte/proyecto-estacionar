@@ -28,8 +28,8 @@
         <div class="form-generico">
 
           <form action="" method="post">
-            <input type="text" placeholder="Nombre" name="firstName" class="input-firstname" required>
-            <input type="text" placeholder="Apellido" name="lastName" class="input-lastname" required>
+            <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" required>
+            <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" required>
             <input type="date" placeholder="Fecha de Nacimiento" name="birthDate" max="2002-12-31"required>
             <select name="sexo" required>
               <option value="" selected>Sexo</option>

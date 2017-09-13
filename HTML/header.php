@@ -12,37 +12,56 @@
   </head>
   <body>
     <header class="main-header">
+
       <a href="index.php"><h1>EstacionARte</h1></a>
         <a href="#">
           <img src="images/hamburguesa.png" alt="menu" class="toggle-nav">
         </a>
+
       <nav class="main-nav">
         <ul>
           <li><a href="signin.php" class="iniciar-btn">Iniciar Sesión</a></li>
+          <!-- <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li> -->
           <li><a href="signup.php" class="register-btn">Registrarse</a></li>
           <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>
           <li class="ayuda-li"><a href="faqs.php" class="faq-btn">Ayuda</a></li>
         </ul>
       </nav>
-      <a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a>
-      <div class="modal-wrapper" id="popup-iniciar">
+
+      <!-- <div class="modal-wrapper" id="popup-iniciar">
+
          <div class="popup-contenedor">
+
             <a class="popup-cerrar" href="#">X</a>
-            <h1 class="tittle-signin">Iniciar sesión</h1>
-            <section class="recuperar-password">
-              <div>
+            <h2 class="title-signin">Iniciar sesión</h2>
+            <section class="signin-popup">
+              <div class="form-generico">
+
                 <form action="" method="post">
-                  <input type="email" class="form-control" placeholder="Email"/>
-                  <input type="password" class="form-control" placeholder="Contraseña"/>
-                  <label><input type="checkbox">Recordarme</label>
-                  <input type="submit" name="" value="Continuar">
+                  <input type="email" name="email" placeholder="Email"/>
+                  <input type="password" name="password" placeholder="Contraseña"/>
+                  <input type="checkbox" name="recordarme" value="recordarme"> <label for="recordarme">Recordarme</label>
+                  <input type="submit" name="" value="INICIAR SESIÓN">
                 </form>
+
               </div>
+
+              <a href="forgot-password.php">¿Olvidaste tu e-mail o contraseña?</a>
+              <a href="signup.php">¿Aún no estás registrado?</a>
+
+              <div class="login-separador">
+                <span>O</span>
+              </div>
+
+              <a href="#" class="facebook-login-button">Iniciar con Facebook</a>
+              <a href="#" class="google-login-button">Iniciar con Google</a>
+
             </section>
-            <a href="forgot-password.php">Olvidé mi contraseña</a><br>
-            <label>¿No tenés una cuenta?<a href="signup.php" class="text-center"> Registrate</a></label>
+
          </div>
-      </div>
+
+      </div> -->
+
     </header>
   </body>
 </html>
