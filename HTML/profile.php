@@ -26,12 +26,10 @@
       <section class="profile">
 
         <nav class="profile-nav">
-          <ul>
-            <li><a href="#">Datos Personales</a></li>
-            <li><a href="#">Mis Vehículos</a></li>
-            <li><a href="#">Mis Estacionamientos</a></li>
-            <li><a href="#">Reputación</a></li>
-          </ul>
+          <a href="#">Datos Personales</a>
+          <a href="#">Mis Vehículos</a>
+          <a href="#">Mis Estacionamientos</a>
+          <a href="#">Reputación</a>
         </nav>
 
       </section>
