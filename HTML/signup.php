@@ -37,7 +37,19 @@
               <option value="female">Masculino</option>
               <option value="other">Otro</option>
             </select>
-            <input type="text" placeholder="Ciudad" name="ciudad" id="pac-input" required>
+            <select name="localidad" required>
+              <option value="" selected>Barrio</option>
+              <?php
+
+              $archivojson = file_get_contents("localidades.json");
+              $localidades = json_decode($archivojson,true);
+
+              foreach ($localidades["barriosAZ"] as $key) { ?>
+                <option value="<?php echo $key ?>"><?php echo $key ?></option>
+              <?php } ?>
+
+            </select>
+            <!-- <input type="text" placeholder="Ciudad" name="ciudad" id="pac-input" required> -->
             <select name="interes" required>
               <option value="" selected>Interés Principal</option>
               <option value="locatario">Buscar estacionamiento</option>
@@ -68,13 +80,13 @@
     </div>
     <?php require_once('footer.php'); ?>
   </div>
-  <script>
+  <!-- <script>
   function initMap() {
     var input = document.getElementById('pac-input');
     var autocomplete = new google.maps.places.Autocomplete(input);
   };
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSkfauiLSZEhmyR3Yti92BCrmMCFbqB0Y&libraries=places&callback=initMap" async defer></script>
+  </script> -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSkfauiLSZEhmyR3Yti92BCrmMCFbqB0Y&libraries=places&callback=initMap" async defer></script> -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/menu.js"></script>
 </body>

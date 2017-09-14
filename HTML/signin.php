@@ -27,7 +27,7 @@
           <form action="" method="post">
             <input type="email" name="email" placeholder="Email"/>
             <input type="password" name="password" placeholder="Contraseña"/>
-            <input type="checkbox" name="recordarme" value="recordarme"> <label for="recordarme">Recordarme</label>
+            <input type="checkbox" name="recordarme" value="recordarme" id="recordarme"> <label for="recordarme">Recordarme</label>
             <input type="submit" name="" value="INICIAR SESIÓN">
           </form>
 
