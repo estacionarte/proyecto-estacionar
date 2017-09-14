@@ -477,6 +477,59 @@ ul li .popup-link{
   transform: translateX(-50%);
 }
 
+/***************** MAP ********************/
+
+.map-main-content{
+  width: 100%;
+}
+
+.map-estacionamientos{
+  border: solid 1px black;
+}
+
+#map{
+  height: 50vh;
+  border: dotted 1px red;
+}
+
+.cochera {
+  border: solid 2px blue;
+}
+
+.cochera-numero{
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.cochera-info{
+  display: inline-block;
+  width: 72%;
+  vertical-align: middle;
+}
+
+.cochera-info h3{
+  font-size: 1em;
+}
+
+.cochera-info p{
+  font-size: 0.8em;
+}
+
+.cochera-precio{
+  display: inline-block;
+  width: 15%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+
+
 /***************** PROFILE ********************/
 
 .profile-nav{
