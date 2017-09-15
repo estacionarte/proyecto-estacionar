@@ -395,9 +395,9 @@ ul li .popup-link{
   margin: 0;
 }
 
-.form-firstname, .form-lastname{
-  display: inline-block !important;
-  width: 49.5% !important;
+.form-generico .form-firstname, .form-generico .form-lastname{
+  display: inline-block;
+  width: 49.5%;
 }
 
 .form-firstname{
@@ -406,6 +406,17 @@ ul li .popup-link{
 
 .form-lastname{
   float: right;
+}
+
+.form-generico .form-birthdate{
+  display: inline-block;
+  width: 30%;
+}
+
+.signup .form-generico label{
+  padding: 10px 4px;
+  color: #9c9c9c;
+  font-size: 1.3em;
 }
 
 .signup p{
