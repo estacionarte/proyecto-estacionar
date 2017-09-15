@@ -533,22 +533,24 @@ ul li .popup-link{
 /***************** PROFILE ********************/
 
 .profile-nav{
-  background-color: #48A8C1;
+  background-color: #ededed;
   overflow: auto;
   white-space: nowrap;
+  border-bottom: 3px solid #9c9c9c;
 }
 
 .profile-nav a {
   display: inline-block;
-  color: white;
+  color: #9c9c9c;
   text-align: center;
   padding: 14px;
-  /*border-right: solid 1px #fff;*/
-  /*border-left: solid 1px #fff;*/
+
+  margin: 0;
 }
 
 .profile-nav a:hover {
-  background-color: #9c9c9c;
+  background-color: #48A8C1;
+  color: #fff;
 }
 
 
