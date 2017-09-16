@@ -2,7 +2,7 @@
 
   function signUpUser(){
     // Abro el archivo donde guardo los registros
-    $file = "registeredUsers.json";
+    $file = "json/registeredUsers.json";
     $extract = file_get_contents($file);
     $data = json_decode($extract, true);
 

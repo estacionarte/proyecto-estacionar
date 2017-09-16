@@ -2,7 +2,7 @@
 
   function signUpUser(){
     // Abro el archivo donde guardo los registros
-    $file = "registeredUsers.json";
+    $file = "json/registeredUsers.json";
     $extract = file_get_contents($file);
     $data = json_decode($extract, true);
 
@@ -133,8 +133,8 @@ foreach ($emptyFields as $key => $value) {
             <input type="number" placeholder="aaaa" name="birthYear" class="form-birthdate" style="<?php echo $emptyFields['birthYear']; ?>" value="<?php echo $values["birthYear"]; ?>" required>
             <select name="sexo" style="<?php echo $emptyFields['sexo']; ?>" required>
               <option value="" selected>Sexo</option>
-              <option value="male">Femenino</option>
-              <option value="female">Masculino</option>
+              <option value="female">Femenino</option>
+              <option value="male">Masculino</option>
               <option value="other">Otro</option>
             </select>
             <select name="localidad" style="<?php echo $emptyFields['localidad']; ?>" required>
