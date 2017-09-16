@@ -96,7 +96,7 @@
 	// Si se cumplen las condiciones completo el registro
 	if (!$camposVacios && $isReceived) {
 		signUpUser();
-    header('Location:registerSuccess.php');
+    header('Location:profile.php');
 	}
 
 ?>

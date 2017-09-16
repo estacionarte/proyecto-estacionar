@@ -43,10 +43,5 @@
         $('.toggle-nav').toggleClass('rotate');
   		});
   	  </script>
-      <script>
-        $('.toggle-nav-close').click(function(){
-          $('.main-nav').slideToggle(100);
-        });
-      </script>
   </body>
 </html>

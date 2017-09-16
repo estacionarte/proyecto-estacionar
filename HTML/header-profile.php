@@ -1,16 +1,15 @@
 <header class="main-header">
         <a href="index.php"><h1>EstacionARte</h1></a>
-        <a href="#"><img src="icons/hamburguesa.png" alt="menu" class="toggle-nav"></a>
-        <nav class="main-nav">
+        <a href="#"><img src="icons/avatar.png" alt="avatar" class="avatar"></a>
+        <nav class="profile-nav">
           <ul>
-            <li><a href="signin.php" class="iniciar-btn">Iniciar Sesión</a></li>
-            <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li>
-            <li><a href="signup.php" class="register-btn">Registrarse</a></li>
-            <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>
-            <li class="ayuda-li"><a href="faqs.php" class="faq-btn">Ayuda</a></li>
+            <li><a href="profile-edit.php" class="">Editar Perfil</a></li>
+            <li><a href="#" class="">Configuración de mi cuenta</a></li>
+            <li class="#"><a href="faqs.php" class="faq-btn">Ayuda</a></li>
+            <li class=""><a href="#" class="">Salir</a></li>
           </ul>
         </nav>
-        <div class="modal-wrapper" id="popup-iniciar">
+        <!-- <div class="modal-wrapper" id="popup-iniciar">
      <div class="popup-contenedor">
         <a class="popup-cerrar" href="#">X</a>
         <h2 class="title-signin">Iniciar sesión</h2>
@@ -32,5 +31,5 @@
           <a href="#" class="google-login-button">Iniciar sesión con Google</a>
         </section>
      </div>
-  </div>
+  </div> -->
 </header>
