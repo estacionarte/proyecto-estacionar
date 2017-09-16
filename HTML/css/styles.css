@@ -43,9 +43,18 @@ h1{
   vertical-align: middle;
 }
 
-.rotate{
-  transform: rotate(90deg);
+.toggle-nav-close{
+  width: 45px;
+  margin: 12px -6px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  vertical-align: middle;
 }
+
+/*.rotate{
+  transform: rotate(90deg);
+}*/
 
 .main-nav{
   margin-top: 0;

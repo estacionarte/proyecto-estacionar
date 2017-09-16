@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>En Construccion</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
+  <?php require_once('head.php'); ?>
   <body>
     <div class="construction-bg">
       <div class="constuction-txt">
