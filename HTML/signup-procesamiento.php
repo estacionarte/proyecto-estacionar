@@ -2,7 +2,7 @@
 
   function signUpUser(){
     // Abro el archivo donde guardo los registros
-    $file = "registeredUsers.json";
+    $file = "json/registeredUsers.json";
     $extract = file_get_contents($file);
     $data = json_decode($extract, true);
 
@@ -96,7 +96,7 @@
 	// Si se cumplen las condiciones completo el registro
 	if (!$camposVacios && $isReceived) {
 		signUpUser();
-    header('Location:registerSuccess.php');
+    header('Location:profile.php');
 	}
 
 ?>

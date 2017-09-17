@@ -43,10 +43,6 @@ h1{
   vertical-align: middle;
 }
 
-.rotate{
-  transform: rotate(90deg);
-}
-
 .main-nav{
   margin-top: 0;
   display: none;
@@ -74,7 +70,7 @@ ul li .popup-link{
   display: none;
 }
 
-/****************** B A N N E R *******************/
+/************************** B A N N E R *************************/
 .banner-container{
   position: relative;
   background-image: url(../images/bg-home-mobile.jpg);
@@ -539,18 +535,79 @@ ul li .popup-link{
   font-weight: bold;
 }
 
+/************************** H E A D E R  P R O F I L E***********************/
+.main-search{
+  display: none;
+}
 
+.avatar{
+  width: 45px;
+  margin: 12px -6px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  vertical-align: middle;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 15;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow:10px 10px 5px #888888;
+}
+
+.sidenav a {
+    padding: 20px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1em;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    border-bottom: solid 1px #818181;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.sidenav a:hover {
+    color: rgba(73, 169, 193, 0.75);
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border-bottom: none;
+    margin-right: 0;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 
 /***************** PROFILE ********************/
+.profile-edit h1{
+  color: grey;
+  font-size: 1.2em;
+}
 
-.profile-nav{
+.profile-edit-nav{
   background-color: #ededed;
   overflow: auto;
   white-space: nowrap;
   border-bottom: 3px solid #9c9c9c;
 }
 
-.profile-nav a {
+.profile-edit-nav a {
   display: inline-block;
   color: #9c9c9c;
   text-align: center;
@@ -559,7 +616,7 @@ ul li .popup-link{
   margin: 0;
 }
 
-.profile-nav a:hover {
+.profile-edit-nav a:hover {
   background-color: #48A8C1;
   color: #fff;
 }
@@ -952,6 +1009,45 @@ ul li .popup-link{
 
 .main-footer{
   clear: both;
+}
+
+/************************** H E A D E R  P R O F I L E***********************/
+.main-search{
+  width: 40%;
+  display: block;
+  border: solid 1px #9c9c9c;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-form-search input[type=text]{
+  width: 80%;
+  padding: 10px;
+  font-size: 1.1em;
+  border: none;
+  float: left;
+  vertical-align: middle;
+}
+
+.main-form-search input[type=submit]{
+  width: 5%;
+  padding: 15px 22px;
+  border: none;
+  background-color: #fff;
+  background-image: url(../images/search-icon.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+}
+
+.main-form-search input[type=submit]:hover{
+  cursor: pointer;
 }
 
 /***************** UNDER CONSTRUCTION ********************/

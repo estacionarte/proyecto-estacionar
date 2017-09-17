@@ -1,38 +1,35 @@
 <!DOCTYPE html>
+<?php
+session_start();
+// $_SESSION['id'] = $_POST['id'];
+ ?>
+
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>EstacionARte</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
+  <?php require_once('head.php'); ?>
 <body>
 
   <div class="container">
 
-    <?php require_once('header.php'); ?>
+    <?php require_once('header-profile.php');  ?>
 
     <div class="bodies-main-content">
 
       <hr>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-      <h1>Mi Perfil / Mi Cuenta</h1>
+      <!-- <h1>Mi Perfil / Mi Cuenta</h1> -->
 
-      <section class="profile">
+      <!-- <section class="profile">
 
-        <nav class="profile-nav">
+        <nav class="prrofile-nav">
           <a href="#">Datos Personales</a>
           <a href="#">Mis Vehículos</a>
           <a href="#">Mis Estacionamientos</a>
           <a href="#">Reputación</a>
         </nav>
 
-      </section>
+      </section> -->
     </div>
     <?php require_once('footer.php'); ?>
   </div>
@@ -44,6 +41,11 @@
   </script> -->
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSkfauiLSZEhmyR3Yti92BCrmMCFbqB0Y&libraries=places&callback=initMap" async defer></script> -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="js/menu.js"></script>
+  <!-- <script src="js/menu.js"></script> -->
+  <script>
+    $('.avatar').click(function(){
+      $('.profile-nav').slideToggle(100);
+    });
+  </script>
 </body>
 </html>

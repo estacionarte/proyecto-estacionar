@@ -2,7 +2,7 @@
 
   function signUpUser(){
     // Abro el archivo donde guardo los registros
-    $file = "registeredUsers.json";
+    $file = "json/registeredUsers.json";
     $extract = file_get_contents($file);
     $data = json_decode($extract, true);
 
@@ -95,24 +95,14 @@ foreach ($emptyFields as $key => $value) {
 	// Si se cumplen las condiciones completo el registro
 	if (!$camposVacios && $isReceived) {
 		signUpUser();
-    header('Location:registerSuccess.php');
+    header('Location:profile.php');
 	}
 
  ?>
 
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>EstacionARte</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
+  <?php require_once('head.php'); ?>
 <body>
 
   <div class="container">
@@ -143,15 +133,15 @@ foreach ($emptyFields as $key => $value) {
             <input type="number" placeholder="aaaa" name="birthYear" class="form-birthdate" style="<?php echo $emptyFields['birthYear']; ?>" value="<?php echo $values["birthYear"]; ?>" required>
             <select name="sexo" style="<?php echo $emptyFields['sexo']; ?>" required>
               <option value="" selected>Sexo</option>
-              <option value="male">Femenino</option>
-              <option value="female">Masculino</option>
+              <option value="female">Femenino</option>
+              <option value="male">Masculino</option>
               <option value="other">Otro</option>
             </select>
             <select name="localidad" style="<?php echo $emptyFields['localidad']; ?>" required>
               <option value="" selected>Barrio</option>
               <?php
 
-              $archivojson = file_get_contents("localidades.json");
+              $archivojson = file_get_contents("json/localidades.json");
               $localidades = json_decode($archivojson,true);
 
               foreach ($localidades["barriosAZ"] as $key) { ?>
