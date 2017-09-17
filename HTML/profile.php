@@ -1,11 +1,16 @@
 <!DOCTYPE html>
+<?php
+session_start();
+// $_SESSION['id'] = $_POST['id'];
+ ?>
+
 <html>
   <?php require_once('head.php'); ?>
 <body>
 
   <div class="container">
 
-    <?php require_once('header-profile.php'); ?>
+    <?php require_once('header-profile.php');  ?>
 
     <div class="bodies-main-content">
 

@@ -593,24 +593,6 @@ ul li .popup-link{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-/*.profile-nav{
-  margin-top: 0;
-  display: none;
-}
-
-.profile-nav a{
-  display: block;
-  background-color: #48A8C1;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  border-bottom: solid 2px white;
-  font-size: 0.8em;
-}
-
-.profile-nav a:hover{
-  background-color: rgba(72, 168, 193, 0.7);
-}*/
 
 /***************** PROFILE ********************/
 .profile-edit h1{
@@ -1030,15 +1012,6 @@ ul li .popup-link{
 }
 
 /************************** H E A D E R  P R O F I L E***********************/
-/*.avatar{
-  width: 45px;
-  margin: 20px 10px;
-  position: absolute;
-  top: 0;
-  right: 15px;
-  vertical-align: middle;
-}*/
-
 .main-search{
   width: 40%;
   display: block;
@@ -1053,7 +1026,7 @@ ul li .popup-link{
 }
 
 .main-form-search input[type=text]{
-  width: 90%;
+  width: 80%;
   padding: 10px;
   font-size: 1.1em;
   border: none;
@@ -1076,66 +1049,6 @@ ul li .popup-link{
 .main-form-search input[type=submit]:hover{
   cursor: pointer;
 }
-
-/*.profile-nav{
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.profile-nav a{
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.profile-nav a:hover{
-    color: #f1f1f1;
-}
-
-.profile-nav .closebtn{
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .profile-nav {padding-top: 15px;}
-  .profile-nav a {font-size: 18px;}
-}*/
-
-/*.profile-nav{
-  margin-right: 0;
-  display: none;
-  width: 20%;
-  box-shadow: 5px 5px 4px #888888;
-}
-
-.profile-nav a{
-  display: block;
-  background-color: white;
-  color: grey;
-  text-align: left;
-  padding: 15px 0;
-  border-bottom: solid 2px white;
-  font-size: 0.8em;
-}
-
-.profile-nav a:hover{
-  background-color: rgba(72, 168, 193, 0.7);
-}*/
 
 /***************** UNDER CONSTRUCTION ********************/
 .construction-bg{
