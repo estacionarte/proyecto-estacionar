@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- main-profile-edit-nav -->
+    <link rel="stylesheet"
+     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
