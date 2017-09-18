@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html>
   <?php require_once('head.php'); ?>
+  <style media="screen">
+  /*.profile-edit h1{
+    color: grey;
+    font-size: 1.2em;
+  }
+
+  .profile-edit-nav{
+    background-color: #ededed;
+    overflow: auto;
+    white-space: nowrap;
+    border-bottom: 3px solid #9c9c9c;
+  }
+
+  .profile-edit-nav a {
+    display: inline-block;
+    color: #9c9c9c;
+    text-align: center;
+    padding: 14px;
+
+    margin: 0;
+  }
+
+  .profile-edit-nav a:hover {
+    background-color: #48A8C1;
+    color: #fff;
+  }*/
+  </style>
   <body>
     <?php require_once('header-profile.php'); ?>
     <hr>
