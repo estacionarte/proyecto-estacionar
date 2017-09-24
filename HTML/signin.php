@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <?php require_once('head.php'); ?>
+  <?php require_once('login-data-validation.php'); ?>
 <body>
   <div class="container">
     <?php require_once('header.php'); ?>
@@ -16,8 +17,10 @@
         <div class="form-generico">
 
           <form action="" method="post">
-            <input type="email" name="email" placeholder="Email"/>
-            <input type="password" name="password" placeholder="Contraseña"/>
+            <input type="email" name="email" placeholder="Email" id="email" required/>
+            <div class="user_not_found"></div>
+            <input type="password" name="password" placeholder="Contraseña" required/>
+            <div class="wrong_password"></div>
             <input type="checkbox" name="recordarme" value="recordarme" id="recordarme"> <label for="recordarme">Recordarme</label>
             <input type="submit" name="" value="INICIAR SESIÓN">
           </form>
@@ -40,5 +43,15 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/menu.js"></script>
+  <script src="js/login_errors.js"></script>
+  <?php
+  if (isset($login_error)) {
+    ?>
+    <script type="text/javascript">
+    set_login_error( "<?php echo $label; ?>","<?php echo $login_error->desc; ?>","#email","<?php echo $_POST["email"]; ?>" );
+    </script>
+    <?php
+  }
+  ?>
 </body>
 </html>
