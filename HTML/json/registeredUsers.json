@@ -1,16 +1,1 @@
-[
-  {
-     "id":1,
-     "firstName":"Pablo",
-     "lastName":"Merener",
-     "birthDay":"01",
-     "birthMonth":"01",
-     "birthYear":"1900",
-     "sexo":"male",
-     "localidad":"Villa Urquiza",
-     "email":"pablo.merener@gmail.com",
-     "telefono":"55955637",
-     "password":"$2y$10$J6lUeOM4OM2MNCwdJ50uMu4TuN.2.kHc0IQWpnxteGQss5LOyjz2q",
-     "interes":"locatario"
-  }
-]
+[{"id":1,"firstName":"Pablo","lastName":"Merener","birthDay":"01","birthMonth":"01","birthYear":"1900","sexo":"male","localidad":"Villa Urquiza","email":"pablo.merener@gmail.com","telefono":"55955637","password":"$2y$10$J6lUeOM4OM2MNCwdJ50uMu4TuN.2.kHc0IQWpnxteGQss5LOyjz2q","interes":"locatario"},{"id":2,"firstName":"Mariano","lastName":"Alvarez","birthDay":"26","birthMonth":"01","birthYear":"1984","sexo":"male","localidad":"Flores","email":"admin@estacionarte.io","telefono":"123456","password":"$2y$10$HUx\/pPeobWpQcm\/F7\/ZCIOgykcbOZcNt6L1naJrndC7OUB8c0KEAO","interes":"ambos"}]
