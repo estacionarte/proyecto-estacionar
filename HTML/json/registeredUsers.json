@@ -1,16 +1,1 @@
-[
-  {
-     "id":1,
-     "firstName":"Pablo",
-     "lastName":"Merener",
-     "birthDay":"01",
-     "birthMonth":"01",
-     "birthYear":"1900",
-     "sexo":"male",
-     "localidad":"Villa Urquiza",
-     "email":"pablo.merener@gmail.com",
-     "telefono":"55955637",
-     "password":"$2y$10$J6lUeOM4OM2MNCwdJ50uMu4TuN.2.kHc0IQWpnxteGQss5LOyjz2q",
-     "interes":"locatario"
-  }
-]
+[{"id":1,"firstName":"Pablo","lastName":"Merener","birthDay":"01","birthMonth":"01","birthYear":"1900","sexo":"male","localidad":"Villa Urquiza","email":"pablo.merener@gmail.com","telefono":"55955637","password":"$2y$10$J6lUeOM4OM2MNCwdJ50uMu4TuN.2.kHc0IQWpnxteGQss5LOyjz2q","interes":"locatario"},{"id":2,"firstName":"salkjf","lastName":"alkdf","birthDay":"099","birthMonth":"324","birthYear":"290342","sexo":"male","localidad":"Almagro","email":"holaquetal@hotmail.com","telefono":"290409234","password":"$2y$10$z07bLYzbpmbCfNESbMmXqe4APuUtC.bNLw0X37IOBHQykZvMzlzz.","interes":"locatario"}]

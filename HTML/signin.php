@@ -17,7 +17,7 @@
         <div class="form-generico">
 
           <form action="" method="post">
-            <input type="email" name="email" placeholder="Email" id="email" required/>
+            <input type="email" name="email" placeholder="E-Mail" id="email" required/>
             <div class="user_not_found"></div>
             <input type="password" name="password" placeholder="Contraseña" required/>
             <div class="wrong_password"></div>

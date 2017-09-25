@@ -49,9 +49,9 @@ function validData($values, $photo) {
   $isEmptyPass = false;
   $isEmptyEqua = false;
 
-  // de fino el array de traduccion para los mensajes
+  // defino el array de traduccion para los mensajes
   $translate = [
-    "useremail"  => " EMAIL",
+    "useremail"  => "EMAIL",
     "name"       => "NOMBRE",
     "lastname"   => "APELLIDO",
     "birthDay"   => "DIA",
@@ -65,7 +65,7 @@ function validData($values, $photo) {
     "equal_pass" => "REPETIR CONTRASEÑA"
   ];
 
-    // se recorre la variable $values en forma de evaluar la key => value
+  // se recorre la variable $values en forma de evaluar la key => value
   foreach ($values as $key => $value) {
     if (empty($values[$key])) // verifico si los datos estan vacios
       $errors .= "El Campo $translate[$key] es requerido<br>";
@@ -74,7 +74,7 @@ function validData($values, $photo) {
         setcookie($key, $values[$key]);
   }
 
-          // se valida la la foto tiene errores
+  // se valida si la foto tiene errores
   if ($photo["profile_pic"]["error"] != UPLOAD_ERR_OK) {
     $errors .= $erros_file[$photo["profile_pic"]["error"]];
   }

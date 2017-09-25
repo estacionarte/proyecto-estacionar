@@ -32,8 +32,8 @@
           <form action="signup.php" method="post">
             <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" style="<?php echo $emptyFields['firstName']; ?>" value="<?php echo $values["firstName"]; ?>" required>
             <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" style="<?php echo $emptyFields['lastName']; ?>" value="<?php echo $values["lastName"]; ?>" required>
-            <input type="number" placeholder="dd" name="birthDay" class="form-birthdate" style="<?php echo $emptyFields['birthDay']; ?>" value="<?php echo $values["birthDay"]; ?>" required><label>/</label>
-            <input type="number" placeholder="mm" name="birthMonth" class="form-birthdate" style="<?php echo $emptyFields['birthMonth']; ?>" value="<?php echo $values["birthMonth"]; ?>" required><label>/</label>
+            <input type="number" placeholder="dd" name="birthDay" class="form-birthdate" style="<?php echo $emptyFields['birthDay']; ?>" value="<?php echo $values["birthDay"]; ?>" required>
+            <input type="number" placeholder="mm" name="birthMonth" class="form-birthdate" style="<?php echo $emptyFields['birthMonth']; ?>" value="<?php echo $values["birthMonth"]; ?>" required>
             <input type="number" placeholder="aaaa" name="birthYear" class="form-birthdate" style="<?php echo $emptyFields['birthYear']; ?>" value="<?php echo $values["birthYear"]; ?>" required>
             <select name="sexo" style="<?php echo $emptyFields['sexo']; ?>" required>
               <option value="" selected>Sexo</option>
