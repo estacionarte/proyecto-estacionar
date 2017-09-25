@@ -404,11 +404,12 @@ ul li .popup-link{
 
 .form-generico .form-birthdate{
   display: inline-block;
-  width: 30%;
+  text-align: center;
+  width: 32.5%;
 }
 
 .signup .form-generico label{
-  padding: 10px 4px;
+  padding: 10px 1%;
   color: #9c9c9c;
   font-size: 1.3em;
 }

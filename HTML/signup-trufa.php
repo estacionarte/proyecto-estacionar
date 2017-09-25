@@ -44,7 +44,9 @@
             name="birthDay"
             class="form-birthdate"
             id="birthDay"
-            value="<?php echo (isset($_COOKIE['birthDay']) && !empty($_COOKIE['birthDay'])) ? $_COOKIE['birthDay'] : ""; ?>"><label>/</label>
+            value="<?php echo (isset($_COOKIE['birthDay']) && !empty($_COOKIE['birthDay'])) ? $_COOKIE['birthDay'] : ""; ?>">
+
+            <!-- <label>/</label> -->
 
             <input
             type="number"
@@ -52,7 +54,9 @@
             name="birthMonth"
             class="form-birthdate"
             id="birthMonth"
-            value="<?php echo (isset($_COOKIE['birthMonth']) && !empty($_COOKIE['birthMonth'])) ? $_COOKIE['birthMonth'] : ""; ?>"><label>/</label>
+            value="<?php echo (isset($_COOKIE['birthMonth']) && !empty($_COOKIE['birthMonth'])) ? $_COOKIE['birthMonth'] : ""; ?>">
+
+            <!-- <label>/</label> -->
 
             <input
             type="number"
@@ -136,10 +140,9 @@
               type="file"
               name="profile_pic"
               id="profile_pic"
-              accept="image/*"
-            <br><br>
+              accept="image/*">
 
-            <button type="submit">CREAR CUENTA</button>
+            <input type="submit" name="boton-submit" value="CREAR CUENTA">
           </form>
 
         </div>
