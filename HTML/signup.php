@@ -22,48 +22,72 @@
       <section class="signup">
 
         <?php
-        if ($camposVacios) {
+        if ($camposVacios)
           echo "<p style='color:red'>Completar los campos vacíos</p>";
-        }
+        if (isset($_COOKIE['error']) && !empty($_COOKIE['error']))
+          echo "<p style='color:red'>" . $_COOKIE['error'] . "</p>";
         ?>
 
         <div class="form-generico">
 
-          <form action="signup.php" method="post">
-            <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" style="<?php echo $emptyFields['firstName']; ?>" value="<?php echo $values["firstName"]; ?>" required>
-            <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" style="<?php echo $emptyFields['lastName']; ?>" value="<?php echo $values["lastName"]; ?>" required>
-            <input type="number" placeholder="dd" name="birthDay" class="form-birthdate" style="<?php echo $emptyFields['birthDay']; ?>" value="<?php echo $values["birthDay"]; ?>" required>
-            <input type="number" placeholder="mm" name="birthMonth" class="form-birthdate" style="<?php echo $emptyFields['birthMonth']; ?>" value="<?php echo $values["birthMonth"]; ?>" required>
-            <input type="number" placeholder="aaaa" name="birthYear" class="form-birthdate" style="<?php echo $emptyFields['birthYear']; ?>" value="<?php echo $values["birthYear"]; ?>" required>
-            <select name="sexo" style="<?php echo $emptyFields['sexo']; ?>" required>
-              <option value="" selected>Sexo</option>
-              <option value="female">Femenino</option>
-              <option value="male">Masculino</option>
-              <option value="other">Otro</option>
+          <form action="signup.php" method="post" enctype="multipart/form-data">
+
+            <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" style="<?php echo $emptyFields['firstName']; ?>" value="<?php echo (isset($_COOKIE['firstName']) && !empty($_COOKIE['firstName'])) ? $_COOKIE['firstName'] : ""; ?>">
+
+            <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" style="<?php echo $emptyFields['lastName']; ?>" value="<?php echo (isset($_COOKIE['lastName']) && !empty($_COOKIE['lastName'])) ? $_COOKIE['lastName'] : ""; ?>">
+
+            <input type="number" placeholder="dd" name="birthDay" class="form-birthdate" style="<?php echo $emptyFields['birthDay']; ?>" value="<?php echo (isset($_COOKIE['birthDay']) && !empty($_COOKIE['birthDay'])) ? $_COOKIE['birthDay'] : ""; ?>">
+
+            <input type="number" placeholder="mm" name="birthMonth" class="form-birthdate" style="<?php echo $emptyFields['birthMonth']; ?>" value="<?php echo (isset($_COOKIE['birthMonth']) && !empty($_COOKIE['birthMonth'])) ? $_COOKIE['birthMonth'] : ""; ?>">
+
+            <input type="number" placeholder="aaaa" name="birthYear" class="form-birthdate" style="<?php echo $emptyFields['birthYear']; ?>" value="<?php echo (isset($_COOKIE['birthYear']) && !empty($_COOKIE['birthYear'])) ? $_COOKIE['birthYear'] : ""; ?>">
+
+            <?php
+             $s = "selected";
+             $tipo = isset( $_COOKIE['sexo']) ? $_COOKIE['sexo'] : '';
+            ?>
+
+            <select name="sexo" style="<?php echo $emptyFields['sexo']; ?>">
+              <option value="">Género</option>
+              <option value="female" <?php echo $tipo=='female'?$s:''; ?>>Femenino</option>
+              <option value="male" <?php echo $tipo=='male'?$s:''; ?>>Masculino</option>
+              <option value="other" <?php echo $tipo=='other'?$s:''; ?>>Otro</option>
             </select>
-            <select name="localidad" style="<?php echo $emptyFields['localidad']; ?>" required>
-              <option value="" selected>Barrio</option>
+
+            <?php $tipo = isset( $_COOKIE['localidad']) ? $_COOKIE['localidad'] : ''; ?>
+
+            <select name="localidad" style="<?php echo $emptyFields['localidad']; ?>">
+              <option value="">Barrio</option>
+
               <?php
 
               $archivojson = file_get_contents("json/localidades.json");
               $localidades = json_decode($archivojson,true);
 
               foreach ($localidades["barriosAZ"] as $key) { ?>
-                <option value="<?php echo $key ?>"><?php echo $key ?></option>
+                <option value="<?php echo $key ?>" <?php echo $tipo == $key ? $s:''; ?>><?php echo $key ?></option>
               <?php } ?>
             </select>
-            <!-- <input type="text" placeholder="Ciudad" name="ciudad" id="pac-input" required> -->
-            <input type="email" placeholder="E-Mail" name="email" style="<?php echo $emptyFields['email']; ?>" value="<?php echo $values["email"]; ?>" required>
-            <!-- <input type="email" placeholder="Confirmar E-Mail" name="confirmar-email" required> -->
-            <input type="tel" placeholder="Teléfono Móvil" name="telefono" style="<?php echo $emptyFields['telefono']; ?>" value="<?php echo $values["telefono"]; ?>" required>
-            <input type="password" placeholder="Contraseña" name="password" style="<?php echo $emptyFields['password']; ?>" value="<?php echo $values["password"]; ?>" required>
-            <!-- <input type="password" placeholder="Confirmar Contraseña" name="confirmar-password" required> -->
-            <select name="interes" style="<?php echo $emptyFields['interes']; ?>" required>
-              <option value="" selected>Interés Principal</option>
-              <option value="locatario">Buscar estacionamiento</option>
-              <option value="propietario">Ofrecer estacionamiento</option>
-              <option value="ambos">Ambos</option>
+
+            <input type="email" placeholder="E-Mail" name="email" style="<?php echo $emptyFields['email']; ?>" value="<?php echo (isset($_COOKIE['email']) && !empty($_COOKIE['email'])) ? $_COOKIE['email'] : ""; ?>">
+
+            <input type="tel" placeholder="Teléfono Móvil" name="telefono" style="<?php echo $emptyFields['telefono']; ?>" value="<?php echo (isset($_COOKIE['telefono']) && !empty($_COOKIE['telefono'])) ? $_COOKIE['telefono'] : ""; ?>">
+
+            <input type="password" placeholder="Contraseña" name="password" style="<?php echo $emptyFields['password']; ?>">
+
+            <input type="password" placeholder="Confirmar Contraseña" name="confirmar-password" style="<?php echo $emptyFields['confirmar-password']; ?>">
+
+            <?php $tipo = isset( $_COOKIE['interes']) ? $_COOKIE['interes'] : ''; ?>
+
+            <select name="interes" style="<?php echo $emptyFields['interes']; ?>">
+              <option value="">Interés Principal</option>
+              <option value="locatario" <?php echo $tipo=='locatario'?$s:''; ?>>Buscar estacionamiento</option>
+              <option value="propietario" <?php echo $tipo=='propietario'?$s:''; ?>>Ofrecer estacionamiento</option>
+              <option value="ambos" <?php echo $tipo=='ambos'?$s:''; ?>>Ambos</option>
             </select>
+
+            <input type="file" name="profilePic" accept="image/*" style="<?php echo $emptyFields['profilePic']; ?>">
+
             <input type="submit" name="boton-submit" value="CREAR CUENTA">
           </form>
 
@@ -84,13 +108,6 @@
     </div>
     <?php require_once('footer.php'); ?>
   </div>
-  <!-- <script>
-  function initMap() {
-    var input = document.getElementById('pac-input');
-    var autocomplete = new google.maps.places.Autocomplete(input);
-  };
-  </script> -->
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSkfauiLSZEhmyR3Yti92BCrmMCFbqB0Y&libraries=places&callback=initMap" async defer></script> -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/menu.js"></script>
 </body>
