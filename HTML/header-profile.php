@@ -1,4 +1,8 @@
 <header class="main-header">
+  <?php
+    session_start();
+    if (isset($_SESSION['user']))?>
+
     <a href="index.php"><h1>EstacionARte</h1></a>
 
     <div class="main-search">

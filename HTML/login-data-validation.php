@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   if (is_array($user)) {
     session_start();
     $_SESSION['user'] = $user;
-    header('Location: index.php');
+    header('Location: profile.php');
   } else {
     $login_error = $user;
 
