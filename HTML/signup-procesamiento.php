@@ -46,12 +46,12 @@ function signUpUser(){
     "birthDay" => $_POST['birthDay'],
     "birthMonth" => $_POST['birthMonth'],
     "birthYear" => $_POST['birthYear'],
-    "sexo" => $_POST['sexo'],
-    "localidad" => $_POST['localidad'],
+    // "sexo" => $_POST['sexo'],
+    // "localidad" => $_POST['localidad'],
     "email" => $_POST['email'],
-    "telefono" => $_POST['telefono'],
+    // "telefono" => $_POST['telefono'],
     "password" => $password,
-    "interes" => $_POST['interes'],
+    // "interes" => $_POST['interes'],
     "profilePic" => $pathPhoto
   ];
 
@@ -71,13 +71,13 @@ $emptyFields = [
 	"birthDay" => "",
 	"birthMonth" => "",
 	"birthYear" => "",
-  "sexo" => "",
-  "localidad" => "",
+  // "sexo" => "",
+  // "localidad" => "",
   "email" => "",
-  "telefono" => "",
+  // "telefono" => "",
   "password" => "",
   "confirmar-password" => "",
-  "interes" => "",
+  // "interes" => "",
   "profilePic" => ""
 ];
 
