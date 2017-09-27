@@ -6,7 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   if (is_array($user)) {
     session_start();
     $_SESSION['user'] = $user;
-    $user = 'logueado';
     header('Location: profile.php');
   } else {
     $login_error = $user;
