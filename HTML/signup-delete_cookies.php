@@ -10,11 +10,11 @@ $camposCookies = [
   "birthDay",
   "birthMonth",
   "birthYear",
-  "sexo",
-  "localidad",
-  "email",
-  "telefono",
-  "interes"
+  // "sexo",
+  // "localidad",
+  "email"
+  // "telefono",
+  // "interes"
 ];
 
   if (isset($_COOKIE['success']) || !empty($_COOKIE['success']) ) {

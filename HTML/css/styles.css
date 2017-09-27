@@ -406,13 +406,19 @@ ul li .popup-link{
   display: inline-block;
   text-align: center;
   width: 32.5%;
+  /*float: right;
+  margin-left: 2.2%;*/
 }
 
-.signup .form-generico label{
-  padding: 10px 1%;
+/*.form-generico .form-birthdate-label{
+  display: inline-block;
+  text-align: right;
+  float: left;
+  width: 45%;
   color: #9c9c9c;
-  font-size: 1.3em;
-}
+  margin-left: 0;
+  padding-left: 0;
+}*/
 
 .signup p{
   font-size: 0.8em;
@@ -877,12 +883,12 @@ margin-right: 5%;
   margin-right: 5%;
 }
 
-/****************** S I G N  I N *******************/
+/****************** S I G N   I N  /  S I G N   U P *******************/
 
 .signin, .signup, .recuperar-password{
   margin-left: auto;
   margin-right: auto;
-  max-width: 750px;
+  max-width: 700px;
   background-color: #ededed;
   padding: 20px;
 }
