@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <?php
-// session_start();
-// $_SESSION['id'] = $_POST['id'];
- ?>
+// require_once('functions.php');
+// require_once('login-data-validation.php');
+//Reanudamos la sesión
+session_start();
+//Validamos si existe realmente una sesión activa o no
+if($_SESSION["user"] = 'logueado'){?>
+  <h4>Usuario: <? echo $_SESSION["user"] ?></h4>
+<?php
+//Si no hay sesión activa, lo direccionamos al index.php (inicio de sesión)
+echo "no esta logueado";
+}
+?>
 
 <html>
   <?php require_once('head.php'); ?>

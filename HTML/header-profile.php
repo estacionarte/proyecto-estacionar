@@ -1,16 +1,13 @@
 <header class="main-header">
-  <?php
-    session_start();
-    if (isset($_SESSION['user']))?>
 
     <a href="index.php"><h1>EstacionARte</h1></a>
 
-    <div class="main-search">
+    <!-- <div class="main-search">
       <form class="main-form-search" action="" method="get">
         <input type="text" name="buscar-texto" placeholder="Buscar cocheras">
         <input type="submit" name="buscar-submit" value="">
       </form>
-    </div>
+    </div> -->
 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="icons/close-profile-nav2.png" alt=""></a>
@@ -19,7 +16,7 @@
       <a href="#">Ayuda</a>
       <a href="signout.php">Salir</a>
     </div>
-
+    <h4>Usuario: <? echo $_SESSION["user"] ?></h4>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="icons/avatar.png" alt="avatar" class="avatar"></span>
 
     <script>
