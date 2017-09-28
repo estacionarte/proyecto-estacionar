@@ -2,7 +2,7 @@
 <html>
   <?php require_once('head.php'); ?>
   <body>
-    <?php require_once('header-profile.php'); ?>
+    <?php require_once('header.php'); ?>
 
 
     <main class="main-profile-edit">

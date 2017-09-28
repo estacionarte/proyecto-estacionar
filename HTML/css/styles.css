@@ -531,6 +531,18 @@ ul li .popup-link{
   display: none;
 }
 
+.welcome-user{
+  position: absolute;
+  top: 25px;
+  right: 70px;
+}
+
+.welcome-user h4{
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
 .avatar{
   width: 45px;
   margin: 12px -6px;

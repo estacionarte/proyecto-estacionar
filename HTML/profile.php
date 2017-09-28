@@ -1,25 +1,11 @@
 <!DOCTYPE html>
-<?php
-// require_once('functions.php');
-// require_once('login-data-validation.php');
-//Reanudamos la sesión
-session_start();
-//Validamos si existe realmente una sesión activa o no
-if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){?>
-  <h4>Usuario: <? echo $_SESSION["user"] ?></h4>
-<?php
-//Si no hay sesión activa, lo direccionamos al index.php (inicio de sesión)
-echo "no esta logueado";
-}
-?>
-
 <html>
   <?php require_once('head.php'); ?>
 <body>
 
   <div class="container">
 
-    <?php require_once('header-profile.php');  ?>
+    <?php require_once('header.php');  ?>
 
     <div class="bodies-main-content">
 
