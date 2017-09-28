@@ -41,12 +41,8 @@
             <label for="" class="">¿Qué tipo de espacio es?</label>
             <select name="tipoCochera" style="<?php echo $emptyFields['tipoCochera']; ?>">
               <option value="">Elige una opción</option>
-              <option value="Cochera en casa" <?php echo $tipo=='cocheraPrivada'?$s:''; ?>>Femenino</option>
-              <option value="Playa de estacionamiento" <?php echo $tipo=='male'?$s:''; ?>>Masculino</option>
-              <option value="other" <?php echo $tipo=='other'?$s:''; ?>>Otro</option>
-              <option value="other" <?php echo $tipo=='other'?$s:''; ?>>Otro</option>
-              <option value="other" <?php echo $tipo=='other'?$s:''; ?>>Otro</option>
-              <option value="other" <?php echo $tipo=='other'?$s:''; ?>>Otro</option>
+              <option value="Cochera privada" <?php echo $tipo=='cocheraPrivada'?$s:''; ?>>Cochera privada</option>
+              <option value="Playa de estacionamiento" <?php echo $tipo=='playaEstacionamiento'?$s:''; ?>>Playa de estacionamiento</option>
             </select>
 
             <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" style="<?php echo $emptyFields['lastName']; ?>" value="<?php echo (isset($_COOKIE['lastName']) && !empty($_COOKIE['lastName'])) ? $_COOKIE['lastName'] : ""; ?>">
