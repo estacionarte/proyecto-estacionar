@@ -41,25 +41,26 @@
             <label for="" class="">¿Qué tipo de espacio es?</label>
             <select name="tipoCochera" style="<?php echo $emptyFields['tipoCochera']; ?>">
               <option value="">Elige una opción</option>
-              <option value="Cochera en casa" <?php echo $tipo=='cocheraPrivada'?$s:''; ?>>Femenino</option>
-              <option value="Playa de estacionamiento" <?php echo $tipo=='male'?$s:''; ?>>Masculino</option>
-              <option value="other" <?php echo $tipo=='other'?$s:''; ?>>Otro</option>
-              <option value="other" <?php echo $tipo=='other'?$s:''; ?>>Otro</option>
-              <option value="other" <?php echo $tipo=='other'?$s:''; ?>>Otro</option>
-              <option value="other" <?php echo $tipo=='other'?$s:''; ?>>Otro</option>
+              <option value="Cochera privada" <?php echo $tipo=='cocheraPrivada'?$s:''; ?>>Cochera privada</option>
+              <option value="Playa de estacionamiento" <?php echo $tipo=='playaEstacionamiento'?$s:''; ?>>Playa de estacionamiento</option>
             </select>
 
-            <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" style="<?php echo $emptyFields['lastName']; ?>" value="<?php echo (isset($_COOKIE['lastName']) && !empty($_COOKIE['lastName'])) ? $_COOKIE['lastName'] : ""; ?>">
+            <label for="" class="">¿Cuántos vehículos se permiten?</label>
+            <label for="" class="">Autos</label> <input type="number" placeholder="" name="cantAutos" class="" min="0" max="1" value="<?php echo (isset($_COOKIE['cantAutos']) && !empty($_COOKIE['cantAutos'])) ? $_COOKIE['cantAutos'] : 0; ?>">
+            <label for="" class="">Motos</label> <input type="number" placeholder="" name="cantMotos" class="" min="0" max="4" value="<?php echo (isset($_COOKIE['cantMotos']) && !empty($_COOKIE['cantMotos'])) ? $_COOKIE['cantMotos'] : 0; ?>">
+            <label for="" class="">Bicicletas</label> <input type="number" placeholder="" name="cantBicicletas" class="" min="0" max="4" value="<?php echo (isset($_COOKIE['cantBicicletas']) && !empty($_COOKIE['cantBicicletas'])) ? $_COOKIE['cantBicicletas'] : 0; ?>">
 
+            <label for="" class="">¿Tiene alguno de los siguientes servicios especiales?</label>
+            <input type="checkbox" name="serviciosEspeciales" value="aptoDiscapacitados" id="aptoDiscapacitados"><label for="aptoDiscapacitados">Apto para discapacitados</label>
+            <input type="checkbox" name="serviciosEspeciales" value="cargaElectricos" id="cargaElectricos"><label for="cargaElectricos">Carga para autos eléctricos</label>
 
+            <label for="" class="">Información extra (visible por todos) -opcional-</label>
+            <textarea name="name" rows="5" cols="80"></textarea>
 
-            <input type="number" placeholder="dd" name="birthDay" min="1" max="31" class="form-birthdate" style="<?php echo $emptyFields['birthDay']; ?>" value="<?php echo (isset($_COOKIE['birthDay']) && !empty($_COOKIE['birthDay'])) ? $_COOKIE['birthDay'] : ""; ?>">
+            <label for="" class="">Información extra (únicamente visible por quienes alquilen tu espacio) -opcional-</label>
+            <textarea name="name" rows="5" cols="80"></textarea>
 
-            <input type="number" placeholder="mm" name="birthMonth" min="1" max="12" class="form-birthdate" style="<?php echo $emptyFields['birthMonth']; ?>" value="<?php echo (isset($_COOKIE['birthMonth']) && !empty($_COOKIE['birthMonth'])) ? $_COOKIE['birthMonth'] : ""; ?>">
-
-            <input type="number" placeholder="aaaa" name="birthYear" min="1900" max="2010" class="form-birthdate" style="<?php echo $emptyFields['birthYear']; ?>" value="<?php echo (isset($_COOKIE['birthYear']) && !empty($_COOKIE['birthYear'])) ? $_COOKIE['birthYear'] : ""; ?>">
-
-            <input type="file" name="profilePic" accept="image/*" style="<?php echo $emptyFields['profilePic']; ?>">
+            <input type="file" name="profilePic" accept="image/*" style="<?php echo $emptyFields['profilePic']; ?>" multiple>
 
             <input type="submit" name="boton-submit" value="CREAR CUENTA">
           </form>
