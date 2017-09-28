@@ -1,29 +1,16 @@
 <!DOCTYPE html>
-<?php
-// require_once('functions.php');
-// require_once('login-data-validation.php');
-//Reanudamos la sesión
-session_start();
-//Validamos si existe realmente una sesión activa o no
-if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){?>
-  <h4>Usuario: <?php echo $_SESSION["user"]['firstName'] ?></h4>
-<?php
-//Si no hay sesión activa, lo direccionamos al index.php (inicio de sesión)
-echo "no esta logueado";
-}
-?>
-
 <html>
   <?php require_once('head.php'); ?>
 <body>
 
   <div class="container">
 
-    <?php require_once('header-profile.php');  ?>
+    <?php require_once('header.php');  ?>
 
     <div class="bodies-main-content">
 
       <hr>
+      <img src="<?php echo $_SESSION["user"]["profilePic"] ?>">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
