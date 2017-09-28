@@ -6,7 +6,7 @@
 session_start();
 //Validamos si existe realmente una sesión activa o no
 if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){?>
-  <h4>Usuario: <? echo $_SESSION["user"] ?></h4>
+  <h4>Usuario: <?php echo $_SESSION["user"]['firstName'] ?></h4>
 <?php
 //Si no hay sesión activa, lo direccionamos al index.php (inicio de sesión)
 echo "no esta logueado";
