@@ -1,3 +1,15 @@
+<?php
+//Reanudamos la sesión
+session_start();
+//Validamos si existe realmente una sesión activa o no
+if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){?>
+  <h4>Bienvenido <?php echo $_SESSION["user"]["firstName"] ?></h4>
+<?php
+//Si no hay sesión activa, lo direccionamos al index.php (inicio de sesión)
+
+}
+?>
+
 <header class="main-header">
 
     <a href="index.php"><h1>EstacionARte</h1></a>
