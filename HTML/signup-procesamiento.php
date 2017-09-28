@@ -146,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_FILES["profilePic"]["name"];
     $ext = pathinfo($nombre, PATHINFO_EXTENSION);
     // Chequeo si es una de las extensiones que acepto
-    if ($ext =! "jpg" && $ext =! "jpeg" && $ext =! "png") {
+    if ($ext != "jpg" && $ext != "jpeg" && $ext != "png") {
       $emptyFields["profilePic"] = "border: solid 2px red";
       $errors .= 'El tipo de imagen para la foto de perfil debe ser .jpg, .jpeg o .png.';
     } else {
