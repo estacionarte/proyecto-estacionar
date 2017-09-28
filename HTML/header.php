@@ -9,7 +9,7 @@ if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){
   <header class="main-header">
 
       <span class="welcome-user">Bienvenido <h4><?php echo $_SESSION["user"]["firstName"] ?></h4></span>
-
+      
 
       <a href="index.php"><h1>EstacionARte</h1></a>
 

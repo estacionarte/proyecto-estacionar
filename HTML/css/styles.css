@@ -532,15 +532,7 @@ ul li .popup-link{
 }
 
 .welcome-user{
-  position: absolute;
-  top: 25px;
-  right: 70px;
-}
-
-.welcome-user h4{
-  display: inline-block;
-  text-transform: uppercase;
-  font-weight: lighter;
+  display: none;
 }
 
 .avatar{
@@ -734,7 +726,7 @@ ul li .popup-link{
 /****************** B A N N E R *******************/
 
 .banner-container{
-  margin-top: -30px;
+  margin-top: -10px;
 }
 
 .shape{
@@ -1061,7 +1053,7 @@ margin-right: 5%;
 /****************** B A N N E R *******************/
 
 .banner-container{
-  margin-top: -30px;
+  margin-top: -10px;
   background-image: url(../images/bg-home-pc.jpg);
   height: 500px;
 }
@@ -1131,6 +1123,19 @@ margin-right: 5%;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.welcome-user{
+  display: block !important;
+  position: absolute;
+  top: 25px;
+  right: 70px;
+}
+
+.welcome-user h4{
+  display: inline-block !important;
+  text-transform: uppercase;
+  font-weight: lighter;
 }
 
 /******************** P R O F I L E  E D I T *****************/
