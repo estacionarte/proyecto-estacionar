@@ -1057,6 +1057,23 @@ margin-right: 5%;
   padding: 15px 5px;
 }
 
+/************** C R E D I T S *******************/
+.credits{
+  background-image:
+  url(../images/bg-credits.jpg);
+  height: 80%;
+}
+
+.credits-title{
+  margin: 90px auto 20px;
+}
+
+.credits-subtitle{
+  top: 30px;
+  margin: 30px 15px 20px;
+  padding: 110px 25px 20px;
+}
+
 /**************************************************************/
 /*******************  D  E  S  K  T  O  P  ********************/
 /**************************************************************/
@@ -1293,6 +1310,21 @@ margin-right: 5%;
   position: absolute;
   top: 15px;
   right: 15px;
+}
+
+/***************** C R E D I T S ********************/
+
+.credits-title{
+  margin: 100px auto 20px;
+}
+
+.credits-subtitle{
+  margin: 50px 185px 20px;
+  padding: 110px 15px 20px;
+}
+
+.form-generico .credits-form{
+  margin: 150px 185px;
 }
 
 /***************** UNDER CONSTRUCTION ********************/
