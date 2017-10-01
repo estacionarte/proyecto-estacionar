@@ -1,0 +1,66 @@
+{
+  "comunas":[
+    {
+      "id":1,
+      "localidades":["Retiro","San Nicolás","Puerto Madero","San Telmo","Montserrat","Constitución"]
+    },
+    {
+      "id":2,
+      "localidades":["Recoleta"]
+    },
+    {
+      "id":3,
+      "localidades":["Balvanera","San Cristóbal"]
+    },
+    {
+      "id":4,
+      "localidades":["La Boca","Barracas","Parque Patricios","Nueva Pompeya"]
+    },
+    {
+      "id":5,
+      "localidades":["Almagro","Boedo"]
+    },
+    {
+      "id":6,
+      "localidades":["Caballito"]
+    },
+    {
+      "id":7,
+      "localidades":["Flores","Parque Chacabuco"]
+    },
+    {
+      "id":8,
+      "localidades":["Villa Soldati","Villa Riachuelo","Villa Lugano"]
+    },
+    {
+      "id":9,
+      "localidades":["Liniers","Mataderos","Parque Avellaneda"]
+    },
+    {
+      "id":10,
+      "localidades":["Villa Real","Monte Castro","Versalles","Floresta","Vélez Sársfield","Villa Luro"]
+    },
+    {
+      "id":11,
+      "localidades":["Villa General Mitre","Villa Devoto","Villa del Parque","Villa Santa Rita"]
+    },
+    {
+      "id":12,
+      "localidades":["Coghlan","Saavedra","Villa Urquiza","Villa Pueyrredón"]
+    },
+    {
+      "id":13,
+      "localidades":["Núñez","Belgrano","Colegiales"]
+    },
+    {
+      "id":14,
+      "localidades":["Palermo"]
+    },
+    {
+      "id":15,
+      "localidades":["Chacarita","Villa Crespo","La Paternal","Villa Ortúzar","Agronomía","Parque Chas"]
+    }
+  ],
+  "barriosAZ":
+  ["Agronomía","Almagro","Balvanera","Barracas","Belgrano","Boedo","Caballito","Chacarita","Coghlan","Colegiales","Constitución","Flores","Floresta","La Boca","La Paternal","Liniers","Mataderos","Monte Castro","Montserrat","Nueva Pompeya","Núñez","Palermo","Parque Avellaneda","Parque Chacabuco","Parque Chas","Parque Patricios","Puerto Madero","Recoleta","Retiro","Saavedra","San Cristóbal","San Nicolás","San Telmo","Vélez Sársfield","Versalles","Villa Crespo","Villa del Parque","Villa Devoto","Villa General Mitre","Villa Lugano","Villa Luro","Villa Ortúzar","Villa Pueyrredón","Villa Real","Villa Riachuelo","Villa Santa Rita","Villa Soldati","Villa Urquiza"]
+}
