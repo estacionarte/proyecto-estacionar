@@ -22,7 +22,7 @@ if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){
 
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="icons/close-profile-nav2.png" alt=""></a>
-        <a href="profile-edit.php">Editar perfil</a>
+        <a href="profile.php">Mi perfil</a>
         <a href="#">Configuración de mi cuenta</a>
         <a href="#">Ayuda</a>
         <a href="signout.php">Salir</a>

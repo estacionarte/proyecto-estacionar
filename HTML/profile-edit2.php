@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <?php require_once('head.php'); ?>
+  
   <style media="screen">
-  /*.profile-edit h1{
+  .profile-edit h1{
     color: grey;
     font-size: 1.2em;
   }
@@ -26,10 +27,10 @@
   .profile-edit-nav a:hover {
     background-color: #48A8C1;
     color: #fff;
-  }*/
+  }
   </style>
   <body>
-    <?php require_once('header-profile.php'); ?>
+    <?php require_once('header.php'); ?>
     <hr>
 
     <section class="profile-edit">
