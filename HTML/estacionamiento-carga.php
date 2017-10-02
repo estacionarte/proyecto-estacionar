@@ -31,7 +31,17 @@
           <form action="estacionamiento-carga.php" method="post" enctype="multipart/form-data" class="form-cargaEstacionamiento">
 
             <label for="" class="">¿Donde está ubicado tu espacio?</label>
-            <input type="text" placeholder="Ej: Av. Eduardo Madero 399" name="direccion" class="" style="<?php echo $emptyFields['direccion']; ?>" value="<?php echo (isset($_COOKIE['direccion']) && !empty($_COOKIE['direccion'])) ? $_COOKIE['direccion'] : ""; ?>">
+            <input type="text" placeholder="Domicilio. Ej: Av. Eduardo Madero 399" name="direccion" class="" style="<?php echo $emptyFields['direccion']; ?>" value="<?php echo (isset($_COOKIE['direccion']) && !empty($_COOKIE['direccion'])) ? $_COOKIE['direccion'] : ""; ?>">
+
+            <input type="text" placeholder="Número de departamento (opcional)" name="dpto" class="" value="<?php echo (isset($_COOKIE['dpto']) && !empty($_COOKIE['dpto'])) ? $_COOKIE['dpto'] : ""; ?>">
+
+            <input type="text" placeholder="Ciudad" name="ciudad" class="" style="<?php echo $emptyFields['ciudad']; ?>" value="<?php echo (isset($_COOKIE['ciudad']) && !empty($_COOKIE['ciudad'])) ? $_COOKIE['ciudad'] : ""; ?>">
+
+            <input type="text" placeholder="Provincia" name="provincia" class="" style="<?php echo $emptyFields['provincia']; ?>" value="<?php echo (isset($_COOKIE['provincia']) && !empty($_COOKIE['provincia'])) ? $_COOKIE['provincia'] : ""; ?>">
+
+            <input type="text" placeholder="País" name="pais" class="" style="<?php echo $emptyFields['pais']; ?>" value="<?php echo (isset($_COOKIE['pais']) && !empty($_COOKIE['pais'])) ? $_COOKIE['pais'] : ""; ?>">
+
+            <input type="text" placeholder="Código Postal" name="codigoPostal" class="" style="<?php echo $emptyFields['codigoPostal']; ?>" value="<?php echo (isset($_COOKIE['codigoPostal']) && !empty($_COOKIE['codigoPostal'])) ? $_COOKIE['codigoPostal'] : ""; ?>">
 
             <?php
              $s = "selected";
@@ -62,7 +72,7 @@
 
             <input type="file" name="profilePic" accept="image/*" style="<?php echo $emptyFields['profilePic']; ?>" multiple>
 
-            <input type="submit" name="boton-submit" value="CREAR CUENTA">
+            <input type="submit" name="boton-submit" value="SIGUIENTE">
           </form>
 
         </div>
