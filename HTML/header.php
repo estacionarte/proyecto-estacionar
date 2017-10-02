@@ -1,6 +1,7 @@
 <?php
 //Reanudamos la sesión
-session_start();
+require_once('login-data-validation.php');
+if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 
 //Validamos si existe realmente una sesión activa o no
 if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){
@@ -60,9 +61,29 @@ if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){
              <section class="signin-popup">
              <div class="form-generico">
                <form action="" method="post">
-                  <input type="email" name="email" placeholder="Email"/>
+                  <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value="<?php if (array_key_exists("email",$_POST)) { echo $_POST["email"];}?>"/>
+                  <?php
+                  if (isset($login_error) && $login_error->type != 2) {
+                    ?>
+                    <label style="color:red;"><?php echo $login_error->desc; ?></label>
+                    <?php
+                  }
+                  ?>
                   <input type="password" name="password" placeholder="Contraseña"/>
+                  <?php
+                  if (isset($login_error) && $login_error->type == 2) {
+                    ?>
+                    <label style="color:red;"><?php echo $login_error->desc; ?></label>
+                    <?php
+                  }
+                  ?>
+                  <div class="wrong_password"></div>
                   <input type="checkbox" name="recordarme" value="recordarme" id="recordarme"><label for="recordarme">Recordarme</label>
+
                   <input type="submit" name="" value="INICIAR SESIÓN">
                 </form>
               </div>

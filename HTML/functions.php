@@ -14,13 +14,18 @@ function jason2array($file) {
 }
 
 function login($email,$password) {
+  $user = [];
+  $error = new stdClass();
 
 // Get users
   $users = jason2array('registeredUsers.json');
 
   if (!$users) {
 //  fatal error
-    return 'fatal error';
+    $error->type = 3;
+    $error->desc = 'Error al cargar registeredUsers.json';
+    $user["error"] = $error;
+    return $user;
   }
 
 // Search entered user
@@ -30,20 +35,23 @@ function login($email,$password) {
     $db_password = $users[$key]['password'];
     if (password_verify($password, $db_password)) {
 //    Right password; Return user data
-      return $users[$key];
+      $user = $users[$key];
+      $error->type = 0;
+      $user["error"] = $error;
+      return $user;
     } else {
 //    Wrong password
-      $error = new stdClass();
       $error->type = 2;
       $error->desc = 'Contraseña incorrecta';
-      return $error;
+      $user["error"] = $error;
+      return $user;
     }
   } else {
 //  user not found
-    $error = new stdClass();
     $error->type = 1;
     $error->desc = 'El usuario no existe';
-    return $error;
+    $user["error"] = $error;
+    return $user;
   }
 }
 ?>
