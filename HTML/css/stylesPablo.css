@@ -1,0 +1,23 @@
+.recuperar-password div input[type=password], .recuperar-password div input[type=text]{
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: solid 1px #9c9c9c;
+  border-radius: 2px;
+  background-color: #fff;
+  vertical-align: middle;
+}
+
+.recuperar-password input {
+	margin: 5px 0 5px 0;
+}
+
+/*.recuperar-password input[type=checkbox] {
+	text-align: left !important;
+}*/
+
+.recuperar-main-content a {
+	margin: 0px auto;
+ 	display: block;
+	color: black;
+}
