@@ -72,6 +72,7 @@ ul li .popup-link{
 /************************** B A N N E R *************************/
 .banner-container{
   position: relative;
+  margin-top: -10px;
   background-image: url(../images/bg-home-mobile.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -635,11 +636,63 @@ ul li .popup-link{
   text-decoration: underline;
 }
 
-.verified-information li a:after{
-  content: url('../icons/ask.png');
-  padding-left: 10px;
+.ask-verify-data{
+  position: relative;
+  top: -55px;
+  right: 60px;
 }
 
+.modalDialog {
+  font-family: 'Lato', sans-serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 10;
+  opacity:0;
+  pointer-events: none;
+  transition: opacity 400ms ease-in;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog  div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: linear-gradient(#fff, #999);
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	box-shadow: 1px 1px 3px #000;
+	border-radius: 12px;
+}
+
+.close:hover {
+  background: #48A8C1;
+}
 
 .profile-credit{
   border: solid 1px #eeeeee;
@@ -749,7 +802,9 @@ ul li .popup-link{
 
 /************** C R E D I T S *******************/
 .credits{
+  font-family: 'Lato', sans-serif;
   position: relative;
+  margin-top: -10px;
   background-image:
   url(../images/bg-credits-mobile.jpg);
   background-repeat: no-repeat;
@@ -759,10 +814,10 @@ ul li .popup-link{
 
 .credits-title{
   position: relative;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 2em;
   color: white;
-  margin: 30px auto 20px;
+  margin: 60px auto 0;
   padding: 0 20px;
   z-index: 5;
 }
@@ -771,14 +826,16 @@ ul li .popup-link{
   position: absolute;
   top: 30px;
   color: white;
-  font-size: 1.1em;
-  margin: 0 15px 20px;
-  background-color: rgba(0, 0, 0, 0.62);
-  padding: 110px 15px 20px;
+  font-size: 1em;
+  margin: 5px 15px 20px;
+  background-color: rgba(50, 134, 113, 0.7);
+  padding: 110px 15px 25px;
 }
 
 .form-generico .credits-form{
-  margin: 150px 15px;
+  position: relative;
+  margin: 145px 15px 0;
+  z-index: 5;
 }
 
 /**************************************************************/
@@ -832,7 +889,7 @@ ul li .popup-link{
 /****************** B A N N E R *******************/
 
 .banner-container{
-  margin-top: -10px;
+  margin-top: -15px;
 }
 
 .shape{
@@ -1059,6 +1116,7 @@ margin-right: 5%;
 
 /************** C R E D I T S *******************/
 .credits{
+  margin-top: -15px;
   background-image:
   url(../images/bg-credits.jpg);
   height: 80%;
@@ -1173,7 +1231,7 @@ margin-right: 5%;
 /****************** B A N N E R *******************/
 
 .banner-container{
-  margin-top: -10px;
+  margin-top: -15px;
   background-image: url(../images/bg-home-pc.jpg);
   height: 500px;
 }
@@ -1313,18 +1371,20 @@ margin-right: 5%;
 }
 
 /***************** C R E D I T S ********************/
-
+.credits{
+  margin-top: -15px;
+}
 .credits-title{
   margin: 100px auto 20px;
 }
 
 .credits-subtitle{
-  margin: 50px 185px 20px;
-  padding: 110px 15px 20px;
+  margin: 40px 250px 20px;
+  padding: 110px 15px 40px;
 }
 
 .form-generico .credits-form{
-  margin: 150px 185px;
+  margin: 150px 250px;
 }
 
 /***************** UNDER CONSTRUCTION ********************/

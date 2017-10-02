@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
     <!-- FONT ROBOTO -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <!-- FONT LATO -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- ICONOS -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- main-profile-edit-nav -->

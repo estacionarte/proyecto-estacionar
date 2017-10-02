@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <?php require_once('head.php'); ?>
-<body>
+<body class="profile-body">
 
   <div class="container">
 
@@ -40,9 +40,18 @@
                 <li>Documento de identidad <img src="icons/check-no.png"></li>
                 <li>Correo electrónico <img src="icons/check-yes.png"></li>
                 <li>Número telefónico <img src="icons/check-no.png"></li>
-                <li><a  title="Es importante verificar los datos personales para tener un ámbito de confianza entre los usuarios registrados." href="#">Verificar mis datos</a></li>
+                <li><a href="#">Verificar mis datos</a></li>
+                <li class="ask-verify-data"><a href="#openModal"><img src="icons/ask-verify-data.png"></a></li>
               </ul>
             </article>
+            <div id="openModal" class="modalDialog">
+            	<div>
+            		<a href="#close" title="Close" class="close">X</a>
+            		<h3>¿Para qué verificar mis datos?</h3>
+            		<p>Es importante verificar los datos personales para mantener un ámbito de confianza entre los usuarios registrados.</p>
+            	</div>
+            </div>
+
           </div>
           <div class="profile-credit-container">
             <article class="profile-credit">
