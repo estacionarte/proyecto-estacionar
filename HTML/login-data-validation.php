@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   if ($user["error"]->type == 0) {
     $_SESSION['user'] = $user;
     unset($_SESSION["login_error"]);
-    header('Location: profile.php');
+    redirectTo("profile.php");
   } else {
     $login_error = $user["error"];
     $_SESSION["login_error"] = $login_error;
@@ -24,5 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         break;
     }
   }
+}
+
+function redirectTo($url = "index.php", $status_code = false) {
+  header("Location:$url",TRUE, $status_code ? $status_code : 301);
+  die();
 }
 ?>

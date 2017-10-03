@@ -1,7 +1,8 @@
 <?php
 //Reanudamos la sesión
 require_once('login-data-validation.php');
-if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+if (session_status() !== PHP_SESSION_ACTIVE)
+session_start();
 
 //Validamos si existe realmente una sesión activa o no
 if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){
