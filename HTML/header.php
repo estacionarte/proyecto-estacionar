@@ -66,9 +66,21 @@ if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){
                   type="email"
                   name="email"
                   placeholder="Email"
-                  value="<?php if (array_key_exists("email",$_POST)) { echo $_POST["email"];}?>"/>
                   <?php
-                  if (isset($login_error) && $login_error->type != 2) {
+                  $email="";
+                  if (array_key_exists("email",$_POST)) {
+                    $email = $_POST["email"];
+                  } elseif (array_key_exists(COOKIE_USER_NAME,$_COOKIE)) {
+                    $email = $_COOKIE[COOKIE_USER_NAME];
+                  }
+                  ?>
+                  value="<?php echo $email; ?>"/>
+                  <?php
+                  if (isset($login_error) &&
+                      $login_error->type != 2 &&
+                      array_key_exists("popup",$_POST)
+                    ) {
+                    // unset($login_error);
                     ?>
                     <label style="color:red;"><?php echo $login_error->desc; ?></label>
                     <?php
@@ -76,16 +88,29 @@ if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){
                   ?>
                   <input type="password" name="password" placeholder="Contraseña"/>
                   <?php
-                  if (isset($login_error) && $login_error->type == 2) {
+                  if (isset($login_error) &&
+                      $login_error->type == 2 &&
+                      array_key_exists("popup",$_POST)
+                    ) {
+                    // unset($login_error);
                     ?>
                     <label style="color:red;"><?php echo $login_error->desc; ?></label>
+                    <br>
                     <?php
                   }
+                  $checked = FALSE;
+                  if (array_key_exists("recordarme",$_POST)) {
+                    $checked = TRUE;
+                  } elseif (array_key_exists(COOKIE_REMEMBER_ME,$_COOKIE)) {
+                    $checked = TRUE;
+                  }
                   ?>
-                  <div class="wrong_password"></div>
-                  <input type="checkbox" name="recordarme" value="recordarme" id="recordarme"><label for="recordarme">Recordarme</label>
+                  <input type="checkbox" name="recordarme" value="recordarme" id="recordarme" <?php if ($checked) {
+                    echo "checked";
+                  } ?>><label for="recordarme">Recordarme</label>
 
                   <input type="submit" name="" value="INICIAR SESIÓN">
+                  <input type="checkbox" name="popup" style="display:none" checked>
                 </form>
               </div>
                 <a href="forgot-password.php">¿Olvidaste tu e-mail o contraseña?</a>

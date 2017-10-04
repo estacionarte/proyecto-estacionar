@@ -54,4 +54,16 @@ function login($email,$password) {
     return $user;
   }
 }
+
+function set_user_name_cookie($recordarme, $email) {
+  if ($recordarme){
+//  Set cookies
+    setcookie(COOKIE_REMEMBER_ME, TRUE);
+    setcookie(COOKIE_USER_NAME, $email);
+  } else {
+//  Remove cookies
+    setcookie(COOKIE_REMEMBER_ME,$recordarme,time()-1);
+    setcookie(COOKIE_USER_NAME,$email,time()-1);
+  }
+}
 ?>
