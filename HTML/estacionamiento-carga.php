@@ -15,6 +15,10 @@
 
       <hr>
 
+      <div class="">
+        progress bar
+      </div>
+
       <h1>Cargar Estacionamiento - Información General</h1>
 
       <section class="cargaEstacionamiento-paso1">
@@ -78,8 +82,12 @@
             <label for="" class="carga-label-tipovehiculo">Bicicletas</label> <input type="number" placeholder="" name="cantBicicletas" class="carga-input-tipovehiculo" min="0" max="4" value="<?php echo (isset($_COOKIE['cantBicicletas']) && !empty($_COOKIE['cantBicicletas'])) ? $_COOKIE['cantBicicletas'] : 0; ?>">
 
             <label for="" class="carga-label-titulo">¿Tiene alguno de los siguientes servicios especiales?</label>
-            <input type="checkbox" name="serviciosEspeciales" value="aptoDiscapacitados" class="carga-checkbox-especiales" id="aptoDiscapacitados"><label for="aptoDiscapacitados" class="carga-label-especiales">Apto para discapacitados</label>
-            <input type="checkbox" name="serviciosEspeciales" value="cargaElectricos" class="carga-checkbox-especiales" id="cargaElectricos"><label for="cargaElectricos" class="carga-label-especiales">Carga para autos eléctricos</label>
+            <div class="carga-div-especiales">
+              <input type="checkbox" name="serviciosEspeciales" value="aptoDiscapacitados" class="carga-checkbox-especiales" id="aptoDiscapacitados"><label for="aptoDiscapacitados" class="carga-label-especiales">Apto para discapacitados</label>
+            </div>
+            <div class="carga-div-especiales">
+              <input type="checkbox" name="serviciosEspeciales" value="cargaElectricos" class="carga-checkbox-especiales" id="cargaElectricos"><label for="cargaElectricos" class="carga-label-especiales">Carga para autos eléctricos</label>
+            </div>
 
             <label for="" class="carga-label-titulo">Información extra (visible por todos) -opcional-</label>
             <textarea name="name" rows="5" cols="80"></textarea>

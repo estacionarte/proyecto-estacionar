@@ -866,13 +866,19 @@ ul li .popup-link{
   text-align: center;
 }
 
-.cargaEstacionamiento-paso1 .form-generico .carga-checkbox-especiales{
+.cargaEstacionamiento-paso1 .form-generico .carga-div-especiales{
+  width: auto;
+  clear: both;
+  overflow: hidden;
+}
+
+.cargaEstacionamiento-paso1 .form-generico .carga-div-especiales .carga-checkbox-especiales{
   width: 15%;
   float: left;
   vertical-align: middle;
 }
 
-.cargaEstacionamiento-paso1 .form-generico .carga-label-especiales{
+.cargaEstacionamiento-paso1 .form-generico .carga-div-especiales .carga-label-especiales{
   width: 80%;
   float: right;
   vertical-align: middle;
