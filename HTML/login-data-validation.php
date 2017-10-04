@@ -2,6 +2,9 @@
 require_once('functions.php');
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+  set_user_name_cookie(array_key_exists('recordarme',$_POST) ? TRUE : FALSE, $_POST['email']);
+
   if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
   $user = login($_POST["email"],$_POST["password"]);
   if ($user["error"]->type == 0) {
@@ -25,5 +28,4 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
   }
 }
-
 ?>
