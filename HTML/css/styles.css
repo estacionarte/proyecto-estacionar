@@ -838,6 +838,48 @@ ul li .popup-link{
   z-index: 5;
 }
 
+/****************** C A R G A   C O C H E R A (Paso 1) *******************/
+
+.cargaEstacionamiento-paso1 .form-generico{
+  margin: 0;
+}
+
+.cargaEstacionamiento-paso1 .form-generico .carga-label-titulo{
+  text-align: left;
+  width: 100%;
+  padding: 20px 0 5px 0;
+  color: #000000;
+  font-size: 1.3em;
+}
+
+.cargaEstacionamiento-paso1 .form-generico .carga-label-tipovehiculo{
+  width: 65%;
+  float: left;
+  color: #8f8f8f;
+  /*font-size: 1.1em;*/
+}
+
+.cargaEstacionamiento-paso1 .form-generico .carga-input-tipovehiculo{
+  display: inline-block;
+  width: 35%;
+  float: right;
+  text-align: center;
+}
+
+.cargaEstacionamiento-paso1 .form-generico .carga-checkbox-especiales{
+  width: 15%;
+  float: left;
+  vertical-align: middle;
+}
+
+.cargaEstacionamiento-paso1 .form-generico .carga-label-especiales{
+  width: 80%;
+  float: right;
+  vertical-align: middle;
+  color: #8f8f8f;
+  /*font-size: 1.1em;*/
+}
+
 /**************************************************************/
 /*********************  T  A  B  L  E  T  *********************/
 /**************************************************************/

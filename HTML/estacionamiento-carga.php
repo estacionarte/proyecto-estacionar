@@ -30,12 +30,34 @@
 
           <form action="estacionamiento-carga.php" method="post" enctype="multipart/form-data" class="form-cargaEstacionamiento">
 
-            <label for="" class="">¿Donde está ubicado tu espacio?</label>
+            <label for="" class="carga-label-titulo">¿Donde está ubicado tu espacio?</label>
             <input type="text" placeholder="Domicilio. Ej: Av. Eduardo Madero 399" name="direccion" class="" style="<?php echo $emptyFields['direccion']; ?>" value="<?php echo (isset($_COOKIE['direccion']) && !empty($_COOKIE['direccion'])) ? $_COOKIE['direccion'] : ""; ?>">
             <input type="text" placeholder="Número de departamento (opcional)" name="dpto" class="" value="<?php echo (isset($_COOKIE['dpto']) && !empty($_COOKIE['dpto'])) ? $_COOKIE['dpto'] : ""; ?>">
-            <input type="text" placeholder="País" name="pais" class="" style="<?php echo $emptyFields['pais']; ?>" value="<?php echo (isset($_COOKIE['pais']) && !empty($_COOKIE['pais'])) ? $_COOKIE['pais'] : ""; ?>">
-            <input type="text" placeholder="Provincia" name="provincia" class="" style="<?php echo $emptyFields['provincia']; ?>" value="<?php echo (isset($_COOKIE['provincia']) && !empty($_COOKIE['provincia'])) ? $_COOKIE['provincia'] : ""; ?>">
-            <input type="text" placeholder="Ciudad" name="ciudad" class="" style="<?php echo $emptyFields['ciudad']; ?>" value="<?php echo (isset($_COOKIE['ciudad']) && !empty($_COOKIE['ciudad'])) ? $_COOKIE['ciudad'] : ""; ?>">
+            <?php
+             $s = "selected";
+             $tipo = isset( $_COOKIE['pais']) ? $_COOKIE['pais'] : '';
+            ?>
+            <select name="pais" style="<?php echo $emptyFields['pais']; ?>">
+              <option value="">País</option>
+              <option value="Argentina" <?php echo $tipo=='Argentina'?$s:''; ?>>Argentina</option>
+            </select>
+            <?php
+             $s = "selected";
+             $tipo = isset( $_COOKIE['provincia']) ? $_COOKIE['provincia'] : '';
+            ?>
+            <select name="provincia" style="<?php echo $emptyFields['provincia']; ?>">
+              <option value="">Provincia</option>
+              <option value="BuenosAires" <?php echo $tipo=='BuenosAires'?$s:''; ?>>Buenos Aires</option>
+              <option value="CABA" <?php echo $tipo=='CABA'?$s:''; ?>>Ciudad Autónoma de Buenos Aires</option>
+            </select>
+            <?php
+             $s = "selected";
+             $tipo = isset( $_COOKIE['ciudad']) ? $_COOKIE['ciudad'] : '';
+            ?>
+            <select name="ciudad" style="<?php echo $emptyFields['ciudad']; ?>">
+              <option value="">Ciudad</option>
+              <option value="ciudad" <?php echo $tipo=='ciudad'?$s:''; ?>>ciudad</option>
+            </select>
             <input type="text" placeholder="Código Postal" name="codigoPostal" class="" style="<?php echo $emptyFields['codigoPostal']; ?>" value="<?php echo (isset($_COOKIE['codigoPostal']) && !empty($_COOKIE['codigoPostal'])) ? $_COOKIE['codigoPostal'] : ""; ?>">
 
             <?php
@@ -43,28 +65,29 @@
              $tipo = isset( $_COOKIE['tipoCochera']) ? $_COOKIE['tipoCochera'] : '';
             ?>
 
-            <label for="" class="">¿Qué tipo de espacio es?</label>
+            <label for="" class="carga-label-titulo">¿Qué tipo de espacio es?</label>
             <select name="tipoCochera" style="<?php echo $emptyFields['tipoCochera']; ?>">
               <option value="">Elige una opción</option>
-              <option value="Cochera privada" <?php echo $tipo=='cocheraPrivada'?$s:''; ?>>Cochera privada</option>
-              <option value="Playa de estacionamiento" <?php echo $tipo=='playaEstacionamiento'?$s:''; ?>>Playa de estacionamiento</option>
+              <option value="cocheraPrivada" <?php echo $tipo=='cocheraPrivada'?$s:''; ?>>Cochera privada</option>
+              <option value="playaEstacionamiento" <?php echo $tipo=='playaEstacionamiento'?$s:''; ?>>Playa de estacionamiento</option>
             </select>
 
-            <label for="" class="">¿Cuántos vehículos se permiten?</label>
-            <label for="" class="">Autos</label> <input type="number" placeholder="" name="cantAutos" class="" min="0" max="1" value="<?php echo (isset($_COOKIE['cantAutos']) && !empty($_COOKIE['cantAutos'])) ? $_COOKIE['cantAutos'] : 0; ?>">
-            <label for="" class="">Motos</label> <input type="number" placeholder="" name="cantMotos" class="" min="0" max="4" value="<?php echo (isset($_COOKIE['cantMotos']) && !empty($_COOKIE['cantMotos'])) ? $_COOKIE['cantMotos'] : 0; ?>">
-            <label for="" class="">Bicicletas</label> <input type="number" placeholder="" name="cantBicicletas" class="" min="0" max="4" value="<?php echo (isset($_COOKIE['cantBicicletas']) && !empty($_COOKIE['cantBicicletas'])) ? $_COOKIE['cantBicicletas'] : 0; ?>">
+            <label for="" class="carga-label-titulo">¿Cuántos vehículos se permiten?</label>
+            <label for="" class="carga-label-tipovehiculo">Autos</label> <input type="number" placeholder="" name="cantAutos" class="carga-input-tipovehiculo" min="0" max="1" value="<?php echo (isset($_COOKIE['cantAutos']) && !empty($_COOKIE['cantAutos'])) ? $_COOKIE['cantAutos'] : 0; ?>">
+            <label for="" class="carga-label-tipovehiculo">Motos</label> <input type="number" placeholder="" name="cantMotos" class="carga-input-tipovehiculo" min="0" max="4" value="<?php echo (isset($_COOKIE['cantMotos']) && !empty($_COOKIE['cantMotos'])) ? $_COOKIE['cantMotos'] : 0; ?>">
+            <label for="" class="carga-label-tipovehiculo">Bicicletas</label> <input type="number" placeholder="" name="cantBicicletas" class="carga-input-tipovehiculo" min="0" max="4" value="<?php echo (isset($_COOKIE['cantBicicletas']) && !empty($_COOKIE['cantBicicletas'])) ? $_COOKIE['cantBicicletas'] : 0; ?>">
 
-            <label for="" class="">¿Tiene alguno de los siguientes servicios especiales?</label>
-            <input type="checkbox" name="serviciosEspeciales" value="aptoDiscapacitados" id="aptoDiscapacitados"><label for="aptoDiscapacitados">Apto para discapacitados</label>
-            <input type="checkbox" name="serviciosEspeciales" value="cargaElectricos" id="cargaElectricos"><label for="cargaElectricos">Carga para autos eléctricos</label>
+            <label for="" class="carga-label-titulo">¿Tiene alguno de los siguientes servicios especiales?</label>
+            <input type="checkbox" name="serviciosEspeciales" value="aptoDiscapacitados" class="carga-checkbox-especiales" id="aptoDiscapacitados"><label for="aptoDiscapacitados" class="carga-label-especiales">Apto para discapacitados</label>
+            <input type="checkbox" name="serviciosEspeciales" value="cargaElectricos" class="carga-checkbox-especiales" id="cargaElectricos"><label for="cargaElectricos" class="carga-label-especiales">Carga para autos eléctricos</label>
 
-            <label for="" class="">Información extra (visible por todos) -opcional-</label>
+            <label for="" class="carga-label-titulo">Información extra (visible por todos) -opcional-</label>
             <textarea name="name" rows="5" cols="80"></textarea>
 
-            <label for="" class="">Información extra (únicamente visible por quienes alquilen tu espacio) -opcional-</label>
+            <label for="" class="carga-label-titulo">Información extra (únicamente visible por quienes alquilen tu espacio) -opcional-</label>
             <textarea name="name" rows="5" cols="80"></textarea>
 
+            <label for="" class="carga-label-titulo">Fotos de tu espacio</label>
             <input type="file" name="profilePic" accept="image/*" style="<?php echo $emptyFields['profilePic']; ?>" multiple>
 
             <input type="submit" name="boton-submit" value="SIGUIENTE">
