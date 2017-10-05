@@ -1,9 +1,12 @@
 <?php
 
-require_once('login-data-validation.php');
+if (session_status() !== PHP_SESSION_ACTIVE)
+  session_start();
 
-if (isset($_SESSION['user']) && !empty($_SESSION['user']))
+if (isset($_SESSION['user']))
   header("Location:index.php");
+
+require_once('login-data-validation.php');
 
 ?>
 <!DOCTYPE html>

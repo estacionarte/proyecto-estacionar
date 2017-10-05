@@ -1,9 +1,12 @@
 <?php
+  if (session_status() !== PHP_SESSION_ACTIVE)
+    session_start();
+
+  if (isset($_SESSION['user']))
+    header("Location:index.php");
 
   require_once('signup-procesamiento.php');
 
-  if (isset($_SESSION['user']) && !empty($_SESSION['user']))
-    header("Location:index.php");
 
  ?>
 
