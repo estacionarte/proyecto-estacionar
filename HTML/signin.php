@@ -1,9 +1,9 @@
 <?php
 
-require_once('login-data-validation.php');
+require_once('functions.php');
+redirectLoggedUser();
 
-if (isset($_SESSION['user']) && !empty($_SESSION['user']))
-  header("Location:index.php");
+require_once('login-data-validation.php');
 
 ?>
 <!DOCTYPE html>

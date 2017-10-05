@@ -1,3 +1,10 @@
+<?php
+
+require_once('functions.php');
+redirectNotLoggedUser();
+
+?>
+
 <!DOCTYPE html>
 <html>
   <?php require_once('head.php'); ?>
