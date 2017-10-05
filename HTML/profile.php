@@ -12,7 +12,7 @@ redirectNotLoggedUser();
 
   <div class="container">
 
-    <?php require_once('header.php');  ?>
+    <?php require_once('header.php');?>
 
     <div class="bodies-main-content">
 
@@ -33,6 +33,7 @@ redirectNotLoggedUser();
         <label for="tab4">Reputación</label>
 
         <section id="content1">
+
           <div class="profile-image">
             <img src="images/avatar-profile.png" alt="profile image">
           </div>
@@ -71,6 +72,7 @@ redirectNotLoggedUser();
 
         <section id="content2">
           <h2>Mis Vehículos</h2>
+          <?php require_once('estacionamiento-carga.php'); ?>
           <p>
             Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken.
           </p>
