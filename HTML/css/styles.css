@@ -1361,8 +1361,11 @@ margin-right: 5%;
 
 .welcome-user h4{
   display: inline-block !important;
-  text-transform: uppercase;
   font-weight: lighter;
+}
+
+.welcome-user h4::first-letter{
+  text-transform: uppercase;
 }
 
 /*************** P R O F I L E *************/
@@ -1373,6 +1376,10 @@ margin-right: 5%;
 #content1 .profile-image{
   display: block;
   float: left;
+}
+
+#content1 .profile-image img{
+  max-width: 240px;
 }
 
 .profile-welcome h1{
