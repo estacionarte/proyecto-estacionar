@@ -35,7 +35,7 @@ redirectNotLoggedUser();
         <section id="content1">
 
           <div class="profile-image">
-            <img src="images/avatar-profile.png" alt="profile image">
+            <img src=<?php echo "profile-pic/" . $_SESSION['user']['profilePic'];?> alt="profile image">
           </div>
           <div class="profile-welcome">
             <h1>¡Bienvenido <?php echo $_SESSION["user"]["firstName"] . "!" ?></h1>
