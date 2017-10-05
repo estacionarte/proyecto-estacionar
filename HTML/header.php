@@ -29,7 +29,7 @@ if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){
         <a href="#">Ayuda</a>
         <a href="signout.php">Salir</a>
       </div>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src=<?php echo "profile-pic/" . $_SESSION['user'][profilePic]?> alt="avatar" class="avatar"></span>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src=<?php echo "profile-pic/" . $_SESSION['user'][profilePic];?> alt="avatar" class="avatar"></span>
 
       <script>
       function openNav() {

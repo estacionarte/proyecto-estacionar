@@ -11,8 +11,6 @@ $user = [
   "email" => $_COOKIE["email"]
 ];
 
-$_SESSION['user'] = $user;
-
 // Defino array de cookies a eliminar
 
 $camposCookies = [
