@@ -1,10 +1,7 @@
 <?php
 
-if (session_status() !== PHP_SESSION_ACTIVE)
-  session_start();
-
-if (isset($_SESSION['user']))
-  header("Location:index.php");
+require_once('functions.php');
+redirectLoggedUser();
 
 require_once('login-data-validation.php');
 
