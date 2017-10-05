@@ -2,6 +2,9 @@
 
   require_once('signup-procesamiento.php');
 
+  if (isset($_SESSION['user']) && !empty($_SESSION['user']))
+    header("Location:index.php");
+
  ?>
 
 <!DOCTYPE html>

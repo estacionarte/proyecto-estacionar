@@ -840,6 +840,10 @@ ul li .popup-link{
 
 /****************** C A R G A   C O C H E R A (Paso 1) *******************/
 
+.cargaEstacionamiento-progressBar{
+  border: 1px solid black;
+}
+
 .cargaEstacionamiento-paso1 .form-generico{
   margin: 0;
 }
@@ -866,24 +870,21 @@ ul li .popup-link{
   text-align: center;
 }
 
-.cargaEstacionamiento-paso1 .form-generico .carga-div-especiales{
+.cargaEstacionamiento-paso1 .form-generico .carga-label-especiales{
   width: auto;
-  clear: both;
-  overflow: hidden;
-}
-
-.cargaEstacionamiento-paso1 .form-generico .carga-div-especiales .carga-checkbox-especiales{
-  width: 15%;
   float: left;
-  vertical-align: middle;
-}
-
-.cargaEstacionamiento-paso1 .form-generico .carga-div-especiales .carga-label-especiales{
-  width: 80%;
-  float: right;
   vertical-align: middle;
   color: #8f8f8f;
   /*font-size: 1.1em;*/
+}
+
+.cargaEstacionamiento-paso1 .form-generico .carga-label-especiales .carga-checkbox-especiales{
+  /*width: 15%;*/
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+  position: relative;
+  bottom: 1px;
 }
 
 /**************************************************************/

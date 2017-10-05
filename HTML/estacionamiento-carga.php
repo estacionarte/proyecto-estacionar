@@ -15,7 +15,7 @@
 
       <hr>
 
-      <div class="">
+      <div class="cargaEstacionamiento-progressBar">
         progress bar
       </div>
 
@@ -82,18 +82,14 @@
             <label for="" class="carga-label-tipovehiculo">Bicicletas</label> <input type="number" placeholder="" name="cantBicicletas" class="carga-input-tipovehiculo" min="0" max="4" value="<?php echo (isset($_COOKIE['cantBicicletas']) && !empty($_COOKIE['cantBicicletas'])) ? $_COOKIE['cantBicicletas'] : 0; ?>">
 
             <label for="" class="carga-label-titulo">¿Tiene alguno de los siguientes servicios especiales?</label>
-            <div class="carga-div-especiales">
-              <input type="checkbox" name="serviciosEspeciales" value="aptoDiscapacitados" class="carga-checkbox-especiales" id="aptoDiscapacitados"><label for="aptoDiscapacitados" class="carga-label-especiales">Apto para discapacitados</label>
-            </div>
-            <div class="carga-div-especiales">
-              <input type="checkbox" name="serviciosEspeciales" value="cargaElectricos" class="carga-checkbox-especiales" id="cargaElectricos"><label for="cargaElectricos" class="carga-label-especiales">Carga para autos eléctricos</label>
-            </div>
+            <label for="aptoDiscapacitados" class="carga-label-especiales"><input type="checkbox" name="serviciosEspeciales" value="aptoDiscapacitados" class="carga-checkbox-especiales" id="aptoDiscapacitados">Apto para discapacitados</label>
+            <label for="cargaElectricos" class="carga-label-especiales"><input type="checkbox" name="serviciosEspeciales" value="cargaElectricos" class="carga-checkbox-especiales" id="cargaElectricos">Carga para autos eléctricos</label>
 
             <label for="" class="carga-label-titulo">Información extra (visible por todos) -opcional-</label>
-            <textarea name="name" rows="5" cols="80"></textarea>
+            <textarea name="name" rows="5" cols="40"></textarea>
 
             <label for="" class="carga-label-titulo">Información extra (únicamente visible por quienes alquilen tu espacio) -opcional-</label>
-            <textarea name="name" rows="5" cols="80"></textarea>
+            <textarea name="name" rows="5" cols="40"></textarea>
 
             <label for="" class="carga-label-titulo">Fotos de tu espacio</label>
             <input type="file" name="profilePic" accept="image/*" style="<?php echo $emptyFields['profilePic']; ?>" multiple>
