@@ -37,9 +37,18 @@ redirectNotLoggedUser();
           <div class="profile-image">
             <img src=<?php echo "profile-pic/" . $_SESSION['user']['profilePic'];?> alt="profile image">
           </div>
+
           <div class="profile-welcome">
             <h1>¡Bienvenido <?php echo $_SESSION["user"]["firstName"] . "!" ?></h1>
           </div>
+
+          <article class="profile-credit">
+            <h2>¡Invitá a tus amigos y obtené créditos para estacionar!</h2>
+            <p>Conseguí hasta %50 de descuento en tu próximo alquiler.</p>
+            <a href="credits.php">CONSEGUIR CRÉDITO</a>
+          </article>
+
+
           <div>
             <div class="clear"></div>
             <article class="verified-information">
@@ -52,6 +61,7 @@ redirectNotLoggedUser();
                 <li class="ask-verify-data"><a href="#openModal"><img src="icons/ask-verify-data.png"></a></li>
               </ul>
             </article>
+
             <div id="openModal" class="modalDialog">
             	<div>
             		<a href="#close" title="Close" class="close">X</a>
@@ -59,14 +69,6 @@ redirectNotLoggedUser();
             		<p>Es importante verificar los datos personales para mantener un ámbito de confianza entre los usuarios registrados.</p>
             	</div>
             </div>
-
-          </div>
-          <div class="profile-credit-container">
-            <article class="profile-credit">
-              <h2>¡Invitá a tus amigos y obtené créditos para estacionar!</h2>
-              <p>Conseguí hasta %50 de descuento en tu próximo alquiler.</p>
-              <a href="credits.php">CONSEGUIR CRÉDITO</a>
-            </article>
           </div>
         </section>
 

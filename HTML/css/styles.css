@@ -535,13 +535,15 @@ ul li .popup-link{
   display: none;
 }
 
-.avatar{
+span .avatar{
   width: 45px;
+  height: 45px;
   margin: 12px -6px;
   position: absolute;
   top: 0;
   right: 15px;
   vertical-align: middle;
+  border-radius: 50%
   /*z-index: 25;*/
 }
 
@@ -1369,13 +1371,11 @@ margin-right: 5%;
 }
 
 /*************** P R O F I L E *************/
-/*#content1{
-  position: relative;
-}*/
-
 #content1 .profile-image{
   display: block;
   float: left;
+  width: 25%;
+  overflow: hidden;
 }
 
 #content1 .profile-image img{
@@ -1396,16 +1396,11 @@ margin-right: 5%;
   width: 240px;
 }
 
-.profile-credit-container{
-  position: relative;
-  top: -430px;
-  left: 255px;
-  /*width: 73%;*/
-}
 
 .profile-credit{
-  position: absolute;
+  float: left;
   width: 73%;
+  margin-left: 15px;
 }
 
 .profile-credit h2{
@@ -1417,13 +1412,13 @@ margin-right: 5%;
 .profile-credit p{
   text-align: left !important;
   font-size: 0.8em !important;
-  margin: 0 0 5px 15px !important;
+  margin: 0 0 -30px 15px !important;
 }
 
 .profile-credit a{
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  position: relative;
+  bottom: 12px;
+  left: 245px;
 }
 
 /***************** C R E D I T S ********************/
