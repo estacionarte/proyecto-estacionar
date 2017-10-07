@@ -15,13 +15,13 @@
 
       <hr>
 
-      <div class="cargaEstacionamiento-progressBar">
-        progress bar
+      <div class="uploadEstacionamiento-progressBar">
+        <div class="uploadEstacionamiento-progressBar-progress2"></div>
       </div>
 
-      <h1>Cargar Estacionamiento - Información General</h1>
+      <h1>Cargar Estacionamiento - Días y Horarios</h1>
 
-      <section class="cargaEstacionamiento-paso1">
+      <section class="uploadEstacionamiento-paso1">
 
         <?php
         // if ($camposVacios)
@@ -32,9 +32,9 @@
 
         <div class="form-generico">
 
-          <form action="estacionamiento-carga.php" method="post" enctype="multipart/form-data" class="form-cargaEstacionamiento">
+          <form action="upload-estacionamiento-infogeneral.php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento">
 
-            <label for="" class="carga-label-titulo">¿Donde está ubicado tu espacio?</label>
+            <label for="" class="upload-label-titulo">¿Donde está ubicado tu espacio?</label>
             <input type="text" placeholder="Domicilio. Ej: Av. Eduardo Madero 399" name="direccion" class="" style="<?php echo $emptyFields['direccion']; ?>" value="<?php echo (isset($_COOKIE['direccion']) && !empty($_COOKIE['direccion'])) ? $_COOKIE['direccion'] : ""; ?>">
             <input type="text" placeholder="Número de departamento (opcional)" name="dpto" class="" value="<?php echo (isset($_COOKIE['dpto']) && !empty($_COOKIE['dpto'])) ? $_COOKIE['dpto'] : ""; ?>">
             <?php
@@ -69,29 +69,29 @@
              $tipo = isset( $_COOKIE['tipoCochera']) ? $_COOKIE['tipoCochera'] : '';
             ?>
 
-            <label for="" class="carga-label-titulo">¿Qué tipo de espacio es?</label>
+            <label for="" class="upload-label-titulo">¿Qué tipo de espacio es?</label>
             <select name="tipoCochera" style="<?php echo $emptyFields['tipoCochera']; ?>">
               <option value="">Elige una opción</option>
               <option value="cocheraPrivada" <?php echo $tipo=='cocheraPrivada'?$s:''; ?>>Cochera privada</option>
               <option value="playaEstacionamiento" <?php echo $tipo=='playaEstacionamiento'?$s:''; ?>>Playa de estacionamiento</option>
             </select>
 
-            <label for="" class="carga-label-titulo">¿Cuántos vehículos se permiten?</label>
-            <label for="" class="carga-label-tipovehiculo">Autos</label> <input type="number" placeholder="" name="cantAutos" class="carga-input-tipovehiculo" min="0" max="1" value="<?php echo (isset($_COOKIE['cantAutos']) && !empty($_COOKIE['cantAutos'])) ? $_COOKIE['cantAutos'] : 0; ?>">
-            <label for="" class="carga-label-tipovehiculo">Motos</label> <input type="number" placeholder="" name="cantMotos" class="carga-input-tipovehiculo" min="0" max="4" value="<?php echo (isset($_COOKIE['cantMotos']) && !empty($_COOKIE['cantMotos'])) ? $_COOKIE['cantMotos'] : 0; ?>">
-            <label for="" class="carga-label-tipovehiculo">Bicicletas</label> <input type="number" placeholder="" name="cantBicicletas" class="carga-input-tipovehiculo" min="0" max="4" value="<?php echo (isset($_COOKIE['cantBicicletas']) && !empty($_COOKIE['cantBicicletas'])) ? $_COOKIE['cantBicicletas'] : 0; ?>">
+            <label for="" class="upload-label-titulo">¿Cuántos vehículos se permiten?</label>
+            <label for="" class="upload-label-tipovehiculo">Autos</label> <input type="number" placeholder="" name="cantAutos" class="upload-input-tipovehiculo" min="0" max="1" value="<?php echo (isset($_COOKIE['cantAutos']) && !empty($_COOKIE['cantAutos'])) ? $_COOKIE['cantAutos'] : 0; ?>">
+            <label for="" class="upload-label-tipovehiculo">Motos</label> <input type="number" placeholder="" name="cantMotos" class="upload-input-tipovehiculo" min="0" max="4" value="<?php echo (isset($_COOKIE['cantMotos']) && !empty($_COOKIE['cantMotos'])) ? $_COOKIE['cantMotos'] : 0; ?>">
+            <label for="" class="upload-label-tipovehiculo">Bicicletas</label> <input type="number" placeholder="" name="cantBicicletas" class="upload-input-tipovehiculo" min="0" max="4" value="<?php echo (isset($_COOKIE['cantBicicletas']) && !empty($_COOKIE['cantBicicletas'])) ? $_COOKIE['cantBicicletas'] : 0; ?>">
 
-            <label for="" class="carga-label-titulo">¿Tiene alguno de los siguientes servicios especiales?</label>
-            <label for="aptoDiscapacitados" class="carga-label-especiales"><input type="checkbox" name="serviciosEspeciales" value="aptoDiscapacitados" class="carga-checkbox-especiales" id="aptoDiscapacitados">Apto para discapacitados</label>
-            <label for="cargaElectricos" class="carga-label-especiales"><input type="checkbox" name="serviciosEspeciales" value="cargaElectricos" class="carga-checkbox-especiales" id="cargaElectricos">Carga para autos eléctricos</label>
+            <label for="" class="upload-label-titulo">¿Tiene alguno de los siguientes servicios especiales?</label>
+            <label for="aptoDiscapacitados" class="upload-label-especiales"><input type="checkbox" name="serviciosEspeciales" value="aptoDiscapacitados" class="upload-checkbox-especiales" id="aptoDiscapacitados">Apto para discapacitados</label>
+            <label for="uploadElectricos" class="upload-label-especiales"><input type="checkbox" name="serviciosEspeciales" value="uploadElectricos" class="upload-checkbox-especiales" id="uploadElectricos">Carga para autos eléctricos</label>
 
-            <label for="" class="carga-label-titulo">Información extra (visible por todos) -opcional-</label>
-            <textarea name="name" rows="5" cols="40"></textarea>
+            <label for="" class="upload-label-titulo">Información extra (visible por todos) -opcional-</label>
+            <textarea name="name"></textarea>
 
-            <label for="" class="carga-label-titulo">Información extra (únicamente visible por quienes alquilen tu espacio) -opcional-</label>
-            <textarea name="name" rows="5" cols="40"></textarea>
+            <label for="" class="upload-label-titulo">Información extra (únicamente visible por quienes alquilen tu espacio) -opcional-</label>
+            <textarea name="name"></textarea>
 
-            <label for="" class="carga-label-titulo">Fotos de tu espacio</label>
+            <label for="" class="upload-label-titulo">Fotos de tu espacio</label>
             <input type="file" name="profilePic" accept="image/*" style="<?php echo $emptyFields['profilePic']; ?>" multiple>
 
             <input type="submit" name="boton-submit" value="SIGUIENTE">

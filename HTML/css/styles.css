@@ -226,7 +226,7 @@ ul li .popup-link{
    color: #8f8f8f;
    font-weight: lighter;
    font-family: 'Roboto Condensed', sans-serif;
-   text-align: center;
+   text-align: left;
  }
 
 .faqs-search{
@@ -303,7 +303,7 @@ ul li .popup-link{
   margin: 0;
 }
 
-.form-generico input, .form-generico label, .form-generico select{
+.form-generico input, .form-generico label, .form-generico select, .form-generico textarea{
   width: 100%;
   margin-top: 5px;
   padding: 10px;
@@ -312,6 +312,10 @@ ul li .popup-link{
   border-radius: 2px;
   background-color: #fff;
   vertical-align: middle;
+}
+
+.form-generico textarea{
+  height: 80px;
 }
 
 .form-generico input[type=checkbox], .form-generico label{
@@ -840,17 +844,28 @@ span .avatar{
   z-index: 5;
 }
 
-/****************** C A R G A   C O C H E R A (Paso 1) *******************/
+/****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
 
-.cargaEstacionamiento-progressBar{
-  border: 1px solid black;
+.uploadEstacionamiento-progressBar{
+  /*border: 1px solid gray;*/
+  border-radius: 5px;
 }
 
-.cargaEstacionamiento-paso1 .form-generico{
+.uploadEstacionamiento-progressBar div{
+  height: 7px;
+  border-radius: 5px;
+  background-color: #48A8C1;
+}
+
+.uploadEstacionamiento-progressBar .uploadEstacionamiento-progressBar-progress1{
+  width: 1%;
+}
+
+.uploadEstacionamiento-paso1 .form-generico{
   margin: 0;
 }
 
-.cargaEstacionamiento-paso1 .form-generico .carga-label-titulo{
+.uploadEstacionamiento-paso1 .form-generico .upload-label-titulo{
   text-align: left;
   width: 100%;
   padding: 20px 0 5px 0;
@@ -858,21 +873,26 @@ span .avatar{
   font-size: 1.3em;
 }
 
-.cargaEstacionamiento-paso1 .form-generico .carga-label-tipovehiculo{
+.uploadEstacionamiento-paso1 .form-generico .upload-label-tipovehiculo{
   width: 65%;
   float: left;
   color: #8f8f8f;
   /*font-size: 1.1em;*/
 }
 
-.cargaEstacionamiento-paso1 .form-generico .carga-input-tipovehiculo{
+.uploadEstacionamiento-paso1 .form-generico .upload-input-tipovehiculo{
   display: inline-block;
   width: 35%;
   float: right;
   text-align: center;
 }
 
-.cargaEstacionamiento-paso1 .form-generico .carga-label-especiales{
+.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales{
+  display: block;
+  clear: both;
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales{
   width: auto;
   float: left;
   vertical-align: middle;
@@ -880,7 +900,68 @@ span .avatar{
   /*font-size: 1.1em;*/
 }
 
-.cargaEstacionamiento-paso1 .form-generico .carga-label-especiales .carga-checkbox-especiales{
+.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
+  /*width: 15%;*/
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+  position: relative;
+  bottom: 1px;
+}
+
+.uploadEstacionamiento-paso1 .upload-div-sideimage {
+  display: none;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 2 - Días y Horarios) *******************/
+
+.uploadEstacionamiento-progressBar-progress2{
+  height: 7px;
+  border-radius: 5px;
+  background-color: #48A8C1;
+  width: 25%;
+}
+
+.uploadEstacionamiento-paso1 .form-generico{
+  margin: 0;
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-label-titulo{
+  text-align: left;
+  width: 100%;
+  padding: 20px 0 5px 0;
+  color: #000000;
+  font-size: 1.3em;
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-label-tipovehiculo{
+  width: 65%;
+  float: left;
+  color: #8f8f8f;
+  /*font-size: 1.1em;*/
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-input-tipovehiculo{
+  display: inline-block;
+  width: 35%;
+  float: right;
+  text-align: center;
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales{
+  display: block;
+  clear: both;
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales{
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  color: #8f8f8f;
+  /*font-size: 1.1em;*/
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
   /*width: 15%;*/
   float: left;
   vertical-align: middle;
@@ -1072,7 +1153,7 @@ span .avatar{
 .bodies-main-content{
   margin-left: auto;
   margin-right: auto;
-  max-width: 1000px;
+  max-width: 1100px;
 }
 
 .faqs-main-content h1{
@@ -1181,6 +1262,69 @@ margin-right: 5%;
   top: 30px;
   margin: 30px 15px 20px;
   padding: 110px 25px 20px;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
+
+.uploadEstacionamiento-progressBar div{
+  height: 10.5px;
+}
+
+.form-uploadEstacionamiento{
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.uploadEstacionamiento-paso1 .form-generico .form-uploadEstacionamiento .upload-input-direccion{
+  width: 84%;
+  float: left;
+}
+
+.uploadEstacionamiento-paso1 .form-generico .form-uploadEstacionamiento .upload-input-numdpto{
+  width: 15.5%;
+  float: right;
+}
+
+.form-uploadEstacionamiento .upload-select-pais, .form-uploadEstacionamiento .upload-select-provincia, .form-uploadEstacionamiento .upload-select-ciudad, .form-uploadEstacionamiento .upload-input-cp {
+  display: inline-block;
+  width: 24.5%;
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-label-tipovehiculo{
+  width: 65%;
+  float: left;
+  color: #8f8f8f;
+  /*font-size: 1.1em;*/
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-input-tipovehiculo{
+  display: inline-block;
+  width: 35%;
+  float: right;
+  text-align: center;
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales{
+  display: block;
+  clear: both;
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales{
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  color: #8f8f8f;
+  /*font-size: 1.1em;*/
+}
+
+.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
+  /*width: 15%;*/
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+  position: relative;
+  bottom: 1px;
 }
 
 /**************************************************************/
@@ -1441,4 +1585,33 @@ margin-right: 5%;
 /***************** UNDER CONSTRUCTION ********************/
 .construction-bg{
   background-repeat:repeat;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
+
+.uploadEstacionamiento-progressBar div{
+  height: 14px;
+}
+
+.form-uploadEstacionamiento{
+  max-width: 700px;
+  margin: inherit;
+}
+
+.uploadEstacionamiento-paso1 .form-generico{
+  display: inline-block;
+  float: left;
+}
+
+.uploadEstacionamiento-paso1 .upload-div-sideimage {
+  background-image: url(../images/parking-lot-yellow.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: right;
+  display: inline-block;
+  min-width: 260px;
+  height: 100%;
+  max-width: 300px;
+  margin-top: 25px;
 }
