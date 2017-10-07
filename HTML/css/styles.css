@@ -847,7 +847,7 @@ span .avatar{
 /****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
 
 .uploadEstacionamiento-progressBar{
-  /*border: 1px solid gray;*/
+  background-color: rgba(143, 143, 143, 0.1);
   border-radius: 5px;
 }
 
@@ -1604,14 +1604,14 @@ margin-right: 5%;
 }
 
 .uploadEstacionamiento-paso1 .upload-div-sideimage {
-  background-image: url(../images/parking-lot-yellow.jpg);
-  background-position: center;
+  background-image: url(../images/road-uparrow.jpeg);
   background-size: cover;
+  background-position: bottom center;
   background-repeat: no-repeat;
   float: right;
   display: inline-block;
   min-width: 260px;
-  height: 100%;
-  max-width: 300px;
+  height: 100vh;
+  max-width: 360px;
   margin-top: 25px;
 }

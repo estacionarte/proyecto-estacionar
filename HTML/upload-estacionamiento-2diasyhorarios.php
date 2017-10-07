@@ -32,7 +32,7 @@
 
         <div class="form-generico">
 
-          <form action="upload-estacionamiento-infogeneral.php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento">
+          <form action="upload-estacionamiento-1infogeneral.php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento">
 
             <label for="" class="upload-label-titulo">¿Donde está ubicado tu espacio?</label>
             <input type="text" placeholder="Domicilio. Ej: Av. Eduardo Madero 399" name="direccion" class="" style="<?php echo $emptyFields['direccion']; ?>" value="<?php echo (isset($_COOKIE['direccion']) && !empty($_COOKIE['direccion'])) ? $_COOKIE['direccion'] : ""; ?>">
@@ -98,6 +98,8 @@
           </form>
 
         </div>
+
+        <div class="upload-div-sideimage"></div>
 
       </section>
     </div>
