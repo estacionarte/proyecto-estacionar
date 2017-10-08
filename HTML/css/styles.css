@@ -687,7 +687,7 @@ span .avatar{
 
 .verified-information{
   border: solid 1px #eeeeee;
-  margin-bottom: 30px;
+  margin: 30px 0 30px;
 }
 
 .verified-information li{
@@ -806,9 +806,24 @@ span .avatar{
   border-radius: 5px;
 }
 
-/*********** PROFILE -- MIS VEHJICULO*************/
-#content2
+/*********** PROFILE -- MIS VEHJICULOS *************/
+#content2 .carga-vehiculo-container{
+  display: block;
+  text-align: center;
+  max-width: 245px;
+  margin: auto;
+  /*border: solid 1px red;*/
+  overflow: hidden;
+}
 
+.carga-vehiculo-container .upload-vehicle{
+  border: dotted 1px rgba(92, 111, 110, 0.82);
+  width: 240px;
+}
+
+.carga-vehiculo-container p{
+  margin: 0 0 45px;
+}
 
 
 /************** C R E D I T S *******************/
@@ -1245,6 +1260,12 @@ margin-right: 5%;
   padding: 15px 5px;
 }
 
+/*********** PROFILE -- MIS VEHJICULOS *************/
+#content2 .carga-vehiculo-container{
+  margin-left: 12%;
+  float: left;
+}
+
 /************** C R E D I T S *******************/
 .credits {
   background-image: url(../images/bg-credits.jpg);
@@ -1514,7 +1535,7 @@ margin-right: 5%;
   text-transform: uppercase;
 }
 
-/*************** P R O F I L E *************/
+/*************** P R O F I L E  M I  P E R F I L *************/
 #content1 .profile-image{
   display: block;
   float: left;
@@ -1563,6 +1584,11 @@ margin-right: 5%;
   position: relative;
   bottom: 12px;
   left: 245px;
+}
+
+/*********** PROFILE -- MIS VEHJICULOS *************/
+#content2 .carga-vehiculo-container{
+  margin-left: 6%;
 }
 
 /***************** C R E D I T S ********************/

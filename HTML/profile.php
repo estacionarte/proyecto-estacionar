@@ -73,10 +73,22 @@ redirectNotLoggedUser();
         </section>
 
         <section id="content2">
-          <h2>Mis Vehículos</h2>
+          <h1>Mis Vehículos</h1>
+          <div class="clear"></div>
 
-          <article class="vehiculo-container">
-            
+          <article class="carga-vehiculo-container">
+          <a href="upload-estacionamiento-1infogeneral.php"><img class="upload-vehicle" src="images/upload.png"></a>
+            <p>Cargá tus vehículos</p>
+          </article>
+
+          <article class="carga-vehiculo-container">
+          <a href="#"><img class="upload-vehicle" src="images/car.png"></a>
+            <p>"se van viendo los vehiculos cargados"</p>
+          </article>
+          
+          <article class="carga-vehiculo-container">
+          <a href="#"><img class="upload-vehicle" src="images/car.png"></a>
+            <p>"se van viendo los vehiculos cargados"</p>
           </article>
         </section>
 
