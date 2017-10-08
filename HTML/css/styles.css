@@ -594,6 +594,82 @@ span .avatar{
 }
 
 /***************** P R O F I L E ********************/
+.main-profile-nav{
+  padding: 15px 2px;
+  margin: 0 auto;
+  background: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+.main-profile-nav section{
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+  font-size: 1.1em;
+}
+
+.main-profile-nav input{
+  display: none;
+}
+
+.main-profile-nav label{
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 15px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+  font-size: 0;
+}
+
+.main-profile-nav label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.main-profile-nav label[for*='1']:before {
+  content: '\f007';
+}
+
+.main-profile-nav label[for*='2']:before {
+  content: '\f1b9';
+}
+
+.main-profile-nav label[for*='3']:before {
+  content: '\f015';
+}
+
+.main-profile-nav label[for*='4']:before {
+  content: '\f006';
+}
+
+.main-profile-nav label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.main-profile-nav input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+  width: 40%;
+  font-size: 0.8em;
+  padding: 15px 5px;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+/************ PROFILE -- MI PERFIL****************/
 .profile-image{
   display: none;
 }
@@ -726,118 +802,41 @@ span .avatar{
   border-radius: 5px;
 }
 
-
-.main-profile-nav{
-  padding: 15px 2px;
-  margin: 0 auto;
-  background: #fff;
-  font-family: 'Roboto Condensed', sans-serif;
-}
+/*********** PROFILE -- MIS VEHJICULO*************/
+#content2
 
 
-.main-profile-nav section{
-  display: none;
-  padding: 20px 0 0;
-  border-top: 1px solid #ddd;
-  font-size: 1.1em;
-}
-
-.main-profile-nav input{
-  display: none;
-}
-
-.main-profile-nav label{
-  display: inline-block;
-  margin: 0 0 -1px;
-  padding: 15px 15px;
-  font-weight: 600;
-  text-align: center;
-  color: #bbb;
-  border: 1px solid transparent;
-  font-size: 0;
-}
-
-.main-profile-nav label:before {
-  font-family: fontawesome;
-  font-weight: normal;
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-.main-profile-nav label[for*='1']:before {
-  content: '\f007';
-}
-
-.main-profile-nav label[for*='2']:before {
-  content: '\f1b9';
-}
-
-.main-profile-nav label[for*='3']:before {
-  content: '\f015';
-}
-
-.main-profile-nav label[for*='4']:before {
-  content: '\f006';
-}
-
-.main-profile-nav label:hover {
-  color: #888;
-  cursor: pointer;
-}
-
-.main-profile-nav input:checked + label {
-  color: #555;
-  border: 1px solid #ddd;
-  border-top: 2px solid orange;
-  border-bottom: 1px solid #fff;
-  width: 40%;
-  font-size: 0.8em;
-  padding: 15px 5px;
-}
-
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2,
-#tab3:checked ~ #content3,
-#tab4:checked ~ #content4 {
-  display: block;
-}
 
 /************** C R E D I T S *******************/
-.credits{
+.credits-container{
   font-family: 'Lato', sans-serif;
-  position: relative;
-  margin-top: -10px;
-  background-image:
-  url(../images/bg-credits-mobile.jpg);
-  background-repeat: no-repeat;
-  height: 90%;
   text-align: center;
 }
 
-.credits-title{
-  position: relative;
+.credits {
+  background-image: url(../images/bg-credits-mobile.jpg);
+  background-repeat: no-repeat;
+  height: 75%;
+  text-align: center;
+}
+
+.credits h1{
   font-family: 'Lato', sans-serif;
   font-size: 2em;
   color: white;
-  margin: 60px auto 0;
-  padding: 0 20px;
   z-index: 5;
 }
 
-.credits-subtitle{
-  position: absolute;
-  top: 30px;
+.credits h2{
   color: white;
   font-size: 1em;
   margin: 5px 15px 20px;
   background-color: rgba(50, 134, 113, 0.7);
-  padding: 110px 15px 25px;
+  padding: 25px 15px 25px;
 }
 
 .form-generico .credits-form{
-  position: relative;
-  margin: 145px 15px 0;
-  z-index: 5;
+  margin: -150px 15px 0;
 }
 
 /****************** C A R G A   C O C H E R A (Paso 1) *******************/
@@ -1166,21 +1165,22 @@ margin-right: 5%;
 }
 
 /************** C R E D I T S *******************/
-.credits{
-  margin-top: -15px;
-  background-image:
-  url(../images/bg-credits.jpg);
+.credits {
+  background-image: url(../images/bg-credits.jpg);
   height: 80%;
 }
 
-.credits-title{
-  margin: 90px auto 20px;
+.credits h1{
+  font-size: 2em;
+  margin: 40px auto 0;
 }
 
-.credits-subtitle{
-  top: 30px;
-  margin: 30px 15px 20px;
-  padding: 110px 25px 20px;
+.credits h2{
+  margin: 15px 45px 20px;
+}
+
+.form-generico .credits-form{
+  margin: -150px 45px 0;
 }
 
 /**************************************************************/
@@ -1422,20 +1422,24 @@ margin-right: 5%;
 }
 
 /***************** C R E D I T S ********************/
-.credits{
-  margin-top: -15px;
-}
-.credits-title{
-  margin: 100px auto 20px;
+.credits {
+  height: 85%;
 }
 
-.credits-subtitle{
-  margin: 40px 250px 20px;
-  padding: 110px 15px 40px;
+.credits h1{
+  font-size: 2.7em;
+  margin: 60px auto 60px;
+}
+
+.credits h2{
+  font-size: 1.5em;
+  margin: 0 135px 20px;
+  background-color: rgba(50, 134, 113, 0.7);
+  padding: 25px 15px 25px;
 }
 
 .form-generico .credits-form{
-  margin: 150px 250px;
+  margin: -150px 135px 0;
 }
 
 /***************** UNDER CONSTRUCTION ********************/

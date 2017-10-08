@@ -74,10 +74,10 @@ redirectNotLoggedUser();
 
         <section id="content2">
           <h2>Mis Vehículos</h2>
-          <?php require_once('estacionamiento-carga.php'); ?>
-          <p>
-            Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken.
-          </p>
+
+          <article class="vehiculo-container">
+            
+          </article>
         </section>
 
         <section id="content3">
