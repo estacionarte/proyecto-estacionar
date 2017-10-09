@@ -922,53 +922,6 @@ span .avatar{
   width: 25%;
 }
 
-.uploadEstacionamiento-paso1 .form-generico{
-  margin: 0;
-}
-
-.uploadEstacionamiento-paso1 .form-generico .upload-label-titulo{
-  text-align: left;
-  width: 100%;
-  padding: 20px 0 5px 0;
-  color: #000000;
-  font-size: 1.3em;
-}
-
-.uploadEstacionamiento-paso1 .form-generico .upload-label-tipovehiculo{
-  width: 65%;
-  float: left;
-  color: #8f8f8f;
-  /*font-size: 1.1em;*/
-}
-
-.uploadEstacionamiento-paso1 .form-generico .upload-input-tipovehiculo{
-  display: inline-block;
-  width: 35%;
-  float: right;
-  text-align: center;
-}
-
-.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales{
-  display: block;
-  clear: both;
-}
-
-.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales{
-  width: auto;
-  float: left;
-  vertical-align: middle;
-  color: #8f8f8f;
-  /*font-size: 1.1em;*/
-}
-
-.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
-  /*width: 15%;*/
-  float: left;
-  vertical-align: middle;
-  margin-right: 10px;
-  position: relative;
-  bottom: 1px;
-}
 
 /**************************************************************/
 /*********************  T  A  B  L  E  T  *********************/
