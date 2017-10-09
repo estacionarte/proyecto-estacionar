@@ -5,8 +5,7 @@ if (session_status() !== PHP_SESSION_ACTIVE)
 session_start();
 
 //Validamos si existe realmente una sesión activa o no
-if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){
-?>
+if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){ ?>
 
   <header class="main-header">
 
@@ -15,12 +14,16 @@ if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){
 
       <a href="index.php"><h1>EstacionARte</h1></a>
 
-      <div class="main-search">
-        <form class="main-form-search" action="" method="get">
-          <input type="text" name="buscar-texto" placeholder="Buscar cocheras">
-          <input type="submit" name="buscar-submit" value="">
-        </form>
-      </div>
+<?php if ($_SERVER['PHP_SELF'] !== '/php/proyecto-estacionar/HTML/index.php') {?>
+
+  <div class="main-search">
+    <form class="main-form-search" action="" method="get">
+      <input type="text" name="buscar-texto" placeholder="Buscar cocheras">
+      <input type="submit" name="buscar-submit" value="">
+    </form>
+  </div>
+
+<?php }?>
 
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="icons/close-profile-nav2.png" alt=""></a>
