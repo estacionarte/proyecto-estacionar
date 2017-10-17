@@ -861,7 +861,7 @@ span .avatar{
 /****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
 
 .uploadEstacionamiento-progressBar{
-  background-color: rgba(143, 143, 143, 0.1);
+  background-color: rgba(143, 143, 143, 0.15);
   border-radius: 5px;
 }
 
@@ -934,6 +934,44 @@ span .avatar{
   border-radius: 5px;
   background-color: #48A8C1;
   width: 25%;
+}
+
+/* Weekdays (Mon-Sun) */
+.uploadEstacionamiento-paso2 .upload-estacionamiento-calendar-weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.uploadEstacionamiento-paso2 .upload-estacionamiento-calendar-weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color:#777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
 }
 
 
@@ -1571,10 +1609,6 @@ margin-right: 5%;
 }
 
 /****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
-
-.uploadEstacionamiento-progressBar div{
-  height: 14px;
-}
 
 .form-uploadEstacionamiento{
   max-width: 700px;
