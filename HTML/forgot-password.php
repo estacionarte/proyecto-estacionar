@@ -24,13 +24,9 @@
             </form>
 
           </div>
-<<<<<<< HEAD:HTML/forgot-password.html
-          <p>Si todavía no tienes una cuenta puedes registrarte gratis haciendo <a href="signUp.html">click aquí</a>.</p>
-=======
 
           <p>Si todavía no tienes una cuenta puedes registrarte gratis haciendo <a href="signup.php">click aquí</a>.</p>
 
->>>>>>> origin/master:HTML/forgot-password.php
         </section>
 
       </div>

@@ -2,18 +2,10 @@
 
 require_once('signup-procesamiento.php');
 
-if (session_status() !== PHP_SESSION_ACTIVE)
-session_start();
-
-$user = [
-  "firstName" => $_COOKIE["firstName"],
-  "lastName" => $_COOKIE["lastName"],
-  "email" => $_COOKIE["email"]
-];
-
 // Defino array de cookies a eliminar
 
 $camposCookies = [
+  "camposVacios",
   "firstName",
   "lastName",
   "birthDay",
@@ -21,9 +13,20 @@ $camposCookies = [
   "birthYear",
   // "sexo",
   // "localidad",
-  "email"
+  "email",
   // "telefono",
-  // "interes"
+  // "interes",
+  "EMPTYfirstName",
+  "EMPTYlastName",
+  "EMPTYbirthDay",
+  "EMPTYbirthMonth",
+  "EMPTYbirthYear",
+  // "EMPTYsexo",
+  // "EMPTYlocalidad",
+  "EMPTYemail",
+  // "EMPTYtelefono",
+  // "EMPTYinteres",
+  "EMPTYprofilePic"
 ];
 
 if (isset($_COOKIE['success']) || !empty($_COOKIE['success']) ) {
