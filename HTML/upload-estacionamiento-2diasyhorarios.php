@@ -21,7 +21,7 @@
 
       <h1>Cargar Estacionamiento - Días y Horarios</h1>
 
-      <section class="uploadEstacionamiento-paso2">
+      <section class="uploadEstacionamiento">
 
         <ul class="upload-estacionamiento-calendar-weekdays">
           <li>Lunes</li>

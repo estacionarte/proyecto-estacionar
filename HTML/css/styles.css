@@ -875,11 +875,11 @@ span .avatar{
   width: 1%;
 }
 
-.uploadEstacionamiento-paso1 .form-generico{
+.uploadEstacionamiento .form-generico{
   margin: 0;
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-label-titulo{
+.uploadEstacionamiento .form-generico .upload-label-titulo{
   text-align: left;
   width: 100%;
   padding: 20px 0 5px 0;
@@ -887,26 +887,26 @@ span .avatar{
   font-size: 1.3em;
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-label-tipovehiculo{
+.uploadEstacionamiento .form-generico .upload-label-tipovehiculo{
   width: 65%;
   float: left;
   color: #8f8f8f;
   /*font-size: 1.1em;*/
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-input-tipovehiculo{
+.uploadEstacionamiento .form-generico .upload-input-tipovehiculo{
   display: inline-block;
   width: 35%;
   float: right;
   text-align: center;
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales{
+.uploadEstacionamiento .form-generico .upload-div-especiales{
   display: block;
   clear: both;
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales{
+.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales{
   width: auto;
   float: left;
   vertical-align: middle;
@@ -914,7 +914,7 @@ span .avatar{
   /*font-size: 1.1em;*/
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
+.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
   /*width: 15%;*/
   float: left;
   vertical-align: middle;
@@ -923,55 +923,107 @@ span .avatar{
   bottom: 1px;
 }
 
-.uploadEstacionamiento-paso1 .upload-div-sideimage {
+.uploadEstacionamiento .upload-div-sideimage {
   display: none;
 }
 
-/****************** C A R G A   C O C H E R A (Paso 2 - Días y Horarios) *******************/
+/****************** C A R G A   C O C H E R A (Paso 2 - Días y Horarios) - TEMPORAL *******************/
 
 .uploadEstacionamiento-progressBar-progress2{
-  height: 7px;
-  border-radius: 5px;
-  background-color: #48A8C1;
   width: 25%;
 }
 
-/* Weekdays (Mon-Sun) */
-.uploadEstacionamiento-paso2 .upload-estacionamiento-calendar-weekdays {
+.uploadEstacionamiento .form-generico .upload-label-diasemana{
+  width: 40%;
+  float: left;
+  color: #8f8f8f;
+  margin-bottom: 1px;
+  /*font-size: 1.1em;*/
+}
+
+.uploadEstacionamiento .form-generico .upload-span-separadorhoras{
+  width: 5%;
+  float: right;
+  margin-top: 5px;
+  text-align: center;
+  /*vertical-align: middle;*/
+  padding: 10px 17px 10px 10px;
+}
+
+.uploadEstacionamiento .form-generico .upload-input-horadia{
+  display: inline-block;
+  width: 12.5%;
+  float: right;
+  text-align: center;
+  padding: 10px 5px;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-volver{
+  display: inline-block;
+  width: 49%;
+  /*float: left;*/
+  border-color: #fff;
+  background-color: #fff;
+  font-weight: normal;
+  color: inherit;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-volver:hover{
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-submit{
+  display: inline-block;
+  width: 49%;
+  /*float: right;*/
+}
+
+/*.uploadEstacionamiento .upload-estacionamiento-calendar-weekdays {
     margin: 0;
     padding: 10px 0;
     background-color:#ddd;
 }
 
-.uploadEstacionamiento-paso2 .upload-estacionamiento-calendar-weekdays li {
+.uploadEstacionamiento .upload-estacionamiento-calendar-weekdays li {
     display: inline-block;
     width: 13.6%;
     color: #666;
     text-align: center;
+}*/
+
+/****************** C A R G A   C O C H E R A (Paso 3 - Estadías) *******************/
+
+.uploadEstacionamiento-progressBar-progress3{
+  width: 50%;
 }
 
-/* Days (1-31) */
-.days {
-    padding: 10px 0;
-    background: #eee;
-    margin: 0;
+.uploadEstacionamiento .form-generico .upload-label-tiempoMinimoyMax{
+  width: 40%;
+  float: left;
+  color: #8f8f8f;
+  margin-bottom: 1px;
 }
 
-.days li {
-    list-style-type: none;
-    display: inline-block;
-    width: 13.6%;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size:12px;
-    color:#777;
+.uploadEstacionamiento .form-generico .upload-input-tiempoMinimoyMax{
+  display: inline-block;
+  width: 20%;
+  float: right;
+  text-align: center;
+  border-right: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
-/* Highlight the "current" day */
-.days li .active {
-    padding: 5px;
-    background: #1abc9c;
-    color: white !important
+.uploadEstacionamiento .form-generico .upload-select-tiempoMinimoyMax{
+  display: inline-block;
+  width: 35%;
+  float: right;
+  text-align: right;
+  padding: 9px 10px;
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 
@@ -1288,12 +1340,12 @@ margin-right: 5%;
   margin-right: auto;
 }
 
-.uploadEstacionamiento-paso1 .form-generico .form-uploadEstacionamiento .upload-input-direccion{
+.uploadEstacionamiento .form-generico .form-uploadEstacionamiento .upload-input-direccion{
   width: 84%;
   float: left;
 }
 
-.uploadEstacionamiento-paso1 .form-generico .form-uploadEstacionamiento .upload-input-numdpto{
+.uploadEstacionamiento .form-generico .form-uploadEstacionamiento .upload-input-numdpto{
   width: 15.5%;
   float: right;
 }
@@ -1303,26 +1355,26 @@ margin-right: 5%;
   width: 24.5%;
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-label-tipovehiculo{
+.uploadEstacionamiento .form-generico .upload-label-tipovehiculo{
   width: 65%;
   float: left;
   color: #8f8f8f;
   /*font-size: 1.1em;*/
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-input-tipovehiculo{
+.uploadEstacionamiento .form-generico .upload-input-tipovehiculo{
   display: inline-block;
   width: 35%;
   float: right;
   text-align: center;
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales{
+.uploadEstacionamiento .form-generico .upload-div-especiales{
   display: block;
   clear: both;
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales{
+.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales{
   width: auto;
   float: left;
   vertical-align: middle;
@@ -1330,7 +1382,7 @@ margin-right: 5%;
   /*font-size: 1.1em;*/
 }
 
-.uploadEstacionamiento-paso1 .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
+.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
   /*width: 15%;*/
   float: left;
   vertical-align: middle;
@@ -1338,6 +1390,21 @@ margin-right: 5%;
   position: relative;
   bottom: 1px;
 }
+
+/****************** C A R G A   C O C H E R A (Paso 2 - Días y Horarios) - TEMPORAL *******************/
+
+.uploadEstacionamiento .form-generico .upload-span-separadorhoras{
+  padding: 10px 10px 10px 10px;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-volver{
+  width: 24%;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-submit{
+  width: 75%;
+}
+
 
 /**************************************************************/
 /*******************  D  E  S  K  T  O  P  ********************/
@@ -1615,12 +1682,12 @@ margin-right: 5%;
   margin: inherit;
 }
 
-.uploadEstacionamiento-paso1 .form-generico{
+.uploadEstacionamiento .form-generico{
   display: inline-block;
   float: left;
 }
 
-.uploadEstacionamiento-paso1 .upload-div-sideimage {
+.uploadEstacionamiento .upload-div-sideimage {
   background-image: url(../images/road-uparrow.jpeg);
   background-size: cover;
   background-position: bottom center;
@@ -1631,4 +1698,27 @@ margin-right: 5%;
   height: 100vh;
   max-width: 360px;
   margin-top: 25px;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 2 - Días y Horarios) - TEMPORAL *******************/
+
+.uploadEstacionamiento .upload-div-sideimage2 {
+  background-image: url(../images/road-uparrow.jpeg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  float: right;
+  display: inline-block;
+  min-width: 260px;
+  height: 50vh;
+  max-width: 360px;
+  margin-top: 25px;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-volver{
+  width: 19%;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-submit{
+  width: 80%;
 }
