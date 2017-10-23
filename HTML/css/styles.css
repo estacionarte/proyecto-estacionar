@@ -1026,78 +1026,87 @@ span .avatar{
     text-align: center;
 }*/
 
-/****************** C A R G A   C O C H E R A (Paso 2 - Estadías) *******************/
+/****************** C A R G A   C O C H E R A (Paso 4 - Precios) *******************/
 
 .uploadEstacionamiento-progressBar-progress4{
   width: 75%;
 }
 
-.uploadEstacionamiento .form-generico .upload-div-precioPorMinuto{
-  display: block;
-  margin: 0px 7.5% 30px;
-  text-align: center;
+.uploadEstacionamiento .form-generico .upload-div-precio{
   border: solid 1px #9c9c9c;
-  border-radius: 5px;
+  border-radius: 2px;
   background-color: #fff;
   overflow: hidden;
+  margin-top: 10px;
 }
 
-.faqs-form-search input[type=text]{
-  width: 82%;
-  padding: 10px;
-  font-size: 1.1em;
-  border: none;
+.uploadEstacionamiento .form-generico .upload-label-precioPorMinutoSigno{
+  width: auto;
   float: left;
   vertical-align: middle;
-}
-
-.faqs-form-search input[type=submit]{
-  width: 5%;
-  padding: 15px 22px;
   border: none;
-  background-color: #fff;
-  background-image: url(../images/search-icon.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  float: right;
+  margin: 0px auto;
+  padding-right: 3px;
 }
 
 .uploadEstacionamiento .form-generico .upload-input-precioPorMinuto{
   display: inline-block;
-  width: 30%;
+  width: 17%;
   float: left;
   padding: 10px;
   text-align: left;
   vertical-align: middle;
   border: none;
   margin: 0px auto;
+  padding: 10px 0px;
 }
 
 .uploadEstacionamiento .form-generico .upload-label-precioPorMinuto{
-  width: 70%;
+  width: 73%;
   float: right;
   vertical-align: middle;
   border: none;
   margin: 0px auto;
-  /*color: #8f8f8f;*/
-  /*margin-bottom: 1px;*/
+  padding-left: 5px;
 }
 
+.uploadEstacionamiento .form-generico .upload-label-descuentoPorMinutoPorcentaje{
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-left: 3px;
+}
 
-
-
-.uploadEstacionamiento .form-generico .upload-select-tiempoMinimoyMax{
+.uploadEstacionamiento .form-generico .upload-input-descuentoPorMinuto{
   display: inline-block;
-  width: 35%;
-  float: right;
+  width: 19%;
+  float: left;
+  padding: 10px;
   text-align: right;
-  padding: 9px 10px;
-  border-left: none;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-right: 0px;
 }
 
+.uploadEstacionamiento .form-generico .upload-label-descuentoPorMinuto{
+  width: 73%;
+  float: right;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-left: 5px;
+}
+
+.uploadEstacionamiento .form-generico .upload-p-descuentoPorMinuto{
+  width: auto;
+  text-align: left;
+  margin-top: 5px;
+  color: #8f8f8f;
+  font-family: 'Roboto Condensed', sans-serif;
+}
 
 /**************************************************************/
 /*********************  T  A  B  L  E  T  *********************/
