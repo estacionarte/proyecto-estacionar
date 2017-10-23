@@ -16,10 +16,10 @@
       <hr>
 
       <div class="uploadEstacionamiento-progressBar">
-        <div class="uploadEstacionamiento-progressBar-progress3"></div>
+        <div class="uploadEstacionamiento-progressBar-progress4"></div>
       </div>
 
-      <h1>Cargar Estacionamiento - Estadías</h1>
+      <h1>Cargar Estacionamiento - Precio</h1>
 
       <section class="uploadEstacionamiento">
 
@@ -27,15 +27,12 @@
 
           <form action="upload-estacionamiento-1infogeneral.php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento">
 
-            <label for="" class="upload-label-titulo">¿Cuánto tiempo pueden permanecer los vehículos?</label>
+            <label for="" class="upload-label-titulo">¿Cuál va a ser el precio por minuto de tu espacio?</label>
 
-            <label for="" class="upload-label-tiempoMinimoyMax">Mínimo</label>
-            <select name="medidaDeTiempo" class="upload-select-tiempoMinimoyMax">
-              <option value="Minutos">minutos</option>
-              <option value="Horas">horas</option>
-              <option value="Dias">días</option>
-            </select>
-            <input type="number" placeholder="15" name="tiempoMinimoyMax" class="upload-input-tiempoMinimoyMax" min="0" max="10000">
+            <div class="upload-div-precioPorMinuto">
+              <input type="number" placeholder="0,75" name="precioPorMinuto" class="upload-input-precioPorMinuto" min="0,1" max="2">
+              <label for="" class="upload-label-precioPorMinuto">por minuto</label>
+            </div>
 
             <label for="" class="upload-label-tiempoMinimoyMax">Máximo</label>
             <select name="medidaDeTiempo" class="upload-select-tiempoMinimoyMax">
@@ -45,15 +42,24 @@
             </select>
             <input type="number" placeholder="15" name="tiempoMinimoyMax" class="upload-input-tiempoMinimoyMax" min="0" max="10000">
 
+            <label for="" class="upload-label-titulo">¿Cuánta anticipación se necesita para la reserva?</label>
 
-            <input type="submit" name="boton-submit" value="Volver" class="upload-button-volver">
+            <label for="" class="upload-label-tiempoMinimoyMax">Anticipación</label>
+            <select name="medidaDeTiempo" class="upload-select-tiempoMinimoyMax">
+              <option value="Minutos">minutos</option>
+              <option value="Horas">horas</option>
+              <option value="Dias">días</option>
+            </select>
+            <input type="number" placeholder="15" name="tiempoMinimoyMax" class="upload-input-tiempoMinimoyMax" min="0" max="10000">
+
+            <input type="submit" name="boton-submit" value="&#8249; Volver" class="upload-button-volver">
             <input type="submit" name="boton-submit" value="SIGUIENTE" class="upload-button-submit">
 
           </form>
 
         </div>
 
-        <div class="upload-div-sideimage"></div>
+        <div class="upload-div-sideimage2"></div>
 
       </section>
     </div>

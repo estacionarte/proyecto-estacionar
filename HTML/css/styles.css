@@ -927,10 +927,44 @@ span .avatar{
   display: none;
 }
 
-/****************** C A R G A   C O C H E R A (Paso 2 - Días y Horarios) - TEMPORAL *******************/
+/****************** C A R G A   C O C H E R A (Paso 2 - Estadías) *******************/
 
 .uploadEstacionamiento-progressBar-progress2{
   width: 25%;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-tiempoMinimoyMax{
+  width: 40%;
+  float: left;
+  color: #8f8f8f;
+  margin-bottom: 1px;
+}
+
+.uploadEstacionamiento .form-generico .upload-input-tiempoMinimoyMax{
+  display: inline-block;
+  width: 20%;
+  float: right;
+  text-align: center;
+  border-right: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.uploadEstacionamiento .form-generico .upload-select-tiempoMinimoyMax{
+  display: inline-block;
+  width: 35%;
+  float: right;
+  text-align: right;
+  padding: 9px 10px;
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
+
+.uploadEstacionamiento-progressBar-progress3{
+  width: 50%;
 }
 
 .uploadEstacionamiento .form-generico .upload-label-diasemana{
@@ -992,28 +1026,66 @@ span .avatar{
     text-align: center;
 }*/
 
-/****************** C A R G A   C O C H E R A (Paso 3 - Estadías) *******************/
+/****************** C A R G A   C O C H E R A (Paso 2 - Estadías) *******************/
 
-.uploadEstacionamiento-progressBar-progress3{
-  width: 50%;
+.uploadEstacionamiento-progressBar-progress4{
+  width: 75%;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-tiempoMinimoyMax{
-  width: 40%;
-  float: left;
-  color: #8f8f8f;
-  margin-bottom: 1px;
-}
-
-.uploadEstacionamiento .form-generico .upload-input-tiempoMinimoyMax{
-  display: inline-block;
-  width: 20%;
-  float: right;
+.uploadEstacionamiento .form-generico .upload-div-precioPorMinuto{
+  display: block;
+  margin: 0px 7.5% 30px;
   text-align: center;
-  border-right: none;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border: solid 1px #9c9c9c;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
 }
+
+.faqs-form-search input[type=text]{
+  width: 82%;
+  padding: 10px;
+  font-size: 1.1em;
+  border: none;
+  float: left;
+  vertical-align: middle;
+}
+
+.faqs-form-search input[type=submit]{
+  width: 5%;
+  padding: 15px 22px;
+  border: none;
+  background-color: #fff;
+  background-image: url(../images/search-icon.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+}
+
+.uploadEstacionamiento .form-generico .upload-input-precioPorMinuto{
+  display: inline-block;
+  width: 30%;
+  float: left;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-precioPorMinuto{
+  width: 70%;
+  float: right;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  /*color: #8f8f8f;*/
+  /*margin-bottom: 1px;*/
+}
+
+
+
 
 .uploadEstacionamiento .form-generico .upload-select-tiempoMinimoyMax{
   display: inline-block;
@@ -1391,7 +1463,7 @@ margin-right: 5%;
   bottom: 1px;
 }
 
-/****************** C A R G A   C O C H E R A (Paso 2 - Días y Horarios) - TEMPORAL *******************/
+/****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
 
 .uploadEstacionamiento .form-generico .upload-span-separadorhoras{
   padding: 10px 10px 10px 10px;
@@ -1700,9 +1772,24 @@ margin-right: 5%;
   margin-top: 25px;
 }
 
-/****************** C A R G A   C O C H E R A (Paso 2 - Días y Horarios) - TEMPORAL *******************/
+/****************** C A R G A   C O C H E R A (Paso 2 - Estadías) - TEMPORAL *******************/
 
 .uploadEstacionamiento .upload-div-sideimage2 {
+  background-image: url(../images/road-uparrow.jpeg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  float: right;
+  display: inline-block;
+  min-width: 260px;
+  height: 38vh;
+  max-width: 360px;
+  margin-top: 25px;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
+
+.uploadEstacionamiento .upload-div-sideimage3 {
   background-image: url(../images/road-uparrow.jpeg);
   background-size: cover;
   background-position: bottom center;
