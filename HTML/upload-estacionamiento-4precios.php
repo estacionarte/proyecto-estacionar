@@ -25,7 +25,7 @@
 
         <div class="form-generico">
 
-          <form action="upload-estacionamiento-1infogeneral.php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento">
+          <form action="upload-estacionamiento-1infogeneral.php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento form-reducido">
 
             <label for="" class="upload-label-titulo">¿Cuál va a ser el precio por minuto de tu espacio?</label>
 

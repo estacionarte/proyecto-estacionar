@@ -1486,6 +1486,84 @@ margin-right: 5%;
   width: 75%;
 }
 
+/****************** C A R G A   C O C H E R A (Paso 4 - Precios) *******************/
+
+.uploadEstacionamiento .form-generico .upload-div-precio{
+  /*width: 65%;*/
+}
+
+.uploadEstacionamiento .form-reducido{
+  /*width: 65%;*/
+}
+
+.uploadEstacionamiento .form-generico .upload-label-precioPorMinutoSigno{
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-right: 3px;
+}
+
+.uploadEstacionamiento .form-generico .upload-input-precioPorMinuto{
+  display: inline-block;
+  width: 17%;
+  float: left;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding: 10px 0px;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-precioPorMinuto{
+  width: 73%;
+  float: right;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-left: 5px;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-descuentoPorMinutoPorcentaje{
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-left: 3px;
+}
+
+.uploadEstacionamiento .form-generico .upload-input-descuentoPorMinuto{
+  display: inline-block;
+  width: 19%;
+  float: left;
+  padding: 10px;
+  text-align: right;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-right: 0px;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-descuentoPorMinuto{
+  width: 73%;
+  float: right;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-left: 5px;
+}
+
+.uploadEstacionamiento .form-generico .upload-p-descuentoPorMinuto{
+  width: auto;
+  text-align: left;
+  margin-top: 5px;
+  color: #8f8f8f;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 
 /**************************************************************/
 /*******************  D  E  S  K  T  O  P  ********************/
