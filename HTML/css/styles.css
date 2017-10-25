@@ -961,6 +961,10 @@ span .avatar{
   border-bottom-left-radius: 0px;
 }
 
+.uploadEstacionamiento .upload-div-sideimage2 {
+  display: none;
+}
+
 /****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
 
 .uploadEstacionamiento-progressBar-progress3{
@@ -1011,6 +1015,10 @@ span .avatar{
   display: inline-block;
   width: 49%;
   /*float: right;*/
+}
+
+.uploadEstacionamiento .upload-div-sideimage3 {
+  display: none;
 }
 
 /*.uploadEstacionamiento .upload-estacionamiento-calendar-weekdays {
@@ -1106,6 +1114,14 @@ span .avatar{
   margin-top: 5px;
   color: #8f8f8f;
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+.uploadEstacionamiento .form-generico .upload-section-help{
+  display: none;
+}
+
+.uploadEstacionamiento .upload-div-sideimage4 {
+  display: none;
 }
 
 /**************************************************************/
@@ -1488,80 +1504,44 @@ margin-right: 5%;
 
 /****************** C A R G A   C O C H E R A (Paso 4 - Precios) *******************/
 
-.uploadEstacionamiento .form-generico .upload-div-precio{
-  /*width: 65%;*/
-}
-
 .uploadEstacionamiento .form-reducido{
-  /*width: 65%;*/
-}
-
-.uploadEstacionamiento .form-generico .upload-label-precioPorMinutoSigno{
-  width: auto;
+  width: 65%;
   float: left;
-  vertical-align: middle;
-  border: none;
-  margin: 0px auto;
-  padding-right: 3px;
 }
 
-.uploadEstacionamiento .form-generico .upload-input-precioPorMinuto{
-  display: inline-block;
-  width: 17%;
-  float: left;
-  padding: 10px;
-  text-align: left;
-  vertical-align: middle;
-  border: none;
-  margin: 0px auto;
-  padding: 10px 0px;
+.uploadEstacionamiento .form-generico .upload-div-precio{
+  /*width: 90%;*/
 }
 
-.uploadEstacionamiento .form-generico .upload-label-precioPorMinuto{
-  width: 73%;
+.uploadEstacionamiento .form-generico .upload-section-help{
+  display: block;
+  background-image: url(../images/test-bg-image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
   float: right;
-  vertical-align: middle;
-  border: none;
-  margin: 0px auto;
-  padding-left: 5px;
+  width: 30%;
+  height: 300px;
+  margin-top: 45px;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-descuentoPorMinutoPorcentaje{
-  width: auto;
-  float: left;
-  vertical-align: middle;
-  border: none;
-  margin: 0px auto;
-  padding-left: 3px;
+.uploadEstacionamiento .form-generico .upload-section-div-help{
+  width: 90%;
+  margin: auto;
+  padding: 20px 5px;
 }
 
-.uploadEstacionamiento .form-generico .upload-input-descuentoPorMinuto{
-  display: inline-block;
-  width: 19%;
-  float: left;
-  padding: 10px;
-  text-align: right;
-  vertical-align: middle;
-  border: none;
-  margin: 0px auto;
-  padding-right: 0px;
-}
-
-.uploadEstacionamiento .form-generico .upload-label-descuentoPorMinuto{
-  width: 73%;
-  float: right;
-  vertical-align: middle;
-  border: none;
-  margin: 0px auto;
-  padding-left: 5px;
-}
-
-.uploadEstacionamiento .form-generico .upload-p-descuentoPorMinuto{
-  width: auto;
+.uploadEstacionamiento .form-generico .upload-section-div-help *{
   text-align: left;
-  margin-top: 5px;
-  color: #8f8f8f;
-  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.uploadEstacionamiento .form-generico .upload-section-div-help h3{
+  /*color: #000;*/
+  text-transform: uppercase;
+}
+
+.uploadEstacionamiento .form-generico .upload-section-div-help p{
+  font-size: 0.9em;
 }
 
 
@@ -1859,7 +1839,7 @@ margin-right: 5%;
   margin-top: 25px;
 }
 
-/****************** C A R G A   C O C H E R A (Paso 2 - Estadías) - TEMPORAL *******************/
+/****************** C A R G A   C O C H E R A (Paso 2 - Estadías) *******************/
 
 .uploadEstacionamiento .upload-div-sideimage2 {
   background-image: url(../images/road-uparrow.jpeg);
@@ -1895,4 +1875,10 @@ margin-right: 5%;
 
 .uploadEstacionamiento .form-generico .upload-button-submit{
   width: 80%;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 4 - Precio) *******************/
+
+.uploadEstacionamiento .upload-div-sideimage4 {
+
 }

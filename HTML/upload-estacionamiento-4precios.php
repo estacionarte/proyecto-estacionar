@@ -25,7 +25,7 @@
 
         <div class="form-generico">
 
-          <form action="upload-estacionamiento-1infogeneral.php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento form-reducido">
+          <form action="upload-estacionamiento-5resumen.php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento form-reducido">
 
             <label for="" class="upload-label-titulo">¿Cuál va a ser el precio por minuto de tu espacio?</label>
 
@@ -63,9 +63,16 @@
 
           </form>
 
+          <section class="upload-section-help">
+            <div class="upload-section-div-help">
+              <h3>Descuentos</h3>
+              <p>Los descuentos se recomiendan para promover alquileres de mayor duración.</p>
+            </div>
+          </section>
+
         </div>
 
-        <div class="upload-div-sideimage2"></div>
+        <div class="upload-div-sideimage4"></div>
 
       </section>
     </div>
