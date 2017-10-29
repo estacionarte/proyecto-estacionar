@@ -6,8 +6,10 @@
 require_once("db.php");
 
 class Authenticator {
+
   public function __construct() {
     session_start();
+  }
 }
 
 

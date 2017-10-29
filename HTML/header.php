@@ -14,7 +14,7 @@ if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){ ?>
 
       <a href="index.php"><h1>EstacionARte</h1></a>
 
-<?php if ($_SERVER['PHP_SELF'] !== '/php/proyecto-estacionar/HTML/index.php') {?>
+<?php if ($_SERVER['PHP_SELF'] !== 'index.php') {?>
 
   <div class="main-search">
     <form class="main-form-search" action="" method="get">
