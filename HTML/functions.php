@@ -66,4 +66,24 @@ function set_user_name_cookie($recordarme, $email) {
     setcookie(COOKIE_USER_NAME,$email,time()-1);
   }
 }
+
+function redirectLoggedUser() {
+  if (session_status() !== PHP_SESSION_ACTIVE)
+    session_start();
+
+  if (isset($_SESSION['user'])){
+    header("Location:index.php");
+    exit;
+  }
+}
+
+function redirectNotLoggedUser() {
+  if (session_status() !== PHP_SESSION_ACTIVE)
+    session_start();
+
+  if (!isset($_SESSION['user'])){
+    header("Location:index.php");
+    exit;
+  }
+}
 ?>

@@ -1,3 +1,10 @@
+<?php
+
+require_once('functions.php');
+redirectNotLoggedUser();
+
+?>
+
 <!DOCTYPE html>
 <html>
   <?php require_once('head.php'); ?>
@@ -5,7 +12,7 @@
 
   <div class="container">
 
-    <?php require_once('header.php');  ?>
+    <?php require_once('header.php');?>
 
     <div class="bodies-main-content">
 
@@ -26,12 +33,22 @@
         <label for="tab4">Reputación</label>
 
         <section id="content1">
+
           <div class="profile-image">
-            <img src="images/avatar-profile.png" alt="profile image">
+            <img src=<?php echo "profile-pic/" . $_SESSION['user']['profilePic'];?> alt="profile image">
           </div>
+
           <div class="profile-welcome">
             <h1>¡Bienvenido <?php echo $_SESSION["user"]["firstName"] . "!" ?></h1>
           </div>
+
+          <article class="profile-credit">
+            <h2>¡Invitá a tus amigos y obtené créditos para estacionar!</h2>
+            <p>Conseguí hasta %50 de descuento en tu próximo alquiler.</p>
+            <a href="credits.php">CONSEGUIR CRÉDITO</a>
+          </article>
+
+
           <div>
             <div class="clear"></div>
             <article class="verified-information">
@@ -44,6 +61,7 @@
                 <li class="ask-verify-data"><a href="#openModal"><img src="icons/ask-verify-data.png"></a></li>
               </ul>
             </article>
+
             <div id="openModal" class="modalDialog">
             	<div>
             		<a href="#close" title="Close" class="close">X</a>
@@ -51,22 +69,27 @@
             		<p>Es importante verificar los datos personales para mantener un ámbito de confianza entre los usuarios registrados.</p>
             	</div>
             </div>
-
-          </div>
-          <div class="profile-credit-container">
-            <article class="profile-credit">
-              <h2>¡Invitá a tus amigos y obtené créditos para estacionar!</h2>
-              <p>Conseguí hasta %50 de descuento en tu próximo alquiler.</p>
-              <a href="credits.php">CONSEGUIR CRÉDITO</a>
-            </article>
           </div>
         </section>
 
         <section id="content2">
-          <h2>Mis Vehículos</h2>
-          <p>
-            Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken.
-          </p>
+          <h1>Mis Vehículos</h1>
+          <div class="clear"></div>
+
+          <article class="carga-vehiculo-container">
+          <a href="upload-estacionamiento-1infogeneral.php"><img class="upload-vehicle" src="images/upload.png"></a>
+            <p>Cargá tus vehículos</p>
+          </article>
+
+          <article class="carga-vehiculo-container">
+          <a href="#"><img class="upload-vehicle" src="images/car.png"></a>
+            <p>"se van viendo los vehiculos cargados"</p>
+          </article>
+          
+          <article class="carga-vehiculo-container">
+          <a href="#"><img class="upload-vehicle" src="images/car.png"></a>
+            <p>"se van viendo los vehiculos cargados"</p>
+          </article>
         </section>
 
         <section id="content3">

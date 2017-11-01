@@ -1,7 +1,16 @@
+<?php
+
+require_once('functions.php');
+redirectLoggedUser();
+
+require_once('login-data-validation.php');
+
+?>
 <!DOCTYPE html>
 <html>
-  <?php require_once('head.php'); ?>
-  <?php require_once('login-data-validation.php'); ?>
+  <?php
+  require_once('head.php');
+  ?>
 <body>
   <div class="container">
     <?php require_once('header.php'); ?>
