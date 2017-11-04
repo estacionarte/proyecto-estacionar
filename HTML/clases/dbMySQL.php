@@ -7,7 +7,7 @@ class DBMySql extends DB {
   private $conn;
 
   public function __construct(){
-    $dsn = "mysql:host=localhost;port=3306;dbname=estacionapp_db;charset=utf8mb4";
+    $dsn = "mysql:host=localhost;port=3306;dbname=estacionapp;charset=utf8mb4";
     $user = "root";
     $pass = "root";
 
@@ -29,7 +29,7 @@ class DBMySql extends DB {
     if (!$array) {
       return NULL;
     }
-    return new Usuario($array["id"], $array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"]);
+    return new Usuario($array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"],$array["id"]);
   }
 
   public function traerTodosLosUsuarios() {

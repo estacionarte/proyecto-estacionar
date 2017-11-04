@@ -18,7 +18,7 @@ class DBJSON extends DB {
     $this->arch = $arch;
   }
 
-  public function json2array() {
+  private function json2array() {
 
     $url = $this->getArch();
     $json = file_get_contents($url);
