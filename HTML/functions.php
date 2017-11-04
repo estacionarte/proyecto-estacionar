@@ -21,13 +21,13 @@ function login($email,$password) {
   ];
 
 // Get users
-  $users = json2array('registeredUsers.json');
+  $users = json2array('registeredUsers2.json');
 
   if (!$users) {
 //  fatal error
 
     $error["type"] = 3;
-    $error["desc"] = 'Error al cargar registeredUsers.json';
+    $error["desc"] = 'Error al cargar registeredUsers2.json';
     $user["error"] = $error;
     return $user;
   }

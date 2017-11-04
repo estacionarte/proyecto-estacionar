@@ -71,7 +71,7 @@ function getDataBaseStatus() {
 function jsonToTable ($db) {
   if (!$db) return;
 
-  $users = json2array('registeredUsers.json');
+  $users = json2array('registeredUsers2.json');
 
   if ($users) {
     $connection = mysqlConnection();
