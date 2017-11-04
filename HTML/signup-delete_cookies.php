@@ -1,7 +1,5 @@
 <?php
 
-require_once('signup-procesamiento.php');
-
 // Defino array de cookies a eliminar
 
 $camposCookies = [
@@ -43,6 +41,6 @@ if (!isset($_COOKIE['error']) && !isset($_COOKIE['success']) ) {
   }
 }
 
-RedirectSuccess();
+header('Location:profile.php');
 
 ?>

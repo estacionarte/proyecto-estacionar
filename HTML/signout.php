@@ -1,7 +1,9 @@
 <?php
-session_start();
-unset($_SESSION["user"]);
-session_destroy();
+
+require_once('soporte.php');
+
+$auth->logout();
+
 header("Location: index.php");
-exit();
+
 ?>

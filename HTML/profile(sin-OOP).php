@@ -1,7 +1,7 @@
 <?php
 
-require_once('soporte.php');
-$auth->redirectNotLoggedUser();
+require_once('functions.php');
+redirectNotLoggedUser();
 
 ?>
 
@@ -35,11 +35,11 @@ $auth->redirectNotLoggedUser();
         <section id="content1">
 
           <div class="profile-image">
-            <img src=<?php echo "profile-pic/" . $auth->obtenerUsuarioLogueado($db)->getEmail() . "_profilePic.jpg";?> alt="profile image">
+            <img src=<?php echo "profile-pic/" . $_SESSION['user']['profilePic'];?> alt="profile image">
           </div>
 
           <div class="profile-welcome">
-            <h1>¡Bienvenido <?php echo $auth->obtenerUsuarioLogueado($db)->getFirstName() . "!" ?></h1>
+            <h1>¡Bienvenido <?php echo $_SESSION["user"]["firstName"] . "!" ?></h1>
           </div>
 
           <article class="profile-credit">
@@ -85,7 +85,7 @@ $auth->redirectNotLoggedUser();
           <a href="#"><img class="upload-vehicle" src="images/car.png"></a>
             <p>"se van viendo los vehiculos cargados"</p>
           </article>
-
+          
           <article class="carga-vehiculo-container">
           <a href="#"><img class="upload-vehicle" src="images/car.png"></a>
             <p>"se van viendo los vehiculos cargados"</p>

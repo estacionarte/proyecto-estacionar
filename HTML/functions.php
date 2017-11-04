@@ -1,7 +1,7 @@
 <?php
 require_once('constants.php');
 
-function jason2array($file) {
+function json2array($file) {
 
   $url = JSON_FOLDER . $file; // JSON_FOLDER: 'json/'
   $json = file_get_contents($url);
@@ -15,15 +15,19 @@ function jason2array($file) {
 
 function login($email,$password) {
   $user = [];
-  $error = new stdClass();
+  $error = [
+    'type' => '',
+    'desc' => ''
+  ];
 
 // Get users
-  $users = jason2array('registeredUsers.json');
+  $users = json2array('registeredUsers.json');
 
   if (!$users) {
 //  fatal error
-    $error->type = 3;
-    $error->desc = 'Error al cargar registeredUsers.json';
+
+    $error["type"] = 3;
+    $error["desc"] = 'Error al cargar registeredUsers.json';
     $user["error"] = $error;
     return $user;
   }
@@ -36,20 +40,20 @@ function login($email,$password) {
     if (password_verify($password, $db_password)) {
 //    Right password; Return user data
       $user = $users[$key];
-      $error->type = 0;
+      $error["type"] = 0;
       $user["error"] = $error;
       return $user;
     } else {
 //    Wrong password
-      $error->type = 2;
-      $error->desc = 'Contraseña incorrecta';
+      $error["type"] = 2;
+      $error["desc"] = 'Contraseña incorrecta';
       $user["error"] = $error;
       return $user;
     }
   } else {
 //  user not found
-    $error->type = 1;
-    $error->desc = 'El usuario no existe';
+    $error["type"] = 1;
+    $error["desc"] = 'El usuario no existe';
     $user["error"] = $error;
     return $user;
   }

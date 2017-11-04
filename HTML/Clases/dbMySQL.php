@@ -1,8 +1,9 @@
 <?php
 
 require_once("db.php");
+require_once("usuario.php");
 
-class DBMySql extends db {
+class DBMySql extends DB {
   private $conn;
 
   public function __construct(){
@@ -28,7 +29,7 @@ class DBMySql extends db {
     if (!$array) {
       return NULL;
     }
-    return new Usuario($array["id"], $array["firstName"], $array["lastName"], $array["birthday"], $array["email"], $array["password"]);
+    return new Usuario($array["id"], $array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"]);
   }
 
   public function traerTodosLosUsuarios() {
@@ -43,19 +44,19 @@ class DBMySql extends db {
     $arrayDeObjetos = [];
 
     foreach ($arrayDeArrays as $array) {
-      $arrayDeObjetos[] = new Usuario($array["id"], $array["firstName"], $array["lastName"], $array["birthday"], $array["email"], $array["password"]);
+      $arrayDeObjetos[] = new Usuario($array["id"], $array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"]);
     }
     return $arrayDeObjetos;
   }
 
   public function guardarUsuario(Usuario $usuario) {
-    $sql = "Insert into users values(default, :firstName, :lastName, :birthday, :email, :password)";
+    $sql = "Insert into users values(default, :firstName, :lastName, :birthDate, :email, :password)";
 
     $query = $this->conn->prepare($sql);
 
     $query->bindValue(":firstName",$usuario->getFirstName());
     $query->bindValue(":lastName",$usuario->getLastName());
-    $query->bindValue(":birthday",$usuario->getBirthday());
+    $query->bindValue(":birthDate",$usuario->getBirthDate());
     $query->bindValue(":email",$usuario->getEmail());
     $query->bindValue(":password",$usuario->getPassword());
 
@@ -81,19 +82,19 @@ class DBMySql extends db {
     $arrayDeObjetos = [];
 
     foreach ($arrayDeArrays as $array) {
-      $arrayDeObjetos[] = new Usuario($array["id"], $array["firstName"], $array["lastName"], $array["birthday"], $array["email"], $array["password"]);
+      $arrayDeObjetos[] = new Usuario($array["id"], $array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"]);
     }
     return $arrayDeObjetos;
   }
 
   public function editarUsuario(Usuario $usuario) {
-    $sql = "UPDATE users set firstName = :firstName, lastName = :lastName, birthday = :birthday, email = :email, password = :password WHERE id = :id";
+    $sql = "UPDATE users set firstName = :firstName, lastName = :lastName, birthDate = :birthDate, email = :email, password = :password WHERE id = :id";
 
     $query = $this->conn->prepare($sql);
 
     $query->bindValue(":firstName",$usuario->getFirstName());
     $query->bindValue(":lastName",$usuario->getLastName());
-    $query->bindValue(":birthday",$usuario->getBirthday());
+    $query->bindValue(":birthDate",$usuario->getBirthDate());
     $query->bindValue(":email",$usuario->getEmail());
     $query->bindValue(":password",$usuario->getPassword());
     $query->bindValue(":id",$usuario->getId());

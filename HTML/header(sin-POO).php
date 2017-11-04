@@ -1,13 +1,14 @@
 <?php
-
-require_once('soporte.php');
+//Reanudamos la sesión
+if (session_status() !== PHP_SESSION_ACTIVE)
+session_start();
 
 //Validamos si existe realmente una sesión activa o no
-if($auth->isLoggedIn()){ ?>
+if(isset($_SESSION["user"]) && !empty($_SESSION['user'])){ ?>
 
   <header class="main-header">
 
-      <span class="welcome-user"><h4><?php echo $auth->obtenerUsuarioLogueado($db)->getFirstName() . " " . $auth->obtenerUsuarioLogueado($db)->getLastName() ?></h4></span>
+      <span class="welcome-user"><h4><?php echo $_SESSION["user"]["firstName"] . " " . $_SESSION["user"]["lastName"] ?></h4></span>
 
       <a href="index.php"><h1>EstacionARte</h1></a>
 
@@ -29,7 +30,7 @@ if($auth->isLoggedIn()){ ?>
         <a href="#">Ayuda</a>
         <a href="signout.php">Salir</a>
       </div>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src=<?php echo "profile-pic/" . $auth->obtenerUsuarioLogueado($db)->getEmail() . "_profilePic.jpg";?> alt="avatar" class="avatar"></span>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src=<?php echo "profile-pic/" . $_SESSION['user']['profilePic'];?> alt="avatar" class="avatar"></span>
 
       <script>
       function openNav() {

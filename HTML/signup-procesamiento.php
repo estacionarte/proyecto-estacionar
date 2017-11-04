@@ -35,6 +35,9 @@ function signUpUser(){
   $id = count($data);
   $id += 1;
 
+  // Combino los campos de birthdate en uno
+  $birthdate = $_POST['birthDay'] . "-" . $_POST['birthMonth'] . "-" . $_POST['birthYear'];
+
   // Encripto la contraseña
   $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
 
@@ -43,9 +46,10 @@ function signUpUser(){
     "id" => $id,
     "firstName" => $_POST['firstName'],
     "lastName" => $_POST['lastName'],
-    "birthDay" => $_POST['birthDay'],
-    "birthMonth" => $_POST['birthMonth'],
-    "birthYear" => $_POST['birthYear'],
+    "birthDate" => $birthdate,
+    // "birthDay" => $_POST['birthDay'],
+    // "birthMonth" => $_POST['birthMonth'],
+    // "birthYear" => $_POST['birthYear'],
     // "sexo" => $_POST['sexo'],
     // "localidad" => $_POST['localidad'],
     "email" => $_POST['email'],
@@ -116,7 +120,7 @@ $isReceived = false;
 // Defino variable para definir si carga de foto está OK
 $profilePicSuccess = false;
 
-// Variable para verificar posteriormente si quedó algún campo vacío
+// Defino variable para chequear si quedaron campos vacíos
 $camposVacios = false;
 
 // Función que realiza todo el proceso si existe petición POST
@@ -127,6 +131,8 @@ function completeSignUp() {
 
     global $isReceived;
     $isReceived = true;
+    global $emptyFields;
+    global $camposVacios;
 
     // Recorro form chequeando si los campos están vacíos o no
     foreach ($_POST as $key_post => $value_post) {
@@ -138,7 +144,6 @@ function completeSignUp() {
     }
 
     global $errors;
-    global $emptyFields;
 
     // Valido si la foto tiene errores
     if ($_FILES["profilePic"]["error"] != UPLOAD_ERR_OK) {
@@ -147,7 +152,7 @@ function completeSignUp() {
       if ($_FILES["profilePic"]["error"] =! 4) {
         // global $errors;
         global $errors_file;
-        $errors .= $errors_file[$photo["profilePic"]["error"]];
+        $errors .= $errors_file[$_FILES["profilePic"]["error"]];
       }
     } else {
       // Obtengo la extensión del archivo
@@ -196,9 +201,9 @@ function completeSignUp() {
 
     foreach ($emptyFields as $key => $value) {
       if ($value!="") {
+        setcookie("camposVacios", "TRUE", time() + 2);
         global $camposVacios;
         $camposVacios = true;
-        setcookie("camposVacios", "TRUE", time() + 2);
       }
     }
 

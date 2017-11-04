@@ -1,21 +1,7 @@
 <?php
 
-require_once('soporte.php');
-$auth->redirectLoggedUser();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$error = $validator->validarLogin($db);
-
-		if ($error['type'] == 0) {
-			$auth->loguear($_POST["email"]);
-
-			if (isset($_POST["recordame"])) {
-				setcookie("user", $_POST["email"], time()+60*60*24*365);
-			}
-
-			header("Location: profile.php");
-		}
-	}
+require_once('functions.php');
+redirectLoggedUser();
 
 ?>
 <!DOCTYPE html>
@@ -36,13 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <section class="signin">
 
         <?php
-        if (isset($error))
-          echo "<p style='color:red'>" . $error['desc'] . "</p>";
+        if (isset($_COOKIE['loginError']) && !empty($_COOKIE['loginError']))
+          echo "<p style='color:red'>" . $_COOKIE['loginError'] . "</p>";
         ?>
 
         <div class="form-generico">
 
-          <form action="signin.php" method="post">
+          <form action="login-data-validation.php" method="post">
             <input type="email" name="email" placeholder="E-Mail" id="email" required/>
             <input type="password" name="password" placeholder="Contraseña" required/>
             <input type="checkbox" name="recordarme" value="recordarme" id="recordarme">

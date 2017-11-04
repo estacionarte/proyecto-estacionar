@@ -1,8 +1,9 @@
 <?php
 
-  require_once('soporte.php');
+  require_once('functions.php');
+  redirectLoggedUser();
 
-  $auth->redirectLoggedUser();
+  require_once('signup-procesamiento.php');
 
  ?>
 

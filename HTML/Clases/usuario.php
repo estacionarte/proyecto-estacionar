@@ -5,16 +5,16 @@ class Usuario {
   private $id;
   private $firstName;
   private $lastName;
-  private $birthday;
+  private $birthDate;
   private $email;
   private $password;
 
-  public function __construct($firstName, $lastName, $birthday, $email, $password, $id = null){
+  public function __construct($firstName, $lastName, $birthDate, $email, $password, $id = null){
     $id == null ? $this->password = password_hash($password, PASSWORD_DEFAULT) : $this->password = $password;
 
     $this->firstName = $firstName;
     $this->lastName = $lastName;
-    $this->birthday = $birthday;
+    $this->birthDate = $birthDate;
     $this->email = $email;
     $this->id = $id;
   }
@@ -28,7 +28,7 @@ class Usuario {
   }
 
   public function getFirstName(){
-    return $this->name;
+    return $this->firstName;
   }
 
   public function setFirstName($firstName){
@@ -43,12 +43,12 @@ class Usuario {
     $this->lastName = $lastName;
   }
 
-  public function getBirthday(){
-    return $this->birthday;
+  public function getBirthDate(){
+    return $this->birthDate;
   }
 
-  public function setBirthday($birthday){
-    $this->birthday = $birthday;
+  public function setBirthDate($birthDate){
+    $this->birthDate = $birthDate;
   }
 
   public function getEmail(){
@@ -69,12 +69,12 @@ class Usuario {
 
   public function toArray() {
     return [
-      "id"        => $this->id,
+      "id" => $this->id,
       "firstName" => $this->firstName,
-      "lastName"  => $this->lastName,
-      "birthday"  => $this->birthday,
-      "email"     => $this->email,
-      "password"  => $this->password
+      "lastName" => $this->lastName,
+      "birthDate" => $this->birthDate,
+      "email" => $this->email,
+      "password" => $this->password
     ];
   }
 
