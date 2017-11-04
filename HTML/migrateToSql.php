@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 require_once('functions.php');
+require_once('clases/dbJSON.php');
 
 function mysqlConnection() {
 
@@ -34,7 +35,7 @@ function createTable($db) {
       $connection->exec($sql);
       $sql = 'DROP TABLE users';
       $connection->exec($sql);
-      $sql = 'CREATE TABLE users ( ID int(10) unsigned NOT NULL AUTO_INCREMENT, FirstName varchar(100) NOT NULL, LastName varchar(100) NOT NULL, Birthday varchar(100) NOT NULL, Email varchar(100) NOT NULL, Password varchar(100) NOT NULL, PRIMARY KEY (ID)) ENGINE=InnoDB DEFAULT CHARSET=latin1';
+      $sql = 'CREATE TABLE users ( id int(10) unsigned NOT NULL AUTO_INCREMENT, firstName varchar(100) NOT NULL, lastName varchar(100) NOT NULL, birthDate varchar(100) NOT NULL, email varchar(100) NOT NULL, password varchar(100) NOT NULL, PRIMARY KEY (ID)) ENGINE=InnoDB DEFAULT CHARSET=latin1';
       $connection->exec($sql);
     } catch (PDOException $e) {
       echo $e->getMessage();
@@ -47,7 +48,7 @@ function getDataBaseStatus() {
   $connection = mysqlConnection();
 
   if ($connection) {
-    if ($connection->query('use estacionApp')) {
+    if ($connection->query('use Estacionapp')) {
       if ($result = $connection->query('select count(*) from users')) {
         $rows = $result->fetch();
         $rows = ($rows) ? $rows[0] : 0;
@@ -71,7 +72,9 @@ function getDataBaseStatus() {
 function jsonToTable ($db) {
   if (!$db) return;
 
-  $users = json2array('registeredUsers2.json');
+  // $users = json2array('registeredUsers.json');
+  $json = new DBJSON();
+  $users = $json->traerTodosLosUsuarios();
 
   if ($users) {
     $connection = mysqlConnection();
@@ -81,89 +84,36 @@ function jsonToTable ($db) {
   $connection->exec('DELETE FROM users');
 
   $sql = 'INSERT INTO users (';
-  $sql .= 'ID, FirstName, LastName, Birthday, Email, Password) VALUES (';
+  $sql .= 'id, firstName, lastName, birthDate, email, password) VALUES (';
   $sql .= ':id, :firstname, :lastname, :birthday, :email, :password)';
 
   $stmt = $connection->prepare($sql);
 
   foreach ($users as $user) {
-
-    $firstName = '';
-    $lastName = '';
-    $day = '';
-    $month = '';
-    $year = '';
-    $email = '';
-    $password = '';
-
-    foreach ($user as $key => $value) {
-      $key = strtoupper($key);
-      switch ($key) {
-        case 'ID':
-          $id = $value;
-          break;
-
-        case 'FIRSTNAME':
-          $firstName = $value;
-          break;
-
-        case 'LASTNAME':
-          $lastName = $value;
-          break;
-
-        case 'BIRTHDAY':
-          $day = $value;
-          break;
-
-        case 'BIRTHMONTH':
-          $month = $value;
-          break;
-
-        case 'BIRTHYEAR':
-          $year = $value;
-          break;
-
-        case 'EMAIL':
-          $email = $value;
-          break;
-
-        case 'PASSWORD':
-          $password = $value;
-          break;
-
-        default:
-          # code...
-          break;
-      }
-    }
-    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->bindValue(':firstname', $firstName, PDO::PARAM_STR);
-    $stmt->bindValue(':lastname', $lastName, PDO::PARAM_STR);
-
-    $birthday = $year . '-' . $month . '-' . $day;
-    $stmt->bindValue(':birthday', $birthday, PDO::PARAM_STR);
-
-    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-    $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+    $stmt->bindValue(':id', $user->getId(), PDO::PARAM_INT);
+    $stmt->bindValue(':firstname', $user->getFirstName(), PDO::PARAM_STR);
+    $stmt->bindValue(':lastname', $user->getLastName(), PDO::PARAM_STR);
+    $stmt->bindValue(':birthday', $user->getBirthDate(), PDO::PARAM_STR);
+    $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
+    $stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
     $stmt->execute();
   }
   $connection = null;
-
 }
 
 if ($_POST) {
   foreach ($_POST as $key => $value) {
     switch ($key) {
       case 'db':
-        createDataBase('estacionApp');
+        createDataBase('Estacionapp');
         break;
 
       case 'table':
-        createTable('estacionApp');
+        createTable('Estacionapp');
         break;
 
       case 'data':
-        jsonToTable('estacionApp');
+        jsonToTable('Estacionapp');
         break;
 
       default:
