@@ -4,10 +4,10 @@ require_once('soporte.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  $errors = $validator->validarDatosSignUp($db);
-  $errors .= $validator->validarProfilePic($db);
+  $errorsData = $validator->validarDatosSignUp($db);
+  $errorsProfilePic = $validator->validarProfilePic($db);
 
-  if ($errors == '' && !isset($_COOKIE['camposVacios'])) {
+  if (count($errorsData) == 0 && count($errorsProfilePic) == 0) {
 
     // Combino los campos de birthdate en uno
     $birthDate = $_POST['birthDay'] . "-" . $_POST['birthMonth'] . "-" . $_POST['birthYear'];
@@ -48,6 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location:signup-delete_cookies.php');
 
   }
+
+  // setcookie("camposVacios", "TRUE", time() + 2);
 
 }
 
