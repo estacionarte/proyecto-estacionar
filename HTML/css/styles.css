@@ -24,6 +24,27 @@ a{
   text-decoration: none;
 }
 
+/***********migrateToSql en index***************/
+.migrate-btn-container{
+  text-align: center;
+  font-weight: bold;
+}
+.migrate-btn-1, .migrate-btn-2, .migrate-btn-3{
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.migrate-btn-1:hover, .migrate-btn-2:hover, .migrate-btn-3:hover{
+  background-color: rgba(31, 88, 11, 0.98);
+}
 
 /****************** H E A D E R*******************/
 h1{

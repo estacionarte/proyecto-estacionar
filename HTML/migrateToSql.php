@@ -53,19 +53,19 @@ function getDataBaseStatus() {
         $rows = $result->fetch();
         $rows = ($rows) ? $rows[0] : 0;
         if ($rows) {
-          return 'tableWithData';
+          return 'La Tabla tiene los usuarios cargados';
         } else {
-          return 'emptyTable';
+          return 'La Tabla esta vacía';
         }
       } else {
-        return 'tableNotFound';
+        return 'No hay Tablas cargadas';
       }
     } else {
-        return 'dbNotFound';
+        return 'No se encontró la Base de Datos';
     }
 
   } else {
-    return 'conectionFailed';
+    return 'Falló la conexión';
   }
 }
 
@@ -122,38 +122,4 @@ if ($_POST) {
   }
 }
 
-$status = getDataBaseStatus();
-echo 'Status: ' . $status;
 ?>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>json 2 sql</title>
-  </head>
-  <body>
-    <br>
-    <br>
-    <form class="" action="" method="post">
-      <input type="submit" name="db" value="Crear Base de Datos">
-    </form>
-    <br>
-    <form class="" action="" method="post">
-      <input type="submit" name="table" value="Crear Tabla"
-      <?php
-      if ($status == 'dbNotFound') {
-        echo "disabled";
-      }
-      ?>>
-    </form>
-    <br>
-    <form class="" action="" method="post">
-      <input type="submit" name="data" value="Insertar datos en la tabla"
-
-      <?php
-      if ($status !== 'emptyTable' && $status !== 'tableWithData') {
-        echo "disabled";
-      }
-      ?>>
-    </form>
-  </body>
-</html>
