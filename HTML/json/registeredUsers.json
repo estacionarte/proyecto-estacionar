@@ -1,1 +1,3 @@
 {"id":1,"firstName":"mariano","lastName":"alvarez","birthDate":"15-05-1951","email":"mariano@estacionar.com","password":"$2y$10$gd.TFxgFCQX.ZKxAjRuSJuOAhq8UhXFCIKzaLVL7tubwf\/5s\/x9ku"}
+{"id":2,"firstName":"trufa","lastName":"dorada","birthDate":"01-01-1999","email":"trufa@trufadorada.com","password":"$2y$10$\/JEesRLwQNACjQTKUI5D5OMgIAl9UoYhJ0X4ShEp0COChWxQva.3O"}
+{"id":3,"firstName":"tester","lastName":"tester","birthDate":"01-01-1999","email":"tester@tester.com","password":"$2y$10$4Kv4iP8yDWN2ibEN.QFicuRC3\/SD.Vqis2mYeV9gKs9POJRgMox3i"}
