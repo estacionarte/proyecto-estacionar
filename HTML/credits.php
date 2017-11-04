@@ -1,4 +1,8 @@
 <?php
+
+require_once('soporte.php');
+$auth->redirectNotLoggedUser();
+
 require_once('head.php');
 require_once('header.php'); ?>
 
