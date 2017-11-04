@@ -29,6 +29,8 @@
             echo "<p style='color:red'>Completar los campos vacíos</p>";
         if (isset($_COOKIE['error']) && !empty($_COOKIE['error']))
           echo "<p style='color:red'>" . $_COOKIE['error'] . "</p>";
+        if (isset($_COOKIE['errorProfilePic']) && !empty($_COOKIE['errorProfilePic']))
+          echo "<p style='color:red'>" . $_COOKIE['errorProfilePic'] . "</p>";
         ?>
 
         <div class="form-generico">
