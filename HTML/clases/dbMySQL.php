@@ -7,7 +7,7 @@ class DBMySql extends DB {
   private $conn;
 
   public function __construct(){
-    $dsn = "mysql:host=localhost;port=3306;dbname=estacionapp_db;charset=utf8mb4";
+    $dsn = "mysql:host=localhost;port=3306;dbname=Estacionapp;charset=utf8mb4";
     $user = "root";
     $pass = "root";
 
