@@ -29,7 +29,7 @@ class DBMySql extends DB {
     if (!$array) {
       return NULL;
     }
-    return new Usuario($array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"],$array["id"]);
+    return new Usuario($array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"], $array["id"]);
   }
 
   public function traerTodosLosUsuarios() {
@@ -44,7 +44,7 @@ class DBMySql extends DB {
     $arrayDeObjetos = [];
 
     foreach ($arrayDeArrays as $array) {
-      $arrayDeObjetos[] = new Usuario($array["id"], $array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"]);
+      $arrayDeObjetos[] = new Usuario($array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"], $array["id"]);
     }
     return $arrayDeObjetos;
   }

@@ -6,6 +6,22 @@ $auth->redirectLoggedUser();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$error = $validator->validarLogin($db);
 
+		var_dump($error);
+
+		$usuario = $db->traerPorEmail($_POST["email"]);
+
+		$contra = $usuario->getPassword();
+
+		echo "<br>";
+		var_dump($contra);
+		echo "<br>";
+		echo $_POST["password"];
+		echo "<br>";
+		$pass = password_hash($_POST['password'],PASSWORD_DEFAULT);
+		echo $pass;
+		echo "<br>";
+		var_dump(password_verify($_POST["password"], $usuario->getPassword()));
+
 		if ($error['type'] == 0) {
 			$auth->loguear($_POST["email"]);
 

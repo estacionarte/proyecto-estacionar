@@ -17,7 +17,7 @@ class Validator {
       // Chequeo si la contraseña es la correcta
       $usuario = $db->traerPorEmail($_POST["email"]);
 
-      if (password_verify($_POST["password"], $usuario->getPassword()) == false) {
+      if (!password_verify($_POST["password"], $usuario->getPassword())) {
         $error['type'] = 2;
         $error['desc'] = "Contraseña incorrecta";
       } else {
