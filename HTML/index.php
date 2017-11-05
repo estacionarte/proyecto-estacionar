@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <?php require_once('head.php'); ?>
+  <?php require_once('head.php');?>
   <body>
     <div class="home-container">
-      <?php require_once('header.php'); ?>
+      <?php require_once('header.php');?>
       <section class="banner-container">
         <article class="shape">
           <h2>Encontrá y reservá tu estacionamiento privado</h2>
@@ -60,6 +60,7 @@
           if ($status !== 'La Tabla esta vacía' && $status !== 'La Tabla tiene los usuarios cargados') {
             echo "disabled";
           }
+
           ?>>
         </form>
       </div>

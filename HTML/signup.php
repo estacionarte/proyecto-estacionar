@@ -4,6 +4,7 @@
 
   $auth->redirectLoggedUser();
 
+  
  ?>
 
 <!DOCTYPE html>

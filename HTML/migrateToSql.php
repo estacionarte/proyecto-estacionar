@@ -35,20 +35,21 @@ function createTable($db) {
       $connection->exec($sql);
       $sql = 'DROP TABLE users';
       $connection->exec($sql);
-      $sql = 'CREATE TABLE users ( id int(10) unsigned NOT NULL AUTO_INCREMENT, firstName varchar(100) NOT NULL, lastName varchar(100) NOT NULL, birthDate varchar(100) NOT NULL, email varchar(100) NOT NULL, password varchar(100) NOT NULL, PRIMARY KEY (ID)) ENGINE=InnoDB DEFAULT CHARSET=latin1';
+      $sql = 'CREATE TABLE users ( id int(10) unsigned NOT NULL AUTO_INCREMENT, firstName varchar(100) NOT NULL, lastName varchar(100) NOT NULL, birthDate varchar(100) NOT NULL, email varchar(100) NOT NULL, password varchar(100) NOT NULL, PRIMARY KEY (ID)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4';
       $connection->exec($sql);
     } catch (PDOException $e) {
       echo $e->getMessage();
     }
   }
   $connection = null;
+
 }
 
 function getDataBaseStatus() {
   $connection = mysqlConnection();
 
   if ($connection) {
-    if ($connection->query('use Estacionapp')) {
+    if ($connection->query('use estacionapp')) {
       if ($result = $connection->query('select count(*) from users')) {
         $rows = $result->fetch();
         $rows = ($rows) ? $rows[0] : 0;
@@ -121,5 +122,7 @@ if ($_POST) {
     }
   }
 }
+
+
 
 ?>

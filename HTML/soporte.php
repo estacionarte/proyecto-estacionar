@@ -8,5 +8,6 @@ require_once("clases/dbMySQL.php");
 $auth = new Authenticator();
 $validator = new Validator();
 $db = new DBMySql();
+// $db = new DBJSON();
 
 ?>
