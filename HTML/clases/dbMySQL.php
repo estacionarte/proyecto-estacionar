@@ -2,21 +2,22 @@
 
 require_once("db.php");
 require_once("usuario.php");
+require_once("migrateToSql.php");
 
 class DBMySql extends DB {
   private $conn;
 
   public function __construct(){
-    $dsn = "mysql:host=localhost;port=3306;dbname=estacionapp;charset=utf8mb4";
-    $user = "root";
-    $pass = "root";
+    $status = getDataBaseStatus();
 
-    try {
+    if ($status == "La Tabla tiene los usuarios cargados") {
+      $dsn = "mysql:host=localhost;port=3306;dbname=estacionapp;charset=utf8mb4";
+      $user = "root";
+      $pass = "root";
+
       $this->conn = new PDO($dsn, $user, $pass);
-    } catch (PDOException $e) {
-      if ($_SERVER['SCRIPT_FILENAME'] !== "/var/www/html/proyecto-estacionar/HTML/noDB.php") {
-        header ("Location: noDB.php");
-      }
+    } elseif ($_SERVER['SCRIPT_FILENAME'] !== "/var/www/html/proyecto-estacionar/HTML/noDB.php") {
+      header ("Location: noDB.php");
     }
   }
 
