@@ -16,7 +16,7 @@ class DBMySql extends DB {
       $pass = "root";
 
       $this->conn = new PDO($dsn, $user, $pass);
-    } elseif ($_SERVER["REQUEST_URI"] !== "/proyecto-estacionar/HTML/noDB.php") {
+    } elseif (substr($_SERVER["REQUEST_URI"], -8) !== "noDB.php") {
       header ("Location: noDB.php");
     }
   }

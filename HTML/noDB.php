@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <?php require_once('head.php');?>
+  <?php
+  require_once('head.php');?>
   <body>
     <div class="home-container">
       <?php require_once('header.php');?>
