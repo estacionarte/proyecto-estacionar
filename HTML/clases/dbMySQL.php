@@ -2,18 +2,25 @@
 
 require_once("db.php");
 require_once("usuario.php");
+require_once("migrateToSql.php");
 
 class DBMySql extends DB {
   private $conn;
 
   public function __construct(){
-    $dsn = "mysql:host=localhost;port=3306;dbname=estacionapp_db;charset=utf8mb4";
-    $user = "root";
-    $pass = "root";
+     $status = getDataBaseStatus();
 
-    $this->conn = new PDO($dsn, $user, $pass);
-  }
+     if ($status == "La Tabla tiene los usuarios cargados") {
+       $dsn = "mysql:host=localhost;port=3306;dbname=estacionapp;charset=utf8mb4";
+       $user = "root";
+       $pass = "root";
 
+       $this->conn = new PDO($dsn, $user, $pass);
+    //  } elseif (substr($_SERVER["REQUEST_URI"], -8) !== "noDB.php") {
+     } else {
+       header ("Location: noDB.php");
+     }
+   }
 
   public function traerPorEmail($email) {
     $sql = "Select * from users where email = :email";
@@ -29,7 +36,7 @@ class DBMySql extends DB {
     if (!$array) {
       return NULL;
     }
-    return new Usuario($array["id"], $array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"]);
+    return new Usuario($array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"], $array["id"]);
   }
 
   public function traerTodosLosUsuarios() {
