@@ -11,9 +11,14 @@ class DBMySql extends DB {
     $user = "root";
     $pass = "root";
 
-    $this->conn = new PDO($dsn, $user, $pass);
+    try {
+      $this->conn = new PDO($dsn, $user, $pass);
+    } catch (PDOException $e) {
+      if ($_SERVER['SCRIPT_FILENAME'] !== "/var/www/html/proyecto-estacionar/HTML/noDB.php") {
+        header ("Location: noDB.php");
+      }
+    }
   }
-
 
   public function traerPorEmail($email) {
     $sql = "Select * from users where email = :email";

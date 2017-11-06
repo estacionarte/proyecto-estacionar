@@ -106,15 +106,15 @@ if ($_POST) {
   foreach ($_POST as $key => $value) {
     switch ($key) {
       case 'db':
-        createDataBase('Estacionapp');
+        createDataBase('estacionapp');
         break;
 
       case 'table':
-        createTable('Estacionapp');
+        createTable('estacionapp');
         break;
 
       case 'data':
-        jsonToTable('Estacionapp');
+        jsonToTable('estacionapp');
         break;
 
       default:
