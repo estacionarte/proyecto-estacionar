@@ -44,7 +44,7 @@ class DBMySql extends DB {
     $arrayDeObjetos = [];
 
     foreach ($arrayDeArrays as $array) {
-      $arrayDeObjetos[] = new Usuario($array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"], $array["id"]);
+      $arrayDeObjetos[] = new Usuario($array["id"], $array["firstName"], $array["lastName"], $array["birthDate"], $array["email"], $array["password"]);
     }
     return $arrayDeObjetos;
   }

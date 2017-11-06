@@ -65,9 +65,22 @@ if($auth->isLoggedIn()){ ?>
                if (isset($_COOKIE['loginError']) && !empty($_COOKIE['loginError']))
                  echo "<p style='color:red'>" . $_COOKIE['loginError'] . "</p>";
                ?>
+<?php
+if ($_POST) {
+  if (count($error) == 0) {
+    $auth->loguear($_POST["email"]);
 
+    if (isset($_POST["recordame"])) {
+      setcookie("user", $_POST["email"], time()+60*60*24*365);
+    }
+
+    header("Location: profile.php");
+  }
+}
+
+ ?>
              <div class="form-generico">
-               <form action="login-data-validation.php" method="post">
+               <form action="" method="post">
                   <input type="email" name="email" placeholder="Email">
                   <input type="password" name="password" placeholder="Contraseña">
                   <input type="checkbox" name="recordarme" value="recordarme" id="recordarme">
