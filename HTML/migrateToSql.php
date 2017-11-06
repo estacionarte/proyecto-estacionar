@@ -100,6 +100,7 @@ function jsonToTable ($db) {
     $stmt->execute();
   }
   $connection = null;
+  return header('Location: index.php');
 }
 
 if ($_POST) {
