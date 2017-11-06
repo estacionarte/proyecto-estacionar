@@ -4,7 +4,7 @@
   require_once('head.php');?>
   <body>
     <div class="home-container">
-      <?php require_once('header.php');?>
+      <?php //require_once('header.php');?>
       <!-- MIGRATE TO SQL -->
       <?php require_once('migrateToSql.php'); ?>
       <div class="clear"></div>
