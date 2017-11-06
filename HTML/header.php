@@ -1,14 +1,6 @@
 <?php
 
 require_once('soporte.php');
-require_once('migrateToSql.php');
-
-$databaseStatus = getDataBaseStatus();
-
-if ($databaseStatus = 'No se encontró la Base de Datos') {
-  header('Location:noDB.php');
-}
-
 
 //Validamos si existe realmente una sesión activa o no
 if($auth->isLoggedIn()){ ?>

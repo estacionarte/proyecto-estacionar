@@ -8,18 +8,18 @@ class DBMySql extends DB {
   private $conn;
 
   public function __construct(){
-    $status = getDataBaseStatus();
+     $status = getDataBaseStatus();
 
-    if ($status == "La Tabla tiene los usuarios cargados") {
-      $dsn = "mysql:host=localhost;port=3306;dbname=estacionapp;charset=utf8mb4";
-      $user = "root";
-      $pass = "root";
+     if ($status == "La Tabla tiene los usuarios cargados") {
+       $dsn = "mysql:host=localhost;port=3306;dbname=estacionapp;charset=utf8mb4";
+       $user = "root";
+       $pass = "root";
 
-      $this->conn = new PDO($dsn, $user, $pass);
-    } elseif (substr($_SERVER["REQUEST_URI"], -8) !== "noDB.php") {
-      header ("Location: noDB.php");
-    }
-  }
+       $this->conn = new PDO($dsn, $user, $pass);
+     } elseif (substr($_SERVER["REQUEST_URI"], -8) !== "noDB.php") {
+       header ("Location: noDB.php");
+     }
+   }
 
   public function traerPorEmail($email) {
     $sql = "Select * from users where email = :email";
