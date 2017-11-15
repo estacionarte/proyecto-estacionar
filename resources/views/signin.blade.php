@@ -14,10 +14,11 @@
 
         <div class="form-generico">
 
-          <form action="signin.php" method="post">
+          <form action="" method="post">
+            {{ csrf_field() }}
             <input type="email" name="email" placeholder="E-Mail" id="email" required/>
             <input type="password" name="password" placeholder="Contraseña" required/>
-            <input type="checkbox" name="recordarme" value="recordarme" id="recordarme">
+            <input type="checkbox" name="recordarme" value="recordarme" id="recordarme" {{ old('remember') ? 'checked' : '' }}>
             <label for="recordarme">Recordarme</label>
             <input type="submit" name="" value="INICIAR SESIÓN">
           </form>
