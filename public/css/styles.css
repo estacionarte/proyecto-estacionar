@@ -1,0 +1,1905 @@
+/**************************************************************/
+/*********************  M  O  B  I  L  E  *********************/
+/**************************************************************/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 1em;
+  font-family: 'Cabin', sans-serif;
+  min-width: 320px;
+}
+
+ul, ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+/***********migrateToSql en index***************/
+.migrate-btn-container{
+  text-align: center;
+  font-weight: bold;
+}
+.migrate-btn-1, .migrate-btn-2, .migrate-btn-3{
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.migrate-btn-1:hover, .migrate-btn-2:hover, .migrate-btn-3:hover{
+  background-color: rgba(31, 88, 11, 0.98);
+}
+
+/****************** H E A D E R*******************/
+h1{
+  color: #48A8C1;
+  display: inline-block;
+  padding: 20px 15px;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.toggle-nav{
+  width: 45px;
+  margin: 12px -6px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  vertical-align: middle;
+}
+
+.main-nav{
+  margin-top: 0;
+  display: none;
+}
+
+.main-nav a{
+  display: block;
+  background-color: #48A8C1;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: solid 2px white;
+  font-size: 0.8em;
+}
+
+.main-nav a:hover{
+  background-color: rgba(72, 168, 193, 0.7);
+}
+
+.modal-wrapper{
+  display: none;
+}
+
+ul li .popup-link{
+  display: none;
+}
+
+/************************** B A N N E R *************************/
+.banner-container{
+  position: relative;
+  margin-top: -10px;
+  background-image: url(../images/bg-home-mobile.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+}
+
+.shape{
+  position: absolute;
+  margin-top: 20%;
+  background-color: rgba(70, 72, 78, 0.49);
+  text-align: center;
+  width: 100%;
+  padding: 10px 5px 0px;
+}
+
+.shape h2{
+  font-size: 1.8em;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.shape h3{
+  font-size: 1em;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.shape input[type=submit]{
+  margin-bottom: 0px;
+}
+
+.shape .form-generico{
+  margin-bottom: 0;
+}
+
+/********* C O M O   F U N C I O N A ******************/
+
+.como-funciona{
+  position: relative;
+  margin-top: 1%;
+  /*border: solid 1px red;*/
+}
+
+.como-funciona h2{
+  text-align: center;
+  font-size: 2em;
+  color: rgb(105, 105, 105);
+}
+
+.buscas{
+  text-align: center;
+  font-size: 1.5em;
+  color: #27658A;
+}
+
+.alquilas{
+  text-align: center;
+  font-size: 1.5em;
+  color: #DC4844;
+}
+
+.estacionas{
+  text-align: center;
+  font-size: 1.5em;
+  color: #FFF16E;
+}
+
+.como-funciona .pasos{
+  display: block;
+  width: 100%;
+  margin: 10px 0 50px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.como-funciona img{
+  display: block;
+  margin: auto;
+  width: 30%;
+  margin: 20px auto;
+}
+
+.como-funciona p{
+  margin: 15px 35px 60px;
+  text-align: center;
+}
+
+/****************** F O O T E R *******************/
+.main-footer{
+  margin-top: 40px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(105, 105, 105);
+}
+
+.main-footer div h4{
+  display: none;
+}
+
+.main-footer a{
+  display: block;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  border-bottom: solid 1px #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.last{
+  border-bottom: none !important;
+}
+
+.redes-sociales{
+  background-color: #454545;
+  width: 100%;
+  position: relative;
+}
+
+.facebook img{
+  width: 30px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+.twitter img{
+  width: 30px;
+  position: absolute;
+  left: 37%;
+  top: 15%;
+}
+
+.instagram img{
+  width: 30px;
+  position: absolute;
+  right: 37%;
+  top: 15%;
+}
+
+/****************** F A Q s *******************/
+ .bodies-main-content{
+   padding: 0 10px;
+ }
+
+ .bodies-main-content h1{
+   margin: 20px auto;
+   font-size: 1.6em;
+   padding: 10px 0;
+   color: #8f8f8f;
+   font-weight: lighter;
+   font-family: 'Roboto Condensed', sans-serif;
+   text-align: left;
+ }
+
+.faqs-search{
+  display: block;
+  margin: 0px 7.5% 30px;
+  text-align: center;
+  border: solid 1px #9c9c9c;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.faqs-form-search input[type=text]{
+  width: 82%;
+  padding: 10px;
+  font-size: 1.1em;
+  border: none;
+  float: left;
+  vertical-align: middle;
+}
+
+.faqs-form-search input[type=submit]{
+  width: 5%;
+  padding: 15px 22px;
+  border: none;
+  background-color: #fff;
+  background-image: url(../images/search-icon.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+}
+
+.faqs-form-search input[type=submit]:hover{
+  cursor: pointer;
+}
+
+.faqs-preguntas{
+  color: rgb(105, 105, 105);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.faqs-preguntas section{
+  margin: 30px auto;
+}
+
+.faqs-preguntas h2{
+  font-size: 1.4em;
+  color: #8f8f8f;
+  font-weight: bold;
+  text-align: left;
+}
+
+.pregunta h3{
+  text-align: left;
+  font-size: 1.2em;
+  margin: 20px auto 7px;
+  cursor: pointer;
+}
+
+.pregunta p{
+  font-size: 1em;
+  margin: 7px auto 20px;
+  display: none;
+}
+
+/****************** S I G N  I N *******************/
+.form-generico{
+  margin: 15px 0%;
+  text-align: center;
+}
+
+.signin .form-generico{
+  margin: 0;
+}
+
+.form-generico input, .form-generico label, .form-generico select, .form-generico textarea{
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 1em;
+  border: solid 1px #9c9c9c;
+  border-radius: 2px;
+  background-color: #fff;
+  vertical-align: middle;
+}
+
+.form-generico textarea{
+  height: 80px;
+}
+
+.form-generico input[type=checkbox], .form-generico label{
+  display: inline-block;
+  width: auto;
+  text-align: left;
+}
+
+.form-generico label{
+  border: none;
+  background-color: transparent;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.form-generico input:focus, .form-generico select:focus{
+  border: solid 1px #48A8C1;
+}
+
+.form-generico input[type=submit]{
+  margin: 15px auto;
+  font-weight: bold;
+  color: #FFF;
+  border: solid 1px #48A8C1;
+  background-color: #48A8C1;
+}
+
+.form-generico input[type=submit]:hover{
+  background-color: #8f8f8f;
+  border-color: #8f8f8f;
+  cursor: pointer;
+}
+
+.signin a{
+  display: block;
+  text-align: center;
+  margin: 5px auto;
+  color: #48A8C1;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.login-separador{
+  margin: 25px auto 35px;
+  width: 80%;
+  height: 10px;
+  border-bottom: 1px solid #9c9c9c;
+  text-align: center;
+}
+
+.login-separador span{
+  font-size: 20px;
+  background-color: #fff;
+  color: #8f8f8f;
+  padding: 0 10px;
+}
+
+.facebook-login-button, .google-login-button{
+  width: 100%;
+  padding: 10px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: #fff !important;
+  font-weight: bold !important;
+}
+
+.facebook-login-button{
+  background-color: #4B6EA9;
+}
+
+.google-login-button{
+  background-color: #D74D41;
+}
+
+/****************** S I G N  U P *******************/
+.signup .form-generico{
+  margin: 0;
+}
+
+.form-generico .form-firstname, .form-generico .form-lastname{
+  display: inline-block;
+  width: 49.5%;
+}
+
+.form-firstname{
+  float: left;
+}
+
+.form-lastname{
+  float: right;
+}
+
+.form-generico .form-birthdate{
+  display: inline-block;
+  text-align: center;
+  width: 32.5%;
+  /*float: right;
+  margin-left: 2.2%;*/
+}
+
+/*.form-generico .form-birthdate-label{
+  display: inline-block;
+  text-align: right;
+  float: left;
+  width: 45%;
+  color: #9c9c9c;
+  margin-left: 0;
+  padding-left: 0;
+}*/
+
+.signup p{
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #8f8f8f;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.signup a{
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  color: #48A8C1;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/****************** RECUPERO CONTRASEÑA *******************/
+.recuperar-password p{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.recuperar-password a{
+  color: #48A8C1;
+}
+
+/***************** UNDER CONSTRUCTION ********************/
+.construction-bg{
+  background-image: url(../images/bg-construction.jpg);
+  background-repeat:repeat-y;
+  width: 100%;
+  height: 100vh;
+}
+
+.constuction-txt{
+  background-color: rgba(255, 255, 255, 0.85);
+  position: absolute;
+  display: block;
+  top: 40%;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.constuction-txt h2{
+  color: #48A8C1;
+  font-size: 1.4em;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.constuction-txt h3{
+  color: grey;
+  font-size: 0.9em;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+/***************** MAP ********************/
+.map-main-content{
+  width: 100%;
+}
+
+.map-estacionamientos{
+  border: solid 1px black;
+}
+
+#map{
+  height: 50vh;
+  border: dotted 1px red;
+}
+
+.cochera {
+  border: solid 2px blue;
+}
+
+.cochera-numero{
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.cochera-info{
+  display: inline-block;
+  width: 72%;
+  vertical-align: middle;
+}
+
+.cochera-info h3{
+  font-size: 1em;
+}
+
+.cochera-info p{
+  font-size: 0.8em;
+}
+
+.cochera-precio{
+  display: inline-block;
+  width: 15%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/************************** H E A D E R  P R O F I L E***********************/
+.main-search{
+  display: none;
+}
+
+.welcome-user{
+  display: none;
+}
+
+span .avatar{
+  width: 45px;
+  height: 45px;
+  margin: 12px -6px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  vertical-align: middle;
+  border-radius: 50%
+  /*z-index: 25;*/
+}
+
+.sidenav {
+  display: block;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 15;
+  top: 0;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  box-shadow: -2px 2px 25px #999;
+}
+
+.sidenav a {
+  padding: 20px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1em;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  border-bottom: solid 1px rgba(209, 209, 209, 0.47);
+  text-align: left;
+  margin-left: 0;
+}
+
+.sidenav a:hover {
+  color: rgba(73, 169, 193, 0.75);
+  border-bottom: solid 1px rgba(181, 181, 181, 0.99);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 36px;
+  margin-left: 50px;
+  border-bottom: none;
+  margin-right: 0;
+}
+
+.sidenav .closebtn:hover{
+  border-bottom: none;
+}
+
+/***************** P R O F I L E ********************/
+.main-profile-nav{
+  padding: 15px 2px;
+  margin: 0 auto;
+  background: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+.main-profile-nav section{
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+  font-size: 1.1em;
+}
+
+.main-profile-nav input{
+  display: none;
+}
+
+.main-profile-nav label{
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 15px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+  font-size: 0;
+}
+
+.main-profile-nav label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.main-profile-nav label[for*='1']:before {
+  content: '\f007';
+}
+
+.main-profile-nav label[for*='2']:before {
+  content: '\f1b9';
+}
+
+.main-profile-nav label[for*='3']:before {
+  content: '\f015';
+}
+
+.main-profile-nav label[for*='4']:before {
+  content: '\f006';
+}
+
+.main-profile-nav label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.main-profile-nav input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+  width: 40%;
+  font-size: 0.8em;
+  padding: 15px 5px;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+/************ PROFILE -- MI PERFIL****************/
+.profile-image{
+  display: none;
+}
+
+.profile-welcome h1{
+  color: #212121;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+
+.verified-information{
+  border: solid 1px #eeeeee;
+  margin: 30px 0 30px;
+}
+
+.verified-information li{
+  display: block;
+  color: #212121;
+  text-align: left;
+  padding: 15px 0;
+  font-size: 0.9em;
+  padding-left: 10px;
+}
+
+.verified-information li img{
+  width: 25px;
+  vertical-align: middle;
+  float: right;
+  margin-right: 10px;
+}
+
+.verified-information-title{
+  background-color: #e0e0e0;
+}
+
+.verified-information li a{
+  color: #00acc1;
+}
+
+.verified-information li a:hover{
+  text-decoration: underline;
+}
+
+.ask-verify-data{
+  position: relative;
+  top: -55px;
+  right: 60px;
+}
+
+.modalDialog {
+  font-family: 'Lato', sans-serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 10;
+  opacity:0;
+  pointer-events: none;
+  transition: opacity 400ms ease-in;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog  div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: linear-gradient(#fff, #999);
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	box-shadow: 1px 1px 3px #000;
+	border-radius: 12px;
+}
+
+.close:hover {
+  background: #48A8C1;
+}
+
+.profile-credit{
+  border: solid 1px #eeeeee;
+}
+
+#content1 .profile-credit h2{
+  color: #424242;
+  font-size: 1.3em;
+  text-align: center;
+  margin: 0 5px 10px;
+}
+
+.profile-credit P{
+  text-align: center;
+  font-size: 0.8em;
+  margin: 0 5px 15px;
+}
+
+.profile-credit a{
+  display: block;
+  background-color: #48A8C1;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  border-bottom: solid 2px white;
+  font-size: 0.8em;
+  width: 160px;
+  margin: 0 auto 10px;
+  border-radius: 5px;
+}
+
+/*********** PROFILE -- MIS VEHJICULOS *************/
+#content2 .carga-vehiculo-container{
+  display: block;
+  text-align: center;
+  max-width: 245px;
+  margin: auto;
+  /*border: solid 1px red;*/
+  overflow: hidden;
+}
+
+.carga-vehiculo-container .upload-vehicle{
+  border: dotted 1px rgba(92, 111, 110, 0.82);
+  width: 240px;
+}
+
+.carga-vehiculo-container p{
+  margin: 0 0 45px;
+}
+
+
+/************** C R E D I T S *******************/
+.credits-container{
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+.credits {
+  background-image: url(../images/bg-credits-mobile.jpg);
+  background-repeat: no-repeat;
+  height: 75%;
+  text-align: center;
+}
+
+.credits h1{
+  font-family: 'Lato', sans-serif;
+  font-size: 2em;
+  color: white;
+  z-index: 5;
+}
+
+.credits h2{
+  color: white;
+  font-size: 1em;
+  margin: 5px 15px 20px;
+  background-color: rgba(50, 134, 113, 0.7);
+  padding: 25px 15px 25px;
+}
+
+.form-generico .credits-form{
+  margin: -150px 15px 0;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
+
+.uploadEstacionamiento-progressBar{
+  background-color: rgba(143, 143, 143, 0.15);
+  border-radius: 5px;
+}
+
+.uploadEstacionamiento-progressBar div{
+  height: 7px;
+  border-radius: 5px;
+  background-color: #48A8C1;
+}
+
+.uploadEstacionamiento-progressBar .uploadEstacionamiento-progressBar-progress1{
+  width: 1%;
+}
+
+.uploadEstacionamiento .form-generico{
+  margin: 0;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-titulo{
+  text-align: left;
+  width: 100%;
+  padding: 20px 0 5px 0;
+  color: #000000;
+  font-size: 1.3em;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-tipovehiculo{
+  width: 65%;
+  float: left;
+  color: #8f8f8f;
+  /*font-size: 1.1em;*/
+}
+
+.uploadEstacionamiento .form-generico .upload-input-tipovehiculo{
+  display: inline-block;
+  width: 35%;
+  float: right;
+  text-align: center;
+}
+
+.uploadEstacionamiento .form-generico .upload-div-especiales{
+  display: block;
+  clear: both;
+}
+
+.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales{
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  color: #8f8f8f;
+  /*font-size: 1.1em;*/
+}
+
+.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
+  /*width: 15%;*/
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+  position: relative;
+  bottom: 1px;
+}
+
+.uploadEstacionamiento .upload-div-sideimage {
+  display: none;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 2 - Estadías) *******************/
+
+.uploadEstacionamiento-progressBar-progress2{
+  width: 25%;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-tiempoMinimoyMax{
+  width: 40%;
+  float: left;
+  color: #8f8f8f;
+  margin-bottom: 1px;
+}
+
+.uploadEstacionamiento .form-generico .upload-input-tiempoMinimoyMax{
+  display: inline-block;
+  width: 20%;
+  float: right;
+  text-align: center;
+  border-right: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.uploadEstacionamiento .form-generico .upload-select-tiempoMinimoyMax{
+  display: inline-block;
+  width: 35%;
+  float: right;
+  text-align: right;
+  padding: 9px 10px;
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.uploadEstacionamiento .upload-div-sideimage2 {
+  display: none;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
+
+.uploadEstacionamiento-progressBar-progress3{
+  width: 50%;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-diasemana{
+  width: 40%;
+  float: left;
+  color: #8f8f8f;
+  margin-bottom: 1px;
+  /*font-size: 1.1em;*/
+}
+
+.uploadEstacionamiento .form-generico .upload-span-separadorhoras{
+  width: 5%;
+  float: right;
+  margin-top: 5px;
+  text-align: center;
+  /*vertical-align: middle;*/
+  padding: 10px 17px 10px 10px;
+}
+
+.uploadEstacionamiento .form-generico .upload-input-horadia{
+  display: inline-block;
+  width: 12.5%;
+  float: right;
+  text-align: center;
+  padding: 10px 5px;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-volver{
+  display: inline-block;
+  width: 49%;
+  /*float: left;*/
+  border-color: #fff;
+  background-color: #fff;
+  font-weight: normal;
+  color: inherit;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-volver:hover{
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-submit{
+  display: inline-block;
+  width: 49%;
+  /*float: right;*/
+}
+
+.uploadEstacionamiento .upload-div-sideimage3 {
+  display: none;
+}
+
+/*.uploadEstacionamiento .upload-estacionamiento-calendar-weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.uploadEstacionamiento .upload-estacionamiento-calendar-weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}*/
+
+/****************** C A R G A   C O C H E R A (Paso 4 - Precios) *******************/
+
+.uploadEstacionamiento-progressBar-progress4{
+  width: 75%;
+}
+
+.uploadEstacionamiento .form-generico .upload-div-precio{
+  border: solid 1px #9c9c9c;
+  border-radius: 2px;
+  background-color: #fff;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-precioPorMinutoSigno{
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-right: 3px;
+}
+
+.uploadEstacionamiento .form-generico .upload-input-precioPorMinuto{
+  display: inline-block;
+  width: 17%;
+  float: left;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding: 10px 0px;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-precioPorMinuto{
+  width: 73%;
+  float: right;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-left: 5px;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-descuentoPorMinutoPorcentaje{
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-left: 3px;
+}
+
+.uploadEstacionamiento .form-generico .upload-input-descuentoPorMinuto{
+  display: inline-block;
+  width: 19%;
+  float: left;
+  padding: 10px;
+  text-align: right;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-right: 0px;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-descuentoPorMinuto{
+  width: 73%;
+  float: right;
+  vertical-align: middle;
+  border: none;
+  margin: 0px auto;
+  padding-left: 5px;
+}
+
+.uploadEstacionamiento .form-generico .upload-p-descuentoPorMinuto{
+  width: auto;
+  text-align: left;
+  margin-top: 5px;
+  color: #8f8f8f;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.uploadEstacionamiento .form-generico .upload-section-help{
+  display: none;
+}
+
+.uploadEstacionamiento .upload-div-sideimage4 {
+  display: none;
+}
+
+/**************************************************************/
+/*********************  T  A  B  L  E  T  *********************/
+/**************************************************************/
+
+@media (min-width: 700px) {
+
+/****************** H E A D E R *******************/
+
+.toggle-nav{
+  display: none;
+}
+
+.main-nav{
+  display: block !important;
+  margin-bottom: 30px;
+}
+
+.main-nav a{
+  position: absolute;
+  top: 5%;
+  width: 15%;
+  padding: 5px 15px;
+}
+
+.iniciar-btn{
+  right: 2%;
+}
+
+.register-btn{
+  right: 18%;
+}
+
+.faq-btn{
+  right: 32%;
+  color: rgb(105, 105, 105) !important;
+  background-color: white !important;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.faq-btn:hover{
+  color: #48A8C1 !important;
+}
+
+.how-btn{
+  display: none !important;
+}
+
+/****************** B A N N E R *******************/
+
+.banner-container{
+  margin-top: -15px;
+}
+
+.shape{
+  margin-top: 20%;
+}
+
+.shape h2{
+  font-size: 2.5em;
+}
+
+.shape h3{
+  font-size: 1.3em;
+  margin-bottom: 35px;
+}
+
+.shape input[type=search]{
+  width: 80%;
+}
+
+.shape input[type=submit]{
+  width: 80%;
+}
+
+/********* C O M O   F U N C I O N A ******************/
+
+.como-funciona{
+  margin-top: 10%;
+}
+
+.como-funciona h2{
+  font-size: 2.7em;
+}
+
+.como-funciona .pasos{
+  width: 50%;
+  margin: 10% 0 5%;
+  float: left;
+}
+
+.pasos img{
+  width: 50%;
+}
+
+.ultimo-paso{
+  clear: both;
+  margin: 0 auto 10%;
+  width: 50%;
+}
+
+.ultimo-paso img{
+  width: 50%;
+}
+
+/****************** F O O T E R *******************/
+.main-footer{
+  margin-top: 60px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.main-footer div{
+  width: 50%;
+  margin: 15px 0px;
+}
+
+.main-footer-div-left{
+  float: left;
+}
+
+.main-footer-div-right{
+  float: right;
+}
+
+.main-footer div h4{
+  display: block;
+  color: white;
+  font-weight: bold;
+  margin: 10px auto;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.main-footer ul{
+  display: inline-block;
+  width: 80%;
+  border-top: solid 1px #fff;
+}
+
+.main-footer a{
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  border-bottom: none;
+}
+
+.last{
+  border-bottom: none !important;
+}
+
+.redes-sociales{
+  background-color: #454545;
+  width: 100%;
+  position: relative;
+}
+
+.facebook img{
+  width: 30px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+.twitter img{
+  width: 30px;
+  position: absolute;
+  left: 43%;
+  top: 15%;
+}
+
+.instagram img{
+  width: 30px;
+  position: absolute;
+  right: 43%;
+  top: 15%;
+}
+
+/****************** F A Q s *******************/
+
+.bodies-main-content{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+}
+
+.faqs-main-content h1{
+  margin-left: 2.5%;
+}
+
+.faqs-preguntas hr{
+  width: 95%;
+}
+
+.faqs-preguntas section{
+margin-left: 5%;
+margin-right: 5%;
+}
+
+.faqs-preguntas section article{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/****************** S I G N   I N  /  S I G N   U P *******************/
+
+.signin, .signup, .recuperar-password{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  background-color: #ededed;
+  padding: 20px;
+}
+
+.login-separador span{
+  background-color: #ededed;
+}
+
+/************************** H E A D E R  P R O F I L E***********************/
+.main-search{
+  width: 40%;
+  display: block;
+  border: solid 1px #9c9c9c;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  left: 80%;
+  transform: translateX(-80%);
+}
+
+.main-form-search input[type=text]{
+  width: 85%;
+  padding: 10px;
+  font-size: 0.9em;
+  border: none;
+  float: left;
+  vertical-align: middle;
+}
+
+.main-form-search input[type=submit]{
+  width: 5%;
+  padding: 10px 18px;
+  border: none;
+  background-color: #fff;
+  background-image: url(../images/search-icon.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+}
+
+.main-form-search input[type=submit]:hover{
+  cursor: pointer;
+}
+
+/******************** P R O F I L E *****************/
+
+.main-profile-nav label {
+  margin: 0 0 -1px;
+  padding: 15px 10px;
+  font-size: 0.8em;
+}
+
+.main-profile-nav label:before {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.main-profile-nav input:checked + label {
+  width: 25%;
+  font-size: 0.8;
+  padding: 15px 5px;
+}
+
+/*********** PROFILE -- MIS VEHJICULOS *************/
+#content2 .carga-vehiculo-container{
+  margin-left: 12%;
+  float: left;
+}
+
+/************** C R E D I T S *******************/
+.credits {
+  background-image: url(../images/bg-credits.jpg);
+  height: 80%;
+}
+
+.credits h1{
+  font-size: 2em;
+  margin: 40px auto 0;
+}
+
+.credits h2{
+  margin: 15px 45px 20px;
+}
+
+.form-generico .credits-form{
+  margin: -150px 45px 0;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
+
+.uploadEstacionamiento-progressBar div{
+  height: 10.5px;
+}
+
+.form-uploadEstacionamiento{
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.uploadEstacionamiento .form-generico .form-uploadEstacionamiento .upload-input-direccion{
+  width: 84%;
+  float: left;
+}
+
+.uploadEstacionamiento .form-generico .form-uploadEstacionamiento .upload-input-numdpto{
+  width: 15.5%;
+  float: right;
+}
+
+.form-uploadEstacionamiento .upload-select-pais, .form-uploadEstacionamiento .upload-select-provincia, .form-uploadEstacionamiento .upload-select-ciudad, .form-uploadEstacionamiento .upload-input-cp {
+  display: inline-block;
+  width: 24.5%;
+}
+
+.uploadEstacionamiento .form-generico .upload-label-tipovehiculo{
+  width: 65%;
+  float: left;
+  color: #8f8f8f;
+  /*font-size: 1.1em;*/
+}
+
+.uploadEstacionamiento .form-generico .upload-input-tipovehiculo{
+  display: inline-block;
+  width: 35%;
+  float: right;
+  text-align: center;
+}
+
+.uploadEstacionamiento .form-generico .upload-div-especiales{
+  display: block;
+  clear: both;
+}
+
+.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales{
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  color: #8f8f8f;
+  /*font-size: 1.1em;*/
+}
+
+.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
+  /*width: 15%;*/
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+  position: relative;
+  bottom: 1px;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
+
+.uploadEstacionamiento .form-generico .upload-span-separadorhoras{
+  padding: 10px 10px 10px 10px;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-volver{
+  width: 24%;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-submit{
+  width: 75%;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 4 - Precios) *******************/
+
+.uploadEstacionamiento .form-reducido{
+  width: 65%;
+  float: left;
+}
+
+.uploadEstacionamiento .form-generico .upload-div-precio{
+  /*width: 90%;*/
+}
+
+.uploadEstacionamiento .form-generico .upload-section-help{
+  display: block;
+  background-image: url(../images/test-bg-image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  float: right;
+  width: 30%;
+  height: 300px;
+  margin-top: 45px;
+}
+
+.uploadEstacionamiento .form-generico .upload-section-div-help{
+  width: 90%;
+  margin: auto;
+  padding: 20px 5px;
+}
+
+.uploadEstacionamiento .form-generico .upload-section-div-help *{
+  text-align: left;
+}
+
+.uploadEstacionamiento .form-generico .upload-section-div-help h3{
+  /*color: #000;*/
+  text-transform: uppercase;
+}
+
+.uploadEstacionamiento .form-generico .upload-section-div-help p{
+  font-size: 0.9em;
+}
+
+
+/**************************************************************/
+/*******************  D  E  S  K  T  O  P  ********************/
+/**************************************************************/
+
+@media (min-width: 960px) {
+
+/**  **************** H E A D E R *******************/
+
+.main-nav a{
+  font-size: 1.2em;
+}
+
+.iniciar-btn{
+  display: none !important;
+}
+
+.popup-link{
+  display: block !important;
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  width: 15%;
+  padding: 5px 15px;
+  background-color: #48A8C1;
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.popup-contenedor h2{
+  color: rgb(105, 105, 105);
+  margin-top: 5%;
+  font-size: 1.2em;
+  padding: 0;
+}
+
+.signin-popup a{
+  display: block;
+  text-align: center;
+  margin: 5px auto;
+  color: #48A8C1;
+}
+
+.popup-link:hover{
+  background-color: rgba(72, 168, 193, 0.7);
+}
+
+.modal-wrapper{
+  display: block;
+  position: absolute;
+}
+
+#popup-iniciar {
+   visibility: hidden;
+   opacity: 0;
+   margin-top: -300px;
+}
+
+#popup-iniciar:target {
+   visibility: visible;
+   opacity: 1;
+   top: 16%;
+   right: 0;
+   margin: 0;
+   z-index: 20;
+   transition: all 0.8s;
+   /*border: solid 1px green;*/
+   width: 60%;
+}
+
+.popup-contenedor {
+   position: relative;
+   left: 57%;
+   padding: 10px 30px;
+   background-color: #ededed;
+   color:#333;
+   border-radius: 3px;
+   width: 40%;
+  }
+
+.popup-cerrar {
+   position: absolute;
+   top: 3px;
+   right: 3px;
+   background-color: #333;
+   padding: 7px 10px;
+   font-size: 20px;
+   text-decoration: none;
+   line-height: 1;
+   color:#fff;
+}
+
+.form-generico label{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/****************** B A N N E R *******************/
+
+.banner-container{
+  margin-top: -15px;
+  background-image: url(../images/bg-home-pc.jpg);
+  height: 500px;
+}
+
+.shape{
+  margin-top: 12%;
+}
+
+.shape h2{
+  font-size: 3em;
+}
+
+.shape h3{
+  font-size: 1.3em;
+  margin-bottom: 35px;
+}
+
+.shape input[type=search]{
+  width: 60%;
+}
+
+.shape input[type=submit]{
+  width: 60%;
+  margin-bottom: 25px;
+}
+
+/**************** C O M O  F U N C I O N A ****************/
+.como-funciona{
+  margin-top: 5%;
+}
+
+.como-funciona .pasos{
+  width: 33.33%;
+  margin: 5% 0;
+  float: left;
+  margin-bottom: 50px;
+}
+
+.pasos img{
+  width: 40%;
+}
+
+.ultimo-paso{
+  position: absolute;
+  width: 33.33%;
+  margin: 5% 0;
+  right: 0;
+}
+
+.ultimo-paso img{
+  width: 40%;
+}
+
+.main-footer{
+  clear: both;
+}
+
+/************************** H E A D E R  P R O F I L E***********************/
+.main-search{
+  width: 40%;
+  display: block;
+  border: solid 1px #9c9c9c;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.welcome-user{
+  display: block !important;
+  position: absolute;
+  top: 25px;
+  right: 70px;
+}
+
+.welcome-user h4{
+  display: inline-block !important;
+  font-weight: lighter;
+}
+
+.welcome-user h4::first-letter{
+  text-transform: uppercase;
+}
+
+/*************** P R O F I L E  M I  P E R F I L *************/
+#content1 .profile-image{
+  display: block;
+  float: left;
+  width: 25%;
+  overflow: hidden;
+}
+
+#content1 .profile-image img{
+  max-width: 240px;
+}
+
+.profile-welcome h1{
+  float: left;
+  margin-left: 15px;
+}
+
+.clear{
+  clear: both;
+}
+
+.verified-information{
+  margin: 20px 0;
+  width: 240px;
+}
+
+
+.profile-credit{
+  float: left;
+  width: 73%;
+  margin-left: 15px;
+}
+
+.profile-credit h2{
+  text-align: left !important;
+  margin: 15px 0 10px 15px !important;
+  font-size: 1.2em !important;
+}
+
+.profile-credit p{
+  text-align: left !important;
+  font-size: 0.8em !important;
+  margin: 0 0 -30px 15px !important;
+}
+
+.profile-credit a{
+  position: relative;
+  bottom: 12px;
+  left: 245px;
+}
+
+/*********** PROFILE -- MIS VEHJICULOS *************/
+#content2 .carga-vehiculo-container{
+  margin-left: 6%;
+}
+
+/***************** C R E D I T S ********************/
+.credits {
+  height: 85%;
+}
+
+.credits h1{
+  font-size: 2.7em;
+  margin: 60px auto 60px;
+}
+
+.credits h2{
+  font-size: 1.5em;
+  margin: 0 135px 20px;
+  background-color: rgba(50, 134, 113, 0.7);
+  padding: 25px 15px 25px;
+}
+
+.form-generico .credits-form{
+  margin: -150px 135px 0;
+}
+
+/***************** UNDER CONSTRUCTION ********************/
+.construction-bg{
+  background-repeat:repeat;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
+
+.form-uploadEstacionamiento{
+  max-width: 700px;
+  margin: inherit;
+}
+
+.uploadEstacionamiento .form-generico{
+  display: inline-block;
+  float: left;
+}
+
+.uploadEstacionamiento .upload-div-sideimage {
+  background-image: url(../images/road-uparrow.jpeg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  float: right;
+  display: inline-block;
+  min-width: 260px;
+  height: 100vh;
+  max-width: 360px;
+  margin-top: 25px;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 2 - Estadías) *******************/
+
+.uploadEstacionamiento .upload-div-sideimage2 {
+  background-image: url(../images/road-uparrow.jpeg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  float: right;
+  display: inline-block;
+  min-width: 260px;
+  height: 38vh;
+  max-width: 360px;
+  margin-top: 25px;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
+
+.uploadEstacionamiento .upload-div-sideimage3 {
+  background-image: url(../images/road-uparrow.jpeg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  float: right;
+  display: inline-block;
+  min-width: 260px;
+  height: 50vh;
+  max-width: 360px;
+  margin-top: 25px;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-volver{
+  width: 19%;
+}
+
+.uploadEstacionamiento .form-generico .upload-button-submit{
+  width: 80%;
+}
+
+/****************** C A R G A   C O C H E R A (Paso 4 - Precio) *******************/
+
+.uploadEstacionamiento .upload-div-sideimage4 {
+
+}
