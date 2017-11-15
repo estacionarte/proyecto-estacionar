@@ -35,9 +35,9 @@
               <ul>
                 <li><a href="signin.php" class="iniciar-btn">Iniciar Sesión</a></li>
                 <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li>
-                <li><a href="signup.php" class="register-btn">Registrarse</a></li>
+                <li><a href="signup" class="register-btn">Registrarse</a></li>
                 <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>
-                <li class="ayuda-li"><a href="faqs.php" class="faq-btn">Ayuda</a></li>
+                <li class="ayuda-li"><a href="faqs" class="faq-btn">Ayuda</a></li>
               </ul>
             </nav>
             <div class="modal-wrapper" id="popup-iniciar">
@@ -89,13 +89,15 @@
     @yield('body')
     @yield('faqs')
     @yield('signin')
+    @yield('signup')
+    @yield('underconstruction')
 
     <footer class="main-footer">
       <div class="main-footer-div-left">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="underconstruction.php">¿Quiénes somos?</a></li>
-          <li><a href="underconstruction.php">Contacto</a></li>
+          <li><a href="underconstruction">¿Quiénes somos?</a></li>
+          <li><a href="underconstruction">Contacto</a></li>
         </ul>
       </div>
       <div class="main-footer-div-right">
@@ -103,8 +105,8 @@
         <ul>
           <li><a href="#comofunciona">¿Cómo funciona?</a></li>
           <li><a href="/faqs">FAQs</a></li>
-          <li><a href="underconstruction.php">Términos y condiciones</a></li>
-          <li><a href="underconstruction.php" class="last">Políticas de privacidad</a></li>
+          <li><a href="underconstruction">Términos y condiciones</a></li>
+          <li><a href="underconstruction" class="last">Políticas de privacidad</a></li>
         </ul>
       </div>
     </footer>
