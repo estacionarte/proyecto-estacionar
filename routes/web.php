@@ -12,11 +12,11 @@ Route::get('/faqs', function () {
 });
 
 Route::get('/signup', function () {
-    return view('signup');
+    return view('auth.register');
 });
 
 Route::get('/signin', function () {
-    return view('signin');
+    return view('auth.login');
 });
 
 Route::get('/underconstruction', function () {

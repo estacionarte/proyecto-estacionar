@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title')</title>
-  <!-- ICONO DE LA PESTAÑA DEL NAVEGADOR -->
-  <link rel="icon" href="icons/favicon1.png" type="image/png" sizes="16x16">
-  <!-- FONT CABIN -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-  <!-- FONT BLACK -->
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
-  <!-- FONT ROBOTO -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-  <!-- FONT LATO -->
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <!-- ICONOS -->
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- main-profile-edit-nav -->
-  <link rel="stylesheet"
-   href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title')</title>
+    <!-- ICONO DE LA PESTAÑA DEL NAVEGADOR -->
+    <link rel="icon" href="icons/favicon1.png" type="image/png" sizes="16x16">
+    <!-- FONT CABIN -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <!-- FONT BLACK -->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <!-- FONT ROBOTO -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <!-- FONT LATO -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- main-profile-edit-nav -->
+    <link rel="stylesheet"
+     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- CSRF Token -->
+      <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-</head>
+  </head>
   <body>
     <header class="main-header">
             <a href="index.php"><h1>Estacionarte</h1></a>
@@ -47,36 +47,35 @@
                  <h2 class="title-signin">Iniciar sesión</h2>
                <section class="signin-popup">
 
-                 <?php
-                 if (isset($_COOKIE['loginError']) && !empty($_COOKIE['loginError']))
-                   echo "<p style='color:red'>" . $_COOKIE['loginError'] . "</p>";
-                 ?>
-      <?php
-        if ($_POST) {
-          if (count($error) == 0) {
-            $auth->loguear($_POST["email"]);
 
-        if (isset($_POST["recordame"])) {
-          setcookie("user", $_POST["email"], time()+60*60*24*365);
-        }
-
-            header("Location: profile.php");
-              }
-        }
-
-      ?>
        <div class="form-generico">
-         <form action="" method="post">
-            <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Contraseña">
-            <input type="checkbox" name="recordarme" value="recordarme" id="recordarme">
+         <form action="{{ route('login') }}" method="post">
+           {{ csrf_field() }}
+           <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+             @if ($errors->has('email'))
+                 <span class="help-block">
+                     <strong>{{ $errors->first('email') }}</strong>
+                 </span>
+             @endif
+             <input type="email" name="email" placeholder="E-Mail" id="email" value="{{ old('email') }}" required autofocus>
+           </div>
+
+           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+             @if ($errors->has('password'))
+                 <span class="help-block">
+                     <strong>{{ $errors->first('password') }}</strong>
+                 </span>
+             @endif
+             <input type="password" name="password" placeholder="Contraseña" required>
+           </div>
+            <input type="checkbox" name="recordarme" id="recordarme"  {{ old('remember') ? 'checked' : '' }}>
             <label for="recordarme">Recordarme</label>
             <input type="submit" name="" value="INICIAR SESIÓN">
             <input type="checkbox" name="popup" style="display:none" checked>
           </form>
         </div>
-            <a href="forgot-password.php">¿Olvidaste tu e-mail o contraseña?</a>
-            <a href="signup.php">¿Aún no estás registrado?</a>
+            <a href="{{ route('password.request') }}">¿Olvidaste tu e-mail o contraseña?</a>
+            <a href="{{ route('register') }}">¿Aún no estás registrado?</a>
             <div class="login-separador">
               <span>O</span>
             </div>
@@ -92,6 +91,7 @@
     @yield('signin')
     @yield('signup')
     @yield('underconstruction')
+    @yield('content')
 
     <footer class="main-footer">
       <div class="main-footer-div-left">

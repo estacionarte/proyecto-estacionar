@@ -12,42 +12,30 @@
 
     <section class="signup">
 
-      <?php
-      if (isset($_COOKIE['camposVacios']))
-        if ($_COOKIE['camposVacios'] == "TRUE")
-          echo "<p style='color:red'>Completar los campos vacíos</p>";
-      if (isset($_COOKIE['error']) && !empty($_COOKIE['error']))
-        echo "<p style='color:red'>" . $_COOKIE['error'] . "</p>";
-      if (isset($_COOKIE['errorProfilePic']) && !empty($_COOKIE['errorProfilePic']))
-        echo "<p style='color:red'>" . $_COOKIE['errorProfilePic'] . "</p>";
-      ?>
-
       <div class="form-generico">
 
         <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
 
-          <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" style="" value="<?php echo (isset($_COOKIE['firstName']) && !empty($_COOKIE['firstName'])) ? $_COOKIE['firstName'] : ""; ?>">
+          <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" value="{{ old('firstName') }}">
 
-          <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" style="" value="<?php echo (isset($_COOKIE['lastName']) && !empty($_COOKIE['lastName'])) ? $_COOKIE['lastName'] : ""; ?>">
+          <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" value="{{ old('lastNam') }}">
 
           <!-- <label for="" class="form-birthdate-label">Fecha de Nacimiento:</label> -->
 
-          <input type="number" placeholder="dd" name="birthDay" min="1" max="31" class="form-birthdate" style="" value="<?php echo (isset($_COOKIE['birthDay']) && !empty($_COOKIE['birthDay'])) ? $_COOKIE['birthDay'] : ""; ?>">
+          <input type="number" placeholder="dd" name="birthDay" min="1" max="31" class="form-birthdate" value="{{ old('birthDay') }}">
 
-          <input type="number" placeholder="mm" name="birthMonth" min="1" max="12" class="form-birthdate" style="" value="<?php echo (isset($_COOKIE['birthMonth']) && !empty($_COOKIE['birthMonth'])) ? $_COOKIE['birthMonth'] : ""; ?>">
+          <input type="number" placeholder="mm" name="birthMonth" min="1" max="12" class="form-birthdate" value="{{ old('birthMonth') }}">
 
-          <input type="number" placeholder="aaaa" name="birthYear" min="1900" max="2010" class="form-birthdate" style="" value="<?php echo (isset($_COOKIE['birthYear']) && !empty($_COOKIE['birthYear'])) ? $_COOKIE['birthYear'] : ""; ?>">
+          <input type="number" placeholder="aaaa" name="birthYear" min="1900" max="2010" class="form-birthdate" value="{{ old('birthYear') }}">
 
-
-
-          <input type="email" placeholder="E-Mail" name="email" style="" value="<?php echo (isset($_COOKIE['email']) && !empty($_COOKIE['email'])) ? $_COOKIE['email'] : ""; ?>">
+          <input type="email" placeholder="E-Mail" name="email" value="{{ old('email') }}">
 
           <!-- <input type="tel" placeholder="Teléfono Móvil" name="telefono" style="" value="<?php echo (isset($_COOKIE['telefono']) && !empty($_COOKIE['telefono'])) ? $_COOKIE['telefono'] : ""; ?>"> -->
 
-          <input type="password" placeholder="Contraseña" name="password" style="">
+          <input type="password" placeholder="Contraseña" name="password">
 
-          <input type="password" placeholder="Confirmar Contraseña" name="confirmar-password" style="">
+          <input type="password" placeholder="Confirmar Contraseña" name="confirmar-password">
 
           <!-- <?php $tipo = isset( $_COOKIE['interes']) ? $_COOKIE['interes'] : ''; ?>
 
@@ -58,7 +46,7 @@
             <option value="ambos" <?php echo $tipo=='ambos'?$s:''; ?>>Ambos</option>
           </select> -->
 
-          <input type="file" name="profilePic" accept="image/*" style="">
+          <input type="file" name="profilePic" accept="image/*">
 
           <input type="submit" name="boton-submit" value="CREAR CUENTA">
         </form>
