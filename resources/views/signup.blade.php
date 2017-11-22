@@ -24,7 +24,8 @@
 
       <div class="form-generico">
 
-        <form action="signup-exefunctions.php" method="post" enctype="multipart/form-data">
+        <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
+          {{ csrf_field() }}
 
           <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" style="" value="<?php echo (isset($_COOKIE['firstName']) && !empty($_COOKIE['firstName'])) ? $_COOKIE['firstName'] : ""; ?>">
 
