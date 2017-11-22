@@ -1,61 +1,55 @@
 @extends('layouts.app')
-@section('title') Iniciar Sesión @endsection
-@section('content')
+@section('title') Signin @endsection
+@section('signin')
 
-<div class="container">
+  <div class="container">
 
-  <div class="bodies-main-content">
+    <div class="bodies-main-content">
 
-    <hr>
+      <hr>
 
-    <h1>Iniciar Sesión</h1>
+      <h1>Iniciar Sesión</h1>
 
-    <section class="signin">
+      <section class="signin">
 
-      <div class="form-generico">
+        <div class="form-generico">
 
-        <form action="{{ route('login') }}" method="post">
-          {{ csrf_field() }}
-          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+          <form action="" method="post">
+            {{ csrf_field() }}
+
             @if ($errors->has('email'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
+                    <p style='color:#990606'>{{ $errors->first('email') }}</p>
             @endif
-            <input type="email" name="email" placeholder="E-Mail" id="email" value="{{ old('email') }}" required autofocus>
-          </div>
+            <input type="email" name="email" placeholder="E-Mail" style="{{ $errors->has('email') ? ' border: solid 2px #990606' : '' }}" value="{{ old('email') }}" required autofocus>
 
-          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
             @if ($errors->has('password'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
+                    <p style='color:#990606'>{{ $errors->first('password') }}</p>
             @endif
-            <input type="password" name="password" placeholder="Contraseña" required>
-          </div>
+            <input type="password" name="password" placeholder="Contraseña" style="{{ $errors->has('password') ? ' border: solid 2px #990606' : '' }}" value="{{ old('password') }}" required>
 
-          <input type="checkbox" name="recordarme"  id="recordarme" {{ old('remember') ? 'checked' : '' }}>
-          <label for="recordarme">Recordarme</label>
+            <input type="checkbox" name="recordarme" value="recordarme" {{ old('recordarme') ? 'checked' : '' }}>
+            <label for="recordarme">Recordarme</label>
 
-          <input type="submit" name="" value="INICIAR SESIÓN">
-        </form>
+            <input type="submit" name="" value="INICIAR SESIÓN">
 
-      </div>
+          </form>
 
-      <a href="{{ route('password.request') }}">¿Olvidaste tu e-mail o contraseña?</a>
-      <a href="{{ route('register') }}">¿Aún no estás registrado?</a>
+        </div>
 
-      <div class="login-separador">
-        <span>O</span>
-      </div>
+        <a href="{{ route('password.request') }}">¿Olvidaste tu e-mail o contraseña?</a>
+        <a href="{{ route('register') }}">¿Aún no estás registrado?</a>
 
-      <a href="#" class="facebook-login-button">Iniciar sesión con Facebook</a>
-      <a href="#" class="google-login-button">Iniciar sesión con Google</a>
+        <div class="login-separador">
+          <span>O</span>
+        </div>
 
-    </section>
+        <a href="#" class="facebook-login-button">Iniciar sesión con Facebook</a>
+        <a href="#" class="google-login-button">Iniciar sesión con Google</a>
+
+      </section>
+    </div>
   </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="js/menu.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/menu.js"></script>
 
 @endsection

@@ -11,13 +11,9 @@ Route::get('/faqs', function () {
     return view('faqs');
 });
 
-Route::get('/signup', function () {
-    return view('auth.register');
-});
+Route::get('/signup', 'Auth\RegisterController@showRegistrationForm');
 
-Route::get('/signin', function () {
-    return view('auth.login');
-});
+Route::get('/signin', 'Auth\LoginController@showLoginForm');
 
 Route::get('/underconstruction', function () {
     return view('underconstruction');

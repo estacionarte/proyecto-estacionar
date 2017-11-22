@@ -12,6 +12,7 @@ class User extends Authenticatable
     use SoftDeletes;
 
     protected $table = 'users';
+    public $timestamps = true;
 
     /**
      * The attributes that are mass assignable.
