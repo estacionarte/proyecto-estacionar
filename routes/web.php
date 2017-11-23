@@ -18,3 +18,5 @@ Route::get('/signin', 'Auth\LoginController@showLoginForm');
 Route::get('/underconstruction', function () {
     return view('underconstruction');
 });
+
+Route::get('/upload-estacionamiento/1-infogeneral', '')

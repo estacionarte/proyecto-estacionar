@@ -55,6 +55,10 @@ class RegisterController extends Controller
             'birthYear' => 'required|integer|between:1930,2010',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+        ],
+        [
+          'email.unique' => 'Ya existe un usuario registrado con este e-mail.',
+          'password.min' => 'La contraseña debe tener como mínimo 6 caracteres.',
         ]);
     }
 
