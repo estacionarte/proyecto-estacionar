@@ -19,4 +19,6 @@ Route::get('/underconstruction', function () {
     return view('underconstruction');
 });
 
-Route::get('/upload-estacionamiento/1-infogeneral', '')
+Route::get('/upload-estacionamiento/infogeneral', 'UploadEstacionamientoController@showUploadEstacionamiento1')->name('upload.estacionamiento.1');
+
+Route::get('/upload-estacionamiento/estadias', 'UploadEstacionamientoController@showUploadEstacionamiento2')->name('upload.estacionamiento.2');
