@@ -10,6 +10,12 @@
 
     <h1>Crear Cuenta Nueva</h1>
 
+    @if (count($errors) > 0)
+      @foreach ($errors->all() as $error)
+        <p style="color: red;"> {{ $error }} </p>
+      @endforeach
+    @endif
+
     <section class="signup">
 
       @if ($errors->has('firstName') || $errors->has('lastName') || $errors->has('birthDay') || $errors->has('birthMonth') || $errors->has('birthYear') || $errors->has('email') || $errors->has('password') || $errors->has('confirmar-password') || $errors->has('profilePic') )
@@ -23,27 +29,27 @@
         <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
 
-          <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" style="{{ $errors->has('firstName') ? ' border: solid 2px #990606' : '' }}" value="{{ old('firstName') }}" required autofocus>
+          <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" style="{{ $errors->has('firstName') ? ' border: solid 2px #990606' : '' }}" value="{{ old('firstName') }}"  autofocus>
 
-          <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" style="{{ $errors->has('lastName') ? ' border: solid 2px #990606' : '' }}" value="{{ old('lastName') }}" required>
+          <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" style="{{ $errors->has('lastName') ? ' border: solid 2px #990606' : '' }}" value="{{ old('lastName') }}" >
 
           <!-- <label for="" class="form-birthdate-label">Fecha de Nacimiento:</label> -->
 
-          <input type="number" placeholder="dd" name="birthDay" min="1" max="31" class="form-birthdate" style="{{ $errors->has('birthDay') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthDay') }}" required>
+          <input type="number" placeholder="dd" name="birthDay" min="1" max="31" class="form-birthdate" style="{{ $errors->has('birthDay') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthDay') }}" >
 
-          <input type="number" placeholder="mm" name="birthMonth" min="1" max="12" class="form-birthdate" style="{{ $errors->has('birthMonth') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthMonth') }}" required>
+          <input type="number" placeholder="mm" name="birthMonth" min="1" max="12" class="form-birthdate" style="{{ $errors->has('birthMonth') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthMonth') }}" >
 
-          <input type="number" placeholder="aaaa" name="birthYear" min="1900" max="2010" class="form-birthdate" style="{{ $errors->has('birthYear') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthYear') }}" required>
+          <input type="number" placeholder="aaaa" name="birthYear" min="1900" max="2010" class="form-birthdate" style="{{ $errors->has('birthYear') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthYear') }}" >
 
 
 
-          <input type="email" placeholder="E-Mail" name="email" style="{{ $errors->has('email') ? ' border: solid 2px #990606' : '' }}" value="{{ old('email') }}" required>
+          <input type="email" placeholder="E-Mail" name="email" style="{{ $errors->has('email') ? ' border: solid 2px #990606' : '' }}" value="{{ old('email') }}" >
 
           <!-- <input type="tel" placeholder="Teléfono Móvil" name="telefono" style="" value="<?php echo (isset($_COOKIE['telefono']) && !empty($_COOKIE['telefono'])) ? $_COOKIE['telefono'] : ""; ?>"> -->
 
-          <input type="password" placeholder="Contraseña" name="password" style="{{ $errors->has('password') ? ' border: solid 2px #990606' : '' }}" required>
+          <input type="password" placeholder="Contraseña" name="password" style="{{ $errors->has('password') ? ' border: solid 2px #990606' : '' }}" >
 
-          <input type="password" placeholder="Confirmar Contraseña" name="confirmar-password" style="{{ $errors->has('confirmar-password') ? ' border: solid 2px #990606' : '' }}" required>
+          <input type="password" placeholder="Confirmar Contraseña" name="password_confirmation" style="{{ $errors->has('password_confirmation') ? ' border: solid 2px #990606' : '' }}" >
 
           <!-- <?php $tipo = isset( $_COOKIE['interes']) ? $_COOKIE['interes'] : ''; ?>
 

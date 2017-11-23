@@ -30,6 +30,10 @@
   </head>
   <body>
     <header class="main-header">
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            {{ csrf_field() }}
+            <input type="submit" name="" value="">
+        </form>
             <a href="index.php"><h1>Estacionarte</h1></a>
             <a href="#"><img src="icons/hamburguesa.png" alt="menu" class="toggle-nav"></a>
             <nav class="main-nav">

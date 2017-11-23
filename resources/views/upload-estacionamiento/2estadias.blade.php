@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') Signin @endsection
+@section('title') Cargar Estacionamiento @endsection
 @section('signin')
 
   <div class="container">

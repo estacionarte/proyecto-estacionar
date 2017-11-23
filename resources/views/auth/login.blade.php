@@ -14,7 +14,7 @@
 
         <div class="form-generico">
 
-          <form action="" method="post">
+          <form action="{{ route('login') }}" method="post">
             {{ csrf_field() }}
 
             @if ($errors->has('email'))

@@ -1,15 +1,8 @@
-<?php
-
- ?>
-
-<!DOCTYPE html>
-<html>
-  <?php require_once('head.php'); ?>
-<body>
+@extends('layouts.app')
+@section('title') Cargar Estacionamiento @endsection
+@section('signin')
 
   <div class="container">
-
-    <?php require_once('header.php'); ?>
 
     <div class="bodies-main-content">
 
@@ -48,9 +41,10 @@
 
       </section>
     </div>
-    <?php require_once('footer.php'); ?>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/menu.js"></script>
-</body>
-</html>
+
+  @extends('layouts.app')
+  @section('title') Cargar Estacionamiento @endsection
+  @section('signin')
