@@ -30,64 +30,69 @@
   </head>
   <body>
     <header class="main-header">
+      @auth
+        <h1> {{Auth::user()->firstName}} </h1>
         <form id="logout-form" action="{{ route('logout') }}" method="POST">
             {{ csrf_field() }}
             <input type="submit" name="" value="">
         </form>
-            <a href="index.php"><h1>Estacionarte</h1></a>
-            <a href="#"><img src="icons/hamburguesa.png" alt="menu" class="toggle-nav"></a>
-            <nav class="main-nav">
-              <ul>
-                <li><a href="signin.php" class="iniciar-btn">Iniciar Sesión</a></li>
-                <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li>
-                <li><a href="signup" class="register-btn">Registrarse</a></li>
-                <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>
-                <li class="ayuda-li"><a href="faqs" class="faq-btn">Ayuda</a></li>
-              </ul>
-            </nav>
-            <div class="modal-wrapper" id="popup-iniciar">
-              <div class="popup-contenedor">
-                 <a class="popup-cerrar" href="#">X</a>
-                 <h2 class="title-signin">Iniciar sesión</h2>
-               <section class="signin-popup">
+      @endauth
 
+      <a href="index.php"><h1>Estacionarte</h1></a>
+      @guest
+        <a href="#"><img src="icons/hamburguesa.png" alt="menu" class="toggle-nav"></a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="signin.php" class="iniciar-btn">Iniciar Sesión</a></li>
+            <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li>
+            <li><a href="signup" class="register-btn">Registrarse</a></li>
+            <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>
+            <li class="ayuda-li"><a href="faqs" class="faq-btn">Ayuda</a></li>
+          </ul>
+        </nav>
+        <div class="modal-wrapper" id="popup-iniciar">
+          <div class="popup-contenedor">
+            <a class="popup-cerrar" href="#">X</a>
+            <h2 class="title-signin">Iniciar sesión</h2>
+            <section class="signin-popup">
 
-       <div class="form-generico">
-         <form action="{{ route('login') }}" method="post">
-           {{ csrf_field() }}
-           <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-             @if ($errors->has('email'))
-                 <span class="help-block">
-                     <strong>{{ $errors->first('email') }}</strong>
-                 </span>
-             @endif
-             <input type="email" name="email" placeholder="E-Mail" id="email" value="{{ old('email') }}" required autofocus>
-           </div>
+              <div class="form-generico">
+                <form action="{{ route('login') }}" method="post">
+                  {{ csrf_field() }}
+                  <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    @if ($errors->has('email'))
+                      <span class="help-block">
+                        <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                    @endif
+                    <input type="email" name="email" placeholder="E-Mail" id="email" value="{{ old('email') }}" required autofocus>
+                  </div>
 
-           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-             @if ($errors->has('password'))
-                 <span class="help-block">
-                     <strong>{{ $errors->first('password') }}</strong>
-                 </span>
-             @endif
-             <input type="password" name="password" placeholder="Contraseña" required>
-           </div>
-            <input type="checkbox" name="recordarme" id="recordarme"  {{ old('remember') ? 'checked' : '' }}>
-            <label for="recordarme">Recordarme</label>
-            <input type="submit" name="" value="INICIAR SESIÓN">
-            <input type="checkbox" name="popup" style="display:none" checked>
-          </form>
+                  <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    @if ($errors->has('password'))
+                      <span class="help-block">
+                        <strong>{{ $errors->first('password') }}</strong>
+                      </span>
+                    @endif
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                  </div>
+                  <input type="checkbox" name="recordarme" id="recordarme"  {{ old('remember') ? 'checked' : '' }}>
+                  <label for="recordarme">Recordarme</label>
+                  <input type="submit" name="" value="INICIAR SESIÓN">
+                  <input type="checkbox" name="popup" style="display:none" checked>
+                </form>
+              </div>
+              <a href="{{ route('password.request') }}">¿Olvidaste tu e-mail o contraseña?</a>
+              <a href="{{ route('register') }}">¿Aún no estás registrado?</a>
+              <div class="login-separador">
+                <span>O</span>
+              </div>
+              <a href="#" class="facebook-login-button">Iniciar sesion con Facebook</a>
+              <a href="#" class="google-login-button">Iniciar sesión con Google</a>
+            </section>
+          </div>
         </div>
-            <a href="{{ route('password.request') }}">¿Olvidaste tu e-mail o contraseña?</a>
-            <a href="{{ route('register') }}">¿Aún no estás registrado?</a>
-            <div class="login-separador">
-              <span>O</span>
-            </div>
-            <a href="#" class="facebook-login-button">Iniciar sesion con Facebook</a>
-            <a href="#" class="google-login-button">Iniciar sesión con Google</a>
-          </section>
-        </div>
-      </div>
+      @endguest
     </header>
 
     @yield('body')
