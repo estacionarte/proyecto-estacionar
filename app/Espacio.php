@@ -28,4 +28,9 @@ class Espacio extends Model
     'infoprivada'
   ];
 
+  public function usuario()
+    {
+        return $this->belongsTo(User::class, 'idUser');
+    }
+
 }

@@ -44,7 +44,7 @@
           onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();">Salir</a>
     </div>
-    
+
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}
     </form>

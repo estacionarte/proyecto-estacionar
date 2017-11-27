@@ -25,13 +25,13 @@ class UploadEstacionamientoController extends Controller
         'pais' => 'required|string|max:45',
         'provincia' => 'required|string|max:45',
         'ciudad' => 'required|string|max:45',
-        'zipcode' => 'required|numeric|max:5',
+        'zipcode' => 'required|numeric|max:9999',
         'tipoEspacio' => 'required|string|max:45',
         'cantAutos' => 'required|numeric|max:2',
         'cantMotos' => 'required|numeric|max:8',
         'cantBicicletas' => 'required|numeric|max:8',
-        'aptoDiscapacitados' => 'required',
-        'aptoElectricos' => 'required',
+        'aptoDiscapacitados' => 'nullable',
+        'aptoElectricos' => 'nullable',
         'infopublica' => 'nullable|string|max:250',
         'infoprivada' => 'nullable|string|max:250',
       ]
@@ -48,6 +48,10 @@ class UploadEstacionamientoController extends Controller
   }
 
   public function showUploadEstacionamiento3(){
+    return view('upload-estacionamiento.3diasyhorarios');
+  }
+
+  public function insertAndShowUploadEstacionamiento3(){
     return view('upload-estacionamiento.3diasyhorarios');
   }
 

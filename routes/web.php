@@ -31,6 +31,8 @@ Route::post('/upload-estacionamiento/estadias', 'UploadEstacionamientoController
 
 Route::get('/upload-estacionamiento/diasyhorarios', 'UploadEstacionamientoController@showUploadEstacionamiento3')->name('upload.estacionamiento.3');
 
+Route::post('/upload-estacionamiento/diasyhorarios', 'UploadEstacionamientoController@insertAndShowUploadEstacionamiento3')->name('insert.upload.estacionamiento.3');
+
 Route::get('/upload-estacionamiento/precios', 'UploadEstacionamientoController@showUploadEstacionamiento4')->name('upload.estacionamiento.4');
 
 Route::get('/upload-estacionamiento/resumen', 'UploadEstacionamientoController@showUploadEstacionamientoResumen')->name('upload.estacionamiento.resumen');
