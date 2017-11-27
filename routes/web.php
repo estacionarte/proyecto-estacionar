@@ -30,3 +30,7 @@ Route::get('/upload-estacionamiento/diasyhorarios', 'UploadEstacionamientoContro
 Route::get('/upload-estacionamiento/precios', 'UploadEstacionamientoController@showUploadEstacionamiento4')->name('upload.estacionamiento.4');
 
 Route::get('/upload-estacionamiento/resumen', 'UploadEstacionamientoController@showUploadEstacionamientoResumen')->name('upload.estacionamiento.resumen');
+
+Route::get('/map', function() {
+  return view('leaflet');
+});

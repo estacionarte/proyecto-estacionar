@@ -31,6 +31,7 @@ CREATE TABLE `alquileres` (
   `fechaFinAlquiler` datetime NOT NULL,
   `precioPorMinutoConDesc` decimal(6,2) unsigned NOT NULL,
   `monto` decimal(8,2) unsigned NOT NULL,
+  `rating` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idEspacioAlquiler_idx` (`idEspacio`),
   KEY `idVehiculoAlquiler_idx` (`idVehiculo`),
@@ -131,9 +132,9 @@ CREATE TABLE `espacios` (
   `tipoEspacio` varchar(45) DEFAULT NULL,
   `cantAutos` int(10) unsigned DEFAULT NULL,
   `cantMotos` int(10) unsigned DEFAULT NULL,
-  `cantBicis` int(10) unsigned DEFAULT NULL,
-  `aptoDiscapacitados` varchar(2) DEFAULT NULL,
-  `aptoElectricos` varchar(2) DEFAULT NULL,
+  `cantBicicletas` int(10) unsigned DEFAULT NULL,
+  `aptoDiscapacitados` varchar(45) DEFAULT NULL,
+  `aptoElectricos` varchar(45) DEFAULT NULL,
   `infopublica` varchar(250) DEFAULT NULL,
   `infoprivada` varchar(250) DEFAULT NULL,
   `estadiaMinima` int(10) unsigned DEFAULT NULL,
@@ -141,7 +142,7 @@ CREATE TABLE `espacios` (
   `anticipacion` int(10) unsigned DEFAULT NULL,
   `precioAutosMinuto` decimal(6,2) unsigned DEFAULT NULL,
   `precioMotosMinuto` decimal(6,2) unsigned DEFAULT NULL,
-  `precioBicisMinuto` decimal(6,2) DEFAULT NULL,
+  `precioBicicletasMinuto` decimal(6,2) DEFAULT NULL,
   `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
   `updated_at` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
   `deleted_at` timestamp(6) NULL DEFAULT NULL,
@@ -220,7 +221,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'mariano','alvarez','0000-00-00','mariano@estacionar.com','$2y$10$gd.TFxgFCQX.ZKxAjRuSJuOAhq8UhXFCIKzaLVL7tubwf/5s/x9ku',NULL,'2017-11-21 20:04:13.673634',NULL,NULL,NULL,NULL,NULL,'0000-00-00 00:00:00.000000',NULL),(5,'joaco','joaco','0000-00-00','joaquin@estacionar.com','$2y$10$k/TnVRV4VW0zwMvE7Ntp5.mKLgznAIpAr0TKc5kCpk8T00IhqcLC2','AvDI05inlMwRXELxM5IqJATZxsWFG2nxSBiL1gguDOXASop0nbIdfcq6uuEA','2017-11-24 00:51:34.216881',NULL,NULL,NULL,NULL,NULL,'2017-11-24 01:51:09.000000',NULL);
+INSERT INTO `users` VALUES (1,'mariano','alvarez','0000-00-00','mariano@estacionar.com','$2y$10$gd.TFxgFCQX.ZKxAjRuSJuOAhq8UhXFCIKzaLVL7tubwf/5s/x9ku','03GZZsXhUWRnJ5dfdEggt8GMUvQt5Dnmcpn3Gdg7UuJtkKxfZWUBhpiPQnhx','2017-11-27 15:51:18.690280',NULL,NULL,NULL,NULL,NULL,'0000-00-00 00:00:00.000000',NULL),(5,'joaco','joaco','0000-00-00','joaquin@estacionar.com','$2y$10$k/TnVRV4VW0zwMvE7Ntp5.mKLgznAIpAr0TKc5kCpk8T00IhqcLC2','AvDI05inlMwRXELxM5IqJATZxsWFG2nxSBiL1gguDOXASop0nbIdfcq6uuEA','2017-11-24 00:51:34.216881',NULL,NULL,NULL,NULL,NULL,'2017-11-24 01:51:09.000000',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,4 +268,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-26 22:28:31
+-- Dump completed on 2017-11-27 16:09:54
