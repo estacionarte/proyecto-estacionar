@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title') Faqs @endsection
-@section('faqs')
+@section('content')
 
 <div class="bodies-main-content">
 

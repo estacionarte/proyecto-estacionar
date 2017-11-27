@@ -15,8 +15,12 @@ Route::get('/signup', 'Auth\RegisterController@showRegistrationForm');
 
 Route::get('/signin', 'Auth\LoginController@showLoginForm');
 
-Route::get('/underconstruction', function () {
+Route::get('/  mantenimiento', function () {
     return view('underconstruction');
+});
+
+Route::get('/miperfil', function () {
+    return view('profile');
 });
 
 Route::get('/upload-estacionamiento/infogeneral', 'UploadEstacionamientoController@showUploadEstacionamiento1')->name('upload.estacionamiento.1');

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title') UnderConstruction @endsection
-@section('underconstruction')
+@section('content')
 
 <div class="construction-bg">
   <div class="constuction-txt">
