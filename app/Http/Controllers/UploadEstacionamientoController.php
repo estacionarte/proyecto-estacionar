@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Espacio;
 
 class UploadEstacionamientoController extends Controller
 {
@@ -39,7 +40,7 @@ class UploadEstacionamientoController extends Controller
 
     $espacio = new Espacio($request->all());
 
-    dd($espacio);
+    // dd($espacio);
 
     $espacio->save();
 
