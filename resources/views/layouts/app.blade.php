@@ -29,17 +29,38 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
   </head>
   <body>
+    @auth
     <header class="main-header">
-      @auth
-        <h1> {{Auth::user()->firstName}} </h1>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+      <a href="/"><h1>Estacionarte</h1></a>
+
+    <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="icons/close-profile-nav2.png" alt=""></a>
+      <a href="profile.php">Mi perfil</a>
+      <a href="#">Configuración de mi cuenta</a>
+      <a href="#">Ayuda</a>
+      <a href="{{ route('logout') }}"> <form id="logout-form" action="{{ route('logout') }}" method="POST">
             {{ csrf_field() }}
             <input type="submit" name="" value="">
-        </form>
-      @endauth
+        </form>Salir</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="{{Auth::user()->firstName}}" alt="avatar" class="avatar"></span>
 
-      <a href="index.php"><h1>Estacionarte</h1></a>
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";}
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";}
+    </script>
+
+    @endauth
+
+    </header>
       @guest
+      <header class="main-header">
+        <a href="/"><h1>Estacionarte</h1></a>
         <a href="#"><img src="icons/hamburguesa.png" alt="menu" class="toggle-nav"></a>
         <nav class="main-nav">
           <ul>
@@ -92,14 +113,12 @@
             </section>
           </div>
         </div>
-      @endguest
     </header>
+    @endguest
 
     @yield('body')
-    @yield('faqs')
     @yield('signin')
     @yield('signup')
-    @yield('underconstruction')
     @yield('content')
 
     <footer class="main-footer">
