@@ -3,10 +3,7 @@
 @section('content')
 
 <body class="profile-body">
-  <form id="logout-form" action="{{ route('logout') }}" method="POST">
-      {{ csrf_field() }}
-      <input type="submit" name="" value="salir">
-  </form>
+
   <div class="container">
 
     <div class="bodies-main-content">

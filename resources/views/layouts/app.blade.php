@@ -40,11 +40,15 @@
       <a href="profile.php">Mi perfil</a>
       <a href="#">Configuración de mi cuenta</a>
       <a href="#">Ayuda</a>
-      <a href="{{ route('logout') }}"> <form id="logout-form" action="{{ route('logout') }}" method="POST">
-            {{ csrf_field() }}
-            <input type="submit" name="" value="">
-        </form>Salir</a>
+      <a href="{{ route('logout') }}"
+          onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">Salir</a>
     </div>
+    
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
+
     <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="{{Auth::user()->firstName}}" alt="avatar" class="avatar"></span>
 
     <script>

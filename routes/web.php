@@ -15,7 +15,7 @@ Route::get('/signup', 'Auth\RegisterController@showRegistrationForm');
 
 Route::get('/signin', 'Auth\LoginController@showLoginForm');
 
-Route::get('/  mantenimiento', function () {
+Route::get('/mantenimiento', function () {
     return view('underconstruction');
 });
 
