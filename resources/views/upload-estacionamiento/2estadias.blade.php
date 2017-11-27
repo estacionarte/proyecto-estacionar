@@ -18,7 +18,7 @@
 
         <div class="form-generico">
 
-          <form action="upload-estacionamiento-3diasyhorarios(TEMPORAL).php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento">
+          <form action="upload-estacionamiento-3diasyhorarios(TEMPORAL).php" method="post" class="form-uploadEstacionamiento">
             {{ csrf_field() }}
 
             <label for="" class="upload-label-titulo">¿Cuánto tiempo pueden permanecer los vehículos?</label>

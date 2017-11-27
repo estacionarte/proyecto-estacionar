@@ -18,7 +18,8 @@
 
         <div class="form-generico">
 
-          <form action="upload-estacionamiento-4precios.php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento">
+          <form action="upload-estacionamiento-4precios.php" method="post" class="form-uploadEstacionamiento">
+            {{ csrf_field() }}
 
             <label for="" class="upload-label-titulo">¿En qué días y horario va a estar disponible tu espacio?</label>
 
@@ -45,6 +46,4 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/menu.js"></script>
 
-  @extends('layouts.app')
-  @section('title') Cargar Estacionamiento @endsection
-  @section('signin')
+@endsection

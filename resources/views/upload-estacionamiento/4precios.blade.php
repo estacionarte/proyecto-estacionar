@@ -1,15 +1,8 @@
-<?php
-
- ?>
-
-<!DOCTYPE html>
-<html>
-  <?php require_once('head.php'); ?>
-<body>
+@extends('layouts.app')
+@section('title') Cargar Estacionamiento @endsection
+@section('signin')
 
   <div class="container">
-
-    <?php require_once('header.php'); ?>
 
     <div class="bodies-main-content">
 
@@ -25,7 +18,8 @@
 
         <div class="form-generico">
 
-          <form action="upload-estacionamiento-5resumen.php" method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento form-reducido">
+          <form action="upload-estacionamiento-5resumen.php" method="post" class="form-uploadEstacionamiento form-reducido">
+            {{ csrf_field() }}
 
             <label for="" class="upload-label-titulo">¿Cuál va a ser el precio por minuto de tu espacio?</label>
 
@@ -76,9 +70,8 @@
 
       </section>
     </div>
-    <?php require_once('footer.php'); ?>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/menu.js"></script>
-</body>
-</html>
+
+@endsection

@@ -22,3 +22,11 @@ Route::get('/underconstruction', function () {
 Route::get('/upload-estacionamiento/infogeneral', 'UploadEstacionamientoController@showUploadEstacionamiento1')->name('upload.estacionamiento.1');
 
 Route::get('/upload-estacionamiento/estadias', 'UploadEstacionamientoController@showUploadEstacionamiento2')->name('upload.estacionamiento.2');
+
+Route::post('/upload-estacionamiento/estadias', 'UploadEstacionamientoController@createEspacio')->name('create.espacio');
+
+Route::get('/upload-estacionamiento/diasyhorarios', 'UploadEstacionamientoController@showUploadEstacionamiento3')->name('upload.estacionamiento.3');
+
+Route::get('/upload-estacionamiento/precios', 'UploadEstacionamientoController@showUploadEstacionamiento4')->name('upload.estacionamiento.4');
+
+Route::get('/upload-estacionamiento/resumen', 'UploadEstacionamientoController@showUploadEstacionamientoResumen')->name('upload.estacionamiento.resumen');
