@@ -4,22 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DiasYHorariosDeEspacio extends Model
+class FotosDeEspacio extends Model
 {
   use SoftDeletes;
 
-  protected $table = 'espacios_diasyhorarios';
+  protected $table = 'espacios_fotos';
 
   protected $fillable = [
     'idEspacio',
-    'dia',
-    'horaComienzo',
-    'horaFin'
+    'photoname',
   ];
 
   public function espacio()
     {
         return $this->belongsTo(App\Espacio::class, 'idEspacio');
     }
-
 }

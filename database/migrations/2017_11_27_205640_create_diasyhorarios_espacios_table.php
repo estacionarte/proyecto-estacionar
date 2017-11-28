@@ -13,7 +13,7 @@ class CreateDiasyhorariosEspaciosTable extends Migration
      */
     public function up()
     {
-        Schema::create('diasyhorarios_espacios', function (Blueprint $table) {
+        Schema::create('espacios_diasyhorarios', function (Blueprint $table) {
           $table->increments('id');
           $table->timestamps();
           $table->softDeletes();
@@ -34,6 +34,6 @@ class CreateDiasyhorariosEspaciosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('diasyhorarios_espacios');
+        Schema::dropIfExists('espacios_diasyhorarios');
     }
 }

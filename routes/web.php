@@ -27,13 +27,13 @@ Route::group(['prefix' => 'upload-estacionamiento', 'middleware' => 'auth'], fun
 
   Route::get('infogeneral', 'UploadEstacionamientoController@showUploadEstacionamiento1')->name('upload.estacionamiento.1');
 
-  Route::get('estadias', 'UploadEstacionamientoController@showUploadEstacionamiento2')->name('upload.estacionamiento.2');
+  Route::get('estadias/{id}', 'UploadEstacionamientoController@showUploadEstacionamiento2')->name('upload.estacionamiento.2');
 
-  Route::post('estadias', 'UploadEstacionamientoController@createEspacio')->name('create.espacio');
+  Route::post('estadias/{id}', 'UploadEstacionamientoController@createEspacioAndShowUploadEstacionamiento2')->name('create.espacio.upload.estacionamiento.2');
 
   Route::get('diasyhorarios', 'UploadEstacionamientoController@showUploadEstacionamiento3')->name('upload.estacionamiento.3');
 
-  Route::post('diasyhorarios', 'UploadEstacionamientoController@insertAndShowUploadEstacionamiento3')->name('insert.upload.estacionamiento.3');
+  Route::put('diasyhorarios', 'UploadEstacionamientoController@insertAndShowUploadEstacionamiento3')->name('insert.upload.estacionamiento.3');
 
   Route::get('precios', 'UploadEstacionamientoController@showUploadEstacionamiento4')->name('upload.estacionamiento.4');
 

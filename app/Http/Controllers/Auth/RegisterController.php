@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'birthYear' => 'required|numeric|between:1930,2010',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'profilePic' => 'required|image',
+            'profilePic' => 'required|image|max:10000',
         ],
         [
           'email.unique' => 'Ya existe un usuario registrado con este e-mail.',
