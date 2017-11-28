@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Espacio;
+use Auth;
 
 class UploadEstacionamientoController extends Controller
 {
@@ -26,7 +27,7 @@ class UploadEstacionamientoController extends Controller
         'pais' => 'required|string|max:45',
         'provincia' => 'required|string|max:45',
         'ciudad' => 'required|string|max:45',
-        'zipcode' => 'required|numeric|max:9999',
+        'zipcode' => 'required|numeric|min:1000|max:9999',
         'tipoEspacio' => 'required|string|max:45',
         'cantAutos' => 'required|numeric|max:2',
         'cantMotos' => 'required|numeric|max:8',
@@ -39,6 +40,7 @@ class UploadEstacionamientoController extends Controller
     );
 
     $espacio = new Espacio($request->all());
+    $espacio->idUser = Auth::user()->id;
 
     // dd($espacio);
 

@@ -12,6 +12,7 @@ class Espacio extends Model
   protected $table = 'espacios';
 
   protected $fillable = [
+    'idUser',
     'direccion',
     'dpto',
     'pais',
@@ -25,12 +26,18 @@ class Espacio extends Model
     'aptoDiscapacitados',
     'aptoElectricos',
     'infopublica',
-    'infoprivada'
+    'infoprivada',
+    'estadiaMinima',
+    'estadiaMaxima',
+    'anticipacion',
+    'precioAutosMinuto',
+    'precioMotosMinuto',
+    'precioBicicletasMinuto'
   ];
 
   public function usuario()
     {
-        return $this->belongsTo(User::class, 'idUser');
+        return $this->belongsTo(App\User::class, 'idUser');
     }
 
 }

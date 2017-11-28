@@ -18,29 +18,12 @@ class CreateDiasyhorariosEspaciosTable extends Migration
           $table->timestamps();
           $table->softDeletes();
 
-          $table->integer('idUser')->unsigned();
-          $table->foreign('idUser')->references('id')->on('users');
+          $table->integer('idEspacio')->unsigned();
+          $table->foreign('idEspacio')->references('id')->on('espacios');
 
-          $table->string('direccion', 45)->nullable();
-          $table->string('dpto', 45)->nullable();
-          $table->string('pais', 45)->nullable();
-          $table->string('provincia', 45)->nullable();
-          $table->string('ciudad', 45)->nullable();
-          $table->integer('zipcode')->unsigned()->nullable();
-          $table->string('tipoEspacio', 45)->nullable();
-          $table->integer('cantAutos')->unsigned()->nullable();
-          $table->integer('cantMotos')->unsigned()->nullable();
-          $table->integer('cantBicicletas')->unsigned()->nullable();
-          $table->string('aptoDiscapacitados', 45)->nullable();
-          $table->string('aptoElectricos', 45)->nullable();
-          $table->string('infopublica', 250)->nullable();
-          $table->string('infoprivada', 250)->nullable();
-          $table->integer('estadiaMinima')->unsigned()->nullable();
-          $table->integer('estadiaMaxima')->unsigned()->nullable();
-          $table->integer('anticipacion')->unsigned()->nullable();
-          $table->decimal('precioAutosMinuto', 6, 2);
-          $table->decimal('precioMotosMinuto', 6, 2);
-          $table->decimal('precioBicicletasMinuto', 6, 2);
+          $table->string('dia', 45);
+          $table->time('horaComienzo');
+          $table->time('horaFin');
         });
     }
 
