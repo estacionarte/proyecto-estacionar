@@ -18,7 +18,7 @@
 
         <div class="form-generico">
 
-          <form action="upload-estacionamiento-3diasyhorarios(TEMPORAL).php" method="post" class="form-uploadEstacionamiento">
+          <form action="{{ route('insert.upload.estacionamiento.3') }}" method="post" class="form-uploadEstacionamiento">
             {{ csrf_field() }}
 
             <label for="" class="upload-label-titulo">¿Cuánto tiempo pueden permanecer los vehículos?</label>
@@ -29,7 +29,7 @@
               <option value="Horas">horas</option>
               <option value="Dias">días</option>
             </select>
-            <input type="number" placeholder="15" name="tiempoMinimoyMax" class="upload-input-tiempoMinimoyMax" min="0" max="10000">
+            <input type="number" placeholder="15" name="tiempoMinimo" class="upload-input-tiempoMinimoyMax" min="0" max="10000">
 
             <label for="" class="upload-label-tiempoMinimoyMax">Máximo</label>
             <select name="medidaDeTiempo" class="upload-select-tiempoMinimoyMax">
@@ -37,7 +37,7 @@
               <option value="Horas">horas</option>
               <option value="Dias">días</option>
             </select>
-            <input type="number" placeholder="15" name="tiempoMinimoyMax" class="upload-input-tiempoMinimoyMax" min="0" max="10000">
+            <input type="number" placeholder="15" name="tiempoMinimoMaximo" class="upload-input-tiempoMinimoyMax" min="0" max="10000">
 
             <label for="" class="upload-label-titulo">¿Cuánta anticipación se necesita para la reserva?</label>
 
