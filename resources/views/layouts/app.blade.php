@@ -58,10 +58,8 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";}
     </script>
-
-    @endauth
-
     </header>
+    @endauth
       @guest
       <header class="main-header">
         <a href="/"><h1>Estacionarte</h1></a>
@@ -117,8 +115,15 @@
             </section>
           </div>
         </div>
+        @endguest
+        <div class="main-search">
+          <form class="main-form-search" action="" method="get">
+            <input type="text" name="buscar-texto" placeholder="Buscar cocheras">
+            <input type="submit" name="buscar-submit" value="">
+          </form>
+        </div>
     </header>
-    @endguest
+
 
     @yield('body')
     @yield('signin')
