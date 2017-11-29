@@ -35,9 +35,9 @@ class CreateEspaciosTable extends Migration
           $table->string('aptoElectricos', 45)->nullable();
           $table->string('infopublica', 250)->nullable();
           $table->string('infoprivada', 250)->nullable();
-          $table->integer('estadiaMinima')->unsigned()->nullable();
-          $table->integer('estadiaMaxima')->unsigned()->nullable();
-          $table->integer('anticipacion')->unsigned()->nullable();
+          $table->integer('estadiaMinimaMinutos')->unsigned()->nullable();
+          $table->integer('estadiaMaximaMinutos')->unsigned()->nullable();
+          $table->integer('anticipacionMinutos')->unsigned()->nullable();
           $table->decimal('precioAutosMinuto', 6, 2);
           $table->decimal('precioMotosMinuto', 6, 2);
           $table->decimal('precioBicicletasMinuto', 6, 2);

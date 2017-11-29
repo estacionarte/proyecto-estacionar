@@ -37,6 +37,8 @@ Route::group(['prefix' => 'upload-estacionamiento', 'middleware' => 'auth'], fun
 
   Route::get('precios', 'UploadEstacionamientoController@showUploadEstacionamiento4')->name('upload.estacionamiento.4');
 
+  Route::put('precios', 'UploadEstacionamientoController@insertAndShowUploadEstacionamiento4')->name('insert.upload.estacionamiento.4');
+
   Route::get('resumen', 'UploadEstacionamientoController@showUploadEstacionamientoResumen')->name('upload.estacionamiento.resumen');
 
 });

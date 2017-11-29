@@ -64,12 +64,24 @@ class UploadEstacionamientoController extends Controller
     // $path = $request->file('profilePic')->storePubliclyAs('public/espacios', $nombreArchivo);
 
     return redirect()->route('upload.estacionamiento.2',['id' => $espacio->id]);
+    // return redirect()->route('upload.estacionamiento.2',$espacio);
     // return view('upload-estacionamiento.2estadias', compact('espacio'));
     // showUploadEstacionamiento2($espacio->id);
   }
 
   public function showUploadEstacionamiento3(){
-    return view('upload-estacionamiento.3diasyhorarios');
+
+    $diasSemana = [
+      1 => 'Lunes',
+      2 => 'Martes',
+      3 => 'Miércoles',
+      4 => 'Jueves',
+      5 => 'Viernes',
+      6 => 'Sábado',
+      7 => 'Domingo',
+    ];
+    
+    return view('upload-estacionamiento.3diasyhorarios', compact('diasSemana'));
   }
 
   public function insertAndShowUploadEstacionamiento3(){
@@ -85,18 +97,44 @@ class UploadEstacionamientoController extends Controller
       ]
     );
 
-    if ($request->input('medidaDeTiempoMin') == 'Dias') {
-      $minutosMinimo = $request->input('tiempoMinimo') * 24 * 60;
+    // Función para transformar toda la data recibida a minutos
+    function transformarEnMinutos($medida, $tiempo){
+      if ($medida == 'Dias') {
+        $minutos = $tiempo * 24 * 60;
+        return $minutos;
+      } elseif ($medida == 'Horas') {
+        $minutos = $tiempo * 60;
+        return $minutos;
+      } else {
+        $minutos = $tiempo;
+        return $minutos;
+      }
     }
 
+    // La ejecuto para los distintos campos
+    $minutosMinimo = transformarEnMinutos($request->input('medidaDeTiempoMin'), $request->input('tiempoMinimo'));
+    $minutosMaximo = transformarEnMinutos($request->input('medidaDeTiempoMax'), $request->input('tiempoMaximo'));
+    $minutosAnticipacion = transformarEnMinutos($request->input('medidaDeTiempoAnt'), $request->input('tiempoAnticipacion'));
+
+    // Guardo datos en registro existente
     $espacio = Espacio::findOrFail($id);
-    $espacio->fill($request->all());
+    $espacio->estadiaMinimaMinutos = $minutosMinimo;
+    $espacio->estadiaMaximaMinutos = $minutosMaximo;
+    $espacio->anticipacionMinutos = $minutosAnticipacion;
+
+    // $espacio->fill($request->all());
     $espacio->save();
 
     return view('upload-estacionamiento.3diasyhorarios');
   }
 
   public function showUploadEstacionamiento4(){
+    return view('upload-estacionamiento.4precios');
+  }
+
+  public function insertAndShowUploadEstacionamiento4(){
+
+
     return view('upload-estacionamiento.4precios');
   }
 

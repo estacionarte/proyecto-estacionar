@@ -36,7 +36,7 @@
               <option value="Horas" {{ old('medidaDeTiempoMin') == 'Horas' ? 'selected':'' }}>horas</option>
               <option value="Dias" {{ old('medidaDeTiempoMin') == 'Dias' ? 'selected':'' }}>días</option>
             </select>
-            <input type="number" placeholder="10" name="tiempoMinimo" class="upload-input-tiempoMinimoyMax" min="10" max="10000" value="{{ old('tiempoMinimo', $espacio->tiempoMinimo) }}">
+            <input type="number" placeholder="10" name="tiempoMinimo" class="upload-input-tiempoMinimoyMax" min="10" max="10000" value="{{ old('tiempoMinimo', $espacio->estadiaMinimaMinutos) }}">
 
             <label for="" class="upload-label-tiempoMinimoyMax">Máximo</label>
             <select name="medidaDeTiempoMax" class="upload-select-tiempoMinimoyMax">
@@ -44,7 +44,7 @@
               <option value="Horas" {{ old('medidaDeTiempoMax') == 'Horas' ? 'selected':'' }}>horas</option>
               <option value="Dias" {{ old('medidaDeTiempoMax') == 'Dias' ? 'selected':'' }}>días</option>
             </select>
-            <input type="number" placeholder="210" name="tiempoMaximo" class="upload-input-tiempoMinimoyMax" min="0" max="10000" value="{{ old('tiempoMaximo', $espacio->tiempoMaximo) }}">
+            <input type="number" placeholder="210" name="tiempoMaximo" class="upload-input-tiempoMinimoyMax" min="0" max="10000" value="{{ old('tiempoMaximo', $espacio->estadiaMaximaMinutos) }}">
 
             <label for="" class="upload-label-titulo">¿Cuánta anticipación se necesita para la reserva?</label>
 
@@ -54,7 +54,7 @@
               <option value="Horas" {{ old('medidaDeTiempoAnt') == 'Horas' ? 'selected':'' }}>horas</option>
               <option value="Dias" {{ old('medidaDeTiempoAnt') == 'Dias' ? 'selected':'' }}>días</option>
             </select>
-            <input type="number" placeholder="15" name="tiempoAnticipacion" class="upload-input-tiempoMinimoyMax" min="0" max="10000" value="{{ old('tiempoAnticipacion', $espacio->tiempoAnticipacion) }}">
+            <input type="number" placeholder="15" name="tiempoAnticipacion" class="upload-input-tiempoMinimoyMax" min="0" max="10000" value="{{ old('tiempoAnticipacion', $espacio->anticipacionMinutos) }}">
 
             <input type="submit" name="boton-submit" value="&#8249; Volver" class="upload-button-volver">
             <input type="submit" name="boton-submit" value="SIGUIENTE" class="upload-button-submit">

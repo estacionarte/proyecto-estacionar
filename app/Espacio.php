@@ -27,9 +27,9 @@ class Espacio extends Model
     'aptoElectricos',
     'infopublica',
     'infoprivada',
-    'estadiaMinima',
-    'estadiaMaxima',
-    'anticipacion',
+    'estadiaMinimaMinutos',
+    'estadiaMaximaMinutos',
+    'anticipacionMinutos',
     'precioAutosMinuto',
     'precioMotosMinuto',
     'precioBicicletasMinuto'
