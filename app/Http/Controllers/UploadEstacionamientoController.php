@@ -4,19 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Espacio;
+use App\FotosDeEspacio;
+use App\DiasYHorariosDeEspacio;
 use Auth;
 
 class UploadEstacionamientoController extends Controller
 {
 
   public function showUploadEstacionamiento1(){
-
-    return view('upload-estacionamiento.1infogeneral');
+    $espacio = new Espacio();
+    return view('upload-estacionamiento.1infogeneral', compact('espacio'));
   }
 
-  public function showUploadEstacionamiento2($id){
+  public function showUploadEstacionamiento2(Espacio $espacio){
 
-    $espacio = Espacio::findOrFail($id);
+    // $espacio = Espacio::findOrFail($id);
 
     return view('upload-estacionamiento.2estadias', compact('espacio'));
   }
@@ -63,7 +65,7 @@ class UploadEstacionamientoController extends Controller
     // $nombreArchivo = $fotosDeEspacio->idEspacio . '-' . $fotosDeEspacio->id . '-' . $request->file('profilePic')->extension();
     // $path = $request->file('profilePic')->storePubliclyAs('public/espacios', $nombreArchivo);
 
-    return redirect()->route('upload.estacionamiento.2',['id' => $espacio->id]);
+    return redirect()->route('upload.estacionamiento.2',compact('espacio'));
     // return redirect()->route('upload.estacionamiento.2',$espacio);
     // return view('upload-estacionamiento.2estadias', compact('espacio'));
     // showUploadEstacionamiento2($espacio->id);
@@ -80,11 +82,11 @@ class UploadEstacionamientoController extends Controller
       6 => 'Sábado',
       7 => 'Domingo',
     ];
-    
+
     return view('upload-estacionamiento.3diasyhorarios', compact('diasSemana'));
   }
 
-  public function insertAndShowUploadEstacionamiento3(){
+  public function insertAndShowUploadEstacionamiento3(Request $request, Espacio $espacio){
 
     $this->validate($request,
       [
@@ -125,7 +127,8 @@ class UploadEstacionamientoController extends Controller
     // $espacio->fill($request->all());
     $espacio->save();
 
-    return view('upload-estacionamiento.3diasyhorarios');
+    // return view('upload-estacionamiento.3diasyhorarios');
+    return redirect()->route('upload.estacionamiento.3',['id' => $espacio->id]);
   }
 
   public function showUploadEstacionamiento4(){
@@ -133,6 +136,21 @@ class UploadEstacionamientoController extends Controller
   }
 
   public function insertAndShowUploadEstacionamiento4(){
+
+    $this->validate($request,
+      [
+        'horaComienzoLunes' => 'required|numeric|between:0,23',
+        'minutoComienzoLunes' => 'required|numeric|between:0,59',
+        'horaFinLunes' => 'required|numeric|between:0,23',
+        'minutoFinLunes' => 'required|numeric|between:0,59',
+      ]
+    );
+
+    $DiasYHorariosDeEspacio = new DiasYHorariosDeEspacio;
+    $DiasYHorariosDeEspacio->idEspacio = $espacio->id;
+    $DiasYHorariosDeEspacio->dia = $request->input('');
+    $DiasYHorariosDeEspacio->horaComienzo = $request->input('');
+    $DiasYHorariosDeEspacio->horaFin = $request->input('');
 
 
     return view('upload-estacionamiento.4precios');

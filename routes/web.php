@@ -25,11 +25,11 @@ Route::get('/miperfil', function () {
 
 Route::group(['prefix' => 'upload-estacionamiento', 'middleware' => 'auth'], function(){
 
-  Route::get('infogeneral', 'UploadEstacionamientoController@showUploadEstacionamiento1')->name('upload.estacionamiento.1');
+  Route::get('infogeneral/{espacio?}', 'UploadEstacionamientoController@showUploadEstacionamiento1')->name('upload.estacionamiento.1');
 
-  Route::get('estadias/{id}', 'UploadEstacionamientoController@showUploadEstacionamiento2')->name('upload.estacionamiento.2');
+  Route::get('estadias/{espacio}', 'UploadEstacionamientoController@showUploadEstacionamiento2')->name('upload.estacionamiento.2');
 
-  Route::post('estadias/{id}', 'UploadEstacionamientoController@createEspacioAndShowUploadEstacionamiento2')->name('create.espacio.upload.estacionamiento.2');
+  Route::post('estadias', 'UploadEstacionamientoController@createEspacioAndShowUploadEstacionamiento2')->name('create.espacio.upload.estacionamiento.2');
 
   Route::get('diasyhorarios', 'UploadEstacionamientoController@showUploadEstacionamiento3')->name('upload.estacionamiento.3');
 

@@ -24,7 +24,7 @@
 
         <div class="form-generico">
 
-          <form action="{{ route('insert.upload.estacionamiento.3') }}" method="post" class="form-uploadEstacionamiento">
+          <form action="{{ route('insert.upload.estacionamiento.3', $espacio) }}" method="post" class="form-uploadEstacionamiento">
             {{ method_field('PUT') }}
             {{ csrf_field() }}
 
