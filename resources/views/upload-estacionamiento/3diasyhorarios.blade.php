@@ -16,21 +16,27 @@
 
       <section class="uploadEstacionamiento">
 
+        @if (count($errors) > 0)
+          @foreach ($errors->all() as $error)
+            <p style="color: #990606;"> {{ $error }} </p>
+          @endforeach
+        @endif
+
         <div class="form-generico">
 
-          <form action="upload-estacionamiento-4precios.php" method="post" class="form-uploadEstacionamiento">
+          <form action="{{ route('insert.upload.estacionamiento.4', $espacio) }}" method="post" class="form-uploadEstacionamiento">
             {{ method_field('PUT') }}
             {{ csrf_field() }}
 
-            <label for="" class="upload-label-titulo">¿En qué días y horario va a estar disponible tu espacio?</label>
+            <label for="" class="upload-label-titulo">¿En qué días y horarios va a estar disponible tu espacio?</label>
 
             @foreach ($diasSemana as $dia)
 
               <label for="" class="upload-label-diasemana">{{ $dia }}</label>
               <input type="checkbox" name="checkbox{{ $dia }}" value="Si" class="" id="" {{ old('', $espacio->dia) ? 'checked':'' }}>
-              <input type="number" placeholder="00" name="horaComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="23"><input type="number" placeholder="00" name="minutoComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="59">
+              <input type="number" placeholder="00" name="horaComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="00"><input type="number" placeholder="00" name="minutoComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="00">
               <span class="upload-span-separadorhoras">-</span>
-              <input type="number" placeholder="00" name="horaFin{{ $dia }}" class="upload-input-horadia" min="0" max="23"> <input type="number" placeholder="00" name="minutoFin{{ $dia }}" class="upload-input-horadia" min="0" max="59">
+              <input type="number" placeholder="00" name="horaFin{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="00"> <input type="number" placeholder="00" name="minutoFin{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="00">
 
             @endforeach
 

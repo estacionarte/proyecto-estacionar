@@ -18,8 +18,6 @@ class UploadEstacionamientoController extends Controller
 
   public function showUploadEstacionamiento2(Espacio $espacio){
 
-    // $espacio = Espacio::findOrFail($id);
-
     return view('upload-estacionamiento.2estadias', compact('espacio'));
   }
 
@@ -66,12 +64,9 @@ class UploadEstacionamientoController extends Controller
     // $path = $request->file('profilePic')->storePubliclyAs('public/espacios', $nombreArchivo);
 
     return redirect()->route('upload.estacionamiento.2',compact('espacio'));
-    // return redirect()->route('upload.estacionamiento.2',$espacio);
-    // return view('upload-estacionamiento.2estadias', compact('espacio'));
-    // showUploadEstacionamiento2($espacio->id);
   }
 
-  public function showUploadEstacionamiento3(){
+  public function showUploadEstacionamiento3(Espacio $espacio){
 
     $diasSemana = [
       1 => 'Lunes',
@@ -83,19 +78,19 @@ class UploadEstacionamientoController extends Controller
       7 => 'Domingo',
     ];
 
-    return view('upload-estacionamiento.3diasyhorarios', compact('diasSemana'));
+    return view('upload-estacionamiento.3diasyhorarios', compact('diasSemana', 'espacio'));
   }
 
-  public function insertAndShowUploadEstacionamiento3(Request $request, Espacio $espacio){
+  public function insertAndShowUploadEstacionamiento3(Request $request, $id){
 
     $this->validate($request,
       [
         'medidaDeTiempoMin' => 'required|string|max:45',
-        'tiempoMinimo' => 'required|numeric|between:10,10000',
+        'tiempoMinimo' => 'required|numeric|between:1,10000',
         'medidaDeTiempoMax' => 'required|string|max:45',
-        'tiempoMaximo' => 'required|numeric|between:10,10000',
+        'tiempoMaximo' => 'required|numeric|between:1,10000',
         'medidaDeTiempoAnt' => 'required|string|max:45',
-        'tiempoAnticipacion' => 'required|numeric|between:10,10000',
+        'tiempoAnticipacion' => 'required|numeric|between:1,10000',
       ]
     );
 
@@ -127,15 +122,14 @@ class UploadEstacionamientoController extends Controller
     // $espacio->fill($request->all());
     $espacio->save();
 
-    // return view('upload-estacionamiento.3diasyhorarios');
-    return redirect()->route('upload.estacionamiento.3',['id' => $espacio->id]);
+    return redirect()->route('upload.estacionamiento.3',compact('espacio'));
   }
 
-  public function showUploadEstacionamiento4(){
-    return view('upload-estacionamiento.4precios');
+  public function showUploadEstacionamiento4(Espacio $espacio){
+    return view('upload-estacionamiento.4precios', compact('espacio'));
   }
 
-  public function insertAndShowUploadEstacionamiento4(){
+  public function insertAndShowUploadEstacionamiento4(Request $request, $id){
 
     $this->validate($request,
       [
@@ -143,20 +137,50 @@ class UploadEstacionamientoController extends Controller
         'minutoComienzoLunes' => 'required|numeric|between:0,59',
         'horaFinLunes' => 'required|numeric|between:0,23',
         'minutoFinLunes' => 'required|numeric|between:0,59',
+        'horaComienzoMartes' => 'required|numeric|between:0,23',
+        'minutoComienzoMartes' => 'required|numeric|between:0,59',
+        'horaFinMartes' => 'required|numeric|between:0,23',
+        'minutoFinMartes' => 'required|numeric|between:0,59',
+        'horaComienzoMiércoles' => 'required|numeric|between:0,23',
+        'minutoComienzoMiércoles' => 'required|numeric|between:0,59',
+        'horaFinMiércoles' => 'required|numeric|between:0,23',
+        'minutoFinMiércoles' => 'required|numeric|between:0,59',
+        'horaComienzoJueves' => 'required|numeric|between:0,23',
+        'minutoComienzoJueves' => 'required|numeric|between:0,59',
+        'horaFinJueves' => 'required|numeric|between:0,23',
+        'minutoFinJueves' => 'required|numeric|between:0,59',
+        'horaComienzoViernes' => 'required|numeric|between:0,23',
+        'minutoComienzoViernes' => 'required|numeric|between:0,59',
+        'horaFinViernes' => 'required|numeric|between:0,23',
+        'minutoFinViernes' => 'required|numeric|between:0,59',
+        'horaComienzoSábado' => 'required|numeric|between:0,23',
+        'minutoComienzoSábado' => 'required|numeric|between:0,59',
+        'horaFinSábado' => 'required|numeric|between:0,23',
+        'minutoFinSábado' => 'required|numeric|between:0,59',
+        'horaComienzoDomingo' => 'required|numeric|between:0,23',
+        'minutoComienzoDomingo' => 'required|numeric|between:0,59',
+        'horaFinDomingo' => 'required|numeric|between:0,23',
+        'minutoFinDomingo' => 'required|numeric|between:0,59',
       ]
     );
 
     $DiasYHorariosDeEspacio = new DiasYHorariosDeEspacio;
+    $espacio = Espacio::findOrFail($id);
     $DiasYHorariosDeEspacio->idEspacio = $espacio->id;
     $DiasYHorariosDeEspacio->dia = $request->input('');
     $DiasYHorariosDeEspacio->horaComienzo = $request->input('');
     $DiasYHorariosDeEspacio->horaFin = $request->input('');
 
 
-    return view('upload-estacionamiento.4precios');
+    return redirect()->route('upload.estacionamiento.4',compact('espacio'));
   }
 
   public function showUploadEstacionamientoResumen(){
+    return view('upload-estacionamiento.resumen');
+  }
+
+  public function insertAndShowUploadEstacionamientoResumen(){
+
     return view('upload-estacionamiento.resumen');
   }
 

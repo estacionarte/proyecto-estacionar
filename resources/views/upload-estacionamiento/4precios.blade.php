@@ -18,7 +18,8 @@
 
         <div class="form-generico">
 
-          <form action="upload-estacionamiento-5resumen.php" method="post" class="form-uploadEstacionamiento form-reducido">
+          <form action="{{ route('insert.upload.estacionamiento.resumen', $espacio) }}" method="post" class="form-uploadEstacionamiento form-reducido">
+            {{ method_field('PUT') }}
             {{ csrf_field() }}
 
             <label for="" class="upload-label-titulo">¿Cuál va a ser el precio por minuto de tu espacio?</label>
