@@ -52,68 +52,6 @@ LOCK TABLES `alquileres` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `descuentos_espacios`
---
-
-DROP TABLE IF EXISTS `descuentos_espacios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `descuentos_espacios` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `idEspacio` int(10) unsigned NOT NULL,
-  `tipoVehiculo` varchar(45) NOT NULL,
-  `hora` int(10) unsigned NOT NULL,
-  `descuento` decimal(3,2) NOT NULL,
-  `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-  `updated_at` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
-  `deleted_at` timestamp(6) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idEspacioDesc_idx` (`idEspacio`),
-  CONSTRAINT `idEspacioDesc` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `descuentos_espacios`
---
-
-LOCK TABLES `descuentos_espacios` WRITE;
-/*!40000 ALTER TABLE `descuentos_espacios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `descuentos_espacios` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `diasyhorarios_espacios`
---
-
-DROP TABLE IF EXISTS `diasyhorarios_espacios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `diasyhorarios_espacios` (
-  `id` int(10) unsigned NOT NULL,
-  `idEspacio` int(10) unsigned NOT NULL,
-  `dia` varchar(45) NOT NULL,
-  `horaComienzo` time NOT NULL,
-  `horaFin` time NOT NULL,
-  `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-  `updated_at` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
-  `deleted_at` timestamp(6) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idEspacio_idx` (`idEspacio`),
-  CONSTRAINT `idEspacio` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `diasyhorarios_espacios`
---
-
-LOCK TABLES `diasyhorarios_espacios` WRITE;
-/*!40000 ALTER TABLE `diasyhorarios_espacios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `diasyhorarios_espacios` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `espacios`
 --
 
@@ -137,9 +75,9 @@ CREATE TABLE `espacios` (
   `aptoElectricos` varchar(45) DEFAULT NULL,
   `infopublica` varchar(250) DEFAULT NULL,
   `infoprivada` varchar(250) DEFAULT NULL,
-  `estadiaMinima` int(10) unsigned DEFAULT NULL,
-  `estadiaMaxima` int(10) unsigned DEFAULT NULL,
-  `anticipacion` int(10) unsigned DEFAULT NULL,
+  `estadiaMinimaMinutos` int(10) unsigned DEFAULT NULL,
+  `estadiaMaximaMinutos` int(10) unsigned DEFAULT NULL,
+  `anticipacionMinutos` int(10) unsigned DEFAULT NULL,
   `precioAutosMinuto` decimal(6,2) unsigned DEFAULT NULL,
   `precioMotosMinuto` decimal(6,2) unsigned DEFAULT NULL,
   `precioBicicletasMinuto` decimal(6,2) DEFAULT NULL,
@@ -150,7 +88,7 @@ CREATE TABLE `espacios` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `_idx` (`idUser`),
   CONSTRAINT `` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,6 +101,70 @@ LOCK TABLES `espacios` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `espacios_descuentos`
+--
+
+DROP TABLE IF EXISTS `espacios_descuentos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `espacios_descuentos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idEspacio` int(10) unsigned NOT NULL,
+  `tipoVehiculo` varchar(45) NOT NULL,
+  `hora` int(10) unsigned NOT NULL,
+  `descuento` decimal(3,2) NOT NULL,
+  `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  `updated_at` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
+  `deleted_at` timestamp(6) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idEspacioDesc_idx` (`idEspacio`),
+  KEY `idEspacioDescuentos_idx` (`idEspacio`),
+  CONSTRAINT `idEspacioDesc` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `idEspacioDescuentos` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `espacios_descuentos`
+--
+
+LOCK TABLES `espacios_descuentos` WRITE;
+/*!40000 ALTER TABLE `espacios_descuentos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `espacios_descuentos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `espacios_diasyhorarios`
+--
+
+DROP TABLE IF EXISTS `espacios_diasyhorarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `espacios_diasyhorarios` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idEspacio` int(10) unsigned NOT NULL,
+  `dia` varchar(45) NOT NULL,
+  `horaComienzo` varchar(5) NOT NULL,
+  `horaFin` varchar(5) NOT NULL,
+  `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  `updated_at` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
+  `deleted_at` timestamp(6) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idEspacio_idx` (`idEspacio`),
+  CONSTRAINT `idEspacio` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `espacios_diasyhorarios`
+--
+
+LOCK TABLES `espacios_diasyhorarios` WRITE;
+/*!40000 ALTER TABLE `espacios_diasyhorarios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `espacios_diasyhorarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `espacios_fotos`
 --
 
@@ -170,12 +172,15 @@ DROP TABLE IF EXISTS `espacios_fotos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `espacios_fotos` (
-  `id` int(10) unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idEspacio` int(10) unsigned NOT NULL,
   `photoname` varchar(255) NOT NULL,
   `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
   `updated_at` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
-  KEY `idEspacioFoto` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `idFotoEspacio_idx` (`idEspacio`),
+  CONSTRAINT `idFotoEspacio` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +203,7 @@ CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `firstName` varchar(100) NOT NULL,
   `lastName` varchar(100) NOT NULL,
-  `birthDate` date NOT NULL,
+  `birthDate` varchar(10) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
@@ -212,7 +217,7 @@ CREATE TABLE `users` (
   `deleted_at` timestamp(6) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `phoneNumber_UNIQUE` (`phoneNumber`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,7 +226,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'mariano','alvarez','0000-00-00','mariano@estacionar.com','$2y$10$gd.TFxgFCQX.ZKxAjRuSJuOAhq8UhXFCIKzaLVL7tubwf/5s/x9ku','03GZZsXhUWRnJ5dfdEggt8GMUvQt5Dnmcpn3Gdg7UuJtkKxfZWUBhpiPQnhx','2017-11-27 15:51:18.690280',NULL,NULL,NULL,NULL,NULL,'0000-00-00 00:00:00.000000',NULL),(5,'joaco','joaco','0000-00-00','joaquin@estacionar.com','$2y$10$k/TnVRV4VW0zwMvE7Ntp5.mKLgznAIpAr0TKc5kCpk8T00IhqcLC2','AvDI05inlMwRXELxM5IqJATZxsWFG2nxSBiL1gguDOXASop0nbIdfcq6uuEA','2017-11-24 00:51:34.216881',NULL,NULL,NULL,NULL,NULL,'2017-11-24 01:51:09.000000',NULL);
+INSERT INTO `users` VALUES (1,'mariano','alvarez','0000-00-00','mariano@estacionar.com','$2y$10$gd.TFxgFCQX.ZKxAjRuSJuOAhq8UhXFCIKzaLVL7tubwf/5s/x9ku','o8KW51yW00uRZFAeTshLvIbs3HQWqyOXx3pVaJyAXAOFkNwohS01pmWCBVwq','2017-11-27 20:18:06.122381',NULL,NULL,NULL,NULL,NULL,'0000-00-00 00:00:00.000000',NULL),(9,'test1','test1','09-09-1999','test1@test1.com','$2y$10$zWV/yRV7iUArH7LZYR5PQeWWfvD0QDmKAClvqkvIkhoe2canD7RCK',NULL,'2017-12-02 01:57:53.000000',NULL,NULL,NULL,NULL,'test1@test1.com_profilePic.jpeg','2017-12-02 01:57:53.000000',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,4 +273,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-27 16:09:54
+-- Dump completed on 2017-12-01 20:02:14

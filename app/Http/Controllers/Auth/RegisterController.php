@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/miperfil';
+    protected $redirectTo = '/perfil';
 
     /**
      * Create a new controller instance.
@@ -72,6 +72,8 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
       $birthdate = $data['birthDay'] . '-' . $data['birthMonth'] . '-' . $data['birthYear'];
+      $email = $data['email'];
+      $nombreArchivo = $email . '_profilePic.' . $data['profilePic']->extension();
 
         return User::create([
             'firstName' => $data['firstName'],
@@ -79,6 +81,7 @@ class RegisterController extends Controller
             'birthDate' => $birthdate,
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'profilePic' => $nombreArchivo,
         ]);
     }
 

@@ -19,9 +19,9 @@ Route::get('/mantenimiento', function () {
     return view('underconstruction');
 });
 
-Route::get('/miperfil', function () {
+Route::get('/perfil', function () {
     return view('profile');
-});
+})->name('profile');
 
 Route::group(['prefix' => 'upload-estacionamiento', 'middleware' => 'auth'], function(){
 
@@ -41,7 +41,7 @@ Route::group(['prefix' => 'upload-estacionamiento', 'middleware' => 'auth'], fun
 
   Route::get('resumen/{espacio}', 'UploadEstacionamientoController@showUploadEstacionamientoResumen')->name('upload.estacionamiento.resumen');
 
-  Route::put('resumen/{id}', 'UploadEstacionamientoController@showUploadEstacionamientoResumen')->name('insert.upload.estacionamiento.resumen');
+  Route::put('resumen/{id}', 'UploadEstacionamientoController@insertAndShowUploadEstacionamientoResumen')->name('insert.upload.estacionamiento.resumen');
 
 });
 

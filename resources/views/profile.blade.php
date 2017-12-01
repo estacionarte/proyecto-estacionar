@@ -27,7 +27,7 @@
         <section id="content1">
 
           <div class="profile-image">
-            <img src="{{Auth::user()->profilePic}}" alt="profile image">
+            <img src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
           </div>
 
           <div class="profile-welcome">

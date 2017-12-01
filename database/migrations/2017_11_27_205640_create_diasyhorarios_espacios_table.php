@@ -22,8 +22,8 @@ class CreateDiasyhorariosEspaciosTable extends Migration
           $table->foreign('idEspacio')->references('id')->on('espacios');
 
           $table->string('dia', 45);
-          $table->time('horaComienzo');
-          $table->time('horaFin');
+          $table->string('horaComienzo',4);
+          $table->string('horaFin',4);
         });
     }
 

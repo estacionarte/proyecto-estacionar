@@ -33,10 +33,12 @@
             @foreach ($diasSemana as $dia)
 
               <label for="" class="upload-label-diasemana">{{ $dia }}</label>
-              <input type="checkbox" name="checkbox{{ $dia }}" value="Si" class="" id="" {{ old('', $espacio->dia) ? 'checked':'' }}>
-              <input type="number" placeholder="00" name="horaComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="00"><input type="number" placeholder="00" name="minutoComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="00">
+
+              <input type="number" placeholder="00" name="minutoFin{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="00"><input type="number" placeholder="00" name="horaFin{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="00">
+
               <span class="upload-span-separadorhoras">-</span>
-              <input type="number" placeholder="00" name="horaFin{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="00"> <input type="number" placeholder="00" name="minutoFin{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="00">
+
+              <input type="number" placeholder="00" name="minutoComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="00"><input type="number" placeholder="00" name="horaComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="00">
 
             @endforeach
 

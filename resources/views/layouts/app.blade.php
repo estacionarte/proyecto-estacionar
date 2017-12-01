@@ -37,7 +37,7 @@
 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="icons/close-profile-nav2.png" alt=""></a>
-      <a href="profile.php">Mi perfil</a>
+      <a href="{{ route('profile') }}">Mi perfil</a>
       <a href="#">Configuración de mi cuenta</a>
       <a href="#">Ayuda</a>
       <a href="{{ route('logout') }}"
@@ -49,7 +49,7 @@
         {{ csrf_field() }}
     </form>
 
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="{{Auth::user()->firstName}}" alt="avatar" class="avatar"></span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar" class="avatar"></span>
 
     <script>
     function openNav() {
@@ -161,12 +161,12 @@
     </section>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  		<script>
+  <script>
   		$('.toggle-nav').click(function (){
   			$('.main-nav').slideToggle(100);
         $('.toggle-nav').toggleClass('rotate');
   		});
-  	  </script>
+  </script>
 
   </body>
 </html>

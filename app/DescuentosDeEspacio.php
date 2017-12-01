@@ -3,16 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class FotosDeEspacio extends Model
+class DescuentosDeEspacio extends Model
 {
   use SoftDeletes;
 
-  protected $table = 'espacios_fotos';
+  protected $table = 'espacios_descuentos';
 
   protected $fillable = [
     'idEspacio',
-    'photoname',
+    'tipoVehiculo',
+    'hora',
+    'descuento'
   ];
 
   public function espacio()

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Espacio;
-use App\FotosDeEspacio;
+use App\FotoDeEspacio;
 use App\DiasYHorariosDeEspacio;
+use App\DescuentosDeEspacio;
+use App\Http\Requests\UploadEspacioRequest;
 use Auth;
 
 class UploadEstacionamientoController extends Controller
@@ -21,33 +23,30 @@ class UploadEstacionamientoController extends Controller
     return view('upload-estacionamiento.2estadias', compact('espacio'));
   }
 
-  public function createEspacioAndShowUploadEstacionamiento2(Request $request){
+  public function createEspacioAndShowUploadEstacionamiento2(UploadEspacioRequest $request){
 
-    $pics = count($request->input('espacioPic'));
-
-    $this->validate(
-      $request,
-      [
-        'direccion' => 'required|string|max:45',
-        'dpto' => 'nullable|string|max:45',
-        'pais' => 'required|string|max:45',
-        'provincia' => 'required|string|max:45',
-        'ciudad' => 'required|string|max:45',
-        'zipcode' => 'required|numeric|min:1000|max:9999',
-        'tipoEspacio' => 'required|string|max:45',
-        'cantAutos' => 'required|numeric|max:2',
-        'cantMotos' => 'required|numeric|max:8',
-        'cantBicicletas' => 'required|numeric|max:8',
-        'aptoDiscapacitados' => 'nullable',
-        'aptoElectricos' => 'nullable',
-        'infopublica' => 'nullable|string|max:250',
-        'infoprivada' => 'nullable|string|max:250',
-        // foreach (range(0, $pics) as $index) {
-        //   'espacioPic.' . $index => 'required|image|max:10000',
-        // }
-        // 'espacioPic[]' => 'required|image|max:10000',
-      ]
-    );
+    // $pics = count($request->input('espacioPic'));
+    //
+    // $this->validate(
+    //   $request,
+    //   [
+    //     'direccion' => 'required|string|max:45',
+    //     'dpto' => 'nullable|string|max:45',
+    //     'pais' => 'required|string|max:45',
+    //     'provincia' => 'required|string|max:45',
+    //     'ciudad' => 'required|string|max:45',
+    //     'zipcode' => 'required|numeric|min:1000|max:9999',
+    //     'tipoEspacio' => 'required|string|max:45',
+    //     'cantAutos' => 'required|numeric|max:2',
+    //     'cantMotos' => 'required|numeric|max:8',
+    //     'cantBicicletas' => 'required|numeric|max:8',
+    //     'aptoDiscapacitados' => 'nullable',
+    //     'aptoElectricos' => 'nullable',
+    //     'infopublica' => 'nullable|string|max:250',
+    //     'infoprivada' => 'nullable|string|max:250',
+    //     'espacioPic[]' => 'required|image|max:10000',
+    //   ]
+    // );
 
     // Registrar espacio
     $espacio = new Espacio($request->except('espacioPic'));
@@ -56,12 +55,23 @@ class UploadEstacionamientoController extends Controller
 
     // Guardar nombre de foto en db y después archivo de foto
 
-    // $fotosDeEspacio = new FotosDeEspacio($request->only('espacioPic'));
-    // $fotosDeEspacio->idEspacio = $espacio->id;
-    // $fotosDeEspacio->save();
-    //
-    // $nombreArchivo = $fotosDeEspacio->idEspacio . '-' . $fotosDeEspacio->id . '-' . $request->file('profilePic')->extension();
-    // $path = $request->file('profilePic')->storePubliclyAs('public/espacios', $nombreArchivo);
+    foreach ($request->espacioPic as $photo) {
+      $fotoDeEspacio = new FotoDeEspacio();
+      $fotoDeEspacio->idEspacio = $espacio->id;
+      if ($fotoDeEspacio->id) {
+        $i = $fotoDeEspacio->id + 1;
+      } elseif (isset($i)) {
+        $i++;
+      } else {
+        $i = 1;
+      }
+      $nombreArchivo = $fotoDeEspacio->idEspacio . '-' . $i . '.' . $photo->extension();
+      $fotoDeEspacio->photoname = $nombreArchivo;
+      $fotoDeEspacio->save();
+
+      $path = $photo->storePubliclyAs('public/espacios', $nombreArchivo);
+
+    }
 
     return redirect()->route('upload.estacionamiento.2',compact('espacio'));
   }
@@ -164,24 +174,83 @@ class UploadEstacionamientoController extends Controller
       ]
     );
 
-    $DiasYHorariosDeEspacio = new DiasYHorariosDeEspacio;
-    $espacio = Espacio::findOrFail($id);
-    $DiasYHorariosDeEspacio->idEspacio = $espacio->id;
-    $DiasYHorariosDeEspacio->dia = $request->input('');
-    $DiasYHorariosDeEspacio->horaComienzo = $request->input('');
-    $DiasYHorariosDeEspacio->horaFin = $request->input('');
+    $diasSemana = [
+      1 => 'Lunes',
+      2 => 'Martes',
+      3 => 'Miércoles',
+      4 => 'Jueves',
+      5 => 'Viernes',
+      6 => 'Sábado',
+      7 => 'Domingo',
+    ];
 
+    foreach ($diasSemana as $key => $value) {
+
+      $diasYHorariosDeEspacio = new DiasYHorariosDeEspacio();
+      $espacio = Espacio::findOrFail($id);
+
+      $diasYHorariosDeEspacio->idEspacio = $espacio->id;
+
+      $horacomienzo = $request->input('horaComienzo' . $value) * 60 + $request->input('minutoComienzo' . $value);
+      $horafin = $request->input('horaFin' . $value) * 60 + $request->input('minutoFin' . $value);
+
+      $diasYHorariosDeEspacio->dia = $value;
+      $diasYHorariosDeEspacio->horaComienzo = $horacomienzo;
+      $diasYHorariosDeEspacio->horaFin = $horafin;
+
+      $diasYHorariosDeEspacio->save();
+
+    }
 
     return redirect()->route('upload.estacionamiento.4',compact('espacio'));
   }
 
-  public function showUploadEstacionamientoResumen(){
-    return view('upload-estacionamiento.resumen');
+  public function showUploadEstacionamientoResumen(Espacio $espacio){
+    return view('upload-estacionamiento.resumen', compact('espacio'));
   }
 
-  public function insertAndShowUploadEstacionamientoResumen(){
+  public function insertAndShowUploadEstacionamientoResumen(Request $request, $id){
 
-    return view('upload-estacionamiento.resumen');
+    $this->validate($request,
+    [
+      'precioPorMinuto' => 'required|numeric|between:0,100',
+      'descuentoPorMinutoHora' => 'required|numeric|between:0,99',
+      'descuentoPorMinutoSeisHoras' => 'required|numeric|between:0,99',
+      'descuentoPorMinutoDia' => 'required|numeric|between:0,99',
+    ]);
+
+    $espacio = Espacio::findOrFail($id);
+    $espacio->precioAutosMinuto = $request->input('precioPorMinuto');
+    $espacio->precioMotosMinuto = $request->input('precioPorMinuto');
+    $espacio->precioBicicletasMinuto = $request->input('precioPorMinuto');
+
+    $espacio->save();
+
+    $descuentosDeEspacio = new DescuentosDeEspacio();
+    $descuentosDeEspacio->idEspacio = $espacio->id;
+    $descuentosDeEspacio->tipoVehiculo = 'Todos';
+    $descuentosDeEspacio->hora = 1;
+    $descuentosDeEspacio->descuento = $request->input('descuentoPorMinutoHora') / 100;
+
+    $descuentosDeEspacio->save();
+
+    $descuentosDeEspacio = new DescuentosDeEspacio();
+    $descuentosDeEspacio->idEspacio = $espacio->id;
+    $descuentosDeEspacio->tipoVehiculo = 'Todos';
+    $descuentosDeEspacio->hora = 6;
+    $descuentosDeEspacio->descuento = $request->input('descuentoPorMinutoSeisHoras') / 100;
+
+    $descuentosDeEspacio->save();
+
+    $descuentosDeEspacio = new DescuentosDeEspacio();
+    $descuentosDeEspacio->idEspacio = $espacio->id;
+    $descuentosDeEspacio->tipoVehiculo = 'Todos';
+    $descuentosDeEspacio->hora = 24;
+    $descuentosDeEspacio->descuento = $request->input('descuentoPorMinutoDia') / 100;
+
+    $descuentosDeEspacio->save();
+
+    return redirect()->route('upload.estacionamiento.resumen',compact('espacio'));
   }
 
 }
