@@ -10,12 +10,6 @@
 
     <h1>Crear Cuenta Nueva</h1>
 
-    @if (count($errors) > 0)
-      @foreach ($errors->all() as $error)
-        <p style="color: red;"> {{ $error }} </p>
-      @endforeach
-    @endif
-
     <section class="signup">
 
       @if (count($errors) > 0)

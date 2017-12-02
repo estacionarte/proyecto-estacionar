@@ -19,21 +19,31 @@ Route::get('/mantenimiento', function () {
     return view('underconstruction');
 });
 
-Route::get('/miperfil', function () {
+Route::get('/perfil', function () {
     return view('profile');
+})->name('profile');
+
+Route::group(['prefix' => 'upload-estacionamiento', 'middleware' => 'auth'], function(){
+
+  Route::get('infogeneral/{espacio?}', 'UploadEstacionamientoController@showUploadEstacionamiento1')->name('upload.estacionamiento.1');
+
+  Route::get('estadias/{espacio}', 'UploadEstacionamientoController@showUploadEstacionamiento2')->name('upload.estacionamiento.2');
+
+  Route::post('estadias', 'UploadEstacionamientoController@createEspacioAndShowUploadEstacionamiento2')->name('create.espacio.upload.estacionamiento.2');
+
+  Route::get('diasyhorarios/{espacio}', 'UploadEstacionamientoController@showUploadEstacionamiento3')->name('upload.estacionamiento.3');
+
+  Route::put('diasyhorarios/{id}', 'UploadEstacionamientoController@insertAndShowUploadEstacionamiento3')->name('insert.upload.estacionamiento.3');
+
+  Route::get('precios/{espacio}', 'UploadEstacionamientoController@showUploadEstacionamiento4')->name('upload.estacionamiento.4');
+
+  Route::put('precios/{id}', 'UploadEstacionamientoController@insertAndShowUploadEstacionamiento4')->name('insert.upload.estacionamiento.4');
+
+  Route::get('resumen/{espacio}', 'UploadEstacionamientoController@showUploadEstacionamientoResumen')->name('upload.estacionamiento.resumen');
+
+  Route::put('resumen/{id}', 'UploadEstacionamientoController@insertAndShowUploadEstacionamientoResumen')->name('insert.upload.estacionamiento.resumen');
+
 });
-
-Route::get('/upload-estacionamiento/infogeneral', 'UploadEstacionamientoController@showUploadEstacionamiento1')->name('upload.estacionamiento.1');
-
-Route::get('/upload-estacionamiento/estadias', 'UploadEstacionamientoController@showUploadEstacionamiento2')->name('upload.estacionamiento.2');
-
-Route::post('/upload-estacionamiento/estadias', 'UploadEstacionamientoController@createEspacio')->name('create.espacio');
-
-Route::get('/upload-estacionamiento/diasyhorarios', 'UploadEstacionamientoController@showUploadEstacionamiento3')->name('upload.estacionamiento.3');
-
-Route::get('/upload-estacionamiento/precios', 'UploadEstacionamientoController@showUploadEstacionamiento4')->name('upload.estacionamiento.4');
-
-Route::get('/upload-estacionamiento/resumen', 'UploadEstacionamientoController@showUploadEstacionamientoResumen')->name('upload.estacionamiento.resumen');
 
 Route::get('/map', function() {
   return view('leaflet');

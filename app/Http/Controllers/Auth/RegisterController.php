@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/perfil';
 
     /**
      * Create a new controller instance.
@@ -50,12 +50,12 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'firstName' => 'required|string|max:255',
             'lastName' => 'required|string|max:255',
-            'birthDay' => 'required|integer|between:1,31',
-            'birthMonth' => 'required|integer|between:1,12',
-            'birthYear' => 'required|integer|between:1930,2010',
+            'birthDay' => 'required|numeric|between:1,31',
+            'birthMonth' => 'required|numeric|between:1,12',
+            'birthYear' => 'required|numeric|between:1930,2010',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'profilePic' => 'required|image',
+            'profilePic' => 'required|image|max:10000',
         ],
         [
           'email.unique' => 'Ya existe un usuario registrado con este e-mail.',
@@ -71,12 +71,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      $birthdate = $data['birthDay'] . '-' . $data['birthMonth'] . '-' . $data['birthYear'];
+      $email = $data['email'];
+      $nombreArchivo = $email . '_profilePic.' . $data['profilePic']->extension();
+
         return User::create([
             'firstName' => $data['firstName'],
             'lastName' => $data['lastName'],
-            'birthDate' => date('d-m-Y',strtotime($data['birthDay'] . '-' . $data['birthMonth'] . '-' . $data['birthYear'])),
+            'birthDate' => $birthdate,
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'profilePic' => $nombreArchivo,
         ]);
     }
 

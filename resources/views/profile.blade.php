@@ -2,8 +2,6 @@
 @section('title') Mi Perfil @endsection
 @section('content')
 
-<body class="profile-body">
-
   <div class="container">
 
     <div class="bodies-main-content">
@@ -27,7 +25,7 @@
         <section id="content1">
 
           <div class="profile-image">
-            <img src="{{Auth::user()->profilePic}}" alt="profile image">
+            <img src="../storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
           </div>
 
           <div class="profile-welcome">
@@ -118,3 +116,4 @@
       $('.profile-nav').slideToggle(100);
     });
   </script>
+@endsection

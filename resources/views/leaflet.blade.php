@@ -40,7 +40,57 @@
     </div>
 
     <script type="text/javascript">
-      var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+      var mymap = L.map('mapid').setView([-34.64, -58.38], 14);
+
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1Ijoiam9hcGFub3MiLCJhIjoiY2pha2Z2eG1zMmlrNTMzcno2OHQ0b3VvYiJ9.jgj5HdcO2n9VZJpuSn4_wA'
+      }).addTo(mymap);
+
+      var marker = L.marker([-34.6211, -58.38151]).addTo(mymap);
+
+      var circle = L.circle([-34.61709, -58.38233], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 150
+      }).addTo(mymap);
+
+      var polygon = L.polygon([
+        [-34.6241, -58.38251],
+        [-34.6291, -58.38291],
+        [-34.63, -58.389]
+      ],
+      {
+        color: 'green'
+      }).addTo(mymap);
+
+      marker.bindPopup("<b>Hello world!</b><br>Soy un popup!").openPopup();
+      circle.bindPopup("<b>Soy un popup en un circulo!</b>");
+      polygon.bindPopup("<b>Hello world!</b><br>Soy un polígono popup!");
+
+      var popup = L.popup()
+        .setLatLng([-34.6111, -58.38151])
+        .setContent("I am a standalone popup.")
+        .openOn(mymap);
+
+      function onMapClick(event) {
+        alert("Clickeaste el mapa en " + event.latlng);
+      }
+      mymap.on('click', onMapClick);
+      mymap.off('click', onMapClick);
+
+      var popup2 = L.popup()
+      function onMapClick2(e) {
+        popup2
+          .setLatLng(e.latlng)
+          .setContent("Clickeaste el mapa en " + e.latlng.toString())
+          .openOn(mymap)
+      }
+      mymap.on('click', onMapClick2)
+
     </script>
   </body>
 </html>
