@@ -18,6 +18,11 @@ class UploadEstacionamientoController extends Controller
     return view('upload-estacionamiento.1infogeneral', compact('espacio'));
   }
 
+  public function showEditarUploadEstacionamiento1(Espacio $espacio){
+    // $espacio = Espacio::findOrFail($id);
+    return view('upload-estacionamiento.1infogeneral-edit', compact('espacio'));
+  }
+
   public function showUploadEstacionamiento2(Espacio $espacio){
 
     return view('upload-estacionamiento.2estadias', compact('espacio'));
@@ -25,35 +30,40 @@ class UploadEstacionamientoController extends Controller
 
   public function createEspacioAndShowUploadEstacionamiento2(UploadEspacioRequest $request){
 
-    // $pics = count($request->input('espacioPic'));
-    //
-    // $this->validate(
-    //   $request,
-    //   [
-    //     'direccion' => 'required|string|max:45',
-    //     'dpto' => 'nullable|string|max:45',
-    //     'pais' => 'required|string|max:45',
-    //     'provincia' => 'required|string|max:45',
-    //     'ciudad' => 'required|string|max:45',
-    //     'zipcode' => 'required|numeric|min:1000|max:9999',
-    //     'tipoEspacio' => 'required|string|max:45',
-    //     'cantAutos' => 'required|numeric|max:2',
-    //     'cantMotos' => 'required|numeric|max:8',
-    //     'cantBicicletas' => 'required|numeric|max:8',
-    //     'aptoDiscapacitados' => 'nullable',
-    //     'aptoElectricos' => 'nullable',
-    //     'infopublica' => 'nullable|string|max:250',
-    //     'infoprivada' => 'nullable|string|max:250',
-    //     'espacioPic[]' => 'required|image|max:10000',
-    //   ]
-    // );
-
     // Registrar espacio
     $espacio = new Espacio($request->except('espacioPic'));
     $espacio->idUser = Auth::user()->id;
     $espacio->save();
 
     // Guardar nombre de foto en db y después archivo de foto
+
+    foreach ($request->espacioPic as $photo) {
+      $fotoDeEspacio = new FotoDeEspacio();
+      $fotoDeEspacio->idEspacio = $espacio->id;
+      if ($fotoDeEspacio->id) {
+        $i = $fotoDeEspacio->id + 1;
+      } elseif (isset($i)) {
+        $i++;
+      } else {
+        $i = 1;
+      }
+      $nombreArchivo = $fotoDeEspacio->idEspacio . '-' . $i . '.' . $photo->extension();
+      $fotoDeEspacio->photoname = $nombreArchivo;
+      $fotoDeEspacio->save();
+
+      $path = $photo->storePubliclyAs('public/espacios', $nombreArchivo);
+
+    }
+
+    return redirect()->route('upload.estacionamiento.2',compact('espacio'));
+  }
+
+  public function insertAndShowUploadEstacionamiento2(UploadEspacioRequest $request, $id){
+
+    // Editar espacio
+    $espacio = Espacio::findOrFail($id);
+    $espacio->fill($request->except('espacioPic'));
+    $espacio->save();
 
     foreach ($request->espacioPic as $photo) {
       $fotoDeEspacio = new FotoDeEspacio();
@@ -129,7 +139,6 @@ class UploadEstacionamientoController extends Controller
     $espacio->estadiaMaximaMinutos = $minutosMaximo;
     $espacio->anticipacionMinutos = $minutosAnticipacion;
 
-    // $espacio->fill($request->all());
     $espacio->save();
 
     return redirect()->route('upload.estacionamiento.3',compact('espacio'));

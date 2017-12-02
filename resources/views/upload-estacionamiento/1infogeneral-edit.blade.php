@@ -24,7 +24,8 @@
 
         <div class="form-generico">
 
-          <form action='{{ route('create.espacio.upload.estacionamiento.2') }}' method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento">
+          <form action='{{ route('insert.upload.estacionamiento.2', $espacio) }}' method="post" enctype="multipart/form-data" class="form-uploadEstacionamiento">
+            {{ method_field('PUT') }}
             {{ csrf_field() }}
 
             @include('upload-estacionamiento._form-infogeneral')
