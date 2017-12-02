@@ -23,11 +23,6 @@ class UploadEstacionamientoController extends Controller
     return view('upload-estacionamiento.1infogeneral-edit', compact('espacio'));
   }
 
-  public function showUploadEstacionamiento2(Espacio $espacio){
-
-    return view('upload-estacionamiento.2estadias', compact('espacio'));
-  }
-
   public function createEspacioAndShowUploadEstacionamiento2(UploadEspacioRequest $request){
 
     // Registrar espacio
@@ -54,7 +49,6 @@ class UploadEstacionamientoController extends Controller
       $path = $photo->storePubliclyAs('public/espacios', $nombreArchivo);
 
     }
-
     return redirect()->route('upload.estacionamiento.2',compact('espacio'));
   }
 
@@ -82,23 +76,11 @@ class UploadEstacionamientoController extends Controller
       $path = $photo->storePubliclyAs('public/espacios', $nombreArchivo);
 
     }
-
     return redirect()->route('upload.estacionamiento.2',compact('espacio'));
   }
 
-  public function showUploadEstacionamiento3(Espacio $espacio){
-
-    $diasSemana = [
-      1 => 'Lunes',
-      2 => 'Martes',
-      3 => 'Miércoles',
-      4 => 'Jueves',
-      5 => 'Viernes',
-      6 => 'Sábado',
-      7 => 'Domingo',
-    ];
-
-    return view('upload-estacionamiento.3diasyhorarios', compact('diasSemana', 'espacio'));
+  public function showUploadEstacionamiento2(Espacio $espacio){
+    return view('upload-estacionamiento.2estadias', compact('espacio'));
   }
 
   public function insertAndShowUploadEstacionamiento3(Request $request, $id){
@@ -144,8 +126,19 @@ class UploadEstacionamientoController extends Controller
     return redirect()->route('upload.estacionamiento.3',compact('espacio'));
   }
 
-  public function showUploadEstacionamiento4(Espacio $espacio){
-    return view('upload-estacionamiento.4precios', compact('espacio'));
+  public function showUploadEstacionamiento3(Espacio $espacio){
+
+    $diasSemana = [
+      1 => 'Lunes',
+      2 => 'Martes',
+      3 => 'Miércoles',
+      4 => 'Jueves',
+      5 => 'Viernes',
+      6 => 'Sábado',
+      7 => 'Domingo',
+    ];
+
+    return view('upload-estacionamiento.3diasyhorarios', compact('diasSemana', 'espacio'));
   }
 
   public function insertAndShowUploadEstacionamiento4(Request $request, $id){
@@ -214,8 +207,8 @@ class UploadEstacionamientoController extends Controller
     return redirect()->route('upload.estacionamiento.4',compact('espacio'));
   }
 
-  public function showUploadEstacionamientoResumen(Espacio $espacio){
-    return view('upload-estacionamiento.resumen', compact('espacio'));
+  public function showUploadEstacionamiento4(Espacio $espacio){
+    return view('upload-estacionamiento.4precios', compact('espacio'));
   }
 
   public function insertAndShowUploadEstacionamientoResumen(Request $request, $id){
@@ -260,6 +253,10 @@ class UploadEstacionamientoController extends Controller
     $descuentosDeEspacio->save();
 
     return redirect()->route('upload.estacionamiento.resumen',compact('espacio'));
+  }
+
+  public function showUploadEstacionamientoResumen(Espacio $espacio){
+    return view('upload-estacionamiento.resumen', compact('espacio'));
   }
 
 }
