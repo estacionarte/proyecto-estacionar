@@ -9,6 +9,7 @@ use App\DiasYHorariosDeEspacio;
 use App\DescuentosDeEspacio;
 use App\Http\Requests\UploadEspacioRequest;
 use Auth;
+use DB;
 
 class UploadEstacionamientoController extends Controller
 {
@@ -83,6 +84,20 @@ class UploadEstacionamientoController extends Controller
     return view('upload-estacionamiento.2estadias', compact('espacio'));
   }
 
+  // Función para transformar toda la data recibida a minutos
+  private function transformarEnMinutos($medida, $tiempo){
+    if ($medida == 'Dias') {
+      $minutos = $tiempo * 24 * 60;
+      return $minutos;
+    } elseif ($medida == 'Horas') {
+      $minutos = $tiempo * 60;
+      return $minutos;
+    } else {
+      $minutos = $tiempo;
+      return $minutos;
+    }
+  }
+
   public function insertAndShowUploadEstacionamiento3(Request $request, $id){
 
     $this->validate($request,
@@ -96,24 +111,11 @@ class UploadEstacionamientoController extends Controller
       ]
     );
 
-    // Función para transformar toda la data recibida a minutos
-    function transformarEnMinutos($medida, $tiempo){
-      if ($medida == 'Dias') {
-        $minutos = $tiempo * 24 * 60;
-        return $minutos;
-      } elseif ($medida == 'Horas') {
-        $minutos = $tiempo * 60;
-        return $minutos;
-      } else {
-        $minutos = $tiempo;
-        return $minutos;
-      }
-    }
 
     // La ejecuto para los distintos campos
-    $minutosMinimo = transformarEnMinutos($request->input('medidaDeTiempoMin'), $request->input('tiempoMinimo'));
-    $minutosMaximo = transformarEnMinutos($request->input('medidaDeTiempoMax'), $request->input('tiempoMaximo'));
-    $minutosAnticipacion = transformarEnMinutos($request->input('medidaDeTiempoAnt'), $request->input('tiempoAnticipacion'));
+    $minutosMinimo = $this->transformarEnMinutos($request->input('medidaDeTiempoMin'), $request->input('tiempoMinimo'));
+    $minutosMaximo = $this->transformarEnMinutos($request->input('medidaDeTiempoMax'), $request->input('tiempoMaximo'));
+    $minutosAnticipacion = $this->transformarEnMinutos($request->input('medidaDeTiempoAnt'), $request->input('tiempoAnticipacion'));
 
     // Guardo datos en registro existente
     $espacio = Espacio::findOrFail($id);
@@ -255,8 +257,111 @@ class UploadEstacionamientoController extends Controller
     return redirect()->route('upload.estacionamiento.resumen',compact('espacio'));
   }
 
+  // Pasar de minutos (como está guardado en DB) a horas y días
+  private function minutosEnDiasYHoras($minutos) {
+
+    if ($minutos < 60) {
+      $tiempo = $minutos . ' minutos';
+      return $tiempo;
+    } elseif ($minutos < 1440) {
+      if ($minutos % 60 == 0) {
+        if ($minutos / 60 == 1) {
+          // Si es una hora exacta
+          $tiempo = '1 hora';
+          return $tiempo;
+        }
+        $tiempo = $minutos / 60 . ' horas';
+        return $tiempo;
+      }
+      if (floor($minutos / 60) == 1) {
+        $tiempo = floor($minutos / 60) . ' hora y ' . $minutos % 60 . ' minutos';
+        return $tiempo;
+      }
+      $tiempo = floor($minutos / 60) . ' horas y ' . $minutos % 60 . ' minutos';
+      return $tiempo;
+    } else {
+      if ($minutos % 60 == 0) {
+        if ($minutos % 1440 == 0) {
+          if ($minutos / 1440 == 1) {
+            $tiempo = '1 día';
+            return $tiempo;
+          }
+          $tiempo = $minutos / 1440 . ' días';
+          return $tiempo;
+        }
+        if (floor($minutos / 1440) == 1) {
+          if (floor($minutos % 1440 / 60) == 1) {
+            $tiempo = '1 día y 1 hora';
+            return $tiempo;
+          }
+          $tiempo = '1 día y ' . ($minutos % 1440 / 60) . ' horas';;
+          return $tiempo;
+        }
+        if (floor($minutos % 1440 / 60) == 1) {
+          $tiempo = floor($minutos / 1440) . ' días y 1 hora';
+          return $tiempo;
+        }
+        $tiempo = floor($minutos / 1440) . ' días y ' . ($minutos % 1440 / 60) . ' horas';
+        return $tiempo;
+      }
+      if (floor($minutos / 1440) == 1) {
+        if (floor($minutos % 1440 / 60) == 1) {
+          $tiempo = ' 1 día, 1 hora y ' . $minutos % 1440 % 60 . ' minutos';
+          return $tiempo;
+        }
+        $tiempo = ' 1 día ' . floor($minutos % 1440 / 60) . ' horas y ' . $minutos % 1440 % 60 . ' minutos';
+        return $tiempo;
+      }
+      if (floor($minutos % 1440 / 60) == 1) {
+        $tiempo = floor($minutos / 1440) . ' días, 1 hora y ' . $minutos % 1440 % 60 . ' minutos';
+        return $tiempo;
+      }
+      $tiempo = floor($minutos / 1440) . ' días, ' . floor($minutos % 1440 / 60) . ' horas y ' . $minutos % 1440 % 60 . ' minutos';
+      return $tiempo;
+    }
+
+  }
+
+  // Pasar minutos a horario
+  private function minutosEnHoraDelDia($minutos){
+
+    if ($minutos % 60 == 0) {
+      $hora = $minutos / 60 . ':00';
+      return $hora;
+    } else {
+      $hora = floor($minutos / 60) . ':' . ($minutos % 60);
+      return $hora;
+    }
+  }
+
   public function showUploadEstacionamientoResumen(Espacio $espacio){
-    return view('upload-estacionamiento.resumen', compact('espacio'));
+
+    $fotos = DB::table('espacios_fotos')
+    ->select('*')
+    ->where('idEspacio', '=', $espacio->id)
+    ->get();
+
+    $tiempominimo = $this->minutosEnDiasYHoras($espacio->estadiaMinimaMinutos);
+    $tiempomaximo = $this->minutosEnDiasYHoras($espacio->estadiaMaximaMinutos);
+    $anticipacion = $this->minutosEnDiasYHoras($espacio->anticipacionMinutos);
+
+    $dias = DB::table('espacios_diasyhorarios')
+      ->select('*')
+      ->where('idEspacio', '=', $espacio->id)
+      ->get();
+    $horarios[] = '';
+    foreach ($dias as $dia) {
+      $horaComienzo = $this->minutosEnHoraDelDia($dia->horaComienzo);
+      $horaFin = $this->minutosEnHoraDelDia($dia->horaFin);
+      $horarios[] = $dia->dia . ': ' . $horaComienzo . ' - ' . $horaFin;
+    }
+
+    $descuentos = DB::table('espacios_descuentos')
+      ->select('*')
+      ->where('idEspacio', '=', $espacio->id)
+      ->get();
+
+    return view('upload-estacionamiento.resumen', compact('espacio', 'fotos', 'tiempominimo', 'tiempomaximo', 'anticipacion', 'horarios', 'descuentos'));
   }
 
 }

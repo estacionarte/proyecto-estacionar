@@ -17,7 +17,7 @@
       <section class="uploadEstacionamiento">
 
         <section class="upload-seccion-resumen">
-          <h2>Información General</h2>
+          <h2>Información General</h2><a href="{{ route('editar.upload.estacionamiento.1', $espacio) }}">Editar</a>
           <p>{{ $espacio->direccion }} {{ $espacio->dpto }}</p>
           <p>{{ $espacio->ciudad }}, {{ $espacio->provincia }}, {{ $espacio->pais }}, {{ $espacio->zipcode }}</p>
           <br>
@@ -34,23 +34,31 @@
           <p>{{ $espacio->infoprivada }}</p>
           <br>
           <p>FOTOS</p>
+          @foreach ($fotos as $foto)
+            <img src="/storage/espacios/{{ $foto->photoname }}" alt="" class="upload-img-foto">
+          @endforeach
 
           <br><br>
 
           <h2>Estadías</h2>
-          <p>Tiempo mínimo: {{ $espacio->estadiaMinimaMinutos }} minutos</p>
-          <p>Tiempo máximo: {{ $espacio->estadiaMaximaMinutos }} minutos</p>
-          <p>Anticipación para reservar: {{ $espacio->anticipacionMinutos }} minutos</p>
+          <p>Tiempo mínimo: {{ $tiempominimo }}</p>
+          <p>Tiempo máximo: {{ $tiempomaximo }}</p>
+          <p>Anticipación para reservar: {{ $anticipacion }}</p>
 
           <br><br>
 
           <h2>Días y Horarios</h2>
-          <p>Lunes: {{ $espacio->estadiaMinimaMinutos }} minutos</p>
-          <p>Tiempo máximo: {{ $espacio->estadiaMaximaMinutos }} minutos</p>
-          <p>Anticipación para reservar: {{ $espacio->anticipacionMinutos }} minutos</p>
+          @foreach ($horarios as $horario)
+            <p>{{ $horario }}</p>
+          @endforeach
 
           <br><br>
 
+          <h2>Precios</h2>
+          <p>Precio por minuto: ${{ $espacio->precioAutosMinuto }}</p>
+          @foreach ($descuentos as $descuento)
+            <p>Descuento a partir de {{ $descuento->hora }} horas: {{ $descuento->descuento * 100 }}%</p>
+          @endforeach
         </section>
 
         <div class="upload-div-sideimage4"></div>
