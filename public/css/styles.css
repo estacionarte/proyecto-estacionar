@@ -1146,6 +1146,17 @@ span .avatar{
   display: none;
 }
 
+/****************** C A R G A   C O C H E R A (Resumen) *******************/
+
+.uploadEstacionamiento-progressBar-progress5{
+  width: 100%;
+}
+
+.uploadEstacionamiento .upload-seccion-resumen .upload-img-foto{
+  width: 150px;
+  height: 150px;
+}
+
 /**************************************************************/
 /*********************  T  A  B  L  E  T  *********************/
 /**************************************************************/

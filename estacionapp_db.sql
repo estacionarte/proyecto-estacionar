@@ -88,7 +88,7 @@ CREATE TABLE `espacios` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `_idx` (`idUser`),
   CONSTRAINT `` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,6 +97,7 @@ CREATE TABLE `espacios` (
 
 LOCK TABLES `espacios` WRITE;
 /*!40000 ALTER TABLE `espacios` DISABLE KEYS */;
+INSERT INTO `espacios` VALUES (1,10,'Tu Calle 223',NULL,'Argentina','CABA','ciudad','1100','Cochera Privada',1,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2017-12-02 18:41:12.101807','2017-12-02 21:41:12.000000',NULL),(2,9,'Argentina 7','9','Argentina','Buenos Aires','ciudad','1100','Cochera Privada',1,2,4,'Apto para Discapacitados',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2017-12-02 21:36:30.000000','2017-12-02 21:36:30.000000',NULL),(3,9,'Avenida Belgrano 822','3B','Argentina','CABA','ciudad','1090','Cochera Privada',1,2,4,'Apto para Discapacitados',NULL,'Fácil acceso desde avenida.','Tocar timbre de departamento 3B y preguntar por Carlos.',20,330,15,1.00,1.00,1.00,'2017-12-04 04:32:26.156695','2017-12-04 01:59:15.000000',NULL);
 /*!40000 ALTER TABLE `espacios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,6 +131,7 @@ CREATE TABLE `espacios_descuentos` (
 
 LOCK TABLES `espacios_descuentos` WRITE;
 /*!40000 ALTER TABLE `espacios_descuentos` DISABLE KEYS */;
+INSERT INTO `espacios_descuentos` VALUES (1,3,'Todos',1,0.20,'2017-12-04 01:59:15.000000','2017-12-04 01:59:15.000000',NULL),(2,3,'Todos',6,0.30,'2017-12-04 01:59:15.000000','2017-12-04 01:59:15.000000',NULL),(3,3,'Todos',24,0.60,'2017-12-04 01:59:15.000000','2017-12-04 01:59:15.000000',NULL);
 /*!40000 ALTER TABLE `espacios_descuentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +154,7 @@ CREATE TABLE `espacios_diasyhorarios` (
   PRIMARY KEY (`id`),
   KEY `idEspacio_idx` (`idEspacio`),
   CONSTRAINT `idEspacio` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,6 +163,7 @@ CREATE TABLE `espacios_diasyhorarios` (
 
 LOCK TABLES `espacios_diasyhorarios` WRITE;
 /*!40000 ALTER TABLE `espacios_diasyhorarios` DISABLE KEYS */;
+INSERT INTO `espacios_diasyhorarios` VALUES (1,3,'Lunes','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(2,3,'Martes','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(3,3,'Miércoles','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(4,3,'Jueves','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(5,3,'Viernes','1200','1410','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(6,3,'Sábado','600','1200','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(7,3,'Domingo','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL);
 /*!40000 ALTER TABLE `espacios_diasyhorarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,7 +183,7 @@ CREATE TABLE `espacios_fotos` (
   PRIMARY KEY (`id`),
   KEY `idFotoEspacio_idx` (`idEspacio`),
   CONSTRAINT `idFotoEspacio` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,6 +192,7 @@ CREATE TABLE `espacios_fotos` (
 
 LOCK TABLES `espacios_fotos` WRITE;
 /*!40000 ALTER TABLE `espacios_fotos` DISABLE KEYS */;
+INSERT INTO `espacios_fotos` VALUES (1,1,'1-1.jpeg','2017-12-02 06:07:47.000000','2017-12-02 06:07:47.000000'),(2,2,'2-1.jpeg','2017-12-02 21:36:30.000000','2017-12-02 21:36:30.000000'),(3,1,'1-1.jpeg','2017-12-02 21:41:12.000000','2017-12-02 21:41:12.000000'),(4,3,'3-1.jpeg','2017-12-04 01:58:13.000000','2017-12-04 01:58:13.000000'),(5,3,'3-2.jpeg','2017-12-04 01:58:13.000000','2017-12-04 01:58:13.000000');
 /*!40000 ALTER TABLE `espacios_fotos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,7 +221,7 @@ CREATE TABLE `users` (
   `deleted_at` timestamp(6) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `phoneNumber_UNIQUE` (`phoneNumber`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +230,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'mariano','alvarez','0000-00-00','mariano@estacionar.com','$2y$10$gd.TFxgFCQX.ZKxAjRuSJuOAhq8UhXFCIKzaLVL7tubwf/5s/x9ku','o8KW51yW00uRZFAeTshLvIbs3HQWqyOXx3pVaJyAXAOFkNwohS01pmWCBVwq','2017-11-27 20:18:06.122381',NULL,NULL,NULL,NULL,NULL,'0000-00-00 00:00:00.000000',NULL),(9,'test1','test1','09-09-1999','test1@test1.com','$2y$10$zWV/yRV7iUArH7LZYR5PQeWWfvD0QDmKAClvqkvIkhoe2canD7RCK',NULL,'2017-12-02 01:57:53.000000',NULL,NULL,NULL,NULL,'test1@test1.com_profilePic.jpeg','2017-12-02 01:57:53.000000',NULL);
+INSERT INTO `users` VALUES (1,'mariano','alvarez','0000-00-00','mariano@estacionar.com','$2y$10$gd.TFxgFCQX.ZKxAjRuSJuOAhq8UhXFCIKzaLVL7tubwf/5s/x9ku','o8KW51yW00uRZFAeTshLvIbs3HQWqyOXx3pVaJyAXAOFkNwohS01pmWCBVwq','2017-11-27 20:18:06.122381',NULL,NULL,NULL,NULL,NULL,'0000-00-00 00:00:00.000000',NULL),(9,'test1','test1','09-09-1999','test1@test1.com','$2y$10$zWV/yRV7iUArH7LZYR5PQeWWfvD0QDmKAClvqkvIkhoe2canD7RCK',NULL,'2017-12-02 01:57:53.000000',NULL,NULL,NULL,NULL,'test1@test1.com_profilePic.jpeg','2017-12-02 01:57:53.000000',NULL),(10,'Joaquín','Paños','09-08-1994','joaquin@estacionar.com','$2y$10$PakmmZWLQWW7yfTJBQLGPeSAngGMKLNhgLuJK2szKnLcyef4fvSzG',NULL,'2017-12-02 06:05:36.000000',NULL,NULL,NULL,NULL,'joaquin@estacionar.com_profilePic.jpeg','2017-12-02 06:05:36.000000',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -273,4 +277,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-01 20:02:14
+-- Dump completed on 2017-12-04  2:19:32
