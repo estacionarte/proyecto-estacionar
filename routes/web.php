@@ -52,3 +52,5 @@ Route::group(['prefix' => 'upload-estacionamiento', 'middleware' => 'auth'], fun
 Route::get('/map', function() {
   return view('leaflet');
 });
+
+Route::get('/locations','LocationsController@map');
