@@ -49,7 +49,7 @@
         {{ csrf_field() }}
     </form>
 
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/avatar-profile.png" alt="avatar" class="avatar"></span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar" class="avatar"></span>
 
     <script>
     function openNav() {
