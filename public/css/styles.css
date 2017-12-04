@@ -97,7 +97,7 @@ ul li .popup-link{
   background-image: url(../images/bg-home-mobile.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
+  background-attachment: fixed;
   width: 100%;
   height: 500px;
 }
@@ -829,7 +829,7 @@ span .avatar{
 }
 
 /*********** PROFILE -- MIS VEHJICULOS *************/
-#content2 .carga-vehiculo-container{
+ .carga-vehiculo-container{
   display: block;
   text-align: center;
   max-width: 245px;
@@ -840,7 +840,8 @@ span .avatar{
 
 .carga-vehiculo-container .upload-vehicle{
   border: dotted 1px rgba(92, 111, 110, 0.82);
-  width: 240px;
+  /*max-width: 240px;*/
+  max-height: 240px;
 }
 
 .carga-vehiculo-container p{
@@ -1434,7 +1435,7 @@ margin-right: 5%;
 }
 
 /*********** PROFILE -- MIS VEHJICULOS *************/
-#content2 .carga-vehiculo-container{
+.carga-vehiculo-container{
   margin-left: 12%;
   float: left;
 }
@@ -1817,7 +1818,7 @@ margin-right: 5%;
 }
 
 /*********** PROFILE -- MIS VEHJICULOS *************/
-#content2 .carga-vehiculo-container{
+ .carga-vehiculo-container{
   margin-left: 6%;
 }
 

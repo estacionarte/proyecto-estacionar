@@ -45,6 +45,14 @@
            <option value="{{ asset('css/styles.css') }}">estilo original</option>
            <option value="{{ asset('css/styles2.css') }}">estilo alternativo</option>
           </select>
+
+          <!-- SCRIPT CSS -->
+          <script type="text/javascript">
+          document.getElementById("styleChange").addEventListener('change', function () {
+            document.getElementById('hojaDeEstilo').href = this.value;
+          });
+          </script>
+          
           <div>
             <div class="clear"></div>
             <article class="verified-information">
@@ -66,14 +74,6 @@
             	</div>
             </div>
           </div>
-
-          <!-- SCRIPT CSS -->
-          <script type="text/javascript">
-          document.getElementById("styleChange").addEventListener('change', function () {
-            document.getElementById('hojaDeEstilo').href = this.value;
-          });
-          </script>
-
         </section>
 
         <section id="content2">
@@ -86,30 +86,42 @@
           </article>
 
           <article class="carga-vehiculo-container">
-          <a href="#"><img class="upload-vehicle" src="images/car.png"></a>
-            <p>"se van viendo los vehiculos cargados"</p>
+          <a href="#"><img class="upload-vehicle" src="storage/vehiculos/auto_prueba1.jpg"></a>
+            <p>Vehiculo 1</p>
           </article>
 
           <article class="carga-vehiculo-container">
-          <a href="#"><img class="upload-vehicle" src="images/car.png"></a>
-            <p>"se van viendo los vehiculos cargados"</p>
+          <a href="#"><img class="upload-vehicle" src="storage/vehiculos/auto_prueba2.jpg"></a>
+            <p>Vehiculo 2</p>
           </article>
         </section>
 
         <section id="content3">
-          <h2>Mis Espacios</h2>
+          <h1>Mis Espacios</h1>
+          <div class="clear"></div>
 
-          <p>
-            Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
-          </p>
+          <article class="carga-vehiculo-container">
+          <a href="upload-estacionamiento/infogeneral"><img class="upload-vehicle" src="images/upload.png"></a>
+            <p>Cargá tus Espacios</p>
+          </article>
+
+          <article class="carga-vehiculo-container">
+          <a href="#"><img class="upload-vehicle" src="storage/espacios/cochera_prueba.jpg"></a>
+            <p>Espacio 1</p>
+          </article>
+
+          <article class="carga-vehiculo-container">
+          <a href="#"><img class="upload-vehicle" src="storage/espacios/cochera_prueba2.jpg"></a>
+            <p>Espacio 2</p>
+          </article>
+
+
         </section>
 
         <section id="content4">
-          <h2>Reputación</h2>
+          <h1>Reputación</h1>
 
-          <p>
-            Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.
-          </p>
+
         </section>
 
       </main>
