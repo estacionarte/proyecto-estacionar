@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->integer('zipcode')->nullable();
             $table->string('country')->nullable();
             $table->integer('DNI')->nullable()->unsigned();
-            $table->string('profilePic');
+            $table->string('profilePic')->default('avatar-profile.png');
 
         });
     }

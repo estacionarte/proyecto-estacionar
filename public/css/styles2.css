@@ -12,6 +12,7 @@ body{
   font-size: 1em;
   font-family: 'Cabin', sans-serif;
   min-width: 320px;
+  background-color: #48A8C1;
 }
 
 ul, ol{
@@ -48,7 +49,7 @@ a{
 
 /****************** H E A D E R*******************/
 h1{
-  color: #48A8C1;
+  color: white;
   display: inline-block;
   padding: 20px 15px;
   font-family: 'Archivo Black', sans-serif;
@@ -188,7 +189,7 @@ ul li .popup-link{
   display: block;
   width: 100%;
   text-align: center;
-  background-color: rgb(105, 105, 105);
+  background-color: rgba(10, 17, 23, 0.48);
 }
 
 .main-footer div h4{
@@ -623,7 +624,7 @@ span .avatar{
 .main-profile-nav{
   padding: 15px 2px;
   margin: 0 auto;
-  background: #fff;
+  background: white;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -817,7 +818,7 @@ span .avatar{
 
 .profile-credit a{
   display: block;
-  background-color: #48A8C1;
+  background-color: #48c158;
   color: white;
   text-align: center;
   padding: 12px 0;
@@ -829,7 +830,7 @@ span .avatar{
 }
 
 /*********** PROFILE -- MIS VEHJICULOS *************/
- .carga-vehiculo-container{
+#content2 .carga-vehiculo-container{
   display: block;
   text-align: center;
   max-width: 245px;
@@ -840,8 +841,7 @@ span .avatar{
 
 .carga-vehiculo-container .upload-vehicle{
   border: dotted 1px rgba(92, 111, 110, 0.82);
-  /*max-width: 240px;*/
-  max-height: 240px;
+  width: 240px;
 }
 
 .carga-vehiculo-container p{
@@ -1147,17 +1147,6 @@ span .avatar{
   display: none;
 }
 
-/****************** C A R G A   C O C H E R A (Resumen) *******************/
-
-.uploadEstacionamiento-progressBar-progress5{
-  width: 100%;
-}
-
-.uploadEstacionamiento .upload-seccion-resumen .upload-img-foto{
-  width: 150px;
-  height: 150px;
-}
-
 /**************************************************************/
 /*********************  T  A  B  L  E  T  *********************/
 /**************************************************************/
@@ -1435,7 +1424,7 @@ margin-right: 5%;
 }
 
 /*********** PROFILE -- MIS VEHJICULOS *************/
-.carga-vehiculo-container{
+#content2 .carga-vehiculo-container{
   margin-left: 12%;
   float: left;
 }
@@ -1755,6 +1744,7 @@ margin-right: 5%;
   position: absolute;
   top: 25px;
   right: 70px;
+  color: white;
 }
 
 .welcome-user h4{
@@ -1818,7 +1808,7 @@ margin-right: 5%;
 }
 
 /*********** PROFILE -- MIS VEHJICULOS *************/
- .carga-vehiculo-container{
+#content2 .carga-vehiculo-container{
   margin-left: 6%;
 }
 

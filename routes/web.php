@@ -19,9 +19,7 @@ Route::get('/mantenimiento', function () {
     return view('underconstruction');
 });
 
-Route::get('/perfil', function () {
-    return view('profile');
-})->name('profile');
+Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile');
 
 Route::group(['prefix' => 'upload-estacionamiento', 'middleware' => 'auth'], function(){
 
