@@ -20,8 +20,13 @@ class UploadEstacionamientoController extends Controller
   }
 
   public function showEditarUploadEstacionamiento1(Espacio $espacio){
-    // $espacio = Espacio::findOrFail($id);
-    return view('upload-estacionamiento.1infogeneral-edit', compact('espacio'));
+
+    $fotos = DB::table('espacios_fotos')
+    ->select('*')
+    ->where('idEspacio', '=', $espacio->id)
+    ->get();
+    
+    return view('upload-estacionamiento.1infogeneral-edit', compact('espacio', 'fotos'));
   }
 
   public function createEspacioAndShowUploadEstacionamiento2(UploadEspacioRequest $request){

@@ -29,6 +29,10 @@
             {{ csrf_field() }}
 
             @include('upload-estacionamiento._form-infogeneral')
+            
+            @foreach ($fotos as $foto)
+              <img src="/storage/espacios/{{ $foto->photoname }}" alt="" class="upload-img-foto">
+            @endforeach
 
             <input type="submit" name="boton-submit" value="SIGUIENTE">
           </form>
