@@ -36,7 +36,7 @@
               <option value="Horas" {{ old('medidaDeTiempoMin') == 'Horas' ? 'selected':'' }}>horas</option>
               <option value="Dias" {{ old('medidaDeTiempoMin') == 'Dias' ? 'selected':'' }}>días</option>
             </select>
-            <input type="number" placeholder="10" name="tiempoMinimo" class="upload-input-tiempoMinimoyMax" min="10" max="10000" value="{{ old('tiempoMinimo', $espacio->estadiaMinimaMinutos) }}">
+            <input type="number" placeholder="10" name="tiempoMinimo" class="upload-input-tiempoMinimoyMax" min="1" max="10000" value="{{ old('tiempoMinimo', $espacio->estadiaMinimaMinutos) }}">
 
             <label for="" class="upload-label-tiempoMinimoyMax">Máximo</label>
             <select name="medidaDeTiempoMax" class="upload-select-tiempoMinimoyMax">

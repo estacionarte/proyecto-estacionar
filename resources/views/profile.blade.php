@@ -17,7 +17,7 @@
         <label for="tab2">Mis Vehículos</label>
 
         <input id="tab3" type="radio" name="tabs">
-        <label for="tab3">Mis cocheras</label>
+        <label for="tab3">Mis espacios</label>
 
         <input id="tab4" type="radio" name="tabs">
         <label for="tab4">Reputación</label>
@@ -25,7 +25,7 @@
         <section id="content1">
 
           <div class="profile-image">
-            <img src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
+            <img src="storage/profilePic/avatar-profile.png" alt="profile image">
           </div>
 
           <div class="profile-welcome">
@@ -38,7 +38,13 @@
             <a href="credits.php">CONSEGUIR CRÉDITO</a>
           </article>
 
-
+          <!-- <div class="cambiarTema">
+            <a href="#" id="estilo">Cambiar Estilo apretame</a>
+          </div> -->
+          <select id="styleChange">
+           <option value="{{ asset('css/styles.css') }}">estilo original</option>
+           <option value="{{ asset('css/styles2.css') }}">estilo alternativo</option>
+          </select>
           <div>
             <div class="clear"></div>
             <article class="verified-information">
@@ -60,6 +66,14 @@
             	</div>
             </div>
           </div>
+
+          <!-- SCRIPT CSS -->
+          <script type="text/javascript">
+          document.getElementById("styleChange").addEventListener('change', function () {
+            document.getElementById('hojaDeEstilo').href = this.value;
+          });
+          </script>
+
         </section>
 
         <section id="content2">
@@ -67,7 +81,7 @@
           <div class="clear"></div>
 
           <article class="carga-vehiculo-container">
-          <a href="upload-estacionamiento-1infogeneral.php"><img class="upload-vehicle" src="images/upload.png"></a>
+          <a href="upload-estacionamiento/infogeneral"><img class="upload-vehicle" src="images/upload.png"></a>
             <p>Cargá tus vehículos</p>
           </article>
 
@@ -83,7 +97,7 @@
         </section>
 
         <section id="content3">
-          <h2>Mis Cocheras</h2>
+          <h2>Mis Espacios</h2>
 
           <p>
             Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
