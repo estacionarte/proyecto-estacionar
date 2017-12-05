@@ -48,11 +48,14 @@
 
           <!-- SCRIPT CSS -->
           <script type="text/javascript">
-          document.getElementById("styleChange").addEventListener('change', function () {
+            document.getElementById("styleChange").addEventListener('change', function () {
             document.getElementById('hojaDeEstilo').href = this.value;
+            // localStorage.setItem("css", "{{ asset('css/styles2.css') }}");
+            // localStorage.setItem("css", this.value);
+            localStorage.setItem('css', document.getElementById('hojaDeEstilo').href);
           });
           </script>
-          
+
           <div>
             <div class="clear"></div>
             <article class="verified-information">
