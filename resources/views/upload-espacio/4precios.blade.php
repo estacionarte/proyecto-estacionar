@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') Cargar Estacionamiento @endsection
+@section('title') Cargar Espacio @endsection
 @section('signin')
 
   <div class="container">
@@ -8,17 +8,17 @@
 
       <hr>
 
-      <div class="uploadEstacionamiento-progressBar">
-        <div class="uploadEstacionamiento-progressBar-progress4"></div>
+      <div class="uploadEspacio-progressBar">
+        <div class="uploadEspacio-progressBar-progress4"></div>
       </div>
 
-      <h1>Cargar Estacionamiento - Precio</h1>
+      <h1>Cargar Espacio - Precio</h1>
 
-      <section class="uploadEstacionamiento">
+      <section class="uploadEspacio">
 
         <div class="form-generico">
 
-          <form action="{{ route('insert.upload.estacionamiento.resumen', $espacio) }}" method="post" class="form-uploadEstacionamiento form-reducido">
+          <form action="{{ route('insert.upload.espacio.resumen', $espacio) }}" method="post" class="form-uploadEspacio form-reducido">
             {{ method_field('PUT') }}
             {{ csrf_field() }}
 

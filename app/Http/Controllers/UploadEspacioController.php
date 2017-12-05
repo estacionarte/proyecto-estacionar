@@ -10,26 +10,27 @@ use App\DescuentosDeEspacio;
 use App\Http\Requests\UploadEspacioRequest;
 use Auth;
 use DB;
+use Storage;
 
-class UploadEstacionamientoController extends Controller
+class UploadEspacioController extends Controller
 {
 
-  public function showUploadEstacionamiento1(){
+  public function showUploadEspacio1(){
     $espacio = new Espacio();
-    return view('upload-estacionamiento.1infogeneral', compact('espacio'));
+    return view('upload-espacio.1infogeneral', compact('espacio'));
   }
 
-  public function showEditarUploadEstacionamiento1(Espacio $espacio){
+  public function showEditarUploadEspacio1(Espacio $espacio){
 
     $fotos = DB::table('espacios_fotos')
     ->select('*')
     ->where('idEspacio', '=', $espacio->id)
     ->get();
-    
-    return view('upload-estacionamiento.1infogeneral-edit', compact('espacio', 'fotos'));
+
+    return view('upload-espacio.1infogeneral-edit', compact('espacio', 'fotos'));
   }
 
-  public function createEspacioAndShowUploadEstacionamiento2(UploadEspacioRequest $request){
+  public function createEspacioAndShowUploadEspacio2(UploadEspacioRequest $request){
 
     // Registrar espacio
     $espacio = new Espacio($request->except('espacioPic'));
@@ -41,9 +42,7 @@ class UploadEstacionamientoController extends Controller
     foreach ($request->espacioPic as $photo) {
       $fotoDeEspacio = new FotoDeEspacio();
       $fotoDeEspacio->idEspacio = $espacio->id;
-      if ($fotoDeEspacio->id) {
-        $i = $fotoDeEspacio->id + 1;
-      } elseif (isset($i)) {
+      if (isset($i)) {
         $i++;
       } else {
         $i = 1;
@@ -55,25 +54,31 @@ class UploadEstacionamientoController extends Controller
       $path = $photo->storePubliclyAs('public/espacios', $nombreArchivo);
 
     }
-    return redirect()->route('upload.estacionamiento.2',compact('espacio'));
+    return redirect()->route('upload.espacio.2',compact('espacio'));
   }
 
-  public function insertAndShowUploadEstacionamiento2(UploadEspacioRequest $request, $id){
+  public function insertAndShowUploadEspacio2(UploadEspacioRequest $request, $id){
 
     // Editar espacio
     $espacio = Espacio::findOrFail($id);
     $espacio->fill($request->except('espacioPic'));
     $espacio->save();
 
+    $fotosespacio = DB::table('espacios_fotos')
+      ->where('idEspacio',$espacio->id)
+      ->count();
+
     foreach ($request->espacioPic as $photo) {
       $fotoDeEspacio = new FotoDeEspacio();
       $fotoDeEspacio->idEspacio = $espacio->id;
-      if ($fotoDeEspacio->id) {
-        $i = $fotoDeEspacio->id + 1;
-      } elseif (isset($i)) {
+      if (isset($i)) {
         $i++;
       } else {
-        $i = 1;
+        if ($fotosespacio == 0) {
+          $i = 1;
+        } else {
+          $i = $fotosespacio+1;
+        }
       }
       $nombreArchivo = $fotoDeEspacio->idEspacio . '-' . $i . '.' . $photo->extension();
       $fotoDeEspacio->photoname = $nombreArchivo;
@@ -82,11 +87,24 @@ class UploadEstacionamientoController extends Controller
       $path = $photo->storePubliclyAs('public/espacios', $nombreArchivo);
 
     }
-    return redirect()->route('upload.estacionamiento.2',compact('espacio'));
+    return redirect()->route('upload.espacio.2',compact('espacio'));
   }
 
-  public function showUploadEstacionamiento2(Espacio $espacio){
-    return view('upload-estacionamiento.2estadias', compact('espacio'));
+  public function deletePicEspacio($id){
+
+    $foto = FotoDeEspacio::findOrFail($id);
+    $espacio = Espacio::findOrFail($foto->idEspacio);
+
+    $archivofoto = '/public/espacios/'. $foto->photoname;
+    Storage::delete($archivofoto);
+
+    $foto->delete();
+
+    return redirect()->route('editar.upload.espacio.1',compact('espacio'));
+  }
+
+  public function showUploadEspacio2(Espacio $espacio){
+    return view('upload-espacio.2estadias', compact('espacio'));
   }
 
   // Función para transformar toda la data recibida a minutos
@@ -103,7 +121,7 @@ class UploadEstacionamientoController extends Controller
     }
   }
 
-  public function insertAndShowUploadEstacionamiento3(Request $request, $id){
+  public function insertAndShowUploadEspacio3(Request $request, $id){
 
     $this->validate($request,
       [
@@ -130,10 +148,10 @@ class UploadEstacionamientoController extends Controller
 
     $espacio->save();
 
-    return redirect()->route('upload.estacionamiento.3',compact('espacio'));
+    return redirect()->route('upload.espacio.3',compact('espacio'));
   }
 
-  public function showUploadEstacionamiento3(Espacio $espacio){
+  public function showUploadEspacio3(Espacio $espacio){
 
     $diasSemana = [
       1 => 'Lunes',
@@ -145,10 +163,10 @@ class UploadEstacionamientoController extends Controller
       7 => 'Domingo',
     ];
 
-    return view('upload-estacionamiento.3diasyhorarios', compact('diasSemana', 'espacio'));
+    return view('upload-espacio.3diasyhorarios', compact('diasSemana', 'espacio'));
   }
 
-  public function insertAndShowUploadEstacionamiento4(Request $request, $id){
+  public function insertAndShowUploadEspacio4(Request $request, $id){
 
     $this->validate($request,
       [
@@ -211,14 +229,14 @@ class UploadEstacionamientoController extends Controller
 
     }
 
-    return redirect()->route('upload.estacionamiento.4',compact('espacio'));
+    return redirect()->route('upload.espacio.4',compact('espacio'));
   }
 
-  public function showUploadEstacionamiento4(Espacio $espacio){
-    return view('upload-estacionamiento.4precios', compact('espacio'));
+  public function showUploadEspacio4(Espacio $espacio){
+    return view('upload-espacio.4precios', compact('espacio'));
   }
 
-  public function insertAndShowUploadEstacionamientoResumen(Request $request, $id){
+  public function insertAndShowUploadEspacioResumen(Request $request, $id){
 
     $this->validate($request,
     [
@@ -259,7 +277,7 @@ class UploadEstacionamientoController extends Controller
 
     $descuentosDeEspacio->save();
 
-    return redirect()->route('upload.estacionamiento.resumen',compact('espacio'));
+    return redirect()->route('upload.espacio.resumen',compact('espacio'));
   }
 
   // Pasar de minutos (como está guardado en DB) a horas y días
@@ -339,7 +357,7 @@ class UploadEstacionamientoController extends Controller
     }
   }
 
-  public function showUploadEstacionamientoResumen(Espacio $espacio){
+  public function showUploadEspacioResumen(Espacio $espacio){
 
     $fotos = DB::table('espacios_fotos')
     ->select('*')
@@ -366,7 +384,7 @@ class UploadEstacionamientoController extends Controller
       ->where('idEspacio', '=', $espacio->id)
       ->get();
 
-    return view('upload-estacionamiento.resumen', compact('espacio', 'fotos', 'tiempominimo', 'tiempomaximo', 'anticipacion', 'horarios', 'descuentos'));
+    return view('upload-espacio.resumen', compact('espacio', 'fotos', 'tiempominimo', 'tiempomaximo', 'anticipacion', 'horarios', 'descuentos'));
   }
 
 }

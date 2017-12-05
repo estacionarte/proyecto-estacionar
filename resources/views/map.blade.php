@@ -19,7 +19,7 @@
 
       <!-- <h1>Elige un lugar donde estacionar</h1> -->
 
-      <section class="map-estacionamientos">
+      <section class="map-espacios">
 
         <div id="map"></div>
 

@@ -41,7 +41,11 @@ class UploadEspacioRequest extends FormRequest
       ];
       $photos = count($this->input('espacioPic'));
       foreach(range(0, $photos) as $index) {
-          $rules['espacioPic.' . $index] = 'required|image|mimes:jpeg,bmp,png|max:10000';
+          $rules['espacioPic.' . $index] = 'image|mimes:jpeg,bmp,png|max:10000';
+          // Hago que la carga sea obligatoria si no hay ninguna foto en la db
+          $rules['espacioPic.' . $index]->sometimes('espacioPic.' . $index, 'required', function(){
+            return 2>1;
+          });
       }
 
       return $rules;

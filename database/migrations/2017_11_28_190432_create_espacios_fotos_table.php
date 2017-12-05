@@ -16,7 +16,6 @@ class CreateEspaciosFotosTable extends Migration
         Schema::create('espacios_fotos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->softDeletes();
 
             $table->integer('idEspacio')->unsigned();
             $table->foreign('idEspacio')->references('id')->on('espacios');

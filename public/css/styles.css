@@ -507,7 +507,7 @@ ul li .popup-link{
   width: 100%;
 }
 
-.map-estacionamientos{
+.map-espacios{
   border: solid 1px black;
 }
 
@@ -883,26 +883,26 @@ span .avatar{
 
 /****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
 
-.uploadEstacionamiento-progressBar{
+.uploadEspacio-progressBar{
   background-color: rgba(143, 143, 143, 0.15);
   border-radius: 5px;
 }
 
-.uploadEstacionamiento-progressBar div{
+.uploadEspacio-progressBar div{
   height: 7px;
   border-radius: 5px;
   background-color: #48A8C1;
 }
 
-.uploadEstacionamiento-progressBar .uploadEstacionamiento-progressBar-progress1{
+.uploadEspacio-progressBar .uploadEspacio-progressBar-progress1{
   width: 1%;
 }
 
-.uploadEstacionamiento .form-generico{
+.uploadEspacio .form-generico{
   margin: 0;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-titulo{
+.uploadEspacio .form-generico .upload-label-titulo{
   text-align: left;
   width: 100%;
   padding: 20px 0 5px 0;
@@ -910,26 +910,26 @@ span .avatar{
   font-size: 1.3em;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-tipovehiculo{
+.uploadEspacio .form-generico .upload-label-tipovehiculo{
   width: 65%;
   float: left;
   color: #8f8f8f;
   /*font-size: 1.1em;*/
 }
 
-.uploadEstacionamiento .form-generico .upload-input-tipovehiculo{
+.uploadEspacio .form-generico .upload-input-tipovehiculo{
   display: inline-block;
   width: 35%;
   float: right;
   text-align: center;
 }
 
-.uploadEstacionamiento .form-generico .upload-div-especiales{
+.uploadEspacio .form-generico .upload-div-especiales{
   display: block;
   clear: both;
 }
 
-.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales{
+.uploadEspacio .form-generico .upload-div-especiales .upload-label-especiales{
   width: auto;
   float: left;
   vertical-align: middle;
@@ -937,7 +937,7 @@ span .avatar{
   /*font-size: 1.1em;*/
 }
 
-.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
+.uploadEspacio .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
   /*width: 15%;*/
   float: left;
   vertical-align: middle;
@@ -946,24 +946,72 @@ span .avatar{
   bottom: 1px;
 }
 
-.uploadEstacionamiento .upload-div-sideimage {
+.uploadEspacio .upload-div-sideimage{
   display: none;
+}
+
+.upload-div-foto{
+  position: relative;
+  width: 49.4%;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.upload-img-foto{
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 140px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.upload-div-foto .upload-div-div-foto{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.upload-div-foto:hover .upload-img-foto{
+  opacity: 0.3;
+  box-shadow: 0 0 2px 1px rgba(72, 168, 193, 0.5);
+}
+
+.upload-div-foto:hover .upload-div-div-foto{
+  opacity: 1;
+}
+
+.upload-div-foto .upload-div-div-foto .upload-label-deletefoto{
+  background-color: #ab3434;
+  color: white;
+  font-size: 16px;
+  padding: 14px 28px;
+  margin-top: 0px;
+  margin: auto;
 }
 
 /****************** C A R G A   C O C H E R A (Paso 2 - Estadías) *******************/
 
-.uploadEstacionamiento-progressBar-progress2{
+.uploadEspacio-progressBar-progress2{
   width: 25%;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-tiempoMinimoyMax{
+.uploadEspacio .form-generico .upload-label-tiempoMinimoyMax{
   width: 40%;
   float: left;
   color: #8f8f8f;
   margin-bottom: 1px;
 }
 
-.uploadEstacionamiento .form-generico .upload-input-tiempoMinimoyMax{
+.uploadEspacio .form-generico .upload-input-tiempoMinimoyMax{
   display: inline-block;
   width: 20%;
   float: right;
@@ -973,7 +1021,7 @@ span .avatar{
   border-bottom-right-radius: 0px;
 }
 
-.uploadEstacionamiento .form-generico .upload-select-tiempoMinimoyMax{
+.uploadEspacio .form-generico .upload-select-tiempoMinimoyMax{
   display: inline-block;
   width: 35%;
   float: right;
@@ -984,17 +1032,17 @@ span .avatar{
   border-bottom-left-radius: 0px;
 }
 
-.uploadEstacionamiento .upload-div-sideimage2 {
+.uploadEspacio .upload-div-sideimage2 {
   display: none;
 }
 
 /****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
 
-.uploadEstacionamiento-progressBar-progress3{
+.uploadEspacio-progressBar-progress3{
   width: 50%;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-diasemana{
+.uploadEspacio .form-generico .upload-label-diasemana{
   width: 40%;
   float: left;
   color: #8f8f8f;
@@ -1002,7 +1050,7 @@ span .avatar{
   /*font-size: 1.1em;*/
 }
 
-.uploadEstacionamiento .form-generico .upload-span-separadorhoras{
+.uploadEspacio .form-generico .upload-span-separadorhoras{
   width: 5%;
   float: right;
   margin-top: 5px;
@@ -1011,7 +1059,7 @@ span .avatar{
   padding: 10px 17px 10px 10px;
 }
 
-.uploadEstacionamiento .form-generico .upload-input-horadia{
+.uploadEspacio .form-generico .upload-input-horadia{
   display: inline-block;
   width: 12.5%;
   float: right;
@@ -1019,7 +1067,7 @@ span .avatar{
   padding: 10px 5px;
 }
 
-.uploadEstacionamiento .form-generico .upload-button-volver{
+.uploadEspacio .form-generico .upload-button-volver{
   display: inline-block;
   width: 49%;
   /*float: left;*/
@@ -1029,28 +1077,28 @@ span .avatar{
   color: inherit;
 }
 
-.uploadEstacionamiento .form-generico .upload-button-volver:hover{
+.uploadEspacio .form-generico .upload-button-volver:hover{
   background-color: #fff;
   border-color: #fff;
 }
 
-.uploadEstacionamiento .form-generico .upload-button-submit{
+.uploadEspacio .form-generico .upload-button-submit{
   display: inline-block;
   width: 49%;
   /*float: right;*/
 }
 
-.uploadEstacionamiento .upload-div-sideimage3 {
+.uploadEspacio .upload-div-sideimage3 {
   display: none;
 }
 
-/*.uploadEstacionamiento .upload-estacionamiento-calendar-weekdays {
+/*.uploadEspacio .upload-espacio-calendar-weekdays {
     margin: 0;
     padding: 10px 0;
     background-color:#ddd;
 }
 
-.uploadEstacionamiento .upload-estacionamiento-calendar-weekdays li {
+.uploadEspacio .upload-espacio-calendar-weekdays li {
     display: inline-block;
     width: 13.6%;
     color: #666;
@@ -1059,11 +1107,11 @@ span .avatar{
 
 /****************** C A R G A   C O C H E R A (Paso 4 - Precios) *******************/
 
-.uploadEstacionamiento-progressBar-progress4{
+.uploadEspacio-progressBar-progress4{
   width: 75%;
 }
 
-.uploadEstacionamiento .form-generico .upload-div-precio{
+.uploadEspacio .form-generico .upload-div-precio{
   border: solid 1px #9c9c9c;
   border-radius: 2px;
   background-color: #fff;
@@ -1071,7 +1119,7 @@ span .avatar{
   margin-top: 10px;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-precioPorMinutoSigno{
+.uploadEspacio .form-generico .upload-label-precioPorMinutoSigno{
   width: auto;
   float: left;
   vertical-align: middle;
@@ -1080,7 +1128,7 @@ span .avatar{
   padding-right: 3px;
 }
 
-.uploadEstacionamiento .form-generico .upload-input-precioPorMinuto{
+.uploadEspacio .form-generico .upload-input-precioPorMinuto{
   display: inline-block;
   width: 17%;
   float: left;
@@ -1092,7 +1140,7 @@ span .avatar{
   padding: 10px 0px;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-precioPorMinuto{
+.uploadEspacio .form-generico .upload-label-precioPorMinuto{
   width: 73%;
   float: right;
   vertical-align: middle;
@@ -1101,7 +1149,7 @@ span .avatar{
   padding-left: 5px;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-descuentoPorMinutoPorcentaje{
+.uploadEspacio .form-generico .upload-label-descuentoPorMinutoPorcentaje{
   width: auto;
   float: left;
   vertical-align: middle;
@@ -1110,7 +1158,7 @@ span .avatar{
   padding-left: 3px;
 }
 
-.uploadEstacionamiento .form-generico .upload-input-descuentoPorMinuto{
+.uploadEspacio .form-generico .upload-input-descuentoPorMinuto{
   display: inline-block;
   width: 19%;
   float: left;
@@ -1122,7 +1170,7 @@ span .avatar{
   padding-right: 0px;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-descuentoPorMinuto{
+.uploadEspacio .form-generico .upload-label-descuentoPorMinuto{
   width: 73%;
   float: right;
   vertical-align: middle;
@@ -1131,7 +1179,7 @@ span .avatar{
   padding-left: 5px;
 }
 
-.uploadEstacionamiento .form-generico .upload-p-descuentoPorMinuto{
+.uploadEspacio .form-generico .upload-p-descuentoPorMinuto{
   width: auto;
   text-align: left;
   margin-top: 5px;
@@ -1139,21 +1187,21 @@ span .avatar{
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-.uploadEstacionamiento .form-generico .upload-section-help{
+.uploadEspacio .form-generico .upload-section-help{
   display: none;
 }
 
-.uploadEstacionamiento .upload-div-sideimage4 {
+.uploadEspacio .upload-div-sideimage4 {
   display: none;
 }
 
 /****************** C A R G A   C O C H E R A (Resumen) *******************/
 
-.uploadEstacionamiento-progressBar-progress5{
+.uploadEspacio-progressBar-progress5{
   width: 100%;
 }
 
-.uploadEstacionamiento .upload-seccion-resumen .upload-img-foto{
+.uploadEspacio .upload-seccion-resumen .upload-img-foto{
   width: 150px;
   height: 150px;
 }
@@ -1461,51 +1509,51 @@ margin-right: 5%;
 
 /****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
 
-.uploadEstacionamiento-progressBar div{
+.uploadEspacio-progressBar div{
   height: 10.5px;
 }
 
-.form-uploadEstacionamiento{
+.form-uploadEspacio{
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.uploadEstacionamiento .form-generico .form-uploadEstacionamiento .upload-input-direccion{
+.uploadEspacio .form-generico .form-uploadEspacio .upload-input-direccion{
   width: 84%;
   float: left;
 }
 
-.uploadEstacionamiento .form-generico .form-uploadEstacionamiento .upload-input-numdpto{
+.uploadEspacio .form-generico .form-uploadEspacio .upload-input-numdpto{
   width: 15.5%;
   float: right;
 }
 
-.form-uploadEstacionamiento .upload-select-pais, .form-uploadEstacionamiento .upload-select-provincia, .form-uploadEstacionamiento .upload-select-ciudad, .form-uploadEstacionamiento .upload-input-cp {
+.form-uploadEspacio .upload-select-pais, .form-uploadEspacio .upload-select-provincia, .form-uploadEspacio .upload-select-ciudad, .form-uploadEspacio .upload-input-cp {
   display: inline-block;
   width: 24.5%;
 }
 
-.uploadEstacionamiento .form-generico .upload-label-tipovehiculo{
+.uploadEspacio .form-generico .upload-label-tipovehiculo{
   width: 65%;
   float: left;
   color: #8f8f8f;
   /*font-size: 1.1em;*/
 }
 
-.uploadEstacionamiento .form-generico .upload-input-tipovehiculo{
+.uploadEspacio .form-generico .upload-input-tipovehiculo{
   display: inline-block;
   width: 35%;
   float: right;
   text-align: center;
 }
 
-.uploadEstacionamiento .form-generico .upload-div-especiales{
+.uploadEspacio .form-generico .upload-div-especiales{
   display: block;
   clear: both;
 }
 
-.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales{
+.uploadEspacio .form-generico .upload-div-especiales .upload-label-especiales{
   width: auto;
   float: left;
   vertical-align: middle;
@@ -1513,7 +1561,7 @@ margin-right: 5%;
   /*font-size: 1.1em;*/
 }
 
-.uploadEstacionamiento .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
+.uploadEspacio .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
   /*width: 15%;*/
   float: left;
   vertical-align: middle;
@@ -1522,32 +1570,46 @@ margin-right: 5%;
   bottom: 1px;
 }
 
+.upload-div-foto{
+  margin: none;
+  text-align: left;
+  width: 19.8%;
+}
+
+.upload-img-foto{
+  height: 160px;
+}
+
+.upload-div-foto .upload-div-div-foto .upload-label-deletefoto{
+  padding: 16px 32px;
+}
+
 /****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
 
-.uploadEstacionamiento .form-generico .upload-span-separadorhoras{
+.uploadEspacio .form-generico .upload-span-separadorhoras{
   padding: 10px 10px 10px 10px;
 }
 
-.uploadEstacionamiento .form-generico .upload-button-volver{
+.uploadEspacio .form-generico .upload-button-volver{
   width: 24%;
 }
 
-.uploadEstacionamiento .form-generico .upload-button-submit{
+.uploadEspacio .form-generico .upload-button-submit{
   width: 75%;
 }
 
 /****************** C A R G A   C O C H E R A (Paso 4 - Precios) *******************/
 
-.uploadEstacionamiento .form-reducido{
+.uploadEspacio .form-reducido{
   width: 65%;
   float: left;
 }
 
-.uploadEstacionamiento .form-generico .upload-div-precio{
+.uploadEspacio .form-generico .upload-div-precio{
   /*width: 90%;*/
 }
 
-.uploadEstacionamiento .form-generico .upload-section-help{
+.uploadEspacio .form-generico .upload-section-help{
   display: block;
   background-image: url(../images/test-bg-image.png);
   background-size: cover;
@@ -1559,22 +1621,22 @@ margin-right: 5%;
   margin-top: 45px;
 }
 
-.uploadEstacionamiento .form-generico .upload-section-div-help{
+.uploadEspacio .form-generico .upload-section-div-help{
   width: 90%;
   margin: auto;
   padding: 20px 5px;
 }
 
-.uploadEstacionamiento .form-generico .upload-section-div-help *{
+.uploadEspacio .form-generico .upload-section-div-help *{
   text-align: left;
 }
 
-.uploadEstacionamiento .form-generico .upload-section-div-help h3{
+.uploadEspacio .form-generico .upload-section-div-help h3{
   /*color: #000;*/
   text-transform: uppercase;
 }
 
-.uploadEstacionamiento .form-generico .upload-section-div-help p{
+.uploadEspacio .form-generico .upload-section-div-help p{
   font-size: 0.9em;
 }
 
@@ -1850,17 +1912,17 @@ margin-right: 5%;
 
 /****************** C A R G A   C O C H E R A (Paso 1 - Info General) *******************/
 
-.form-uploadEstacionamiento{
+.form-uploadEspacio{
   max-width: 700px;
   margin: inherit;
 }
 
-.uploadEstacionamiento .form-generico{
+.uploadEspacio .form-generico{
   display: inline-block;
   float: left;
 }
 
-.uploadEstacionamiento .upload-div-sideimage {
+.uploadEspacio .upload-div-sideimage {
   background-image: url(../images/road-uparrow.jpeg);
   background-size: cover;
   background-position: bottom center;
@@ -1875,7 +1937,7 @@ margin-right: 5%;
 
 /****************** C A R G A   C O C H E R A (Paso 2 - Estadías) *******************/
 
-.uploadEstacionamiento .upload-div-sideimage2 {
+.uploadEspacio .upload-div-sideimage2 {
   background-image: url(../images/road-uparrow.jpeg);
   background-size: cover;
   background-position: bottom center;
@@ -1890,7 +1952,7 @@ margin-right: 5%;
 
 /****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
 
-.uploadEstacionamiento .upload-div-sideimage3 {
+.uploadEspacio .upload-div-sideimage3 {
   background-image: url(../images/road-uparrow.jpeg);
   background-size: cover;
   background-position: bottom center;
@@ -1903,16 +1965,16 @@ margin-right: 5%;
   margin-top: 25px;
 }
 
-.uploadEstacionamiento .form-generico .upload-button-volver{
+.uploadEspacio .form-generico .upload-button-volver{
   width: 19%;
 }
 
-.uploadEstacionamiento .form-generico .upload-button-submit{
+.uploadEspacio .form-generico .upload-button-submit{
   width: 80%;
 }
 
 /****************** C A R G A   C O C H E R A (Paso 4 - Precio) *******************/
 
-.uploadEstacionamiento .upload-div-sideimage4 {
+.uploadEspacio .upload-div-sideimage4 {
 
 }

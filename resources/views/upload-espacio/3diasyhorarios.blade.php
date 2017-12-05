@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') Cargar Estacionamiento @endsection
+@section('title') Cargar Espacio @endsection
 @section('signin')
 
   <div class="container">
@@ -8,13 +8,13 @@
 
       <hr>
 
-      <div class="uploadEstacionamiento-progressBar">
-        <div class="uploadEstacionamiento-progressBar-progress3"></div>
+      <div class="uploadEspacio-progressBar">
+        <div class="uploadEspacio-progressBar-progress3"></div>
       </div>
 
-      <h1>Cargar Estacionamiento - Días y Horarios</h1>
+      <h1>Cargar Espacio - Días y Horarios</h1>
 
-      <section class="uploadEstacionamiento">
+      <section class="uploadEspacio">
 
         @if (count($errors) > 0)
           @foreach ($errors->all() as $error)
@@ -24,7 +24,7 @@
 
         <div class="form-generico">
 
-          <form action="{{ route('insert.upload.estacionamiento.4', $espacio) }}" method="post" class="form-uploadEstacionamiento">
+          <form action="{{ route('insert.upload.espacio.4', $espacio) }}" method="post" class="form-uploadEspacio">
             {{ method_field('PUT') }}
             {{ csrf_field() }}
 

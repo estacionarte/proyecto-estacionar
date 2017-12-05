@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') Cargar Estacionamiento @endsection
+@section('title') Cargar Espacio @endsection
 @section('signin')
 
   <div class="container">
@@ -8,16 +8,16 @@
 
       <hr>
 
-      <div class="uploadEstacionamiento-progressBar">
-        <div class="uploadEstacionamiento-progressBar-progress5"></div>
+      <div class="uploadEspacio-progressBar">
+        <div class="uploadEspacio-progressBar-progress5"></div>
       </div>
 
       <h1>Confirmar Datos</h1>
 
-      <section class="uploadEstacionamiento">
+      <section class="uploadEspacio">
 
         <section class="upload-seccion-resumen">
-          <h2>Información General</h2><a href="{{ route('upload.estacionamiento.1', $espacio) }}">Editar</a>
+          <h2>Información General</h2><a href="{{ route('upload.espacio.1', $espacio) }}">Editar</a>
           <p>{{ $espacio->direccion }} {{ $espacio->dpto }}</p>
           <p>{{ $espacio->ciudad }}, {{ $espacio->provincia }}, {{ $espacio->pais }}, {{ $espacio->zipcode }}</p>
           <br>
@@ -40,21 +40,21 @@
 
           <br><br>
 
-          <h2>Estadías</h2><a href="{{ route('upload.estacionamiento.2', $espacio) }}">Editar</a>
+          <h2>Estadías</h2><a href="{{ route('upload.espacio.2', $espacio) }}">Editar</a>
           <p>Tiempo mínimo: {{ $tiempominimo }}</p>
           <p>Tiempo máximo: {{ $tiempomaximo }}</p>
           <p>Anticipación para reservar: {{ $anticipacion }}</p>
 
           <br><br>
 
-          <h2>Días y Horarios</h2><a href="{{ route('upload.estacionamiento.3', $espacio) }}">Editar</a>
+          <h2>Días y Horarios</h2><a href="{{ route('upload.espacio.3', $espacio) }}">Editar</a>
           @foreach ($horarios as $horario)
             <p>{{ $horario }}</p>
           @endforeach
 
           <br><br>
 
-          <h2>Precios</h2><a href="{{ route('upload.estacionamiento.4', $espacio) }}">Editar</a>
+          <h2>Precios</h2><a href="{{ route('upload.espacio.4', $espacio) }}">Editar</a>
           <p>Precio por minuto: ${{ $espacio->precioAutosMinuto }}</p>
           @foreach ($descuentos as $descuento)
             <p>Descuento a partir de {{ $descuento->hora }} horas: {{ $descuento->descuento * 100 }}%</p>
