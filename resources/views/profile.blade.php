@@ -52,7 +52,7 @@
             document.getElementById('hojaDeEstilo').href = this.value;
           });
           </script>
-          
+
           <div>
             <div class="clear"></div>
             <article class="verified-information">
@@ -101,14 +101,17 @@
           <div class="clear"></div>
 
           <article class="carga-vehiculo-container">
-          <a href="upload-estacionamiento/infogeneral"><img class="upload-vehicle" src="images/upload.png"></a>
+          <a href="{{ route('upload.estacionamiento.1') }}"><img class="upload-vehicle" src="images/upload.png"></a>
             <p>Cargá tus Espacios</p>
           </article>
 
-          <article class="carga-vehiculo-container">
-          <a href="#"><img class="upload-vehicle" src="storage/espacios/cochera_prueba.jpg"></a>
-            <p>Espacio 1</p>
-          </article>
+          @foreach ($espacios as $espacio)
+            <article class="carga-vehiculo-container">
+              <a href=""><img class="upload-vehicle" src="storage/espacios/cochera_prueba.jpg"></a>
+              <p>Espacio 1</p>
+              <p></p>
+            </article>
+          @endforeach
 
           <article class="carga-vehiculo-container">
           <a href="#"><img class="upload-vehicle" src="storage/espacios/cochera_prueba2.jpg"></a>
