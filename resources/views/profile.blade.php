@@ -110,18 +110,12 @@
 
           @foreach ($espacios as $espacio)
             <article class="carga-vehiculo-container">
-              <a href=""><img class="upload-vehicle" src="storage/espacios/cochera_prueba.jpg"></a>
-              <p>Espacio 1</p>
-              <p></p>
+              @foreach ($fotos as $foto)
+                <a href=""><img class="upload-vehicle" src="storage/espacios/{{$foto->photoname}}"></a>
+              @endforeach
+              <br>{{$espacio->direccion}}
             </article>
           @endforeach
-
-          <article class="carga-vehiculo-container">
-          <a href="#"><img class="upload-vehicle" src="storage/espacios/cochera_prueba2.jpg"></a>
-            <p>Espacio 2</p>
-          </article>
-
-
         </section>
 
         <section id="content4">
