@@ -51,4 +51,8 @@ Route::get('/map', function() {
   return view('leaflet');
 });
 
+Route::get('/mapita', function() {
+  return view('map');
+});
+
 Route::get('/locations','LocationsController@map');
