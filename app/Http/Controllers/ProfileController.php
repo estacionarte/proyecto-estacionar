@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Espacio;
+use App\FotoDeEspacio;
 use DB;
 use Auth;
 
