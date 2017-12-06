@@ -40,4 +40,5 @@ class Espacio extends Model
         return $this->belongsTo(App\User::class, 'idUser');
     }
 
+  
 }

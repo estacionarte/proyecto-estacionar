@@ -25,7 +25,8 @@
         <section id="content1">
 
           <div class="profile-image">
-            <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
+            <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image"><br>
+            <a href="{{route ('show.update.profile.image') }}">Editar imagen de perfil</a><br><br><br>
           </div>
 
           <div class="profile-welcome">
@@ -104,18 +105,20 @@
           <div class="clear"></div>
 
           <article class="carga-vehiculo-container">
-          <a href="{{ route('upload.estacionamiento.1') }}"><img class="upload-vehicle" src="images/upload.png"></a>
+          <a href="{{route ('upload.espacio.1')}}"><img class="upload-vehicle" src="images/upload.png"></a>
             <p>Cargá tus Espacios</p>
           </article>
 
           @foreach ($espacios as $espacio)
             <article class="carga-vehiculo-container">
               @foreach ($fotos as $foto)
-                <a href=""><img class="upload-vehicle" src="storage/espacios/{{$foto->photoname}}"></a>
-              @endforeach
-              <br>{{$espacio->direccion}}
+              <br>foto id  {{$foto->id}}
+              <a href=""><img class="upload-vehicle" src="storage/espacios/{{$foto->photoname}}"></a>
+            @endforeach
+              <br>{{$espacio->direccion}} espacio ID{{$espacio->id}}
             </article>
           @endforeach
+
         </section>
 
         <section id="content4">
