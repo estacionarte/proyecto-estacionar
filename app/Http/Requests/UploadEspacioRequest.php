@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Auth;
 
 class UploadEspacioRequest extends FormRequest
 {
@@ -41,13 +42,21 @@ class UploadEspacioRequest extends FormRequest
       ];
       $photos = count($this->input('espacioPic'));
       foreach(range(0, $photos) as $index) {
-          $rules['espacioPic.' . $index] = 'image|mimes:jpeg,bmp,png|max:10000';
+        $campo = 'espacioPic.' . $index;
+          $rules[$campo] = 'required|image|mimes:jpeg,bmp,png|max:10000';
           // Hago que la carga sea obligatoria si no hay ninguna foto en la db
-          $rules['espacioPic.' . $index]->sometimes('espacioPic.' . $index, 'required', function(){
-            return 2>1;
-          });
+          // $rules[$campo]->sometimes($campo, 'required', function(){
+          //   return !Auth::user()->espacios()->find(Route::input('id'))->fotos();
+          // });
       }
-
+      // dd($rules);
       return $rules;
+    }
+
+    public function messages()
+    {
+      return [
+        'espacioPic.0.required' => 'Debes cargar por lo menos una foto',
+      ];
     }
 }

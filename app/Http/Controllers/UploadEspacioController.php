@@ -68,24 +68,26 @@ class UploadEspacioController extends Controller
       ->where('idEspacio',$espacio->id)
       ->count();
 
-    foreach ($request->espacioPic as $photo) {
-      $fotoDeEspacio = new FotoDeEspacio();
-      $fotoDeEspacio->idEspacio = $espacio->id;
-      if (isset($i)) {
-        $i++;
-      } else {
-        if ($fotosespacio == 0) {
-          $i = 1;
+    if ($request->espacioPic) {
+      foreach ($request->espacioPic as $photo) {
+        $fotoDeEspacio = new FotoDeEspacio();
+        $fotoDeEspacio->idEspacio = $espacio->id;
+        if (isset($i)) {
+          $i++;
         } else {
-          $i = $fotosespacio+1;
+          if ($fotosespacio == 0) {
+            $i = 1;
+          } else {
+            $i = $fotosespacio+1;
+          }
         }
+        $nombreArchivo = $fotoDeEspacio->idEspacio . '-' . $i . '.' . $photo->extension();
+        $fotoDeEspacio->photoname = $nombreArchivo;
+        $fotoDeEspacio->save();
+
+        $path = $photo->storePubliclyAs('public/espacios', $nombreArchivo);
+
       }
-      $nombreArchivo = $fotoDeEspacio->idEspacio . '-' . $i . '.' . $photo->extension();
-      $fotoDeEspacio->photoname = $nombreArchivo;
-      $fotoDeEspacio->save();
-
-      $path = $photo->storePubliclyAs('public/espacios', $nombreArchivo);
-
     }
     return redirect()->route('upload.espacio.2',compact('espacio'));
   }
@@ -213,10 +215,16 @@ class UploadEspacioController extends Controller
 
     foreach ($diasSemana as $key => $value) {
 
-      $diasYHorariosDeEspacio = new DiasYHorariosDeEspacio();
       $espacio = Espacio::findOrFail($id);
+      $dia = $espacio->diasyhorarios()->where('dia',$value)->first();
 
-      $diasYHorariosDeEspacio->idEspacio = $espacio->id;
+      // Me fijo si tengo un horario para ese día ya guardado en la db y si no lo creo
+      if ($dia) {
+        $diasYHorariosDeEspacio = $espacio->diasyhorarios()->where('dia',$value)->first();
+      } else {
+        $diasYHorariosDeEspacio = new DiasYHorariosDeEspacio();
+        $diasYHorariosDeEspacio->idEspacio = $espacio->id;
+      }
 
       $horacomienzo = $request->input('horaComienzo' . $value) * 60 + $request->input('minutoComienzo' . $value);
       $horafin = $request->input('horaFin' . $value) * 60 + $request->input('minutoFin' . $value);
@@ -247,35 +255,36 @@ class UploadEspacioController extends Controller
     ]);
 
     $espacio = Espacio::findOrFail($id);
+    // Hasta que tengamos distintos precios para los distintos vehículos, le asigno a todos el mismo
     $espacio->precioAutosMinuto = $request->input('precioPorMinuto');
     $espacio->precioMotosMinuto = $request->input('precioPorMinuto');
     $espacio->precioBicicletasMinuto = $request->input('precioPorMinuto');
 
     $espacio->save();
 
-    $descuentosDeEspacio = new DescuentosDeEspacio();
-    $descuentosDeEspacio->idEspacio = $espacio->id;
-    $descuentosDeEspacio->tipoVehiculo = 'Todos';
-    $descuentosDeEspacio->hora = 1;
-    $descuentosDeEspacio->descuento = $request->input('descuentoPorMinutoHora') / 100;
 
-    $descuentosDeEspacio->save();
+    function guardar ($hora, $input, $espacio, $request){
 
-    $descuentosDeEspacio = new DescuentosDeEspacio();
-    $descuentosDeEspacio->idEspacio = $espacio->id;
-    $descuentosDeEspacio->tipoVehiculo = 'Todos';
-    $descuentosDeEspacio->hora = 6;
-    $descuentosDeEspacio->descuento = $request->input('descuentoPorMinutoSeisHoras') / 100;
+      // Me fijo si tengo un descuento ya guardado en la db y si no lo creo
+      $descuento = $espacio->descuentos()->where('hora',$hora)->first();
+      if ($descuento) {
+        $descuentosDeEspacio = $espacio->descuentos()->where('hora',$hora)->first();
+      } else {
+        $descuentosDeEspacio = new DescuentosDeEspacio();
+        $descuentosDeEspacio->idEspacio = $espacio->id;
+      }
 
-    $descuentosDeEspacio->save();
+      // Hasta que tengamos distintos precios para los distintos vehículos, le asigno a todos el mismo
+      $descuentosDeEspacio->tipoVehiculo = 'Todos';
+      $descuentosDeEspacio->hora = $hora;
+      $descuentosDeEspacio->descuento = $request->input($input) / 100;
 
-    $descuentosDeEspacio = new DescuentosDeEspacio();
-    $descuentosDeEspacio->idEspacio = $espacio->id;
-    $descuentosDeEspacio->tipoVehiculo = 'Todos';
-    $descuentosDeEspacio->hora = 24;
-    $descuentosDeEspacio->descuento = $request->input('descuentoPorMinutoDia') / 100;
+      $descuentosDeEspacio->save();
+    }
 
-    $descuentosDeEspacio->save();
+    guardar(1, 'descuentoPorMinutoHora', $espacio, $request);
+    guardar(6, 'descuentoPorMinutoSeisHoras', $espacio, $request);
+    guardar(24, 'descuentoPorMinutoDia', $espacio, $request);
 
     return redirect()->route('upload.espacio.resumen',compact('espacio'));
   }
@@ -345,18 +354,6 @@ class UploadEspacioController extends Controller
 
   }
 
-  // Pasar minutos a horario
-  private function minutosEnHoraDelDia($minutos){
-
-    if ($minutos % 60 == 0) {
-      $hora = $minutos / 60 . ':00';
-      return $hora;
-    } else {
-      $hora = floor($minutos / 60) . ':' . ($minutos % 60);
-      return $hora;
-    }
-  }
-
   public function showUploadEspacioResumen(Espacio $espacio){
 
     $fotos = DB::table('espacios_fotos')
@@ -373,9 +370,12 @@ class UploadEspacioController extends Controller
       ->where('idEspacio', '=', $espacio->id)
       ->get();
     $horarios[] = '';
+    // dd($dias);
+    $dias = $dias->toArray();
+
     foreach ($dias as $dia) {
-      $horaComienzo = $this->minutosEnHoraDelDia($dia->horaComienzo);
-      $horaFin = $this->minutosEnHoraDelDia($dia->horaFin);
+      $horaComienzo = $espacio->comienzo($dia->dia);
+      $horaFin = $espacio->fin($dia->dia);
       $horarios[] = $dia->dia . ': ' . $horaComienzo . ' - ' . $horaFin;
     }
 

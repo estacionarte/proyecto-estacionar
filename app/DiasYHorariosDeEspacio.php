@@ -20,7 +20,7 @@ class DiasYHorariosDeEspacio extends Model
 
   public function espacio()
     {
-        return $this->belongsTo(App\Espacio::class, 'idEspacio');
+        return $this->belongsTo(Espacio::class, 'idEspacio');
     }
 
 }
