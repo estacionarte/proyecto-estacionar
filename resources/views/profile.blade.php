@@ -85,7 +85,7 @@
           <div class="clear"></div>
 
           <article class="carga-vehiculo-container">
-          <a href="upload-estacionamiento/infogeneral"><img class="upload-vehicle" src="images/upload.png"></a>
+          <a href="{{ route('upload.espacio.1') }}"><img class="upload-vehicle" src="images/upload.png"></a>
             <p>Cargá tus vehículos</p>
           </article>
 
@@ -111,11 +111,8 @@
 
           @foreach ($espacios as $espacio)
             <article class="carga-vehiculo-container">
-              @foreach ($fotos as $foto)
-              <br>foto id  {{$foto->id}}
-              <a href=""><img class="upload-vehicle" src="storage/espacios/{{$foto->photoname}}"></a>
-            @endforeach
-              <br>{{$espacio->direccion}} espacio ID{{$espacio->id}}
+                <a href=""><img class="upload-vehicle" src="storage/espacios/{{Auth::user()->espacios()->where('id',$espacio->id)->first()->fotoPortada()}}"></a>
+              <br>{{$espacio->direccion}}
             </article>
           @endforeach
 

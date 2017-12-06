@@ -29,7 +29,7 @@
             {{ csrf_field() }}
 
             <label for="" class="upload-label-titulo">¿Cuánto tiempo pueden permanecer los vehículos?</label>
-
+            
             <label for="" class="upload-label-tiempoMinimoyMax">Mínimo</label>
             <select name="medidaDeTiempoMin" class="upload-select-tiempoMinimoyMax">
               <option value="Minutos" {{ old('medidaDeTiempoMin') == 'Minutos' ? 'selected':'' }}>minutos</option>

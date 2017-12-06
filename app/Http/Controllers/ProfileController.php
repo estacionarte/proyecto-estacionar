@@ -18,13 +18,16 @@ class ProfileController extends Controller
     ->where('idUser', '=', Auth::user()->id)
     ->get();
 
+    // foreach ($espacios as $espacio) {
+    //   $fotos = DB::table('espacios_fotos')
+    //   ->select('*')
+    //   ->where('idEspacio', '=', $espacio->id)
+    //   ->get();
+    // }
 
-    foreach ($espacios as $espacio) {
-      $fotos = DB::table('espacios_fotos')
-      ->select('*')
-      ->where('idEspacio', '=', $espacio->id)
-      ->get();
-    }
+    // foreach ($espacios as $espacio) {
+    //   dd($espacio->fotos()->get());
+    // }
 
     return view('profile', compact('espacios', 'fotos'));
   }
