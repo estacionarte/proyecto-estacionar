@@ -19,10 +19,20 @@ Route::get('/mantenimiento', function () {
     return view('underconstruction');
 });
 
+// ***************************** P E R F I L *******************
 Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile');
-Route::get('/perfil/editar-imagen', 'ProfileController@showUpdateProfileImage')->name('show.update.profile.image');
-Route::put('/perfil/editar-imagen', 'ProfileController@updateProfileImage')->name('update_profile_image');
 
+Route::get('/perfil/editar-imagen', 'ProfileController@showUpdateProfileImage')->name('show.update.profile.image');
+
+Route::post('/perfil/editar-imagen', 'ProfileController@updateProfileImage')->name('update_profile_image');
+
+// *************************** V E H I C U L O S ******************************
+Route::get('cargar-vehiculo', 'UploadVehicleController@showUploadVehicle')->name('show.upload.vehicle');
+
+Route::post('cargar-vehiculo', 'UploadVehicleController@UploadVehicle')->name('create.upload.vehicle');
+
+
+// ***************************  E S P A C I O S ******************************
 Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
 
   Route::get('infogeneral/{espacio?}', 'UploadEspacioController@showUploadEspacio1')->name('upload.espacio.1');
@@ -50,7 +60,7 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
   Route::get('resumen/{espacio}', 'UploadEspacioController@showUploadEspacioResumen')->name('upload.espacio.resumen');
 
 });
-
+// ******************************************************************************
 Route::get('/map', function() {
   return view('leaflet');
 });

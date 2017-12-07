@@ -26,7 +26,7 @@
 
           <div class="profile-image">
             <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image"><br>
-            <a href="{{route ('show.update.profile.image') }}">Editar imagen de perfil</a><br><br><br>
+            <a href="{{route ('show.update.profile.image') }}">Cambiar mi imagen de perfil</a><br><br><br>
           </div>
 
           <div class="profile-welcome">
@@ -85,7 +85,7 @@
           <div class="clear"></div>
 
           <article class="carga-vehiculo-container">
-          <a href="{{ route('upload.espacio.1') }}"><img class="upload-vehicle" src="images/upload.png"></a>
+          <a href="{{route ('show.upload.vehicle') }}"><img class="upload-vehicle" src="images/upload.png"></a>
             <p>Cargá tus vehículos</p>
           </article>
 
