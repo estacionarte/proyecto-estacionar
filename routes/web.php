@@ -20,6 +20,8 @@ Route::get('/mantenimiento', function () {
 });
 
 Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile');
+Route::get('/perfil/editar-imagen', 'ProfileController@showUpdateProfileImage')->name('show.update.profile.image');
+Route::put('/perfil/editar-imagen', 'ProfileController@updateProfileImage')->name('update_profile_image');
 
 Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
 

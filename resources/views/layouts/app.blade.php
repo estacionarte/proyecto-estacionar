@@ -60,6 +60,7 @@
     </script>
     </header>
     @endauth
+
       @guest
       <header class="main-header">
         <a href="/"><h1>Estacionarte</h1></a>
@@ -116,6 +117,7 @@
           </div>
         </div>
         @endguest
+
         <div class="main-search">
           <form class="main-form-search" action="" method="get">
             <input type="text" name="buscar-texto" placeholder="Buscar cocheras">

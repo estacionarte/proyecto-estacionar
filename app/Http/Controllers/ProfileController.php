@@ -7,6 +7,7 @@ use App\Espacio;
 use App\FotoDeEspacio;
 use DB;
 use Auth;
+use Image;
 
 class ProfileController extends Controller
 {
@@ -20,5 +21,21 @@ class ProfileController extends Controller
     return view('profile', compact('espacios'));
   }
 
+  public function showUpdateProfileImage(){
+    return view('update-profile-image');
+  }
+
+  public function updateProfileImage(Request $request){
+    if ($request->hasFile('avatar')) {
+      $avatar = $request->file('avatar');
+      $filename = time() . '_' . $avatar->getClientoriginalExtension();
+      Image::make($avatar)->resize(200,200)->save(public_path('/storage/profilePic' . $filename));
+
+      $user = Auth::user();
+      $user->avatar = $filename;
+      $user->save();
+    }
+    return view('profile');
+  }
 
 }
