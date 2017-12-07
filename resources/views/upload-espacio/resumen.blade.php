@@ -17,7 +17,7 @@
       <section class="uploadEspacio">
 
         <section class="upload-seccion-resumen">
-          <h2>Información General</h2><a href="{{ route('upload.espacio.1', $espacio) }}">Editar</a>
+          <h2>Información General</h2><a href="{{ route('editar.upload.espacio.1', $espacio) }}">Editar</a>
           <p>{{ $espacio->direccion }} {{ $espacio->dpto }}</p>
           <p>{{ $espacio->ciudad }}, {{ $espacio->provincia }}, {{ $espacio->pais }}, {{ $espacio->zipcode }}</p>
           <br>

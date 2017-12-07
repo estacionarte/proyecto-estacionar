@@ -108,12 +108,17 @@
             <p>Cargá tus Espacios</p>
           </article>
 
-          @foreach ($espacios as $espacio)
+          @forelse ($espacios as $espacio)
             <article class="carga-vehiculo-container">
-                <a href=""><img class="upload-vehicle" src="storage/espacios/{{Auth::user()->espacios()->where('id',$espacio->id)->first()->fotoPortada()}}"></a>
+              @if (\Auth::user()->espacios()->where('id',$espacio->id)->first()->fotos->count() != 0)
+                <a href="{{ route('editar.upload.espacio.1', $espacio->id) }}"><img class="upload-vehicle" src="storage/espacios/{{\Auth::user()->espacios()->where('id',$espacio->id)->first()->fotoPortada()}}"></a>
+              @else
+                <a href="{{ route('editar.upload.espacio.1', $espacio->id) }}"><img class="upload-vehicle" src="storage/espacios/noespacio.jpg"></a>
+              @endif
               <br>{{$espacio->direccion}}
             </article>
-          @endforeach
+          @empty
+          @endforelse
         </section>
 
         <section id="content4">

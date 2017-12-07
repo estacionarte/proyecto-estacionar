@@ -21,7 +21,7 @@
   <option value="">Elige una opción</option>
   <option value="Cochera Privada" {{ old('tipoEspacio', $espacio->tipoEspacio) == 'Cochera Privada' ? 'selected':'' }}>Cochera privada</option>
   <option value="Espacio en Hogar" {{ old('tipoEspacio', $espacio->tipoEspacio) == 'Espacio en Hogar' ? 'selected':'' }}>Espacio en hogar</option>
-  <option value="Playa de Estacionamiento" {{ old('tipoEspacio', $espacio->tipoEspacio) == 'Playa de Estacionamiento' ? 'selected':'' }}>Playa de espacio</option>
+  <option value="Playa de Estacionamiento" {{ old('tipoEspacio', $espacio->tipoEspacio) == 'Playa de Estacionamiento' ? 'selected':'' }}>Playa de estacionamiento</option>
 </select>
 
 <label for="" class="upload-label-titulo">¿Cuántos vehículos se permiten?</label>
@@ -34,14 +34,14 @@
   <label for="aptoDiscapacitados" class="upload-label-especiales"><input type="checkbox" name="aptoDiscapacitados" value="Apto para Discapacitados" class="upload-checkbox-especiales" id="aptoDiscapacitados" {{ old('aptoDiscapacitados', $espacio->aptoDiscapacitados) ? 'checked':'' }}>Apto para discapacitados</label>
 </div>
 <div class="upload-div-especiales">
-  <label for="aptoElectricos" class="upload-label-especiales"><input type="checkbox" name="aptoElectricos" value="Apto para Electricos" class="upload-checkbox-especiales" id="uploadElectricos" {{ old('aptoElectricos', $espacio->aptoElectricos) ? 'checked':'' }}>Carga para autos eléctricos</label>
+  <label for="aptoElectricos" class="upload-label-especiales"><input type="checkbox" name="aptoElectricos" value="Apto para Electricos" class="upload-checkbox-especiales" id="aptoElectricos" {{ old('aptoElectricos', $espacio->aptoElectricos) ? 'checked':'' }}>Carga para autos eléctricos</label>
 </div>
 
 <label for="" class="upload-label-titulo">Información extra (visible por todos) -opcional-</label>
-<textarea name="infopublica" maxlength="250">{{ old('infopublica') }}</textarea>
+<textarea name="infopublica" maxlength="250" placeholder="Por ejemplo: edificio de departamentos, fácil acceso desde calle, no se necesita bajar a abrir...">{{ old('infopublica', $espacio->infopublica) }}</textarea>
 
 <label for="" class="upload-label-titulo">Información extra (únicamente visible por quienes alquilen tu espacio) -opcional-</label>
-<textarea name="infoprivada" maxlength="250">{{ old('infoprivada') }}</textarea>
+<textarea name="infoprivada" maxlength="250" placeholder="Por ejemplo: tocar timbre de departamento 3B al llegar, usar cochera número 15...">{{ old('infoprivada', $espacio->infoprivada) }}</textarea>
 
 <label for="" class="upload-label-titulo">Fotos de tu espacio</label>
 <input type="file" name="espacioPic[]" accept="image/*" style="" multiple>
