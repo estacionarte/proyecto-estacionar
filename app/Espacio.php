@@ -40,9 +40,6 @@ class Espacio extends Model
         return $this->belongsTo(User::class, 'idUser');
     }
 
-<<<<<<< HEAD
-  
-=======
   public function fotos()
     {
         return $this->hasMany(FotoDeEspacio::class, 'idEspacio');
@@ -93,5 +90,4 @@ class Espacio extends Model
     return $foto->photoname;
   }
 
->>>>>>> e71e7e655643a4f74296d9c946c05468bc5e4c08
 }
