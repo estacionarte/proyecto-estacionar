@@ -910,18 +910,39 @@ span .avatar{
   font-size: 1.3em;
 }
 
+.uploadEspacio .form-generico .upload-div-tipovehiculo{
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.uploadEspacio .form-generico .upload-div-div-tipovehiculo{
+  float: right;
+}
+
 .uploadEspacio .form-generico .upload-label-tipovehiculo{
-  width: 65%;
+  width: 59%;
   float: left;
   color: #8f8f8f;
   /*font-size: 1.1em;*/
+  margin-top: 0px;
 }
 
 .uploadEspacio .form-generico .upload-input-tipovehiculo{
   display: inline-block;
-  width: 35%;
-  float: right;
+  width: 40px;
   text-align: center;
+  margin-top: 0px;
+}
+
+.uploadEspacio .form-generico .upload-button-sumaresta{
+  display: inline-block;
+  text-align: center;
+  margin: 0px 6px;
+  background-color: #ffffff;
+  color: #444444;
+  font-size: 22px;
+  border: none;
+  vertical-align: middle;
 }
 
 .uploadEspacio .form-generico .upload-div-especiales{
@@ -1534,18 +1555,25 @@ margin-right: 5%;
   width: 24.5%;
 }
 
+.uploadEspacio .form-generico .upload-div-tipovehiculo{
+  width: 50%;
+}
+
 .uploadEspacio .form-generico .upload-label-tipovehiculo{
-  width: 65%;
-  float: left;
-  color: #8f8f8f;
-  /*font-size: 1.1em;*/
+  width: 50%;
 }
 
 .uploadEspacio .form-generico .upload-input-tipovehiculo{
-  display: inline-block;
-  width: 35%;
-  float: right;
-  text-align: center;
+  width: 40px;
+}
+
+.uploadEspacio .form-generico .upload-button-sumaresta{
+  margin: 0px 8px;
+  font-size: 26px;
+}
+
+.uploadEspacio .form-generico .upload-input-tipovehiculo{
+  width: 60px;
 }
 
 .uploadEspacio .form-generico .upload-div-especiales{

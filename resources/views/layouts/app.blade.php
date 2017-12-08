@@ -27,6 +27,9 @@
     <!-- Styles -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="hojaDeEstilo">
+
+    {{-- Scripts --}}
+    <script src="{{ mix('js/app.js') }}"></script>
   </head>
   <body>
     @auth

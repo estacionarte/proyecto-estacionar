@@ -16,6 +16,12 @@
 
       <section class="uploadEspacio">
 
+        @if (count($errors) > 0)
+          @foreach ($errors->all() as $error)
+            <p style="color: #990606;"> {{ $error }} </p>
+          @endforeach
+        @endif
+
         <div class="form-generico">
 
           <form action="{{ route('insert.upload.espacio.resumen', $espacio) }}" method="post" class="form-uploadEspacio form-reducido">

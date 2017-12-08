@@ -25,9 +25,45 @@
 </select>
 
 <label for="" class="upload-label-titulo">¿Cuántos vehículos se permiten?</label>
-<label for="" class="upload-label-tipovehiculo">Autos</label> <input type="number" placeholder="" name="cantAutos" class="upload-input-tipovehiculo" min="0" max="1" value="{{ old('cantAutos', $espacio->cantAutos) }}">
-<label for="" class="upload-label-tipovehiculo">Motos</label> <input type="number" placeholder="" name="cantMotos" class="upload-input-tipovehiculo" min="0" max="4" value="{{ old('cantMotos', $espacio->cantMotos) }}">
-<label for="" class="upload-label-tipovehiculo">Bicicletas</label> <input type="number" placeholder="" name="cantBicicletas" class="upload-input-tipovehiculo" min="0" max="4" value="{{ old('cantBicicletas', $espacio->cantBicicletas) }}">
+
+<div class="upload-div-tipovehiculo">
+  <label class="upload-label-tipovehiculo">Autos</label>
+  <div class="upload-div-div-tipovehiculo">
+    <button type="button" name="boton-resta-auto" class="upload-button-sumaresta">
+      <i class="fa fa-minus-circle"></i>
+    </button>
+    <input type="text" placeholder="0" name="cantAutos" class="upload-input-tipovehiculo" value="{{ old('cantAutos', $espacio->cantAutos) }}">
+    <button type="button" name="boton-suma-auto" class="upload-button-sumaresta">
+      <i class="fa fa-plus-circle"></i>
+    </button>
+  </div>
+</div>
+
+<div class="upload-div-tipovehiculo">
+  <label class="upload-label-tipovehiculo">Motos</label>
+  <div class="upload-div-div-tipovehiculo">
+    <button type="button" name="boton-resta-moto" class="upload-button-sumaresta">
+      <i class="fa fa-minus-circle"></i>
+    </button>
+    <input type="text" placeholder="0" name="cantMotos" class="upload-input-tipovehiculo" value="{{ old('cantMotos', $espacio->cantMotos) }}">
+    <button type="button" name="boton-suma-moto" class="upload-button-sumaresta">
+      <i class="fa fa-plus-circle"></i>
+    </button>
+  </div>
+</div>
+
+<div class="upload-div-tipovehiculo">
+  <label class="upload-label-tipovehiculo">Bicicletas</label>
+  <div class="upload-div-div-tipovehiculo">
+    <button type="button" name="boton-resta-bici" class="upload-button-sumaresta">
+      <i class="fa fa-minus-circle"></i>
+    </button>
+    <input type="text" placeholder="0" name="cantBicicletas" class="upload-input-tipovehiculo" value="{{ old('cantBicicletas', $espacio->cantBicicletas) }}">
+    <button type="button" name="boton-suma-bici" class="upload-button-sumaresta">
+      <i class="fa fa-plus-circle"></i>
+    </button>
+  </div>
+</div>
 
 <label for="" class="upload-label-titulo">¿Tiene alguno de los siguientes servicios especiales?</label>
 <div class="upload-div-especiales">
