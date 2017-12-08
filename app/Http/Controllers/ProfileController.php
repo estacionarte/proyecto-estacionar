@@ -29,13 +29,13 @@ class ProfileController extends Controller
     if ($request->hasFile('avatar')) {
       $avatar = $request->file('avatar');
       $filename = time() . '_' . $avatar->getClientoriginalExtension();
-      Image::make($avatar)->resize(200,200)->save(public_path('/storage/profilePic' . $filename));
+      Image::make($avatar)->resize(240,240)->save(public_path('/storage/profilePic' . $filename));
 
       $user = Auth::user();
       $user->avatar = $filename;
       $user->save();
     }
-    return view('profile');
+    return view('/home');
   }
 
 }
