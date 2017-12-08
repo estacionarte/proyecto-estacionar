@@ -89,15 +89,16 @@
             <p>Cargá tus vehículos</p>
           </article>
 
-          <article class="carga-vehiculo-container">
-          <a href="#"><img class="upload-vehicle" src="storage/vehiculos/auto_prueba1.jpg"></a>
-            <p>Vehiculo 1</p>
-          </article>
+          @forelse ($vehiculos as $vehiculo)
+            <article class="carga-vehiculo-container">
+            <a href="#"><img class="upload-vehicle" src="storage/vehiculos/auto_prueba1.jpg"></a>
+              <p>{{$vehiculo->tipoVehiculo}}</p>
+            </article>
+          @empty
 
-          <article class="carga-vehiculo-container">
-          <a href="#"><img class="upload-vehicle" src="storage/vehiculos/auto_prueba2.jpg"></a>
-            <p>Vehiculo 2</p>
-          </article>
+          @endforelse
+
+
         </section>
 
         <section id="content3">
