@@ -17,6 +17,16 @@ class Vehiculo extends Model
       'modelo',
       'color',
       'patente',
-      'IdUser',
+      'IdUser'
     ];
+
+    public function usuario()
+    {
+        return $this->belongsTo(User::class, 'idUser');
+    }
+
+    // public function fotos()
+    // {
+    //     return $this->hasMany(FotoDeEspacio::class, 'idVehiculo');
+    // }
 }

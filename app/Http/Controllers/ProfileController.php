@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Espacio;
 use App\FotoDeEspacio;
+use App\Vehiculo;
 use DB;
 use Auth;
 use Image;
@@ -18,7 +19,12 @@ class ProfileController extends Controller
     ->where('idUser', '=', Auth::user()->id)
     ->get();
 
-    return view('profile', compact('espacios'));
+    $vehiculos = DB::table('vehiculos')
+    ->select('*')
+    ->where('idUser', '=', Auth::user()->id)
+    ->get();
+
+    return view('profile', compact('espacios', 'vehiculos'));
   }
 
   public function showUpdateProfileImage(){

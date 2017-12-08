@@ -2,25 +2,30 @@
 @section('title') Cargar Vehiculo @endsection
 @section('signin')
 
+  @if (count($errors) > 0)
+          @foreach ($errors->all() as $error)
+            <p style="color: #990606;"> {{ $error }} </p>
+          @endforeach
+        @endif
 
   <h2>Cargar Vehiculo</h2>
-  <form class="" action="" method="post">
+  <form class="" action="{{ route('create.upload.vehicle') }}" method="post">
       {{ csrf_field() }}
       <label>Tipo de vehiculo</label>
-      <select id="vehiculo" class="" name="" onchange="mostrarMarca()">
-        <option value="-1">Seleccioná</option>
-        <option value="1">AUTOMOVIL</option>
-        <option value="2">CAMIÓN</option>
-        <option value="3">CAMIONETA</option>
-        <option value="4">MOTOCICLETA</option>
-        <option value="5">BICICLETA</option>
+      <select id="vehiculo" class="" name="tipoVehiculo" onchange="mostrarMarca()">
+        <option value="-1" {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == '-1' ? 'selected':'' }}>Seleccioná</option>
+        <option value="Automovil"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Automovil' ? 'selected':'' }}>AUTOMOVIL</option>
+        <option value="Camión"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Camión' ? 'selected':'' }}>CAMIÓN</option>
+        <option value="Camioneta"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Camioneta' ? 'selected':'' }}>CAMIONETA</option>
+        <option value="Motocicleta"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Motocicleta' ? 'selected':'' }}>MOTOCICLETA</option>
+        <option value="Bicicleta"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Bicicleta' ? 'selected':'' }}>BICICLETA</option>
       </select><br>
 
       <label>Marca
-      <select id="vehiculo-marca"name="" class="" disabled>
+      <select id="vehiculo-marca" name="marca" class="" disabled>
         <option value="-1" selected>Seleccioná</option>
-        <option value="1">ABARTH</option>
-        <option value="2">ALFA ROMEO</option>
+        <option value="1" {{ old('marca', $vehiculo->marca) == '1' ? 'selected':'' }}>ABARTH</option>
+        <option value="2" {{ old('marca', $vehiculo->marca) == '2' ? 'selected':'' }}>ALFA ROMEO</option>
         <option value="3">ASTON MARTIN</option>
         <option value="4">AUDI</option>
         <option value="5">BENTLEY</option>
@@ -73,13 +78,13 @@
       </label><br>
 
       <label for="">Modelo</label>
-      <input type="text" name="" value=""><br>
+      <input id="vehiculo-modelo" type="text" name="modelo" value="{{ old('modelo', $vehiculo->modelo) }}"><br>
 
       <label for="">Color</label>
-      <input type="text" name="" value=""><br>
+      <input type="text" name="color" value="{{ old('color', $vehiculo->color) }}"><br>
 
       <label for="">Patente</label>
-      <input type="text" name="" value=""><br>
+      <input type="text" name="patente" value="{{ old('color', $vehiculo->patente) }}"><br>
 
       {{-- <label for="">Datos adicionales</label>
       <textarea name="name" rows="8" cols="80" maxlength="250"></textarea><br> --}}
@@ -90,9 +95,9 @@
       <script type="text/javascript">
         function mostrarMarca() {
           var mostrar = document.getElementById("vehiculo").value;
-          if (mostrar == -1) {
+          if (mostrar == -1 || mostrar == 'Bicicleta') {
             document.getElementById("vehiculo-marca").disabled = true;
-            // document.getElementById("vehiculo-marca").value == -1;
+            document.getElementById("vehiculo-modelo").removeAttr("required");
           }else {
             document.getElementById("vehiculo-marca").disabled = false;
           }
