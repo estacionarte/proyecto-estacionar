@@ -20,8 +20,8 @@ class CreateLocationsTable extends Migration
             $table->softDeletes();
             $table->string('domicilio', 100);
             $table->string('barrio', 100);
+            $table->point('location');
         });
-        DB::statement('ALTER TABLE locations ADD location POINT' );
     }
 
     /**

@@ -34,7 +34,18 @@ class Location extends Model
 
   public function scopeDistance($query,$dist,$location)
   {
-    return $query->whereRaw('st_distance(location,POINT('.$location.')) < '.$dist);
+    // return $query->whereRaw('st_distance(location,POINT('.$location.')) < '.$dist); // En grados
+
+    //  Distancia en metros
+    return $query->whereRaw('ST_Distance_Sphere(location,POINT(' . $location . ')) < ' . $dist);
 
   }
+
+  public function scopeWithDistance($query, $location)
+  {
+    $distance = $query->selectRaw('Round(ST_Distance_Sphere(location,POINT(' . $location . '))) AS distance');
+
+    return $distance;
+  }
+
 }

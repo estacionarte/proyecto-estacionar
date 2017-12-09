@@ -70,3 +70,4 @@ Route::get('/mapita', function() {
 });
 
 Route::get('/locations','LocationsController@map');
+Route::post('/locations','LocationsController@map');
