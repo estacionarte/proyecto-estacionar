@@ -37,15 +37,15 @@
             <h2>¡Invitá a tus amigos y obtené créditos para estacionar!</h2>
             <p>Conseguí hasta %50 de descuento en tu próximo alquiler.</p>
             <a href="credits.php">CONSEGUIR CRÉDITO</a>
-          </article>
+          </article><br>
 
-          <!-- <div class="cambiarTema">
-            <a href="#" id="estilo">Cambiar Estilo apretame</a>
-          </div> -->
-          <select id="styleChange">
-           <option value="{{ asset('css/styles.css') }}">estilo original</option>
-           <option value="{{ asset('css/styles2.css') }}">estilo alternativo</option>
-          </select>
+          <article class="profile-credit">
+            <h2>Cambia el estilo de tu página</h2>
+            <select id="styleChange">
+             <option value="{{ asset('css/styles.css') }}">estilo original</option>
+             <option value="{{ asset('css/styles2.css') }}">estilo alternativo</option>
+            </select>
+          </article>
 
           <!-- SCRIPT CSS -->
           <script type="text/javascript">
@@ -91,14 +91,21 @@
 
           @forelse ($vehiculos as $vehiculo)
             <article class="carga-vehiculo-container">
-            <a href="#"><img class="upload-vehicle" src="storage/vehiculos/auto_prueba1.jpg"></a>
-              <p>{{$vehiculo->tipoVehiculo}}</p>
+
+            <a href=""><img class="upload-vehicle" src="storage/vehiculos/auto_prueba1.jpg"></a>
+              {{$vehiculo->tipoVehiculo}}<br>
+              <a href="{{ route('show.edit.vehicle', $vehiculo->id) }}">
+                <button type="button" class="btn btn-default">Editar</button>
+              </a>
+
+              <form method="POST" action="{{ route('delete.vehicle', $vehiculo->id) }}"  onsubmit="return confirm('¿Eliminar Vehiculo?')" style="display:inline;">
+                {{ method_field('DELETE') }}
+                {{ csrf_field() }}
+                <button type="button" class="btn btn-danger">Eliminar</button><br><br>
+              </form>
             </article>
           @empty
-
           @endforelse
-
-
         </section>
 
         <section id="content3">

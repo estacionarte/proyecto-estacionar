@@ -37,4 +37,9 @@ class User extends Authenticatable
           return $this->hasMany(Espacio::class, 'idUser');
       }
 
+    public function vehiculos()
+      {
+          return $this->hasMany(Vehiculo::class, 'idUser');
+      }
+
 }

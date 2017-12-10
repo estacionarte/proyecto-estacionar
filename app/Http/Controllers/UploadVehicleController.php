@@ -14,7 +14,7 @@ class UploadVehicleController extends Controller
     public function showUploadVehicle(){
       $vehiculo = new Vehiculo();
 
-      return view('upload_vehicle', compact('vehiculo'));
+      return view('cargar-vehiculo.upload_vehicle', compact('vehiculo'));
     }
 
     public function UploadVehicle(Request $request){
@@ -22,20 +22,20 @@ class UploadVehicleController extends Controller
         $request,
         [
           'tipoVehiculo' => 'required',
-          'marca'        => 'required',
-          'modelo'       => 'required|max:45',
+          'marca'        => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta',
+          'modelo'       => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta|max:45',
           'color'        => 'required|string|max:20',
-          'patente'      => 'required'
+          'patente'      => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta'
         ],
         [
           'tipoVehiculo.required'  => 'Debe indicar un tipo de vehiculo.',
-          'marca.required'         => 'Debe indicar una marca.',
-          'modelo.required'        => 'Debe indicar un modelo.',
+          'marca.required_if'      => 'Debe indicar la marca de su vehiculo.',
+          'modelo.required_if'     => 'Debe indicar un modelo.',
           'modelo.max'             => 'Excedió la cantidad de carácteres.',
-          'color.required'         => 'Debe indicar un color.',
+          'color.required_if'      => 'Debe indicar el color de su vehiculo.',
           'color.string'           => 'Debe ingresar solo texto.',
           'color.max'              => 'Excedió la cantidad de carácteres.',
-          'patente.required'       => 'Debe completar la patente',
+          'patente.required_if'    => 'Debe completar la patente',
         ]);
 
           $vehiculo = new Vehiculo($request->all());
@@ -51,4 +51,48 @@ class UploadVehicleController extends Controller
 
           return redirect(route('profile'));
     }
+
+    public function showEditVehicle($id){
+
+          $vehiculo = Vehiculo::findOrFail($id);
+
+          return view('cargar-vehiculo.edit-vehicle', compact('vehiculo'));
+    }
+
+    public function editvehicle(Request $request, $id){
+      $this->validate(
+        $request,
+        [
+          'tipoVehiculo' => 'required',
+          'marca'        => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta',
+          'modelo'       => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta|max:45',
+          'color'        => 'required|string|max:20',
+          'patente'      => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta'
+        ],
+        [
+          'tipoVehiculo.required'  => 'Debe indicar un tipo de vehiculo.',
+          'marca.required_if'      => 'Debe indicar la marca de su vehiculo.',
+          'modelo.required_if'     => 'Debe indicar un modelo.',
+          'modelo.max'             => 'Excedió la cantidad de carácteres.',
+          'color.required_if'      => 'Debe indicar el color de su vehiculo.',
+          'color.string'           => 'Debe ingresar solo texto.',
+          'color.max'              => 'Excedió la cantidad de carácteres.',
+          'patente.required_if'    => 'Debe completar la patente',
+        ]);
+
+        $vehiculo = Vehiculo::findOrFail($id);
+        $vehiculo->fill($request->all());
+        $vehiculo->save();
+
+        return redirect(route('profile'));
+    }
+
+    public function deleteVehicle($id){
+      
+        $vehiculo = Vehiculo::findOrFail($id);
+        $vehiculo->delete();
+
+        return redirect(route('profile'));
+    }
+
 }

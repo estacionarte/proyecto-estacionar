@@ -25,8 +25,4 @@ class Vehiculo extends Model
         return $this->belongsTo(User::class, 'idUser');
     }
 
-    // public function fotos()
-    // {
-    //     return $this->hasMany(FotoDeEspacio::class, 'idVehiculo');
-    // }
-}
+  }

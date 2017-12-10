@@ -27,10 +27,18 @@ Route::get('/perfil/editar-imagen', 'ProfileController@showUpdateProfileImage')-
 Route::post('/perfil/editar-imagen', 'ProfileController@updateProfileImage')->name('update_profile_image');
 
 // *************************** V E H I C U L O S ******************************
-Route::get('cargar-vehiculo', 'UploadVehicleController@showUploadVehicle')->name('show.upload.vehicle');
+Route::group(['prefix' => 'cargar-vehiculo', 'middleware' => 'auth'], function(){
 
-Route::post('cargar-vehiculo', 'UploadVehicleController@UploadVehicle')->name('create.upload.vehicle');
+  Route::get('datos', 'UploadVehicleController@showUploadVehicle')->name('show.upload.vehicle');
 
+  Route::post('datos', 'UploadVehicleController@UploadVehicle')->name('create.upload.vehicle');
+
+  Route::get('datos/editar/{vehiculo?}', 'UploadVehicleController@showEditVehicle')->name('show.edit.vehicle');
+
+  Route::put('datos/editar/{id}', 'UploadVehicleController@editVehicle')->name('edit.vehicle');
+
+  Route::delete('datos/{id}', 'UploadVehicleController@deleteVehicle')->name('delete.vehicle');
+});
 
 // ***************************  E S P A C I O S ******************************
 Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
