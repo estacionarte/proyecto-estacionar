@@ -77,7 +77,7 @@
 <textarea name="infopublica" maxlength="250" placeholder="Por ejemplo: edificio de departamentos, fácil acceso desde calle, no se necesita bajar a abrir...">{{ old('infopublica', $espacio->infopublica) }}</textarea>
 
 <label for="" class="upload-label-titulo">Información extra (únicamente visible por quienes alquilen tu espacio) -opcional-</label>
-<textarea name="infoprivada" maxlength="250" placeholder="Por ejemplo: tocar timbre de departamento 3B al llegar, usar cochera número 15...">{{ old('infoprivada', $espacio->infoprivada) }}</textarea>
+<textarea name="infoprivada" maxlength="250" placeholder="Por ejemplo: tocar timbre de departamento 3B al llegar, usar cochera número 15... No incluir teléfono ni e-mail por razones de seguridad">{{ old('infoprivada', $espacio->infoprivada) }}</textarea>
 
 <label for="" class="upload-label-titulo">Fotos de tu espacio</label>
 <input type="file" name="espacioPic[]" accept="image/*" style="" multiple>

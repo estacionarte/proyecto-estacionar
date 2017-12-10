@@ -29,7 +29,7 @@
             {{ csrf_field() }}
 
             <label for="" class="upload-label-titulo">¿Cuánto tiempo pueden permanecer los vehículos?</label>
-            
+
             <label for="" class="upload-label-tiempoMinimoyMax">Mínimo</label>
             <select name="medidaDeTiempoMin" class="upload-select-tiempoMinimoyMax">
               <option value="Minutos" {{ old('medidaDeTiempoMin') == 'Minutos' ? 'selected':'' }}>minutos</option>
@@ -56,7 +56,7 @@
             </select>
             <input type="number" placeholder="15" name="tiempoAnticipacion" class="upload-input-tiempoMinimoyMax" min="0" max="10000" value="{{ old('tiempoAnticipacion', $espacio->anticipacionMinutos) }}">
 
-            <input type="submit" name="boton-submit" value="&#8249; Volver" class="upload-button-volver">
+            <input type="submit" name="boton-volver" value="&#8249; Volver" class="upload-button-volver" formaction="{{ route('editar.upload.espacio.1', $espacio) }}">
             <input type="submit" name="boton-submit" value="SIGUIENTE" class="upload-button-submit">
 
           </form>

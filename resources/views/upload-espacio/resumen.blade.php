@@ -17,49 +17,75 @@
       <section class="uploadEspacio">
 
         <section class="upload-seccion-resumen">
-          <h2>Información General</h2><a href="{{ route('editar.upload.espacio.1', $espacio) }}">Editar</a>
-          <p>{{ $espacio->direccion }} {{ $espacio->dpto }}</p>
-          <p>{{ $espacio->ciudad }}, {{ $espacio->provincia }}, {{ $espacio->pais }}, {{ $espacio->zipcode }}</p>
-          <br>
-          <p>{{ $espacio->tipoEspacio }}</p>
-          <br>
-          <p>Autos: {{ $espacio->cantAutos }}</p>
-          <p>Motos: {{ $espacio->cantMotos }}</p>
-          <p>Bicicletas: {{ $espacio->cantBicicletas }}</p>
-          <br>
-          <p>{{ $espacio->aptoDiscapacitados ? 'Apto para discapacitados' : 'NO apto para discapacitados' }}</p>
-          <p>{{ $espacio->aptoElectricos ? 'Carga autos eléctricos' : 'NO carga autos eléctricos' }}</p>
-          <br>
-          <p>{{ $espacio->infopublica }}</p>
-          <p>{{ $espacio->infoprivada }}</p>
-          <br>
-          <p>FOTOS</p>
-          @foreach ($fotos as $foto)
-            <img src="/storage/espacios/{{ $foto->photoname }}" alt="" class="upload-img-foto">
-          @endforeach
 
-          <br><br>
+          <div class="div-section">
+            <div>
+              <h2>Información General</h2>
+              <a href="{{ route('editar.upload.espacio.1', $espacio) }}" class="upload-a-editar">Editar</a>
+            </div>
+            <p>{{ $espacio->direccion }} {{ $espacio->dpto }}</p>
+            <p>{{ $espacio->ciudad }}, {{ $espacio->provincia }}, {{ $espacio->pais }}, {{ $espacio->zipcode }}</p>
+            <ul>
+              <li>{{ $espacio->tipoEspacio }}</li>
+              <li>Autos: {{ $espacio->cantAutos }}</li>
+              <li>Motos: {{ $espacio->cantMotos }}</li>
+              <li>Bicicletas: {{ $espacio->cantBicicletas }}</li>
+              <li>{{ $espacio->aptoDiscapacitados ? 'Apto para discapacitados' : 'NO apto para discapacitados' }}</li>
+              <li>{{ $espacio->aptoElectricos ? 'Carga autos eléctricos' : 'NO carga autos eléctricos' }}</li>
+            </ul>
+            <p>Fotos del espacio:</p>
+            @foreach ($fotos as $foto)
+              <div class="upload-div-foto">
+                <img src="/storage/espacios/{{ $foto->photoname }}" alt="" class="upload-img-foto">
+              </div>
+            @endforeach
+          </div>
 
-          <h2>Estadías</h2><a href="{{ route('upload.espacio.2', $espacio) }}">Editar</a>
-          <p>Tiempo mínimo: {{ $tiempominimo }}</p>
-          <p>Tiempo máximo: {{ $tiempomaximo }}</p>
-          <p>Anticipación para reservar: {{ $anticipacion }}</p>
+          <br> <hr> <br>
 
-          <br><br>
+          <div class="div-section">
+            <div>
+              <h2>Estadías</h2>
+              <a href="{{ route('upload.espacio.2', $espacio) }}" class="upload-a-editar">Editar</a>
+            </div>
+            <ul>
+              <li>Tiempo mínimo: {{ $tiempominimo }}</li>
+              <li>Tiempo máximo: {{ $tiempomaximo }}</li>
+              <li>Anticipación para reservar: {{ $anticipacion }}</li>
+            </ul>
+          </div>
 
-          <h2>Días y Horarios</h2><a href="{{ route('upload.espacio.3', $espacio) }}">Editar</a>
-          @foreach ($horarios as $horario)
-            <p>{{ $horario }}</p>
-          @endforeach
+          <br> <hr> <br>
 
-          <br><br>
+          <div class="div-section">
+            <div>
+              <h2>Días y Horarios</h2>
+              <a href="{{ route('upload.espacio.3', $espacio) }}" class="upload-a-editar">Editar</a>
+            </div>
+            <ul>
+              @foreach ($horarios as $horario)
+                <li>{{ $horario }}</li>
+              @endforeach
+            </ul>
+          </div>
 
-          <h2>Precios</h2><a href="{{ route('upload.espacio.4', $espacio) }}">Editar</a>
-          <p>Precio por minuto: ${{ $espacio->precioAutosMinuto }}</p>
-          @foreach ($descuentos as $descuento)
-            <p>Descuento a partir de {{ $descuento->hora }} horas: {{ $descuento->descuento * 100 }}%</p>
-          @endforeach
+          <br> <hr> <br>
+
+          <div class="div-section">
+            <div>
+              <h2>Precios</h2>
+              <a href="{{ route('upload.espacio.4', $espacio) }}" class="upload-a-editar">Editar</a>
+            </div>
+            <p>Precio por minuto: ${{ $espacio->precioAutosMinuto }}</p>
+            <ul>
+              @foreach ($descuentos as $descuento)
+                <li>Descuento a partir de {{ $descuento->hora }} horas: {{ $descuento->descuento * 100 }}%</li>
+              @endforeach
+            </ul>
+          </div>
         </section>
+
+        <a href="#" id="confirmar-espacio">CONFIRMAR ESPACIO</a>
 
         <div class="upload-div-sideimage4"></div>
 

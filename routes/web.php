@@ -45,7 +45,7 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
 
   Route::get('infogeneral/{espacio?}', 'UploadEspacioController@showUploadEspacio1')->name('upload.espacio.1');
 
-  Route::get('infogeneral/editar/{espacio}', 'UploadEspacioController@showEditarUploadEspacio1')->name('editar.upload.espacio.1');
+  Route::any('infogeneral/editar/{espacio}', 'UploadEspacioController@showEditarUploadEspacio1')->name('editar.upload.espacio.1');
 
   Route::delete('infogeneral/eliminarfoto/{id}', 'UploadEspacioController@deletePicEspacio')->name('deletepic.upload.espacio');
 
@@ -78,3 +78,4 @@ Route::get('/mapita', function() {
 });
 
 Route::get('/locations','LocationsController@map');
+Route::post('/locations','LocationsController@map');
