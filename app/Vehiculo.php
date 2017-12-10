@@ -17,6 +17,7 @@ class Vehiculo extends Model
       'modelo',
       'color',
       'patente',
+      'deleted_at',
       'IdUser'
     ];
 

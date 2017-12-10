@@ -11,8 +11,11 @@ use Storage;
 
 class UploadVehicleController extends Controller
 {
-    public function showUploadVehicle(){
-      $vehiculo = new Vehiculo();
+    public function showUploadVehicle(Vehiculo $vehiculo){
+      $vehiculo = Vehiculo::table('vehiculos')
+      ->select('*')
+      ->where('updated_at', 'null')
+      ->get();
 
       return view('cargar-vehiculo.upload_vehicle', compact('vehiculo'));
     }
@@ -88,7 +91,7 @@ class UploadVehicleController extends Controller
     }
 
     public function deleteVehicle($id){
-      
+
         $vehiculo = Vehiculo::findOrFail($id);
         $vehiculo->delete();
 

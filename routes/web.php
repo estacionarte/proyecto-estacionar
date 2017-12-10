@@ -33,7 +33,7 @@ Route::group(['prefix' => 'cargar-vehiculo', 'middleware' => 'auth'], function()
 
   Route::post('datos', 'UploadVehicleController@UploadVehicle')->name('create.upload.vehicle');
 
-  Route::get('datos/editar/{vehiculo?}', 'UploadVehicleController@showEditVehicle')->name('show.edit.vehicle');
+  Route::get('datos/editar/{id?}', 'UploadVehicleController@showEditVehicle')->name('show.edit.vehicle');
 
   Route::put('datos/editar/{id}', 'UploadVehicleController@editVehicle')->name('edit.vehicle');
 

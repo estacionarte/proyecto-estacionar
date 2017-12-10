@@ -9,7 +9,8 @@
         @endif
 
   <h2>Editar Datos de mi Vehiculo</h2>
-  <form class="" action="{{ route('edit.vehicle', $vehiculo) }}" method="post">
+
+  <form class="" action="{{ route('edit.vehicle', $vehiculo) }}" method="post" style="display:inline">
     {{ method_field('PUT') }}
     {{ csrf_field() }}
 
@@ -17,5 +18,8 @@
 
     <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success">
 </form>
+  <a href="{{ route('profile')}}">
+    <input type="submit" name="" value="Cancelar cambios" class="btn btn-warning" onclick="return confirm('¿Desea Cancelar y volver al Perfil?')">
+  </a>
 
 @endsection

@@ -91,18 +91,18 @@
 
           @forelse ($vehiculos as $vehiculo)
             <article class="carga-vehiculo-container">
-
-            <a href=""><img class="upload-vehicle" src="storage/vehiculos/auto_prueba1.jpg"></a>
+            <a href="{{ route('show.edit.vehicle', $vehiculo->id) }}"><img class="upload-vehicle" src="storage/vehiculos/auto_prueba1.jpg"></a>
               {{$vehiculo->tipoVehiculo}}<br>
+
               <a href="{{ route('show.edit.vehicle', $vehiculo->id) }}">
                 <button type="button" class="btn btn-default">Editar</button>
               </a>
 
-              <form method="POST" action="{{ route('delete.vehicle', $vehiculo->id) }}"  onsubmit="return confirm('¿Eliminar Vehiculo?')" style="display:inline;">
+              <form method="POST" action="{{ route('delete.vehicle', $vehiculo->id) }}" style="display:inline;" onsubmit="return confirm('¿Eliminar Vehiculo?')">
                 {{ method_field('DELETE') }}
                 {{ csrf_field() }}
-                <button type="button" class="btn btn-danger">Eliminar</button><br><br>
-              </form>
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+              </form><br><br>
             </article>
           @empty
           @endforelse
@@ -125,7 +125,7 @@
                 <a href="{{ route('editar.upload.espacio.1', $espacio->id) }}"><img class="upload-vehicle" src="storage/espacios/noespacio.jpg"></a>
               @endif
               <br>{{$espacio->direccion}}
-            </article>
+            </article><br><br>
           @empty
           @endforelse
         </section>
