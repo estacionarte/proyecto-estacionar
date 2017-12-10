@@ -32,17 +32,27 @@
 
             @foreach ($diasSemana as $dia)
 
-              <label for="" class="upload-label-diasemana">{{ $dia }}</label>
+              <div class="upload-div-diasemana">
 
-              <input type="number" placeholder="00" name="minutoFin{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->fin($dia),3,2) : '00' }}"><input type="number" placeholder="00" name="horaFin{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->fin($dia),0,2) : '00' }}">
+                <label for="" class="upload-label-diasemana">{{ $dia }}</label>
 
-              <span class="upload-span-separadorhoras">-</span>
+                <div class="upload-div-div-diasemana">
 
-              <input type="number" placeholder="00" name="minutoComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->comienzo($dia),3,2) : '00' }}"><input type="number" placeholder="00" name="horaComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->comienzo($dia),0,2) : '00' }}">
+                  <input type="number" placeholder="00" name="horaComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->comienzo($dia),0,2) : '00' }}">
+                  <input type="number" placeholder="00" name="minutoComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->comienzo($dia),3,2) : '00' }}">
+
+                  <span class="upload-span-separadorhoras">-</span>
+
+                  <input type="number" placeholder="00" name="horaFin{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->fin($dia),0,2) : '00' }}">
+                  <input type="number" placeholder="00" name="minutoFin{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->fin($dia),3,2) : '00' }}">
+
+                </div>
+
+              </div>
 
             @endforeach
 
-            <input type="submit" name="boton-submit" value="&#8249; Volver" class="upload-button-volver">
+            <input type="submit" name="boton-volver" value="&#8249; Volver" class="upload-button-volver" formaction="{{ route('upload.espacio.2', $espacio) }}" formmethod="get">
             <input type="submit" name="boton-submit" value="SIGUIENTE" class="upload-button-submit">
 
           </form>

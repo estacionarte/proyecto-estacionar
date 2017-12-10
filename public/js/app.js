@@ -1017,24 +1017,76 @@ window.onload = function () {
     }
   };
 
-  // Funcionalidad a botones de suma y resta en upload espacio info general
-  var botonSumarAuto = document.querySelector('button[name="boton-suma-auto"]');
-  var autos = document.querySelector('input[name="cantAutos"]');
-  var botonRestarAuto = document.querySelector('button[name="boton-resta-auto"]');
-  botonSumarAuto.addEventListener('click', sumar);
-  botonRestarAuto.addEventListener('click', restar);
+  // // Funcionalidad a botones de suma y resta en upload espacio info general
+  // var botonSumarAuto = document.querySelector('button[name="boton-suma-auto"]');
+  // var autos = document.querySelector('input[name="cantAutos"]');
+  // var botonRestarAuto = document.querySelector('button[name="boton-resta-auto"]');
+  // botonSumarAuto.addEventListener('click', sumar);
+  // botonRestarAuto.addEventListener('click', restar);
+  //
+  // var botonSumarMoto = document.querySelector('button[name="boton-suma-moto"]');
+  // var motos = document.querySelector('input[name="cantMotos"]');
+  // var botonRestarMoto = document.querySelector('button[name="boton-resta-moto"]');
+  // botonSumarMoto.addEventListener('click', sumar);
+  // botonRestarMoto.addEventListener('click', restar);
+  //
+  // var botonSumarBicicleta = document.querySelector('button[name="boton-suma-bici"]');
+  // var bicis = document.querySelector('input[name="cantBicicletas"]');
+  // var botonRestarBicicleta = document.querySelector('button[name="boton-resta-bici"]');
+  // botonSumarBicicleta.addEventListener('click', sumar);
+  // botonRestarBicicleta.addEventListener('click', restar);
 
-  var botonSumarMoto = document.querySelector('button[name="boton-suma-moto"]');
-  var motos = document.querySelector('input[name="cantMotos"]');
-  var botonRestarMoto = document.querySelector('button[name="boton-resta-moto"]');
-  botonSumarMoto.addEventListener('click', sumar);
-  botonRestarMoto.addEventListener('click', restar);
+  // Cálculo de precios con descuentos aplicados en upload espacio precios
 
-  var botonSumarBicicleta = document.querySelector('button[name="boton-suma-bici"]');
-  var bicis = document.querySelector('input[name="cantBicicletas"]');
-  var botonRestarBicicleta = document.querySelector('button[name="boton-resta-bici"]');
-  botonSumarBicicleta.addEventListener('click', sumar);
-  botonRestarBicicleta.addEventListener('click', restar);
+  // Defino el precio en una variable y actualizo su valor y los totales por hora cada vez que cambia
+  var precioPorMinuto = document.querySelector('input[name="precioPorMinuto"]');
+  precio = parseInt(precioPorMinuto.value.replace(',', '.'));
+
+  precioPorMinuto.onchange = function () {
+    precio = Math.round(precioPorMinuto.value.replace(',', '.') * 100) / 100;
+    debugger;
+    actualizarTodo();
+  };
+
+  var descuentoPorMinutoHora = document.querySelector('input[name="descuentoPorMinutoHora"]');
+  var precioHora = document.getElementById('precioHora');
+  descuentoPorMinutoHora.onchange = function () {
+    actualizarDescuentoHora();
+  };
+
+  var actualizarDescuentoHora = function actualizarDescuentoHora() {
+    descuento = parseInt(descuentoPorMinutoHora.value) / 100;
+    precioHora.textContent = Math.round((1 - descuento) * precio * 60);
+  };
+
+  var descuentoPorMinutoSeisHoras = document.querySelector('input[name="descuentoPorMinutoSeisHoras"]');
+  var precioSeisHoras = document.getElementById('precioSeisHoras');
+  descuentoPorMinutoSeisHoras.onchange = function () {
+    actualizarDescuentoSeisHoras();
+  };
+
+  var actualizarDescuentoSeisHoras = function actualizarDescuentoSeisHoras() {
+    descuento = parseInt(descuentoPorMinutoSeisHoras.value) / 100;
+    precioSeisHoras.textContent = Math.round((1 - descuento) * precio * 60 * 6);
+  };
+
+  var descuentoPorMinutoDia = document.querySelector('input[name="descuentoPorMinutoDia"]');
+  var precioDia = document.getElementById('precioDia');
+  descuentoPorMinutoDia.onchange = function () {
+    actualizarDescuentoDia();
+  };
+
+  var actualizarDescuentoDia = function actualizarDescuentoDia() {
+    descuento = parseInt(descuentoPorMinutoDia.value) / 100;
+    precioDia.textContent = Math.round((1 - descuento) * precio * 60 * 24);
+  };
+
+  var actualizarTodo = function actualizarTodo() {
+    actualizarDescuentoHora();
+    actualizarDescuentoSeisHoras();
+    actualizarDescuentoDia();
+  };
+  actualizarTodo();
 };
 
 /***/ }),
