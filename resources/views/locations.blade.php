@@ -20,6 +20,11 @@
   Para insertar 100 registrios en la tabla locations: <br><br>
   1) php artisan migrate:refresh --path=/database/migrations/selected/ <br>
   2) localhost/json_2_mysql.php <br> <br><hr>
+
+  Para agregar columna de lat y long a tabla espacios: <br><br>
+  1) cambiar campo update_at de tabla espacios para que permita nulos <br>
+  2) php artisan migrate:refresh --path=/database/migrations/selected/ <br><hr>
+
   Distancia máxima (metros) <input type="number" name="distanciaMax" value="1500" size="80"> <br><br>
 
   <input type="text" name="busqueda" value="" id="pac-input" size="80"> <br><br>
