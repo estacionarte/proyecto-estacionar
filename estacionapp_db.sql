@@ -82,13 +82,14 @@ CREATE TABLE `espacios` (
   `precioMotosMinuto` decimal(6,2) unsigned DEFAULT NULL,
   `precioBicicletasMinuto` decimal(6,2) DEFAULT NULL,
   `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-  `updated_at` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
+  `updated_at` timestamp(6) NULL DEFAULT NULL,
   `deleted_at` timestamp(6) NULL DEFAULT NULL,
+  `location` point DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `_idx` (`idUser`),
   CONSTRAINT `` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +98,7 @@ CREATE TABLE `espacios` (
 
 LOCK TABLES `espacios` WRITE;
 /*!40000 ALTER TABLE `espacios` DISABLE KEYS */;
-INSERT INTO `espacios` VALUES (1,10,'Tu Calle 223',NULL,'Argentina','CABA','ciudad','1100','Cochera Privada',1,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2017-12-02 18:41:12.101807','2017-12-02 21:41:12.000000',NULL),(2,9,'Argentina 7','9','Argentina','Buenos Aires','ciudad','1100','Cochera Privada',1,2,4,'Apto para Discapacitados',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2017-12-02 21:36:30.000000','2017-12-02 21:36:30.000000',NULL),(3,9,'Avenida Belgrano 822','3B','Argentina','CABA','ciudad','1090','Cochera Privada',1,2,4,'Apto para Discapacitados',NULL,'Fácil acceso desde avenida.','Tocar timbre de departamento 3B y preguntar por Carlos.',20,330,15,1.00,1.00,1.00,'2017-12-04 04:32:26.156695','2017-12-04 01:59:15.000000',NULL);
+INSERT INTO `espacios` VALUES (1,10,'Tu Calle 223',NULL,'Argentina','CABA','ciudad','1100','Cochera Privada',1,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2017-12-02 18:41:12.101807','2017-12-02 21:41:12.000000',NULL,NULL),(2,9,'Argentina 7','9','Argentina','Buenos Aires','ciudad','1100','Cochera Privada',1,2,4,'Apto para Discapacitados',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2017-12-02 21:36:30.000000','2017-12-02 21:36:30.000000',NULL,NULL),(3,9,'Avenida Belgrano 822','3B','Argentina','CABA','ciudad','1090','Cochera Privada',1,2,4,'Apto para Discapacitados',NULL,NULL,NULL,30,180,15,1.20,1.20,1.20,'2017-12-09 22:12:47.630051','2017-12-10 01:12:47.000000',NULL,NULL),(5,9,'Calle de Prueba 1291',NULL,'Argentina','Buenos Aires','ciudad','9999','Cochera Privada',1,2,2,'Apto para Discapacitados',NULL,'Solamente estoy probando cargar una cochera.','Nada importante.',30,360,30,1.00,1.00,1.00,'2017-12-06 19:30:15.806358','2017-12-06 22:30:15.000000',NULL,NULL),(7,11,'Calle Falsa 123',NULL,'Argentina','Buenos Aires','ciudad','1111','Cochera Privada',1,0,0,'Apto para Discapacitados','Apto para Electricos',NULL,NULL,15,240,15,1.00,1.00,1.00,'2017-12-07 02:31:34.833303','2017-12-07 05:31:34.000000',NULL,NULL);
 /*!40000 ALTER TABLE `espacios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +123,7 @@ CREATE TABLE `espacios_descuentos` (
   KEY `idEspacioDescuentos_idx` (`idEspacio`),
   CONSTRAINT `idEspacioDesc` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `idEspacioDescuentos` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +132,7 @@ CREATE TABLE `espacios_descuentos` (
 
 LOCK TABLES `espacios_descuentos` WRITE;
 /*!40000 ALTER TABLE `espacios_descuentos` DISABLE KEYS */;
-INSERT INTO `espacios_descuentos` VALUES (1,3,'Todos',1,0.20,'2017-12-04 01:59:15.000000','2017-12-04 01:59:15.000000',NULL),(2,3,'Todos',6,0.30,'2017-12-04 01:59:15.000000','2017-12-04 01:59:15.000000',NULL),(3,3,'Todos',24,0.60,'2017-12-04 01:59:15.000000','2017-12-04 01:59:15.000000',NULL);
+INSERT INTO `espacios_descuentos` VALUES (1,3,'Todos',1,0.30,'2017-12-10 04:19:38.274858','2017-12-10 07:19:38.000000',NULL),(2,3,'Todos',6,0.35,'2017-12-09 21:51:46.693008','2017-12-10 00:51:46.000000',NULL),(3,3,'Todos',24,0.65,'2017-12-09 21:51:46.696012','2017-12-10 00:51:46.000000',NULL),(7,5,'Todos',1,0.20,'2017-12-06 22:30:15.000000','2017-12-06 22:30:15.000000',NULL),(8,5,'Todos',6,0.40,'2017-12-06 22:30:15.000000','2017-12-06 22:30:15.000000',NULL),(9,5,'Todos',24,0.80,'2017-12-06 22:30:15.000000','2017-12-06 22:30:15.000000',NULL),(13,7,'Todos',1,0.20,'2017-12-07 05:31:34.000000','2017-12-07 05:31:34.000000',NULL),(14,7,'Todos',6,0.35,'2017-12-07 05:31:34.000000','2017-12-07 05:31:34.000000',NULL),(15,7,'Todos',24,0.70,'2017-12-07 05:31:34.000000','2017-12-07 05:31:34.000000',NULL);
 /*!40000 ALTER TABLE `espacios_descuentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -154,7 +155,7 @@ CREATE TABLE `espacios_diasyhorarios` (
   PRIMARY KEY (`id`),
   KEY `idEspacio_idx` (`idEspacio`),
   CONSTRAINT `idEspacio` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,7 +164,7 @@ CREATE TABLE `espacios_diasyhorarios` (
 
 LOCK TABLES `espacios_diasyhorarios` WRITE;
 /*!40000 ALTER TABLE `espacios_diasyhorarios` DISABLE KEYS */;
-INSERT INTO `espacios_diasyhorarios` VALUES (1,3,'Lunes','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(2,3,'Martes','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(3,3,'Miércoles','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(4,3,'Jueves','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(5,3,'Viernes','1200','1410','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(6,3,'Sábado','600','1200','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(7,3,'Domingo','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL);
+INSERT INTO `espacios_diasyhorarios` VALUES (1,3,'Lunes','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(2,3,'Martes','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(3,3,'Miércoles','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(4,3,'Jueves','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(5,3,'Viernes','1200','1410','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(6,3,'Sábado','600','1200','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(7,3,'Domingo','0','0','2017-12-04 01:58:56.000000','2017-12-04 01:58:56.000000',NULL),(15,5,'Lunes','1080','1260','2017-12-06 22:21:22.000000','2017-12-06 22:21:22.000000',NULL),(16,5,'Martes','1140','1260','2017-12-06 22:21:22.000000','2017-12-06 22:21:22.000000',NULL),(17,5,'Miércoles','0','0','2017-12-06 22:21:22.000000','2017-12-06 22:21:22.000000',NULL),(18,5,'Jueves','1200','1380','2017-12-06 22:21:22.000000','2017-12-06 22:21:22.000000',NULL),(19,5,'Viernes','900','1260','2017-12-06 22:21:22.000000','2017-12-06 22:21:22.000000',NULL),(20,5,'Sábado','0','0','2017-12-06 22:21:22.000000','2017-12-06 22:21:22.000000',NULL),(21,5,'Domingo','0','0','2017-12-06 22:21:22.000000','2017-12-06 22:21:22.000000',NULL),(29,7,'Lunes','0','0','2017-12-07 05:31:19.000000','2017-12-07 05:31:19.000000',NULL),(30,7,'Martes','1140','1290','2017-12-07 05:31:19.000000','2017-12-07 05:31:19.000000',NULL),(31,7,'Miércoles','0','0','2017-12-07 05:31:19.000000','2017-12-07 05:31:19.000000',NULL),(32,7,'Jueves','0','0','2017-12-07 05:31:19.000000','2017-12-07 05:31:19.000000',NULL),(33,7,'Viernes','0','0','2017-12-07 05:31:19.000000','2017-12-07 05:31:19.000000',NULL),(34,7,'Sábado','1200','1380','2017-12-07 05:31:19.000000','2017-12-07 05:31:19.000000',NULL),(35,7,'Domingo','600','840','2017-12-07 05:31:19.000000','2017-12-07 05:31:19.000000',NULL);
 /*!40000 ALTER TABLE `espacios_diasyhorarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -183,7 +184,7 @@ CREATE TABLE `espacios_fotos` (
   PRIMARY KEY (`id`),
   KEY `idFotoEspacio_idx` (`idEspacio`),
   CONSTRAINT `idFotoEspacio` FOREIGN KEY (`idEspacio`) REFERENCES `espacios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -192,8 +193,61 @@ CREATE TABLE `espacios_fotos` (
 
 LOCK TABLES `espacios_fotos` WRITE;
 /*!40000 ALTER TABLE `espacios_fotos` DISABLE KEYS */;
-INSERT INTO `espacios_fotos` VALUES (1,1,'1-1.jpeg','2017-12-02 06:07:47.000000','2017-12-02 06:07:47.000000'),(2,2,'2-1.jpeg','2017-12-02 21:36:30.000000','2017-12-02 21:36:30.000000'),(3,1,'1-1.jpeg','2017-12-02 21:41:12.000000','2017-12-02 21:41:12.000000'),(4,3,'3-1.jpeg','2017-12-04 01:58:13.000000','2017-12-04 01:58:13.000000'),(5,3,'3-2.jpeg','2017-12-04 01:58:13.000000','2017-12-04 01:58:13.000000');
+INSERT INTO `espacios_fotos` VALUES (1,1,'1-1.jpeg','2017-12-02 06:07:47.000000','2017-12-02 06:07:47.000000'),(2,2,'2-1.jpeg','2017-12-02 21:36:30.000000','2017-12-02 21:36:30.000000'),(3,1,'1-1.jpeg','2017-12-02 21:41:12.000000','2017-12-02 21:41:12.000000'),(9,3,'3-1.jpeg','2017-12-06 00:38:12.000000','2017-12-06 00:38:12.000000'),(11,3,'3-3.jpeg','2017-12-06 05:54:58.000000','2017-12-06 05:54:58.000000'),(12,5,'5-1.jpeg','2017-12-06 22:14:44.000000','2017-12-06 22:14:44.000000');
 /*!40000 ALTER TABLE `espacios_fotos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `locations`
+--
+
+DROP TABLE IF EXISTS `locations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `locations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `domicilio` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `barrio` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` point NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `locations`
+--
+
+LOCK TABLES `locations` WRITE;
+/*!40000 ALTER TABLE `locations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `locations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (6,'2017_12_03_023306_create_locations_table',1),(7,'2017_12_10_204858_agrega_latlng_a_espacios',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -221,7 +275,7 @@ CREATE TABLE `users` (
   `deleted_at` timestamp(6) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `phoneNumber_UNIQUE` (`phoneNumber`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -230,7 +284,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'mariano','alvarez','0000-00-00','mariano@estacionar.com','$2y$10$gd.TFxgFCQX.ZKxAjRuSJuOAhq8UhXFCIKzaLVL7tubwf/5s/x9ku','o8KW51yW00uRZFAeTshLvIbs3HQWqyOXx3pVaJyAXAOFkNwohS01pmWCBVwq','2017-11-27 20:18:06.122381',NULL,NULL,NULL,NULL,NULL,'0000-00-00 00:00:00.000000',NULL),(9,'test1','test1','09-09-1999','test1@test1.com','$2y$10$zWV/yRV7iUArH7LZYR5PQeWWfvD0QDmKAClvqkvIkhoe2canD7RCK',NULL,'2017-12-02 01:57:53.000000',NULL,NULL,NULL,NULL,'test1@test1.com_profilePic.jpeg','2017-12-02 01:57:53.000000',NULL),(10,'Joaquín','Paños','09-08-1994','joaquin@estacionar.com','$2y$10$PakmmZWLQWW7yfTJBQLGPeSAngGMKLNhgLuJK2szKnLcyef4fvSzG',NULL,'2017-12-02 06:05:36.000000',NULL,NULL,NULL,NULL,'joaquin@estacionar.com_profilePic.jpeg','2017-12-02 06:05:36.000000',NULL);
+INSERT INTO `users` VALUES (1,'mariano','alvarez','0000-00-00','mariano@estacionar.com','$2y$10$gd.TFxgFCQX.ZKxAjRuSJuOAhq8UhXFCIKzaLVL7tubwf/5s/x9ku','o8KW51yW00uRZFAeTshLvIbs3HQWqyOXx3pVaJyAXAOFkNwohS01pmWCBVwq','2017-11-27 20:18:06.122381',NULL,NULL,NULL,NULL,NULL,'0000-00-00 00:00:00.000000',NULL),(9,'test1','test1','09-09-1999','test1@test1.com','$2y$10$zWV/yRV7iUArH7LZYR5PQeWWfvD0QDmKAClvqkvIkhoe2canD7RCK','MSsTeRyyDltxzAWmIL6ZACeRrfofO1uiALadsMb95Z2ZTaDtoI8GvvO3zR9L','2017-12-07 02:19:55.045658',NULL,NULL,NULL,NULL,'test1@test1.com_profilePic.jpeg','2017-12-02 01:57:53.000000',NULL),(10,'Joaquín','Paños','09-08-1994','joaquin@estacionar.com','$2y$10$PakmmZWLQWW7yfTJBQLGPeSAngGMKLNhgLuJK2szKnLcyef4fvSzG',NULL,'2017-12-02 06:05:36.000000',NULL,NULL,NULL,NULL,'joaquin@estacionar.com_profilePic.jpeg','2017-12-02 06:05:36.000000',NULL),(11,'Test2','Test2','09-09-1999','test2@test2.com','$2y$10$a8fTVkDHYfQgis20FxFjiuEftK9mbcOh73luOMNmynEscQBM99DEy','vedC8PpWTlx205V7Fp4ObQfY564BMVGzaSDApqGkBmQ0I1Ne937HvaHAjjMr','2017-12-06 23:25:03.079852',NULL,NULL,NULL,NULL,'test2@test2.com_profilePic.jpeg','2017-12-07 00:34:41.000000',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -244,7 +298,7 @@ DROP TABLE IF EXISTS `vehiculos`;
 CREATE TABLE `vehiculos` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `tipoVehiculo` varchar(20) NOT NULL,
-  `marca` varchar(45) NOT NULL,
+  `marca` varchar(45) DEFAULT NULL,
   `modelo` varchar(45) DEFAULT NULL,
   `color` varchar(45) NOT NULL,
   `patente` varchar(10) DEFAULT NULL,
@@ -256,7 +310,7 @@ CREATE TABLE `vehiculos` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `idUser` (`idUser`),
   CONSTRAINT `idUser` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -265,6 +319,7 @@ CREATE TABLE `vehiculos` (
 
 LOCK TABLES `vehiculos` WRITE;
 /*!40000 ALTER TABLE `vehiculos` DISABLE KEYS */;
+INSERT INTO `vehiculos` VALUES (1,'Automovil','16','Fit','Gris','ABA199',9,'2017-12-10 21:38:42.082533','2017-12-11 00:38:42.000000','2017-12-11 00:38:42.000000'),(2,'Automovil','14','500','Gris','AAA999',9,'2017-12-11 01:07:59.000000','2017-12-11 01:07:59.000000',NULL);
 /*!40000 ALTER TABLE `vehiculos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -277,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-04  2:19:32
+-- Dump completed on 2017-12-11  1:21:03

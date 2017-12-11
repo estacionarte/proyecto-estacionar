@@ -11,6 +11,7 @@
         <input type="submit" name="BUSCAR" value="BUSCAR">
       </form>
     </div>
+    
   </article>
 </section>
 
