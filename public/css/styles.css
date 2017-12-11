@@ -1282,9 +1282,14 @@ span .avatar{
   width: 100%;
 }
 
+#dir_y_vehiculo {
+  background-color: white;
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
+
 .search-espacios-form input[name='search-espacios-input-direccion']{
-  background-color: blue;
-  width: 68%;
+  width: 68.5%;
   border: none;
   vertical-align: middle;
   margin-top: 0px;
@@ -1292,33 +1297,52 @@ span .avatar{
 }
 
 .search-espacios-form select[name='search-espacios-vehiculo']{
-  background-color: yellow;
   width: 30%;
+  border: none;
+  border-left: 1px solid gray;
+  border-radius: 0px;
+  vertical-align: middle;
+  margin-top: 0px;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 4px;
+}
+
+.form-generico .search-espacios-form .search-horario {
+  background-color: white;
+  width: 49%;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.form-generico .search-espacios-form .search-horario h5 {
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.form-generico .search-espacios-form .search-horario input {
+  text-align: center;
+  border: none;
+  margin-top: 0px;
+  color: gray;
+}
+
+.search-espacios-form .search-espacios-hora, .search-espacios-form .search-espacios-minuto{
+  background-color: yellow;
+  width: 48.5%;
   border: none;
   vertical-align: middle;
   margin-top: 0px;
-  text-align: left;
   display: inline-block;
+  color: gray;
 }
 
 .search-espacios-form .search-espacios-hora{
-  background-color: yellow;
-  width: 24%;
-  border: none;
-  vertical-align: middle;
-  margin-top: 0px;
-  text-align: left;
-  display: inline-block;
+
 }
 
 .search-espacios-form .search-espacios-minuto{
-  background-color: yellow;
-  width: 24%;
-  border: none;
-  vertical-align: middle;
-  margin-top: 0px;
-  text-align: left;
-  display: inline-block;
+
 }
 
 .search-espacios-form button[name='search-espacios-submit']{
