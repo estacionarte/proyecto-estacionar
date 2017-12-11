@@ -21,7 +21,10 @@ class ProfileController extends Controller
 
     $vehiculos = DB::table('vehiculos')
     ->select('*')
-    ->where('idUser', '=', Auth::user()->id)
+    ->where([
+        ['idUser', '=', Auth::user()->id],
+        ['deleted_at', null]
+      ])
     ->get();
 
     return view('profile', compact('espacios', 'vehiculos'));
