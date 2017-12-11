@@ -5,12 +5,12 @@
   <article class="shape">
     <h2>Encontrá y reservá tu estacionamiento privado</h2>
     <h3>Más de 10.000 usuarios ya confían en nosotros</h3>
-    <div class="form-generico">
+    {{-- <div class="form-generico">
       <form action="" method="get">
         <input type="search" name="busqueda" value="" placeholder="¿Dónde querés estacionar?" required>
         <input type="submit" name="BUSCAR" value="BUSCAR">
       </form>
-    </div>
+    </div> --}}
 
     <div class="form-generico">
       <form class="search-espacios-form" action="" method="get">
@@ -27,19 +27,28 @@
           <h5>Llegada</h5>
           <input type="date" name="" value="">
           <select name="search-espacios-hora-comienzo" class="search-espacios-hora">
-            <option value=""></option>
+            <option value="">00</option>
+            <option value="">01</option>
+            <option value="">02</option>
           </select>
           <select name="search-espacios-minuto-comienzo" class="search-espacios-minuto">
+            <option value="">00</option>
+            <option value="">05</option>
+            <option value="">10</option>
           </select>
         </div>
         <div class="search-horario">
           <h5>Partida</h5>
           <input type="date" name="" value="">
           <select name="search-espacios-hora-fin" class="search-espacios-hora">
-
+            <option value="">00</option>
+            <option value="">01</option>
+            <option value="">02</option>
           </select>
           <select name="search-espacios-hora-fin" class="search-espacios-minuto">
-
+            <option value="">00</option>
+            <option value="">05</option>
+            <option value="">10</option>
           </select>
         </div>
         <button type="submit" name="search-espacios-submit"><i class="fa fa-search"></i></button>

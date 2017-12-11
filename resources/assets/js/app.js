@@ -69,10 +69,9 @@ window.onload = function() {
   // Defino el precio en una variable y actualizo su valor y los totales por hora cada vez que cambia
   var precioPorMinuto = document.querySelector('input[name="precioPorMinuto"]');
   precio = parseInt(precioPorMinuto.value.replace(',','.'));
-  
+
   precioPorMinuto.onchange = function(){
     precio = Math.round(precioPorMinuto.value.replace(',','.') * 100) / 100;
-    debugger;
     actualizarTodo();
   }
 

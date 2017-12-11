@@ -1044,7 +1044,6 @@ window.onload = function () {
 
   precioPorMinuto.onchange = function () {
     precio = Math.round(precioPorMinuto.value.replace(',', '.') * 100) / 100;
-    debugger;
     actualizarTodo();
   };
 
