@@ -83,3 +83,5 @@ Route::get('/search', function(){
 
 Route::get('/locations','LocationsController@map');
 Route::post('/locations','LocationsController@map');
+
+Route::get('/buscador','BuscadorController@buscarEspacios');

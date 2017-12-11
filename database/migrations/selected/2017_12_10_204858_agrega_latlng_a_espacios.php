@@ -25,8 +25,8 @@ class AgregaLatlngAEspacios extends Migration
      */
     public function down()
     {
-        Schema::table('espacios', function (Blueprint $table) {
-            $table->dropColumn('location');
-        });
+        // Schema::table('espacios', function (Blueprint $table) {
+        //     $table->dropColumn('location');
+        // });
     }
 }
