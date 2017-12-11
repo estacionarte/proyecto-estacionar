@@ -11,7 +11,8 @@ class Location extends Model
   protected $geofields = array('location');
 
   public function setLocationAttribute($value) {
-      $this->attributes['location'] = DB::raw("POINT($value)");
+      // $this->attributes['location'] = DB::raw("POINT($value)");
+      $this->attributes['location'] = DB::raw("GeomFromText('POINT(".$value.")')");
   }
 
   public function getLocationAttribute($value){

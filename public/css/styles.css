@@ -1608,9 +1608,10 @@ margin-right: 5%;
 
 /*********** PROFILE -- MIS VEHJICULOS *************/
 .carga-vehiculo-container{
-  margin-left: 12%;
+  margin-left: 5%;
   float: left;
 }
+
 
 /************** C R E D I T S *******************/
 .credits {
@@ -2035,9 +2036,9 @@ margin-right: 5%;
   left: 245px;
 }
 
-/*********** PROFILE -- MIS VEHJICULOS *************/
+/*********** PROFILE -- MIS VEHICULOS *************/
  .carga-vehiculo-container{
-  margin-left: 6%;
+  margin-left: 1px;
 }
 
 /***************** C R E D I T S ********************/

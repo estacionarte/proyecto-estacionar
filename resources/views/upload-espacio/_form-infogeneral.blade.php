@@ -1,5 +1,5 @@
 <label for="" class="upload-label-titulo">¿Donde está ubicado tu espacio?</label>
-<input type="text" placeholder="Domicilio. Ej: Av. Eduardo Madero 399" name="direccion" class="upload-input-direccion" style="" value="{{ old('direccion', $espacio->direccion) }}">
+<input type="text" placeholder="Domicilio. Ej: Av. Eduardo Madero 399" name="direccion" class="upload-input-direccion" style="" value="{{ old('direccion', $espacio->direccion) }}" id="pac-input">
 <input type="text" placeholder="Nº Dpto. (Opcional)" name="dpto" class="upload-input-numdpto" value="{{ old('dpto', $espacio->dpto) }}">
 <select name="pais" class="upload-select-pais" style="">
   <option value="">País</option>

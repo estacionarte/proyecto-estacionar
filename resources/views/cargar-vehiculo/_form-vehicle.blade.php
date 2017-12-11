@@ -10,7 +10,7 @@
   </select><br>
 
   <select id="vehiculo-marca" class="form-control" name="marca">
-    <option value="-1" selected>Marca</option>
+    <option value="" {{ old('marca', $vehiculo->marca) == '' ? 'selected':'' }}selected>Marca</option>
     <option value="1" {{ old('marca', $vehiculo->marca) == '1' ? 'selected':'' }}>ABARTH</option>
     <option value="2" {{ old('marca', $vehiculo->marca) == '2' ? 'selected':'' }}>ALFA ROMEO</option>
     <option value="3">ASTON MARTIN</option>
