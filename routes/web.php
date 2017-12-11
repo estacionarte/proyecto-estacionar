@@ -77,5 +77,9 @@ Route::get('/mapita', function() {
   return view('map');
 });
 
+Route::get('/search', function(){
+  return view('searchbar');
+});
+
 Route::get('/locations','LocationsController@map');
 Route::post('/locations','LocationsController@map');

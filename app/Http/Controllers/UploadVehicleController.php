@@ -12,10 +12,8 @@ use Storage;
 class UploadVehicleController extends Controller
 {
     public function showUploadVehicle(Vehiculo $vehiculo){
-      $vehiculo = Vehiculo::table('vehiculos')
-      ->select('*')
-      ->where('updated_at', 'null')
-      ->get();
+
+      $vehiculo = new Vehiculo();
 
       return view('cargar-vehiculo.upload_vehicle', compact('vehiculo'));
     }

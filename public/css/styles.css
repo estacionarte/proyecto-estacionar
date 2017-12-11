@@ -552,7 +552,7 @@ ul li .popup-link{
   font-weight: bold;
 }
 
-/************************** H E A D E R  P R O F I L E***********************/
+/************************** H E A D E R  P R O F I L E ***********************/
 .main-search{
   display: none;
 }
@@ -1272,6 +1272,62 @@ span .avatar{
   padding: 20px 10px;
   text-align: center;
   display: block;
+}
+
+/****************** S E A R C H   B A R *******************/
+
+.search-espacios-form{
+  border-style: solid 1px red;
+  background-color: red;
+  width: 100%;
+}
+
+.search-espacios-form input[name='search-espacios-input-direccion']{
+  background-color: blue;
+  width: 68%;
+  border: none;
+  vertical-align: middle;
+  margin-top: 0px;
+  text-align: left;
+}
+
+.search-espacios-form select[name='search-espacios-vehiculo']{
+  background-color: yellow;
+  width: 30%;
+  border: none;
+  vertical-align: middle;
+  margin-top: 0px;
+  text-align: left;
+  display: inline-block;
+}
+
+.search-espacios-form .search-espacios-hora{
+  background-color: yellow;
+  width: 24%;
+  border: none;
+  vertical-align: middle;
+  margin-top: 0px;
+  text-align: left;
+  display: inline-block;
+}
+
+.search-espacios-form .search-espacios-minuto{
+  background-color: yellow;
+  width: 24%;
+  border: none;
+  vertical-align: middle;
+  margin-top: 0px;
+  text-align: left;
+  display: inline-block;
+}
+
+.search-espacios-form button[name='search-espacios-submit']{
+  background-color: green;
+  border: none;
+  background-color: #fff;
+  vertical-align: middle;
+  font-size: 1.8em;
+  text-align: right;
 }
 
 /**************************************************************/
