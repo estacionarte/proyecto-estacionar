@@ -1,4 +1,4 @@
-<div class="form-group col-xs-5 col-sm-4 col-md-3">
+<div class="form-group col-xs-5 col-sm-4 col-md-5">
 
   <select id="vehiculo" class="form-control" name="tipoVehiculo" onchange="mostrarMarca()">
     <option value="-1" {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == '-1' ? 'selected':'' }}>Tipo de vehiculo</option>
@@ -63,7 +63,7 @@
     <option value="50">VOLKSWAGEN</option>
     <option value="51">VOLVO</option></select>
 </div>
-
+<div class="clear"></div>
 {{-- <label for="">Modelo</label>
 <input id="vehiculo-modelo" type="text" name="modelo" value="{{ old('modelo', $vehiculo->modelo) }}"><br>
 
@@ -73,17 +73,17 @@
 <label for="">Patente</label>
 <input type="text" name="patente" value="{{ old('patente', $vehiculo->patente) }}"><br> --}}
 
-<div class="input-group col-xs-5 col-sm-3 col-md-3">
+<div class="input-group col-xs-5 col-sm-3 col-md-4" style="margin-left:15px;">
 <span class="input-group-addon">Modelo</span>
 <input type="text" class="form-control" name="modelo" placeholder="Ingrese el modelo de su vehiculo" value="{{ old('modelo', $vehiculo->modelo) }}">
 </div><br>
 
-<div class="input-group col-xs-5 col-sm-3 col-md-3">
+<div class="input-group col-xs-5 col-sm-3 col-md-4" style="margin-left:15px;">
 <span class="input-group-addon">Color</span>
 <input type="text" class="form-control" name="color" placeholder="Ingrese el color de su vehiculo" value="{{ old('color', $vehiculo->color) }}">
 </div><br>
 
-<div class="input-group col-xs-5 col-sm-3 col-md-3">
+<div class="input-group col-xs-5 col-sm-3 col-md-4" style="margin-left:15px;">
 <span class="input-group-addon">Patente</span>
 <input type="text" class="form-control" name="patente" placeholder="Ingrese el numero de patente" value="{{ old('patente', $vehiculo->patente) }}">
 </div><br>

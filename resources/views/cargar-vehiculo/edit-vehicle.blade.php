@@ -7,22 +7,25 @@
             <p style="color: #990606;"> {{ $error }} </p>
           @endforeach
         @endif
+  <div class="content">
+    <div class="bodies-main-content">
+      <hr>
+      <h1>Editá los datos de tu Vehiculo</h1>
+      <div class="clear"></div>
 
-  <h2>Editar Datos de mi Vehiculo</h2>
+      <form class="" action="{{ route('edit.vehicle', $vehiculo) }}" method="post" style="display:inline">
+        {{ method_field('PUT') }}
+        {{ csrf_field() }}
 
-  <form class="" action="{{ route('edit.vehicle', $vehiculo) }}" method="post" style="display:inline">
-    {{ method_field('PUT') }}
-    {{ csrf_field() }}
+        @include('cargar-vehiculo._form-vehicle')
 
-    @include('cargar-vehiculo._form-vehicle')
-
-    <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success">
-</form>
-  <a href="{{ route('profile')}}">
-    <input type="submit" name="" value="Cancelar cambios" class="btn btn-warning" data-toggle="modal" data-target="#myModal" onclick="event.preventDefault();">
-  </a>
-  <div class="container">
-
+        <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success" style="margin-left:15px;">
+      </form>
+      <a href="{{ route('profile')}}">
+        <input type="submit" name="" value="Cancelar cambios"data-dismiss="alert" class="btn btn-warning" data-toggle="modal" data-target="#myModal" onclick="event.preventDefault();">
+      </a>
+    </div>
+  </div>
 
     <!-- ALERT - MODAL -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -33,7 +36,7 @@
             <h4 class="modal-title">ATENCIÓN</h4>
           </div>
           <div class="modal-body">
-            <p>¿Desea cancelar y vovler al Perfil?</p>
+            <p>¿Cancelas los cambios y vovles tu Perfil?</p>
           </div>
           <div class="modal-footer">
             <button id="cerrar-modal" type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>

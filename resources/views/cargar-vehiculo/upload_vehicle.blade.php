@@ -7,15 +7,20 @@
             <p style="color: #990606;"> {{ $error }} </p>
           @endforeach
         @endif
+  <div class="container">
+    <div class="bodies-main-content">
+      <hr>
+      <h1>Cargá los datos de tu Vehiculo</h1><br>
+      <form class="" action="{{ route('create.upload.vehicle') }}" method="post">
+        {{ csrf_field() }}
 
-  <h2>Cargar Vehiculo</h2>
-  <form class="" action="{{ route('create.upload.vehicle') }}" method="post">
-    {{ csrf_field() }}
+        @include('cargar-vehiculo._form-vehicle')
 
-    @include('cargar-vehiculo._form-vehicle')
+        <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success" style="margin-left:15px;">
+    </form>
+    </div>
+  </div>
 
-    <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success">
-</form>
 
       <script type="text/javascript">
         function mostrarMarca() {

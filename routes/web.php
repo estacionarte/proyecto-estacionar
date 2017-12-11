@@ -7,17 +7,10 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/faqs', function () {
-    return view('faqs');
-});
-
 Route::get('/signup', 'Auth\RegisterController@showRegistrationForm');
 
 Route::get('/signin', 'Auth\LoginController@showLoginForm');
 
-Route::get('/mantenimiento', function () {
-    return view('underconstruction');
-});
 
 // ***************************** P E R F I L *******************
 Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile');
@@ -25,6 +18,7 @@ Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile');
 Route::get('/perfil/editar-imagen', 'ProfileController@showUpdateProfileImage')->name('show.update.profile.image');
 
 Route::post('/perfil/editar-imagen', 'ProfileController@updateProfileImage')->name('update_profile_image');
+
 
 // *************************** V E H I C U L O S ******************************
 Route::group(['prefix' => 'cargar-vehiculo', 'middleware' => 'auth'], function(){
@@ -69,6 +63,15 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
 
 });
 // ******************************************************************************
+
+Route::get('/faqs', function () {
+    return view('faqs');
+});
+
+Route::get('/creditos', function () {
+    return view('credits');
+});
+
 Route::get('/map', function() {
   return view('leaflet');
 });
@@ -83,3 +86,9 @@ Route::get('/search', function(){
 
 Route::get('/locations','LocationsController@map');
 Route::post('/locations','LocationsController@map');
+
+Route::get('/buscador','BuscadorController@buscarEspacios');
+
+Route::get('/mantenimiento', function () {
+    return view('underconstruction');
+});
