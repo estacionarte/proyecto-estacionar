@@ -16,6 +16,7 @@
 
 <section class="como-funciona" id="comofunciona">
   <h2>¿Cómo funciona?</h2>
+  <p class="sub-buscas">Si necesitás alquilar una cochera, ingresá a Estacionapp, encontrá ofertas cercanas a tu destino y seleccioná tu favorita. Vas a poder comparar precios, ver imágenes, calificaciones y comentarios de otros conductores.</p>
   <article class="pasos">
     <img src="images/search.jpg" alt="buscar">
     <h3 class="buscas">BUSCÁS</h3>
@@ -26,10 +27,13 @@
     <h3 class="alquilas">ALQUILÁS</h3>
     <p>Reservá la opción que mejor se adapte a lo que necesitás y pagá a través de nuestro sistema seguro. ¡No más problemas de efectivo!</p>
   </article>
-  <article class="ultimo-paso">
+  <article class="pasos">
     <img src="images/car.jpg" alt="auto">
     <h3 class="estacionas">ESTACIONÁS</h3>
     <p>Conducí hasta la cochera y dejá tu auto. ¡Listo! Ya es tuya por el tiempo que la solicitaste.</p>
   </article>
+  <div class="clear">
+
+  </div>
 </section>
 @endsection

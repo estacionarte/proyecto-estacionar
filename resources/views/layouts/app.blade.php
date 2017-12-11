@@ -35,8 +35,10 @@
   <body>
     @auth
     <header class="main-header">
-      <a href="/"><h1>Estacionarte</h1></a>
+      <a href="/"><img src="images/logo1.png" alt="logotipo" class="logotipo"></a>
+      <div class="clear">
 
+      </div>
     <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
 
     <div id="mySidenav" class="sidenav">
@@ -67,8 +69,12 @@
 
       @guest
       <header class="main-header">
-        <a href="/"><h1>Estacionarte</h1></a>
-        <a href="#"><img src="icons/hamburguesa.png" alt="menu" class="toggle-nav"></a>
+        <div class="header-container">
+          <a href="/"><img src="images/logo1.png" alt="logotipo" class="logotipo"></a>
+        <a href="#" class="toggle-nav">
+  				<span class="ion-navicon-round"></span>
+  			</a>
+        <div class="clear"></div>
         <nav class="main-nav">
           <ul>
             <li><a href="signin.php" class="iniciar-btn">Iniciar Sesión</a></li>
@@ -128,6 +134,7 @@
             <input type="submit" name="buscar-submit" value="">
           </form>
         </div>
+      </div>
     </header>
 
 
