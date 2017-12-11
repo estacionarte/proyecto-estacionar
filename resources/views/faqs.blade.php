@@ -4,7 +4,7 @@
 
 <div class="bodies-main-content">
 
-  <hr>
+  {{-- <hr> --}}
 
   <h1>Preguntas Frecuentes</h1>
 

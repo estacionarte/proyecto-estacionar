@@ -35,7 +35,7 @@
   <body>
     @auth
     <header class="main-header">
-      <a href="/"><img src="images/logo1.png" alt="logotipo" class="logotipo"></a>
+      <a href="/"><img src="/storage/logo1.png" alt="logotipo" class="logotipo"></a>
       <div class="clear">
 
       </div>
@@ -70,7 +70,7 @@
       @guest
       <header class="main-header">
         <div class="header-container">
-          <a href="/"><img src="images/logo1.png" alt="logotipo" class="logotipo"></a>
+          <a href="/"><img src="/storage/logo1.png" alt="logotipo" class="logotipo"></a>
         <a href="#" class="toggle-nav">
   				<span class="ion-navicon-round"></span>
   			</a>

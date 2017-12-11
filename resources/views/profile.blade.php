@@ -84,7 +84,7 @@
           <h1>Mis Vehículos</h1>
           <div class="clear"></div>
 
-          <article class="carga-vehiculo-container">
+          <article class="">
           <a href="{{route ('show.upload.vehicle') }}"><button type="button" class="btn btn-success .cargar-vehiculo-btn">Cargá tus Vehiculos</button></a>
         </article><br><br><br>
 
@@ -127,27 +127,30 @@
         </section>
 
         <section id="content3">
+          {{-- <div class="clear"></div> --}}
           <h1>Mis Espacios</h1>
-          <div class="clear"></div>
 
           <article class="carga-vehiculo-container">
           <a href="{{route ('upload.espacio.1')}}"><img class="upload-vehicle" src="images/upload.png"></a>
-            <p>Cargá tus Espacios</p>
           </article>
+          <div class="clear"></div>
+          <p>Cargá tus Espacios</p>
 
           @forelse ($espacios as $espacio)
             <article class="carga-vehiculo-container">
               @if (\Auth::user()->espacios()->where('id',$espacio->id)->first()->fotos->count() != 0)
                 <a href="{{ route('editar.upload.espacio.1', $espacio->id) }}"><img class="upload-vehicle" src="storage/espacios/{{\Auth::user()->espacios()->where('id',$espacio->id)->first()->fotoPortada()}}"></a>
+                {{$espacio->direccion}}
               @else
                 <a href="{{ route('editar.upload.espacio.1', $espacio->id) }}"><img class="upload-vehicle" src="storage/espacios/noespacio.jpg"></a>
               @endif
-              <br>{{$espacio->direccion}}
+
             </article>
+
           @empty
           @endforelse
         </section>
-
+<div class="clear"></div>
         <section id="content4">
           <h1>Reputación</h1>
 

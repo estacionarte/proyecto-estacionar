@@ -39,6 +39,12 @@
 
           <input type="email" placeholder="E-Mail" name="email" style="{{ $errors->has('email') ? ' border: solid 2px #990606' : '' }}" value="{{ old('email') }}" >
 
+      		<select id="comboPaises">
+      		</select>
+
+      		<select id="comboProvincia" style="display:none">
+      		</select>
+
           <!-- <input type="tel" placeholder="Teléfono Móvil" name="telefono" style="" value="<?php echo (isset($_COOKIE['telefono']) && !empty($_COOKIE['telefono'])) ? $_COOKIE['telefono'] : ""; ?>"> -->
 
           <input type="password" placeholder="Contraseña" name="password" style="{{ $errors->has('password') ? ' border: solid 2px #990606' : '' }}" >
@@ -81,5 +87,81 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="js/menu.js"></script>
+<script type="text/javascript">
 
+  window.onload = function(){
+
+    ajaxCall('GET','http://pilote.techo.org/?do=api.getPaises',llenarSelectPaises);
+
+    var combopaises = document.querySelector("comboPaises");
+    combopaises.addEventListener("change",cambioPaisSeleccionado);
+  }
+
+  function cambioPaisSeleccionado(){
+
+  		ajaxCall('GET','http://pilote.techo.org/?do=api.getRegiones?idPais=' + this.value ,llenarSelectProvincias);
+  }
+
+  function llenarSelectPaises(resultado){
+  		llenarSelect("comboPaises",resultado.contenido);
+  }
+
+  function llenarSelectProvincias(resultado){
+  		llenarSelect("comboProvincia",resultado.contenido);
+  }
+
+  function llenarSelect (selectId, objetoResultado){
+  	var select = document.getElementById(selectId);
+
+  	var option = document.createElement("OPTION");
+  	option.value = -1;
+  	option.text = 'País';
+
+  	select.appendChild(option);
+
+  	for (var x in objetoResultado) {
+
+      	var option = document.createElement("OPTION");
+  			option.value = objetoResultado[x];
+  			option.text = x;
+
+  			select.appendChild(option);
+  	}
+
+  }
+
+  function ajaxCall (method,url,callbackFunction){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+          var objetoResultado = JSON.parse(xmlhttp.responseText);
+          callbackFunction(objetoResultado);
+      }
+    };
+
+    if(method == "POST")
+      xmlhttp.setRequestHeader("Contenttype", "application/xwwwformurlencoded");
+
+    xmlhttp.open(method, url, true);
+    xmlhttp.send();
+
+  }
+
+  // function mostrarProvincias() {
+  //   var paises = document.getElementById("comoboPaises").value;
+  //   if (mostrar == -1 || mostrar == 'Bicicleta') {
+  //     document.getElementById("vehiculo-marca").disabled = true;
+  //   }else {
+  //     document.getElementById("vehiculo-marca").disabled = false;
+  //   }
+  // }
+  var paises  = document.getElementById('comoboPaises');
+  paises.onchange = function (event){
+      event.preventDefault();
+      document.getElementById('comboProvincia').style.display = 'block';
+      // document.getElementById('segundaParte').style.display = 'block';
+  }
+
+</script>
 @endsection
