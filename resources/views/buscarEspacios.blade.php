@@ -257,7 +257,7 @@ function mostrarEspaciosEnElMapa (map, userLocation, espacios) {
     lng      = location.split(",")[1],
     latLng   = L.latLng(lat,lng);
 
-    var marker = L.marker(latLng).bindPopup(espacio.domicilio + '<BR>' + espacio.barrio + '<BR>' + espacio.distance + 'm');
+    var marker = L.marker(latLng).bindPopup(espacio.direccion + '<BR>' + espacio.tipoEspacio + '<BR>' + espacio.distance + 'm');
     marker.addTo(map);
 
     var tr = $('<tr>').append(
