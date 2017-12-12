@@ -5,13 +5,44 @@
   <article class="shape">
     <h2>Encontrá y reservá tu estacionamiento privado</h2>
     <h3>Más de 10.000 usuarios ya confían en nosotros</h3>
-    <div class="form-generico">
+    {{-- <div class="form-generico">
       <form action="" method="get">
         <input type="search" name="busqueda" value="" placeholder="¿Dónde querés estacionar?" required>
         <input type="submit" name="BUSCAR" value="BUSCAR">
       </form>
+    </div> --}}
+    <div class="form-generico">
+      <form class="search-espacios-form" action="" method="get">
+        <input type="search" name="search-espacios-input-direccion" placeholder="¿Dónde querés estacionar?">
+        <select name="search-espacios-vehiculo">
+          <option value="">Elige un vehículo</option>
+          <option value="Auto">Auto</option>
+          <option value="Moto">Moto</option>
+          <option value="Bicicleta">Bicicleta</option>
+        </select>
+        <div class="" style="background-color: green; width: 49%; display: inline-block;">
+          <h5>Llegada</h5>
+          <input type="date" name="" value="">
+          <select name="search-espacios-hora-comienzo" class="search-espacios-hora">
+            <option value=""></option>
+          </select>
+          <select name="search-espacios-minuto-comienzo" class="search-espacios-minuto">
+          </select>
+        </div>
+        <div class="" style="background-color: green;  width: 49%; display: inline-block;">
+          <h5>Partida</h5>
+          <input type="date" name="" value="">
+          <select name="search-espacios-hora-fin" class="search-espacios-hora">
+
+          </select>
+          <select name="search-espacios-hora-fin" class="search-espacios-minuto">
+
+          </select>
+        </div>
+        <button type="submit" name="search-espacios-submit"><i class="fa fa-search"></i></button>
+        <input type="submit" name="BUSCAR" value="BUSCAR">
+      </form>
     </div>
-    
   </article>
 </section>
 
@@ -33,8 +64,30 @@
     <h3 class="estacionas">ESTACIONÁS</h3>
     <p>Conducí hasta la cochera y dejá tu auto. ¡Listo! Ya es tuya por el tiempo que la solicitaste.</p>
   </article>
+
   <div class="clear">
 
+    <section class="mejores-espacios-container">
+      <h2>Nuestros Espacios de mayor reputacion</h2>
+      <article class="mejor-espacio-bloque">
+        <a href="#"><img src="/storage/espacios/33-1.jpeg"></a>
+        <h3>ARS 100.00</h3>
+        <h4>Detalle</h4>
+        <img class="stars" src="/images/stars.jpg">
+      </article>
+      <article class="mejor-espacio-bloque">
+        <a href="#"><img src="/storage/espacios/33-1.jpeg"></a>
+        <h3>ARS 100.00</h3>
+        <h4>Detalle</h4>
+        <img class="stars" src="/images/stars.jpg">
+      </article>
+      <article class="mejor-espacio-bloque">
+        <a href="#"><img src="/storage/espacios/33-1.jpeg"></a>
+        <h3>ARS 100.00</h3>
+        <h4>Detalle</h4>
+        <img class="stars" src="/images/stars.jpg">
+      </article>
+    </section>
   </div>
 </section>
 @endsection
