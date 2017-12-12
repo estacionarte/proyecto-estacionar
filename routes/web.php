@@ -76,14 +76,6 @@ Route::get('/map', function() {
   return view('leaflet');
 });
 
-Route::get('/mapita', function() {
-  return view('map');
-});
-
-Route::get('/search', function(){
-  return view('searchbar');
-});
-
 Route::get('/locations','LocationsController@map');
 Route::post('/locations','LocationsController@map');
 
@@ -91,4 +83,8 @@ Route::get('/buscador','BuscadorController@buscarEspacios');
 
 Route::get('/mantenimiento', function () {
     return view('underconstruction');
+});
+
+Route::get('/resultados', function () {
+    return view('search-results');
 });

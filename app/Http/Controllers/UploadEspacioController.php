@@ -370,7 +370,6 @@ class UploadEspacioController extends Controller
       ->where('idEspacio', '=', $espacio->id)
       ->get();
     $horarios[] = '';
-    // dd($dias);
     $dias = $dias->toArray();
 
     foreach ($dias as $dia) {
