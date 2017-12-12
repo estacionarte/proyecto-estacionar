@@ -77,8 +77,30 @@
     <h3 class="estacionas">ESTACIONÁS</h3>
     <p>Conducí hasta la cochera y dejá tu auto. ¡Listo! Ya es tuya por el tiempo que la solicitaste.</p>
   </article>
+
   <div class="clear">
 
+    <section class="mejores-espacios-container">
+      <h2>Nuestros Espacios de mayor reputacion</h2>
+      <article class="mejor-espacio-bloque">
+        <a href="#"><img src="/storage/espacios/33-1.jpeg"></a>
+        <h3>ARS 100.00</h3>
+        <h4>Detalle</h4>
+        <img class="stars" src="/images/stars.jpg">
+      </article>
+      <article class="mejor-espacio-bloque">
+        <a href="#"><img src="/storage/espacios/33-1.jpeg"></a>
+        <h3>ARS 100.00</h3>
+        <h4>Detalle</h4>
+        <img class="stars" src="/images/stars.jpg">
+      </article>
+      <article class="mejor-espacio-bloque">
+        <a href="#"><img src="/storage/espacios/33-1.jpeg"></a>
+        <h3>ARS 100.00</h3>
+        <h4>Detalle</h4>
+        <img class="stars" src="/images/stars.jpg">
+      </article>
+    </section>
   </div>
 </section>
 @endsection
