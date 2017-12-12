@@ -246,6 +246,7 @@ class UploadEspacioController extends Controller
 
   public function insertAndShowUploadEspacioResumen(Request $request, $id){
 
+    // $request->input('precioPorMinuto') =
     $this->validate($request,
     [
       'precioPorMinuto' => 'required|numeric|between:0,100',
@@ -369,7 +370,7 @@ class UploadEspacioController extends Controller
       ->select('*')
       ->where('idEspacio', '=', $espacio->id)
       ->get();
-    $horarios[] = '';
+    $horarios = [];
     $dias = $dias->toArray();
 
     foreach ($dias as $dia) {

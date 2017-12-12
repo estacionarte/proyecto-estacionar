@@ -25,28 +25,6 @@ a{
   text-decoration: none;
 }
 
-/***********migrateToSql en index***************/
-.migrate-btn-container{
-  text-align: center;
-  font-weight: bold;
-}
-.migrate-btn-1, .migrate-btn-2, .migrate-btn-3{
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.migrate-btn-1:hover, .migrate-btn-2:hover, .migrate-btn-3:hover{
-  background-color: rgba(31, 88, 11, 0.98);
-}
-
 /****************** H E A D E R*******************/
 .header-container{
   width: 100%;
@@ -565,33 +543,6 @@ ul li .popup-link{
   padding-bottom: 20px;
   margin-bottom: 40px;
 }
-
-/***************** MAP ********************/
-
-#map{
-  height: 60vh;
-  border: dotted 1px red;
-}
-
-.search-results-espacio {
-  border: 1px solid red;
-  margin-top: 10px;
-}
-
-.search-results-espacio img {
-  object-fit: cover;
-  width: 100%;
-  height: 150px;
-}
-
-.search-results-espacio h3, .search-results-espacio p {
-  margin-bottom: 0px;
-}
-
-.search-results-espacio h3 {
-  margin-top: 8px;
-}
-
 
 /************************** H E A D E R  P R O F I L E ***********************/
 .main-search{
@@ -1393,6 +1344,31 @@ span .avatar{
   margin: 5px 0px 15px;
 }
 
+/***************** MAP ********************/
+
+#map{
+  height: 50vh;
+  border: dotted 1px red;
+}
+
+.search-results-espacio {
+  margin-top: 10px;
+}
+
+.search-results-espacio img {
+  object-fit: cover;
+  width: 100%;
+  height: 150px;
+}
+
+.search-results-espacio h3, .search-results-espacio p {
+  margin-bottom: 0px;
+}
+
+.search-results-espacio h3 {
+  margin-top: 8px;
+}
+
 /**************************************************************/
 /*********************  T  A  B  L  E  T  *********************/
 /**************************************************************/
@@ -1929,6 +1905,23 @@ margin-right: 5%;
   margin: 5px 0px 15px;
 }
 
+/***************** MAP ********************/
+
+#map{
+  height: 40vh;
+}
+
+.search-results-espacio {
+  display: inline-block;
+  width: 48.2%;
+  margin: 10px 5px;
+}
+
+.search-results-espacio img {
+  height: 170px;
+}
+
+
 /**************************************************************/
 /*******************  D  E  S  K  T  O  P  ********************/
 /**************************************************************/
@@ -2283,4 +2276,27 @@ margin-right: 5%;
 
 .uploadEspacio .upload-div-sideimage4 {
 
+}
+
+
+/***************** MAP ********************/
+
+#map{
+  height: 40vh;
+}
+
+.search-results-espacio {
+  width: 32%;
+}
+
+.search-results-espacio img {
+  height: 170px;
+}
+
+.search-results-espacio h3, .search-results-espacio p {
+  margin-bottom: 0px;
+}
+
+.search-results-espacio h3 {
+  margin-top: 8px;
 }

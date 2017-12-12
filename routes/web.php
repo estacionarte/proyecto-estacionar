@@ -85,6 +85,4 @@ Route::get('/mantenimiento', function () {
     return view('underconstruction');
 });
 
-Route::get('/resultados', function () {
-    return view('search-results');
-});
+Route::get('resultados', 'SearchEspaciosController@search')->name('show.search');
