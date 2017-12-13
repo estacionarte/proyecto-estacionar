@@ -226,6 +226,7 @@ class UploadEspacioController extends Controller
         $diasYHorariosDeEspacio->idEspacio = $espacio->id;
       }
 
+      // Convierto la hora en minutos
       $horacomienzo = $request->input('horaComienzo' . $value) * 60 + $request->input('minutoComienzo' . $value);
       $horafin = $request->input('horaFin' . $value) * 60 + $request->input('minutoFin' . $value);
 
@@ -246,7 +247,9 @@ class UploadEspacioController extends Controller
 
   public function insertAndShowUploadEspacioResumen(Request $request, $id){
 
-    // $request->input('precioPorMinuto') =
+    // Reemplazo coma por punto
+    $newInput = str_replace(',','.',$request->input('precioPorMinuto'));
+    $request->merge(['precioPorMinuto' => $newInput]);
     $this->validate($request,
     [
       'precioPorMinuto' => 'required|numeric|between:0,100',
@@ -385,6 +388,35 @@ class UploadEspacioController extends Controller
       ->get();
 
     return view('upload-espacio.resumen', compact('espacio', 'fotos', 'tiempominimo', 'tiempomaximo', 'anticipacion', 'horarios', 'descuentos'));
+  }
+
+  public function deleteEspacio($id){
+    $espacio = Espacio::findOrFail($id);
+
+    //Borro los descuentos
+    $descuentos = $espacio->descuentos()->get();
+    foreach ($descuentos as $descuento) {
+      $descuento->delete();
+    }
+
+    //Borro los diasyhorarios
+    $diasyhorarios = $espacio->diasyhorarios()->get();
+    foreach ($diasyhorarios as $diayhorario) {
+      $diayhorario->delete();
+    }
+
+    //Borro las fotos
+    $fotos = $espacio->fotos()->get();
+    foreach ($fotos as $foto) {
+      $archivofoto = '/public/espacios/'. $foto->photoname;
+      Storage::delete($archivofoto);
+      $foto->delete();
+    }
+
+    //Borro el espacio
+    $espacio->delete();
+
+    return redirect()->route('profile');
   }
 
 }

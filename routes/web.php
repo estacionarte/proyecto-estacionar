@@ -61,6 +61,8 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
 
   Route::get('resumen/{espacio}', 'UploadEspacioController@showUploadEspacioResumen')->name('upload.espacio.resumen');
 
+  Route::delete('espacio/{id}', 'UploadEspacioController@deleteEspacio')->name('delete.espacio');
+
 });
 // ******************************************************************************
 
