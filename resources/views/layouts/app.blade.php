@@ -18,12 +18,9 @@
 
     <!-- ICONOS -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-      <!-- main-profile-edit-nav -->
+    
     <link rel="stylesheet"
      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            {{-- Alerts --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
       <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -40,37 +37,37 @@
   </head>
   <body>
     @auth
-    <header class="main-header">
-      <a href="/"><img src="/images/logo3.jpg" alt="logotipo" class="logotipo"></a>
-      <div class="clear">
+    <nav>
+      <header class="main-header">
+        <a href="/"><img src="/images/logo3.jpg" alt="logotipo" class="logotipo"></a>
+        <div class="clear"></div>
+      <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
 
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="icons/close-profile-nav2.png" alt=""></a>
+        <a href="{{ route('profile') }}" class="fa fa-btn fa-user"> Mi perfil</a>
+        <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a>
+        <a href="faqs" class="fa fa-info-circle"> Ayuda</a>
+        <a href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();" class="fa fa-btn fa-sign-out"> Salir</a>
       </div>
-    <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
 
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="icons/close-profile-nav2.png" alt=""></a>
-      <a href="{{ route('profile') }}" class="fa fa-btn fa-user"> Mi perfil</a>
-      <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a>
-      <a href="faqs" class="fa fa-info-circle"> Ayuda</a>
-      <a href="{{ route('logout') }}"
-          onclick="event.preventDefault();
-                   document.getElementById('logout-form').submit();" class="fa fa-btn fa-sign-out"> Salir</a>
-    </div>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+      </form>
 
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        {{ csrf_field() }}
-    </form>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar" class="avatar"></span>
 
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar" class="avatar"></span>
+      <script>
+      function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";}
 
-    <script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";}
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";}
-    </script>
-    </header>
+      function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";}
+      </script>
+      </header>
+    </nav>
     @endauth
 
       @guest

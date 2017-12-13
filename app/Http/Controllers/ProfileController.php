@@ -29,7 +29,7 @@ class ProfileController extends Controller
       ['idUser', '=', Auth::user()->id],
       ['deleted_at', null]
     ])
-    ->get();
+    ->paginate(2);
 
     return view('profile', compact('espacios', 'vehiculos'));
   }

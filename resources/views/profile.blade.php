@@ -122,13 +122,22 @@
               </div>
             @empty
             @endforelse
-            {{-- {{ $vehiculo->links() }} --}}
             </table>
+            <div class="">
+              {{ $vehiculos->links() }}
+            </div>
           </div>
-
-
         </section>
+<script type="text/javascript">
+<script>
+$(document).ready(function() {
+    var refreshId =  setInterval( function(){
+  $('#content2').load('profile');//actualizas el div
+ }, 1000 );
+});
 
+</script>
+</script>
         <section id="content3">
 
           <h1>Mis Espacios</h1>

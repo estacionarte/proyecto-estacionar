@@ -60,13 +60,6 @@ a{
   /*border: solid 1px red;*/
 }
 
-/*h1{
-  color: #48A8C1;
-  display: inline-block;
-  padding: 20px 15px;
-  font-family: 'Archivo Black', sans-serif;
-}*/
-
 /*.toggle-nav{
   width: 45px;
   margin: 12px -6px;
@@ -178,7 +171,7 @@ ul li .popup-link{
   /*border: solid 1px red;*/
   width: 90%;
   margin: 45px auto;
-  padding-bottom: 15px;
+  padding: 15px 0;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -470,8 +463,8 @@ ul li .popup-link{
 }
 
 .form-generico input[type=submit]:hover{
-  background-color: #8f8f8f;
-  border-color: #8f8f8f;
+  background-color: #6fbbce;
+  border-color: #6fbbce;
   cursor: pointer;
 }
 
@@ -1672,8 +1665,8 @@ span .avatar{
 }
 
 .faqs-preguntas section{
-margin-left: 5%;
-margin-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .faqs-preguntas section article{
@@ -2136,10 +2129,14 @@ margin-right: 5%;
   margin-top: -15px;
   background-image: url(../images/parking_pc.jpg);
   height: 620px;
+  text-align: center;
 }
 
 .shape{
-  margin-top: 12%;
+  margin-top: 8%;
+  padding-bottom: 20px;
+  width: 80%;
+  margin-left: 10%;
 }
 
 .shape h2{
@@ -2151,13 +2148,42 @@ margin-right: 5%;
   margin-bottom: 35px;
 }
 
-.shape input[type=search]{
+/*.shape input[type=search]{
   width: 60%;
 }
 
 .shape input[type=submit]{
   width: 60%;
   margin-bottom: 25px;
+}*/
+
+/****************** S E A R C H   B A R *******************/
+
+.search-espacios-form{
+  width: 50%;
+  margin: auto;
+}
+
+#dir_y_vehiculo {
+  margin: 0 0 5px 4px;
+  width: 98.7%;
+  height: 60px;
+}
+
+.search-espacios-form input[name='search-espacios-input-direccion']{
+  width: 68.5%;
+  height: 60px;
+}
+
+.search-espacios-form select[name='search-espacios-vehiculo']{
+  width: 31%;
+  height: 60px;
+}
+
+.search-espacios-form input[name='BUSCAR']{
+  margin: 5px 0px 15px;
+  width: 99%;
+  height: 60px;
 }
 
 /**************** C O M O  F U N C I O N A ****************/
@@ -2441,7 +2467,7 @@ margin-right: 5%;
 }
 
 /***************** C A R O U S E L ********************/
-#myCarousel{
+/*#myCarousel{
   display: block;
 }
 .container-title-carousel h2{
@@ -2454,4 +2480,4 @@ margin-right: 5%;
 }
 
 .carousel-indicators .active{
-  margin-bottom: -20px;
+  margin-bottom: -20px;*/
