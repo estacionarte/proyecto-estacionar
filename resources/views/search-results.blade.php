@@ -14,12 +14,21 @@
 
       </div>
 
-      <article class="search-results-espacio">
-        <img src="../images/garage.jpg" alt="">
-        <h3>Dirección</h3>
-        <p>Tipo Espacio</p>
-        <p>Precio</p>
-      </article>
+      @forelse ($espacios as $espacio)
+        <article class="search-results-espacio">
+          <img src="../images/garage.jpg" alt="">
+          <h3>{{ $espacio->direccion }}</h3>
+          <p>{{ $espacio->tipoEspacio }}</p>
+          <p>{{ $espacio->precioAutosMinuto}}</p>
+        </article>
+      @empty
+        <h3>No hay espacios disponibles con estos criterios de búsqueda</h3>
+        <p>Intenta buscando en otra zona o en otros horarios</p>
+      @endforelse
+
+      <div>
+      	{{ $espacios->links() }}
+      </div>
 
     </section>
   </div>

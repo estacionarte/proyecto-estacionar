@@ -33,8 +33,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="hojaDeEstilo">
 
+    @yield('scripts')
+
     {{-- Scripts --}}
-    <script src="{{ mix('js/app.js') }}"></script>
+    {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
   </head>
   <body>
     @auth

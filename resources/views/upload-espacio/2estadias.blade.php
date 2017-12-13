@@ -66,6 +66,7 @@
         <div class="upload-div-sideimage2"></div>
 
       </section>
+      <div class="clear"></div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

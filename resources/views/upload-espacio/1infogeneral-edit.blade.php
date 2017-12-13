@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title') Cargar Espacio @endsection
+@section('scripts')  @endsection
 @section('signin')
 
   <div class="container">
@@ -42,7 +43,7 @@
             <input type="submit" name="boton-submit" value="SIGUIENTE">
           </form>
           @foreach ($fotos as $foto)
-            <form method="POST" action="{{ route('deletepic.upload.espacio', $foto->id) }}" method="post" onsubmit="return confirm('¿Está seguro de que quiere eliminar esta foto?')">
+            <form method="POST" action="{{ route('deletepic.upload.espacio', $foto->id) }}" onsubmit="return confirm('¿Está seguro de que quiere eliminar esta foto?')">
               {{ method_field('DELETE') }}
   					  {{ csrf_field() }}
 
@@ -60,5 +61,6 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="js/menu.js"></script>
+  <script src="{{ asset('js/upload-infogeneral.js') }}"></script>
 
 @endsection

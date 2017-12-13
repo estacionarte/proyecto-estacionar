@@ -13,7 +13,7 @@
     </div> --}}
 
     <div class="form-generico">
-      <form class="search-espacios-form" action="" method="get">
+      <form class="search-espacios-form" action="{{ route('show.search')}}" method="get">
         <div class="" id="dir_y_vehiculo">
           <input type="search" name="search-espacios-input-direccion" placeholder="¿Dónde querés estacionar?">
           <select name="search-espacios-vehiculo">

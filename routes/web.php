@@ -61,6 +61,8 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
 
   Route::get('resumen/{espacio}', 'UploadEspacioController@showUploadEspacioResumen')->name('upload.espacio.resumen');
 
+  Route::delete('espacio/{id}', 'UploadEspacioController@deleteEspacio')->name('delete.espacio');
+
 });
 // ******************************************************************************
 
@@ -85,6 +87,4 @@ Route::get('/mantenimiento', function () {
     return view('underconstruction');
 });
 
-Route::get('/resultados', function () {
-    return view('search-results');
-});
+Route::get('resultados', 'SearchEspaciosController@search')->name('show.search');

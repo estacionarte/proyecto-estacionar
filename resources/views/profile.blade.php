@@ -152,7 +152,7 @@
                   <a href="{{ route('editar.upload.espacio.1', $espacio->id) }}">
                     <button type="button" class="btn btn-default">Editar</button>
                   </a>
-                  <form method="POST" action="{{ route('delete.vehicle', $vehiculo->id) }}" style="display:inline;" onsubmit="return confirm('¿Eliminar Vehiculo?')">
+                  <form method="POST" action="{{ route('delete.espacio', $espacio->id) }}" style="display:inline;" onsubmit="return confirm('¿Está seguro de que quiere eliminar este espacio?')">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
                     <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -178,15 +178,6 @@
 
     </div>
   </div>
-  <!-- <script>
-  function initMap() {
-    var input = document.getElementById('pac-input');
-    var autocomplete = new google.maps.places.Autocomplete(input);
-  };
-  </script> -->
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSkfauiLSZEhmyR3Yti92BCrmMCFbqB0Y&libraries=places&callback=initMap" async defer></script> -->
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="js/menu.js"></script> -->
   <script>
     $('.avatar').click(function(){
       $('.profile-nav').slideToggle(100);

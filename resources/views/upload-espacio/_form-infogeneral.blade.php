@@ -1,21 +1,23 @@
 <label for="" class="upload-label-titulo">¿Donde está ubicado tu espacio?</label>
 <input type="text" placeholder="Domicilio. Ej: Av. Eduardo Madero 399" name="direccion" class="upload-input-direccion" style="" value="{{ old('direccion', $espacio->direccion) }}" id="pac-input">
 <input type="text" placeholder="Nº Dpto. (Opcional)" name="dpto" class="upload-input-numdpto" value="{{ old('dpto', $espacio->dpto) }}">
-<select id="comboPaises" class="upload-select-pais">
-</select>
 
-{{-- <select name="pais" class="upload-select-pais" style="">
-  <option value="">País</option>
+{{-- <select id="comboPaises" class="upload-select-pais">
   <option value="Argentina" {{ old('pais', $espacio->pais) == 'Argentina' ? 'selected':'' }}>Argentina</option>
 </select> --}}
-<select id="comboProvincia" name="provincia" class="upload-select-provincia" style="">
+
+<select name="pais" class="upload-select-pais" style="">
+  <option value="">País</option>
+  <option value="Argentina" {{ old('pais', $espacio->pais) == 'Argentina' ? 'selected':'' }}>Argentina</option>
 </select>
-{{-- <option value="">Provincia</option>
-<option value="Buenos Aires" {{ old('provincia', $espacio->provincia) == 'Buenos Aires' ? 'selected':'' }}>Buenos Aires</option>
-<option value="CABA" {{ old('provincia', $espacio->provincia) == 'CABA' ? 'selected':'' }}>Ciudad Autónoma de Buenos Aires</option> --}}
+
+<select id="comboProvincia" name="provincia" class="upload-select-provincia" style="">
+  <option value="Buenos Aires" {{ old('provincia', $espacio->provincia) == 'Buenos Aires' ? 'selected':'' }}>Buenos Aires</option>
+  <option value="CABA" {{ old('provincia', $espacio->provincia) == 'CABA' ? 'selected':'' }}>Ciudad Autónoma de Buenos Aires</option>
+</select>
 <select name="ciudad" class="upload-select-ciudad" style="">
   <option value="">Ciudad</option>
-  <option value="ciudad" {{ old('ciudad', $espacio->ciudad) == 'ciudad' ? 'selected':'' }}>ciudad</option>
+  <option value="CABA" {{ old('ciudad', $espacio->ciudad) == 'CABA' ? 'selected':'' }}>C.A.B.A.</option>
 </select>
 <input type="text" placeholder="Código Postal" name="zipcode" class="upload-input-cp" style="" value="{{ old('zipcode', $espacio->zipcode) }}">
 
@@ -84,82 +86,3 @@
 
 <label for="" class="upload-label-titulo">Fotos de tu espacio</label>
 <input type="file" name="espacioPic[]" accept="image/*" style="" multiple>
-
-<script type="text/javascript">
-
-  window.onload = function(){
-
-    ajaxCall('GET','http://pilote.techo.org/?do=api.getPaises',llenarSelectPaises);
-
-    var combopaises = document.querySelector("comboPaises");
-    combopaises.addEventListener("change",cambioPaisSeleccionado);
-  }
-
-  function cambioPaisSeleccionado(){
-
-  		ajaxCall('GET','http://pilote.techo.org/?do=api.getRegiones?idPais=' + this.value ,llenarSelectProvincias);
-  }
-
-  function llenarSelectPaises(resultado){
-  		llenarSelect("comboPaises",resultado.contenido);
-  }
-
-  function llenarSelectProvincias(resultado){
-  		llenarSelect("comboProvincia",resultado.contenido);
-  }
-
-  function llenarSelect (selectId, objetoResultado){
-  	var select = document.getElementById(selectId);
-
-  	var option = document.createElement("OPTION");
-  	option.value = -1;
-  	option.text = 'País';
-
-  	select.appendChild(option);
-
-  	for (var x in objetoResultado) {
-
-      	var option = document.createElement("OPTION");
-  			option.value = objetoResultado[x];
-  			option.text = x;
-
-  			select.appendChild(option);
-  	}
-
-  }
-
-  function ajaxCall (method,url,callbackFunction){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-
-          var objetoResultado = JSON.parse(xmlhttp.responseText);
-          callbackFunction(objetoResultado);
-      }
-    };
-
-    if(method == "POST")
-      xmlhttp.setRequestHeader("Contenttype", "application/xwwwformurlencoded");
-
-    xmlhttp.open(method, url, true);
-    xmlhttp.send();
-
-  }
-
-  function mostrarProvincias() {
-    var paises = document.getElementById("comoboPaises").value;
-    paises.onchange = function(){
-
-      }
-
-      document.getElementById("comboProvincia").disabled = true;
-
-  }
-  var paises  = document.getElementById('comoboPaises');
-  paises.onchange = function (event){
-      event.preventDefault();
-      document.getElementById('comboProvincia').style.display = 'block';
-      // document.getElementById('segundaParte').style.display = 'block';
-  }
-
-</script>
