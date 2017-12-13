@@ -14,11 +14,6 @@ class SearchEspaciosController extends Controller
       ->orderBy('created_at','descS')
       ->paginate(3);
 
-
-      // $espacios = Espacio::where('id', '>', 0)->orderBy('direccion')->paginate(3);
-
-      // dd($espacios);
-
       return view('search-results', compact('espacios'));
     }
 }
