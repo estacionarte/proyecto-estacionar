@@ -25,36 +25,12 @@ a{
   text-decoration: none;
 }
 
-
-/*
 #myCarousel{
   display: none;
 }
 .container-title-carousel h2{
   display: none;
-}*/
-/***********migrateToSql en index***************/
-.migrate-btn-container{
-  text-align: center;
-  font-weight: bold;
 }
-.migrate-btn-1, .migrate-btn-2, .migrate-btn-3{
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.migrate-btn-1:hover, .migrate-btn-2:hover, .migrate-btn-3:hover{
-  background-color: rgba(31, 88, 11, 0.98);
-}
-
 
 /****************** H E A D E R*******************/
 .header-container{
@@ -385,7 +361,7 @@ ul li .popup-link{
 .faqs-form-search input[type=text]{
   width: 82%;
   padding: 10px;
-  font-size: 1.1em;
+  font-size: 1.3em;
   border: none;
   float: left;
   vertical-align: middle;
@@ -401,6 +377,7 @@ ul li .popup-link{
   background-size: contain;
   background-repeat: no-repeat;
   float: right;
+  vertical-align: middle;
 }
 
 .faqs-form-search input[type=submit]:hover{
@@ -542,30 +519,23 @@ ul li .popup-link{
 }
 
 .form-firstname{
-  float: left;
+  /*float: left;*/
+  margin: 5px 0px;
 }
 
 .form-lastname{
-  float: right;
+  /*float: right;*/
+  margin: 5px 0px;
 }
 
 .form-generico .form-birthdate{
   display: inline-block;
   text-align: center;
-  width: 32.5%;
+  width: 32.4%;
+  margin: auto;
   /*float: right;
   margin-left: 2.2%;*/
 }
-
-/*.form-generico .form-birthdate-label{
-  display: inline-block;
-  text-align: right;
-  float: left;
-  width: 45%;
-  color: #9c9c9c;
-  margin-left: 0;
-  padding-left: 0;
-}*/
 
 .signup p{
   font-size: 0.8em;
@@ -1149,13 +1119,14 @@ span .avatar{
 
 .uploadEspacio .form-generico .upload-div-diasemana{
   overflow: hidden;
-  /*margin-top: 5px;*/
+  margin-top: 5px;
 }
 
 .uploadEspacio .form-generico .upload-label-diasemana{
   width: 27%;
   float: left;
   color: #8f8f8f;
+  margin: 0px;
 }
 
 .uploadEspacio .form-generico .upload-div-div-diasemana{
@@ -1167,12 +1138,12 @@ span .avatar{
   width: 5%;
   text-align: center;
   vertical-align: middle;
-  padding: 10px 5px;
+  padding: 10px 3px;
 }
 
 .uploadEspacio .form-generico .upload-input-horadia{
   display: inline-block;
-  width: 45px;
+  width: 46px;
   text-align: center;
   padding: 10px 5px;
   vertical-align: middle;

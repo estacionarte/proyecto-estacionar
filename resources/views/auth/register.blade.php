@@ -23,19 +23,21 @@
         <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
 
-          <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" style="{{ $errors->has('firstName') ? ' border: solid 2px #990606' : '' }}" value="{{ old('firstName') }}"  autofocus>
+          <div class="" style="margin-top: 5px;">
+            <input type="text" placeholder="Nombre" name="firstName" class="form-firstname" style="{{ $errors->has('firstName') ? ' border: solid 2px #990606' : '' }}" value="{{ old('firstName') }}"  autofocus>
 
-          <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" style="{{ $errors->has('lastName') ? ' border: solid 2px #990606' : '' }}" value="{{ old('lastName') }}" >
+            <input type="text" placeholder="Apellido" name="lastName" class="form-lastname" style="{{ $errors->has('lastName') ? ' border: solid 2px #990606' : '' }}" value="{{ old('lastName') }}" >
+          </div>
 
           <!-- <label for="" class="form-birthdate-label">Fecha de Nacimiento:</label> -->
 
-          <input type="number" placeholder="dd" name="birthDay" min="1" max="31" class="form-birthdate" style="{{ $errors->has('birthDay') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthDay') }}" >
+          <div class="" style="margin-top: 5px;">
+            <input type="number" placeholder="dd" name="birthDay" min="1" max="31" class="form-birthdate" style="{{ $errors->has('birthDay') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthDay') }}" >
 
-          <input type="number" placeholder="mm" name="birthMonth" min="1" max="12" class="form-birthdate" style="{{ $errors->has('birthMonth') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthMonth') }}" >
+            <input type="number" placeholder="mm" name="birthMonth" min="1" max="12" class="form-birthdate" style="{{ $errors->has('birthMonth') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthMonth') }}" >
 
-          <input type="number" placeholder="aaaa" name="birthYear" min="1900" max="2010" class="form-birthdate" style="{{ $errors->has('birthYear') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthYear') }}" >
-
-
+            <input type="number" placeholder="aaaa" name="birthYear" min="1900" max="2010" class="form-birthdate" style="{{ $errors->has('birthYear') ? ' border: solid 2px #990606' : '' }}" value="{{ old('birthYear') }}" >
+          </div>
 
           <input type="email" placeholder="E-Mail" name="email" style="{{ $errors->has('email') ? ' border: solid 2px #990606' : '' }}" value="{{ old('email') }}" >
 
