@@ -869,9 +869,8 @@ span .avatar{
   border-radius: 5px;
 }
 
-/*********** PROFILE -- MIS VEHJICULOS *************/
+/*********** PROFILE -- MIS ESPACIOS *************/
 .carga-main{
-    border: dotted 1px red;
     overflow: hidden;
     width: 250px;
     float: left;
@@ -894,6 +893,9 @@ span .avatar{
   /*object-fit: cover;*/
 }
 
+.carga-vehiculo-container p{
+  padding-top: 100px;
+}
 
 #content3 p{
   margin-left: 50px;

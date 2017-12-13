@@ -58,18 +58,18 @@
 <div class="clear"></div>
 
 <div class="input-group col-xs-5 col-sm-3 col-md-4" style="margin-left:15px;">
-<span class="input-group-addon">Modelo</span>
-<input type="text" class="form-control" name="modelo" placeholder="Ingrese el modelo de su vehiculo" value="{{ old('modelo', $vehiculo->modelo) }}">
+<span class="input-group-addon" style="width:80px;">Modelo</span>
+<input type="text" class="form-control" name="modelo" placeholder="Ingrese el modelo de su vehiculo" value="{{ old('modelo', $vehiculo->modelo) }}" style="{{ $errors->has('modelo') ? ' border: solid 2px #990606' : '' }}">
 </div><br>
 
 <div class="input-group col-xs-5 col-sm-3 col-md-4" style="margin-left:15px;">
-<span class="input-group-addon">Color</span>
-<input type="text" class="form-control" name="color" placeholder="Ingrese el color de su vehiculo" value="{{ old('color', $vehiculo->color) }}">
+<span class="input-group-addon" style="width:80px;">Color</span>
+<input type="text" class="form-control" name="color" placeholder="Ingrese el color de su vehiculo" value="{{ old('color', $vehiculo->color) }}" style="{{ $errors->has('color') ? ' border: solid 2px #990606' : '' }}">
 </div><br>
 
 <div class="input-group col-xs-5 col-sm-3 col-md-4" style="margin-left:15px;">
-<span class="input-group-addon">Patente</span>
-<input type="text" class="form-control" name="patente" placeholder="Ingrese el numero de patente" value="{{ old('patente', $vehiculo->patente) }}">
+<span class="input-group-addon" style="width:80px;">Patente</span>
+<input type="text" class="form-control" name="patente" placeholder="Ingrese el numero de patente" value="{{ old('patente', $vehiculo->patente) }}" style="{{ $errors->has('patente') ? ' border: solid 2px #990606' : '' }}">
 </div><br>
 
 {{-- <div class="input-group col-xs-5 col-sm-3 col-md-3">
