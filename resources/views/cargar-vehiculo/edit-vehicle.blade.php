@@ -19,16 +19,16 @@
 
         @include('cargar-vehiculo._form-vehicle')
 
-        <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success" style="margin-left:15px;">
+        <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success" style="margin-left:15px;" onsubmit="confirm('¿Eliminar Vehiculo?')">
       </form>
       <a href="{{ route('profile')}}">
-        <input type="submit" name="" value="Cancelar cambios"data-dismiss="alert" class="btn btn-warning" data-toggle="modal" data-target="#myModal" onclick="event.preventDefault();">
+        <input type="submit" name="" value="Cancelar cambios" class="btn btn-warning" onsubmit="confirm('¿Volver al perfil?')">
       </a>
     </div>
   </div>
 
-    <!-- ALERT CON ESTILO -->
-    <div class="modal fade" id="myModal" role="dialog">
+
+    {{-- <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog modal-md">
         <div class="modal-content">
           <div class="modal-header">
@@ -39,18 +39,18 @@
             <p>¿Cancelas los cambios y vovles tu Perfil?</p>
           </div>
           <div class="modal-footer">
-            <button id="cerrar-modal" type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  {{-- ALERT CON ESTILO --}}
+
   <script type="text/javascript">
     document.getElementById("cerrar-modal").onclick = function(){
       window.location.href = "{{ route('profile')}}"
     }
-  </script>
+  </script> --}}
 
 @endsection

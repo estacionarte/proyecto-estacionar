@@ -123,30 +123,19 @@
             @empty
             @endforelse
             </table>
-            <div class="">
-              {{ $vehiculos->links() }}
-            </div>
           </div>
         </section>
-<script type="text/javascript">
-<script>
-$(document).ready(function() {
-    var refreshId =  setInterval( function(){
-  $('#content2').load('profile');//actualizas el div
- }, 1000 );
-});
 
-</script>
-</script>
         <section id="content3">
 
           <h1>Mis Espacios</h1>
 
           <article class="carga-vehiculo-container load-vehicle">
           <a href="{{route ('upload.espacio.1')}}"><img class="upload-vehicle" src="images/upload.png"></a>
-          </article>
-          <div class="clear"></div>
           <p>Cargá tus Espacios</p>
+          </article>
+          {{-- <div class="clear"></div> --}}
+
 
           @forelse ($espacios as $espacio)
             <div class="carga-main">

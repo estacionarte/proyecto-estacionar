@@ -18,7 +18,7 @@
 
     <!-- ICONOS -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    
+
     <link rel="stylesheet"
      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -102,7 +102,7 @@
                         <strong>{{ $errors->first('email') }}</strong>
                       </span>
                     @endif
-                    <input type="email" name="email" placeholder="E-Mail" id="email" value="{{ old('email') }}" required autofocus>
+                    <input type="text" name="email" placeholder="E-Mail" id="email" value="{{ old('email') }}"  autofocus>
                   </div>
 
                   <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -111,7 +111,7 @@
                         <strong>{{ $errors->first('password') }}</strong>
                       </span>
                     @endif
-                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <input type="password" name="password" placeholder="Contraseña">
                   </div>
                   <input type="checkbox" name="recordarme" id="recordarme"  {{ old('remember') ? 'checked' : '' }}>
                   <label for="recordarme">Recordarme</label>
@@ -187,5 +187,33 @@
   		});
   </script>
 
+  <script type="text/javascript">
+
+    window.onload = function () {
+
+      var form = document.forms[0];
+      form.addEventListener("submit", submitForm);
+    }
+
+    function submitForm (event) {
+      // event.preventDefault();
+
+      var elementos = this.length;
+
+      for (var i = 0; i < elementos; i++) {
+        var elemento = this[i];
+
+        if (!elemento.value) {
+          alert('El campo "' + elemento.name + '" es obligatorio');
+        }
+        if (elemento.type == 'submit') { continue; }
+      }
+      var regex =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      var email = document.getElementById("email").value;
+      if( !(regex.test(email)) ) {
+        alert('Debe ingresar un correo válido');
+      }
+    }
+  </script>
   </body>
 </html>
