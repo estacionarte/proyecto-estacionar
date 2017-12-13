@@ -27,7 +27,7 @@
     </div>
   </div>
 
-    <!-- ALERT - MODAL -->
+    <!-- ALERT CON ESTILO -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog modal-md">
         <div class="modal-content">
@@ -46,9 +46,11 @@
     </div>
   </div>
 
+  {{-- ALERT CON ESTILO --}}
   <script type="text/javascript">
     document.getElementById("cerrar-modal").onclick = function(){
       window.location.href = "{{ route('profile')}}"
     }
   </script>
+
 @endsection

@@ -11,67 +11,51 @@
 
   <select id="vehiculo-marca" class="form-control" name="marca">
     <option value="" {{ old('marca', $vehiculo->marca) == '' ? 'selected':'' }}selected>Marca</option>
-    <option value="1" {{ old('marca', $vehiculo->marca) == '1' ? 'selected':'' }}>ABARTH</option>
-    <option value="2" {{ old('marca', $vehiculo->marca) == '2' ? 'selected':'' }}>ALFA ROMEO</option>
-    <option value="3">ASTON MARTIN</option>
-    <option value="4">AUDI</option>
-    <option value="5">BENTLEY</option>
-    <option value="6">BMW</option>
-    <option value="7">BYD</option>
-    <option value="8">CHEVROLET</option>
-    <option value="9">CITROEN</option>
-    <option value="10">DACIA</option>
-    <option value="11">DFSK</option>
-    <option value="12">DS</option>
-    <option value="13">FERRARI</option>
-    <option value="14">FIAT</option>
-    <option value="15">FORD</option>
-    <option value="16">HONDA</option>
-    <option value="17">HYUNDAI</option>
-    <option value="18">INFINITI</option>
-    <option value="19">ISUZU</option>
-    <option value="20">JAGUAR</option>
-    <option value="21">JEEP</option>
-    <option value="22">KIA</option>
-    <option value="23">LADA</option>
-    <option value="24">LAMBORGHINI</option>
-    <option value="25">LANCIA</option>
-    <option value="26">LAND ROVER</option>
-    <option value="27">LEXUS</option>
-    <option value="28">MAHINDRA</option>
-    <option value="29">MASERATI</option>
-    <option value="30">MAZDA</option>
-    <option value="31">MERCEDES</option>
-    <option value="32">MINI</option>
-    <option value="33">MITSUBISHI</option>
-    <option value="34">MORGAN</option>
-    <option value="35">NISSAN</option>
-    <option value="36">OPEL</option>
-    <option value="37">PEUGEOT</option>
-    <option value="38">PORSCHE</option>
-    <option value="39">RENAULT</option>
-    <option value="40">ROLLS-ROYCE</option>
-    <option value="41">SEAT</option>
-    <option value="42">SKODA</option>
-    <option value="43">SMART</option>
-    <option value="44">SSANGYONG</option>
-    <option value="45">SUBARU</option>
-    <option value="46">SUZUKI</option>
-    <option value="47">TATA</option>
-    <option value="48">TESLA</option>
-    <option value="49">TOYOTA</option>
-    <option value="50">VOLKSWAGEN</option>
-    <option value="51">VOLVO</option></select>
+    <option value="ABARTH" {{ old('marca', $vehiculo->marca) == 'ABARTH' ? 'selected':'' }}>ABARTH</option>
+    <option value="ALFA ROMEO" {{ old('marca', $vehiculo->marca) == 'ALFA ROMEO' ? 'selected':'' }}>ALFA ROMEO</option>
+    <option value="ASTON MARTIN" {{ old('marca', $vehiculo->marca) == 'ASTON MARTIN' ? 'selected':'' }}>ASTON MARTIN</option>
+    <option value="AUDI" {{ old('marca', $vehiculo->marca) == 'AUDI' ? 'selected':'' }}>AUDI</option>
+    <option value="BENTLEY" {{ old('marca', $vehiculo->marca) == 'BENTLEY' ? 'selected':'' }}>BENTLEY</option>
+    <option value="BMW">BMW</option>
+    <option value="BYD">BYD</option>
+    <option value="CHEVROLET">CHEVROLET</option>
+    <option value="CITROEN">CITROEN</option>
+    <option value="DACIA">DACIA</option>
+    <option value="FERRARI">FERRARI</option>
+    <option value="FIAT">FIAT</option>
+    <option value="FORD">FORD</option>
+    <option value="HONDA">HONDA</option>
+    <option value="HYUNDAI">HYUNDAI</option>
+    <option value="INFINITI">INFINITI</option>
+    <option value="ISUZU">ISUZU</option>
+    <option value="JAGUAR">JAGUAR</option>
+    <option value="JEEP">JEEP</option>
+    <option value="KIA">KIA</option>
+    <option value="LADA">LADA</option>
+    <option value="LAMBORGHINI">LAMBORGHINI</option>
+    <option value="LAND ROVER">LAND ROVER</option>
+    <option value="LEXUS">c</option>
+    <option value="MASERATI">MASERATI</option>
+    <option value="MAZDA">MAZDA</option>
+    <option value="MERCEDES">MERCEDES</option>
+    <option value="MINI">MINI</option>
+    <option value="MITSUBISHI">MITSUBISHI</option>
+    <option value="NISSAN">NISSAN</option>
+    <option value="PEUGEOT">PEUGEOT</option>
+    <option value="PORSCHE">PORSCHE</option>
+    <option value="RENAULT">RENAULT</option>
+    <option value="ROLLS-ROYCE">ROLLS-ROYCE</option>
+    <option value="SEAT">SEAT</option>
+    <option value="SKODA">SKODA</option>
+    <option value="SMART">SMART</option>
+    <option value="SUBARU">SUBARU</option>
+    <option value="SUZUKI">SUZUKI</option>
+    <option value="TESLA">TESLA</option>
+    <option value="TOYOTA">TOYOTA</option>
+    <option value="VOLKSWAGEN">VOLKSWAGEN</option>
+    <option value="VOLVO">VOLVO</option></select>
 </div>
 <div class="clear"></div>
-{{-- <label for="">Modelo</label>
-<input id="vehiculo-modelo" type="text" name="modelo" value="{{ old('modelo', $vehiculo->modelo) }}"><br>
-
-<label for="">Color</label>
-<input type="text" name="color" value="{{ old('color', $vehiculo->color) }}"><br>
-
-<label for="">Patente</label>
-<input type="text" name="patente" value="{{ old('patente', $vehiculo->patente) }}"><br> --}}
 
 <div class="input-group col-xs-5 col-sm-3 col-md-4" style="margin-left:15px;">
 <span class="input-group-addon">Modelo</span>

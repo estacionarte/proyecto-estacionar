@@ -15,11 +15,15 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <!-- FONT LATO -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
     <!-- ICONOS -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
       <!-- main-profile-edit-nav -->
     <link rel="stylesheet"
      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            {{-- Alerts --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
       <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -45,7 +49,7 @@
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="icons/close-profile-nav2.png" alt=""></a>
       <a href="{{ route('profile') }}" class="fa fa-btn fa-user"> Mi perfil</a>
       <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a>
-      <a href="#" class="fa fa-info-circle"> Ayuda</a>
+      <a href="faqs" class="fa fa-info-circle"> Ayuda</a>
       <a href="{{ route('logout') }}"
           onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();" class="fa fa-btn fa-sign-out"> Salir</a>
@@ -77,7 +81,7 @@
         <div class="clear"></div>
         <nav class="main-nav">
           <ul>
-            <li><a href="signin.php" class="iniciar-btn">Iniciar Sesión</a></li>
+            <li><a href="signin" class="iniciar-btn">Iniciar Sesión</a></li>
             <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li>
             <li><a href="signup" class="register-btn">Registrarse</a></li>
             <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>

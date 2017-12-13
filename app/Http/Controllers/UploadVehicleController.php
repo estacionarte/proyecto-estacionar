@@ -12,7 +12,7 @@ use Storage;
 class UploadVehicleController extends Controller
 {
     public function showUploadVehicle(){
-      $vehiculo = new Vehiculo();
+      $vehiculo = new Vehiculo;
 
       return view('cargar-vehiculo.upload_vehicle', compact('vehiculo'));
     }
@@ -22,7 +22,7 @@ class UploadVehicleController extends Controller
         $request,
         [
           'tipoVehiculo' => 'required',
-          'marca'        => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta|numeric',
+          'marca'        => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta',
           'modelo'       => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta|max:45',
           'color'        => 'required|string|max:20',
           'patente'      => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta'
@@ -30,7 +30,6 @@ class UploadVehicleController extends Controller
         [
           'tipoVehiculo.required'  => 'Debe indicar un tipo de vehiculo.',
           'marca.required_if'      => 'Debe indicar la marca de su vehiculo.',
-          'marca.numeric'          => 'Debe indicar la marca de su vehiculo.',
           'modelo.required_if'     => 'Debe indicar un modelo.',
           'modelo.max'             => 'Excedió la cantidad de carácteres.',
           'color.required_if'      => 'Debe indicar el color de su vehiculo.',

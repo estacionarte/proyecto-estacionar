@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use App\Espacio;
 use App\FotoDeEspacio;
 use App\Vehiculo;

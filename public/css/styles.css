@@ -25,6 +25,12 @@ a{
   text-decoration: none;
 }
 
+#myCarousel{
+  display: none;
+}
+.container-title-carousel h2{
+  display: none;
+}
 /***********migrateToSql en index***************/
 .migrate-btn-container{
   text-align: center;
@@ -146,19 +152,13 @@ ul li .popup-link{
 .banner-container{
   position: relative;
   margin-top: -10px;
-  background-image: url(../images/bg-home-mobile.jpg);
+  background-image: url(../images/parking_mobile.jpg);
   background-size: 100%;
-<<<<<<< HEAD
-  background-repeat: repeat;
-  background-attachment: fixed;
-  width: 100%;
-  height: 400px;
-=======
   /*background-repeat: no-repeat;*/
   background-attachment: fixed;
   width: 100%;
   height: 445px;
->>>>>>> d7d436ff2841e3200204bd64435e1da8b9006b85
+
 }
 
 .shape{
@@ -213,7 +213,7 @@ ul li .popup-link{
 .como-funciona h2{
   padding-top: 45px;
   text-align: center;
-  font-size: 2em;
+  font-size: 2.2em;
   color: rgb(105, 105, 105);
 }
 
@@ -262,25 +262,47 @@ ul li .popup-link{
   background-color: rgba(105, 105, 105, 0.2);
   overflow: hidden;
   padding: 5px 0 20px 0;
-  border: solid 1px green;
 }
 
 .mejores-espacios-container h2{
-  margin: -15px 0 25px;
+  margin: -15px 15px 25px;
+  color: black;
+  font-size: 2em;
 }
 .mejor-espacio-bloque{
-  border: solid 1px red;
-  text-align: center;
-  width: 340px;
-  max-height: 200px;
-  margin: 0 25px;
-  overflow: visible;
+  width: 80%;
+  /*height: 70%;*/
+  margin: 30px 10%;
   background-color: #fff;
   float: left;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: solid 1px pink;
 }
 
-.mejor-espacio-bloque img{
-  border: solid 1px grey;
+.mejor-espacio-bloque .mejor-espacio{
+  width: 85%;
+  margin-top: -25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mejor-espacio-bloque h3{
+  font-size: 1.3em;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.mejor-espacio-bloque h4{
+  font-size: 1.1em;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.mejor-espacio-bloque .stars{
+  width: 40%;
+  margin-left: 15px;
+  margin-top: -10px;
 }
 /****************** F O O T E R *******************/
 .main-footer{
@@ -646,7 +668,7 @@ span .avatar{
   height: 45px;
   margin: 12px -6px;
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 15px;
   vertical-align: middle;
   border-radius: 50%
@@ -1499,7 +1521,7 @@ span .avatar{
 
 .banner-container{
   margin-top: -15px;
-  height: 400px;
+  height: 550px;
 }
 
 
@@ -1552,6 +1574,40 @@ span .avatar{
 
 .ultimo-paso img{
   width: 50%;
+}
+
+/****************** MEJORES ESPACIOS *******************/
+.mejores-espacios-container{
+  background-color: rgba(105, 105, 105, 0.2);
+  overflow: hidden;
+  padding: 5px 0 20px 0;
+}
+
+.mejores-espacios-container h2{
+  font-size: 2em;
+}
+
+.mejor-espacio-bloque{
+  width: 40%;
+  height: 300px;
+  margin: 30px 25px;
+}
+
+.mejor-espacio-bloque .mejor-espacio{
+  width: 85%;
+  height: 200px;
+}
+
+.mejor-espacio-bloque h3{
+  padding-left: 25px;
+}
+
+.mejor-espacio-bloque h4{
+  padding-left: 25px;
+}
+
+.mejor-espacio-bloque .stars{
+  margin-left: 20px;
 }
 
 /****************** F O O T E R *******************/
@@ -2089,8 +2145,8 @@ margin-right: 5%;
 
 .banner-container{
   margin-top: -15px;
-  background-image: url(../images/bg-home-pc.jpg);
-  height: 500px;
+  background-image: url(../images/parking_pc.jpg);
+  height: 620px;
 }
 
 .shape{
@@ -2152,6 +2208,34 @@ margin-right: 5%;
   clear: both;
 }
 
+/****************** MEJORES ESPACIOS *******************/
+
+.mejores-espacios-container h2{
+  font-size: 2.7em;
+  margin: 20px 0 45px;
+}
+
+.mejor-espacio-bloque{
+  width: 28%;
+  max-height: 40%;
+  margin: 30px 25px;
+  float: left;
+}
+
+.mejor-espacio-bloque .mejor-espacio{
+  width: 85%;
+  margin-top: -25px;
+}
+
+.mejor-espacio-bloque h3{
+  font-size: 1.3em;
+}
+
+.mejor-espacio-bloque h4{
+  font-size: 1.1em;
+}
+
+
 /************************** H E A D E R  P R O F I L E***********************/
 .main-search{
   width: 25%;
@@ -2196,6 +2280,7 @@ margin-right: 5%;
   width: 240px;
   height: 240px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .profile-welcome h1{
@@ -2341,4 +2426,21 @@ margin-right: 5%;
 
 .uploadEspacio .upload-div-sideimage4 {
 
+}
+
+/****************** C A R O U S E L *******************/
+#myCarousel{
+  display: block;
+}
+.container-title-carousel h2{
+  display: block;
+}
+.carousel-indicators li{
+  border-color: #48A8C1 !important;
+  background-color: #48A8C1 !important;
+  margin-bottom: -20px;
+}
+
+.carousel-indicators .active{
+  margin-bottom: -20px;
 }

@@ -6,8 +6,6 @@
 
     <div class="bodies-main-content">
 
-      <hr>
-
       <main class="main-profile-nav">
 
         <input id="tab1" type="radio" name="tabs" checked>
@@ -113,7 +111,7 @@
                         <a href="{{ route('show.edit.vehicle', $vehiculo->id) }}">
                           <button type="button" class="btn btn-default">Editar</button>
                         </a>
-                        <form method="POST" action="{{ route('delete.vehicle', $vehiculo->id) }}" style="display:inline;" onsubmit="return confirm('¿Eliminar Vehiculo?')">
+                        <form method="POST" action="{{ route('delete.vehicle', $vehiculo->id) }}" style="display:inline;" onsubmit="confirm('¿Eliminar Vehiculo?')">
                           {{ method_field('DELETE') }}
                           {{ csrf_field() }}
                           <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -124,8 +122,11 @@
               </div>
             @empty
             @endforelse
+            {{-- {{ $vehiculo->links() }} --}}
             </table>
           </div>
+
+
         </section>
 
         <section id="content3">

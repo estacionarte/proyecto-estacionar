@@ -78,29 +78,137 @@
     <p>Conducí hasta la cochera y dejá tu auto. ¡Listo! Ya es tuya por el tiempo que la solicitaste.</p>
   </article>
 
-  <div class="clear">
+  <div class="clear">  </div>
 
-    <section class="mejores-espacios-container">
-      <h2>Nuestros Espacios de mayor reputacion</h2>
-      <article class="mejor-espacio-bloque">
-        <a href="#"><img src="/storage/espacios/33-1.jpeg"></a>
-        <h3>ARS 100.00</h3>
-        <h4>Detalle</h4>
-        <img class="stars" src="/images/stars.jpg">
-      </article>
-      <article class="mejor-espacio-bloque">
-        <a href="#"><img src="/storage/espacios/33-1.jpeg"></a>
-        <h3>ARS 100.00</h3>
-        <h4>Detalle</h4>
-        <img class="stars" src="/images/stars.jpg">
-      </article>
-      <article class="mejor-espacio-bloque">
-        <a href="#"><img src="/storage/espacios/33-1.jpeg"></a>
-        <h3>ARS 100.00</h3>
-        <h4>Detalle</h4>
-        <img class="stars" src="/images/stars.jpg">
-      </article>
-    </section>
+    <div class="mejores-espacios-container">
+      <h2>Nuestros espacios con mayor reputación</h2>
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 220.00 ARS</strong> x día</h3>
+          <h4>Cochera a metros del hipodromo</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/espacio-3.jpg"></a>
+          <h3><strong>$ 15.00 ARS</strong> x hora</h3>
+          <h4>Cochera cubierta en edificio</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-2.jpg"></a>
+          <h3><strong>$ 100.00 ARS</strong> x día</h3>
+          <h4>Cochera descubierta con reja</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/espacio-1.jpg"></a>
+          <h3><strong>$ 20.00 ARS</strong> x hora</h3>
+          <h4>Cochera cubierta Recoleta</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/espacio-2.jpg"></a>
+          <h3><strong>$ 20.00 ARS</strong> x hora</h3>
+          <h4>Cochera cubierta Recoleta</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 20.00 ARS</strong> x hora</h3>
+          <h4>Cochera cubierta Recoleta</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+    </div>
+
+    <div class="container container-title-carousel">
+      <h2>Últimos usuarios registrados</h2>
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="indicators.color"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <article class="mejor-espacio-bloque">
+          <a href="faqs"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 220.00 ARS</strong> x día</h3>
+          <h4>Cochera a metros del hipodromo</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="perfil"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 220.00 ARS</strong> x día</h3>
+          <h4>Cochera a metros del hipodromo</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="perfil"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 220.00 ARS</strong> x día</h3>
+          <h4>Cochera a metros del hipodromo</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+      </div>
+
+      <div class="item">
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 15.00 ARS</strong> x hora</h3>
+          <h4>Cochera cubierta en edificio</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 15.00 ARS</strong> x hora</h3>
+          <h4>Cochera cubierta en edificio</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 15.00 ARS</strong> x hora</h3>
+          <h4>Cochera cubierta en edificio</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+      </div>
+
+      <div class="item">
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 100.00 ARS</strong> x día</h3>
+          <h4>Cochera descubierta con reja</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 100.00 ARS</strong> x día</h3>
+          <h4>Cochera descubierta con reja</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+        <article class="mejor-espacio-bloque">
+          <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
+          <h3><strong>$ 100.00 ARS</strong> x día</h3>
+          <h4>Cochera descubierta con reja</h4>
+          <img class="stars" src="/images/stars.png">
+        </article>
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
+</div>
 </section>
+
+
 @endsection

@@ -2,15 +2,16 @@
 @section('title') Cargar Vehiculo @endsection
 @section('signin')
 
-  @if (count($errors) > 0)
-          @foreach ($errors->all() as $error)
-            <p style="color: #990606;"> {{ $error }} </p>
-          @endforeach
-        @endif
   <div class="container">
     <div class="bodies-main-content">
       <hr>
       <h1>Cargá los datos de tu Vehiculo</h1><br>
+
+      @if (count($errors) > 0)
+              @foreach ($errors->all() as $error)
+                <p style="color: #990606;"> {{ $error }} </p>
+              @endforeach
+            @endif
       <form class="" action="{{ route('create.upload.vehicle') }}" method="post">
         {{ csrf_field() }}
 
