@@ -4,8 +4,6 @@
 
 <div class="bodies-main-content">
 
-  {{-- <hr> --}}
-
   <h1>Preguntas Frecuentes</h1>
 
   <div class="faqs-search">
