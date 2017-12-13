@@ -34,7 +34,7 @@
     <option value="LADA">LADA</option>
     <option value="LAMBORGHINI">LAMBORGHINI</option>
     <option value="LAND ROVER">LAND ROVER</option>
-    <option value="LEXUS">c</option>
+    <option value="LEXUS">LEXUS</option>
     <option value="MASERATI">MASERATI</option>
     <option value="MAZDA">MAZDA</option>
     <option value="MERCEDES">MERCEDES</option>

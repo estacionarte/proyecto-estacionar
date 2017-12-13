@@ -66,7 +66,10 @@
     }
   </script>
 
+
+
   <script type="text/javascript">
+  // Script para dar funcionalidad a botones - y +
 
   var sumar = function sumar(){
     var input = this.parentNode.querySelector('input');
@@ -108,6 +111,11 @@
   var botonRestarBicicleta = document.querySelector('button[name="boton-resta-bici"]');
   botonSumarBicicleta.addEventListener('click', sumar);
   botonRestarBicicleta.addEventListener('click', restar);
+
+  </script>
+
+  <script type="text/javascript">
+  // Script para hacer ajax calls y llenar los campos de países y provincias
 
   </script>
 
