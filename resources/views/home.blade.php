@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title') Estacionapp @endsection
-@section('body')
+@section('content')
 <section class="banner-container">
   <article class="shape">
     <h2>Encontrá y reservá tu estacionamiento privado</h2>
@@ -78,7 +78,7 @@
     <p>Conducí hasta la cochera y dejá tu auto. ¡Listo! Ya es tuya por el tiempo que la solicitaste.</p>
   </article>
 
-  <div class="clear">  </div>
+  <div class="clear"></div>
 
     <div class="mejores-espacios-container">
       <h2>Nuestros espacios con mayor reputación</h2>
@@ -120,7 +120,7 @@
         </article>
     </div>
 
-    <div class="container container-title-carousel">
+    {{-- <div class="container container-title-carousel">
       <h2>Últimos usuarios registrados</h2>
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -207,7 +207,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>
+</div> --}}
 </section>
 
 @endsection

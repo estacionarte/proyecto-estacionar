@@ -21,13 +21,21 @@
 
         <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success" style="margin-left:15px;" onsubmit="confirm('¿Eliminar Vehiculo?')">
       </form>
-      <a href="{{ route('profile')}}">
-        <input type="submit" name="" value="Cancelar cambios" class="btn btn-warning" onsubmit="confirm('¿Volver al perfil?')">
+        <input type="submit" name="" value="Cancelar cambios" class="btn btn-warning" onclick="myFunction()">
       </a>
     </div>
   </div>
 
+  <script>
+  function myFunction(e) {
+    if (confirm('¿Cancelar cambios y volver al perfil?')) {
+    window.location.replace("{{ route('profile')}}");
+} else {
+  e.preventDefault();
+}
 
+  }
+  </script>
     {{-- <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog modal-md">
         <div class="modal-content">
