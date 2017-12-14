@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') Estadía @endsection
+@section('title') {{$espacio->direccion}} @endsection
 @section('content')
 
   <div class="espacio-container">
