@@ -25,12 +25,36 @@ a{
   text-decoration: none;
 }
 
+
+/*
 #myCarousel{
   display: none;
 }
 .container-title-carousel h2{
   display: none;
+}*/
+/***********migrateToSql en index***************/
+.migrate-btn-container{
+  text-align: center;
+  font-weight: bold;
 }
+.migrate-btn-1, .migrate-btn-2, .migrate-btn-3{
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.migrate-btn-1:hover, .migrate-btn-2:hover, .migrate-btn-3:hover{
+  background-color: rgba(31, 88, 11, 0.98);
+}
+
 
 /****************** H E A D E R*******************/
 .header-container{
@@ -168,7 +192,6 @@ ul li .popup-link{
 .como-funciona{
   font-family: 'Roboto Condensed', sans-serif;
   position: relative;
-  /*border: solid 1px red;*/
   width: 90%;
   margin: 45px auto;
   padding: 15px 0;
@@ -238,9 +261,11 @@ ul li .popup-link{
 
 .mejores-espacios-container h2{
   margin: -15px 15px 25px;
-  color: black;
+  color: #fff;
   font-size: 2em;
+  font-weight: bold;
 }
+
 .mejor-espacio-bloque{
   width: 80%;
   /*height: 70%;*/
@@ -249,7 +274,7 @@ ul li .popup-link{
   float: left;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: solid 1px pink;
+  /* border: solid 1px pink; */
 }
 
 .mejor-espacio-bloque .mejor-espacio{
@@ -361,7 +386,7 @@ ul li .popup-link{
 .faqs-form-search input[type=text]{
   width: 82%;
   padding: 10px;
-  font-size: 1.3em;
+  font-size: 1.1em;
   border: none;
   float: left;
   vertical-align: middle;
@@ -377,7 +402,6 @@ ul li .popup-link{
   background-size: contain;
   background-repeat: no-repeat;
   float: right;
-  vertical-align: middle;
 }
 
 .faqs-form-search input[type=submit]:hover{
@@ -519,23 +543,30 @@ ul li .popup-link{
 }
 
 .form-firstname{
-  /*float: left;*/
-  margin: 5px 0px;
+  float: left;
 }
 
 .form-lastname{
-  /*float: right;*/
-  margin: 5px 0px;
+  float: right;
 }
 
 .form-generico .form-birthdate{
   display: inline-block;
   text-align: center;
-  width: 32.4%;
-  margin: auto;
+  width: 32.5%;
   /*float: right;
   margin-left: 2.2%;*/
 }
+
+/*.form-generico .form-birthdate-label{
+  display: inline-block;
+  text-align: right;
+  float: left;
+  width: 45%;
+  color: #9c9c9c;
+  margin-left: 0;
+  padding-left: 0;
+}*/
 
 .signup p{
   font-size: 0.8em;
@@ -1119,14 +1150,13 @@ span .avatar{
 
 .uploadEspacio .form-generico .upload-div-diasemana{
   overflow: hidden;
-  margin-top: 5px;
+  /*margin-top: 5px;*/
 }
 
 .uploadEspacio .form-generico .upload-label-diasemana{
   width: 27%;
   float: left;
   color: #8f8f8f;
-  margin: 0px;
 }
 
 .uploadEspacio .form-generico .upload-div-div-diasemana{
@@ -1138,12 +1168,12 @@ span .avatar{
   width: 5%;
   text-align: center;
   vertical-align: middle;
-  padding: 10px 3px;
+  padding: 10px 5px;
 }
 
 .uploadEspacio .form-generico .upload-input-horadia{
   display: inline-block;
-  width: 46px;
+  width: 45px;
   text-align: center;
   padding: 10px 5px;
   vertical-align: middle;
@@ -1407,11 +1437,18 @@ span .avatar{
   margin: 5px 0px 15px;
 }
 
-/***************** MAP ********************/
+/***************** MAP y search results ********************/
 
 #map{
   height: 50vh;
   border: dotted 1px red;
+}
+
+.search-result h1{
+  text-align: center;
+  color: grey;
+  padding-left: 5px;
+  font-size: 1.6em;
 }
 
 .search-results-espacio {
@@ -2013,7 +2050,12 @@ span .avatar{
 /***************** MAP ********************/
 
 #map{
-  height: 40vh;
+  height: 60vh;
+}
+
+.search-result h1{
+  padding-left: 20px;
+  font-size: 2.6em;
 }
 
 .search-results-espacio {
@@ -2449,7 +2491,7 @@ span .avatar{
 /***************** MAP ********************/
 
 #map{
-  height: 40vh;
+  height: 50vh;
 }
 
 .search-results-espacio {

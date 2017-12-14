@@ -24,7 +24,7 @@
 
           <div class="profile-image">
             <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image"><br>
-            <a href="{{route ('show.update.profile.image') }}">Cambiar mi imagen de perfil</a><br><br><br>
+            {{-- <a href="{{route ('show.update.profile.image') }}">Cambiar mi imagen de perfil</a><br><br><br> --}}
           </div>
 
           <div class="profile-welcome">
