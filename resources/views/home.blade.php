@@ -5,50 +5,59 @@
   <article class="shape">
     <h2>Encontrá y reservá tu estacionamiento privado</h2>
     <h3>Más de 10.000 usuarios ya confían en nosotros</h3>
-    {{-- <div class="form-generico">
-      <form action="" method="get">
-        <input type="search" name="busqueda" value="" placeholder="¿Dónde querés estacionar?" required>
-        <input type="submit" name="BUSCAR" value="BUSCAR">
-      </form>
-    </div> --}}
 
     <div class="form-generico">
       <form class="search-espacios-form" action="{{ route('show.search')}}" method="get">
         <div class="" id="dir_y_vehiculo">
           <input type="search" name="search-espacios-input-direccion" placeholder="¿Dónde querés estacionar?">
           <select name="search-espacios-vehiculo">
-            <option value="">Vehículo</option>
-            <option value="Auto">Auto</option>
+            <option value="Auto" selected>Auto</option>
             <option value="Moto">Moto</option>
             <option value="Bicicleta">Bicicleta</option>
           </select>
         </div>
         <div class="search-horario">
           <h5>Llegada</h5>
-          <input type="date" name="" value="">
+          <input type="date" name="search-espacios-dia-comienzo" value="">
           <select name="search-espacios-hora-comienzo" class="search-espacios-hora">
-            <option value="">00</option>
-            <option value="">01</option>
-            <option value="">02</option>
+            @for ($i=0; $i < 24; $i++)
+              @if ($i<10)
+                <option value={{ $i }}>0{{ $i }}</option>
+              @else
+                <option value={{ $i }}>{{ $i }}</option>
+              @endif
+            @endfor
           </select>
           <select name="search-espacios-minuto-comienzo" class="search-espacios-minuto">
-            <option value="">00</option>
-            <option value="">05</option>
-            <option value="">10</option>
+            @for ($i=0; $i < 60; $i+=5)
+              @if ($i<10)
+                <option value={{ $i }}>0{{ $i }}</option>
+              @else
+                <option value={{ $i }}>{{ $i }}</option>
+              @endif
+            @endfor
           </select>
         </div>
         <div class="search-horario">
           <h5>Partida</h5>
-          <input type="date" name="" value="">
+          <input type="date" name="search-espacios-dia-fin" value="">
           <select name="search-espacios-hora-fin" class="search-espacios-hora">
-            <option value="">00</option>
-            <option value="">01</option>
-            <option value="">02</option>
+            @for ($i=0; $i < 24; $i++)
+              @if ($i<10)
+                <option value={{ $i }}>0{{ $i }}</option>
+              @else
+                <option value={{ $i }}>{{ $i }}</option>
+              @endif
+            @endfor
           </select>
-          <select name="search-espacios-hora-fin" class="search-espacios-minuto">
-            <option value="">00</option>
-            <option value="">05</option>
-            <option value="">10</option>
+          <select name="search-espacios-minuto-fin" class="search-espacios-minuto">
+            @for ($i=0; $i < 60; $i+=5)
+              @if ($i<10)
+                <option value={{ $i }}>0{{ $i }}</option>
+              @else
+                <option value={{ $i }}>{{ $i }}</option>
+              @endif
+            @endfor
           </select>
         </div>
         <button type="submit" name="search-espacios-submit"><i class="fa fa-search"></i></button>
@@ -209,5 +218,10 @@
   </div>
 </div> --}}
 </section>
+
+<script type="text/javascript">
+  document.querySelector("input[name='search-espacios-dia-comienzo']").valueAsDate = new Date();
+  document.querySelector("input[name='search-espacios-dia-fin']").valueAsDate = new Date();
+</script>
 
 @endsection

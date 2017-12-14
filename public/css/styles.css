@@ -539,23 +539,22 @@ ul li .popup-link{
 
 .form-generico .form-firstname, .form-generico .form-lastname{
   display: inline-block;
-  width: 49.5%;
+  width: 49.4%;
 }
 
 .form-firstname{
-  float: left;
+  /*float: left;*/
 }
 
 .form-lastname{
-  float: right;
+  /*float: right;*/
 }
 
 .form-generico .form-birthdate{
   display: inline-block;
   text-align: center;
   width: 32.5%;
-  /*float: right;
-  margin-left: 2.2%;*/
+  margin-top: 0px;
 }
 
 /*.form-generico .form-birthdate-label{
