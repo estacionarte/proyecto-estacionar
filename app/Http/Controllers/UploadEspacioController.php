@@ -38,21 +38,21 @@ class UploadEspacioController extends Controller
     $espacio->save();
 
     // Guardar nombre de foto en db y después archivo de foto
+    if ($request->espacioPic) {
+      foreach ($request->espacioPic as $photo) {
+        $fotoDeEspacio = new FotoDeEspacio();
+        $fotoDeEspacio->idEspacio = $espacio->id;
+        if (isset($i)) {
+          $i++;
+        } else {
+          $i = 1;
+        }
+        $nombreArchivo = $fotoDeEspacio->idEspacio . '-' . $i . '.' . $photo->extension();
+        $fotoDeEspacio->photoname = $nombreArchivo;
+        $fotoDeEspacio->save();
 
-    foreach ($request->espacioPic as $photo) {
-      $fotoDeEspacio = new FotoDeEspacio();
-      $fotoDeEspacio->idEspacio = $espacio->id;
-      if (isset($i)) {
-        $i++;
-      } else {
-        $i = 1;
+        $path = $photo->storePubliclyAs('public/espacios', $nombreArchivo);
       }
-      $nombreArchivo = $fotoDeEspacio->idEspacio . '-' . $i . '.' . $photo->extension();
-      $fotoDeEspacio->photoname = $nombreArchivo;
-      $fotoDeEspacio->save();
-
-      $path = $photo->storePubliclyAs('public/espacios', $nombreArchivo);
-
     }
     return redirect()->route('upload.espacio.2',compact('espacio'));
   }

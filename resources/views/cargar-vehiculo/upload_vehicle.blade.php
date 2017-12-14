@@ -34,4 +34,18 @@
         }
 
       </script>
+
+      <script type="text/javascript">
+        // REGEX para Patente
+        regexPatente = /^[A-Za-z]{3}[0-9]{3}$/i;
+
+        var patente = document.querySelector('input[name="patente"]');
+
+        patente.addEventListener('change',function(){
+          if (!regexPatente.test(patente.value)) {
+            alert('Ingresar patente tipo AAA000');
+          }
+        })
+
+      </script>
 @endsection

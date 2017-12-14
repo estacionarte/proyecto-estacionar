@@ -42,8 +42,7 @@
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  {{-- <script src="js/menu.js"></script> --}}
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSkfauiLSZEhmyR3Yti92BCrmMCFbqB0Y&libraries=places&callback=autocompletarDomicilio" async defer></script>
+  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSkfauiLSZEhmyR3Yti92BCrmMCFbqB0Y&libraries=places&callback=autocompletarDomicilio" async defer></script>
   <script type="text/javascript">
     function autocompletarDomicilio() {
       var input = document.getElementById('pac-input');
@@ -64,7 +63,7 @@
         }
       })
     }
-  </script>
+  </script> --}}
 
 
 
