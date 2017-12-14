@@ -133,8 +133,8 @@
 
         <div class="main-search">
           <form class="main-form-search" action="" method="get">
-            <input type="text" name="buscar-texto" placeholder="Buscar cocheras">
-            <input type="submit" name="buscar-submit" value="">
+            <input type="text" name="buscar-texto" placeholder="Buscar cocheras" id="pac-input">
+            <input type="submit" name="buscar-submit" value="" id="buscar-submit">
           </form>
         </div>
       </div>
