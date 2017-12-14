@@ -15,7 +15,7 @@
       <div class="mejores-espacios-container">
 
       @forelse ($espacios as $espacio)
-        <article class="mejor-espacio-bloque search-bg">
+        <article class="mejor-espacio-bloque">
           <a href="{{ route('show.espacio', $espacio->id) }}"><img class="mejor-espacio" src="/storage/espacios/{{ $espacio->fotos->first()->photoname}}" alt=""></a>
           <h3 <strong>{{ '$ ' . $espacio->precioAutosMinuto . ' el minuto'}}</strong> </h3>
            <h4 style="display:inline;">{{ $espacio->direccion }}</h4>
@@ -23,7 +23,7 @@
           <img class="stars" src="/images/stars.png">
         </article>
       @empty
-        <h3>No hay espacios disponibles con estos criterios de búsqueda</h3>
+        <p>No hay espacios disponibles con estos criterios de búsqueda</p>
         <p>Intenta buscando en otra zona o en otros horarios</p>
       @endforelse
 

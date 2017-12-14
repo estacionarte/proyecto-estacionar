@@ -1,44 +1,44 @@
 @extends('layouts.app')
-@section('title') Estadía @endsection
+@section('title') Cargar Espacio @endsection
 @section('content')
 
-  <div class="espacio-container">
+  <div class="container">
 
-    @if (\Auth::user()->espacios()->where('id',$espacio->id)->first()->fotos->count() != 0)
-      <img src="/storage/espacios/{{ $espacio->fotoPortada() }}" style="width: 100%; height: 150px; object-fit:cover;">
-    @endif
+    <div class="bodies-main-content">
 
-    <div class="espacio-main-content">
+      <h1>Cargar Espacio - Estadías</h1>
 
-      {{-- <h1>Estadías</h1> --}}
-
-      <section class="show-espacio">
+      <section class="showEspacio">
 
         {{-- {{ dd($espacio->fotoPortada()) }} --}}
+
+        {{-- @if (\Auth::user()->espacios()->where('id',$espacio->id)->first()->fotos->count() != 0) --}}
+          <img src="/storage/espacios/{{ $espacio->fotoPortada() }}" style="width: 100%; height: 150px; object-fit:cover;">
+        {{-- @endif --}}
 
         <h2>{{ $espacio->direccion }}</h2>
         <h3 style="margin-top:0px; font-size:1.1em;">{{ $espacio->tipoEspacio }}</h3>
 
-        <hr class="estadia-linea">
+        <hr>
 
         <ul>
           <li style="list-style-type: circle; list-style-position: inside;">{{ $espacio->aptoDiscapacitados }}</li>
           <li>{{ $espacio->aptoElectricos }}</li>
         </ul>
 
-        <hr class="estadia-linea">
+        <hr>
 
         <p>{{ $espacio->infopublica }}</p>
 
-        <hr class="estadia-linea">
+        <hr>
 
         <p><span style="text-decoration:underline;">Tiempo mínimo de alquiler:</span> {{ $tiempominimo }}</p>
         <p><span style="text-decoration:underline;">Tiempo máximo de alquiler:</span> {{ $tiempomaximo }}</p>
         <p><span style="text-decoration:underline;">Anticipación necesaria para reservar espacio:</span> {{ $anticipacion }}</p>
 
-        <hr class="estadia-linea">
+        <hr>
 
-        <div class="form-estadia">
+        <div class="form-generico">
           <form class="search-espacios-form" action="{{ route('show.search')}}" method="get">
             <div class="" id="dir_y_vehiculo">
               <input type="search" name="search-espacios-input-direccion" placeholder="¿Dónde querés estacionar?">
@@ -84,13 +84,12 @@
 
         <br>
 
-        <div>
+        <div class="" style="text-align:center">
           $100
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
 
       </section>
-
+      <div class="clear"></div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
