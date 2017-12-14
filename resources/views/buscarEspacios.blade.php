@@ -167,7 +167,7 @@ debugger;
           $('<td>').text(espacio.direccion));
 
           tbody.append(tr);
-        }        
+        }
       }
 
       window.map = map;
@@ -175,7 +175,7 @@ debugger;
 
     function cargarMapa () {
 
-      var map = L.map('mapid').setView([-34.6033, -58.3816], 14);
+      var map = L.map('mapid').setView([-34.6033, -58.3816], 12);
 
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
         maxZoom: 18,
