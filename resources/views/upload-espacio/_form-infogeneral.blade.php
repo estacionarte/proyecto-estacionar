@@ -2,18 +2,15 @@
 <input type="text" placeholder="Domicilio. Ej: Av. Eduardo Madero 399" name="direccion" class="upload-input-direccion" style="" value="{{ old('direccion', $espacio->direccion) }}" id="pac-input">
 <input type="text" placeholder="Nº Dpto. (Opcional)" name="dpto" class="upload-input-numdpto" value="{{ old('dpto', $espacio->dpto) }}">
 
-{{-- <select id="comboPaises" class="upload-select-pais">
-  <option value="Argentina" {{ old('pais', $espacio->pais) == 'Argentina' ? 'selected':'' }}>Argentina</option>
-</select> --}}
-
 <select name="pais" class="upload-select-pais" style="">
   <option value="">País</option>
-  <option value="Argentina" {{ old('pais', $espacio->pais) == 'Argentina' ? 'selected':'' }}>Argentina</option>
+  {{-- <option value="Argentina" {{ old('pais', $espacio->pais) == 'Argentina' ? 'selected':'' }}>Argentina</option> --}}
 </select>
 
-<select id="comboProvincia" name="provincia" class="upload-select-provincia" style="">
-  <option value="Buenos Aires" {{ old('provincia', $espacio->provincia) == 'Buenos Aires' ? 'selected':'' }}>Buenos Aires</option>
-  <option value="CABA" {{ old('provincia', $espacio->provincia) == 'CABA' ? 'selected':'' }}>Ciudad Autónoma de Buenos Aires</option>
+<select name="provincia" class="upload-select-provincia" style="">
+  <option value="">Provincia</option>
+  {{-- <option value="Buenos Aires" {{ old('provincia', $espacio->provincia) == 'Buenos Aires' ? 'selected':'' }}>Buenos Aires</option> --}}
+  {{-- <option value="CABA" {{ old('provincia', $espacio->provincia) == 'CABA' ? 'selected':'' }}>Ciudad Autónoma de Buenos Aires</option> --}}
 </select>
 <select name="ciudad" class="upload-select-ciudad" style="">
   <option value="">Ciudad</option>

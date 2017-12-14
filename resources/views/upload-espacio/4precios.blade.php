@@ -93,7 +93,6 @@
   } else {
     precio = 0;
   }
-  debugger;
 
   precioPorMinuto.onchange = function(){
     precio = Math.round(precioPorMinuto.value.replace(',','.') * 100) / 100;

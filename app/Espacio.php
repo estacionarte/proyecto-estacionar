@@ -94,6 +94,86 @@ class Espacio extends Model
     return $foto->photoname;
   }
 
+  // Pasar de minutos (como está guardado en DB) a horas y días
+  public function minutosEnDiasYHoras($minutos) {
+
+    if ($minutos < 60) {
+      $tiempo = $minutos . ' minutos';
+      return $tiempo;
+    } elseif ($minutos < 1440) {
+      if ($minutos % 60 == 0) {
+        if ($minutos / 60 == 1) {
+          // Si es una hora exacta
+          $tiempo = '1 hora';
+          return $tiempo;
+        }
+        $tiempo = $minutos / 60 . ' horas';
+        return $tiempo;
+      }
+      if (floor($minutos / 60) == 1) {
+        $tiempo = floor($minutos / 60) . ' hora y ' . $minutos % 60 . ' minutos';
+        return $tiempo;
+      }
+      $tiempo = floor($minutos / 60) . ' horas y ' . $minutos % 60 . ' minutos';
+      return $tiempo;
+    } else {
+      if ($minutos % 60 == 0) {
+        if ($minutos % 1440 == 0) {
+          if ($minutos / 1440 == 1) {
+            $tiempo = '1 día';
+            return $tiempo;
+          }
+          $tiempo = $minutos / 1440 . ' días';
+          return $tiempo;
+        }
+        if (floor($minutos / 1440) == 1) {
+          if (floor($minutos % 1440 / 60) == 1) {
+            $tiempo = '1 día y 1 hora';
+            return $tiempo;
+          }
+          $tiempo = '1 día y ' . ($minutos % 1440 / 60) . ' horas';;
+          return $tiempo;
+        }
+        if (floor($minutos % 1440 / 60) == 1) {
+          $tiempo = floor($minutos / 1440) . ' días y 1 hora';
+          return $tiempo;
+        }
+        $tiempo = floor($minutos / 1440) . ' días y ' . ($minutos % 1440 / 60) . ' horas';
+        return $tiempo;
+      }
+      if (floor($minutos / 1440) == 1) {
+        if (floor($minutos % 1440 / 60) == 1) {
+          $tiempo = ' 1 día, 1 hora y ' . $minutos % 1440 % 60 . ' minutos';
+          return $tiempo;
+        }
+        $tiempo = ' 1 día ' . floor($minutos % 1440 / 60) . ' horas y ' . $minutos % 1440 % 60 . ' minutos';
+        return $tiempo;
+      }
+      if (floor($minutos % 1440 / 60) == 1) {
+        $tiempo = floor($minutos / 1440) . ' días, 1 hora y ' . $minutos % 1440 % 60 . ' minutos';
+        return $tiempo;
+      }
+      $tiempo = floor($minutos / 1440) . ' días, ' . floor($minutos % 1440 / 60) . ' horas y ' . $minutos % 1440 % 60 . ' minutos';
+      return $tiempo;
+    }
+
+  }
+
+  public function precioFinal($minutoComienzo, $minutoFin){
+    $cantidadMinutosAlquiler = $minutoFin - $minutoComienzo;
+    $precioSinDescuentos = $cantidadMinutosAlquiler * $this->precioAutosMinuto;
+    if ($cantidadMinutosAlquiler>1440) {
+      $precioFinal = (1 - $this->getDescuento(24)) * $precioSinDescuentos;
+    } elseif ($cantidadMinutosAlquiler>360) {
+      $precioFinal = (1 - $this->getDescuento(6)) * $precioSinDescuentos;
+    } elseif ($cantidadMinutosAlquiler>60) {
+      $precioFinal = (1 - $this->getDescuento(1)) * $precioSinDescuentos;
+    } else {
+      $precioFinal = $precioSinDescuentos;
+    }
+    return $precioFinal;
+  }
+
   public function setLocationAttribute($value) {
       // $this->attributes['location'] = DB::raw("POINT($value)");
       $this->attributes['location'] = DB::raw("GeomFromText('POINT(".$value.")')");

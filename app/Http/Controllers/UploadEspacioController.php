@@ -293,71 +293,6 @@ class UploadEspacioController extends Controller
     return redirect()->route('upload.espacio.resumen',compact('espacio'));
   }
 
-  // Pasar de minutos (como está guardado en DB) a horas y días
-  private function minutosEnDiasYHoras($minutos) {
-
-    if ($minutos < 60) {
-      $tiempo = $minutos . ' minutos';
-      return $tiempo;
-    } elseif ($minutos < 1440) {
-      if ($minutos % 60 == 0) {
-        if ($minutos / 60 == 1) {
-          // Si es una hora exacta
-          $tiempo = '1 hora';
-          return $tiempo;
-        }
-        $tiempo = $minutos / 60 . ' horas';
-        return $tiempo;
-      }
-      if (floor($minutos / 60) == 1) {
-        $tiempo = floor($minutos / 60) . ' hora y ' . $minutos % 60 . ' minutos';
-        return $tiempo;
-      }
-      $tiempo = floor($minutos / 60) . ' horas y ' . $minutos % 60 . ' minutos';
-      return $tiempo;
-    } else {
-      if ($minutos % 60 == 0) {
-        if ($minutos % 1440 == 0) {
-          if ($minutos / 1440 == 1) {
-            $tiempo = '1 día';
-            return $tiempo;
-          }
-          $tiempo = $minutos / 1440 . ' días';
-          return $tiempo;
-        }
-        if (floor($minutos / 1440) == 1) {
-          if (floor($minutos % 1440 / 60) == 1) {
-            $tiempo = '1 día y 1 hora';
-            return $tiempo;
-          }
-          $tiempo = '1 día y ' . ($minutos % 1440 / 60) . ' horas';;
-          return $tiempo;
-        }
-        if (floor($minutos % 1440 / 60) == 1) {
-          $tiempo = floor($minutos / 1440) . ' días y 1 hora';
-          return $tiempo;
-        }
-        $tiempo = floor($minutos / 1440) . ' días y ' . ($minutos % 1440 / 60) . ' horas';
-        return $tiempo;
-      }
-      if (floor($minutos / 1440) == 1) {
-        if (floor($minutos % 1440 / 60) == 1) {
-          $tiempo = ' 1 día, 1 hora y ' . $minutos % 1440 % 60 . ' minutos';
-          return $tiempo;
-        }
-        $tiempo = ' 1 día ' . floor($minutos % 1440 / 60) . ' horas y ' . $minutos % 1440 % 60 . ' minutos';
-        return $tiempo;
-      }
-      if (floor($minutos % 1440 / 60) == 1) {
-        $tiempo = floor($minutos / 1440) . ' días, 1 hora y ' . $minutos % 1440 % 60 . ' minutos';
-        return $tiempo;
-      }
-      $tiempo = floor($minutos / 1440) . ' días, ' . floor($minutos % 1440 / 60) . ' horas y ' . $minutos % 1440 % 60 . ' minutos';
-      return $tiempo;
-    }
-
-  }
-
   public function showUploadEspacioResumen(Espacio $espacio){
 
     $fotos = DB::table('espacios_fotos')
@@ -365,9 +300,9 @@ class UploadEspacioController extends Controller
     ->where('idEspacio', '=', $espacio->id)
     ->get();
 
-    $tiempominimo = $this->minutosEnDiasYHoras($espacio->estadiaMinimaMinutos);
-    $tiempomaximo = $this->minutosEnDiasYHoras($espacio->estadiaMaximaMinutos);
-    $anticipacion = $this->minutosEnDiasYHoras($espacio->anticipacionMinutos);
+    $tiempominimo = $espacio->minutosEnDiasYHoras($espacio->estadiaMinimaMinutos);
+    $tiempomaximo = $espacio->minutosEnDiasYHoras($espacio->estadiaMaximaMinutos);
+    $anticipacion = $espacio->minutosEnDiasYHoras($espacio->anticipacionMinutos);
 
     $dias = DB::table('espacios_diasyhorarios')
       ->select('*')

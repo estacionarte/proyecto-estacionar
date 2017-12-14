@@ -169,13 +169,13 @@
     </footer>
     <section class="redes-sociales">
       <div class="facebook">
-        <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="icons/facebook.png" alt=""></a>
+        <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
       </div>
       <div class="twitter">
-        <a href="http://twitter.com" target="_blank"><img src="icons/twitter.png" alt=""></a>
+        <a href="http://twitter.com" target="_blank"><img src="/icons/twitter.png" alt=""></a>
       </div>
       <div class="instagram">
-        <a href="http://instagram.com" target="_blank"><img src="icons/instagram.png" alt=""></a>
+        <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
       </div>
     </section>
 

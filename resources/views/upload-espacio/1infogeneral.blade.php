@@ -115,8 +115,67 @@
   </script>
 
   <script type="text/javascript">
-  // Script para hacer ajax calls y llenar los campos de países y provincias
+  // Script para hacer ajax calls y llenar los campos de países
 
+  var selectpais = document.querySelector("select[name='pais']");
+
+  var xmlhttp = new XMLHttpRequest();
+
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 & xmlhttp.status == 200) {
+      console.log(xmlhttp.responseText);
+      // Obtengo JSON de la API
+      var objeto = JSON.parse(xmlhttp.responseText);
+
+      // Agrego options dentro del select de países
+      for (var x in objeto) {
+        var option = document.createElement("OPTION");
+        option.value = objeto[x].name;
+        option.text = objeto[x].name;
+        if (objeto[x].name == 'Argentina') {
+          option.setAttribute('selected', 'true');
+        }
+        selectpais.appendChild(option);
+      }
+    }
+  };
+
+  xmlhttp.open("GET", "https://restcountries.eu/rest/v2/all", true);
+  xmlhttp.send();
+
+  // Script para hacer ajax call y llenar el campo de provincias al elegir Argentina
+
+  selectpais.addEventListener("change", function(){
+    if (selectpais.value == 'Argentina') {
+
+      var selectprovincia = document.querySelector("select[name='provincia']");
+
+      var xmlhttp2 = new XMLHttpRequest();
+
+      xmlhttp2.onreadystatechange = function() {
+        if (xmlhttp2.readyState == 4 & xmlhttp2.status == 200) {
+          console.log(xmlhttp2.responseText);
+          // Obtengo JSON de la API
+          var objeto = JSON.parse(xmlhttp2.responseText).contenido;
+
+          // Agrego options dentro del select de provincias
+          for (var x in objeto) {
+            var option = document.createElement("OPTION");
+            option.value = x;
+            option.text = x;
+            if (x == 'Ciudad de Buenos Aires') {
+              option.setAttribute('selected', 'true');
+            }
+            selectprovincia.appendChild(option);
+          }
+        }
+      };
+
+      xmlhttp2.open("GET", "http://pilote.techo.org/?do=api.getRegiones?idPais=1", true);
+      xmlhttp2.send();
+    }
+
+  });
 
   </script>
 

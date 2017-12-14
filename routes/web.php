@@ -87,4 +87,6 @@ Route::get('/mantenimiento', function () {
     return view('underconstruction');
 });
 
-Route::get('resultados', 'SearchEspaciosController@search')->name('show.search');
+Route::get('resultados', 'EspaciosController@search')->name('show.search');
+
+Route::get('espacio/{id}', 'EspaciosController@showEspacio')->name('show.espacio');
