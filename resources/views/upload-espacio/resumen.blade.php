@@ -85,7 +85,7 @@
           </div>
         </section>
 
-        <a href="#" id="confirmar-espacio">CONFIRMAR ESPACIO</a>
+        <a href="{{route('profile')}}" id="confirmar-espacio">CONFIRMAR ESPACIO</a>
 
         <div class="upload-div-sideimage4"></div>
 

@@ -15,9 +15,9 @@
       <div class="mejores-espacios-container">
 
       @forelse ($espacios as $espacio)
-        <article class="mejor-espacio-bloque">
+        <article class="mejor-espacio-bloque search-bg">
           <img class="mejor-espacio" src="/storage/espacios/33-1.jpeg" alt="">
-          <h3 style="display:inline;"><strong>{{ '$ ' . $espacio->precioAutosMinuto . ' el minuto'}}</strong> </h3>
+          <h3 <strong>{{ '$ ' . $espacio->precioAutosMinuto . ' el minuto'}}</strong> </h3>
           <h4 style="display:inline;">{{ $espacio->direccion }}</h4>
           <h4>{{ $espacio->tipoEspacio }}</h4>
           <img class="stars" src="/images/stars.png">

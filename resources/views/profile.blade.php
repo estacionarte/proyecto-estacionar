@@ -40,7 +40,7 @@
           <article class="profile-credit">
               <h2>Cambia el estilo de tu página</h2>
               <select id="styleChange">
-               <option value="{{ asset('css/styles.css') }}">Estilo original</option>
+               <option value="{{ asset('css/styles.css') }}">Estilo clásico</option>
                <option value="{{ asset('css/styles2.css') }}">Estilo alternativo</option>
               </select>
           </article>

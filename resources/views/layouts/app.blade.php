@@ -16,6 +16,8 @@
     <!-- FONT LATO -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+
     <!-- ICONOS -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
@@ -39,7 +41,8 @@
     @auth
     <nav>
       <header class="main-header">
-        <a href="/"><img src="/images/logo3.jpg" alt="logotipo" class="logotipo"></a>
+        <a href="/"><img src="/images/logo4.jpg" alt="logotipo" class="logotipo"></a>
+        <a href="/"><img src="/images/logoloco.jpg" alt="logotipo" class="logoloco"></a>
         <div class="clear"></div>
       <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
 
@@ -73,7 +76,7 @@
       @guest
       <header class="main-header">
         <div class="header-container">
-          <a href="/"><img src="/images/logo4.png" alt="logotipo" class="logo"></a>
+          <a href="/"><img src="/images/logo4.jpg" alt="logotipo" class="logo"></a>
         <a href="#" class="toggle-nav">
   				<span class="ion-navicon-round"></span>
   			</a>

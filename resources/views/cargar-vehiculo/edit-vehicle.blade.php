@@ -21,44 +21,20 @@
 
         <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success" style="margin-left:15px;" onsubmit="confirm('¿Eliminar Vehiculo?')">
       </form>
-        <input type="submit" name="" value="Cancelar cambios" class="btn btn-warning" onclick="myFunction()">
+        <input type="submit" name="" value="Cancelar cambios" class="btn btn-warning" onclick="confirmar()">
       </a>
     </div>
   </div>
 
   <script>
-  function myFunction(e) {
+  function confirmar(e) {
     if (confirm('¿Cancelar cambios y volver al perfil?')) {
-    window.location.replace("{{ route('profile')}}");
-} else {
-  e.preventDefault();
-}
-
-  }
-  </script>
-    {{-- <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog modal-md">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"></button>
-            <h4 class="modal-title">ATENCIÓN</h4>
-          </div>
-          <div class="modal-body">
-            <p>¿Cancelas los cambios y vovles tu Perfil?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <script type="text/javascript">
-    document.getElementById("cerrar-modal").onclick = function(){
-      window.location.href = "{{ route('profile')}}"
+      window.location.replace("{{ route('profile')}}");
+    } else {
+        e.preventDefault();
+      }
     }
-  </script> --}}
+  </script>
+
 
 @endsection

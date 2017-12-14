@@ -26,36 +26,9 @@ a{
 }
 
 
-/*
-#myCarousel{
+.logoloco{
   display: none;
 }
-.container-title-carousel h2{
-  display: none;
-}*/
-/***********migrateToSql en index***************/
-.migrate-btn-container{
-  text-align: center;
-  font-weight: bold;
-}
-.migrate-btn-1, .migrate-btn-2, .migrate-btn-3{
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.migrate-btn-1:hover, .migrate-btn-2:hover, .migrate-btn-3:hover{
-  background-color: rgba(31, 88, 11, 0.98);
-}
-
-
 /****************** H E A D E R*******************/
 .header-container{
   width: 100%;
@@ -71,9 +44,9 @@ a{
 .logotipo{
   display: block;
   float: left;
-  width: 200px;
-  margin: 5px 0 15px 85px;
-  /*border: solid 1px red;*/
+  width: 55%;
+  margin: 18px 0 5px 15px;
+  padding-bottom: 10px;
 }
 
 .logo{
@@ -95,7 +68,7 @@ a{
 .toggle-nav{
   display: block;
   float: right;
-  margin: 30px 25px;
+  margin: 5s% 3%;
   width: 45px;
   text-align: center;
   padding: 1px;
@@ -636,12 +609,13 @@ ul li .popup-link{
 span .avatar{
   width: 45px;
   height: 45px;
-  margin: 12px -6px;
+  margin: 1.5% -6px;
   position: absolute;
   top: 10px;
   right: 15px;
   vertical-align: middle;
-  border-radius: 50%
+  border-radius: 50%;
+  border: solid 2px #d5dbdc;
   /*z-index: 25;*/
 }
 
@@ -650,7 +624,7 @@ span .avatar{
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 15;
+  z-index: 99999999;
   top: 0;
   right: 0;
   background-color: white;
@@ -1173,7 +1147,7 @@ span .avatar{
 
 .uploadEspacio .form-generico .upload-input-horadia{
   display: inline-block;
-  width: 45px;
+  width: 50px;
   text-align: center;
   padding: 10px 5px;
   vertical-align: middle;
@@ -1182,22 +1156,23 @@ span .avatar{
 
 .uploadEspacio .form-generico .upload-button-volver{
   display: inline-block;
-  width: 49%;
+  width: 25%;
   border-color: #fff;
-  background-color: #fff;
+  background-color: #ffb152;
   font-weight: normal;
-  color: inherit;
+  color: #fff;
+  float: left;
 }
 
 .uploadEspacio .form-generico .upload-button-volver:hover{
-  background-color: #fff;
+  background-color: #ffc175;
   border-color: #fff;
 }
 
 .uploadEspacio .form-generico .upload-button-submit{
   display: inline-block;
-  width: 49%;
-  /*float: right;*/
+  width: 70%;
+  float: right;
 }
 
 .uploadEspacio .upload-div-sideimage3 {
@@ -1441,7 +1416,7 @@ span .avatar{
 
 #map{
   height: 50vh;
-  border: dotted 1px red;
+  /* border: dotted 1px red; */
 }
 
 .search-result h1{
@@ -1476,6 +1451,17 @@ span .avatar{
 @media (min-width: 700px) {
 
 /****************** H E A D E R *******************/
+span .avatar{
+  width: 50px;
+  height: 50px;
+  margin: 1% 2%;
+}
+
+.logotipo{
+  width: 40%;
+  margin: 18px 0 5px 15px;
+  padding-bottom: 15px;
+}
 
 .toggle-nav{
   display: none;
@@ -1593,7 +1579,7 @@ span .avatar{
 
 .mejor-espacio-bloque{
   width: 40%;
-  height: 300px;
+  height: 320px;
   margin: 30px 25px;
 }
 
@@ -1907,11 +1893,13 @@ span .avatar{
 /****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
 
 .uploadEspacio .form-generico .upload-button-volver{
-  width: 24%;
+  width: 25%;
+  float: left;
 }
 
 .uploadEspacio .form-generico .upload-button-submit{
   width: 75%;
+  float: right;
 }
 
 /****************** C A R G A   C O C H E R A (Paso 4 - Precios) *******************/
@@ -2076,7 +2064,17 @@ span .avatar{
 @media (min-width: 960px) {
 
 /**  **************** H E A D E R *******************/
+span .avatar{
+  width: 50px;
+  height: 50px;
+  margin: 1% 1.5%;
+}
 
+.logotipo{
+  width: 30%;
+  margin: 18px 0 5px 30px;
+  padding-bottom: 15px;
+}
 .main-nav a{
   font-size: .8em;
   padding: 10px 1px;
@@ -2299,7 +2297,7 @@ span .avatar{
 .main-search{
   width: 25%;
   height: 40px;
-  display: block;
+  display: none;
   border: solid 1px #9c9c9c;
   border-radius: 5px;
   background-color: #fff;
@@ -2313,8 +2311,8 @@ span .avatar{
 .welcome-user{
   display: block !important;
   position: absolute;
-  top: 25px;
-  right: 70px;
+  top: 4.5%;
+  right: 9%;
 }
 
 .welcome-user h4{
@@ -2465,20 +2463,23 @@ span .avatar{
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
-  float: right;
+  /* float: right; */
   display: inline-block;
   min-width: 260px;
   height: 50vh;
   max-width: 360px;
   margin-top: 25px;
+  margin-left: 20%;
 }
 
 .uploadEspacio .form-generico .upload-button-volver{
   width: 19%;
+  float: left;
 }
 
 .uploadEspacio .form-generico .upload-button-submit{
-  width: 80%;
+  width: 80  %;
+  float: right;
 }
 
 /****************** C A R G A   C O C H E R A (Paso 4 - Precio) *******************/
@@ -2510,18 +2511,88 @@ span .avatar{
   margin-top: 8px;
 }
 
-/***************** C A R O U S E L ********************/
-/*#myCarousel{
-  display: block;
-}
-.container-title-carousel h2{
-  display: block;
-}
-.carousel-indicators li{
-  border-color: #48A8C1 !important;
-  background-color: #48A8C1 !important;
-  margin-bottom: -20px;
+/***************** E S T A D I A S ******************/
+.estadia-linea{
+  width: 50%;
 }
 
-.carousel-indicators .active{
-  margin-bottom: -20px;*/
+.espacio-main-content{
+  font-family: 'Patua One', cursive;
+  position: relative;
+  margin: 10px auto;
+  max-width: 1100px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+}
+
+.espacio-main-content h1{
+  /* color:  */
+  /* padding: 25px 25px 0; */
+}
+.espacio-container img{
+  width: 100%;
+  /* height: 400px; */
+  /* background-image: url(../images/parking_mobile.jpg);
+  background-size: 100%; */
+  /*background-repeat: no-repeat;*/
+}
+
+.show-espacio h2{
+  padding: 15px 5px;
+  font-size: 3em;
+}
+
+.show-espacio h2::first-letter{
+  text-transform: uppercase;
+}
+
+.form-estadia{
+  position: absolute;
+  /* border: solid 1px red; */
+  width: 35%;
+  top: 65px;
+  left: 60%;
+  background-color: white;
+}
+
+.form-estadia input, .form-estadia label, .form-estadia select, .form-estadia textarea{
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 1em;
+  border: solid 1px #9c9c9c;
+  border-radius: 2px;
+  background-color: #fff;
+  vertical-align: middle;
+}
+.form-estadia .search-espacios-form{
+  width: 100%;
+  border: solid 1px rgb(242, 201, 214);
+  background-color: rgba(200, 200, 200, 0.1);
+}
+
+.form-estadia .search-espacios-form input[name=search-espacios-input-direccion]{
+  /* border: solid 1px green; */
+  width: 63%;
+}
+.form-estadia .search-espacios-form input{
+  /* border: solid 1px blue; */
+}
+
+
+.form-estadia .search-espacios-form input[type=submit]{
+  color: #fff;
+}
+
+.form-estadia .search-espacios-form input[name=BUSCAR]{
+  background-color: #48a8c1;
+  border-radius: 5px;
+}
+
+.show-espacio p{
+  width: 50%;
+}
+.search-result .mejores-espacios-container{
+  background-color: #fff;
+}
