@@ -132,7 +132,7 @@
         option.value = objeto[x].name;
         option.text = objeto[x].name;
         if (objeto[x].name == 'Argentina') {
-          option.setAttribute('selected', 'true');
+          // option.setAttribute('selected', 'true');
         }
         selectpais.appendChild(option);
       }
@@ -163,7 +163,7 @@
             option.value = x;
             option.text = x;
             if (x == 'Ciudad de Buenos Aires') {
-              option.setAttribute('selected', 'true');
+              // option.setAttribute('selected', 'true');
             }
             selectprovincia.appendChild(option);
           }

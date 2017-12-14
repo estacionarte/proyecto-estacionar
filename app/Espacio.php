@@ -174,9 +174,9 @@ class Espacio extends Model
     return $precioFinal;
   }
 
-  public function setLocationAttribute($value) {
+  public static function setLocationAttribute($value) {
       // $this->attributes['location'] = DB::raw("POINT($value)");
-      $this->attributes['location'] = DB::raw("GeomFromText('POINT(".$value.")')");
+      // $this->attributes['location'] = DB::raw("GeomFromText('POINT(".$value.")')");
   }
 
   public function getLocationAttribute($value){

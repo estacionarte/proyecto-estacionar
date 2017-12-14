@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Espacio;
+use \App\Espacio;
 use DB;
 
 class EspaciosController extends Controller
@@ -23,7 +23,30 @@ class EspaciosController extends Controller
 
       $tiempoestadia = $horariopartida-$horariollegada;
 
-      $espacios = DB::table('espacios')
+      $espacios = Espacio::with("fotos")
+        ->where('direccion', 'like', '%'.$request->input('search-espacios-input-direccion').'%')
+        ->where('cant'.$request->input('search-espacios-vehiculo').'s','>',0)
+        ->where('estadiaMinimaMinutos','<=',$tiempoestadia)
+        ->where('estadiaMaximaMinutos','>=',$tiempoestadia)
+        ->where('espacios.deleted_at', null)
+        ->orderBy('espacios.created_at','desc')
+        ->paginate(3);
+
+      $espacios = $espacios->filter(function ($espacio, $key) use ($diallegada, $horariollegada, $horariopartida) {
+          $diasYHorarios = $espacio->diasyhorarios()
+            ->where('dia','=',$diallegada)
+            ->where('horaComienzo','<=',$horariollegada)
+            ->where('horaFin','>=',$horariopartida)
+            ->count();
+
+          return $diasYHorarios > 0;
+      });
+
+      // dd($espacios);
+
+
+      /*
+      $espacios = Espacio::with('fotos')
         // Join con tabla que tiene los dias y horarios de cada espacio
         ->join('espacios_diasyhorarios','espacios.id','=','espacios_diasyhorarios.idEspacio')
         ->select('*')
@@ -44,12 +67,11 @@ class EspaciosController extends Controller
           ['espacios.deleted_at', null]
         ])
         ->orderBy('espacios.created_at','desc')
-        ->paginate(100);
+        ->paginate(3);
 
-      // dd($espacios);
+      */
 
-
-      return view('search-results', compact('espacios'));
+      return view('search-results', compact('espacios','horariollegada', 'horariopartida'));
     }
 
     public function showEspacio($id){

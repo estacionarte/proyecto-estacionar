@@ -16,9 +16,9 @@
 
       @forelse ($espacios as $espacio)
         <article class="mejor-espacio-bloque search-bg">
-          <img class="mejor-espacio" src="/storage/espacios/33-1.jpeg" alt="">
+          <a href="{{ route('show.espacio', $espacio->id) }}"><img class="mejor-espacio" src="/storage/espacios/{{ $espacio->fotos->first()->photoname}}" alt=""></a>
           <h3 <strong>{{ '$ ' . $espacio->precioAutosMinuto . ' el minuto'}}</strong> </h3>
-          <h4 style="display:inline;">{{ $espacio->direccion }}</h4>
+           <h4 style="display:inline;">{{ $espacio->direccion }}</h4>
           <h4>{{ $espacio->tipoEspacio }}</h4>
           <img class="stars" src="/images/stars.png">
         </article>
@@ -28,7 +28,7 @@
       @endforelse
 
         <div class="clear">
-        	{{ $espacios->links() }}
+        	{{-- {{ $espacios->links() }} --}}
         </div>
       </div>
     </section>
@@ -73,7 +73,7 @@
 
   var popup = L.popup()
     .setLatLng([-34.6111, -58.38151])
-    .setContent("I am a standalone popup.")
+    .setContent("Soy Digital House!")
     .openOn(mymap);
 
   function onMapClick(event) {
@@ -89,7 +89,7 @@
       .setContent("Clickeaste el mapa en " + e.latlng.toString())
       .openOn(mymap)
   }
-  mymap.on('click', onMapClick2)
+  // mymap.on('click', onMapClick2)
 
 </script>
 @endsection
