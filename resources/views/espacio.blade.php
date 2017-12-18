@@ -36,7 +36,7 @@
 
         <hr class="estadia-linea">
 
-        <div class="form-estadia" style="padding: 10px;">
+        <div class="form-estadia" id="sticky-form"style="padding: 10px;">
           <form class="search-espacios-form" action="{{ route('show.search')}}" method="get">
             <div class="" id="dir_y_vehiculo">
               <input type="search" name="search-espacios-input-direccion" placeholder="¿Dónde querés estacionar?">
@@ -79,7 +79,7 @@
             <input type="submit" name="BUSCAR" value="BUSCAR">
           </form>
         </div>
-
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <br>
 
         <div>
