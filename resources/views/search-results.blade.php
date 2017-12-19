@@ -14,7 +14,10 @@
       </div>
       <div class="mejores-espacios-container">
 
+
       @forelse ($espacios as $espacio)
+        {{-- {{ dd($horariopartida) }} --}}
+        {{ dd($espacio->precioFinal($horariollegada, $horariopartida+1)) }}
         <article class="mejor-espacio-bloque">
           <a href="{{ route('show.espacio', $espacio->id) }}"><img class="mejor-espacio" src="/storage/espacios/{{ $espacio->fotos->first()->photoname}}" alt=""></a>
           <h3 <strong>{{ '$ ' . $espacio->precioAutosMinuto . ' el minuto'}}</strong> </h3>
