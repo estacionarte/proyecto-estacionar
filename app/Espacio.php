@@ -162,14 +162,14 @@ class Espacio extends Model
   public function precioFinal($minutoComienzo, $minutoFin){
     $cantidadMinutosAlquiler = $minutoFin - $minutoComienzo;
     $precioSinDescuentos = $cantidadMinutosAlquiler * $this->precioAutosMinuto;
-    if ($cantidadMinutosAlquiler>1440) {
-      $precioFinal = (1 - $this->getDescuento(24)) * $precioSinDescuentos;
-    } elseif ($cantidadMinutosAlquiler>360) {
-      $precioFinal = (1 - $this->getDescuento(6)) * $precioSinDescuentos;
-    } elseif ($cantidadMinutosAlquiler>60) {
-      $precioFinal = (1 - $this->getDescuento(1)) * $precioSinDescuentos;
+    if ($cantidadMinutosAlquiler>=1440) {
+      $precioFinal = round((1 - $this->getDescuento(24)) * $precioSinDescuentos);
+    } elseif ($cantidadMinutosAlquiler>=360) {
+      $precioFinal = round((1 - $this->getDescuento(6)) * $precioSinDescuentos);
+    } elseif ($cantidadMinutosAlquiler>=60) {
+      $precioFinal = round((1 - $this->getDescuento(1)) * $precioSinDescuentos);
     } else {
-      $precioFinal = $precioSinDescuentos;
+      $precioFinal = round($precioSinDescuentos);
     }
     return $precioFinal;
   }
