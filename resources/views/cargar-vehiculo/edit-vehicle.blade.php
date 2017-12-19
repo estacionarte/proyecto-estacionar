@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title') Editar Vehiculo @endsection
-@section('signin')
+@section('content')
 
   @if (count($errors) > 0)
           @foreach ($errors->all() as $error)
