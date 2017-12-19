@@ -21,8 +21,12 @@
     <!-- ICONOS -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-    <link rel="stylesheet"
-     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{-- BOOSTRAP --}}
+    {{-- <link rel="stylesheet"
+     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+
+     {{-- jquery --}}
+     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
       <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -38,51 +42,44 @@
     {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
   </head>
   <body>
-    @auth
-    <nav>
-      <header class="main-header">
-        <a href="/"><img src="/images/logo4.jpg" alt="logotipo" class="logotipo"></a>
-        <a href="/"><img src="/images/logoloco.jpg" alt="logotipo" class="logoloco"></a>
-        <div class="clear"></div>
-      <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
+    <header class="main-header">
 
-      <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="/images/close-profile-nav2.png" alt=""></a>
-        <a href="{{ route('profile') }}" class="fa fa-btn fa-user"> Mi perfil</a>
-        <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a>
-        <a href="faqs" class="fa fa-info-circle"> Ayuda</a>
-        <a href="{{ route('logout') }}"
-            onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();" class="fa fa-btn fa-sign-out"> Salir</a>
-      </div>
+        <a href="/"><img src="/images/logo4.jpg" alt="logotipo" class="logo"></a>
 
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          {{ csrf_field() }}
-      </form>
+      @auth
 
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar" class="avatar"></span>
+        <nav class="main-nav">
 
-      <script>
-      function openNav() {
-          document.getElementById("mySidenav").style.width = "250px";}
+          {{-- NOMBRE DE USUARIO --}}
+          <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
 
-      function closeNav() {
-          document.getElementById("mySidenav").style.width = "0";}
-      </script>
-      </header>
-    </nav>
-    @endauth
+          {{-- FOTO DE PERFIL DE USUARIO --}}
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar"></span>
+
+          <div class="clear"></div>
+
+          {{-- MENÚ LATERAL --}}
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="/images/close-profile-nav2.png" alt=""></a>
+            <a href="{{ route('profile') }}" class="fa fa-btn fa-user"> Mi perfil</a>
+            <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a>
+            <a href="faqs" class="fa fa-info-circle"> Ayuda</a>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="fa fa-btn fa-sign-out"> Salir</a>
+          </div>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+          </form>
+      @endauth
 
       @guest
-      <header class="main-header">
-        <div class="header-container">
-          <a href="/"><img src="/images/logo4.jpg" alt="logotipo" class="logo"></a>
-        <a href="#" class="toggle-nav">
-  				<span class="ion-navicon-round"></span>
-  			</a>
-        <div class="clear"></div>
-        <nav class="main-nav">
-          <ul>
+
+        <a href="#menu" id="toggle"><span></span></a>
+
+        <div class="clear">
+
+        </div>
+          <ul class="nav-bar">
             <li><a href="signin" class="iniciar-btn">Iniciar Sesión</a></li>
             <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li>
             <li><a href="signup" class="register-btn">Registrarse</a></li>
@@ -90,6 +87,7 @@
             <li class="ayuda-li"><a href="faqs" class="faq-btn">Ayuda</a></li>
           </ul>
         </nav>
+
         <div class="modal-wrapper" id="popup-iniciar">
           <div class="popup-contenedor">
             <a class="popup-cerrar" href="#">X</a>
@@ -134,23 +132,10 @@
         </div>
         @endguest
 
-        <div class="main-search">
-          <form class="main-form-search" action="" method="get">
-            <input type="text" name="buscar-texto" placeholder="Buscar cocheras">
-            <input type="submit" name="buscar-submit" value="">
-          </form>
-        </div>
-      </div>
-    </header>
+      </header>
 
-
-    @yield('body')
-    @yield('signin')
-    @yield('signup')
     @yield('content')
-    <div class="clear">
-
-    </div>
+    <div class="clear"></div>
 
     <footer class="main-footer">
       <div class="main-footer-div-left">
@@ -183,13 +168,28 @@
     </section>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  {{-- HAMURGUESA --}}
   <script>
-  		$('.toggle-nav').click(function (){
-  			$('.main-nav').slideToggle(100);
-        $('.toggle-nav').toggleClass('rotate');
-  		});
+
+    $('#toggle').click(function (){
+      $(this).toggleClass("on");
+      $('.nav-bar').slideToggle(100);
+    });
+
   </script>
 
+  {{-- ABRIR POPUP --}}
+  <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";}
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";}
+  </script>
+
+
+  {{-- VALIDAR LOGIN --}}
   <script type="text/javascript">
 
     window.onload = function () {
@@ -218,6 +218,24 @@
       }
     }
   </script>
+
+
+  {{-- STICKY FIXED --}}
+  {{-- <script type="text/javascript">
+
+  window.onscroll = function() {myFunction()};
+
+  var header = document.getElementById("sticky-form");
+  var sticky = header.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+  </script> --}}
 
   </body>
 </html>

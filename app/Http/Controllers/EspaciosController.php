@@ -41,35 +41,35 @@ class EspaciosController extends Controller
 
           return $diasYHorarios > 0;
       });
-
+      //
       // dd($espacios);
 
 
-      /*
-      $espacios = Espacio::with('fotos')
-        // Join con tabla que tiene los dias y horarios de cada espacio
-        ->join('espacios_diasyhorarios','espacios.id','=','espacios_diasyhorarios.idEspacio')
-        ->select('*')
-        ->where([
-          // Filtro por direccion ingresada
-          ['direccion', 'like', '%'.$request->input('search-espacios-input-direccion').'%'],
-          // Filtro por vehiculo elegido y me aseguro de que el espacio acepte este tipo de vehiculos
-          ['cant'.$request->input('search-espacios-vehiculo').'s','>',0],
-          // // Filtro por día
-          ['dia','=',$diallegada],
-          // // Filtro por horario de entrada y salida
-          ['horaComienzo','<=',$horariollegada],
-          ['horaFin','>=',$horariopartida],
-          // // Me aseguro de que la estadía sea mayor a la mínima permitida y menor a la máxima
-          ['estadiaMinimaMinutos','<=',$tiempoestadia],
-          ['estadiaMaximaMinutos','>=',$tiempoestadia],
-          // Saco los espacios eliminados
-          ['espacios.deleted_at', null]
-        ])
-        ->orderBy('espacios.created_at','desc')
-        ->paginate(3);
 
-      */
+      // $espacios = Espacio::with('fotos')
+      //   // Join con tabla que tiene los dias y horarios de cada espacio
+      //   ->join('espacios_diasyhorarios','espacios.id','=','espacios_diasyhorarios.idEspacio')
+      //   ->select('*')
+      //   ->where([
+      //     // Filtro por direccion ingresada
+      //     ['direccion', 'like', '%'.$request->input('search-espacios-input-direccion').'%'],
+      //     // Filtro por vehiculo elegido y me aseguro de que el espacio acepte este tipo de vehiculos
+      //     ['cant'.$request->input('search-espacios-vehiculo').'s','>',0],
+      //     // // Filtro por día
+      //     ['dia','=',$diallegada],
+      //     // // Filtro por horario de entrada y salida
+      //     ['horaComienzo','<=',$horariollegada],
+      //     ['horaFin','>=',$horariopartida],
+      //     // // Me aseguro de que la estadía sea mayor a la mínima permitida y menor a la máxima
+      //     ['estadiaMinimaMinutos','<=',$tiempoestadia],
+      //     ['estadiaMaximaMinutos','>=',$tiempoestadia],
+      //     // Saco los espacios eliminados
+      //     ['espacios.deleted_at', null]
+      //   ])
+      //   ->orderBy('espacios.created_at','desc')
+      //   ->paginate(3);
+
+
 
       return view('search-results', compact('espacios','horariollegada', 'horariopartida'));
     }
