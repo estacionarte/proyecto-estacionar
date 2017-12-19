@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title') Cargar Vehiculo @endsection
-@section('signin')
+@section('content')
 
   <div class="container">
     <div class="bodies-main-content">

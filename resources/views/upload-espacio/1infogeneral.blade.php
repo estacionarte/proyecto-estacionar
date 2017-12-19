@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title') Cargar Espacio @endsection
 @section('scripts') @endsection
-@section('signin')
+@section('content')
 
   <div class="container">
 

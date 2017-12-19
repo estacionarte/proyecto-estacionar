@@ -2631,3 +2631,13 @@ span .avatar{
   top: 20%;
   width: 30%;
 } */
+
+  /******************* CAROUSEL ****************/
+.glyphicon-chevron-left, .glyphicon-chevron-right{
+  color: orange;
+}
+
+.carousel-indicators li{
+  background-color: orange;
+  border: solid 1px orange  ;
+}
