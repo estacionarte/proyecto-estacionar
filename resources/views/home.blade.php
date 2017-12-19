@@ -129,7 +129,7 @@
         </article>
     </div>
 
-    {{-- <div class="container container-title-carousel">
+    <div class="container container-title-carousel">
       <h2>Últimos usuarios registrados</h2>
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -216,7 +216,8 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div> --}}
+</div>
+
 </section>
 
 <script type="text/javascript">

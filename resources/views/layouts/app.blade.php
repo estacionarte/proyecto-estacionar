@@ -21,12 +21,15 @@
     <!-- ICONOS -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-    {{-- BOOSTRAP --}}
-    {{-- <link rel="stylesheet"
-     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+    {{-- BOOSTRAP ICONS--}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
      {{-- jquery --}}
      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+     {{-- CAROUSEL DE BOOSTRAP--}}
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
       <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -141,8 +144,8 @@
       <div class="main-footer-div-left">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="underconstruction">¿Quiénes somos?</a></li>
-          <li><a href="underconstruction">Contacto</a></li>
+          <li><a href="mantenimiento">¿Quiénes somos?</a></li>
+          <li><a href="mantenimiento">Contacto</a></li>
         </ul>
       </div>
       <div class="main-footer-div-right">
@@ -150,8 +153,8 @@
         <ul>
           <li><a href="#comofunciona">¿Cómo funciona?</a></li>
           <li><a href="/faqs">FAQs</a></li>
-          <li><a href="underconstruction">Términos y condiciones</a></li>
-          <li><a href="underconstruction" class="last">Políticas de privacidad</a></li>
+          <li><a href="mantenimiento">Términos y condiciones</a></li>
+          <li><a href="mantenimiento" class="last">Políticas de privacidad</a></li>
         </ul>
       </div>
     </footer>
