@@ -2517,10 +2517,7 @@ span .avatar{
   margin-top: 8px;
 }
 
-/***************** E S T A D I A S ******************/
-.estadia-linea{
-  width: 50%;
-}
+/***************** E S P A C I O ******************/
 
 .espacio-main-content{
   font-family: 'Patua One', cursive;
@@ -2532,16 +2529,20 @@ span .avatar{
   overflow: hidden;
 }
 
-.espacio-main-content h1{
-  /* color:  */
-  /* padding: 25px 25px 0; */
-}
+
 .espacio-container img{
   width: 100%;
   /* height: 400px; */
   /* background-image: url(../images/parking_mobile.jpg);
   background-size: 100%; */
   /*background-repeat: no-repeat;*/
+}
+
+.show-espacio{
+  display: block;
+  float: left;
+  width: 50%;
+  /* border: solid 1px red; */
 }
 
 .show-espacio h2{
@@ -2553,84 +2554,41 @@ span .avatar{
   text-transform: uppercase;
 }
 
-.form-estadia{
-  position: absolute;
+.espacio-main-content .form-generico{
+  font-family: 'Roboto Condensed', sans-serif;
+  border: solid 2px rgb(204, 212, 201);
+  width: 45%;
+  float: right;
+  margin: 80px 40px 0 1px;
+  padding-bottom: 0;
+}
+
+.espacio-main-content .form-generico .search-espacios-form{
+  width: 90%;
+  margin: 40px auto;
   /* border: solid 1px red; */
-  width: 35%;
-  top: 65px;
-  left: 60%;
-  background-color: rgba(73, 169, 193, 0.47);
 }
 
-.form-estadia input, .form-estadia label, .form-estadia select, .form-estadia textarea{
-  width: 100%;
-  margin-top: 5px;
-  padding: 10px 20px;
-  font-size: 1em;
-  border: solid 1px #9c9c9c;
-  border-radius: 2px;
-  background-color: #fff;
-  vertical-align: middle;
+.espacio-main-content .form-generico .search-espacios-form div{
+  border: solid 1px rgb(204, 212, 201);
 }
 
-
-.form-estadia .search-espacios-form{
-  width: 100%;
-}
-.form-estadia .search-espacios-form type{
-  width: 100%;
+.espacio-main-content .form-generico .search-espacios-form input[type=submit]{
+  margin-bottom: 0;
+  height: 40px;
 }
 
-.form-estadia .search-espacios-form input[name=search-espacios-input-direccion]{
-  /* border: solid 1px green; */
-  width: 63%;
+.espacio-main-content #reservar-cochera{
+  width: 45%;
+  height: 50px;
+  margin: 10px 0 0 15px;
 }
-
-
-.form-estadia .search-espacios-form input[type=submit]{
-  color: #fff;
-}
-
-.form-estadia .search-espacios-form input[name=BUSCAR]{
-  background-color: #48a8c1;
-  border-radius: 5px;
-}
-
-.show-espacio p{
-  width: 50%;
-}
-.search-result .mejores-espacios-container{
-  background-color: #fff;
-}
-
-.form-estadia .search-espacios-hora select{
-  margin:auto;
-}
-.form-estadia .search-horario h5{
-  color: #fff;
-  margin-left: 40px;
-}
-
-.form-estadia .search-espacios-form input[name=search-espacios-input-direccion]{
-  margin-top: 5px;
-}
-
-.form-estadia .search-espacios-form .search-horario select[name=search-espacios-hora-comienzo], .search-horario select[name=search-espacios-miinuto-comienzo]{
-  width: 50%;
-  margin-left: 2px;
-}
-
-.form-estadia .search-espacios-form .search-horario select[name=search-espacios-hora-fin], .search-horario select[name=search-espacios-miinuto-fin]{
-  width: 48%;
-  /* margin-left: 2px; */
-}
-
-
 /* .sticky {
   position: fixed;
-  top: 20%;
-  width: 30%;
+  top: 0;
+  left: 45%;
 } */
+
 
   /******************* CAROUSEL ****************/
 .glyphicon-chevron-left, .glyphicon-chevron-right{
