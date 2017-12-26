@@ -33,7 +33,7 @@
 
           <article class="profile-credit">
             <h2>¡Invitá a tus amigos y obtené créditos para estacionar!</h2>
-            <p>Conseguí hasta %50 de descuento en tu próximo alquiler.</p>
+            <p>Conseguí hasta 50% de descuento en tu próximo alquiler.</p>
             <a href="credits.php">CONSEGUIR CRÉDITO</a>
           </article><br>
 

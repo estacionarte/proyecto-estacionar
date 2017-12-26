@@ -8,11 +8,7 @@
 
     <div class="espacio-main-content">
 
-      {{-- <h1>Estadías</h1> --}}
-
       <section class="show-espacio" style="padding-left:15px; padding-bottom:40px;">
-
-        {{-- {{ dd($espacio->fotoPortada()) }} --}}
 
         <h2>{{ $espacio->direccion }}</h2>
         <h4> {{ $espacio->pais }} , {{ $espacio->provincia }} </h4>
@@ -27,8 +23,12 @@
         <hr class="estadia-linea">
 
         <ul>
-          <li style="list-style-type: circle; list-style-position: inside;">{{ $espacio->aptoDiscapacitados }}</li>
-          <li>{{ $espacio->aptoElectricos }}</li>
+          @if ($espacio->aptoDiscapacitados)
+            <li style="list-style-type: circle; list-style-position: inside;">{{ $espacio->aptoDiscapacitados }}</li>
+          @endif
+          @if ($espacio->aptoElectricos)
+            <li style="list-style-type: circle; list-style-position: inside;">{{ $espacio->aptoElectricos }}</li>
+          @endif
         </ul>
 
         <hr class="estadia-linea">
@@ -52,7 +52,7 @@
       <div class="form-generico" id="espacio-form">
 
         <h3 style="margin-left:2px">{{ $espacio->tipoEspacio }}</h3>
-        <h4 style="margin-top:0px; font-size:1.1em;">Estadía con Auto $ {{ $espacio->precioAutosMinuto }}  por minuto</h4>
+        <h4 style="margin-top:0px; font-size:1.1em;">Estadía con Auto ${{ $espacio->precioAutosMinuto }} por minuto</h4>
 
         <form class="search-espacios-form" action="{{ route('show.search')}}" method="get">
           <div class="" id="dir_y_vehiculo">
@@ -113,9 +113,9 @@
       </div>
 
 
-      <form method="POST" action="" style="display:inline;" onsubmit="confirm('ESTA POR RESERVAR ESTA COCHERA')">
+      <form method="POST" action="" style="display:inline;" onsubmit="confirm('ESTÁS POR RESERVAR ESTE ESPACIO')">
         {{ csrf_field() }}
-        <button id="reservar-cochera" type="submit" class="btn btn-success">RESERVAR ESTA COCHERA</button>
+        <button id="reservar-cochera" type="submit" class="btn btn-success">RESERVAR ESTE ESPACIO</button>
       </form>
 
       <div class="clear"></div>
@@ -142,29 +142,10 @@
 
     var marker = L.marker([-34.6211, -58.38151]).addTo(mymap);
 
-
-    marker.bindPopup("<h5>$ 80.00 ARS x hora</h5>").openPopup();
-
-
     var popup = L.popup()
       .setLatLng([-34.6111, -58.38151])
       .setContent("Soy Digital House!")
       .openOn(mymap);
-
-    function onMapClick(event) {
-      alert("Clickeaste el mapa en " + event.latlng);
-    }
-    mymap.on('click', onMapClick);
-    mymap.off('click', onMapClick);
-
-    var popup2 = L.popup()
-    function onMapClick2(e) {
-      popup2
-        .setLatLng(e.latlng)
-        .setContent("Clickeaste el mapa en " + e.latlng.toString())
-        .openOn(mymap)
-    }
-    // mymap.on('click', onMapClick2)
 
   </script>
 
