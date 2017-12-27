@@ -40,12 +40,6 @@ class UploadVehicleController extends Controller
 
           $vehiculo = new Vehiculo($request->all());
 
-          // $vehiculo->tipoVehiculo = $request->input('tipoVehiculo');
-          // $vehiculo->marca        = $request->input('marca');
-          // $vehiculo->modelo       = $request->input('modelo');
-          // $vehiculo->color        = $request->input('color');
-          // $vehiculo->patente      = $request->input('patente');
-
           $vehiculo->idUser = Auth::user()->id;
           $vehiculo->save();
 

@@ -29,7 +29,7 @@
             {{ csrf_field() }}
 
             @include('upload-espacio._form-infogeneral')
-            <input type="text" name="location" id="location" hidden="hidden">
+
             <input type="submit" name="boton-submit" value="SIGUIENTE">
           </form>
 
