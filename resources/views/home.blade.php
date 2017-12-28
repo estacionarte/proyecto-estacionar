@@ -3,7 +3,7 @@
 @section('content')
 <section class="banner-container">
   <article class="shape">
-    <h2>Encontrá y reservá tu estacionamiento privado</h2>
+    <h2>Encontrá y reservá lugar para tu vehículo</h2>
     <h3>Más de 10.000 usuarios ya confían en nosotros</h3>
 
     <div class="form-generico">
@@ -90,11 +90,11 @@
   <div class="clear"></div>
 
     <div class="mejores-espacios-container">
-      <h2>Nuestros espacios con mayor reputación</h2>
+      <h2>Nuestros espacios con mejor reputación</h2>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 220.00 ARS</strong> x día</h3>
-          <h4>Cochera a metros del hipodromo</h4>
+          <h4>Cochera a metros del hipódromo</h4>
           <img class="stars" src="/images/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
@@ -112,7 +112,7 @@
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/espacio-1.jpg"></a>
           <h3><strong>$ 20.00 ARS</strong> x hora</h3>
-          <h4>Cochera cubierta Recoleta</h4>
+          <h4>Cochera en edificio residencial</h4>
           <img class="stars" src="/images/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
@@ -124,7 +124,7 @@
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 20.00 ARS</strong> x hora</h3>
-          <h4>Cochera cubierta Recoleta</h4>
+          <h4>Cochera cubierta en Palermo</h4>
           <img class="stars" src="/images/stars.png">
         </article>
     </div>

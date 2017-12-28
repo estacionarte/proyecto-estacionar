@@ -21,7 +21,7 @@ class CreateEspaciosDescuentosTable extends Migration
             $table->integer('idEspacio')->unsigned();
             $table->foreign('idEspacio')->references('id')->on('espacios');
 
-            $table->string('tipo', 45);
+            $table->string('tipoVehiculo', 45);
             $table->integer('hora');
             $table->decimal('descuento', 3, 2);
         });

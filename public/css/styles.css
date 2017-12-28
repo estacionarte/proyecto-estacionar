@@ -619,6 +619,7 @@ span .avatar{
   vertical-align: middle;
   border-radius: 50%;
   border: solid 2px #d5dbdc;
+  object-fit: cover;
 }
 
 @media (min-width: 400px){
@@ -752,7 +753,7 @@ span .avatar{
   display: block;
 }
 
-/************ PROFILE -- MI PERFIL****************/
+/************ PROFILE -- MI PERFIL ****************/
 .profile-image{
   display: none;
 }

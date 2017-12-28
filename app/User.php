@@ -4,9 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
 
 class User extends Authenticatable
 {
@@ -42,11 +40,6 @@ class User extends Authenticatable
     public function vehiculos()
       {
           return $this->hasMany(Vehiculo::class, 'idUser');
-      }
-
-    public function socialProvider()
-      {
-        return $this->hasMany(SocialProvider::class, 'user_id');
       }
 
 }

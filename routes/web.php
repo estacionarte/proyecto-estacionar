@@ -98,8 +98,3 @@ Route::get('/mantenimiento', function () {
 Route::get('resultados', 'EspaciosController@search')->name('show.search');
 
 Route::get('espacio/{id}', 'EspaciosController@showEspacio')->name('show.espacio');
-
-
-Route::get('/prueba', function(){
-  dd( \App\Espacio::with('fotos')->where('id', '9')->get() );
-});

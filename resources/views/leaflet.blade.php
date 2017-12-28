@@ -27,17 +27,29 @@
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+    {{-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/> --}}
+    {{-- <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script> --}}
+    <link rel="stylesheet" href="{{ URL::asset('css/leaflet.css')}}">
+    <script src="{{ URL::asset('js/leaflet.js')}}"></script>
+
+    <link  href="https://unpkg.com/leaflet-geosearch@latest/assets/css/leaflet.css" rel="stylesheet" />
+    <script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
+
     <title>Mapa Leaflet</title>
+
     <style media="all">
       #mapid {height: 300px;}
     </style>
-  </head>
-  <body>
-    <div class="" id='mapid'>
 
-    </div>
+  </head>
+
+
+  <body>
+
+    <div class="" id='mapid'></div>
+    <form class="" action="" method="post">
+      <label for="">Buscar dirección</label> <input type="text" name="" value="">
+    </form>
 
     <script type="text/javascript">
       var mymap = L.map('mapid').setView([-34.64, -58.38], 14);
@@ -82,15 +94,26 @@
       mymap.on('click', onMapClick);
       mymap.off('click', onMapClick);
 
-      var popup2 = L.popup()
+      var popup2 = L.popup();
       function onMapClick2(e) {
         popup2
           .setLatLng(e.latlng)
           .setContent("Clickeaste el mapa en " + e.latlng.toString())
           .openOn(mymap)
       }
-      mymap.on('click', onMapClick2)
+      mymap.on('click', onMapClick2);
 
+      // Buscar
+
+      const form = document.querySelector('form');
+      const input = form.querySelector('input[type="text"]');
+
+      form.addEventListener('change', async (event) => {
+        event.preventDefault();
+
+        const results = await provider.search({ query: input.value });
+        console.log(results); // » [{}, {}, {}, ...]
+      });
     </script>
   </body>
 </html>
