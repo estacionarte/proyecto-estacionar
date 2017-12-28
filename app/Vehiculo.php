@@ -7,23 +7,22 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Vehiculo extends Model
 {
-    use SoftDeletes;
+  use SoftDeletes;
 
-    protected $table = 'vehiculos';
+  protected $table = 'vehiculos';
 
-    protected $fillable = [
-      'tipoVehiculo',
-      'marca',
-      'modelo',
-      'color',
-      'patente',
-      'deleted_at',
-      'IdUser'
-    ];
+  protected $fillable = [
+    'tipoVehiculo',
+    'marca',
+    'modelo',
+    'color',
+    'patente',
+    'deleted_at',
+    'Iduser'
+  ];
 
-    public function usuario()
-    {
-        return $this->belongsTo(User::class, 'idUser');
-    }
-
+  public function usuario()
+  {
+      return $this->belongsTo(User::class, 'idUser');
   }
+}

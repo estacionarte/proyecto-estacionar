@@ -19,10 +19,10 @@ class CreateUsersTable extends Migration
             $table->softDeletes();
 
             $table->string('firstName');
-            $table->string('lastName');
+            $table->string('lastName')->nullable();
             $table->string('birthDate',10);
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->string('phoneNumber',25)->nullable();
             $table->integer('zipcode')->nullable();
