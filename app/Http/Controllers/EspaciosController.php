@@ -25,7 +25,7 @@ class EspaciosController extends Controller
 
       $espacios = Espacio::with("fotos")
         // Filtro por direccion ingresada
-        ->where('direccion', 'like', '%'.$request->input('search-espacios-input-direccion').'%')
+        // ->where('direccion', 'like', '%'.$request->input('search-espacios-input-direccion').'%')
         // Filtro por vehiculo elegido y me aseguro de que el espacio acepte este tipo de vehiculos
         ->where('cant'.$request->input('search-espacios-vehiculo').'s','>',0)
         // Me aseguro de que la estadía sea mayor a la mínima permitida y menor a la máxima
@@ -48,8 +48,10 @@ class EspaciosController extends Controller
           return $diasYHorarios > 0;
       });
 
+      $direccion = $request->input('search-espacios-input-direccion');
 
-      return view('search-results', compact('espacios','horariollegada', 'horariopartida'));
+
+      return view('search-results', compact('espacios','horariollegada', 'horariopartida', 'direccion'));
     }
 
     public function showEspacio($id){

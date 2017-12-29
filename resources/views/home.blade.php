@@ -9,7 +9,7 @@
     <div class="form-generico">
       <form class="search-espacios-form" action="{{ route('show.search')}}" method="get">
         <div class="" id="dir_y_vehiculo">
-          <input type="search" name="search-espacios-input-direccion" placeholder="¿Dónde querés estacionar?">
+          <input type="search" name="search-espacios-input-direccion" placeholder="Ejemplo: Balcarce 50 CABA">
           <select name="search-espacios-vehiculo">
             <option value="Auto" selected>Auto</option>
             <option value="Moto">Moto</option>

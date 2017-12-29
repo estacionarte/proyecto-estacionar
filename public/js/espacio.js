@@ -22,7 +22,7 @@ function mapaYCirculo(mapa,lat,lng){
 }
 
 // Cargar mapa con círculo en posición del espacio
-var mymap = L.map('mapid');
+var mymap = L.map('mapid').setView([3,4],15);
 var circle;
 mapaYCirculo(mymap,lat,lng);
 
