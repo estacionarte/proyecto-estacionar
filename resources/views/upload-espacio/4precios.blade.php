@@ -12,7 +12,7 @@
         <div class="uploadEspacio-progressBar-progress4"></div>
       </div>
 
-      <h1>Cargar Espacio - Precio</h1>
+      <h1>Cargar Espacio - Precio (Paso 4 de 4)</h1>
 
       <section class="uploadEspacio">
 

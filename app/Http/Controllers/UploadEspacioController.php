@@ -34,6 +34,8 @@ class UploadEspacioController extends Controller
 
     // Registrar espacio
     $espacio = new Espacio($request->except('espacioPic'));
+    $espacio->lat = $request->input('lat');
+    $espacio->lng = $request->input('lng');
     $espacio->idUser = Auth::user()->id;
     $espacio->save();
 
@@ -62,6 +64,8 @@ class UploadEspacioController extends Controller
     // Editar espacio
     $espacio = Espacio::findOrFail($id);
     $espacio->fill($request->except('espacioPic'));
+    $espacio->lat = $request->input('lat');
+    $espacio->lng = $request->input('lng');
     $espacio->save();
 
     $fotosespacio = DB::table('espacios_fotos')

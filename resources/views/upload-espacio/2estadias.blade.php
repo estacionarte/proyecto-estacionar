@@ -12,7 +12,7 @@
         <div class="uploadEspacio-progressBar-progress2"></div>
       </div>
 
-      <h1>Cargar Espacio - Estadías</h1>
+      <h1>Cargar Espacio - Estadías (Paso 2 de 4)</h1>
 
       <section class="uploadEspacio">
 

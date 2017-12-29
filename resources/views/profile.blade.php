@@ -141,7 +141,7 @@
             <div class="carga-main">
               <article class="carga-vehiculo-container">
                 @if (\Auth::user()->espacios()->where('id',$espacio->id)->first()->fotos->count() != 0)
-                  <a href="{{ route('editar.upload.espacio.1', $espacio->id) }}"><img class="upload-vehicle" src="storage/espacios/{{\Auth::user()->espacios()->where('id',$espacio->id)->first()->fotoPortada()}}"></a><br>
+                  <a href="{{ route('show.espacio', $espacio->id) }}"><img class="upload-vehicle" src="storage/espacios/{{\Auth::user()->espacios()->where('id',$espacio->id)->first()->fotoPortada()}}"></a><br>
                   </article>
                   <div class="clear"></div>
                   <div style='pie-de-espacio'>

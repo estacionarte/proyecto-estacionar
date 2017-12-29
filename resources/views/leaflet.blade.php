@@ -27,13 +27,9 @@
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-    {{-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/> --}}
-    {{-- <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script> --}}
+
     <link rel="stylesheet" href="{{ URL::asset('css/leaflet.css')}}">
     <script src="{{ URL::asset('js/leaflet.js')}}"></script>
-
-    <link  href="https://unpkg.com/leaflet-geosearch@latest/assets/css/leaflet.css" rel="stylesheet" />
-    <script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
 
     <title>Mapa Leaflet</title>
 
@@ -47,9 +43,8 @@
   <body>
 
     <div class="" id='mapid'></div>
-    <form class="" action="" method="post">
-      <label for="">Buscar dirección</label> <input type="text" name="" value="">
-    </form>
+    <label for="">Buscar dirección</label> <input type="text" name="" value="">
+    <input type="button" value="Geocode">
 
     <script type="text/javascript">
       var mymap = L.map('mapid').setView([-34.64, -58.38], 14);
@@ -103,17 +98,49 @@
       }
       mymap.on('click', onMapClick2);
 
+      // Activar geocoder de Google Maps
+      function initMap(){
+        var geocoder = new google.maps.Geocoder();
+
+        // Dar función a botón
+        const geocode = document.querySelector('input[type="button"]');
+        geocode.addEventListener('click', function(){
+          geocodeAddress(geocoder);
+        });
+      }
+
       // Buscar
 
-      const form = document.querySelector('form');
-      const input = form.querySelector('input[type="text"]');
+      function geocodeAddress(geocoder) {
+        var address = document.querySelector('input[type="text"]').value;
+        // Busco por address y filtro por región Argentina para que priorice resultados dentro del país
+        geocoder.geocode({
+          'address': address,
+          'region': 'AR',
+        //   componentRestrictions: {
+        //   administrativeArea: 'CABA'
+        //   administrativeArea: 'Buenos Aires'
+        // }
+        }, function(results, status) {
+          if (status === google.maps.GeocoderStatus.OK) {
+            console.log(results[0]);
+            console.log(results[0].address_components[5].long_name);
+            console.log(results[0].formatted_address);
+            // Latitud
+            console.log('Latitud: ' + results[0].geometry.location.lat());
+            // Longitud
+            console.log('Longitud: ' + results[0].geometry.location.lng());
+            mymap.setView([results[0].geometry.location.lat(), results[0].geometry.location.lng()], 14);
+          } else {
+            alert('Ocurrió el siguiente error: ' + status);
+          }
+        });
+      }
 
-      form.addEventListener('change', async (event) => {
-        event.preventDefault();
+    </script>
 
-        const results = await provider.search({ query: input.value });
-        console.log(results); // » [{}, {}, {}, ...]
-      });
+    {{-- Llamo la API de Google con mi clave --}}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkuJOGY0hwpTRHHsCoxPLc_1Bcv_sUIHk&v=3&callback=initMap">
     </script>
   </body>
 </html>

@@ -981,6 +981,11 @@ span .avatar{
   font-size: 1.3em;
 }
 
+.upload-div-div-map1 {
+  height: 250px;
+  margin-top: 5px;
+}
+
 .uploadEspacio .form-generico .upload-div-tipovehiculo{
   overflow: hidden;
   margin-top: 5px;
@@ -1826,19 +1831,34 @@ span .avatar{
   margin-right: auto;
 }
 
+.uploadEspacio .form-generico .form-uploadEspacio .upload-div-paisprovincia{
+
+}
+
+.form-uploadEspacio .upload-div-paisprovincia .upload-select-pais, .form-uploadEspacio .upload-div-paisprovincia .upload-select-provincia {
+  display: inline-block;
+  width: 49.7%;
+}
+
 .uploadEspacio .form-generico .form-uploadEspacio .upload-input-direccion{
-  width: 84%;
-  float: left;
+  width: 75%;
 }
 
 .uploadEspacio .form-generico .form-uploadEspacio .upload-input-numdpto{
-  width: 15.5%;
-  float: right;
+  width: 24.5%;
 }
 
-.form-uploadEspacio .upload-select-pais, .form-uploadEspacio .upload-select-provincia, .form-uploadEspacio .upload-select-ciudad, .form-uploadEspacio .upload-input-cp {
-  display: inline-block;
+.form-uploadEspacio .upload-div-ciudadzipcode .upload-input-ciudad{
+  width: 75%;
+}
+
+.form-uploadEspacio .upload-div-ciudadzipcode .upload-input-cp{
   width: 24.5%;
+}
+
+.upload-div-div-map1 {
+  height: 250px;
+  margin-top: 5px;
 }
 
 .uploadEspacio .form-generico .upload-div-tipovehiculo{
@@ -2441,7 +2461,7 @@ span .avatar{
   background-repeat: no-repeat;
   float: right;
   display: inline-block;
-  min-width: 260px;
+  min-width: 210px;
   height: 100vh;
   max-width: 360px;
   margin-top: 25px;

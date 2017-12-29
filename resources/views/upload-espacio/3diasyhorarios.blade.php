@@ -12,7 +12,7 @@
         <div class="uploadEspacio-progressBar-progress3"></div>
       </div>
 
-      <h1>Cargar Espacio - Días y Horarios</h1>
+      <h1>Cargar Espacio - Días y Horarios (Paso 3 de 4)</h1>
 
       <section class="uploadEspacio">
 

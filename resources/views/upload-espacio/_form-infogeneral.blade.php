@@ -1,22 +1,41 @@
 <label for="" class="upload-label-titulo">¿Donde está ubicado tu espacio?</label>
-<input type="text" placeholder="Domicilio. Ej: Av. Eduardo Madero 399" name="direccion" class="upload-input-direccion" style="" value="{{ old('direccion', $espacio->direccion) }}" id="pac-input">
-<input type="text" placeholder="Nº Dpto. (Opcional)" name="dpto" class="upload-input-numdpto" value="{{ old('dpto', $espacio->dpto) }}">
 
-<select name="pais" class="upload-select-pais" style="">
-  <option value="">País</option>
-  {{-- <option value="Argentina" {{ old('pais', $espacio->pais) == 'Argentina' ? 'selected':'' }}>Argentina</option> --}}
-</select>
+<div class="upload-div-fulladdress">
 
-<select name="provincia" class="upload-select-provincia" style="">
-  <option value="">Provincia</option>
-  {{-- <option value="Buenos Aires" {{ old('provincia', $espacio->provincia) == 'Buenos Aires' ? 'selected':'' }}>Buenos Aires</option> --}}
-  {{-- <option value="CABA" {{ old('provincia', $espacio->provincia) == 'CABA' ? 'selected':'' }}>Ciudad Autónoma de Buenos Aires</option> --}}
-</select>
-<select name="ciudad" class="upload-select-ciudad" style="">
-  <option value="">Ciudad</option>
-  <option value="CABA" {{ old('ciudad', $espacio->ciudad) == 'CABA' ? 'selected':'' }}>C.A.B.A.</option>
-</select>
-<input type="text" placeholder="Código Postal" name="zipcode" class="upload-input-cp" style="" value="{{ old('zipcode', $espacio->zipcode) }}">
+  <div class="upload-div-paisprovincia">
+    <select name="pais" class="upload-select-pais" style="">
+      <option value="">País</option>
+      <option value="Argentina" {{ old('pais', $espacio->pais) == 'Argentina' ? 'selected':'' }}>Argentina</option>
+    </select>
+
+    <select name="provincia" class="upload-select-provincia" style="">
+      <option value="">Provincia</option>
+      <option value="Buenos Aires" {{ old('provincia', $espacio->provincia) == 'Buenos Aires' ? 'selected':'' }}>Buenos Aires</option>
+      <option value="CABA" {{ old('provincia', $espacio->provincia) == 'CABA' ? 'selected':'' }}>Ciudad Autónoma de Buenos Aires</option>
+    </select>
+  </div>
+
+  <div class="upload-div-domicilio">
+    <input type="text" placeholder="Domicilio. Ej: Av. Eduardo Madero 399" name="direccion" class="upload-input-direccion" style="" value="{{ old('direccion', $espacio->direccion) }}" readonly>
+    <input type="hidden" name="lat" value="{{ old('lat', $espacio->lat) }}">
+    <input type="hidden" name="lng" value="{{ old('lng', $espacio->lng) }}">
+    <input type="text" placeholder="Nº Dpto. (Opcional)" name="dpto" class="upload-input-numdpto" value="{{ old('dpto', $espacio->dpto) }}" readonly>
+  </div>
+
+  <div class="upload-div-ciudadzipcode">
+    <input type="text" placeholder="Ciudad" name="ciudad" class="upload-input-ciudad" style="" value="{{ old('ciudad', $espacio->ciudad) }}" readonly>
+
+    <input type="text" placeholder="Código Postal" name="zipcode" class="upload-input-cp" style="" value="{{ old('zipcode', $espacio->zipcode) }}" readonly>
+  </div>
+
+</div>
+
+<div class="upload-div-map">
+  <p id="mapwarning" style="display: none; margin: 5px 0px 0px; color: gray; font-size: 0.8em;">Esto es lo que verán los usuarios cuando encuentren tu espacio. La dirección exacta sólo se muestra a quienes concreten una reserva.</p>
+  <div class="upload-div-div-map1" id="mapid">
+</div>
+
+</div>
 
 <label for="" class="upload-label-titulo">¿Qué tipo de espacio es?</label>
 <select name="tipoEspacio" style="">
