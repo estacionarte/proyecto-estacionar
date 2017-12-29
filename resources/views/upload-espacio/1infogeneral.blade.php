@@ -49,6 +49,4 @@
 
 @section('scripts')
   <script src="{{ URL::asset('js/upload-espacio/1infogeneral.js')}}"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkuJOGY0hwpTRHHsCoxPLc_1Bcv_sUIHk&v=3&callback=initMap">
-  </script>
 @endsection

@@ -13,7 +13,7 @@ Route::get('/signin', 'Auth\LoginController@showLoginForm');
 
 
 // ***************************** P E R F I L *******************
-Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile');
+Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile')->middleware('auth');
 
 Route::get('/perfil/editar-imagen', 'ProfileController@showUpdateProfileImage')->name('show.update.profile.image');
 

@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('title') Resultados de búsqueda @endsection
 @section('content')
-  
+
 <div class="container">
 
   <div class="como-funciona">
 
     <section class="search-result">
         <h1>Resultados de búsqueda</h1>
-      <div id="map">
+      <div id="mapid" class="searchresults-map">
 
       </div>
       <div class="mejores-espacios-container">

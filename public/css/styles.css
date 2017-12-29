@@ -1431,7 +1431,7 @@ span .avatar{
 
 /***************** MAP y search results ********************/
 
-#map{
+.searchresults-map{
   height: 50vh;
 }
 
@@ -1458,6 +1458,12 @@ span .avatar{
 
 .search-results-espacio h3 {
   margin-top: 8px;
+}
+
+/***************** E S P A C I O ********************/
+
+.espacio-map{
+  height: 300px;
 }
 
 /**************************************************************/
@@ -2066,7 +2072,7 @@ span .avatar{
 
 /***************** MAP ********************/
 
-#map{
+.searchresults-map{
   height: 60vh;
 }
 
@@ -2085,6 +2091,11 @@ span .avatar{
   height: 170px;
 }
 
+/***************** E S P A C I O ********************/
+
+.espacio-map{
+  height: 250px;
+}
 
 /**************************************************************/
 /*******************  D  E  S  K  T  O  P  ********************/
@@ -2517,7 +2528,7 @@ span .avatar{
 
 /***************** MAP ********************/
 
-#map{
+.searchresults-map{
   height: 50vh;
   margin-bottom: 15px;
 }
@@ -2610,6 +2621,9 @@ span .avatar{
   left: 45%;
 } */
 
+.espacio-map{
+  height: 400px;
+}
 
   /******************* CAROUSEL ****************/
 .glyphicon-chevron-left, .glyphicon-chevron-right{

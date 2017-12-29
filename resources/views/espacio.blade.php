@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('title') {{$espacio->direccion}} @endsection
+@section('leaflet')
+  <link rel="stylesheet" href="{{ URL::asset('css/leaflet.css')}}">
+  <script src="{{ URL::asset('js/leaflet.js')}}"></script>
+@endsection
 @section('content')
 
   <div class="espacio-container">
@@ -121,48 +125,39 @@
       <div class="clear"></div>
 
       <div class="">
-        <h2 style="margin-left:15px">El Barrio</h2>
+        <h2 style="margin-left:15px">Ubicación</h2>
 
-        <div id="map"></div>
+        <div id="mapid" class="espacio-map"></div>
 
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="js/menu.js"></script>
-  <script type="text/javascript">
-    var mymap = L.map('map').setView([-34.64, -58.38], 14);
+@endsection
 
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-      maxZoom: 18,
-      id: 'mapbox.streets',
-      accessToken: 'pk.eyJ1Ijoiam9hcGFub3MiLCJhIjoiY2pha2Z2eG1zMmlrNTMzcno2OHQ0b3VvYiJ9.jgj5HdcO2n9VZJpuSn4_wA'
-    }).addTo(mymap);
-
-    var marker = L.marker([-34.6211, -58.38151]).addTo(mymap);
-
-    var popup = L.popup()
-      .setLatLng([-34.6111, -58.38151])
-      .setContent("Soy Digital House!")
-      .openOn(mymap);
-
-  </script>
+@section('scripts')
 
   <script>
-    window.onscroll = function(){formSticky()};
-
-    var header = document.getElementById("espacio-form");
-    // var sticky = header.offsetTop;
-
-    function formSticky() {
-      if (window.pageYOffset >= 550) {
-        header.classList.add("sticky");
-      } else {
-        header.classList.remove("sticky");
-      }
-    }
-
+  // Obtengo latlng que después paso al segundo script
+  var lat = {!! json_encode($espacio->lat) !!};
+  var lng = {!! json_encode($espacio->lng) !!};
   </script>
+
+  <script src="{{ URL::asset('js/espacio.js')}}"></script>
+
+  <script>
+  window.onscroll = function(){formSticky()};
+
+  var header = document.getElementById("espacio-form");
+  // var sticky = header.offsetTop;
+
+  function formSticky() {
+    if (window.pageYOffset >= 550) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+
+</script>
 
 @endsection

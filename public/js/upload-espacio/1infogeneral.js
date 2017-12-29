@@ -9,36 +9,37 @@ var circle;
 var mymap = L.map('mapid');
 
 // Función para centrar mapa y colocar círculo
-function centrarMapa(mapa,lat,lon){
-  mapa.setView([lat, lon], 15);
+function centrarMapa(mapa,lat,lng){
+  mapa.setView([lat, lng], 15);
 }
-function ponerCirculo(mapa,lat,lon,circulo){
-  if (circulo != undefined) {
-    mapa.removeLayer(circulo);
+function ponerCirculo(mapa,lat,lng){
+  if (circle != undefined) {
+    mapa.removeLayer(circle);
   };
-  circulo = L.circle([lat, lon], {
+  circle = L.circle([lat, lng], {
     color: 'blue',
     fillColor: '#3e74d0',
     fillOpacity: 0.7,
     radius: 60
   }).addTo(mapa);
 }
-function mapaYCirculo(mapa,lat,lon,circulo){
+function mapaYCirculo(mapa,lat,lng){
   var parsedLat = Number(lat);
-  var parsedLon = Number(lon);
-  centrarMapa(mapa,parsedLat,parsedLon);
-  ponerCirculo(mapa,parsedLat,parsedLon,circulo);
+  var parsedLng = Number(lng);
+  centrarMapa(mapa,parsedLat,parsedLng);
+  ponerCirculo(mapa,parsedLat,parsedLng);
 }
 
 if (latitud.value && longitud.value) {
   // Si ya tengo datos, los uso para cargar el mapa
-  mapaYCirculo(mymap,latitud.value,longitud.value,circle);
+  mapaYCirculo(mymap,latitud.value,longitud.value);
   document.getElementById('mapwarning').style.display = 'block';
 } else {
   // Si no tengo le pongo CABA por default
   mymap.setView([-34.603684,-58.381559], 11);
 }
 
+// Le agrego "tiles" al mapa para que sea visible
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   // attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
   maxZoom: 17,
@@ -136,7 +137,7 @@ function geocodeAddress(geocoder) {
       longitud.value = resultado.geometry.location.lng();
 
       // Cambio la posición del mapa para ajustarla a las nuevas coordenadas y pongo un círculo
-      mapaYCirculo(mymap,latitud.value,longitud.value,circle);
+      mapaYCirculo(mymap,latitud.value,longitud.value);
 
       // Muestro el párrafo con información
       document.getElementById('mapwarning').style.display = 'block';
@@ -171,7 +172,7 @@ function geocodeAddressConFiltroLocality(geocoder) {
       completarDireccion('zipcode', 'postal_code', resultado);
       latitud.value = resultado.geometry.location.lat();
       longitud.value = resultado.geometry.location.lng();
-      mapaYCirculo(mymap,latitud.value,longitud.value,circle);
+      mapaYCirculo(mymap,latitud.value,longitud.value);
       document.getElementById('mapwarning').style.display = 'block';
     } else {
       alert('Ocurrió el siguiente error: ' + status + '. Intente nuevamente con otra dirección.');
