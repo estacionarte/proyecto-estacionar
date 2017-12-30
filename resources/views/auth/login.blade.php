@@ -43,8 +43,8 @@
           <span>O</span>
         </div>
 
-        <a href="#" class="facebook-login-button">Iniciar sesión con Facebook</a>
-        <a href="#" class="google-login-button">Iniciar sesión con Google</a>
+        <a href="login/facebook" class="facebook-login-button">Iniciar sesión con Facebook</a>
+        <a href="login/google" class="google-login-button">Iniciar sesión con Google</a>
 
       </section>
     </div>

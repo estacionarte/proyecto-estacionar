@@ -126,8 +126,8 @@
               <div class="login-separador">
                 <span>O</span>
               </div>
-              <a href="#" class="facebook-login-button">Iniciar sesion con Facebook</a>
-              <a href="#" class="google-login-button">Iniciar sesión con Google</a>
+              <a href="login/facebook" class="facebook-login-button">Iniciar sesion con Facebook</a>
+              <a href="login/google" class="google-login-button">Iniciar sesión con Google</a>
             </section>
           </div>
         </div>
@@ -152,7 +152,7 @@
           <li><a href="#comofunciona">¿Cómo funciona?</a></li>
           <li><a href="/faqs">FAQs</a></li>
           <li><a href="mantenimiento">Términos y condiciones</a></li>
-          <li><a href="mantenimiento" class="last">Políticas de privacidad</a></li>
+          <li><a href="politica-y-privacidad" class="last">Políticas de privacidad</a></li>
         </ul>
       </div>
     </footer>

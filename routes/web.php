@@ -11,6 +11,10 @@ Route::get('/signup', 'Auth\RegisterController@showRegistrationForm');
 
 Route::get('/signin', 'Auth\LoginController@showLoginForm');
 
+// ************************ LOGIN FACEBOOK *********************
+Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+
 
 // ***************************** P E R F I L *******************
 Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile')->middleware('auth');
@@ -68,6 +72,10 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
 
 Route::get('/faqs', function () {
     return view('faqs');
+});
+
+Route::get('/politica-y-privacidad', function () {
+    return view('politica-y-privacidad');
 });
 
 Route::get('/creditos', function () {

@@ -26,8 +26,6 @@ class CreateVehiculosTable extends Migration
             $table->string('modelo', 45)->nullable();
             $table->string('color', 45)->nullable();
             $table->string('patente', 45)->nullable();
-
-
         });
     }
 
@@ -38,6 +36,6 @@ class CreateVehiculosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehicle');
+        Schema::dropIfExists('vehiculos');
     }
 }
