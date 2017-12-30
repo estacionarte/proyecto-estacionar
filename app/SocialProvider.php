@@ -11,6 +11,7 @@ class SocialProvider extends Model
     protected $table = 'social_providers';
 
     protected $fillable = [
+      // 'user_id',
       'provider_id',
       'provider'
     ];
