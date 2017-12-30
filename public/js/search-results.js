@@ -5,10 +5,10 @@ function centrarMapa(mapa,lat,lng){
 }
 function ponerCirculo(mapa,lat,lng){
   circle = L.circle([lat, lng], {
-    color: 'blue',
-    fillColor: '#3e74d0',
-    fillOpacity: 0.7,
-    radius: 60
+    color: '#48A8C1',
+    fillColor: '#64aec2',
+    fillOpacity: 0.3,
+    radius: 500
   }).addTo(mapa);
 }
 
@@ -23,6 +23,11 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1Ijoiam9hcGFub3MiLCJhIjoiY2pha2Z2eG1zMmlrNTMzcno2OHQ0b3VvYiJ9.jgj5HdcO2n9VZJpuSn4_wA'
 }).addTo(mymap);
+// Deshabilito los controles sobre el mapa
+mymap._handlers.forEach(function(handler) {
+    handler.disable();
+});
+
 
 // Activar geocoder de Google Maps
 function initMap(){
@@ -47,6 +52,7 @@ function geocodeAddress(geocoder) {
       longitud = Number(resultado.geometry.location.lng());
       // Cambio la posición del mapa para ajustarla a las nuevas coordenadas
       centrarMapa(mymap,latitud,longitud);
+      ponerCirculo(mymap,latitud,longitud);
       // Guardo la posición en una nueva variable y la comparo con los resultados de búsqueda
       searchlatlng = L.latLng(latitud,longitud);
       medirDistancia();
@@ -63,16 +69,21 @@ var marker = [];
 function medirDistancia(){
   for (var i = 0; i < espacios.length; i++) {
     var latlng = L.latLng([espacios[i]['lat'],espacios[i]['lng']]);
-    if (searchlatlng.distanceTo(latlng)<500) {
+    var distancia = searchlatlng.distanceTo(latlng);
+    var id = espacios[i]['id'];
+    if (distancia<500) {
       // Si se encuentra a menos de 500m de la dirección buscada lo guardo
       coordenadas.push({"id":espacios[i]['id'],"punto":latlng});
       // ponerCirculo(mymap,espacios[i]['lat'],espacios[i]['lng']);
+      // Pongo un marker en la posición
       marker[i] = L.marker(latlng);
       marker[i].addTo(mymap);
-      var id = espacios[i]['id'];
-      marker[i].addEventListener('click',function(){
-        document.getElementById(id).style.border = '2px solid red';
-      });
+      marker[i].bindPopup(espacios[i]['direccion']);
+      // marker[i].addEventListener('click',function(){
+      //   document.getElementById().style.border = '2px solid red';
+      // });
+    } else {
+      document.getElementById(id).style.display = 'none';
     }
   }
 }

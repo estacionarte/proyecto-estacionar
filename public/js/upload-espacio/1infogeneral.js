@@ -19,7 +19,7 @@ function ponerCirculo(mapa,lat,lng){
   circle = L.circle([lat, lng], {
     color: 'blue',
     fillColor: '#3e74d0',
-    fillOpacity: 0.7,
+    fillOpacity: 0.4,
     radius: 60
   }).addTo(mapa);
 }
@@ -46,6 +46,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1Ijoiam9hcGFub3MiLCJhIjoiY2pha2Z2eG1zMmlrNTMzcno2OHQ0b3VvYiJ9.jgj5HdcO2n9VZJpuSn4_wA'
 }).addTo(mymap);
+
+// Deshabilito los controles sobre el mapa
+mymap._handlers.forEach(function(handler) {
+    handler.disable();
+});
+
 
 // Habilitar campo de direccion para escritura cuando lleno país y provincia (les saco el readonly)
 var pais = document.querySelector('.upload-select-pais');

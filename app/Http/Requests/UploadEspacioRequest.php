@@ -30,7 +30,7 @@ class UploadEspacioRequest extends FormRequest
         'pais' => 'required|string|max:45',
         'provincia' => 'required|string|max:45',
         'ciudad' => 'required_unless:provincia,CABA|string|max:45',
-        'zipcode' => 'required|string|min:4|max:5',
+        'zipcode' => 'required|string|min:4|max:8',
         'tipoEspacio' => 'required|string|max:45',
         'cantAutos' => 'required|numeric|max:2',
         'cantMotos' => 'required|numeric|max:8',
