@@ -43,4 +43,9 @@ class User extends Authenticatable
           return $this->hasMany(Vehiculo::class, 'idUser');
       }
 
+    public function socialProvider()
+      {
+        return $this->hasMany(SocialProvider::class, 'user_id');
+      }
+
 }
