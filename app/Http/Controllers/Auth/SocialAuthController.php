@@ -53,14 +53,12 @@ class SocialAuthController extends Controller
           ]);
 
           Auth::login($newUser);
-          return redirect()->to('/home'); // Login y redirección
 
       } else {
           //si el ussuario exite logueamos
           Auth::login($userSocialProvider);
-          return redirect()->to('/home');
-
       }
+        return redirect()->to('/home'); // Login y redirección
   }
 
 }
