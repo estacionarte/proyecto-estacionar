@@ -5,6 +5,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/coming-soon', function () {
+    return view('coming-soon');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/signup', 'Auth\RegisterController@showRegistrationForm');
