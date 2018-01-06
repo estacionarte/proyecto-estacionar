@@ -26,6 +26,7 @@
 
 
     <section class="redes-sociales">
+      {{-- <h5>Seguinos</h5> --}}
       <div class="facebook">
         <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
       </div>
