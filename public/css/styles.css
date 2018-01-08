@@ -277,7 +277,7 @@ ul li .popup-link{
 }
 
 .mejor-espacio-bloque .stars{
-  width: 40%;
+  width: 100px;
   margin: 0px 0px 0px 15px;
 }
 
@@ -1463,6 +1463,7 @@ span .avatar{
   margin-top: 8px;
 }
 
+/* Botones de Alquilar y Ver Más */
 .mejor-espacio-bloque .mejor-espacio-botones{
   text-align: center;
   padding: 15px 0px;
@@ -1505,7 +1506,7 @@ span .avatar{
     height: 100%;
     overflow: auto; /* Para poder scrollear y que se mantenga */
     background-color: rgb(0,0,0); /* Por si falla el opacity */
-    background-color: rgba(0,0,0,0.4); /* Negro con opacity */
+    background-color: rgba(0,0,0,0.3); /* Negro con opacity */
 }
 
 /* Modal Box */
@@ -1515,6 +1516,7 @@ span .avatar{
     padding: 20px 15px;
     border: 1px solid #888;
     width: 92%;
+    max-width: 500px;
 }
 
 /* Botón cerrar */
@@ -1780,7 +1782,7 @@ span .avatar{
 
 .mejor-espacio-bloque{
   width: 40%;
-  height: 320px;
+  /* height: 320px; */
   margin: 30px 25px;
 }
 
@@ -2269,7 +2271,16 @@ span .avatar{
 }
 
 .search-results-espacio img {
-  height: 170px;
+  height: 180px;
+}
+
+/* Modal Box */
+.modalAlquilar-content {
+  padding: 20px;
+}
+
+.modalAlquilar-content h3{
+  padding: 0;
 }
 
 /***************** E S P A C I O ********************/

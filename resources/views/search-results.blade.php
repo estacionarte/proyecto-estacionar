@@ -29,13 +29,13 @@
           <div class="mejor-espacio-botones">
 
             <a class="mejor-espacio-boton-alquilar" id="alquilar">Alquilar</a>
+            <a href="{{ route('show.espacio', $espacio->id) }}" class="mejor-espacio-boton-vermas">Ver Más</a>
 
             <div id="myModal" class="modalAlquilar">
               <div class="modalAlquilar-content">
                 <span class="alquilar-close">&times;</span>
                 <h2>Reservar espacio</h2>
                 <h3>Nombre Espacio por Usuario</h3>
-                <h4>{{ $espacio->direccion }}</h4>
 
                 <hr>
 
@@ -150,8 +150,6 @@
                 </div>
               </div>
             </div>
-
-            <a href="{{ route('show.espacio', $espacio->id) }}" class="mejor-espacio-boton-vermas">Ver Más</a>
 
           </div>
         </article>
