@@ -60,7 +60,6 @@
             @endfor
           </select>
         </div>
-        <button type="submit" name="search-espacios-submit"><i class="fa fa-search"></i></button>
         <input type="submit" name="BUSCAR" value="BUSCAR">
       </form>
     </div>

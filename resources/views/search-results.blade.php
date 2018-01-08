@@ -28,12 +28,126 @@
 
           <div class="mejor-espacio-botones">
 
-            <a href="" class="mejor-espacio-boton-alquilar" id="alquilar">Alquilar</a>
+            <a class="mejor-espacio-boton-alquilar" id="alquilar">Alquilar</a>
 
-            <div id="myModal" class="modal">
-              <div class="modal-content">
+            <div id="myModal" class="modalAlquilar">
+              <div class="modalAlquilar-content">
                 <span class="alquilar-close">&times;</span>
-                <p>Some text in the Modal..</p>
+                <h2>Reservar espacio</h2>
+                <h3>Nombre Espacio por Usuario</h3>
+                <h4>{{ $espacio->direccion }}</h4>
+
+                <hr>
+
+                <div class="form-generico">
+
+                  <form class="" action="" method="post">
+
+                    <div class="modalAlquilar-form-div">
+
+                      <label for="alquilar-vehiculo">Vehículo</label>
+                      <select class="" name="" id="alquilar-vehiculo">
+                        <option value="">Poner vehículos de usuario</option>
+                        <option value="" disabled>Volkswagen Golf AAA111</option>
+                        <option value="" disabled>Bicicleta Roja</option>
+                      </select>
+
+                    </div>
+
+                    <div class="modalAlquilar-form-div">
+
+                      <label>Fecha y Hora</label>
+
+                      <div class="modalAlquilar-form-div-div">
+                        <div class="modalAlquilar-form-horarios">
+                          <input type="date" name="search-espacios-dia-comienzo" value="">
+                          <select name="search-espacios-hora-comienzo" class="search-espacios-hora">
+                            @for ($i=0; $i < 24; $i++)
+                              @if ($i<10)
+                                <option value={{ $i }}>0{{ $i }}</option>
+                              @else
+                                <option value={{ $i }}>{{ $i }}</option>
+                              @endif
+                            @endfor
+                          </select>
+                          <span>:</span>
+                          <select name="search-espacios-minuto-comienzo" class="search-espacios-minuto">
+                            @for ($i=0; $i < 60; $i+=5)
+                              @if ($i<10)
+                                <option value={{ $i }}>0{{ $i }}</option>
+                              @else
+                                <option value={{ $i }}>{{ $i }}</option>
+                              @endif
+                            @endfor
+                          </select>
+                        </div>
+
+                        <span style="font-size:1em; vertical-align:middle;">&#8680;</span>
+
+                        <div class="modalAlquilar-form-horarios">
+                          <input type="date" name="search-espacios-dia-fin" value="">
+                          <select name="search-espacios-hora-fin" class="search-espacios-hora">
+                            @for ($i=0; $i < 24; $i++)
+                              @if ($i<10)
+                                <option value={{ $i }}>0{{ $i }}</option>
+                              @else
+                                <option value={{ $i }}>{{ $i }}</option>
+                              @endif
+                            @endfor
+                          </select>
+                          <span>:</span>
+                          <select name="search-espacios-minuto-fin" class="search-espacios-minuto">
+                            @for ($i=0; $i < 60; $i+=5)
+                              @if ($i<10)
+                                <option value={{ $i }}>0{{ $i }}</option>
+                              @else
+                                <option value={{ $i }}>{{ $i }}</option>
+                              @endif
+                            @endfor
+                          </select>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="modalAlquilar-form-div">
+
+                      <div class="modalAlquilar-form-lineadetalle">
+                        <div class="lineadetalle-motivo">
+                          <span>$20 x 16hs</span>
+                          <span>|?|</span>
+                        </div>
+                        <div class="lineadetalle-precio">
+                          <span>$320</span>
+                        </div>
+                      </div>
+
+                      <div class="modalAlquilar-form-lineadetalle lineadetalle-descuento">
+                        <div class="lineadetalle-motivo">
+                          <span>10% descuento x hr</span>
+                          <span>|?|</span>
+                        </div>
+                        <div class="lineadetalle-precio">
+                          <span>-$32</span>
+                        </div>
+                      </div>
+
+                      <div class="modalAlquilar-form-lineadetalle lineadetalle-total">
+                        <div class="lineadetalle-motivo">
+                          <span>TOTAL</span>
+                        </div>
+                        <div class="lineadetalle-precio">
+                          <span>$288</span>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <input type="submit" name="reservar" value="RESERVAR">
+
+                  </form>
+
+                </div>
               </div>
             </div>
 
