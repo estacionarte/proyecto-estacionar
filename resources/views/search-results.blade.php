@@ -6,7 +6,7 @@
 @endsection
 @section('content')
 
-<div class="container">
+<div class="container" style="padding:0px 5px;">
 
   <div class="como-funciona">
 
@@ -21,10 +21,25 @@
       @forelse ($espacios as $espacio)
         <article class="mejor-espacio-bloque" id="{{ $espacio->id }}">
           <a href="{{ route('show.espacio', $espacio->id) }}"><img class="mejor-espacio" src="/storage/espacios/{{ $espacio->fotos->first()->photoname}}" alt=""></a>
-          <h3><strong>{{ 'Precio Final: $' . $espacio->precioFinal($horariollegada, $horariopartida)}}</strong> </h3>
-           <h4 style="display:inline;">{{ $espacio->direccion }}</h4>
+          <h3>{{ 'Precio Final: $' . $espacio->precioFinal($horariollegada, $horariopartida)}}</h3>
+          <h4>{{ $espacio->direccion }}</h4>
           <h4>{{ $espacio->tipoEspacio }}</h4>
           <img class="stars" src="/images/stars.png">
+
+          <div class="mejor-espacio-botones">
+
+            <a href="" class="mejor-espacio-boton-alquilar" id="alquilar">Alquilar</a>
+
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="alquilar-close">&times;</span>
+                <p>Some text in the Modal..</p>
+              </div>
+            </div>
+
+            <a href="{{ route('show.espacio', $espacio->id) }}" class="mejor-espacio-boton-vermas">Ver Más</a>
+
+          </div>
         </article>
       @empty
         <p>No hay espacios disponibles con estos criterios de búsqueda</p>
