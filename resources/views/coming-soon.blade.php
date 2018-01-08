@@ -10,45 +10,61 @@
 </head>
 
 <body class="coming-soon">
+
   <div class="comingsoon-container">
 
-    <img src="/images/logo_trans.png" class="comming-logo">
+    <div class="logo-container">
+      <img src="/images/logo_trans.png" class="comming-logo">
+    </div>
 
-    <section class="redes">
-      <div class="face">
-        <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
+    <div class="redes-container">
+      <section class="redes">
+        <div class="fa">
+          <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
+        </div>
+        <div class="tw">
+          <a href="http://twitter.com" target="_blank"><img src="/icons/twitter.png" alt=""></a>
+        </div>
+        <div class="ig">
+          <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
+        </div>
+      </section>
+    </div>
+
+    <div class="countdown-container">
+      <h1>COMING SOON</h1>
+
+      <div class="reloj-container">
+        <p id="dia"></p>
+        <p id="hora"></p>
+        <p id="minuto"></p>
+        <p id="segundo"></p>
       </div>
-      <div class="twit">
-        <a href="http://twitter.com" target="_blank"><img src="/icons/twitter.png" alt=""></a>
+
+      <div class="letras-container">
+        <h4 id="dialetra">D</h4>
+        <h4>H</h4>
+        <h4>M</h4>
+        <h4>S</h4>
       </div>
-      <div class="inst">
-        <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
-      </div>
-    </section>
 
-    <h1>COMING SOON</h1>
+      <h3>Ya podés subir tu espacio</h3>
+      <h6>Convertire en anfitrión y empezá a ganar dinero. ¿Como hago?</h6>
+      <button type="button" class="btn btn-warning">Hacé click acá y enterate</button>
+    </div>
 
-    <p id="dia"></p>
-    <p id="hora"></p>
-    <p id="minuto"></p>
-    <p id="segundo"></p>
-    <div class="clear" style="margin-bottom:-185px"></div>
-    <h4 id="dialetra">D</h4>
-    <h4>H</h4>
-    <h4>M</h4>
-    <h4>S</h4>
+    <div class="clear"></div>
 
+    <div class="contacto-container">
+      <h5>Dejanos un correo y nos ponemos en contacto con vos</h5>
 
-    <button type="button" class="btn btn-warning">Ya podes subir tu espacio</button>
-
-    <h5>Dejanos un correo y nos ponemos en contacto con vos</h5>
-
-    <article class="form-generico">
-        <form class="credits-form" action="" method="post">
-          <input type="email" name="email" placeholder="Ingresá un e-mail" id="credit-email">
-          <input type="submit" name="" value="SUSCRIBITE">
-        </form>
-    </article>
+      <article class="form-generico">
+          <form class="credits-form" action="" method="post">
+            <input type="email" name="email" placeholder="Ingresá un e-mail" id="credit-email">
+            <input type="submit" name="" value="SUSCRIBITE">
+          </form>
+      </article>
+    </div>
 
   </div>
 

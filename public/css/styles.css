@@ -132,7 +132,6 @@ ul li .popup-link{
   background-attachment: fixed;
   width: 100%;
   height: 445px;
-
 }
 
 .shape{
@@ -1466,6 +1465,141 @@ span .avatar{
   height: 300px;
 }
 
+/******************* C O M I N G  S O O N ****************/
+.coming-soon{
+  background-image: url(../images/coming-soon/coming-soon-mobile.jpg);
+  background-repeat: no-repeat;
+  max-width: 699px;
+}
+
+.comingsoon-container{
+  width: 100%;
+  /* border: solid 1px orange; */
+}
+
+.comingsoon-container .logo-container{
+  width: 100%;
+  background: linear-gradient(rgba(19, 20, 19, 1.5), rgba(19, 20, 19, 0.05));
+  padding: 3px;
+}
+
+.comingsoon-container .logo-container .comming-logo{
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  /* border: solid 1px red; */
+}
+
+.comingsoon-container .redes-container{
+  width: 10%;
+  display: inline-block;
+  float: left;
+  margin: 100px 0 0 0;
+  /* border: solid 1px blue; */
+}
+
+.comingsoon-container .redes-container .redes img{
+  width: 20px;
+}
+
+.comingsoon-container .countdown-container{
+  width: 80%;
+  float: left;
+  /* border: solid 3px green; */
+}
+
+.comingsoon-container .countdown-container h1{
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin: 75px 0 5px 0;
+  font-size: 1.5em;
+  /* border: solid 1px red; */
+}
+
+.comingsoon-container .countdown-container .reloj-container{
+  width: 100%;
+  text-align: center;
+  /* border: solid 1px red; */
+}
+
+.comingsoon-container .countdown-container .reloj-container p {
+  display: inline-block;
+  font-size: 30px;
+  width: 23%;
+  margin: 0 0 -10px 0;
+  color: white;
+  border-right: solid 1px white;
+}
+
+.comingsoon-container .countdown-container .letras-container{
+  width: 100%;
+  text-align: center;
+  /* border: solid 1px blue; */
+}
+
+.comingsoon-container .countdown-container h4{
+  display: inline-block;
+  width: 23%;
+  margin: -5px 0 0 0;
+  font-size: 0.9em;
+  color: white;
+  /* border: solid 1px red; */
+}
+
+.comingsoon-container .countdown-container h3, h6{
+  color: #fff;
+  text-align: center;
+  /* border: solid 1px red; */
+}
+
+.comingsoon-container .countdown-container button{
+  display: block;
+  margin: 10px auto;
+  font-size: 1.3em;
+  /* border: solid 1px red; */
+}
+
+.comingsoon-container .contacto-container{
+  width: 100%;
+  text-align: center;
+  /* border: solid 1px yellow; */
+}
+
+.comingsoon-container .contacto-container h5{
+  color: #fff;
+  width: 100%;
+  margin: 65px 0 -15px 0;
+  /* border: solid 1px yellow; */
+}
+
+.comingsoon-container .contacto-container .form-generico{
+  /* border: solid 1px orange; */
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form{
+  background-color: rgba(122, 219, 245, 0.14);
+  /* border: solid 1px red; */
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form input[type=email]{
+  display: inline-block;
+  width: 60%;
+  height: 30px;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]{
+  display: inline-block;
+  width: 32%;
+  background-color: inherit;
+  border: solid 1px #fff;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]:hover{
+  background-color: rgba(158, 206, 213, 0.29);
+}
+
 /**************************************************************/
 /*********************  T  A  B  L  E  T  *********************/
 /**************************************************************/
@@ -2644,7 +2778,7 @@ span .avatar{
 }
 
 /******************* C O M I N G  S O O N ****************/
-.coming-soon{
+/* .coming-soon{
   background-image: url(../images/coming-soon/5.png);
   background-repeat: no-repeat;
 }
@@ -2731,4 +2865,4 @@ span .avatar{
 
 .comingsoon-container .form-generico .credits-form input[type=submit]:hover{
   background-color: rgba(158, 206, 213, 0.29);
-}
+} */
