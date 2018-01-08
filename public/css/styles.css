@@ -2651,59 +2651,63 @@ span .avatar{
 
 .comingsoon-container .comming-logo{
   width: 20%;
-  margin-top: 2%;
-  margin-left: 2%;
+  margin: 15px 15px;
+}
+
+.comingsoon-container .redes{
+  width: 12%;
+  overflow: hidden;
+  float: right;
+  margin: 20px 400px 0 0;
+}
+.comingsoon-container .redes img{
+  float: left;
+  width: 18%;
 }
 
 .comingsoon-container h1{
   font-family: 'Roboto Condensed', sans-serif;
+  width: 20%;
   color: white;
-  margin-top: 6%;
-  margin-left: 16.5%;
+  margin: 85px 0 0 215px;
 }
 
 .comingsoon-container p {
   display: inline-block;
   text-align: center;
-  margin-left: 1%;
-  margin-top: 1%;
+  margin: 10px 0 0 10px;
   font-size: 40px;
   width: 5%;
   color: white;
   border: solid 1px white;
-  /* background-color: white; */
 }
 
 #dia{
-  margin-left: 13.5%;
+  margin-left: 183px;
 }
 
 .comingsoon-container h4{
   display: inline-block;
-  margin-left: 5.3%;
+  width: 1%;
+  margin: 200px 0 0 65px;
   font-size: 1em;
   color: white;
 }
 
 #dialetra{
-  margin-left: 15.4%;
-}
-
-.comingsoon-container .redes-sociales{
-  background-color: inherit;
-  margin-top: -300px;
+  margin-left: 210px;
 }
 
 .comingsoon-container button{
-  margin-left: 15%;
-  margin-top: 20%;
-  margin-bottom: 6%;
+  display: block;
+  margin: 20px 0 15px 195px;
   font-size: 1.6em;
 }
 
 .comingsoon-container h5{
   color: #fff;
-  margin-left: 14%;
+  width: 30%;
+  margin: 135px 0 0 180px;
 }
 
 .comingsoon-container .form-generico .credits-form{
@@ -2711,7 +2715,6 @@ span .avatar{
   margin-left: 13%;
   margin-top: -10px;
   background-color: rgba(122, 219, 245, 0.14);
-  /* border: solid 1px red; */
 }
 
 .comingsoon-container .form-generico .credits-form input[type=email]{

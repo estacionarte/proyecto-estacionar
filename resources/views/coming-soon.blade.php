@@ -13,30 +13,31 @@
   <div class="comingsoon-container">
 
     <img src="/images/logo_trans.png" class="comming-logo">
+
+    <section class="redes">
+      <div class="face">
+        <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
+      </div>
+      <div class="twit">
+        <a href="http://twitter.com" target="_blank"><img src="/icons/twitter.png" alt=""></a>
+      </div>
+      <div class="inst">
+        <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
+      </div>
+    </section>
+
     <h1>COMING SOON</h1>
 
     <p id="dia"></p>
     <p id="hora"></p>
     <p id="minuto"></p>
-    <p id="segundo"></p><br>
+    <p id="segundo"></p>
+    <div class="clear" style="margin-bottom:-185px"></div>
     <h4 id="dialetra">D</h4>
     <h4>H</h4>
     <h4>M</h4>
     <h4>S</h4>
 
-
-    <section class="redes-sociales">
-      {{-- <h5>Seguinos</h5> --}}
-      <div class="facebook">
-        <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
-      </div>
-      <div class="twitter">
-        <a href="http://twitter.com" target="_blank"><img src="/icons/twitter.png" alt=""></a>
-      </div>
-      <div class="instagram">
-        <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
-      </div>
-    </section>
 
     <button type="button" class="btn btn-warning">Ya podes subir tu espacio</button>
 
@@ -49,9 +50,7 @@
         </form>
     </article>
 
-
   </div>
-
 
 
 <script>
