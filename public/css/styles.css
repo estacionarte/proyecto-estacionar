@@ -25,11 +25,16 @@ a{
   text-decoration: none;
 }
 
+.clear{
+  clear: both;
+}
 /****************** H E A D E R *******************/
 .main-header{
   width: 100%;
   margin-bottom: 10px;
   background-color: #fff;
+  /* position: fixed;
+  z-index: 9999; */
 }
 
 .logo{
@@ -119,7 +124,7 @@ ul li .popup-link{
   display: none;
 }
 
-.clear{
+.clear-toggle{
   clear: both;
 }
 /************************** B A N N E R *************************/
@@ -1515,6 +1520,7 @@ span .avatar{
   text-align: center;
   margin: 75px 0 5px 0;
   font-size: 1.5em;
+  letter-spacing: 0.4em;
   /* border: solid 1px red; */
 }
 
@@ -1585,13 +1591,16 @@ span .avatar{
 
 .comingsoon-container .contacto-container .form-generico .credits-form input[type=email]{
   display: inline-block;
+  margin-bottom: 5px;
   width: 60%;
   height: 30px;
+  /* border: solid 1px red; */
 }
 
 .comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]{
   display: inline-block;
-  width: 32%;
+  width: 33%;
+  /* height: 30px; */
   background-color: inherit;
   border: solid 1px #fff;
 }
@@ -1611,6 +1620,10 @@ span .avatar{
   display: none;
 }
 
+.clear-toggle{
+  clear: none !important;
+}
+
 span .avatar{
   width: 50px;
   height: 50px;
@@ -1619,41 +1632,41 @@ span .avatar{
 }
 
 .logo{
-  width: 35%;
+  width: 30%;
   margin: 15px 0 10px 20px;
+  /* float: left !important; */
+  /* display: inline-block !important; */
+  /* border: solid 1px blue; */
 }
 
 .nav-bar{
   display: block !important;
+  /* border: solid 1px yellow; */
+  width: 65%;
+  overflow: hidden;
+  /* float: left; */
+  margin: 17px 0 0 35%;
 }
 
 .nav-bar a{
-  position: absolute;
-  top: 5%;
-  width: 15%;
-  padding: 10px 5px;
+  float: right;
+  padding: 8px 16px;
+  margin: 0  10px 0 0;
   font-size: 0.8em;
   font-weight: bold;
   text-decoration: none;
+  text-transform: none !important;
+  border-bottom: none;
+  /* border: solid 1px green; */
 }
 
-.iniciar-btn{
-  right: 2%;
+.faq-btn, .anfitrion-btn{
+  color: rgba(132, 140, 148, 1)!important;
+  background-color: inherit !important;
+  margin: 0  0 0 -4px !important;
 }
 
-.register-btn{
-  right: 18%;
-}
-
-.faq-btn{
-  right: 32%;
-  color: rgb(105, 105, 105) !important;
-  background-color: white !important;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.faq-btn:hover{
+.anfitrion-btn:hover, .faq-btn:hover{
   color: #48A8C1 !important;
 }
 
@@ -1667,7 +1680,6 @@ span .avatar{
   margin-top: -15px;
   height: 550px;
 }
-
 
 .shape{
   margin-top: 10%;
@@ -2231,6 +2243,40 @@ span .avatar{
   height: 250px;
 }
 
+/***************** CO M I N G  S O O N ********************/
+.coming-soon{
+  background-image: url(../images/coming-soon/coming-soon-tablet.jpg);
+  background-repeat: no-repeat;
+  max-width: 959px;
+}
+
+.comingsoon-container .logo-container .comming-logo{
+  width: 50%;
+}
+
+.comingsoon-container .redes-container{
+  margin: 80px 0 0 0;
+}
+
+.comingsoon-container .redes-container .redes img{
+  margin-top: 10px;
+}
+
+.comingsoon-container .countdown-container h1{
+  margin: 75px 0 5px 20px;
+  font-size: 1.7em;
+  letter-spacing: 0.7em;
+}
+
+.comingsoon-container .countdown-container .reloj-container p {
+  width: 15%;
+}
+
+.comingsoon-container .countdown-container h4{
+  width: 15%;
+}
+
+
 /**************************************************************/
 /*******************  D  E  S  K  T  O  P  ********************/
 /**************************************************************/
@@ -2250,24 +2296,49 @@ span .avatar{
   padding-bottom: 15px;
 }
 
+.nav-bar{
+  /* border: solid 1px yellow; */
+  width: 55%;
+  margin: 25px;
+  float: right;
+}
+
+.iniciar-btn{
+  display: none !important;
+}
+
 .nav-bar a{
   font-size: .8em;
   padding: 10px 1px;
-  width: 165px;
+  width: 125px;
+  letter-spacing: 2px;
 }
 
+.anfitrion-btn{
+  width: 135px !important;
+  margin: 0  5px 0 1px !important;
+  letter-spacing: 0.5px !important;
+  /* border: solid 1px red; */
+}
+
+.faq-btn{
+  width: 40px !important;
+  margin: 0  1px !important;
+  letter-spacing: 0.5px !important;
+  /* border: solid 1px red; */
+}
 
 .popup-link{
   display: block !important;
-  position: absolute;
-  top: 5%;
-  right: 2%;
-  width: 15%;
-  padding: 5px 15px;
-  background-color: #48A8C1;
-  color: white;
-  font-size: 1.2em;
-  text-align: center;
+  float: right;
+  padding: 8px 16px;
+  margin: 0  10px 0 0;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: none !important;
+  border-bottom: none;
+  /* border: solid 4px green; */
 }
 
 .popup-contenedor h2{
@@ -2778,6 +2849,113 @@ span .avatar{
 }
 
 /******************* C O M I N G  S O O N ****************/
+.coming-soon{
+  background-image: url(../images/coming-soon/coming-soon-pc.jpg);
+  background-size: 100%;
+  max-width: 1920px;
+  /* border: solid 1px blue; */
+}
+
+.comingsoon-container .logo-container .comming-logo{
+  width: 30%;
+  margin: 15px 15px;
+  /* border: solid 1px red; */
+}
+
+.comingsoon-container .redes-container{
+  width: 10%;
+  display: inline-block;
+  float: right;
+  margin: -80px 65px 0 0;
+  /* border: solid 1px blue; */
+}
+
+.comingsoon-container .redes-container .redes img{
+  width: 30px;
+  margin-right: 5px;
+  float: left;
+}
+
+.comingsoon-container .countdown-container{
+  width: 100%;
+  /* border: solid 3px green; */
+}
+
+.comingsoon-container .countdown-container h1{
+  margin: 75px auto 5px;
+  font-size: 2.6em;
+  letter-spacing: 0.1em;
+  /* border: solid 1px red; */
+}
+
+.comingsoon-container .countdown-container .reloj-container{
+  /* border: solid 1px red; */
+  margin: 0 2px;;
+}
+
+.comingsoon-container .countdown-container .reloj-container p {
+  width: 8%;
+  margin: 0 auto -10px;
+  border-right: solid 1px white;
+}
+
+.comingsoon-container .countdown-container .letras-container{
+  /* border: solid 1px blue; */
+}
+
+.comingsoon-container .countdown-container h4{
+  width: 8%;
+  margin: -5px 0 0 0;
+  font-size: 0.9em;
+  /* border: solid 1px red; */
+}
+
+.comingsoon-container .countdown-container h3, h6{
+  /* color: #fff;
+  text-align: center;
+  border: solid 1px red; */
+}
+
+.comingsoon-container .countdown-container button{
+  /* display: block;
+  margin: 10px auto;
+  font-size: 1.3em;
+  border: solid 1px red; */
+}
+
+/* .comingsoon-container .contacto-container h5{
+  color: #fff;
+  width: 100%;
+  margin: 65px 0 -15px 0;
+  border: solid 1px yellow;
+} */
+
+.comingsoon-container .contacto-container .form-generico .credits-form{
+  width: 35%;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form input[type=email]{
+  margin-bottom: 5px;
+  width: 65%;
+  height: 30px;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]{
+  display: inline-block;
+  width: 25%;
+  background-color: inherit;
+  border: solid 1px #fff;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]:hover{
+  background-color: rgba(158, 206, 213, 0.29);
+}
+
+
+
+
 /* .coming-soon{
   background-image: url(../images/coming-soon/5.png);
   background-repeat: no-repeat;

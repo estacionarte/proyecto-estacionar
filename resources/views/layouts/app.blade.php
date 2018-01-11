@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <!-- FONT LATO -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
 
     <!-- ICONOS -->
@@ -77,18 +77,19 @@
 
         <a href="#menu" id="toggle"><span></span></a>
 
-        <div class="clear">
+        <div class="clear-toggle"></div>
 
-        </div>
           <ul class="nav-bar">
             <li><a href="signin" class="iniciar-btn">Iniciar Sesión</a></li>
             <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li>
             <li><a href="signup" class="register-btn">Registrarse</a></li>
+            <li><a href="" class="anfitrion-btn">Convertite en anfitrión</a></li>
             <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>
             <li class="ayuda-li"><a href="faqs" class="faq-btn">Ayuda</a></li>
           </ul>
-        </nav>
 
+        </nav>
+<div class="clear"></div>
         <div class="modal-wrapper" id="popup-iniciar">
           <div class="popup-contenedor">
             <a class="popup-cerrar" href="#">X</a>

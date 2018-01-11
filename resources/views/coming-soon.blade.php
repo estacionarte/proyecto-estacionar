@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Coming - Soon</title>
+  <title>Lanzamiento</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="hojaDeEstilo">
 </head>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="countdown-container">
-      <h1>COMING SOON</h1>
+      <h1>PROXIMAMENTE</h1>
 
       <div class="reloj-container">
         <p id="dia"></p>
@@ -60,6 +60,7 @@
 
       <article class="form-generico">
           <form class="credits-form" action="" method="post">
+            {{ csrf_field() }}
             <input type="email" name="email" placeholder="Ingresá un e-mail" id="credit-email">
             <input type="submit" name="" value="SUSCRIBITE">
           </form>

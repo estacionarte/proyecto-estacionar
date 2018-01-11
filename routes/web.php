@@ -5,7 +5,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/coming-soon', function () {
+Route::get('/lanzamiento', function () {
     return view('coming-soon');
 });
 
