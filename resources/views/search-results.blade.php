@@ -39,115 +39,132 @@
 
                 <hr>
 
-                <div class="form-generico">
+                @auth
+                  <div class="form-generico">
 
-                  <form class="" action="" method="post">
+                    <form action="" method="post">
 
-                    <div class="modalAlquilar-form-div">
+                      <div class="modalAlquilar-form-div">
 
-                      <label for="alquilar-vehiculo">Vehículo</label>
-                      <select class="" name="" id="alquilar-vehiculo">
-                        <option value="">Poner vehículos de usuario</option>
-                        <option value="" disabled>Volkswagen Golf AAA111</option>
-                        <option value="" disabled>Bicicleta Roja</option>
-                      </select>
+                        <label for="alquilar-vehiculo">Vehículo</label>
+                        <select class="" name="" id="alquilar-vehiculo">
 
-                    </div>
+                          @forelse (Auth::user()->vehiculos as $vehiculo)
+                            <option value="{{$vehiculo->id}}">{{$vehiculo->datos()}}</option>
+                          @empty
+                            <option value="">Cargar vehículo</option>
+                          @endforelse
+                        </select>
 
-                    <div class="modalAlquilar-form-div">
-
-                      <label>Fecha y Hora</label>
-
-                      <div class="modalAlquilar-form-div-div">
-                        <div class="modalAlquilar-form-horarios">
-                          <input type="date" name="search-espacios-dia-comienzo" value="">
-                          <select name="search-espacios-hora-comienzo" class="search-espacios-hora">
-                            @for ($i=0; $i < 24; $i++)
-                              @if ($i<10)
-                                <option value={{ $i }}>0{{ $i }}</option>
-                              @else
-                                <option value={{ $i }}>{{ $i }}</option>
-                              @endif
-                            @endfor
-                          </select>
-                          <span>:</span>
-                          <select name="search-espacios-minuto-comienzo" class="search-espacios-minuto">
-                            @for ($i=0; $i < 60; $i+=5)
-                              @if ($i<10)
-                                <option value={{ $i }}>0{{ $i }}</option>
-                              @else
-                                <option value={{ $i }}>{{ $i }}</option>
-                              @endif
-                            @endfor
-                          </select>
-                        </div>
-
-                        <span style="font-size:1em; vertical-align:middle;">&#8680;</span>
-
-                        <div class="modalAlquilar-form-horarios">
-                          <input type="date" name="search-espacios-dia-fin" value="">
-                          <select name="search-espacios-hora-fin" class="search-espacios-hora">
-                            @for ($i=0; $i < 24; $i++)
-                              @if ($i<10)
-                                <option value={{ $i }}>0{{ $i }}</option>
-                              @else
-                                <option value={{ $i }}>{{ $i }}</option>
-                              @endif
-                            @endfor
-                          </select>
-                          <span>:</span>
-                          <select name="search-espacios-minuto-fin" class="search-espacios-minuto">
-                            @for ($i=0; $i < 60; $i+=5)
-                              @if ($i<10)
-                                <option value={{ $i }}>0{{ $i }}</option>
-                              @else
-                                <option value={{ $i }}>{{ $i }}</option>
-                              @endif
-                            @endfor
-                          </select>
-                        </div>
                       </div>
 
-                    </div>
+                      <div class="modalAlquilar-form-div">
 
-                    <div class="modalAlquilar-form-div">
+                        <label>Fecha y Hora</label>
 
-                      <div class="modalAlquilar-form-lineadetalle">
-                        <div class="lineadetalle-motivo">
-                          <span>$20 x 16hs</span>
-                          <span>|?|</span>
+                        <div class="modalAlquilar-form-div-div">
+                          <div class="modalAlquilar-form-horarios">
+                            <input type="date" name="search-espacios-dia-comienzo" value="">
+                            <select name="search-espacios-hora-comienzo" class="search-espacios-hora">
+                              @for ($i=0; $i < 24; $i++)
+                                @if ($i<10)
+                                  <option value={{ $i }}>0{{ $i }}</option>
+                                @else
+                                  <option value={{ $i }}>{{ $i }}</option>
+                                @endif
+                              @endfor
+                            </select>
+                            <span>:</span>
+                            <select name="search-espacios-minuto-comienzo" class="search-espacios-minuto">
+                              @for ($i=0; $i < 60; $i+=5)
+                                @if ($i<10)
+                                  <option value={{ $i }}>0{{ $i }}</option>
+                                @else
+                                  <option value={{ $i }}>{{ $i }}</option>
+                                @endif
+                              @endfor
+                            </select>
+                          </div>
+
+                          <span style="font-size:1.4em; line-height: 47px; vertical-align:text-bottom;">&#10140;</span>
+
+                          <div class="modalAlquilar-form-horarios">
+                            <input type="date" name="search-espacios-dia-fin" value="">
+                            <select name="search-espacios-hora-fin" class="search-espacios-hora">
+                              @for ($i=0; $i < 24; $i++)
+                                @if ($i<10)
+                                  <option value={{ $i }}>0{{ $i }}</option>
+                                @else
+                                  <option value={{ $i }}>{{ $i }}</option>
+                                @endif
+                              @endfor
+                            </select>
+                            <span>:</span>
+                            <select name="search-espacios-minuto-fin" class="search-espacios-minuto">
+                              @for ($i=0; $i < 60; $i+=5)
+                                @if ($i<10)
+                                  <option value={{ $i }}>0{{ $i }}</option>
+                                @else
+                                  <option value={{ $i }}>{{ $i }}</option>
+                                @endif
+                              @endfor
+                            </select>
+                          </div>
                         </div>
-                        <div class="lineadetalle-precio">
-                          <span>$320</span>
-                        </div>
+
                       </div>
 
-                      <div class="modalAlquilar-form-lineadetalle lineadetalle-descuento">
-                        <div class="lineadetalle-motivo">
-                          <span>10% descuento x hr</span>
-                          <span>|?|</span>
+                      <div class="modalAlquilar-form-div">
+
+                        <div class="modalAlquilar-form-lineadetalle">
+                          <div class="lineadetalle-motivo">
+                            <span>$20 x 16hs</span>
+                            <span>|?|</span>
+                          </div>
+                          <div class="lineadetalle-precio">
+                            <span>$320</span>
+                          </div>
                         </div>
-                        <div class="lineadetalle-precio">
-                          <span>-$32</span>
+
+                        <div class="modalAlquilar-form-lineadetalle lineadetalle-descuento">
+                          <div class="lineadetalle-motivo">
+                            <span>10% descuento x hr</span>
+                            <span>|?|</span>
+                          </div>
+                          <div class="lineadetalle-precio">
+                            <span>-$32</span>
+                          </div>
                         </div>
+
+                        <div class="modalAlquilar-form-lineadetalle lineadetalle-total">
+                          <div class="lineadetalle-motivo">
+                            <span>TOTAL</span>
+                          </div>
+                          <div class="lineadetalle-precio">
+                            <span>$288</span>
+                          </div>
+                        </div>
+
                       </div>
 
-                      <div class="modalAlquilar-form-lineadetalle lineadetalle-total">
-                        <div class="lineadetalle-motivo">
-                          <span>TOTAL</span>
-                        </div>
-                        <div class="lineadetalle-precio">
-                          <span>$288</span>
-                        </div>
-                      </div>
+                      <input type="submit" name="reservar" value="RESERVAR">
 
-                    </div>
+                    </form>
 
-                    <input type="submit" name="reservar" value="RESERVAR">
+                  </div>
 
-                  </form>
+                  <p>Todavía no se hará ningún cobro</p>
 
-                </div>
+                @endauth
+
+                @guest
+
+                  <div class="">
+                    <h4 style="text-align:center; margin: 15px auto;">Debés <a href="{{ route('login') }}">iniciar sesión</a> antes de alquilar un espacio</h4>
+                  </div>
+
+                @endguest
+
               </div>
             </div>
 

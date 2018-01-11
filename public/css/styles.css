@@ -888,6 +888,12 @@ span .avatar{
   border-radius: 5px;
 }
 
+.bodies-main-content .main-profile-nav section > h2{
+  color: rgb(143, 143, 143);
+  margin: 5px auto 10px;
+  font-size: 1.6em;
+}
+
 /*********** PROFILE -- MIS ESPACIOS *************/
 .carga-main{
     overflow: hidden;
@@ -920,6 +926,77 @@ span .avatar{
   margin-left: 50px;
 }
 
+/*********** PROFILE -- ALQUILERES *************/
+
+.alquileres-navbar{
+  margin: 5px auto;
+  width: 100%;
+  text-align: center;
+}
+
+.alquileres-navbar .navbar-misespacios, .alquileres-navbar .navbar-otrosespacios{
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.alquileres-navbar .navbar-misespacios{
+  font-weight: bold;
+  border-right: solid 1px rgb(143, 143, 143);
+  color: #48A8C1;
+}
+
+.alquileres-navbar .navbar-otrosespacios{
+  border-left: solid 1px rgb(143, 143, 143);
+}
+
+/* Listado de alquileres */
+.alquileres-content{
+
+}
+
+.alquileres-content .alquileres-tipo{
+  margin: 5px auto;
+}
+
+.alquileres-content .alquileres-tipo .alquileres-content-detalle{
+  margin-bottom: 5px;
+}
+
+.alquileres-content-detalle p{
+  margin: 0px auto;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  display: none;
+}
+
+.alquileres-content-detalle h4{
+  margin: 0px auto 2px;
+  font-size: 1em;
+  font-weight:bold;
+}
+
+.span-alquilar-editar, .span-alquilar-delete {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.span-alquilar-editar {
+  color: #48A8C1;
+}
+
+.span-alquilar-delete {
+  color: rgb(140, 32, 18);
+}
+
+.span-underline{
+  text-decoration: underline;
+}
+
+#alquileres-otros-espacios{
+  display: none;
+}
 
 /************** C R E D I T S *******************/
 .credits-container{
@@ -1552,6 +1629,12 @@ span .avatar{
 .modalAlquilar-content h4{
   padding: 0;
   margin: 0px auto;
+}
+
+.modalAlquilar-content p{
+  padding: 0;
+  margin: 0px auto;
+  font-size: 0.9em;
 }
 
 .modalAlquilar-content hr{
@@ -2283,6 +2366,10 @@ span .avatar{
   padding: 0;
 }
 
+.modalAlquilar-content h4{
+  padding: 0;
+}
+
 /***************** E S P A C I O ********************/
 
 .espacio-map{
@@ -2739,6 +2826,10 @@ span .avatar{
 
 .search-results-espacio h3 {
   margin-top: 8px;
+}
+
+.modalAlquilar-content p{
+  font-size: 0.9em;
 }
 
 /***************** E S P A C I O ******************/

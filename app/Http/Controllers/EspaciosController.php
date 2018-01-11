@@ -50,7 +50,6 @@ class EspaciosController extends Controller
 
       $direccion = $request->input('search-espacios-input-direccion');
 
-
       return view('search-results', compact('espacios','horariollegada', 'horariopartida', 'direccion'));
     }
 

@@ -25,4 +25,13 @@ class Vehiculo extends Model
   {
       return $this->belongsTo(User::class, 'idUser');
   }
+
+  public function datos(){
+    if ($this->tipoVehiculo == 'Bicicleta') {
+      $datos = $this->tipoVehiculo . ' ' . $this->color;
+    } else {
+      $datos = $this->tipoVehiculo . ' ' . $this->marca . ' ' . $this->modelo . ' ' . $this->color;
+    }
+    return $datos;
+  }
 }
