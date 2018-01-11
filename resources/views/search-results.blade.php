@@ -6,7 +6,7 @@
 @endsection
 @section('content')
 
-<div class="container">
+<div class="container" style="padding:0px 5px;">
 
   <div class="como-funciona">
 
@@ -21,10 +21,154 @@
       @forelse ($espacios as $espacio)
         <article class="mejor-espacio-bloque" id="{{ $espacio->id }}">
           <a href="{{ route('show.espacio', $espacio->id) }}"><img class="mejor-espacio" src="/storage/espacios/{{ $espacio->fotos->first()->photoname}}" alt=""></a>
-          <h3><strong>{{ 'Precio Final: $' . $espacio->precioFinal($horariollegada, $horariopartida)}}</strong> </h3>
-           <h4 style="display:inline;">{{ $espacio->direccion }}</h4>
+          <h3>{{ 'Precio Final: $' . $espacio->precioFinal($horariollegada, $horariopartida)}}</h3>
+          <h4>{{ $espacio->direccion }}</h4>
           <h4>{{ $espacio->tipoEspacio }}</h4>
           <img class="stars" src="/images/stars.png">
+
+          <div class="mejor-espacio-botones">
+
+            <a class="mejor-espacio-boton-alquilar" id="alquilar">Alquilar</a>
+            <a href="{{ route('show.espacio', $espacio->id) }}" class="mejor-espacio-boton-vermas">Ver Más</a>
+
+            <div id="myModal" class="modalAlquilar">
+              <div class="modalAlquilar-content">
+                <span class="alquilar-close">&times;</span>
+                <h2>Reservar espacio</h2>
+                <h3>Nombre Espacio por Usuario</h3>
+
+                <hr>
+
+                @auth
+                  <div class="form-generico">
+
+                    <form action="" method="post">
+
+                      <div class="modalAlquilar-form-div">
+
+                        <label for="alquilar-vehiculo">Vehículo</label>
+                        <select class="" name="" id="alquilar-vehiculo">
+
+                          @forelse (Auth::user()->vehiculos as $vehiculo)
+                            <option value="{{$vehiculo->id}}">{{$vehiculo->datos()}}</option>
+                          @empty
+                            <option value="">Cargar vehículo</option>
+                          @endforelse
+                        </select>
+
+                      </div>
+
+                      <div class="modalAlquilar-form-div">
+
+                        <label>Fecha y Hora</label>
+
+                        <div class="modalAlquilar-form-div-div">
+                          <div class="modalAlquilar-form-horarios">
+                            <input type="date" name="search-espacios-dia-comienzo" value="">
+                            <select name="search-espacios-hora-comienzo" class="search-espacios-hora">
+                              @for ($i=0; $i < 24; $i++)
+                                @if ($i<10)
+                                  <option value={{ $i }}>0{{ $i }}</option>
+                                @else
+                                  <option value={{ $i }}>{{ $i }}</option>
+                                @endif
+                              @endfor
+                            </select>
+                            <span>:</span>
+                            <select name="search-espacios-minuto-comienzo" class="search-espacios-minuto">
+                              @for ($i=0; $i < 60; $i+=5)
+                                @if ($i<10)
+                                  <option value={{ $i }}>0{{ $i }}</option>
+                                @else
+                                  <option value={{ $i }}>{{ $i }}</option>
+                                @endif
+                              @endfor
+                            </select>
+                          </div>
+
+                          <span style="font-size:1.4em; line-height: 47px; vertical-align:text-bottom;">&#10140;</span>
+
+                          <div class="modalAlquilar-form-horarios">
+                            <input type="date" name="search-espacios-dia-fin" value="">
+                            <select name="search-espacios-hora-fin" class="search-espacios-hora">
+                              @for ($i=0; $i < 24; $i++)
+                                @if ($i<10)
+                                  <option value={{ $i }}>0{{ $i }}</option>
+                                @else
+                                  <option value={{ $i }}>{{ $i }}</option>
+                                @endif
+                              @endfor
+                            </select>
+                            <span>:</span>
+                            <select name="search-espacios-minuto-fin" class="search-espacios-minuto">
+                              @for ($i=0; $i < 60; $i+=5)
+                                @if ($i<10)
+                                  <option value={{ $i }}>0{{ $i }}</option>
+                                @else
+                                  <option value={{ $i }}>{{ $i }}</option>
+                                @endif
+                              @endfor
+                            </select>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="modalAlquilar-form-div">
+
+                        <div class="modalAlquilar-form-lineadetalle">
+                          <div class="lineadetalle-motivo">
+                            <span>$20 x 16hs</span>
+                            <span>|?|</span>
+                          </div>
+                          <div class="lineadetalle-precio">
+                            <span>$320</span>
+                          </div>
+                        </div>
+
+                        <div class="modalAlquilar-form-lineadetalle lineadetalle-descuento">
+                          <div class="lineadetalle-motivo">
+                            <span>10% descuento x hr</span>
+                            <span>|?|</span>
+                          </div>
+                          <div class="lineadetalle-precio">
+                            <span>-$32</span>
+                          </div>
+                        </div>
+
+                        <div class="modalAlquilar-form-lineadetalle lineadetalle-total">
+                          <div class="lineadetalle-motivo">
+                            <span>TOTAL</span>
+                          </div>
+                          <div class="lineadetalle-precio">
+                            <span>$288</span>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <input type="submit" name="reservar" value="RESERVAR">
+
+                    </form>
+
+                  </div>
+
+                  <p>Todavía no se hará ningún cobro</p>
+
+                @endauth
+
+                @guest
+
+                  <div class="">
+                    <h4 style="text-align:center; margin: 15px auto;">Debés <a href="{{ route('login') }}">iniciar sesión</a> antes de alquilar un espacio</h4>
+                  </div>
+
+                @endguest
+
+              </div>
+            </div>
+
+          </div>
         </article>
       @empty
         <p>No hay espacios disponibles con estos criterios de búsqueda</p>

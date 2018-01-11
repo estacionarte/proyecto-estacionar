@@ -91,7 +91,7 @@
   <label for="aptoDiscapacitados" class="upload-label-especiales"><input type="checkbox" name="aptoDiscapacitados" value="Apto para Discapacitados" class="upload-checkbox-especiales" id="aptoDiscapacitados" {{ old('aptoDiscapacitados', $espacio->aptoDiscapacitados) ? 'checked':'' }}>Apto para discapacitados</label>
 </div>
 <div class="upload-div-especiales">
-  <label for="aptoElectricos" class="upload-label-especiales"><input type="checkbox" name="aptoElectricos" value="Apto para Electricos" class="upload-checkbox-especiales" id="aptoElectricos" {{ old('aptoElectricos', $espacio->aptoElectricos) ? 'checked':'' }}>Carga para autos eléctricos</label>
+  <label for="aptoElectricos" class="upload-label-especiales"><input type="checkbox" name="aptoElectricos" value="Apto para Electricos" class="upload-checkbox-especiales" id="aptoElectricos" {{ old('aptoElectricos', $espacio->aptoElectricos) ? 'checked':'' }}>Carga para motos eléctricas</label>
 </div>
 
 <label for="" class="upload-label-titulo">Información extra (visible por todos) -opcional-</label>

@@ -250,39 +250,41 @@ ul li .popup-link{
 
 .mejor-espacio-bloque{
   width: 80%;
-  /*height: 70%;*/
   margin: 30px 10%;
   background-color: #fff;
   float: left;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /* border: solid 1px pink; */
 }
 
 .mejor-espacio-bloque .mejor-espacio{
   width: 85%;
+  height: 180px;
   margin-top: -25px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  object-fit: cover;
 }
 
 .mejor-espacio-bloque h3{
-  font-size: 1.3em;
+  font-size: 1.4em;
   text-align: left;
   padding-left: 20px;
+  font-weight: bold;
 }
 
 .mejor-espacio-bloque h4{
   font-size: 1.1em;
   text-align: left;
   padding-left: 20px;
+  margin: 2px 0px;
 }
 
 .mejor-espacio-bloque .stars{
-  width: 40%;
-  margin-left: 15px;
-  margin-top: -10px;
+  width: 100px;
+  margin: 0px 0px 0px 15px;
 }
+
 /****************** F O O T E R *******************/
 .main-footer{
   margin-top: 40px;
@@ -890,6 +892,12 @@ span .avatar{
   border-radius: 5px;
 }
 
+.bodies-main-content .main-profile-nav section > h2{
+  color: rgb(143, 143, 143);
+  margin: 5px auto 10px;
+  font-size: 1.6em;
+}
+
 /*********** PROFILE -- MIS ESPACIOS *************/
 .carga-main{
     overflow: hidden;
@@ -922,6 +930,77 @@ span .avatar{
   margin-left: 50px;
 }
 
+/*********** PROFILE -- ALQUILERES *************/
+
+.alquileres-navbar{
+  margin: 5px auto;
+  width: 100%;
+  text-align: center;
+}
+
+.alquileres-navbar .navbar-misespacios, .alquileres-navbar .navbar-otrosespacios{
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.alquileres-navbar .navbar-misespacios{
+  font-weight: bold;
+  border-right: solid 1px rgb(143, 143, 143);
+  color: #48A8C1;
+}
+
+.alquileres-navbar .navbar-otrosespacios{
+  border-left: solid 1px rgb(143, 143, 143);
+}
+
+/* Listado de alquileres */
+.alquileres-content{
+
+}
+
+.alquileres-content .alquileres-tipo{
+  margin: 5px auto;
+}
+
+.alquileres-content .alquileres-tipo .alquileres-content-detalle{
+  margin-bottom: 5px;
+}
+
+.alquileres-content-detalle p{
+  margin: 0px auto;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  display: none;
+}
+
+.alquileres-content-detalle h4{
+  margin: 0px auto 2px;
+  font-size: 1em;
+  font-weight:bold;
+}
+
+.span-alquilar-editar, .span-alquilar-delete {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.span-alquilar-editar {
+  color: #48A8C1;
+}
+
+.span-alquilar-delete {
+  color: rgb(140, 32, 18);
+}
+
+.span-underline{
+  text-decoration: underline;
+}
+
+#alquileres-otros-espacios{
+  display: none;
+}
 
 /************** C R E D I T S *******************/
 .credits-container{
@@ -1437,6 +1516,7 @@ span .avatar{
 
 .searchresults-map{
   height: 50vh;
+  z-index: 0;
 }
 
 .search-result h1{
@@ -1462,6 +1542,192 @@ span .avatar{
 
 .search-results-espacio h3 {
   margin-top: 8px;
+}
+
+/* Botones de Alquilar y Ver Más */
+.mejor-espacio-bloque .mejor-espacio-botones{
+  text-align: center;
+  padding: 15px 0px;
+}
+
+.mejor-espacio-bloque .mejor-espacio-botones .mejor-espacio-boton-alquilar, .mejor-espacio-bloque .mejor-espacio-botones .mejor-espacio-boton-vermas{
+  margin: 5px auto;
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-size: 18px;
+  padding: 9px 16px;
+}
+
+.mejor-espacio-boton-alquilar{
+  background-color: #1baa47;
+}
+
+.mejor-espacio-boton-alquilar:hover{
+  background-color: #137d34;
+  text-decoration: none;
+}
+
+.mejor-espacio-boton-vermas{
+  background-color: #38589d;
+}
+
+.mejor-espacio-boton-vermas:hover{
+  background-color: #284074;
+  text-decoration: none;
+}
+
+/* El Modal (background) */
+.modalAlquilar {
+    display: none;
+    position: fixed; /* Para que se quede en el lugar */
+    z-index: 1; /* Por encima del resto */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Para poder scrollear y que se mantenga */
+    background-color: rgb(0,0,0); /* Por si falla el opacity */
+    background-color: rgba(0,0,0,0.3); /* Negro con opacity */
+}
+
+/* Modal Box */
+.modalAlquilar-content {
+    background-color: #fefefe;
+    margin: 13% auto;
+    padding: 20px 15px;
+    border: 1px solid #888;
+    width: 92%;
+    max-width: 500px;
+}
+
+/* Botón cerrar */
+.alquilar-close {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -20px;
+    margin-right: -5px;
+}
+
+.alquilar-close:hover,
+.alquilar-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos de elementos dentro del modal */
+.modalAlquilar-content h2{
+  /* color: rgb(51, 51, 51); */
+  color: rgb(0, 0, 0);
+  padding: 0;
+  margin: 5px auto 12px;
+}
+
+.modalAlquilar-content h3{
+  padding: 0;
+  margin: 1px auto;
+}
+
+.modalAlquilar-content h4{
+  padding: 0;
+  margin: 0px auto;
+}
+
+.modalAlquilar-content p{
+  padding: 0;
+  margin: 0px auto;
+  font-size: 0.9em;
+}
+
+.modalAlquilar-content hr{
+  margin: 10px auto;
+  border-color: #9c9c9c;
+}
+
+/* Contenido del form */
+.modalAlquilar-content .form-generico{
+  padding: 0;
+  margin: 0px auto;
+}
+
+/* Este div contiene cada set de elementos */
+.modalAlquilar-content .form-generico .modalAlquilar-form-div{
+  margin: 0px auto 8px;
+  text-align: left;
+}
+
+.modalAlquilar-content .form-generico div label{
+  padding: 0;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+.modalAlquilar-content .form-generico div select{
+  margin: 0px auto;
+}
+
+/* Horarios llegada y salida */
+.modalAlquilar-content .form-generico .modalAlquilar-form-div .modalAlquilar-form-div-div{
+  margin: 0px auto;
+  text-align: center;
+  border-radius: 2px;
+  border: 1px solid #9c9c9c;
+}
+
+.modalAlquilar-form-div div .modalAlquilar-form-horarios {
+  width: 45%;
+  display: inline-block;
+  margin: 0px auto;
+  border: none;
+}
+
+.modalAlquilar-form-horarios input, .modalAlquilar-form-horarios select{
+  border: none;
+  margin: 0px auto;
+}
+
+.modalAlquilar-form-horarios input{
+  padding-right: 2px;
+  padding-bottom: 5px;
+}
+
+.modalAlquilar-form-horarios select{
+  display: inline-block;
+  width: 45%;
+  padding-top: 3px;
+}
+
+/* Detalle costos transacción */
+.modalAlquilar-form-div .modalAlquilar-form-lineadetalle{
+  padding: 5px 0px;
+  border-bottom: 1px solid #9c9c9c;
+  overflow: hidden;
+}
+
+.modalAlquilar-form-div .modalAlquilar-form-lineadetalle .lineadetalle-motivo, .modalAlquilar-form-div .modalAlquilar-form-lineadetalle .lineadetalle-precio{
+  display: inline-block;
+  border: none;
+}
+
+.modalAlquilar-form-div .modalAlquilar-form-lineadetalle .lineadetalle-motivo{
+  float: left;
+}
+
+.modalAlquilar-form-div .modalAlquilar-form-lineadetalle .lineadetalle-precio{
+  float: right;
+}
+
+.lineadetalle-descuento{
+  color: rgb(27, 130, 46);
+}
+
+.lineadetalle-total{
+  font-weight: 900;
+  color: black;
+  border-bottom: none;
 }
 
 /***************** E S P A C I O ********************/
@@ -1745,7 +2011,7 @@ span .avatar{
 
 .mejor-espacio-bloque{
   width: 40%;
-  height: 320px;
+  /* height: 320px; */
   margin: 30px 25px;
 }
 
@@ -2234,7 +2500,20 @@ span .avatar{
 }
 
 .search-results-espacio img {
-  height: 170px;
+  height: 180px;
+}
+
+/* Modal Box */
+.modalAlquilar-content {
+  padding: 20px;
+}
+
+.modalAlquilar-content h3{
+  padding: 0;
+}
+
+.modalAlquilar-content h4{
+  padding: 0;
 }
 
 /***************** E S P A C I O ********************/
@@ -2752,6 +3031,10 @@ span .avatar{
 
 .search-results-espacio h3 {
   margin-top: 8px;
+}
+
+.modalAlquilar-content p{
+  font-size: 0.9em;
 }
 
 /***************** E S P A C I O ******************/

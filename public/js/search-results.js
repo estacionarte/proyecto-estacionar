@@ -87,3 +87,26 @@ function medirDistancia(){
     }
   }
 }
+
+
+// Popup de botón Alquilar
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("alquilar");
+var close = document.getElementsByClassName("alquilar-close")[0];
+
+// Abrir modal al apretar botón
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// Cerrar con cruz
+close.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Cerrar al hacer click fuera de la caja
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
