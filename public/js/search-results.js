@@ -90,23 +90,160 @@ function medirDistancia(){
 
 
 // Popup de botón Alquilar
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("alquilar");
-var close = document.getElementsByClassName("alquilar-close")[0];
+// Guardo variables a usar
+var modal = [];
+var btn = [];
+var close = [];
+var modalactivo;
+// Variables para validaciones
+var diacomienzo = [];
+var horacomienzo = [];
+var minutocomienzo = [];
+var fechacomienzo = [];
+var diafin = [];
+var horafin = [];
+var minutofin = [];
+var fechafin = [];
+var espacioid;
+// Variables para precios
+var precio = [];
+var descuento = [];
+var total = [];
 
-// Abrir modal al apretar botón
-btn.onclick = function() {
+// Función para actualizar fechas
+var actualizarreserva = function(){
+  espacioid = parseInt(modalactivo.closest("article").id);
+
+  fechacomienzo[espacioid] = new Date(diacomienzo[espacioid].value + " " + horacomienzo[espacioid].options[horacomienzo[espacioid].selectedIndex].value + ":" + minutocomienzo[espacioid].options[minutocomienzo[espacioid].selectedIndex].value);
+
+  fechafin[espacioid] = new Date(diafin[espacioid].value + " " + horafin[espacioid].options[horafin[espacioid].selectedIndex].value + ":" + minutofin[espacioid].options[minutofin[espacioid].selectedIndex].value);
+
+}
+
+// Actualizar precios ante cambios en horarios
+// Creo función que pide datos a la db
+
+var actualizarValores = function actualizar(){
+  // Actualizo valores de fechas
+  actualizarreserva();
+  // Obtengo id del espacio que tengo que buscar
+  espacioid = parseInt(modalactivo.closest("article").id);
+  // Paso horarios a minutos
+  var comienzoMinutos = fechacomienzo[espacioid].getHours() * 60 + fechacomienzo[espacioid].getMinutes();
+  var finMinutos = fechafin[espacioid].getHours() * 60 + fechafin[espacioid].getMinutes();
+
+  // Ajax call usando jquery
+  jQuery(function($){
+    $.ajax({
+      url: '/alquilar/detallealquiler/{id}/{horariollegada}/{horariopartida}',
+      // Paso headers con csrftoken por ser post
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+      type: 'POST',
+      // Paso parámetros para función
+      data: {id:espacioid,horariollegada:comienzoMinutos,horariopartida:finMinutos},
+      success: function(resultado) {
+        precio[espacioid].textContent = resultado.precio;
+        descuento[espacioid].textContent = resultado.descuento;
+        total[espacioid].textContent = resultado.total;
+      }
+    });
+  });
+}
+
+// Popup
+for (var i = 0; i < espacios.length; i++) {
+  modal[i] = document.getElementsByClassName("modalAlquilar")[i];
+  btn[i] = document.getElementsByClassName("mejor-espacio-boton-alquilar")[i];
+  close[i] = document.getElementsByClassName("alquilar-close")[i];
+
+  id = parseInt(modal[i].id.slice(5));
+  modal[id] = modal[i];
+
+  // Abrir modal al apretar botón
+  btn[i].onclick = function() {
+    var modal = document.getElementById('modal' + this.id.slice(3));
+    window.modalactivo = modal;
     modal.style.display = "block";
-}
+  }
 
-// Cerrar con cruz
-close.onclick = function() {
+  // Cerrar con cruz
+  close[i].onclick = function() {
+    var modal = document.getElementById('modal' + this.id.slice(3));
     modal.style.display = "none";
+  }
+
+  // Cerrar al hacer click fuera de la caja
+  window.addEventListener('click', function(event) {
+    if (event.target == window.modalactivo) {
+      window.modalactivo.style.display = "none";
+    }
+  });
+
+  // Validaciones para form de alquiler
+  // No se puede elegir fecha anterior a la actual
+  diacomienzo[id] = document.querySelectorAll("input[name='alquiler-dia-comienzo']")[i];
+  diafin[id] = document.querySelectorAll("input[name='alquiler-dia-fin']")[i];
+
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //Enero es 0
+  var yyyy = today.getFullYear();
+
+  if(dd<10){
+    dd='0'+dd
+  }
+  if(mm<10){
+    mm='0'+mm
+  }
+
+  today = yyyy+'-'+mm+'-'+dd;
+  diacomienzo[id].setAttribute("min", today);
+  diafin[id].setAttribute("min", today);
+
+  // Asigno a variables los elementos a validar
+  horacomienzo[id] = document.querySelectorAll("select[name='alquiler-hora-comienzo']")[i];
+  minutocomienzo[id] = document.querySelectorAll("select[name='alquiler-minuto-comienzo']")[i];
+  horafin[id] = document.querySelectorAll("select[name='alquiler-hora-fin']")[i];
+  minutofin[id] = document.querySelectorAll("select[name='alquiler-minuto-fin']")[i];
+
+  // Guardo fechas introducidas
+  fechacomienzo[id] = new Date(diacomienzo[id].value + " " + horacomienzo[id].options[horacomienzo[id].selectedIndex].value + ":" + minutocomienzo[id].options[minutocomienzo[id].selectedIndex].value);
+
+  fechafin[id] = new Date(diafin[id].value + " " + horafin[id].options[horafin[id].selectedIndex].value + ":" + minutofin[id].options[minutofin[id].selectedIndex].value);
+
+  // Capturo elementos de precios a cambiar
+  precio[id] = document.querySelectorAll("span[precio='si']")[i];
+  descuento[id] = document.querySelectorAll("span[descuento='si']")[i];
+  total[id] = document.querySelectorAll("span[total='si']")[i];
+
+  // Agrego la función a los elementos
+  diacomienzo[id].addEventListener('change',actualizarValores);
+  horacomienzo[id].addEventListener('change',actualizarValores);
+  minutocomienzo[id].addEventListener('change',actualizarValores);
+  diafin[id].addEventListener('change',actualizarValores);
+  horafin[id].addEventListener('change',actualizarValores);
+  minutofin[id].addEventListener('change',actualizarValores);
+  debugger;
 }
 
-// Cerrar al hacer click fuera de la caja
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+
+// Creo función para validar datos cuando aprieto submit
+function validarForm(){
+  var ahora = new Date();
+  // Actualizo valores previo a verificaciones
+  actualizarreserva();
+
+  espacioid = parseInt(modalactivo.closest("article").id);
+
+  if (fechacomienzo[espacioid] <= ahora) {
+    alert("El horario a buscar debe ser mayor a la hora actual");
+    return false;
+  }
+
+  if (fechafin[espacioid] <= fechacomienzo[espacioid]) {
+    alert("La fecha de partida no puede ser anterior a la de llegada");
+    return false;
+  }
+
+  return true;
 }

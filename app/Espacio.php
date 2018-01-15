@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\DB;
 
 class Espacio extends Model
 {
@@ -156,6 +155,28 @@ class Espacio extends Model
 
   }
 
+  public function precio($minutoComienzo, $minutoFin){
+    $cantidadMinutosAlquiler = $minutoFin - $minutoComienzo;
+    $precioSinDescuentos = round($cantidadMinutosAlquiler * $this->precioAutosMinuto);
+
+    return $precioSinDescuentos;
+  }
+
+  public function descuento($minutoComienzo, $minutoFin){
+    $cantidadMinutosAlquiler = $minutoFin - $minutoComienzo;
+    $precioSinDescuentos = $cantidadMinutosAlquiler * $this->precioAutosMinuto;
+    if ($cantidadMinutosAlquiler>=1440) {
+      $descuento = round(($this->getDescuento(24)) * $precioSinDescuentos);
+    } elseif ($cantidadMinutosAlquiler>=360) {
+      $descuento = round(($this->getDescuento(6)) * $precioSinDescuentos);
+    } elseif ($cantidadMinutosAlquiler>=60) {
+      $descuento = round(($this->getDescuento(1)) * $precioSinDescuentos);
+    } else {
+      $descuento = 0;
+    }
+    return $descuento;
+  }
+
   public function precioFinal($minutoComienzo, $minutoFin){
     $cantidadMinutosAlquiler = $minutoFin - $minutoComienzo;
     $precioSinDescuentos = $cantidadMinutosAlquiler * $this->precioAutosMinuto;
@@ -169,6 +190,10 @@ class Espacio extends Model
       $precioFinal = round($precioSinDescuentos);
     }
     return $precioFinal;
+  }
+
+  public function disponible(){
+
   }
 
 

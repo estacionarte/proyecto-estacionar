@@ -17,7 +17,6 @@
       </div>
       <div class="mejores-espacios-container">
 
-
       @forelse ($espacios as $espacio)
         <article class="mejor-espacio-bloque" id="{{ $espacio->id }}">
           <a href="{{ route('show.espacio', $espacio->id) }}"><img class="mejor-espacio" src="/storage/espacios/{{ $espacio->fotos->first()->photoname}}" alt=""></a>
@@ -28,12 +27,12 @@
 
           <div class="mejor-espacio-botones">
 
-            <a class="mejor-espacio-boton-alquilar" id="alquilar">Alquilar</a>
+            <a class="mejor-espacio-boton-alquilar" id="btn{{ $espacio->id }}">Alquilar</a>
             <a href="{{ route('show.espacio', $espacio->id) }}" class="mejor-espacio-boton-vermas">Ver Más</a>
 
-            <div id="myModal" class="modalAlquilar">
+            <div id="modal{{ $espacio->id }}" class="modalAlquilar">
               <div class="modalAlquilar-content">
-                <span class="alquilar-close">&times;</span>
+                <span class="alquilar-close" id="btn{{ $espacio->id }}">&times;</span>
                 <h2>Reservar espacio</h2>
                 <h3>Nombre Espacio por Usuario</h3>
 
@@ -42,12 +41,13 @@
                 @auth
                   <div class="form-generico">
 
-                    <form action="" method="post">
+                    <form action="{{ route('alquilar', $espacio->id) }}" method="post" onsubmit="return validarForm();">
+                      {{ csrf_field() }}
 
                       <div class="modalAlquilar-form-div">
 
-                        <label for="alquilar-vehiculo">Vehículo</label>
-                        <select class="" name="" id="alquilar-vehiculo">
+                        <label>Vehículo</label>
+                        <select class="" name="vehiculo">
 
                           @forelse (Auth::user()->vehiculos as $vehiculo)
                             <option value="{{$vehiculo->id}}">{{$vehiculo->datos()}}</option>
@@ -64,23 +64,23 @@
 
                         <div class="modalAlquilar-form-div-div">
                           <div class="modalAlquilar-form-horarios">
-                            <input type="date" name="search-espacios-dia-comienzo" value="">
-                            <select name="search-espacios-hora-comienzo" class="search-espacios-hora">
+                            <input type="date" name="alquiler-dia-comienzo" value="{{ $diacomienzo }}">
+                            <select name="alquiler-hora-comienzo" class="search-espacios-hora">
                               @for ($i=0; $i < 24; $i++)
                                 @if ($i<10)
-                                  <option value={{ $i }}>0{{ $i }}</option>
+                                  <option value={{ $i }} {{ $i == $horacomienzo ? 'selected' : '' }}>0{{ $i }}</option>
                                 @else
-                                  <option value={{ $i }}>{{ $i }}</option>
+                                  <option value={{ $i }} {{ $i == $horacomienzo ? 'selected' : '' }}>{{ $i }}</option>
                                 @endif
                               @endfor
                             </select>
                             <span>:</span>
-                            <select name="search-espacios-minuto-comienzo" class="search-espacios-minuto">
+                            <select name="alquiler-minuto-comienzo" class="search-espacios-minuto">
                               @for ($i=0; $i < 60; $i+=5)
                                 @if ($i<10)
-                                  <option value={{ $i }}>0{{ $i }}</option>
+                                  <option value={{ $i }} {{ $i == $minutocomienzo ? 'selected' : '' }}>0{{ $i }}</option>
                                 @else
-                                  <option value={{ $i }}>{{ $i }}</option>
+                                  <option value={{ $i }} {{ $i == $minutocomienzo ? 'selected' : '' }}>{{ $i }}</option>
                                 @endif
                               @endfor
                             </select>
@@ -89,23 +89,23 @@
                           <span style="font-size:1.4em; line-height: 47px; vertical-align:text-bottom;">&#10140;</span>
 
                           <div class="modalAlquilar-form-horarios">
-                            <input type="date" name="search-espacios-dia-fin" value="">
-                            <select name="search-espacios-hora-fin" class="search-espacios-hora">
+                            <input type="date" name="alquiler-dia-fin" value="{{ $diafin }}">
+                            <select name="alquiler-hora-fin" class="search-espacios-hora">
                               @for ($i=0; $i < 24; $i++)
                                 @if ($i<10)
-                                  <option value={{ $i }}>0{{ $i }}</option>
+                                  <option value={{ $i }} {{ $i == $horafin ? 'selected' : '' }}>0{{ $i }}</option>
                                 @else
-                                  <option value={{ $i }}>{{ $i }}</option>
+                                  <option value={{ $i }} {{ $i == $horafin ? 'selected' : '' }}>{{ $i }}</option>
                                 @endif
                               @endfor
                             </select>
                             <span>:</span>
-                            <select name="search-espacios-minuto-fin" class="search-espacios-minuto">
+                            <select name="alquiler-minuto-fin" class="search-espacios-minuto">
                               @for ($i=0; $i < 60; $i+=5)
                                 @if ($i<10)
-                                  <option value={{ $i }}>0{{ $i }}</option>
+                                  <option value={{ $i }} {{ $i == $minutofin ? 'selected' : '' }}>0{{ $i }}</option>
                                 @else
-                                  <option value={{ $i }}>{{ $i }}</option>
+                                  <option value={{ $i }} {{ $i == $minutofin ? 'selected' : '' }}>{{ $i }}</option>
                                 @endif
                               @endfor
                             </select>
@@ -118,21 +118,21 @@
 
                         <div class="modalAlquilar-form-lineadetalle">
                           <div class="lineadetalle-motivo">
-                            <span>$20 x 16hs</span>
+                            <span>Precio</span>
                             <span>|?|</span>
                           </div>
                           <div class="lineadetalle-precio">
-                            <span>$320</span>
+                            <span>$</span><span precio='si'>{{ $espacio->precio($horariollegada, $horariopartida) }}</span>
                           </div>
                         </div>
 
                         <div class="modalAlquilar-form-lineadetalle lineadetalle-descuento">
                           <div class="lineadetalle-motivo">
-                            <span>10% descuento x hr</span>
+                            <span>Descuento</span>
                             <span>|?|</span>
                           </div>
                           <div class="lineadetalle-precio">
-                            <span>-$32</span>
+                            <span>-$</span><span descuento='si'>{{ $espacio->descuento($horariollegada, $horariopartida) }}</span>
                           </div>
                         </div>
 
@@ -141,7 +141,7 @@
                             <span>TOTAL</span>
                           </div>
                           <div class="lineadetalle-precio">
-                            <span>$288</span>
+                            <span>$</span><span total='si'>{{ $espacio->precioFinal($horariollegada, $horariopartida) }}</span>
                           </div>
                         </div>
 
@@ -170,6 +170,7 @@
 
           </div>
         </article>
+
       @empty
         <p>No hay espacios disponibles con estos criterios de búsqueda</p>
         <p>Intenta buscando en otra zona o en otros horarios</p>

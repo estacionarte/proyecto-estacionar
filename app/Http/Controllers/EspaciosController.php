@@ -24,8 +24,6 @@ class EspaciosController extends Controller
       $tiempoestadia = $horariopartida-$horariollegada;
 
       $espacios = Espacio::with("fotos")
-        // Filtro por direccion ingresada
-        // ->where('direccion', 'like', '%'.$request->input('search-espacios-input-direccion').'%')
         // Filtro por vehiculo elegido y me aseguro de que el espacio acepte este tipo de vehiculos
         ->where('cant'.$request->input('search-espacios-vehiculo').'s','>',0)
         // Me aseguro de que la estadía sea mayor a la mínima permitida y menor a la máxima
@@ -50,7 +48,15 @@ class EspaciosController extends Controller
 
       $direccion = $request->input('search-espacios-input-direccion');
 
-      return view('search-results', compact('espacios','horariollegada', 'horariopartida', 'direccion'));
+      // Guardo fecha, hora y minuto para persistir datos de búsqueda
+      $diacomienzo = $request->input('search-espacios-dia-comienzo');
+      $horacomienzo = $request->input('search-espacios-hora-comienzo');
+      $minutocomienzo = $request->input('search-espacios-minuto-comienzo');
+      $diafin = $request->input('search-espacios-dia-fin');
+      $horafin = $request->input('search-espacios-hora-fin');
+      $minutofin = $request->input('search-espacios-minuto-fin');
+
+      return view('search-results', compact('espacios','horariollegada', 'horariopartida', 'direccion', 'diacomienzo', 'horacomienzo', 'minutocomienzo', 'diafin', 'horafin', 'minutofin'));
     }
 
     public function showEspacio($id){
@@ -63,4 +69,37 @@ class EspaciosController extends Controller
 
       return view('espacio', compact('espacio', 'tiempominimo', 'tiempomaximo', 'anticipacion'));
     }
+
+    // Función para traer el precio del alquiler según el horario introducido
+    // Usado en search-results dentro del modal alquiler
+    public function detalleAlquiler(Request $request){
+
+      // Por seguridad, si no recibo petición por post no muestro nada
+      if ($request->isMethod('post')) {
+        $id = $request->id;
+        $horariollegada = $request->horariollegada;
+        $horariopartida = $request->horariopartida;
+
+        $espacio = Espacio::findOrFail($id);
+        $precio = $espacio->precio($horariollegada, $horariopartida);
+
+        $resultado = [
+          'precio' => $precio > 0 ? $precio : '?',
+          'descuento' => $precio > 0 ? $espacio->descuento($horariollegada, $horariopartida) : '?',
+          'total' => $precio > 0 ? $espacio->precioFinal($horariollegada, $horariopartida) : '?'
+        ];
+
+        return response()->json($resultado);
+      }
+
+      // Si no vino por post devuelvo 0
+      $resultado = [
+        'precio' => '?',
+        'descuento' => '?',
+        'total' => '?'
+      ];
+
+      return response()->json($resultado);
+    }
+
 }
