@@ -105,13 +105,15 @@ var horafin = [];
 var minutofin = [];
 var fechafin = [];
 var espacioid;
+var comienzo;
+var fin;
 // Variables para precios
 var precio = [];
 var descuento = [];
 var total = [];
 
 // Función para actualizar fechas
-var actualizarreserva = function(){
+var actualizarReserva = function(){
   espacioid = parseInt(modalactivo.closest("article").id);
 
   fechacomienzo[espacioid] = new Date(diacomienzo[espacioid].value + " " + horacomienzo[espacioid].options[horacomienzo[espacioid].selectedIndex].value + ":" + minutocomienzo[espacioid].options[minutocomienzo[espacioid].selectedIndex].value);
@@ -120,17 +122,24 @@ var actualizarreserva = function(){
 
 }
 
+// Función para convertir fechas a formato compatible con DateTime de php
+function convertirFechas(){
+  // Obtengo id del espacio que tengo que buscar
+  espacioid = parseInt(modalactivo.closest("article").id);
+  // Guardo fechas en el formato que las lee php
+  comienzo = fechacomienzo[espacioid].getFullYear() + '-' + (fechacomienzo[espacioid].getMonth()+1) + '-' + fechacomienzo[espacioid].getDate() + ' ' + fechacomienzo[espacioid].getHours() + ':' + fechacomienzo[espacioid].getMinutes();
+  fin = fechafin[espacioid].getFullYear() + '-' + (fechafin[espacioid].getMonth()+1) + '-' + fechafin[espacioid].getDate() + ' ' + fechafin[espacioid].getHours() + ':' + fechafin[espacioid].getMinutes();
+}
+
 // Actualizar precios ante cambios en horarios
 // Creo función que pide datos a la db
 
 var actualizarValores = function actualizar(){
-  // Actualizo valores de fechas
-  actualizarreserva();
-  // Obtengo id del espacio que tengo que buscar
-  espacioid = parseInt(modalactivo.closest("article").id);
-  // Paso horarios a minutos
-  var comienzoMinutos = fechacomienzo[espacioid].getHours() * 60 + fechacomienzo[espacioid].getMinutes();
-  var finMinutos = fechafin[espacioid].getHours() * 60 + fechafin[espacioid].getMinutes();
+  // Escondo el cartel que dice que el espacio no está disponible
+  document.getElementById('disponible').style.display = 'none';
+  // Actualizo valores de fechas y las convierto
+  actualizarReserva();
+  convertirFechas();
 
   // Ajax call usando jquery
   jQuery(function($){
@@ -140,7 +149,7 @@ var actualizarValores = function actualizar(){
       headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
       type: 'POST',
       // Paso parámetros para función
-      data: {id:espacioid,horariollegada:comienzoMinutos,horariopartida:finMinutos},
+      data: {id:espacioid,horariollegada:comienzo,horariopartida:fin},
       success: function(resultado) {
         precio[espacioid].textContent = resultado.precio;
         descuento[espacioid].textContent = resultado.descuento;
@@ -148,6 +157,8 @@ var actualizarValores = function actualizar(){
       }
     });
   });
+  // Hago check de disponibilidad
+  chequearDisponibilidad();
 }
 
 // Popup
@@ -223,17 +234,39 @@ for (var i = 0; i < espacios.length; i++) {
   diafin[id].addEventListener('change',actualizarValores);
   horafin[id].addEventListener('change',actualizarValores);
   minutofin[id].addEventListener('change',actualizarValores);
-  debugger;
 }
 
+// Función para chequear disponibilidad
+function chequearDisponibilidad(){
+  // Ajax call usando jquery
+  // Paso los parámetros que ya conseguí de las funciones ejecutadas anteriormente
+  jQuery(function($){
+    $.ajax({
+      url: 'alquilar/disponible/{id}/{horariollegada}/{horariopartida}',
+      // Paso headers con csrftoken por ser post
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+      type: 'POST',
+      // Paso parámetros para función
+      data: {id:espacioid,horariollegada:comienzo,horariopartida:fin},
+      success: function(resultado) {
+        // Si el resultado es false (no disponible), muestro div informando esto y escondo botón de submit para que no mande el form
+        if (!resultado.disponibleTodo) {
+          document.getElementById('disponible').style.display = 'block';
+          document.getElementById('submit-disponible').style.display = 'none';
+        } else {
+          document.getElementById('disponible').style.display = 'none';
+          document.getElementById('submit-disponible').style.display = 'block';
+        }
+    }
+    });
+  });
+}
 
 // Creo función para validar datos cuando aprieto submit
 function validarForm(){
   var ahora = new Date();
   // Actualizo valores previo a verificaciones
-  actualizarreserva();
-
-  espacioid = parseInt(modalactivo.closest("article").id);
+  actualizarReserva();
 
   if (fechacomienzo[espacioid] <= ahora) {
     alert("El horario a buscar debe ser mayor a la hora actual");
@@ -245,5 +278,6 @@ function validarForm(){
     return false;
   }
 
+  // Retorno false para evitar el envío. Lo que retorna true es la función chequearDisponibilidad
   return true;
 }

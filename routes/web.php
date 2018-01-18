@@ -103,5 +103,9 @@ Route::post('alquilar/{id}', 'AlquileresController@alquilar')->name('alquilar');
 
 // Ajax call detalle alquiler
 Route::post('alquilar/detallealquiler/{id}/{horariollegada}/{horariopartida}', 'EspaciosController@detalleAlquiler')->name('alquiler.detalle');
-// TEST
-Route::post('/alquilar/detalle/{id}', 'EspaciosController@detalle')->name('detalle');
+
+// Ajax call para chequear disponibilidad
+Route::post('alquilar/disponible/{id}/{horariollegada}/{horariopartida}', 'EspaciosController@disponible')->name('alquiler.disponible');
+
+// test
+Route::get('testfunction/{id}', 'EspaciosController@disponible')->name('disponible');

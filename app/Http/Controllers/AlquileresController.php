@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Alquiler;
 use App\Espacio;
+use DateTime;
 
 class AlquileresController extends Controller
 {
@@ -26,20 +27,27 @@ class AlquileresController extends Controller
     $alquiler->idEspacio = $id;
     $alquiler->idVehiculo = $request->input('vehiculo');
 
-    // Convierto fechas de comienzo y fin a formatos guardables en DB
-    $comienzo = $request->input('alquiler-dia-comienzo') . ' ' . $request->input('alquiler-hora-comienzo') . ':' . $request->input('alquiler-minuto-comienzo') . ':' . '00.000';
 
-    $fin = $request->input('alquiler-dia-fin') . ' ' . $request->input('alquiler-hora-fin') . ':' . $request->input('alquiler-minuto-fin') . ':' . '00.000';
+    // Convierto fechas de comienzo y fin a formatos guardables en DB
+    $fechallegada = $request->input('alquiler-dia-comienzo') . ' ' . ($request->input('alquiler-hora-comienzo')<10 ? '0' . $request->input('alquiler-hora-comienzo') : $request->input('alquiler-hora-comienzo')) . ':' . ($request->input('alquiler-minuto-comienzo')<10 ? '0' . $request->input('alquiler-minuto-comienzo') : $request->input('alquiler-minuto-comienzo'));
+    $fechallegada = DateTime::createFromFormat('Y-m-d H:i', $fechallegada);
+
+    $fechapartida = $request->input('alquiler-dia-fin') . ' ' . ($request->input('alquiler-hora-fin')<10 ? '0' . $request->input('alquiler-hora-fin') : $request->input('alquiler-hora-fin')) . ':' . ($request->input('alquiler-minuto-fin')<10 ? '0' . $request->input('alquiler-minuto-fin') : $request->input('alquiler-minuto-fin'));
+    $fechapartida = DateTime::createFromFormat('Y-m-d H:i', $fechapartida);
 
     // Los guardo
-    $alquiler->fechaComienzoAlquiler = $comienzo;
-    $alquiler->fechaFinAlquiler = $fin;
+    $alquiler->fechaComienzoAlquiler = $fechallegada;
+    $alquiler->fechaFinAlquiler = $fechapartida;
+
+    // Obtengo el espacio y hago un chequeo extra para ver si está disponible
+    $espacio = Espacio::findOrFail($id);
+    $disponible = $espacio->disponibleTodo($fechallegada, $fechapartida)['disponibleTodo'];
+    if (!$disponible) {
+      return redirect()->route('home');
+    }
 
     // Obtengo el precio final
-    $espacio = Espacio::findOrFail($id);
-    $minutoComienzo = $request->input('alquiler-hora-comienzo') * 60 + $request->input('alquiler-minuto-comienzo');
-    $minutoFin = $request->input('alquiler-hora-fin') * 60 + $request->input('alquiler-minuto-fin');
-    $alquiler->precioFinal = $espacio->precioFinal($minutoComienzo, $minutoFin);
+    $alquiler->precioFinal = $espacio->precioFinal($fechallegada, $fechapartida);
 
     // Guardo todo
     $alquiler->save();
