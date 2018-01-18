@@ -1720,6 +1720,12 @@ span .avatar{
   border-bottom: none;
 }
 
+article input[type='submit']:disabled{
+  color: #FFF;
+  border-color: #787878;
+  background-color: #787878;
+}
+
 /***************** E S P A C I O ********************/
 
 .espacio-map{

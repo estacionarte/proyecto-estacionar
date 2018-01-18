@@ -58,7 +58,7 @@
 
                       </div>
 
-                      <div class="modalAlquilar-form-div" id="disponible" style="font-size:1.2em; color: #990606; display:none;">
+                      <div class="modalAlquilar-form-div div-nodisponible" style="font-size:1.2em; color: #990606; display:none;">
                         <p>Espacio no disponible en este horario</p>
                       </div>
 
@@ -151,7 +151,7 @@
 
                       </div>
 
-                      <input type="submit" name="reservar" value="RESERVAR" id="submit-disponible">
+                      <input type="submit" name="reservar" value="RESERVAR">
 
                     </form>
 

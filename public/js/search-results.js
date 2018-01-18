@@ -107,6 +107,8 @@ var fechafin = [];
 var espacioid;
 var comienzo;
 var fin;
+var divNoDisponible = [];
+var btnsubmit = [];
 // Variables para precios
 var precio = [];
 var descuento = [];
@@ -135,8 +137,8 @@ function convertirFechas(){
 // Creo función que pide datos a la db
 
 var actualizarValores = function actualizar(){
-  // Escondo el cartel que dice que el espacio no está disponible
-  document.getElementById('disponible').style.display = 'none';
+  // // Escondo el cartel que dice que el espacio no está disponible
+  // document.getElementById('disponible').style.display = 'none';
   // Actualizo valores de fechas y las convierto
   actualizarReserva();
   convertirFechas();
@@ -234,6 +236,12 @@ for (var i = 0; i < espacios.length; i++) {
   diafin[id].addEventListener('change',actualizarValores);
   horafin[id].addEventListener('change',actualizarValores);
   minutofin[id].addEventListener('change',actualizarValores);
+
+  // Capturo divs de no disponible y botones de submit
+  divNoDisponible[id] = document.querySelectorAll(".div-nodisponible")[i];
+  console.log(divNoDisponible[id]);
+  btnsubmit[id] = document.querySelectorAll("article input[type='submit']")[i];
+  console.log(btnsubmit[id]);
 }
 
 // Función para chequear disponibilidad
@@ -249,13 +257,13 @@ function chequearDisponibilidad(){
       // Paso parámetros para función
       data: {id:espacioid,horariollegada:comienzo,horariopartida:fin},
       success: function(resultado) {
-        // Si el resultado es false (no disponible), muestro div informando esto y escondo botón de submit para que no mande el form
+        // Si el resultado es false (no disponible), muestro div informando esto y deshabilito botón de submit para que no mande el form
         if (!resultado.disponibleTodo) {
-          document.getElementById('disponible').style.display = 'block';
-          document.getElementById('submit-disponible').style.display = 'none';
+          divNoDisponible[espacioid].style.display = 'block';
+          btnsubmit[espacioid].disabled = true;
         } else {
-          document.getElementById('disponible').style.display = 'none';
-          document.getElementById('submit-disponible').style.display = 'block';
+          divNoDisponible[espacioid].style.display = 'none';
+          btnsubmit[espacioid].disabled = false;
         }
     }
     });
