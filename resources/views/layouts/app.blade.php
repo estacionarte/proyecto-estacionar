@@ -50,12 +50,15 @@
       @auth
 
         <nav class="main-nav">
-
+          {{-- <div class="clear"></div> --}}
           {{-- NOMBRE DE USUARIO --}}
-          <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
+          <div class="avatar-container">
+            <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
 
-          {{-- FOTO DE PERFIL DE USUARIO --}}
-          <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar"></span>
+            {{-- FOTO DE PERFIL DE USUARIO --}}
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar"></span>
+          </div>
+
 
           <div class="clear"></div>
 
@@ -83,19 +86,20 @@
             <li><a href="signin" class="iniciar-btn">Iniciar Sesión</a></li>
             <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li>
             <li><a href="signup" class="register-btn">Registrarse</a></li>
-            <li><a href="" class="anfitrion-btn">Convertite en anfitrión</a></li>
+            <li><a href="/anfitrion" class="anfitrion-btn">Convertite en anfitrión</a></li>
             <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>
             <li class="ayuda-li"><a href="faqs" class="faq-btn">Ayuda</a></li>
           </ul>
-
         </nav>
-<div class="clear"></div>
+
+        <div class="clear"></div>
+
         <div class="modal-wrapper" id="popup-iniciar">
           <div class="popup-contenedor">
             <a class="popup-cerrar" href="#">X</a>
             <h2 class="title-signin">Iniciar sesión</h2>
-            <section class="signin-popup">
 
+            <section class="signin-popup">
               <div class="form-generico">
                 <form action="{{ route('login') }}" method="post">
                   {{ csrf_field() }}
@@ -105,7 +109,7 @@
                         <strong>{{ $errors->first('email') }}</strong>
                       </span>
                     @endif
-                    <input type="text" name="email" placeholder="E-Mail" id="email" value="{{ old('email') }}"  autofocus>
+                    <input type="email" name="email" placeholder="E-Mail" id="email" value="{{ old('email') }}"  autofocus>
                   </div>
 
                   <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -143,7 +147,7 @@
       <div class="main-footer-div-left">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="mantenimiento">¿Quiénes somos?</a></li>
+          <li><a href="/quienes-somos">¿Quiénes somos?</a></li>
           <li><a href="mantenimiento">Contacto</a></li>
         </ul>
       </div>
@@ -188,37 +192,6 @@
 
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";}
-  </script>
-
-
-  {{-- VALIDAR LOGIN --}}
-  <script type="text/javascript">
-
-    window.onload = function () {
-
-      var form = document.forms[0];
-      form.addEventListener("submit", submitForm);
-    }
-
-    function submitForm (event) {
-      // event.preventDefault();
-
-      var elementos = this.length;
-
-      for (var i = 0; i < elementos; i++) {
-        var elemento = this[i];
-
-        if (!elemento.value) {
-          alert('El campo "' + elemento.name + '" es obligatorio');
-        }
-        if (elemento.type == 'submit') { continue; }
-      }
-      var regex =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-      var email = document.getElementById("email").value;
-      if( !(regex.test(email)) ) {
-        alert('Debe ingresar un correo válido');
-      }
-    }
   </script>
 
 
