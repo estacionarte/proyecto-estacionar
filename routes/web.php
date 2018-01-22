@@ -104,11 +104,6 @@ Route::get('/map', function() {
   return view('leaflet');
 });
 
-Route::get('/locations','LocationsController@map');
-Route::post('/locations','LocationsController@map');
-
-Route::get('/buscador','BuscadorController@buscarEspacios');
-
 Route::get('/mantenimiento', function () {
     return view('underconstruction');
 });
@@ -116,3 +111,15 @@ Route::get('/mantenimiento', function () {
 Route::get('resultados', 'EspaciosController@search')->name('show.search');
 
 Route::get('espacio/{id}', 'EspaciosController@showEspacio')->name('show.espacio');
+
+// Alquilar
+Route::post('alquilar/{id}', 'AlquileresController@alquilar')->name('alquilar');
+
+// Ajax call detalle alquiler
+Route::post('alquilar/detallealquiler/{id}/{horariollegada}/{horariopartida}', 'EspaciosController@detalleAlquiler')->name('alquiler.detalle');
+
+// Ajax call para chequear disponibilidad
+Route::post('alquilar/disponible/{id}/{horariollegada}/{horariopartida}', 'EspaciosController@disponible')->name('alquiler.disponible');
+
+// test
+Route::get('testfunction/{id}', 'EspaciosController@disponible')->name('disponible');

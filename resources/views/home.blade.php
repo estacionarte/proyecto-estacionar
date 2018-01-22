@@ -7,7 +7,7 @@
     <h3>Más de 10.000 usuarios ya confían en nosotros</h3>
 
     <div class="form-generico">
-      <form class="search-espacios-form" action="{{ route('show.search')}}" method="get">
+      <form class="search-espacios-form" action="{{ route('show.search')}}" method="get" onsubmit="return validarForm();">
         <div class="" id="dir_y_vehiculo">
           <input type="search" name="search-espacios-input-direccion" placeholder="Ejemplo: Balcarce 50 CABA">
           <select name="search-espacios-vehiculo">
@@ -18,7 +18,7 @@
         </div>
         <div class="search-horario">
           <h5>Llegada</h5>
-          <input type="date" name="search-espacios-dia-comienzo" value="">
+          <input type="date" name="search-espacios-dia-comienzo" value="" min="">
           <select name="search-espacios-hora-comienzo" class="search-espacios-hora">
             @for ($i=0; $i < 24; $i++)
               @if ($i<10)
@@ -60,7 +60,7 @@
             @endfor
           </select>
         </div>
-        <input type="submit" name="BUSCAR" value="BUSCAR">
+        <input type="submit" name="buscar" value="BUSCAR">
       </form>
     </div>
 
@@ -219,9 +219,8 @@
 
 </section>
 
-<script type="text/javascript">
-  document.querySelector("input[name='search-espacios-dia-comienzo']").valueAsDate = new Date();
-  document.querySelector("input[name='search-espacios-dia-fin']").valueAsDate = new Date();
-</script>
+@endsection
 
+@section('scripts')
+  <script src="{{ URL::asset('js/home.js')}}"></script>
 @endsection

@@ -541,16 +541,6 @@ ul li .popup-link{
   margin-top: 0px;
 }
 
-/*.form-generico .form-birthdate-label{
-  display: inline-block;
-  text-align: right;
-  float: left;
-  width: 45%;
-  color: #9c9c9c;
-  margin-left: 0;
-  padding-left: 0;
-}*/
-
 .signup p{
   font-size: 0.8em;
   font-weight: bold;
@@ -1724,6 +1714,12 @@ span .avatar{
   font-weight: 900;
   color: black;
   border-bottom: none;
+}
+
+article input[type='submit']:disabled{
+  color: #FFF;
+  border-color: #787878;
+  background-color: #787878;
 }
 
 /***************** E S P A C I O ********************/
@@ -3096,6 +3092,10 @@ span .avatar{
 
 .modalAlquilar-content p{
   font-size: 0.9em;
+}
+
+.modalAlquilar-content h2 {
+    margin: 6px auto 18px;
 }
 
 /***************** E S P A C I O ******************/
