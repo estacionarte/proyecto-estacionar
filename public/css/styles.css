@@ -24,6 +24,9 @@ ul, ol{
 a{
   text-decoration: none;
 }
+a:hover{
+  text-decoration: none;
+}
 
 .clear{
   clear: both;
@@ -1927,6 +1930,18 @@ article input[type='submit']:disabled{
 
 .resumen-anfitrion-container .resumen p{
   font-size: 1.5em;
+}
+
+.pasos-anfitrion-container{
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: left;
+  padding: 15px 15px;
+  border: 1px solid red;
+}
+
+.pasos-anfitrion-container h1{
+  font-weight: bold;
+  font-size: 3em;
 }
 
 /**************************************************************/
