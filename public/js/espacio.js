@@ -38,3 +38,21 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 mymap._handlers.forEach(function(handler) {
     handler.disable();
 });
+
+
+
+// // Función para mostar form al apretar botón
+// var botonAlquilar = document.getElementById('botonReLoco');
+// var modal = document.getElementById('modal1');
+// var close = document.querySelector(".alquilar-close");
+//
+// // Abrir modal al apretar botón
+// botonAlquilar.addEventListener('click',function(){
+//   modal.style.display = 'block';
+// });
+//
+// // Cerrar con cruz
+// close.onclick = function() {
+//   var modal = document.getElementById('modal' + this.id.slice(3));
+//   modal.style.display = "none";
+// }

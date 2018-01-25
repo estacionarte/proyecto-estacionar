@@ -1554,6 +1554,7 @@ span .avatar{
 .mejor-espacio-boton-alquilar:hover{
   background-color: #137d34;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .mejor-espacio-boton-vermas{
@@ -1563,6 +1564,7 @@ span .avatar{
 .mejor-espacio-boton-vermas:hover{
   background-color: #284074;
   text-decoration: none;
+  cursor: pointer;
 }
 
 /* El Modal (background) */
@@ -1577,6 +1579,7 @@ span .avatar{
     overflow: auto; /* Para poder scrollear y que se mantenga */
     background-color: rgb(0,0,0); /* Por si falla el opacity */
     background-color: rgba(0,0,0,0.3); /* Negro con opacity */
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 /* Modal Box */
@@ -1608,15 +1611,20 @@ span .avatar{
 
 /* Estilos de elementos dentro del modal */
 .modalAlquilar-content h2{
-  /* color: rgb(51, 51, 51); */
   color: rgb(0, 0, 0);
   padding: 0;
   margin: 5px auto 12px;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
 }
 
 .modalAlquilar-content h3{
   padding: 0;
   margin: 1px auto;
+  font-size: 1.4em;
+  text-align: left;
+  font-weight: bold;
 }
 
 .modalAlquilar-content h4{
@@ -1628,6 +1636,7 @@ span .avatar{
   padding: 0;
   margin: 0px auto;
   font-size: 0.9em;
+  text-align: center;
 }
 
 .modalAlquilar-content hr{
@@ -1729,6 +1738,25 @@ article input[type='submit']:disabled{
 
 .espacio-map{
   height: 300px;
+}
+
+#botonReLoco{
+  margin: 5px auto;
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-size: 18px;
+  padding: 9px 16px;
+  background-color: #1baa47;
+}
+
+#botonReLoco:hover{
+  background-color: #137d34;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#mapid {
+  z-index: 0;
 }
 
 /******************* C O M I N G  S O O N ****************/
@@ -3269,41 +3297,6 @@ article input[type='submit']:disabled{
 .show-espacio h2::first-letter{
   text-transform: uppercase;
 }
-
-.espacio-main-content .form-generico{
-  font-family: 'Roboto Condensed', sans-serif;
-  border: solid 2px rgb(204, 212, 201);
-  width: 45%;
-  float: right;
-  margin: 80px 40px 0 1px;
-  padding-bottom: 0;
-}
-
-.espacio-main-content .form-generico .search-espacios-form{
-  width: 90%;
-  margin: 40px auto;
-  /* border: solid 1px red; */
-}
-
-.espacio-main-content .form-generico .search-espacios-form div{
-  border: solid 1px rgb(204, 212, 201);
-}
-
-.espacio-main-content .form-generico .search-espacios-form input[type=submit]{
-  margin-bottom: 0;
-  height: 40px;
-}
-
-.espacio-main-content #reservar-cochera{
-  width: 45%;
-  height: 50px;
-  margin: 10px 0 0 15px;
-}
-/* .sticky {
-  position: fixed;
-  top: 0;
-  left: 45%;
-} */
 
 .espacio-map{
   height: 400px;

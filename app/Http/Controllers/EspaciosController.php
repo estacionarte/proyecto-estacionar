@@ -13,6 +13,7 @@ class EspaciosController extends Controller
     public function search(Request $request){
       // Guardo las fechas en string
       $fechallegada = $request->input('search-espacios-dia-comienzo') . ' ' . ($request->input('search-espacios-hora-comienzo')<10 ? '0' . $request->input('search-espacios-hora-comienzo') : $request->input('search-espacios-hora-comienzo')) . ':' . ($request->input('search-espacios-minuto-comienzo')<10 ? '0' . $request->input('search-espacios-minuto-comienzo') : $request->input('search-espacios-minuto-comienzo'));
+
       $fechapartida = $request->input('search-espacios-dia-fin') . ' ' . ($request->input('search-espacios-hora-fin')<10 ? '0' . $request->input('search-espacios-hora-fin') : $request->input('search-espacios-hora-fin')) . ':' . ($request->input('search-espacios-minuto-fin')<10 ? '0' . $request->input('search-espacios-minuto-fin') : $request->input('search-espacios-minuto-fin'));
 
       // Convierto todo a formato fecha
@@ -31,7 +32,14 @@ class EspaciosController extends Controller
       return view('search-results', compact('espacios','fechallegada', 'fechapartida', 'direccion'));
     }
 
-    public function showEspacio($id){
+
+    public function showEspacio($id,  $fechallegada = null,  $fechapartida = null){
+
+      if (!$fechallegada && !$fechapartida) {
+        $fechallegada = new DateTime();
+        $fechapartida = new DateTime();
+        $fechapartida->modify('+6 hour');
+      }
 
       $espacio = Espacio::findOrFail($id);
 
@@ -39,8 +47,9 @@ class EspaciosController extends Controller
       $tiempomaximo = $espacio->minutosEnDiasYHoras($espacio->estadiaMaximaMinutos);
       $anticipacion = $espacio->minutosEnDiasYHoras($espacio->anticipacionMinutos);
 
-      return view('espacio', compact('espacio', 'tiempominimo', 'tiempomaximo', 'anticipacion'));
+      return view('espacio', compact('espacio', 'tiempominimo', 'tiempomaximo', 'anticipacion','fechallegada','fechapartida'));
     }
+
 
     // Función para traer el precio del alquiler según el horario introducido
     // Usado en search-results dentro del modal alquiler
@@ -75,6 +84,7 @@ class EspaciosController extends Controller
       return response()->json($resultado);
     }
 
+    // Función para chequear disponibilidad
     public function disponible(Request $request){
 
       // Por seguridad, si no recibo petición por post no muestro nada
