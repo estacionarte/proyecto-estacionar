@@ -45,7 +45,7 @@
   <body>
     <header class="main-header">
 
-        <a href="/"><img src="/images/logo4.jpg" alt="logotipo" class="logo"></a>
+        <a href="/"><img src="/images/logo_dos.png" alt="logotipo" class="logo"></a>
 
       @auth
 
@@ -53,10 +53,12 @@
           {{-- <div class="clear"></div> --}}
           {{-- NOMBRE DE USUARIO --}}
           <div class="avatar-container">
-            <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
 
             {{-- FOTO DE PERFIL DE USUARIO --}}
             <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar"></span>
+
+            <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
+
           </div>
 
 
@@ -147,7 +149,7 @@
       <div class="main-footer-div-left">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="/quienes-somos">¿Quiénes somos?</a></li>
+          <li><a href="/nosotros">Nosotros</a></li>
           <li><a href="mantenimiento">Contacto</a></li>
         </ul>
       </div>

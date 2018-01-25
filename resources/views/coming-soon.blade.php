@@ -14,7 +14,7 @@
   <div class="comingsoon-container">
 
     <div class="logo-container">
-      <img src="/images/logo_trans.png" class="comming-logo">
+      <img src="images/logo_dos.png" class="comming-logo">
     </div>
 
     <div class="redes-container">

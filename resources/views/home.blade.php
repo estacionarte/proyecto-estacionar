@@ -70,18 +70,18 @@
 <section class="como-funciona" id="comofunciona">
   <h2>¿Cómo funciona?</h2>
   <p class="sub-buscas">Si necesitás alquilar una cochera, ingresá a Estacionapp, encontrá ofertas cercanas a tu destino y seleccioná tu favorita. Vas a poder comparar precios, ver imágenes, calificaciones y comentarios de otros conductores.</p>
-  <article class="pasos">
-    <img src="images/search.jpg" alt="buscar">
+  <article class="pasos" id="pasos-1">
+    <img src="images/home/search.jpg" alt="buscar">
     <h3 class="buscas">BUSCÁS</h3>
     <p>Elegí entre las más de 50.000 cocheras disponibles en la ciudad de Buenos Aires en cualquier momento del día.</p>
   </article>
-  <article class="pasos">
-    <img src="images/credit-card.jpg" alt="tarjeta">
+  <article class="pasos" id="pasos-2">
+    <img src="images/home/credit-card.jpg" alt="tarjeta">
     <h3 class="alquilas">ALQUILÁS</h3>
     <p>Reservá la opción que mejor se adapte a lo que necesitás y pagá a través de nuestro sistema seguro. ¡No más problemas de efectivo!</p>
   </article>
-  <article class="pasos">
-    <img src="images/car.jpg" alt="auto">
+  <article class="pasos" id="pasos-3">
+    <img src="images/home/car.jpg" alt="auto">
     <h3 class="estacionas">ESTACIONÁS</h3>
     <p>Conducí hasta la cochera y dejá tu auto. ¡Listo! Ya es tuya por el tiempo que la solicitaste.</p>
   </article>
@@ -94,37 +94,37 @@
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 220.00 ARS</strong> x día</h3>
           <h4>Cochera a metros del hipódromo</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/espacio-3.jpg"></a>
           <h3><strong>$ 15.00 ARS</strong> x hora</h3>
           <h4>Cochera cubierta en edificio</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-2.jpg"></a>
           <h3><strong>$ 100.00 ARS</strong> x día</h3>
           <h4>Cochera descubierta con reja</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/espacio-1.jpg"></a>
           <h3><strong>$ 20.00 ARS</strong> x hora</h3>
           <h4>Cochera en edificio residencial</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/espacio-2.jpg"></a>
           <h3><strong>$ 20.00 ARS</strong> x hora</h3>
           <h4>Cochera cubierta Recoleta</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 20.00 ARS</strong> x hora</h3>
           <h4>Cochera cubierta en Palermo</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
     </div>
 
@@ -147,19 +147,19 @@
           <a href="faqs"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 220.00 ARS</strong> x día</h3>
           <h4>Cochera a metros del hipodromo</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="perfil"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 220.00 ARS</strong> x día</h3>
           <h4>Cochera a metros del hipodromo</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="perfil"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 220.00 ARS</strong> x día</h3>
           <h4>Cochera a metros del hipodromo</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
       </div>
 
@@ -168,19 +168,19 @@
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 15.00 ARS</strong> x hora</h3>
           <h4>Cochera cubierta en edificio</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 15.00 ARS</strong> x hora</h3>
           <h4>Cochera cubierta en edificio</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 15.00 ARS</strong> x hora</h3>
           <h4>Cochera cubierta en edificio</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
       </div>
 
@@ -189,19 +189,19 @@
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 100.00 ARS</strong> x día</h3>
           <h4>Cochera descubierta con reja</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 100.00 ARS</strong> x día</h3>
           <h4>Cochera descubierta con reja</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
           <h3><strong>$ 100.00 ARS</strong> x día</h3>
           <h4>Cochera descubierta con reja</h4>
-          <img class="stars" src="/images/stars.png">
+          <img class="stars" src="/images/home/stars.png">
         </article>
       </div>
     </div>

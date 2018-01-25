@@ -84,8 +84,8 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
 // ******************************************************************************
 
 // ************************ QUIENES SOMOS  *********************
-Route::get('/quienes-somos', function () {
-    return view('quienes-somos');
+Route::get('/nosotros', function () {
+    return view('nosotros');
 });
 
 Route::get('/faqs', function () {
