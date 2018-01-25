@@ -23,6 +23,7 @@ class SocialAuthController extends Controller
   public function redirectToProvider($provider)
   {
       return Socialite::driver($provider)->redirect();
+
   }
 
   // Obtengo la información de usuario del prveedor

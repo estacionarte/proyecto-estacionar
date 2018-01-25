@@ -32,7 +32,7 @@
     </div>
 
     <div class="countdown-container">
-      <h1>PROXIMAMENTE</h1>
+      <h1>Coming Soon</h1>
 
       <div class="reloj-container">
         <p id="dia"></p>
@@ -58,13 +58,24 @@
     <div class="contacto-container">
       <h5>Dejanos un correo y nos ponemos en contacto con vos</h5>
 
-      <article class="form-generico">
-          <form class="credits-form" action="" method="post">
+      <article class="form-generico form-group">
+          <form class="credits-form" action="/lanzamiento" method="post">
             {{ csrf_field() }}
-            <input type="email" name="email" placeholder="Ingresá un e-mail" id="credit-email">
+
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="text" name="name" placeholder="Tu nombre" value="">
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input type="email" name="email" placeholder="Tu correo" id="credit-email">
+            </div>
+
             <input type="submit" name="" value="SUSCRIBITE">
           </form>
       </article>
+
     </div>
 
   </div>

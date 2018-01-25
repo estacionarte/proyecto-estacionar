@@ -45,10 +45,10 @@
               </select>
           </article>
 
-          <article class="profile-credit">
+          {{-- <article class="profile-credit">
               <h2>Próximos alquileres</h2>
               <p>02/02 16:00 - 02/02 19:30 Cochera privada en recoleta </p>
-          </article>
+          </article> --}}
 
           <!-- SCRIPT CSS -->
           <script type="text/javascript">

@@ -4,11 +4,20 @@ Auth::routes();
 Route::get('/', function () {
     return view('home');
 });
-
+// ************************ COMING SOON *********************
 Route::get('/lanzamiento', function () {
     return view('coming-soon');
 });
 
+// ************************ A N F I T R I O N  *********************
+Route::get('/anfitrion', function () {
+    return view('anfitrion');
+});
+
+// ************************ CONTACTO EMAIL *********************
+Route::post('/lanzamiento', 'ContactController@sendContact');
+
+// ************************ HOME LOGIN REGISTER *********************
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/signup', 'Auth\RegisterController@showRegistrationForm');
@@ -73,6 +82,11 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
 
 });
 // ******************************************************************************
+
+// ************************ QUIENES SOMOS  *********************
+Route::get('/quienes-somos', function () {
+    return view('quienes-somos');
+});
 
 Route::get('/faqs', function () {
     return view('faqs');
