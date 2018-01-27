@@ -3,11 +3,11 @@ Auth::routes();
 
 Route::get('/', function () {
     return view('home');
-});
+})->middleware('coming.soon');
 // ************************ COMING SOON *********************
 Route::get('/lanzamiento', function () {
     return view('coming-soon');
-});
+})->name('coming.soon');
 
 // ************************ A N F I T R I O N  *********************
 Route::get('/anfitrion', function () {
@@ -18,9 +18,9 @@ Route::get('/anfitrion', function () {
 Route::post('/lanzamiento', 'ContactController@sendContact');
 
 // ************************ HOME LOGIN REGISTER *********************
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('coming.soon');
 
-Route::get('/signup', 'Auth\RegisterController@showRegistrationForm');
+Route::get('/signup', 'Auth\RegisterController@showRegistrationForm')->middleware('coming.soon');
 
 Route::get('/signin', 'Auth\LoginController@showLoginForm');
 
@@ -30,15 +30,15 @@ Route::get('login/{provider}/callback', 'Auth\SocialAuthController@handleProvide
 
 
 // ***************************** P E R F I L *******************
-Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile')->middleware('auth');
+Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile')->middleware('auth')->middleware('coming.soon');
 
-Route::get('/perfil/editar-imagen', 'ProfileController@showUpdateProfileImage')->name('show.update.profile.image');
+Route::get('/perfil/editar-imagen', 'ProfileController@showUpdateProfileImage')->name('show.update.profile.image')->middleware('coming.soon');
 
 Route::post('/perfil/editar-imagen', 'ProfileController@updateProfileImage')->name('update_profile_image');
 
 
 // *************************** V E H I C U L O S ******************************
-Route::group(['prefix' => 'cargar-vehiculo', 'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'cargar-vehiculo', 'middleware' => ['auth','coming.soon']], function(){
 
   Route::get('datos', 'UploadVehicleController@showUploadVehicle')->name('show.upload.vehicle');
 
@@ -52,7 +52,7 @@ Route::group(['prefix' => 'cargar-vehiculo', 'middleware' => 'auth'], function()
 });
 
 // ***************************  E S P A C I O S ******************************
-Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'upload-espacio', 'middleware' => ['auth','coming.soon']], function(){
 
   Route::get('infogeneral/{espacio?}', 'UploadEspacioController@showUploadEspacio1')->name('upload.espacio.1');
 
@@ -86,31 +86,27 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => 'auth'], function(){
 // ************************ QUIENES SOMOS  *********************
 Route::get('/quienes-somos', function () {
     return view('quienes-somos');
-});
+})->middleware('coming.soon');
 
 Route::get('/faqs', function () {
     return view('faqs');
-});
+})->middleware('coming.soon');
 
 Route::get('/politica-y-privacidad', function () {
     return view('politica-y-privacidad');
-});
+})->middleware('coming.soon');
 
 Route::get('/creditos', function () {
     return view('credits');
-});
-
-Route::get('/map', function() {
-  return view('leaflet');
-});
+})->middleware('coming.soon');
 
 Route::get('/mantenimiento', function () {
     return view('underconstruction');
-});
+})->middleware('coming.soon');
 
-Route::get('resultados', 'EspaciosController@search')->name('show.search');
+Route::get('resultados', 'EspaciosController@search')->name('show.search')->middleware('coming.soon');
 
-Route::get('espacio/{id}', 'EspaciosController@showEspacio')->name('show.espacio');
+Route::get('espacio/{id}', 'EspaciosController@showEspacio')->name('show.espacio')->middleware('coming.soon');
 
 // Alquilar
 Route::post('alquilar/{id}', 'AlquileresController@alquilar')->name('alquilar');
@@ -122,4 +118,4 @@ Route::post('alquilar/detallealquiler/{id}/{horariollegada}/{horariopartida}', '
 Route::post('alquilar/disponible/{id}/{horariollegada}/{horariopartida}', 'EspaciosController@disponible')->name('alquiler.disponible');
 
 // test
-Route::get('testfunction/{id}', 'EspaciosController@disponible')->name('disponible');
+Route::get('testfunction', 'EspaciosController@test')->name('test')->middleware('coming.soon');

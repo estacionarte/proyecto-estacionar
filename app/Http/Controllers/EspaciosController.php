@@ -113,4 +113,5 @@ class EspaciosController extends Controller
       return response()->json($disponibleTodo);
 
     }
+
 }
