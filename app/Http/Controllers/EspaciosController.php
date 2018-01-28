@@ -92,10 +92,11 @@ class EspaciosController extends Controller
         $id = $request->id;
         $horariollegada = new DateTime($request->horariollegada);;
         $horariopartida = new DateTime($request->horariopartida);
+        $tipoVehiculo = $request->tipoVehiculo;
 
         // Busco el espacio que quiero y ejecuto la función para ver si está disponible
         $espacio = Espacio::findOrFail($id);
-        $disponibleTodo = $espacio->disponibleTodo($horariollegada, $horariopartida);
+        $disponibleTodo = $espacio->disponibleTodo($horariollegada, $horariopartida, $tipoVehiculo);
 
         return response()->json($disponibleTodo);
       }

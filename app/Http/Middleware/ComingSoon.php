@@ -42,7 +42,7 @@ class ComingSoon
       if (!Auth::check()) {
         return redirect()->route('coming.soon');
       }
-      if (Auth::user()->email != 'joaquin@test.com') {
+      if (Auth::user()->email != 'joaquin@test.com' || Auth::user()->email != 'mariano@estacionados.com') {
         return redirect()->route('coming.soon');
       }
       return $next($request);

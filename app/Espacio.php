@@ -347,8 +347,8 @@ class Espacio extends Model
     return false;
   }
 
+  // Función para verificar si no se pisa con otro alquiler existente en ese horario
   public function disponibleAlquileres(DateTime $fechallegada, DateTime $fechapartida){
-
 
     // Busco si hay otros alquileres al principio (con fecha de salida entre mis fechas de estadía)
     $alquileres = Alquiler::where('idEspacio', $this->id)
@@ -382,13 +382,42 @@ class Espacio extends Model
     return true;
   }
 
+  // Función para chequear que se acepte el tipo de vehiculo solicitado
+  public function disponibleVehiculo($tipoVehiculo){
+
+    if ($tipoVehiculo == 'Automóvil') {
+      if ($this->cantAutos > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    if ($tipoVehiculo == 'Motocicleta') {
+      if ($this->cantMotos > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    if ($tipoVehiculo == 'Bicicleta') {
+      if ($this->cantBicicletas > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+  }
+
   // Función para chequear que todo esté disponible simultáneamente
-  public function disponibleTodo(DateTime $fechallegada, DateTime $fechapartida){
+  public function disponibleTodo(DateTime $fechallegada, DateTime $fechapartida, $tipoVehiculo){
 
     $disponibleTodo = true;
 
     // Si alguno no está disponible, el resultado final es falso
-    if (!$this->disponibleMinYMax($fechallegada, $fechapartida) || !$this->disponibleDiasYHorarios($fechallegada, $fechapartida) || !$this->disponibleAlquileres($fechallegada, $fechapartida)) {
+    if (!$this->disponibleMinYMax($fechallegada, $fechapartida) || !$this->disponibleDiasYHorarios($fechallegada, $fechapartida) || !$this->disponibleAlquileres($fechallegada, $fechapartida || !$this->disponibleVehiculo($tipoVehiculo)) {
       $disponibleTodo = false;
     }
 
@@ -399,10 +428,11 @@ class Espacio extends Model
         'minYMax' => $this->disponibleMinYMax($fechallegada, $fechapartida),
         'diasYHorarios' => $this->disponibleDiasYHorarios($fechallegada, $fechapartida),
         'alquileres' => $this->disponibleAlquileres($fechallegada, $fechapartida),
+        'vehiculo' => $this->disponibleVehiculo($tipoVehiculo),
       ]
     ];
 
-      return $disponible;
-    }
+    return $disponible;
+  }
 
 }

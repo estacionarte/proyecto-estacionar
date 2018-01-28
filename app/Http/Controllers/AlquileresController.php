@@ -41,7 +41,7 @@ class AlquileresController extends Controller
 
     // Obtengo el espacio y hago un chequeo extra para ver si está disponible
     $espacio = Espacio::findOrFail($id);
-    $disponible = $espacio->disponibleTodo($fechallegada, $fechapartida)['disponibleTodo'];
+    $disponible = $espacio->disponibleTodo($fechallegada, $fechapartida, $tipoVehiculo)['disponibleTodo'];
     if (!$disponible) {
       return redirect()->route('home');
     }
