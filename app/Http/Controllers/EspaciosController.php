@@ -21,10 +21,11 @@ class EspaciosController extends Controller
       $fechapartida = DateTime::createFromFormat('Y-m-d H:i', $fechapartida);
 
       // Busco los espacios que estén disponibles usando la función del espacio
-      // FALTA AGREGAR VERIFICACIÓN POR VEHÍCULO
+      $tipoVehiculo = $request->input('search-espacios-vehiculo');
+
       $espacios = Espacio::with("fotos")->get();
-      $espacios = $espacios->filter(function ($espacio) use ($fechallegada, $fechapartida) {
-        return $espacio->disponibleTodo($fechallegada, $fechapartida)['disponibleTodo'];
+      $espacios = $espacios->filter(function ($espacio) use ($fechallegada, $fechapartida, $tipoVehiculo) {
+        return $espacio->disponibleTodo($fechallegada, $fechapartida,$tipoVehiculo)['disponibleTodo'];
       });
 
       $direccion = $request->input('search-espacios-input-direccion');
@@ -58,7 +59,7 @@ class EspaciosController extends Controller
       // Por seguridad, si no recibo petición por post no muestro nada
       if ($request->isMethod('post')) {
         $id = $request->id;
-        $horariollegada = new DateTime($request->horariollegada);;
+        $horariollegada = new DateTime($request->horariollegada);
         $horariopartida = new DateTime($request->horariopartida);
 
         $espacio = Espacio::findOrFail($id);
@@ -107,7 +108,8 @@ class EspaciosController extends Controller
         'detalle' => [
           'minYMax' => '?',
           'diasYHorarios' => '?',
-          'alquileres' => '?'
+          'alquileres' => '?',
+          'vehiculo' => '?'
         ]
       ];
 

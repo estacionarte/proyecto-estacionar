@@ -5,6 +5,7 @@ var btn = [];
 var close = [];
 var modalactivo;
 // Variables para validaciones
+var vehiculo = [];
 var diacomienzo = [];
 var horacomienzo = [];
 var minutocomienzo = [];
@@ -16,6 +17,7 @@ var fechafin = [];
 var espacioid;
 var comienzo;
 var fin;
+var tipoVehiculo;
 var divNoDisponible = [];
 var btnsubmit = [];
 // Variables para precios
@@ -126,6 +128,7 @@ for (var i = 0; i < espacios.length; i++) {
   minutocomienzo[id] = document.querySelectorAll("select[name='alquiler-minuto-comienzo']")[i];
   horafin[id] = document.querySelectorAll("select[name='alquiler-hora-fin']")[i];
   minutofin[id] = document.querySelectorAll("select[name='alquiler-minuto-fin']")[i];
+  vehiculo[id] = document.querySelectorAll("select[name='vehiculo']")[i];
 
   // Guardo fechas introducidas
   fechacomienzo[id] = new Date(diacomienzo[id].value + " " + horacomienzo[id].options[horacomienzo[id].selectedIndex].value + ":" + minutocomienzo[id].options[minutocomienzo[id].selectedIndex].value);
@@ -153,6 +156,17 @@ for (var i = 0; i < espacios.length; i++) {
 // Función para chequear disponibilidad
 function chequearDisponibilidad(){
   // Ajax call usando jquery
+  // Guardo tipo de vehículo elegido
+  tipoVehiculo = vehiculo[espacioid].options[vehiculo[espacioid].selectedIndex].text;
+  tipoVehiculo = tipoVehiculo.substring(0,4);
+  if (tipoVehiculo == 'Auto') {
+    tipoVehiculo = 'Automóvil';
+  } else if (tipoVehiculo == 'Moto') {
+    tipoVehiculo = 'Motocicleta';
+  } else if (tipoVehiculo == 'Bici') {
+    tipoVehiculo = 'Bicicleta';
+  }
+  console.log(tipoVehiculo);
   // Paso los parámetros que ya conseguí de las funciones ejecutadas anteriormente
   jQuery(function($){
     $.ajax({
@@ -161,9 +175,10 @@ function chequearDisponibilidad(){
       headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
       type: 'POST',
       // Paso parámetros para función
-      data: {id:espacioid,horariollegada:comienzo,horariopartida:fin},
+      data: {id:espacioid,horariollegada:comienzo,horariopartida:fin,tipoVehiculo:tipoVehiculo},
       success: function(resultado) {
         // Si el resultado es false (no disponible), muestro div informando esto y deshabilito botón de submit para que no mande el form
+        console.log(resultado);
         if (!resultado.disponibleTodo) {
           divNoDisponible[espacioid].style.display = 'block';
           btnsubmit[espacioid].disabled = true;

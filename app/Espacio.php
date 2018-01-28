@@ -417,7 +417,7 @@ class Espacio extends Model
     $disponibleTodo = true;
 
     // Si alguno no está disponible, el resultado final es falso
-    if (!$this->disponibleMinYMax($fechallegada, $fechapartida) || !$this->disponibleDiasYHorarios($fechallegada, $fechapartida) || !$this->disponibleAlquileres($fechallegada, $fechapartida || !$this->disponibleVehiculo($tipoVehiculo)) {
+    if (!$this->disponibleMinYMax($fechallegada, $fechapartida) || !$this->disponibleDiasYHorarios($fechallegada, $fechapartida) || !$this->disponibleAlquileres($fechallegada, $fechapartida) || !$this->disponibleVehiculo($tipoVehiculo)) {
       $disponibleTodo = false;
     }
 

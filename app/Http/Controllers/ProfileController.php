@@ -13,7 +13,7 @@ use Image;
 
 class ProfileController extends Controller
 {
-  public function mostrarPerfil(Espacio $espacio){
+  public function mostrarPerfil(){
 
     $espacios = DB::table('espacios')
     ->select('*')
