@@ -15,7 +15,6 @@ class Espacio extends Model
   protected $fillable = [
     'idUser',
     'direccion',
-    'dpto',
     'pais',
     'provincia',
     'ciudad',
