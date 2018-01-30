@@ -38,12 +38,12 @@ class UploadVehicleController extends Controller
           'patente.required_if'    => 'Debe completar la patente',
         ]);
 
-          $vehiculo = new Vehiculo($request->all());
+        $vehiculo = new Vehiculo($request->all());
 
-          $vehiculo->idUser = Auth::user()->id;
-          $vehiculo->save();
+        $vehiculo->idUser = Auth::user()->id;
+        $vehiculo->save();
 
-          return redirect(route('profile'));
+        return redirect(route('profile'));
     }
 
     public function showEditVehicle($id){

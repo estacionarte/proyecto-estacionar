@@ -18,7 +18,7 @@ class Vehiculo extends Model
     'color',
     'patente',
     'deleted_at',
-    'Iduser'
+    'idUser'
   ];
 
   public function usuario()
