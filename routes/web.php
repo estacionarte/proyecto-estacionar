@@ -52,7 +52,7 @@ Route::group(['prefix' => 'cargar-vehiculo', 'middleware' => ['auth','coming.soo
 });
 
 // ***************************  E S P A C I O S ******************************
-Route::group(['prefix' => 'upload-espacio', 'middleware' => ['auth','coming.soon']], function(){
+Route::group(['prefix' => 'upload-espacio', 'middleware' => ['auth','coming.soon','check.owner']], function(){
 
   Route::get('infogeneral/{espacio?}', 'UploadEspacioController@showUploadEspacio1')->name('upload.espacio.1');
 
@@ -118,4 +118,4 @@ Route::post('alquilar/detallealquiler/{id}/{horariollegada}/{horariopartida}', '
 Route::post('alquilar/disponible/{id}/{horariollegada}/{horariopartida}', 'EspaciosController@disponible')->name('alquiler.disponible');
 
 // test
-Route::get('testfunction', 'EspaciosController@test')->name('test')->middleware('coming.soon');
+Route::get('testfunction', 'EspaciosController@test')->name('test')->middleware(['coming.soon','check.owner']);
