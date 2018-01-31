@@ -7,6 +7,15 @@
   <title>Lanzamiento</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="hojaDeEstilo">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113241679-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113241679-1');
+  </script>
 </head>
 
 <body class="coming-soon">
