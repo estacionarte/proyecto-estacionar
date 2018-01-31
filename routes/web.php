@@ -26,16 +26,22 @@ Route::get('/signin', 'Auth\LoginController@showLoginForm');
 
 // ************************ LOGIN FACEBOOK *********************
 Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+
 Route::get('login/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
 
-
 // ***************************** P E R F I L *******************
-Route::get('/perfil', 'ProfileController@mostrarPerfil')->name('profile')->middleware('auth');
 
-Route::get('/perfil/editar-imagen', 'ProfileController@showUpdateProfileImage')->name('show.update.profile.image');
+Route::get('perfil-espacio', 'ProfileController@mostrarEspacios')->name('profile-espacio')->middleware('auth');
 
-Route::post('/perfil/editar-imagen', 'ProfileController@updateProfileImage')->name('update_profile_image');
+Route::get('perfil-vehiculo', 'ProfileController@mostrarVehiculos')->name('profile-vehiculo')->middleware('auth');
 
+Route::get('perfil', 'ProfileController@dameFecha')->name('profile')->middleware('auth');
+
+Route::get('/perfil-alquileres', function () {
+    return view('profile.profile-alquileres');
+});
+
+Route::put('perfil', 'ProfileController@uploadProfileImage');
 
 // *************************** V E H I C U L O S ******************************
 Route::group(['prefix' => 'cargar-vehiculo', 'middleware' => 'auth'], function(){

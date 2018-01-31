@@ -43,7 +43,7 @@
     @yield('leaflet')
   </head>
   <body>
-    <header class="main-header">
+    <header class="main-header" id="element">
 
         <a href="/"><img src="/images/logo_dos.png" alt="logotipo" class="logo"></a>
 
@@ -84,13 +84,14 @@
 
         <div class="clear-toggle"></div>
 
-          <ul class="nav-bar">
+          <ul class="nav-bar" id="lol">
             <li><a href="signin" class="iniciar-btn">Iniciar Sesión</a></li>
             <li><a href="#popup-iniciar" class="popup-link">Iniciar Sesión</a></li>
             <li><a href="signup" class="register-btn">Registrarse</a></li>
-            <li><a href="/anfitrion" class="anfitrion-btn">Convertite en anfitrión</a></li>
-            <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>
             <li class="ayuda-li"><a href="faqs" class="faq-btn">Ayuda</a></li>
+            <li><a href="/anfitrion" class="anfitrion-btn" id="anfitrion">Convertite en anfitrión</a></li>
+            <li><a href="#comofunciona" class="how-btn">¿Como funciona?</a></li>
+
           </ul>
         </nav>
 
@@ -194,6 +195,19 @@
 
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";}
+
+      var elementPosition = $('#element').offset();
+
+// $(window).scroll(function(){
+//    if($(window).scrollTop() > 500){
+//       $('#element').css({'position':'fixed', 'zIndex':'99999'});
+//       $('#lol').css({'backgroundColor':'pink'});
+//    } else {
+//       $('#element').css('position', 'static');
+//       $('#lol').css({'backgroundColor':'#fff'});
+//    }
+// });
+
   </script>
 
 

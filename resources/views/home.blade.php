@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title') Estacionapp @endsection
 @section('content')
+
 <section class="banner-container">
   <article class="shape">
     <h2>Encontrá y reservá lugar para tu vehículo</h2>

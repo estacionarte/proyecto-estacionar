@@ -109,13 +109,11 @@ a:hover{
   text-transform: uppercase;
   padding: 15px 0;
   border-bottom: solid 2px white;
-  /*border-radius: 5%;*/
   font-size: 0.8em;
-  margin: auto;
 }
 
 .nav-bar a:hover{
-  background-color: rgba(72, 168, 193, 0.7);
+
   text-decoration: none;
 }
 
@@ -672,282 +670,360 @@ span .avatar{
   border-bottom: none;
 }
 
-/***************** P R O F I L E ********************/
-.main-profile-nav{
-  padding: 15px 2px;
-  margin: 0 auto;
-  background: #fff;
-  font-family: 'Roboto Condensed', sans-serif;
+/***************** NAV BAR - P R O F I L E ********************/
+#toggle-profile {
+  display: block;
+  float: left;
+  width: 28px;
+  height: 30px;
+  margin: 10px;
+  padding-top: 11px;
+  /* border: solid 1px red; */
 }
 
-
-.main-profile-nav section{
-  display: none;
-  padding: 20px 0 0;
-  border-top: 1px solid #ddd;
-  font-size: 1.1em;
-}
-
-.main-profile-nav input{
-  display: none;
-}
-
-.main-profile-nav label{
-  display: inline-block;
-  margin: 0 0 -1px;
-  padding: 15px 15px;
-  font-weight: 600;
-  text-align: center;
-  color: #bbb;
-  border: 1px solid transparent;
-  font-size: 0;
-}
-
-.main-profile-nav label:before {
-  font-family: fontawesome;
-  font-weight: normal;
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-.main-profile-nav label[for*='1']:before {
-  content: '\f007';
-}
-
-.main-profile-nav label[for*='2']:before {
-  content: '\f1b9';
-}
-
-.main-profile-nav label[for*='3']:before {
-  content: '\f015';
-}
-
-.main-profile-nav label[for*='4']:before {
-  content: '\f006';
-}
-
-.main-profile-nav label:hover {
-  color: #888;
+#toggle-profile:hover{
   cursor: pointer;
 }
 
-.main-profile-nav input:checked + label {
-  color: #555;
-  border: 1px solid #ddd;
-  border-top: 2px solid orange;
-  border-bottom: 1px solid #fff;
-  width: 40%;
-  font-size: 0.8em;
-  padding: 15px 5px;
+#toggle-profile span:after, #toggle-profile span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -9px;
 }
 
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2,
-#tab3:checked ~ #content3,
-#tab4:checked ~ #content4 {
+#toggle-profile span:after{
+  top: 9px;
+}
+
+#toggle-profile span {
+  position: relative;
   display: block;
 }
 
-/************ PROFILE -- MI PERFIL ****************/
-.profile-image{
+#toggle-profile span, #toggle-profile span:after, #toggle-profile span:before {
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 2px;
+}
+
+#toggle-profile.on span {
+  background-color: transparent;
+}
+
+#toggle-profile.on span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#toggle-profile.on span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+.profile-nav-container .navbar{
+  margin-top: -10px;
+  background-color: rgb(13, 126, 218);
+}
+
+.profile-nav-container .navbar .navbar-nav{
+  display: none;
+  /* border: solid 1px red; */
+}
+
+.profile-nav-container .navbar .navbar-nav li{
+  display: block;
+  text-align: left;
+  font-size: 1em;
+  font-family: FontAwesome;
+  border-top: solid 1px white;
+}
+
+.profile-nav-container .navbar .navbar-nav label{
+  padding-left: 5px;
+  color: #fff;
+}
+
+.profile-nav-container .navbar .navbar-nav a:hover{
+  background-color: rgba(10, 97, 169, 1);
+}
+
+.profile-nav-container .navbar-nav #perfil-nav-1:before {
+  content: '\f007';
+  color: #fff;
+}
+
+.profile-nav-container .navbar-nav #perfil-nav-2:before {
+  content: '\f015';
+  color: #fff;
+}
+
+.profile-nav-container .navbar-nav #perfil-nav-3:before {
+  content: '\f1b9';
+  color: #fff;
+}
+
+.profile-nav-container .navbar-nav #perfil-nav-4:before {
+  content: '\f022';
+  color: #fff;
+}
+
+.profile-nav-container .navbar-nav #perfil-nav-5:before {
+  content: '\f201';
+  color: #fff;
+}
+
+.profile-welcome-tablet{
   display: none;
 }
 
-.profile-welcome h1{
-  color: #212121;
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-
-.verified-information{
-  border: solid 1px #eeeeee;
-  margin: 30px 0 30px;
-}
-
-.verified-information li{
+.profile-nav-container .profile-welcome-mobile{
   display: block;
-  color: #212121;
-  text-align: left;
-  padding: 15px 0;
-  font-size: 0.9em;
-  padding-left: 10px;
+  margin-left: 80px;
+  padding: 0;
+  color: #fff;
 }
 
-.verified-information li img{
-  width: 25px;
-  vertical-align: middle;
-  float: right;
-  margin-right: 10px;
+.profile-nav-container .profile-welcome-mobile h3{
+  font-size: 1em;
+  margin: 15px 0;
+  /* border: solid 1px yellow;s */
 }
 
-.verified-information-title{
-  background-color: #e0e0e0;
+/* ****************perfil- P R O F I L E ***************/
+.profile-container .nav-tabs{
+  font-family: 'Roboto Condensed', sans-serif;
+  /* border: solid 1px yellow; */
 }
-
-.verified-information li a{
-  color: #00acc1;
-}
-
-.verified-information li a:hover{
-  text-decoration: underline;
-}
-
-.ask-verify-data{
-  position: relative;
-  top: -55px;
-  right: 60px;
-}
-
-.modalDialog {
-  font-family: 'Lato', sans-serif;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 10;
-  opacity:0;
-  pointer-events: none;
-  transition: opacity 400ms ease-in;
-}
-
-.modalDialog:target {
-	opacity:1;
-	pointer-events: auto;
-}
-
-.modalDialog  div {
-	width: 400px;
-	position: relative;
-	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
-	background: linear-gradient(#fff, #999);
-}
-
-.modalDialog:target {
-	opacity:1;
-	pointer-events: auto;
-}
-
-.close {
-	background: #606061;
-	color: #FFFFFF;
-	line-height: 25px;
-	position: absolute;
-	right: -12px;
-	text-align: center;
-	top: -10px;
-	width: 24px;
-	text-decoration: none;
-	font-weight: bold;
-	box-shadow: 1px 1px 3px #000;
-	border-radius: 12px;
-}
-
-.close:hover {
-  background: #48A8C1;
-}
-
-.profile-credit{
-  border: solid 1px #eeeeee;
-}
-
-#content1 .profile-credit h2{
-  color: #424242;
-  font-size: 1.3em;
-  text-align: center;
-  margin: 0 5px 10px;
-}
-
-.profile-credit P{
-  text-align: center;
+.nav-tabs li{
   font-size: 0.8em;
-  margin: 0 5px 15px;
+  background-color: #F5F5F5;;
+  border: solid 1px #fff;
+  /* border: solid 1px blue; */
 }
 
-.profile-credit a{
-  display: block;
-  background-color: #48A8C1;
-  color: white;
-  text-align: center;
-  padding: 12px 0;
-  border-bottom: solid 2px white;
-  font-size: 0.8em;
-  width: 160px;
-  margin: 0 auto 10px;
-  border-radius: 5px;
-}
-
-.bodies-main-content .main-profile-nav section > h2{
-  color: rgb(143, 143, 143);
-  margin: 5px auto 10px;
-  font-size: 1.6em;
-}
-
-/*********** PROFILE -- MIS ESPACIOS *************/
-.carga-main{
-    overflow: hidden;
-    width: 250px;
-    float: left;
-    text-align: center;
-}
-
- .carga-vehiculo-container{
-  display: block;
-  text-align: center;
-  width: 245px;
-  max-height: 240px;
-  margin: 0 15px;
-  overflow: hidden;
-  border: dotted 1px rgba(92, 111, 110, 0.82);
-  padding-bottom: 100px;
-}
-
-.carga-vehiculo-container .upload-vehicle{
-  max-height: 240px;
-  /*object-fit: cover;*/
-}
-
-.carga-vehiculo-container p{
-  padding-top: 100px;
-}
-
-#content3 p{
-  margin-left: 50px;
-}
-
-/*********** PROFILE -- ALQUILERES *************/
-
-.alquileres-navbar{
-  margin: 5px auto;
-  width: 100%;
-  text-align: center;
-}
-
-.alquileres-navbar .navbar-misespacios, .alquileres-navbar .navbar-otrosespacios{
-  display: inline-block;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.2em;
-}
-
-.alquileres-navbar .navbar-misespacios{
-  font-weight: bold;
-  border-right: solid 1px rgb(143, 143, 143);
+.nav-tabs i{
+  font-size: 2.4em;
   color: #48A8C1;
 }
 
-.alquileres-navbar .navbar-otrosespacios{
-  border-left: solid 1px rgb(143, 143, 143);
+.nav-tabs label{
+  display: none;
+}
+
+.tab-content{
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #fff;
+  /* border: solid 1px red; */
+}
+
+.profile-container h4{
+  background-color: #9ba69b;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 0 15px 0;
+  /* border: solid 1px green; */
+}
+
+.profile-container .form-group label{
+  margin-left: 20px;
+}
+
+.profile-container .form-group button{
+  margin-left: 24%;
+}
+
+.profile-container .form-group .profile-mes{
+  margin-left: -4%;
+}
+
+
+.profile-container .tab-content .form-group h5{
+  text-align: left;
+  color: #9ba69b;
+  /* border: solid 1px green; */
+}
+
+.profile-container .tab-content .form-group button{
+  margin-bottom: 20px;
+}
+
+/* *******imagen- P R O F I L E *****/
+.img-profile-container {
+  /* border: solid 1px green; */
+  text-align: center;
+}
+
+.img-profile-container img{
+  width: 200px;
+  height: 200px;
+  border: solid 2px #d5dbdc;
+}
+
+.txt-img-profile p{
+  margin: 10px 20px;
+}
+
+.btn-img-profile{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 30px;
+  /* border: solid 1px red; */
+}
+
+.btn-img-profile a{
+  display: block;
+  padding: 10px 15px;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5%;
+  border: solid 2px #dbdbdb;
+}
+
+.btn-img-profile a:active{
+  background-color: rgba(232, 232, 232, 0.44);
+}
+
+/* ************datos- P R O F I L E *************/
+.datos h3{
+  display: inline-block;
+}
+
+.datos .fa-check-circle-o{
+  color: green;
+  font-size: 1.5em;
+}
+
+.datos .fa-exclamation-circle{
+  color: red;
+  font-size: 1.5em;
+}
+
+.datos h3, .datos p{
+  margin: 10px 20px 0 20px;
+}
+
+.datos .last{
+  padding-bottom: 50px;
+}
+
+/************ credits P R O F I L E *********/
+.profile-credit h3, .profile-credit P{
+  padding-top: 15px;
+  margin: 20px 20px;
+}
+
+.creditos .credits-btn{
+  margin-bottom: 35px;
+  /* border: solid 1px red; */
+}
+.profile-credit .btn-warning{
+  margin: 20px 20px 100px;
+}
+
+.profile-credit a{
+  color: white;
+}
+
+
+/*********** PROFILE -- MIS ESPACIOS *************/
+.profile-espacio-container .nav-tabs{
+  font-family: 'Roboto Condensed', sans-serif;
+  /* border: solid 1px yellow; */
+}
+
+.profile-espacio-container .nav-tabs li{
+  font-size: 0.8em;
+  background-color: #F5F5F5;
+  border: solid 1px #fff;
+}
+
+.profile-espacio-container .nav-tabs label{
+  display: block;
+  color: #000;
+  font-weight: lighter;
+}
+
+.profile-espacio-container .tab-content{
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.profile-espacio-container .tab-content h4{
+  background-color: #9ba69b;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 0 15px 0;
+}
+
+ .carga-espacio-container{
+  display: block;
+  float: left;
+  text-align: center;
+  width: 200px;
+  max-height: 220px;
+  margin: 0 15px 40px;
+  overflow: hidden;
+  border-radius: 5%;
+  border: dotted 1px rgba(92, 111, 110, 0.82);
+}
+
+.carga-espacio-container .upload-espacio{
+  max-height: 220px;
+}
+
+.carga-main-espacio .espacio-dire{
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 20px 0 5px;
+}
+
+.carga-main-espacio .espacio-descripcion{
+  padding: 5px 0 10px;
+}
+
+/*********** PROFILE -- MIS VEHICULOS *************/
+.profile-vehiculo-container .table-responsive{
+  width: 92%;
+  margin: auto;
+}
+
+.profile-vehiculo-container .table-responsive tr{
+  background-color: #fff;
+}
+
+.profile-vehiculo-container .cargar-vehiculo-btn{
+  margin: 15px 4%;
+}
+
+/*********** PROFILE -- ALQUILERES *************/
+.profile-alquiler-container .nav-tabs{
+  font-family: 'Roboto Condensed', sans-serif;
+  /* border: solid 1px yellow; */
+}
+
+.profile-alquiler-container .nav-tabs li{
+  font-size: 0.8em;
+  background-color: #F5F5F5;
+  border: solid 1px #fff;
+}
+
+.profile-alquiler-container .nav-tabs label{
+  display: block;
+  color: #000;
+  font-weight: lighter;
+}
+
+.profile-alquiler-container .tab-content .alq-title{
+  background-color: #9ba69b;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 0 15px 0;
 }
 
 /* Listado de alquileres */
-.alquileres-content{
-
-}
 
 .alquileres-content .alquileres-tipo{
   margin: 5px auto;
@@ -1801,7 +1877,7 @@ article input[type='submit']:disabled{
   width: 80%;
   float: left;
   padding-bottom: 35px;
-  background-color: rgba(122, 219, 245, 0.55);
+  background-color: rgba(122, 219, 245, 0.65);
   /* border: solid 1px green; */
 }
 
@@ -2086,25 +2162,25 @@ article input[type='submit']:disabled{
 }
 
 .nav-bar a{
+  color: rgb(25, 37, 40);
   float: right;
-  padding: 8px 16px;
-  margin: 0  10px 0 0;
-  font-size: 0.8em;
+  padding: 8px 5px;
+  font-size: .8em;
   font-weight: bold;
-  text-decoration: none;
-  text-transform: none !important;
-  border-bottom: none;
+  text-transform: uppercase !important;
+  background-color: inherit;
   /* border: solid 1px green; */
 }
 
-.faq-btn, .anfitrion-btn{
-  color: rgba(132, 140, 148, 1)!important;
-  background-color: inherit !important;
-  margin: 0  0 0 -4px !important;
+.iniciar-btn{
+  margin-right: -5px;
 }
 
-.anfitrion-btn:hover, .faq-btn:hover{
-  color: #48A8C1 !important;
+.anfitrion-btn{
+  color: #fff !important;
+  background-color: #2f1fe0 !important;
+  margin: 0  10px 0 0;
+  border-radius: 5%;
 }
 
 .how-btn{
@@ -2353,39 +2429,148 @@ article input[type='submit']:disabled{
   cursor: pointer;
 }
 
-/******************** P R O F I L E *****************/
-
-.main-profile-nav label {
-  margin: 0 0 -1px;
-  padding: 15px 10px;
-  font-size: 0.8em;
+/***************** NAV BAR - P R O F I L E ********************/
+#toggle-profile {
+  display: none;
+}
+.profile-nav-container {
+  margin-top: -10px;
+  height: 35px;
+  overflow: hidden;
+}
+.profile-nav-container .navbar{
+  margin-top: 0;
 }
 
-.main-profile-nav label:before {
-  margin-right: 10px;
-  font-size: 18px;
+.profile-nav-container .navbar .navbar-nav{
+  display: block;
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }
 
-.main-profile-nav input:checked + label {
-  width: 25%;
-  font-size: 0.8;
-  padding: 15px 5px;
+.profile-nav-container .navbar .navbar-nav li{
+  display: inline-block;
+  padding: 2px;
+  font-size: .8em;
+  border-right: solid 1px white;
+  border-top: none;
 }
 
-/*********** PROFILE -- MIS VEHJICULOS *************/
-.carga-vehiculo-container{
-  margin-left: 5%;
+.profile-nav-container .navbar .navbar-nav .first{
+  border-left: solid 1px #fff;
+  margin-left: 20px;
+}
+
+.profile-nav-container .navbar .navbar-nav a{
+  padding: 5px;
+}
+
+.profile-nav-container .navbar .navbar-nav label{
+  padding: 0 5px;
+  margin: 0;
+}
+
+.profile-nav-container .profile-welcome-mobile{
+  display: none;
+}
+
+.profile-welcome-tablet{
+  display: block;
+  margin-left: 30px;
+}
+/* ****************perfil- P R O F I L E ***************/
+.nav-tabs{
+  width: 20%;
   float: left;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav-tabs li{
+  width: 100%;
+  display: block;
+  font-size: .8em;
 }
 
-.load-vehicle:active{
-  background-color: rgba(176, 196, 230, 0.2);
+.nav-tabs i{
+  font-size: 1.6em;
+  display: block;
+  text-align: center;
 }
 
-.load-vehicle .upload-vehicle:active{
-  width: 230px;
+.nav-tabs label{
+  display: inline-block;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-weight: lighter;
 }
+
+.nav-tabs button{
+  width: 100%;
+}
+
+.tab-content{
+  float: left;
+  width: 80%;
+}
+
+.profile-container .form-group button{
+  margin-left: 20px;
+}
+
+.profile-container .form-group .profile-mes{
+  margin-left: 0;
+}
+
+.profile-container .tab-content .form-group button{
+  margin-bottom: 20px;
+}
+
+/* *******imagen- P R O F I L E *****/
+.img-profile-container {
+  /* border: solid 1px green; */
+  width: 30%;
+  float: left;
+}
+
+.img-profile-container img{
+  width: 180px;
+  height: 180px;
+  margin-left: 10px;
+  margin-bottom: 100px;
+}
+
+.txt-img-profile p{
+  float: left;
+  width: 60%;
+  margin: 10px 20px;
+  /* border: solid 1px green; */
+}
+
+.btn-img-profile{
+  float: left;
+  width: 60%;
+  margin-left: 20px;
+  text-align: center;
+  padding-bottom: 30px;
+  /* border: solid 1px red; */
+}
+
+.btn-img-profile a{
+  display: block;
+  padding: 10px 15px;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5%;
+  border: solid 2px #dbdbdb;
+}
+
+/*********** PROFILE -- MIS VEHICULOS *************/
+.profile-vehiculo-container .table-responsive{
+  width: 92%;
+  margin: auto;
+}
+
 /************** C R E D I T S *******************/
 .credits {
   background-image: url(../images/bg-credits.jpg);
@@ -2770,13 +2955,13 @@ article input[type='submit']:disabled{
   font-size: 1.7em;
 }
 
-/**************************************************************/
-/*******************  D  E  S  K  T  O  P  ********************/
-/**************************************************************/
+/*************************************************************************************************/
+/***********************************  D  E  S  K  T  O  P **************************************  ************************************************************************************************/
+/**********************************************************************************************/
 
 @media (min-width: 960px) {
 
-/**  **************** H E A D E R *******************/
+/****************** H E A D E R *******************/
 .main-nav .avatar-container{
   /* border: solid 1px blue; */
   width: 320px;
@@ -2813,8 +2998,8 @@ article input[type='submit']:disabled{
 
 .nav-bar{
   /* border: solid 1px yellow; */
-  width: 55%;
-  margin: 20px;
+  width: 69%;
+  margin: 25px 0;
   padding: 0;
   float: right;
 }
@@ -2824,22 +3009,26 @@ article input[type='submit']:disabled{
 }
 
 .nav-bar a{
-  font-size: .8em;
-  padding: 10px 1px;
-  width: 125px;
+  font-size: .9em;
+  padding: 8px 0 !important;
+  width: 145px;
   letter-spacing: 2px;
+  margin: 0  0 !important;
 }
 
-.anfitrion-btn{
-  width: 135px !important;
-  margin: 0  5px 0 1px !important;
+.nav-bar a::hover{
+  border-top: solid 2px #48a8c1;
+}
+
+#anfitrion{
+  width: 220px !important;
+  margin: 0  15px 0 0 !important;
   letter-spacing: 0.5px !important;
-  /* border: solid 1px red; */
 }
 
 .faq-btn{
-  width: 40px !important;
-  margin: 0  1px !important;
+  width: 70px !important;
+  margin: 0  10px !important;
   letter-spacing: 0.5px !important;
   /* border: solid 1px red; */
 }
@@ -2848,13 +3037,12 @@ article input[type='submit']:disabled{
   display: block !important;
   float: right;
   padding: 8px 16px;
-  margin: 0  10px 0 0;
+  /* margin: 0  10px 0 0; */
   font-size: 0.8em;
   font-weight: bold;
   text-decoration: none;
   text-transform: none !important;
   border-bottom: none;
-  /* border: solid 4px green; */
 }
 
 .popup-contenedor h2{
@@ -2871,8 +3059,13 @@ article input[type='submit']:disabled{
   color: #48A8C1;
 }
 
-.popup-link:hover{
-  background-color: rgba(72, 168, 193, 0.7);
+.nav-bar a:hover{
+  border-top: solid 2px #48a8c1;
+}
+
+.anfitrion-btn:hover{
+  border-top: inherit !important;
+  background-color: #291bc5 !important;
 }
 
 .modal-wrapper{
@@ -3069,74 +3262,35 @@ article input[type='submit']:disabled{
   left: 30%;
 } */
 
+/***************** NAV BAR - P R O F I L E ********************/
+.profile-nav-container .navbar .navbar-nav li{
+  font-size: 1em;
+}
 
+.profile-nav-container .navbar .navbar-nav .first{
+  margin-left: 10%;
+}
 
-/*************** P R O F I L E  M I  P E R F I L *************/
-#content1 .profile-image{
-  display: block;
-  float: left;
-  width: 25%;
+.profile-nav-container .navbar .navbar-nav label:hover{
+  cursor: pointer;
+}
+
+.profile-welcome-tablet{
+  width: 80%;
+  margin: auto;
+}
+
+/***************** P R O F I L E ********************/
+.profile-container, .profile-espacio-container, .profile-alquiler-container, .profile-vehiculo-container .table-responsive{
   overflow: hidden;
-  margin-left: 15px;
-}
-
-#content1 .profile-image img{
-  width: 240px;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.profile-welcome h1{
-  float: left;
-  margin-left: 15px;
-}
-
-.clear{
-  clear: both;
-}
-
-.verified-information{
-  margin: 20px 0;
-  width: 240px;
-}
-
-
-.profile-credit{
-  float: left;
-  width: 70%;
-  margin: 0 15px 10px 0;
-}
-
-.profile-credit h2{
-  text-align: left !important;
-  margin: 15px 0 10px 15px !important;
-  font-size: 1.2em !important;
-}
-
-.profile-credit p{
-  text-align: left !important;
-  font-size: 0.8em !important;
-  margin: 0 0 -30px 15px !important;
-}
-
-.profile-credit a{
-  position: relative;
-  bottom: 12px;
-  left: 245px;
-}
-
-#styleChange{
-  position: relative;
-  top: -25px;
-  left: 550px;
+  width: 80%;
+  margin: auto;
 }
 
 /*********** PROFILE -- MIS VEHICULOS *************/
- .carga-vehiculo-container{
-  margin-left: 1px;
+.profile-vehiculo-container .cargar-vehiculo-btn{
+  margin: 15px 10%;
 }
-
 /***************** C R E D I T S ********************/
 .credits {
   height: 85%;
@@ -3452,7 +3606,8 @@ article input[type='submit']:disabled{
 /******************* A N F I T R I O N ****************/
 .anfitrion .banner-anfitrion-container{
   background-image: url(/images/anfitrion/banner-pc.jpg);
-  background-size: 100%;
+  /* background-size: 100%; */
+  height: 600px;
   padding-left: 50px;
 }
 

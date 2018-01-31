@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     public function sendContact(Request $request)
     {
-      Mail::to('marianoalvareztt@gmail.com')->send(new EmailContact($request));
+      Mail::to('info@estacionados.com')->send(new EmailContact($request));
       // dd('ok');
       return redirect()->to('/lanzamiento');
     }

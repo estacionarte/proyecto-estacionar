@@ -8,23 +8,26 @@
 
       <main class="main-profile-nav">
 
-        <input id="tab1" type="radio" name="tabs" checked>
-        <label for="tab1">Mi perfil</label>
+          <input id="tab1" type="radio" name="tabs" checked>
+          <label for="tab1">Mi perfil</label>
 
-        <input id="tab2" type="radio" name="tabs">
-        <label for="tab2">Mis Vehículos</label>
+          <input id="tab2" type="radio" name="tabs">
+          <label for="tab2">Mis Vehículos</label>
 
-        <input id="tab3" type="radio" name="tabs">
-        <label for="tab3">Mis espacios</label>
+          <input id="tab3" type="radio" name="tabs">
+          <label for="tab3">Mis espacios</label>
 
-        <input id="tab4" type="radio" name="tabs">
-        <label for="tab4">Alquileres</label>
+          <input id="tab4" type="radio" name="tabs">
+          <label for="tab4">Alquileres</label>
 
         <section id="content1">
 
           <div class="profile-image">
-            <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image"><br>
-            {{-- <a href="{{route ('show.update.profile.image') }}">Cambiar mi imagen de perfil</a><br><br><br> --}}
+            <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
+          </div>
+
+          <div class="">
+            <a href="{{route ('show.update.profile.image') }}">Cambiar mi imagen de perfil</a>
           </div>
 
           <div class="profile-welcome">
@@ -37,13 +40,13 @@
             <a href="credits.php">CONSEGUIR CRÉDITO</a>
           </article><br>
 
-          <article class="profile-credit">
+          {{-- <article class="profile-credit">
               <h2>Cambia el estilo de tu página</h2>
               <select id="styleChange">
                <option value="{{ asset('css/styles.css') }}">Estilo clásico</option>
                <option value="{{ asset('css/styles2.css') }}">Estilo alternativo</option>
               </select>
-          </article>
+          </article> --}}
 
           {{-- <article class="profile-credit">
               <h2>Próximos alquileres</h2>
@@ -139,7 +142,6 @@
           <a href="{{route ('upload.espacio.1')}}"><img class="upload-vehicle" src="images/upload.png"></a>
           <p>Cargá tus Espacios</p>
           </article>
-          {{-- <div class="clear"></div> --}}
 
 
           @forelse ($espacios as $espacio)
