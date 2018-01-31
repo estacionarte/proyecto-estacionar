@@ -11,7 +11,6 @@ class ContactController extends Controller
     public function sendContact(Request $request)
     {
       Mail::to('proyectoestacionar@gmail.com')->send(new EmailContact($request));
-      // dd('ok');
-      return redirect()->to('/lanzamiento');
+      return redirect()->route('coming.soon');
     }
 }

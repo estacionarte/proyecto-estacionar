@@ -68,7 +68,7 @@
       <h5>Dejanos un correo y nos ponemos en contacto con vos</h5>
 
       <article class="form-generico form-group">
-          <form class="credits-form" action="/lanzamiento" method="post">
+          <form class="credits-form" action="{{ route('enviar.mail') }}" method="post">
             {{ csrf_field() }}
 
             <div class="input-group">
