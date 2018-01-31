@@ -10,10 +10,12 @@ use App\Vehiculo;
 use DB;
 use Auth;
 use Image;
+use App\User;
 
 class ProfileController extends Controller
 {
-  public function mostrarPerfil(){
+
+  public function mostrarEspacios(Espacio $espacio){
 
     $espacios = DB::table('espacios')
     ->select('*')
@@ -23,6 +25,11 @@ class ProfileController extends Controller
     ])
     ->get();
 
+    return view('profile.profile-espacio', compact('espacios'));
+  }
+
+  public function mostrarVehiculos(Vehiculo $vehiculo){
+
     $vehiculos = DB::table('vehiculos')
     ->select('*')
     ->where([
@@ -31,24 +38,47 @@ class ProfileController extends Controller
     ])
     ->get();
 
-    return view('profile', compact('espacios', 'vehiculos'));
+    return view('profile.profile-vehiculo', compact('vehiculos'));
   }
 
-  public function showUpdateProfileImage(){
-    return view('update-profile-image');
+  protected function dameFecha(User $user){
+
+    $fecha = DB::table('users')
+    ->select('birthDate')
+    ->where([
+      ['id', '=', Auth::user()->id],
+      ['birthDate', '=', Auth::user()->birthDate]
+    ])
+    ->first();
+
+    $toArray = (array)$fecha;
+    $toString = implode('-', $toArray);
+
+    $diaMesAnio = explode('-', $toString);
+    $dia = $diaMesAnio[0];
+    $mes = $diaMesAnio[1];
+    $anio = $diaMesAnio[2];
+    return view ('profile.profile', compact('dia', 'mes', 'anio'));
   }
 
-  public function updateProfileImage(Request $request){
-    if ($request->hasFile('avatar')) {
-      $avatar = $request->file('avatar');
-      $filename = time() . '_' . $avatar->getClientoriginalExtension();
-      Image::make($avatar)->resize(240,240)->save(public_path('/storage/profilePic' . $filename));
+  protected function uploadProfileImage(Request $request, $id){
 
-      $user = Auth::user();
-      $user->avatar = $filename;
-      $user->save();
-    }
-    return view('/home');
+    $this->validate($request, [
+      'profilePic'     => 'required|image|max:10000'
+    ],
+    [
+      'profilePic.max' => 'Su imagen es demasaido pesada'
+    ]);
+
+    $user = User::findOrFail($id);
+    $user->fill($request->input('profilePic'));
+
+    $nombre = $user->email . '_profilePic.' . $request->file('profilePic')->extension();
+    $path = $request->file('profilePic')->storePubliclyAs('public/profilePic', $nombre);
+
+    $user->save();
+
+    return redirect('/perfil');
   }
 
 }
