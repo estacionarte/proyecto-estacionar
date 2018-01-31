@@ -15,7 +15,7 @@ Route::get('/anfitrion', function () {
 });
 
 // ************************ CONTACTO EMAIL *********************
-Route::post('/lanzamiento', 'ContactController@sendContact');
+Route::post('/lanzamiento', 'ContactController@sendContact')->name('enviar.mail');
 
 // ************************ HOME LOGIN REGISTER *********************
 Route::get('/home', 'HomeController@index')->name('home')->middleware('coming.soon');
@@ -124,4 +124,4 @@ Route::post('alquilar/detallealquiler/{id}/{horariollegada}/{horariopartida}', '
 Route::post('alquilar/disponible/{id}/{horariollegada}/{horariopartida}', 'EspaciosController@disponible')->name('alquiler.disponible');
 
 // test
-Route::get('testfunction', 'EspaciosController@test')->name('test')->middleware(['coming.soon','check.espacio.owner']);
+Route::get('testfunction', 'MPPayments@test')->name('test')->middleware(['coming.soon']);

@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\mail\EmailContact;
+use App\Mail\EmailContact;
 
 class ContactController extends Controller
 {
     public function sendContact(Request $request)
     {
-      Mail::to('info@estacionados.com')->send(new EmailContact($request));
-      // dd('ok');
-      return redirect()->to('/lanzamiento');
+      Mail::to('proyectoestacionar@gmail.com')->send(new EmailContact($request));
+      return redirect()->route('coming.soon');
     }
 }
