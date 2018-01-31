@@ -13,7 +13,7 @@ class AlquileresController extends Controller
 
     $this->validate($request,
       [
-        'vehiculo' => 'required|string',
+        'vehiculo' => 'required',
         'alquiler-dia-comienzo' => 'required|date',
         'alquiler-hora-comienzo' => 'required|integer',
         'alquiler-minuto-comienzo' => 'required|integer',
@@ -39,9 +39,13 @@ class AlquileresController extends Controller
     $alquiler->fechaComienzoAlquiler = $fechallegada;
     $alquiler->fechaFinAlquiler = $fechapartida;
 
+    // Obtengo el tipo de vehículo seleccionado
+    $vehiculo = Vehiculo::findOrFail($request->input('vehiculo'));
+    $tipoVehiculo = $vehiculo->tipoVehiculo;
+
     // Obtengo el espacio y hago un chequeo extra para ver si está disponible
     $espacio = Espacio::findOrFail($id);
-    $disponible = $espacio->disponibleTodo($fechallegada, $fechapartida)['disponibleTodo'];
+    $disponible = $espacio->disponibleTodo($fechallegada, $fechapartida, $tipoVehiculo)['disponibleTodo'];
     if (!$disponible) {
       return redirect()->route('home');
     }

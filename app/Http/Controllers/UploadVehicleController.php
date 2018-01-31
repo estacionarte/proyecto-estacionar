@@ -22,10 +22,10 @@ class UploadVehicleController extends Controller
         $request,
         [
           'tipoVehiculo' => 'required',
-          'marca'        => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta',
-          'modelo'       => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta|max:45',
-          'color'        => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta,Bicicleta|string|max:20',
-          'patente'      => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta'
+          'marca'        => 'required_if:tipoVehiculo,Automóvil,Motocicleta',
+          'modelo'       => 'required_if:tipoVehiculo,Automóvil,Motocicleta|max:45',
+          'color'        => 'required|string|max:20',
+          'patente'      => 'required_if:tipoVehiculo,Automóvil,Motocicleta'
         ],
         [
           'tipoVehiculo.required'  => 'Debe indicar un tipo de vehiculo.',
@@ -38,12 +38,12 @@ class UploadVehicleController extends Controller
           'patente.required_if'    => 'Debe completar la patente',
         ]);
 
-          $vehiculo = new Vehiculo($request->all());
+        $vehiculo = new Vehiculo($request->all());
 
-          $vehiculo->idUser = Auth::user()->id;
-          $vehiculo->save();
+        $vehiculo->idUser = Auth::user()->id;
+        $vehiculo->save();
 
-          return redirect(route('profile'));
+        return redirect(route('profile'));
     }
 
     public function showEditVehicle($id){
@@ -58,10 +58,10 @@ class UploadVehicleController extends Controller
         $request,
         [
           'tipoVehiculo' => 'required',
-          'marca'        => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta',
-          'modelo'       => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta|max:45',
+          'marca'        => 'required_if:tipoVehiculo,Automóvil,Motocicleta',
+          'modelo'       => 'required_if:tipoVehiculo,Automóvil,Motocicleta|max:45',
           'color'        => 'required|string|max:20',
-          'patente'      => 'required_if:tipoVehiculo,Automovil,Camion,Camioneta,Motocicleta'
+          'patente'      => 'required_if:tipoVehiculo,Automóvil,Motocicleta'
         ],
         [
           'tipoVehiculo.required'  => 'Debe indicar un tipo de vehiculo.',
@@ -69,7 +69,7 @@ class UploadVehicleController extends Controller
           'modelo.required_if'     => 'Debe indicar un modelo.',
           'modelo.max'             => 'Excedió la cantidad de carácteres.',
           'color.required_if'      => 'Debe indicar el color de su vehiculo.',
-          'color.string'           => 'Debe ingresar solo texto.',
+          'color.string'           => 'Debe ingresar un color',
           'color.max'              => 'Excedió la cantidad de carácteres.',
           'patente.required_if'    => 'Debe completar la patente',
         ]);

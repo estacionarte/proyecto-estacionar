@@ -26,7 +26,6 @@ class UploadEspacioRequest extends FormRequest
     {
       $rules = [
         'direccion' => 'required|string|max:45',
-        'dpto' => 'nullable|string|max:45',
         'pais' => 'required|string|max:45',
         'provincia' => 'required|string|max:45',
         'ciudad' => 'required_unless:provincia,CABA|string|max:45',

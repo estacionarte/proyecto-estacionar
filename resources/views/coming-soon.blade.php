@@ -7,6 +7,15 @@
   <title>Lanzamiento</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="hojaDeEstilo">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113241679-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113241679-1');
+  </script>
 </head>
 
 <body class="coming-soon">
@@ -83,7 +92,7 @@
 
 <script>
 // Fecha de lanzamiento
-var countDownDate = new Date("apr 31, 2018 23:59:59").getTime();
+var countDownDate = new Date("feb 18, 2018 23:59:59").getTime();
 
 // Calculo el intervalo cada 1 segundo
 var x = setInterval(function() {

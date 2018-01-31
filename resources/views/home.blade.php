@@ -12,8 +12,8 @@
         <div class="" id="dir_y_vehiculo">
           <input type="search" name="search-espacios-input-direccion" placeholder="Ejemplo: Balcarce 50 CABA">
           <select name="search-espacios-vehiculo">
-            <option value="Auto" selected>Auto</option>
-            <option value="Moto">Moto</option>
+            <option value="Automóvil" selected>Auto</option>
+            <option value="Motocicleta">Moto</option>
             <option value="Bicicleta">Bicicleta</option>
           </select>
         </div>
