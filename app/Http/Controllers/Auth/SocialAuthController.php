@@ -44,7 +44,8 @@ class SocialAuthController extends Controller
           // Si no existe creamos un nuevo usuario con los datos del proveedor en la tabla users
           $newUser = User::firstOrCreate([
               'firstName' => $userProviderInfo->name,
-              'email'     => $userProviderInfo->email
+              'email'     => $userProviderInfo->email,
+              // 'birthDate'     => $userProviderInfo->birthday
           ]);
 
           // Y llenamos la data en la tabla social_providers con el nuevo usuario
