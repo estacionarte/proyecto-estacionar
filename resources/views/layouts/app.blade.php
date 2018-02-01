@@ -21,6 +21,9 @@
     <!-- ICONOS -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
+    {{-- fontawesome --}}
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
     {{-- BOOSTRAP ICONS--}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -65,9 +68,11 @@
           <div class="avatar-container">
 
             {{-- FOTO DE PERFIL DE USUARIO --}}
+            <i class="fas fa-caret-left" onclick="openNav()"></i>
             <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar"></span>
 
-            <span class="welcome-user"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
+
+            <span class="welcome-user" onclick="openNav()"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
 
           </div>
 

@@ -1865,12 +1865,22 @@ article input[type='submit']:disabled{
   width: 10%;
   display: inline-block;
   float: left;
-  margin: 100px 0 0 0;
+  margin: 80px 0 0 10px;
   /* border: solid 1px blue; */
 }
 
+.comingsoon-container .redes-container p{
+  color: #fff;
+  width: 2px;
+  font-size: .8em;
+  text-align: center;
+  word-wrap: break-word;
+  letter-spacing: -3px;
+  margin-left: 12px;
+  /* border: solid 1px red; */
+}
 .comingsoon-container .redes-container .redes img{
-  width: 20px;
+  width: 30px;
 }
 
 .comingsoon-container .countdown-container{
@@ -1934,6 +1944,9 @@ article input[type='submit']:disabled{
   font-size: 1.3em;
   /* border: solid 1px red; */
 }
+.comingsoon-container .countdown-container a{
+  color: #fff;
+}
 
 .comingsoon-container .contacto-container{
   width: 100%;
@@ -1984,6 +1997,22 @@ article input[type='submit']:disabled{
 
 .comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]:hover{
   background-color: rgba(158, 206, 213, 0.29);
+}
+
+.comingsoon-container .nosotros{
+  /* border: solid 1px #fff; */
+  width: 180px;
+  margin: auto;
+  text-align: center;
+}
+
+.comingsoon-container .nosotros a{
+  color: #fff;
+  text-decoration: underline;
+}
+
+.comingsoon-container .nosotros a:hover{
+  color: #afd9e4;
 }
 
 /******************* N O S O T R O S ****************/
@@ -2116,7 +2145,7 @@ article input[type='submit']:disabled{
   font-weight: bold;
   /* text-align: right; */
   width: 65%;
-  font-size: 2.1em;
+  font-size: 2em;
   padding: 120px 0 0 0;
   margin-left: 20px;
   /* border: solid 1px red; */
@@ -2124,7 +2153,7 @@ article input[type='submit']:disabled{
 
 .anfitrion .footer-anfitrion a{
   margin-left: 20px;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
 }
 
@@ -2888,7 +2917,7 @@ article input[type='submit']:disabled{
 }
 
 .comingsoon-container .redes-container{
-  margin: 80px 0 0 0;
+  margin: 80px 0 0 20px;
 }
 
 .comingsoon-container .redes-container .redes img{
@@ -2968,10 +2997,17 @@ article input[type='submit']:disabled{
   margin: 1% 10px 0 0;
 }
 
+.main-nav .avatar-container i{
+  float: right;
+  margin: 20px 0 0 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
 .main-nav .avatar-container .welcome-user{
   display: block !important;
   float: right;
   margin: 10px;
+  cursor: pointer;
   /* border: solid 1px red; */
 }
 
@@ -3492,14 +3528,29 @@ article input[type='submit']:disabled{
   width: 12%;
   display: inline-block;
   float: right;
-  margin: -80px 65px 0 0;
+  margin: -70px 65px 0 0;
+  /* border: solid 1px blue; */
+}
+
+.comingsoon-container .redes-container p{
+  color: #fff;
+  display: inline-block;
+  font-size: .8em;
+  word-wrap: normal;
+  letter-spacing: normal;
+  margin-left: 0;
+  text-align: left;
+  width: 50%;
   /* border: solid 1px blue; */
 }
 
 .comingsoon-container .redes-container .redes img{
   width: 30px;
   margin-right: 5px;
-  float: left;
+  margin-top: -2px;
+  /* float: right; */
+  display: inline-block;
+  /* border: solid 1px blue; */
 }
 
 .comingsoon-container .countdown-container{
@@ -3607,7 +3658,7 @@ article input[type='submit']:disabled{
 .anfitrion .banner-anfitrion-container{
   background-image: url(/images/anfitrion/banner-pc.jpg);
   /* background-size: 100%; */
-  height: 600px;
+  height: 500px;
   padding-left: 50px;
 }
 
@@ -3616,13 +3667,14 @@ article input[type='submit']:disabled{
 }
 
 .title-anfitrion-container h3{
-  padding-top: 80px;
+  padding-top: 220px;
   font-size: 1.4em;
 }
 
 .title-anfitrion-container h1{
   width: 450px;
   font-size: 2.6em;
+  padding: 20px 0;
 }
 
 .banner-anfitrion-container a{
@@ -3669,6 +3721,7 @@ article input[type='submit']:disabled{
   width: 48%;
   height: 350px;
   float: right;
+  object-fit: cover;
 }
 
 .ser-anfitrion{
@@ -3704,14 +3757,14 @@ article input[type='submit']:disabled{
 
 .anfitrion .footer-anfitrion{
   background-image: url(../images/anfitrion/footer-pc.jpg);
-  height: 500px;
+  height: 250px;
 }
 
 .anfitrion .footer-anfitrion h1{
-  padding-top: 150px;
-  font-size: 3.2em;
+  padding: 80px 0 20px;
+  font-size: 2.6em;
 }
 
 .anfitrion .footer-anfitrion a{
-  font-size: 2em;
+  font-size: 1.4em;
 }
