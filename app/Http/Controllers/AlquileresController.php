@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Alquiler;
 use App\Espacio;
+use App\Vehiculo;
 use DateTime;
 
 class AlquileresController extends Controller
