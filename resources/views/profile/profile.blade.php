@@ -9,7 +9,8 @@
 
 <div class="profile-container">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#profile"><i class="fa fa-info-circle"></i> <label id="infper">Información personal</label></a></li>
+    <li class="active"><a data-toggle="tab" href="#dashboard"><i class="fa fa-desktop"></i> <label id="infper">Dashboard</label></a></li>
+    <li><a data-toggle="tab" href="#profile"><i class="fa fa-info-circle"></i> <label id="infper">Información personal</label></a></li>
     <li><a data-toggle="tab" href="#img-profile"><i class="fa fa-user-circle"></i><label>Imagen de perfil</label></a></li>
     <li><a data-toggle="tab" href="#datos"><i class="fa fa-check-circle"></i><label>Datos verificados</label></a></li>
     <li><a data-toggle="tab" href="#creditos"><i class="fa fa-gift"></i><label>Obtener Créditos</label></a></li>
@@ -17,7 +18,21 @@
   </ul>
 
   <div class="tab-content">
-    <div id="profile" class="tab-pane fade in active">
+    <div id="dashboard" class="tab-pane fade in active">
+      <div class="profile-welcome-tablet">
+        <h4>¡Bienvenido {{Auth::user()->firstName}}!</h4>
+      </div>
+      <div class="img-profile-container">
+        <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
+      </div>
+      <div class="">
+        <h3>Texto aca</h3>
+      </div>
+      {{-- <a data-toggle="tab" href="#img-profile">Subir una foto</a> --}}
+
+    </div>
+
+    <div id="profile" class="tab-pane fade">
       <div class="titulo">
         <h4>Campos requeridos para alquilar o reservar un espacio</h4>
         <form class="form-horizontal" action="/action_page.php">
