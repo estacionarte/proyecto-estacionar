@@ -34,7 +34,7 @@
         </div> --}}
         <div class="tw">
           <p>Seguinos</p>
-          <a href="http://twitter.com" target="_blank"><img src="/icons/twitter.png" alt=""></a>
+          <a href="http://twitter.com" target="_blank"><img src="/icons/twitter.jpg" alt=""></a>
         </div>
         {{-- <div class="ig">
           <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
