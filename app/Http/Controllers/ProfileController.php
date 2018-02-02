@@ -61,24 +61,20 @@ class ProfileController extends Controller
     return view ('profile.profile', compact('dia', 'mes', 'anio'));
   }
 
-  protected function uploadProfileImage(Request $request, $id){
+    public function uploadProfileImage(Request $request){
 
-    $this->validate($request, [
-      'profilePic'     => 'required|image|max:10000'
-    ],
-    [
-      'profilePic.max' => 'Su imagen es demasaido pesada'
-    ]);
+        $user = Auth::user();
+      if ($request->hasFile('profilePic')) {
+        $profilePic =  $request->file('profilePic');
+        $fileName = $user->email . '.' . $profilePic->getClientOriginalExtension();
+        Image::make($profilePic)
+            ->resize(400, 400)
+            ->save( public_path('\storage\profilePic/' . $fileName) );
 
-    $user = User::findOrFail($id);
-    $user->fill($request->input('profilePic'));
-
-    $nombre = $user->email . '_profilePic.' . $request->file('profilePic')->extension();
-    $path = $request->file('profilePic')->storePubliclyAs('public/profilePic', $nombre);
-
-    $user->save();
-
-    return redirect('/perfil');
-  }
+        $user->profilePic = $fileName;
+        $user->save();
+      }
+      return view('/home');
+    }
 
 }

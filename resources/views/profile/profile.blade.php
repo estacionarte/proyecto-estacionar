@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title') Mi Perfil @endsection
+@section('css')
+<link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
+@endsection
 @section('content')
+
 @include('profile.nav-bar-profile')
 
 <div class="profile-container">
@@ -110,12 +114,13 @@
         <p>Para que los conductores y anfitriones se conozcan, lo mejor es añadir fotos de la cara que sean nítidas y estén sacadas de frente. Asegurate de utilizar una foto en la que se te vea bien la cara y que no incluya información personal o sensible que preferirías que los conductores o anfitriones no viera</p>
       </div>
       <div class="btn-img-profile">
-        <a href="">Subir una foto</a>
-        <form method="post" enctype="multipart/form-data">
+
+        <form method="post" enctype="multipart/form-data" action="{{ route ('profile')}}">
           {{ method_field('PUT') }}
           {{ csrf_field() }}
           <input type="file" name="profilePic" accept="image/*" style="{{ $errors->has('profilePic') ? ' border: solid 2px #990606' : '' }}">
           <input type="submit" name="boton-submit" value="subir imagen">
+          {{-- <a href="" type="submit">Subir una foto</a> --}}
         </form>
       </div>
     </div>
@@ -171,5 +176,41 @@
   </div>
 </div>
 
+@endsection
+
+@section('scripts')
+
+  <script src="{{ URL::asset('js/dropzone.js')}}"></script>
+
+  <script>
+        Dropzone.options.myDropzone = {
+            autoProcessQueue: false,
+            uploadMultiple: true,
+            maxFilezise: 10,
+            maxFiles: 2,
+
+            init: function() {
+                var submitBtn = document.querySelector("#submit");
+                myDropzone = this;
+
+                submitBtn.addEventListener("click", function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    myDropzone.processQueue();
+                });
+                this.on("addedfile", function(file) {
+                    alert("file uploaded");
+                });
+
+                this.on("complete", function(file) {
+                    myDropzone.removeFile(file);
+                });
+
+                this.on("success",
+                    myDropzone.processQueue.bind(myDropzone)
+                );
+            }
+        };
+    </script>
 
 @endsection

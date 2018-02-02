@@ -614,6 +614,10 @@ ul li .popup-link{
   float: right;
 }
 
+.main-nav .avatar-container i{
+  display: none;
+}
+
 span .avatar{
   width: 40%;
   height: 40%;
@@ -625,6 +629,7 @@ span .avatar{
 }
 
 .sidenav {
+  font-family: 'Roboto Condensed', sans-serif;
   display: block;
   height: 100%;
   width: 0;
@@ -858,6 +863,7 @@ span .avatar{
 .img-profile-container img{
   width: 200px;
   height: 200px;
+  object-fit: cover;
   border: solid 2px #d5dbdc;
 }
 
@@ -2567,6 +2573,7 @@ article input[type='submit']:disabled{
   height: 180px;
   margin-left: 10px;
   margin-bottom: 100px;
+  object-fit: cover;
 }
 
 .txt-img-profile p{
@@ -2998,6 +3005,7 @@ article input[type='submit']:disabled{
 }
 
 .main-nav .avatar-container i{
+  display: inline-block;
   float: right;
   margin: 20px 0 0 5px;
   font-size: 1.2em;
