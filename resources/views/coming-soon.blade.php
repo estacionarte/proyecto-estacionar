@@ -68,17 +68,17 @@
       <h5>Dejanos un correo y nos ponemos en contacto con vos</h5>
 
       <article class="form-generico form-group">
-          <form class="credits-form" action="{{ route('enviar.mail') }}" method="post">
+          <form class="credits-form" action="{{ route('suscribir') }}" method="post">
             {{ csrf_field() }}
 
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input type="text" name="name" placeholder="Tu nombre" value="">
+              <input type="text" name="name" placeholder="Nombre y Apellido" value="">
             </div>
 
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-              <input type="email" name="email" placeholder="Tu correo" id="credit-email">
+              <input type="email" name="email" placeholder="E-Mail" id="credit-email">
             </div>
 
             <input type="submit" name="" value="SUSCRIBITE">
