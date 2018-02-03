@@ -21,9 +21,9 @@
   </div>
 
 </div>
-<div class="profile-welcome-tablet">
+{{-- <div class="profile-welcome-tablet">
   <h3>¡Bienvenido {{Auth::user()->firstName}}!</h3>
-</div>
+</div> --}}
 {{-- HAMURGUESA --}}
 <script>
 

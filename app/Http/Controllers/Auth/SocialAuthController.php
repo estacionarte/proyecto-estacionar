@@ -22,7 +22,11 @@ class SocialAuthController extends Controller
   // Redirecciono a Facebook o Google
   public function redirectToProvider($provider)
   {
-      return Socialite::driver($provider)->redirect();
+      return Socialite::driver($provider)->fields([
+            'first_name', 'last_name', 'email', 'gender', 'birthday'
+        ])->scopes([
+            'email', 'user_birthday'
+        ])->redirect();
 
   }
 
@@ -30,11 +34,14 @@ class SocialAuthController extends Controller
   public function handleProviderCallback($provider)
   {
       // Obtenemos los datos del usuario
-      try {
-        $userProviderInfo = Socialite::driver($provider)->user();
-      } catch (\Exception $e) {
-        return redirect('/');
-      }
+      // try {
+      //   $userProviderInfo = Socialite::driver($provider)->user();
+      // } catch (\Exception $e) {
+      //   return redirect('/');
+      // }
+      $userProviderInfo = Socialite::driver($provider)->fields([
+            'first_name', 'last_name', 'email', 'gender', 'birthday'
+        ])->user();
 
 
       // Compruebo si el usuario existe
@@ -43,8 +50,10 @@ class SocialAuthController extends Controller
 
           // Si no existe creamos un nuevo usuario con los datos del proveedor en la tabla users
           $newUser = User::firstOrCreate([
-              'firstName' => $userProviderInfo->name,
-              'email'     => $userProviderInfo->email
+              'firstName' => $userProviderInfo->user['first_name'],
+              'lastName' => $userProviderInfo->user['last_name'],
+              'email'     => $userProviderInfo->user['email'],
+              'birthDate' => $userProviderInfo->user['birthday']
           ]);
 
           // Y llenamos la data en la tabla social_providers con el nuevo usuario

@@ -1,11 +1,16 @@
 @extends('layouts.app')
 @section('title') Mi Perfil @endsection
+@section('css')
+<link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
+@endsection
 @section('content')
+
 @include('profile.nav-bar-profile')
 
 <div class="profile-container">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#profile"><i class="fa fa-info-circle"></i> <label id="infper">Información personal</label></a></li>
+    <li class="active"><a data-toggle="tab" href="#dashboard"><i class="fa fa-desktop"></i> <label id="infper">Dashboard</label></a></li>
+    <li><a data-toggle="tab" href="#profile"><i class="fa fa-info-circle"></i> <label id="infper">Información personal</label></a></li>
     <li><a data-toggle="tab" href="#img-profile"><i class="fa fa-user-circle"></i><label>Imagen de perfil</label></a></li>
     <li><a data-toggle="tab" href="#datos"><i class="fa fa-check-circle"></i><label>Datos verificados</label></a></li>
     <li><a data-toggle="tab" href="#creditos"><i class="fa fa-gift"></i><label>Obtener Créditos</label></a></li>
@@ -13,7 +18,21 @@
   </ul>
 
   <div class="tab-content">
-    <div id="profile" class="tab-pane fade in active">
+    <div id="dashboard" class="tab-pane fade in active">
+      <div class="profile-welcome-tablet">
+        <h4>¡Bienvenido {{Auth::user()->firstName}}!</h4>
+      </div>
+      <div class="img-profile-container">
+        <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
+      </div>
+      <div class="">
+        <h3>Texto aca</h3>
+      </div>
+      {{-- <a data-toggle="tab" href="#img-profile">Subir una foto</a> --}}
+
+    </div>
+
+    <div id="profile" class="tab-pane fade">
       <div class="titulo">
         <h4>Campos requeridos para alquilar o reservar un espacio</h4>
         <form class="form-horizontal" action="/action_page.php">
@@ -110,12 +129,13 @@
         <p>Para que los conductores y anfitriones se conozcan, lo mejor es añadir fotos de la cara que sean nítidas y estén sacadas de frente. Asegurate de utilizar una foto en la que se te vea bien la cara y que no incluya información personal o sensible que preferirías que los conductores o anfitriones no viera</p>
       </div>
       <div class="btn-img-profile">
-        <a href="">Subir una foto</a>
-        <form method="post" enctype="multipart/form-data">
+
+        <form method="post" enctype="multipart/form-data" action="{{ route ('profile')}}">
           {{ method_field('PUT') }}
           {{ csrf_field() }}
           <input type="file" name="profilePic" accept="image/*" style="{{ $errors->has('profilePic') ? ' border: solid 2px #990606' : '' }}">
           <input type="submit" name="boton-submit" value="subir imagen">
+          {{-- <a href="" type="submit">Subir una foto</a> --}}
         </form>
       </div>
     </div>
@@ -171,5 +191,41 @@
   </div>
 </div>
 
+@endsection
+
+@section('scripts')
+
+  <script src="{{ URL::asset('js/dropzone.js')}}"></script>
+
+  <script>
+        Dropzone.options.myDropzone = {
+            autoProcessQueue: false,
+            uploadMultiple: true,
+            maxFilezise: 10,
+            maxFiles: 2,
+
+            init: function() {
+                var submitBtn = document.querySelector("#submit");
+                myDropzone = this;
+
+                submitBtn.addEventListener("click", function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    myDropzone.processQueue();
+                });
+                this.on("addedfile", function(file) {
+                    alert("file uploaded");
+                });
+
+                this.on("complete", function(file) {
+                    myDropzone.removeFile(file);
+                });
+
+                this.on("success",
+                    myDropzone.processQueue.bind(myDropzone)
+                );
+            }
+        };
+    </script>
 
 @endsection

@@ -27,16 +27,18 @@
     </div>
 
     <div class="redes-container">
+
       <section class="redes">
-        <div class="fa">
+        {{-- <div class="fa">
           <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
-        </div>
+        </div> --}}
         <div class="tw">
-          <a href="http://twitter.com" target="_blank"><img src="/icons/twitter.png" alt=""></a>
+          <p>Seguinos</p>
+          <a href="http://twitter.com" target="_blank"><img src="/images/twitter.png" alt=""></a>
         </div>
-        <div class="ig">
+        {{-- <div class="ig">
           <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
-        </div>
+        </div> --}}
       </section>
     </div>
 
@@ -59,7 +61,7 @@
 
       <h3>Ya podés subir tu espacio</h3>
       <h6>Convertire en anfitrión y empezá a ganar dinero. ¿Como hago?</h6>
-      <button type="button" class="btn btn-warning">Hacé click acá y enterate</button>
+      <button type="button" class="btn btn-warning"><a href="/anfitrion">Hacé click acá y enterate</a></button>
     </div>
 
     <div class="clear"></div>
@@ -84,7 +86,9 @@
             <input type="submit" name="" value="SUSCRIBITE">
           </form>
       </article>
-
+    </div>
+    <div class="nosotros">
+      <h4><a href="/nosotros">Acerca de nosotros</a></h4>
     </div>
 
   </div>
