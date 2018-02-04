@@ -1886,7 +1886,6 @@ article input[type='submit']:disabled{
   display: block;
   width: 80%;
   margin: 15px auto;
-  /* border: solid 1px red; */
 }
 
 .comingsoon-container .redes-container{
@@ -1894,7 +1893,6 @@ article input[type='submit']:disabled{
   display: inline-block;
   float: left;
   margin: 80px 0 0 10px;
-  /* border: solid 1px blue; */
 }
 
 .comingsoon-container .redes-container p{
@@ -1905,25 +1903,53 @@ article input[type='submit']:disabled{
   word-wrap: break-word;
   letter-spacing: -3px;
   margin-left: 12px;
-  /* border: solid 1px red; */
+
 }
+
 .comingsoon-container .redes-container .redes img{
   width: 30px;
 }
 
+.comingsoon-container .title-container{
+  margin: 10px auto 25px;
+  width: 90%;
+  padding: 20px 10px;
+  background-color: rgba(3, 124, 251, 0.55);
+}
+
+.comingsoon-container .title-container h1{
+  font-family: 'Lato', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
+  line-height: 1.1em;
+}
+
+.comingsoon-container .title-container h2{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: lighter;
+  line-height: 1.3em;
+}
+
 .comingsoon-container .countdown-container{
-  width: 80%;
-  float: left;
-  padding-bottom: 35px;
+  margin: 10px auto 20px;
+  width: 90%;
+  padding: 25px 0px;
   background-color: rgba(122, 219, 245, 0.65);
 }
 
-.comingsoon-container .countdown-container h1{
+.comingsoon-container .countdown-container h2{
   font-family: 'Roboto Condensed', sans-serif;
-  width: 100%;
   color: white;
   text-align: center;
-  margin: 45px 0 15px 0;
+  padding: 0px 0 15px 0;
+  margin: 0px;
   font-size: 1.5em;
   letter-spacing: 0.4em;
 }
@@ -1945,7 +1971,6 @@ article input[type='submit']:disabled{
 .comingsoon-container .countdown-container .letras-container{
   width: 100%;
   text-align: center;
-  /* border: solid 1px blue; */
 }
 
 .comingsoon-container .countdown-container h4{
@@ -1954,20 +1979,21 @@ article input[type='submit']:disabled{
   margin: -5px 0 0 0;
   font-size: 0.9em;
   color: white;
-  /* border: solid 1px red; */
 }
 
-.comingsoon-container .countdown-container h3, h6{
+.comingsoon-container .countdown-container h3, .comingsoon-container .countdown-container h6{
   color: #fff;
   text-align: center;
-  /* border: solid 1px red; */
+}
+
+.comingsoon-container .countdown-container h6{
+  font-size: 1em;
 }
 
 .comingsoon-container .countdown-container button{
   display: block;
   margin: 10px auto;
   font-size: 1.3em;
-  /* border: solid 1px red; */
 }
 .comingsoon-container .countdown-container a{
   color: #fff;
@@ -1981,11 +2007,11 @@ article input[type='submit']:disabled{
 .comingsoon-container .contacto-container h5{
   color: #fff;
   width: 100%;
-  margin: 25px 0 -10px 0;
+  margin: 5px 0 -10px 0;
 }
 
 .comingsoon-container .contacto-container .form-generico .credits-form{
-  background-color: rgba(122, 219, 245, 0.14);
+  background-color: rgba(122, 219, 245, 0.18);
   /* border: solid 1px red; */
   padding-top: 15px;
   padding-bottom: 5px;
@@ -2953,9 +2979,25 @@ article input[type='submit']:disabled{
   margin-top: 10px;
 }
 
-.comingsoon-container .countdown-container h1{
-  margin: 45px 0 15px 0;
-  font-size: 1.8em;
+.comingsoon-container .title-container{
+  padding: 45px 20px;
+}
+
+.comingsoon-container .title-container h1{
+  font-size: 2.2em;
+}
+
+.comingsoon-container .title-container h2{
+  font-size: 1.2em;
+}
+
+.comingsoon-container .countdown-container{
+  padding: 20px 0px;
+}
+
+.comingsoon-container .countdown-container h2{
+  padding: 10px 0px 20px;
+  font-size: 1.9em;
   letter-spacing: 0.6em;
 }
 
@@ -3580,14 +3622,28 @@ article input[type='submit']:disabled{
   display: inline-block;
 }
 
-.comingsoon-container .countdown-container{
+.comingsoon-container .title-container{
   width: 100%;
 }
 
-.comingsoon-container .countdown-container h1{
-  margin: 45px 0 15px 0;
+.comingsoon-container .title-container h1{
+  font-size: 3em;
+}
+
+.comingsoon-container .title-container h2{
+  font-size: 1.4em;
+}
+
+.comingsoon-container .countdown-container{
+  margin: 10px auto 20px;
+  padding: 40px 0px;
+  width: 100%;
+}
+
+.comingsoon-container .countdown-container h2{
   font-size: 2.8em;
   letter-spacing: 0.2em;
+  padding: 0px 0 15px 0;
 }
 
 .comingsoon-container .countdown-container .reloj-container{
@@ -3595,18 +3651,12 @@ article input[type='submit']:disabled{
 
 .comingsoon-container .countdown-container .reloj-container p {
   width: 8%;
-  /* border-right: solid 1px white; */
-}
-
-.comingsoon-container .countdown-container .letras-container{
-  /* border: solid 1px blue; */
 }
 
 .comingsoon-container .countdown-container h4{
   width: 8%;
   margin: -5px 0 0 0;
   font-size: 0.9em;
-  /* border: solid 1px red; */
 }
 
 .comingsoon-container .contacto-container .form-generico .credits-form{

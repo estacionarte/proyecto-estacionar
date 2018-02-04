@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lanzamiento</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto" rel="stylesheet">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="hojaDeEstilo">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113241679-1"></script>
@@ -26,24 +27,32 @@
       <img src="images/logo_dos.png" class="comming-logo">
     </div>
 
-    <div class="redes-container">
 
-      <section class="redes">
+    {{-- <div class="redes-container">
+
+      <section class="redes"> --}}
         {{-- <div class="fa">
           <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
         </div> --}}
-        <div class="tw">
+        {{-- <div class="tw">
           <p>Seguinos</p>
           <a href="http://twitter.com" target="_blank"><img src="/images/twitter.png" alt=""></a>
-        </div>
+        </div> --}}
         {{-- <div class="ig">
           <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
         </div> --}}
-      </section>
+      {{-- </section>
+    </div> --}}
+
+    <div class="title-container">
+      <h1>¡La plataforma online para estacionar que estabas esperando!</h1>
+      <h2><b>ESTACIONADOS</b> conecta dueños de espacios con conductores para que estos dejen su vehículo en manos confiables de modo rápido, seguro y a buen precio.</h2>
     </div>
 
     <div class="countdown-container">
-      <h1>Coming Soon</h1>
+
+
+      <h2>Coming Soon</h2>
 
       <div class="reloj-container">
         <p id="dia" style="border-left: solid 1px white;"></p>
@@ -60,14 +69,14 @@
       </div>
 
       <h3>Ya podés subir tu espacio</h3>
-      <h6>Convertire en anfitrión y empezá a ganar dinero. ¿Como hago?</h6>
+      <h6>Convertite en anfitrión y empezá a ganar dinero. ¿Cómo hago?</h6>
       <button type="button" class="btn btn-warning"><a href="/anfitrion">Hacé click acá y enterate</a></button>
     </div>
 
     <div class="clear"></div>
 
     <div class="contacto-container">
-      <h5>Dejanos un correo y nos ponemos en contacto con vos</h5>
+      <h5>Dejanos tus datos y se el primero en tener acceso</h5>
 
       <article class="form-generico form-group">
           <form class="credits-form" action="{{ route('suscribir') }}" method="post">
@@ -96,7 +105,7 @@
 
 <script>
 // Fecha de lanzamiento
-var countDownDate = new Date("feb 18, 2018 23:59:59").getTime();
+var countDownDate = new Date("feb 28, 2018 23:59:59").getTime();
 
 // Calculo el intervalo cada 1 segundo
 var x = setInterval(function() {
