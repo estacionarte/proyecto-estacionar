@@ -46,7 +46,7 @@
       <h1>Coming Soon</h1>
 
       <div class="reloj-container">
-        <p id="dia"></p>
+        <p id="dia" style="border-left: solid 1px white;"></p>
         <p id="hora"></p>
         <p id="minuto"></p>
         <p id="segundo"></p>

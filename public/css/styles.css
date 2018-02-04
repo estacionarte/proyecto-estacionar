@@ -1916,7 +1916,6 @@ article input[type='submit']:disabled{
   float: left;
   padding-bottom: 35px;
   background-color: rgba(122, 219, 245, 0.65);
-  /* border: solid 1px green; */
 }
 
 .comingsoon-container .countdown-container h1{
@@ -1924,16 +1923,14 @@ article input[type='submit']:disabled{
   width: 100%;
   color: white;
   text-align: center;
-  margin: 75px 0 5px 0;
+  margin: 45px 0 15px 0;
   font-size: 1.5em;
   letter-spacing: 0.4em;
-  /* border: solid 1px red; */
 }
 
 .comingsoon-container .countdown-container .reloj-container{
   width: 100%;
   text-align: center;
-  /* border: solid 1px red; */
 }
 
 .comingsoon-container .countdown-container .reloj-container p {
@@ -1979,20 +1976,19 @@ article input[type='submit']:disabled{
 .comingsoon-container .contacto-container{
   width: 100%;
   text-align: center;
-  /* border: solid 1px yellow; */
 }
 
 .comingsoon-container .contacto-container h5{
   color: #fff;
   width: 100%;
-  margin: 65px 0 -15px 0;
-  /* border: solid 1px yellow; */
+  margin: 25px 0 -10px 0;
 }
 
 .comingsoon-container .contacto-container .form-generico .credits-form{
   background-color: rgba(122, 219, 245, 0.14);
   /* border: solid 1px red; */
-  padding-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 5px;
 }
 
 .comingsoon-container .contacto-container .form-generico .credits-form .input-group{
@@ -2017,7 +2013,7 @@ article input[type='submit']:disabled{
 
 .comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]{
   display: inline-block;
-  width: 33%;
+  width: 42%;
   /* height: 30px; */
   background-color: inherit;
   border: solid 1px #fff;
@@ -2958,9 +2954,9 @@ article input[type='submit']:disabled{
 }
 
 .comingsoon-container .countdown-container h1{
-  margin: 75px 0 5px 20px;
-  font-size: 1.7em;
-  letter-spacing: 0.7em;
+  margin: 45px 0 15px 0;
+  font-size: 1.8em;
+  letter-spacing: 0.6em;
 }
 
 .comingsoon-container .countdown-container .reloj-container p {
@@ -3575,31 +3571,26 @@ article input[type='submit']:disabled{
   margin-left: 0;
   text-align: left;
   width: 50%;
-  /* border: solid 1px blue; */
 }
 
 .comingsoon-container .redes-container .redes img{
   width: 30px;
   margin-right: 5px;
-  margin: -2px 0 0 -20px;
+  margin: -2px 0 0 -5px;
   display: inline-block;
-  /* border: solid 1px blue; */
 }
 
 .comingsoon-container .countdown-container{
   width: 100%;
-  /* border: solid 3px green; */
 }
 
 .comingsoon-container .countdown-container h1{
-  margin: 75px auto 5px;
+  margin: 45px 0 15px 0;
   font-size: 2.8em;
-  letter-spacing: 0.1em;
-  /* border: solid 1px red; */
+  letter-spacing: 0.2em;
 }
 
 .comingsoon-container .countdown-container .reloj-container{
-  /* border: solid 1px red; */
 }
 
 .comingsoon-container .countdown-container .reloj-container p {
@@ -3638,8 +3629,7 @@ article input[type='submit']:disabled{
 }
 
 .comingsoon-container .contacto-container .form-generico .credits-form input[type=email], .comingsoon-container .contacto-container .form-generico .credits-form input[type=text]{
-  margin-bottom: 5px;
-  margin-left: -3.5px;
+  margin: 5px 0 5px -3.5px;
   width: 80%;
   height: 30px;
 }
