@@ -5,7 +5,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Nosotros</title>
+    <title>Estacionados - Nosotros</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- ICONO DE LA PESTAÑA DEL NAVEGADOR -->
@@ -60,10 +60,8 @@
     <div class="nosotros-titulo">
       <div class="nos-tit-container">
         <h1>Acerca de nosotros</h1>
-        <p>Más del 50% de las personas pierden a diario entre 15 a 30 minutos para estacionar.</p>
-        <p>Y más del 90% valora su auto y busca un lugar seguro donde dejar su vehiculo.</p>
-        <p>Estacionados es una comunidad que nace para facilitar los problemas de estacionamiento y acercar a las personas que puedan y quieran ofrecer su espacio y obtener grandes beneficios con las personas que a diario pierden tiempo buscando donde dejar su vehículo</p>
-        <p>Nosotros facilitamos el estacionamiento a los conductores, al tiempo que ayudamos a los propietarios y operadores de estacionamiento a obtener grandes beneficios.</p>
+        <p><b>Estacionados</b> nace como respuesta a los diversos problemas para encontrar estacionamiento, desde el tiempo perdido hasta la seguridad y los precios. Conecta a las personas que quieren ofrecer su espacio con aquellas que a diario pierden tiempo buscando un lugar para su vehículo, generando valor para ambas partes.</p>
+        <p>Nuestro objetivo es facilitar el estacionamiento y generar ahorros a los conductores, y al mismo tiempo ayudar a los propietarios y operadores de estacionamiento a obtener grandes beneficios.</p>
       </div>
     </div>
   <div class="nosotros-foto-contanier">

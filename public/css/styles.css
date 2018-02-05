@@ -982,7 +982,7 @@ span .avatar{
 .profile-espacio-container .tab-content h4{
   background-color: #9ba69b;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 20px;#
   margin: 0 0 15px 0;
 }
 
@@ -2074,11 +2074,13 @@ article input[type='submit']:disabled{
 }
 
 .nosotros-titulo .nos-tit-container h1{
-  color: #039E05;
+  color: #48A8C1;
 }
 
 .nosotros-titulo .nos-tit-container p{
   color: #fff;
+  font-weight: lighter;
+  font-family: 'Lato', sans-serif;
 }
 
 .nosotros-foto-contanier .nosotros-foto{
@@ -2158,7 +2160,6 @@ article input[type='submit']:disabled{
   font-family: 'Roboto Condensed', sans-serif;
   text-align: left;
   padding: 15px 15px;
-  /* border: 1px solid red; */
 }
 
 .pasos-anfitrion-container img{
@@ -2170,9 +2171,14 @@ article input[type='submit']:disabled{
   font-size: 2.4em;
 }
 
+.ser-anfitrion{
+  margin-bottom: 40px;
+}
+
 .ser-anfitrion h2{
   font-size: 2em;
   font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .ser-anfitrion h2::first-letter{
@@ -2181,7 +2187,7 @@ article input[type='submit']:disabled{
 
 .ser-anfitrion p{
   font-size: 1.1em;
-  margin-bottom: 45px;
+  margin-bottom: 10px;
 }
 
 .anfitrion .footer-anfitrion{
@@ -3805,8 +3811,8 @@ article input[type='submit']:disabled{
 
 .ser-anfitrion h2{
   font-size: 2em;
-  width: 40%;
-  /* border: solid 1px yellow; */
+  width: 45%;
+  margin-top: 5px;
 }
 
 .ser-anfitrion h2::first-letter{
@@ -3814,7 +3820,7 @@ article input[type='submit']:disabled{
 }
 
 .ser-anfitrion p{
-  width: 40%;
+  width: 45%;
   font-size: 1.3em;
   /* border: solid 1px yellow; */
 }
@@ -3823,9 +3829,9 @@ article input[type='submit']:disabled{
   float: left;
 }
 
-#anfitrion-p-2, #anfitrion-h2-2{
+.anfitrion-p-2, .anfitrion-h2-2{
   float: right;
-  margin-right: 55px;
+  margin-right: 20px;
 }
 
 .anfitrion .footer-anfitrion{
