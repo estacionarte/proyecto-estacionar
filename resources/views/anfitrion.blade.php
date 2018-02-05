@@ -55,7 +55,7 @@
         <div class="title-anfitrion-container">
           <h3>Tu Espacio en Estacionados</h3>
           <h1>Ganá dinero como anfitrión de Estacionados</h1>
-          <a class="btn btn-danger" href="/register" role="button" style="background-color:#48A8C1; border-color:#48A8C1;">Comenzar</a>
+          <a class="btn btn-danger" href="" role="button" style="background-color:#48A8C1; border-color:#48A8C1;">Comenzar</a>
         </div>
       </div>
 
@@ -101,7 +101,7 @@
 
       <div class="footer-anfitrion">
         <h1>Empezá a crear tu espacio</h1>
-        <a class="btn btn-danger" href="/register" role="button" style="background-color:#48A8C1; border-color:#48A8C1;">Comenzar</a>
+        <a class="btn btn-danger" href="" role="button" style="background-color:#48A8C1; border-color:#48A8C1;">Comenzar</a>
       </div>
 
     </div>
