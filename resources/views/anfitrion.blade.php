@@ -55,7 +55,7 @@
         <div class="title-anfitrion-container">
           <h3>Tu Espacio en Estacionados</h3>
           <h1>Ganá dinero como anfitrión de Estacionados</h1>
-          <a class="btn btn-danger" role="button" style="background-color:#48A8C1; border-color:#48A8C1;" id="comenzar1">Comenzar</a>
+          <a class="btn btn-danger" role="button" id="comenzar1">Comenzar</a>
 
           <div class="modalAlquilar" style="{{ !empty($registrado) && $registrado == 1 || count($errors) > 0 ? ' display: block' : '' }}">
             <div class="modalAlquilar-content">
@@ -141,7 +141,7 @@
 
       <div class="footer-anfitrion">
         <h1>Empezá a crear tu espacio</h1>
-        <a class="btn btn-danger" role="button" style="background-color:#48A8C1; border-color:#48A8C1;" id="comenzar2">Comenzar</a>
+        <a class="btn btn-danger" role="button" id="comenzar2">Comenzar</a>
       </div>
 
     </div>

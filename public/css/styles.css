@@ -2198,7 +2198,7 @@ article input[type='submit']:disabled{
 }
 
 .ser-anfitrion h2::first-letter{
-  color: rgb(203, 205, 97);
+  color: #C22927;
 }
 
 .ser-anfitrion p{
@@ -3788,6 +3788,13 @@ article input[type='submit']:disabled{
 
 .banner-anfitrion-container a{
   font-size: 1.4em;
+  background-color:#48A8C1;
+  border-color:#48A8C1;
+}
+
+.banner-anfitrion-container a:hover{
+  background-color:#58b2c9;
+  border-color:#48A8C1;
 }
 
 .anfitrion .resumen-anfitrion-container{
@@ -3819,7 +3826,6 @@ article input[type='submit']:disabled{
 
 .pasos-anfitrion-container{
   padding: 15px 80px 0 80px;
-  /* border: 1px solid red; */
 }
 
 .pasos-anfitrion-container h1{
@@ -3848,7 +3854,7 @@ article input[type='submit']:disabled{
 }
 
 .ser-anfitrion h2::first-letter{
-  color: rgb(203, 205, 97);
+  color: #48A8C1;
 }
 
 .ser-anfitrion p{
@@ -3879,4 +3885,10 @@ article input[type='submit']:disabled{
 .anfitrion .footer-anfitrion a{
   margin-top: 0px;
   font-size: 1.4em;
+  background-color:#48A8C1;
+  border-color:#48A8C1;
+}
+
+.anfitrion .footer-anfitrion a:hover{
+  background-color:#58b2c9;
 }
