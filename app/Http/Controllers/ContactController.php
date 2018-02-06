@@ -40,6 +40,9 @@ class ContactController extends Controller
           'email' => 'required|string|unique:comingsoon,email',
           'location' => 'required|string|max:100',
           'informacion' => 'required|string|max:250',
+        ],
+        [
+          'email.unique'  => 'Este e-mail ya fue ingresado.',
       ]);
 
       DB::insert('insert into comingsoon (name, email, location, informacion, created_at, updated_at) values (?, ?, ?, ?, ?, ?)', [$request->input('name'), $request->input('email'), $request->input('location'), $request->input('informacion'), now(), now()]);
