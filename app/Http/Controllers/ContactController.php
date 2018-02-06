@@ -26,6 +26,26 @@ class ContactController extends Controller
 
       DB::insert('insert into comingsoon (name, email, created_at, updated_at) values (?, ?, ?, ?)', [$request->input('name'), $request->input('email'), now(), now()]);
 
-      return redirect()->route('coming.soon');
+      $registrado = 1;
+
+      return view('coming-soon', compact('registrado'));
+    }
+
+    public function seranfitrion(Request $request)
+    {
+      $this->validate(
+        $request,
+        [
+          'name' => 'required|string|max:32',
+          'email' => 'required|string|unique:comingsoon,email',
+          'location' => 'required|string|max:100',
+          'informacion' => 'required|string|max:250',
+      ]);
+
+      DB::insert('insert into comingsoon (name, email, location, informacion, created_at, updated_at) values (?, ?, ?, ?, ?, ?)', [$request->input('name'), $request->input('email'), $request->input('location'), $request->input('informacion'), now(), now()]);
+
+      $registrado = 1;
+
+      return view('anfitrion', compact('registrado'));
     }
 }

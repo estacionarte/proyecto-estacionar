@@ -70,13 +70,23 @@
 
       <h3>Ya podés subir tu espacio</h3>
       <h6>Convertite en anfitrión y empezá a ganar dinero. ¿Cómo hago?</h6>
-      <button type="button" class="btn btn-warning"><a href="/anfitrion">Hacé click acá y enterate</a></button>
+      <div style="text-align:center;">
+        <a href="/anfitrion" class="btn btn-warning">Clickeá y enterate</a>
+      </div>
     </div>
 
     <div class="clear"></div>
 
     <div class="contacto-container">
-      <h5>Dejanos tus datos y se el primero en tener acceso</h5>
+
+      @if (!empty($registrado) && $registrado == 1)
+        <h5 style="color:rgb(255, 89, 89); font-weight:bold; font-size:1em;">¡Gracias por dejarnos tus datos!</h5>
+      @elseif (count($errors) > 0)
+        <h5 style="color:rgb(255, 89, 89); font-weight:bold; font-size:1em;">¡Este e-mail ya fue ingresado!</h5>
+      @else
+        <h5>Dejanos tus datos y se el primero en tener acceso</h5>
+      @endif
+
 
       <article class="form-generico form-group">
           <form class="credits-form" action="{{ route('suscribir') }}" method="post">
@@ -133,6 +143,7 @@ var x = setInterval(function() {
     //     clearInterval(x);
     //     document.getElementById("").innerHTML = "";
     // }
+    
 }, 1000);
 </script>
 

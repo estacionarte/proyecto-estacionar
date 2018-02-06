@@ -55,14 +55,54 @@
         <div class="title-anfitrion-container">
           <h3>Tu Espacio en Estacionados</h3>
           <h1>Ganá dinero como anfitrión de Estacionados</h1>
-          <a class="btn btn-danger" href="" role="button" style="background-color:#48A8C1; border-color:#48A8C1;">Comenzar</a>
+          <a class="btn btn-danger" role="button" style="background-color:#48A8C1; border-color:#48A8C1;" id="comenzar1">Comenzar</a>
+
+          <div class="modalAlquilar" style="{{ !empty($registrado) && $registrado == 1 || count($errors) > 0 ? ' display: block' : '' }}">
+            <div class="modalAlquilar-content">
+              <span class="alquilar-close">&times;</span>
+              <h2>Enviar datos</h2>
+              <h3 id="anfitrion-modal-h3">Dejanos tus datos y nos contactamos con vos para cargar tu espacio</h3>
+              <hr>
+              @if (count($errors) > 0)
+                @foreach ($errors->all() as $error)
+                  <p style="color: #990606;"> {{ $error }} </p>
+                @endforeach
+              @endif
+              @if (!empty($registrado) && $registrado == 1)
+                <h5 style="color:rgb(255, 89, 89); font-weight:bold; font-size:1em; text-align:center">¡Gracias por dejarnos tus datos!</h5>
+              @endif
+              <div class="form-generico">
+                <form action="{{ route('datos.anfitrion') }}" method="post">
+                  {{ csrf_field() }}
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input type="text" name="name" placeholder="Nombre y Apellido" maxlength="50">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                      <input type="email" name="email" placeholder="E-Mail" maxlength="100">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input type="text" name="location" placeholder="Ciudad y Barrio" maxlength="100">
+                    </div>
+                    <div class="input-group">
+                      <textarea name="informacion" maxlength="250" placeholder="Consultas y otros datos que consideres importantes para nosotros. Por ejemplo: n˚ de teléfono, disponibilidad horaria del espacio a ofertar, información sobre el mismo (casa, techado, altura), etc."></textarea>
+                    </div>
+                    <input type="submit" name="enviar" value="ENVIAR">
+                </form>
+              </div>
+              <p>Te vamos a contactar en menos de 48 horas.</p>
+              <h6 style="color:black; text-align:center;">info@estacionados.com</h6>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <div class="resumen-anfitrion-container">
         <article id="resumen1" class="resumen">
           <h1>¿Por qué alquilar mi espacio?</h1>
-          {{-- <p>No importa qué tipo de espacio tengas para compartir, Estacionados hace que ganar dinero y llegar a cientos de conductores que buscan lugares únicos para estacionar, como el tuyo, resulte simple y seguro.</p> --}}
           <p>Porque, sin importar qué tipo de espacio tengas para compartir, <b>Estacionados</b> hace que ganar dinero y llegar a cientos de conductores resulte simple y seguro. Podés ofrecer una cochera cuando no la uses o, simplemente, el living de tu casa para recibir bicicletas sin ninguna complicación.</p>
         </article>
         <article class="resumen">
@@ -101,9 +141,32 @@
 
       <div class="footer-anfitrion">
         <h1>Empezá a crear tu espacio</h1>
-        <a class="btn btn-danger" href="" role="button" style="background-color:#48A8C1; border-color:#48A8C1;">Comenzar</a>
+        <a class="btn btn-danger" role="button" style="background-color:#48A8C1; border-color:#48A8C1;" id="comenzar2">Comenzar</a>
       </div>
 
     </div>
+
+    <script>
+      modal = document.getElementsByClassName("modalAlquilar")[0];
+      close = document.getElementsByClassName("alquilar-close")[0];
+      btn1 = document.getElementById("comenzar1");
+      btn2 = document.getElementById("comenzar2");
+
+      btn1.onclick = function() {
+        modal.style.display = "block";
+      }
+      btn2.onclick = function() {
+        modal.style.display = "block";
+      }
+      close.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+
+    </script>
   </body>
 </html>

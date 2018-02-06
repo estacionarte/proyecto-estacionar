@@ -19,6 +19,8 @@ class CreateComingsoonTable extends Migration
 
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('location')->nullable();
+            $table->string('informacion')->nullable();
         });
     }
 
