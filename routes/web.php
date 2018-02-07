@@ -128,4 +128,4 @@ Route::post('alquilar/detallealquiler/{id}/{horariollegada}/{horariopartida}', '
 Route::post('alquilar/disponible/{id}/{horariollegada}/{horariopartida}', 'EspaciosController@disponible')->name('alquiler.disponible');
 
 // test
-Route::get('testfunction', 'MPPayments@test')->name('test')->middleware(['coming.soon']);
+Route::get('testfunction', 'PaymentsController@test')->name('test')->middleware(['coming.soon']);

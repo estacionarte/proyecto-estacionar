@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use MercadoPago;
 
-class MPPayments extends Controller
+class PaymentsController extends Controller
 {
     public function test(){
 
