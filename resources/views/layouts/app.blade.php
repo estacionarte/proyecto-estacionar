@@ -47,6 +47,13 @@
       gtag('config', 'UA-113241679-1');
     </script>
 
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@estacionadosweb" />
+    <meta name="twitter:title" content="Estacionados" />
+    <meta name="twitter:description" content="Plataforma online para alquilar estacionamiento!" />
+    <meta name="twitter:image" content="https://i.imgur.com/mMojlEG.jpg" />
+
     <!-- Styles -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

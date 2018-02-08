@@ -17,6 +17,13 @@
 
     gtag('config', 'UA-113241679-1');
   </script>
+
+  {{-- Twitter Card --}}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@estacionadosweb" />
+  <meta name="twitter:title" content="Estacionados" />
+  <meta name="twitter:description" content="Plataforma online para alquilar estacionamiento!" />
+  <meta name="twitter:image" content="https://i.imgur.com/WkneY4Z.jpg" />
 </head>
 
 <body class="coming-soon">
