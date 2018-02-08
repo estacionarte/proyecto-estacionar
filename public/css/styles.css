@@ -2164,7 +2164,8 @@ article input[type='submit']:disabled{
 }
 
 .comingsoon-container .contacto-container .form-generico .credits-form{
-  background-color: rgba(122, 219, 245, 0.18);
+  background-color: rgb(194, 194, 194);
+  background-color: rgba(194, 194, 194, 0.18);
   padding-top: 15px;
   padding-bottom: 5px;
 }
