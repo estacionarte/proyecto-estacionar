@@ -60,7 +60,7 @@
     <div class="nosotros-titulo">
       <div class="nos-tit-container">
         <h1>Acerca de nosotros</h1>
-        <p><b>Estacionados</b> nace como respuesta a los diversos problemas para encontrar estacionamiento, desde el tiempo perdido hasta la seguridad y los precios. Conecta a las personas que quieren ofrecer su espacio con aquellas que a diario pierden tiempo buscando un lugar para su vehículo, generando valor para ambas partes.</p>
+        <p><b>Estacionados</b> nace como respuesta a los diversos problemas para encontrar estacionamiento, desde el tiempo perdido hasta la seguridad y los precios. Conecta a las personas que quieren ofrecer su espacio con aquellas que necesitan un lugar para su vehículo, generando valor para ambas partes.</p>
         <p>Nuestro objetivo es facilitar el estacionamiento y generar ahorros a los conductores, y al mismo tiempo ayudar a los propietarios y operadores de estacionamiento a obtener grandes beneficios.</p>
       </div>
     </div>
