@@ -24,7 +24,7 @@
   <div class="comingsoon-container">
 
     <div class="logo-container">
-      <img src="images/logo_dos.png" class="comming-logo">
+      <img src="images/logo/otros/StandardSmallLogo-Large.png" class="coming-logo">
     </div>
 
 
@@ -143,7 +143,7 @@ var x = setInterval(function() {
     //     clearInterval(x);
     //     document.getElementById("").innerHTML = "";
     // }
-    
+
 }, 1000);
 </script>
 

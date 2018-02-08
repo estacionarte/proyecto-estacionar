@@ -2023,13 +2023,13 @@ article input[type='submit']:disabled{
 
 .comingsoon-container .logo-container{
   width: 100%;
-  background: linear-gradient(rgba(19, 20, 19, 1.5), rgba(19, 20, 19, 0.05));
-  padding: 3px;
+  background: linear-gradient(rgba(240,240,240, 1.5), rgba(125, 125, 125, 0.05));
+  padding: 1px 0px 20px;
 }
 
-.comingsoon-container .logo-container .comming-logo{
+.comingsoon-container .logo-container .coming-logo{
   display: block;
-  width: 80%;
+  width: 85%;
   margin: 15px auto;
 }
 
@@ -3147,8 +3147,14 @@ article input[type='submit']:disabled{
   max-width: 959px;
 }
 
-.comingsoon-container .logo-container .comming-logo{
+.comingsoon-container .logo-container{
+  background: linear-gradient(rgba(240,240,240, 1.5), rgba(135, 135, 135, 0.05));
+  padding: 1px 0px 25px;
+}
+
+.comingsoon-container .logo-container .coming-logo{
   width: 50%;
+  margin: 15px auto 10px;
 }
 
 .comingsoon-container .redes-container{
@@ -3768,13 +3774,16 @@ article input[type='submit']:disabled{
   background-image: url(../images/coming-soon/coming-soon-pc.jpg);
   background-size: 100%;
   max-width: 1920px;
-  /* border: solid 1px blue; */
 }
 
-.comingsoon-container .logo-container .comming-logo{
+.comingsoon-container .logo-container{
+  background: linear-gradient(rgba(240,240,240, 1.5), rgba(155, 155, 155, 0.01));
+  padding: 5px 0px 50px;
+}
+
+.comingsoon-container .logo-container .coming-logo{
   width: 30%;
-  margin: 15px 15px;
-  /* border: solid 1px red; */
+  margin: 15px auto 0px;
 }
 
 .comingsoon-container .redes-container{
@@ -3782,7 +3791,6 @@ article input[type='submit']:disabled{
   display: inline-block;
   float: right;
   margin: -70px 65px 0 0;
-  /* border: solid 1px blue; */
 }
 
 .comingsoon-container .redes-container p{
@@ -3804,6 +3812,7 @@ article input[type='submit']:disabled{
 }
 
 .comingsoon-container .title-container{
+  margin-top: 0px;
   width: 100%;
 }
 

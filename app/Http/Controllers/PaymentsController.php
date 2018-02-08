@@ -24,21 +24,6 @@ class PaymentsController extends Controller
       );
       dd($payment);
 
-      $mp = new MP('CLIENT_ID', 'CLIENT_SECRET');
-
-      $preference_data = array(
-      	"items" => array(
-      		array(
-      			"title" => "Multicolor kite",
-      			"quantity" => 1,
-      			"currency_id" => "CURRENCY_ID", // Available currencies at: https://api.mercadopago.com/currencies
-      			"unit_price" => 10.00
-      		)
-      	)
-      );
-
-    $preference = $mp->create_preference($preference_data);
-
     return view('testfunction', compact('preference'));
   }
 }
