@@ -48,10 +48,10 @@
     </script>
 
     {{-- Twitter Card --}}
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@estacionadosweb" />
     <meta name="twitter:title" content="Estacionados" />
-    <meta name="twitter:description" content="Plataforma online para alquilar estacionamiento!" />
+    <meta name="twitter:description" content="¡Plataforma online para alquilar estacionamiento!" />
     <meta name="twitter:image" content="https://i.imgur.com/mMojlEG.jpg" />
 
     <!-- Styles -->
