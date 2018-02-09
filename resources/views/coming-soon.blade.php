@@ -34,23 +34,6 @@
       <img src="images/logo/otros/StandardSmallLogo-Large.png" class="coming-logo">
     </div>
 
-
-    {{-- <div class="redes-container">
-
-      <section class="redes"> --}}
-        {{-- <div class="fa">
-          <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
-        </div> --}}
-        {{-- <div class="tw">
-          <p>Seguinos</p>
-          <a href="http://twitter.com" target="_blank"><img src="/images/twitter.png" alt=""></a>
-        </div> --}}
-        {{-- <div class="ig">
-          <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
-        </div> --}}
-      {{-- </section>
-    </div> --}}
-
     <div class="title-container">
       <h1>¡La plataforma online para estacionar que estabas esperando!</h1>
       <h2><b>ESTACIONADOS</b> conecta dueños de espacios con conductores para que estos dejen su vehículo en manos confiables de modo rápido, seguro y a buen precio.</h2>
@@ -113,8 +96,25 @@
           </form>
       </article>
     </div>
+
     <div class="nosotros">
       <h4><a href="/nosotros">Acerca de nosotros</a></h4>
+    </div>
+
+    <div class="redes-container">
+
+      <section class="redes">
+        {{-- <div class="fa">
+          <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
+        </div> --}}
+        <div class="tw">
+          {{-- <p>Seguinos</p> --}}
+          <a href="http://twitter.com" target="_blank"><img src="/images/twitter.png" alt=""></a>
+        </div>
+        {{-- <div class="ig">
+          <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
+        </div> --}}
+      </section>
     </div>
 
   </div>

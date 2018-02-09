@@ -2033,11 +2033,17 @@ article input[type='submit']:disabled{
   margin: 15px auto;
 }
 
-.comingsoon-container .redes-container{
+/* .comingsoon-container .redes-container{
   width: 10%;
   display: inline-block;
   float: left;
   margin: 80px 0 0 10px;
+} */
+
+.comingsoon-container .redes-container{
+  width: 30px;
+  display: block;
+  margin: 5px auto 15px;
 }
 
 .comingsoon-container .redes-container p{
@@ -3165,12 +3171,20 @@ article input[type='submit']:disabled{
   margin: 15px auto 10px;
 }
 
-.comingsoon-container .redes-container{
+/* .comingsoon-container .redes-container{
   margin: 80px 0 0 20px;
+} */
+
+/* .comingsoon-container .redes-container .redes img{
+  margin-top: 10px;
+} */
+
+.comingsoon-container .redes-container{
+  width: 40px;
 }
 
 .comingsoon-container .redes-container .redes img{
-  margin-top: 10px;
+  width: 40px;
 }
 
 .comingsoon-container .title-container{
@@ -3794,11 +3808,19 @@ article input[type='submit']:disabled{
   margin: 15px auto 0px;
 }
 
-.comingsoon-container .redes-container{
+/* .comingsoon-container .redes-container{
   width: 12%;
   display: inline-block;
   float: right;
   margin: -70px 65px 0 0;
+} */
+
+.comingsoon-container .redes-container{
+  width: 50px;
+}
+
+.comingsoon-container .redes-container .redes img{
+  width: 50px;
 }
 
 .comingsoon-container .redes-container p{
@@ -3812,12 +3834,12 @@ article input[type='submit']:disabled{
   width: 50%;
 }
 
-.comingsoon-container .redes-container .redes img{
+/* .comingsoon-container .redes-container .redes img{
   width: 30px;
   margin-right: 5px;
   margin: -2px 0 0 -5px;
   display: inline-block;
-}
+} */
 
 .comingsoon-container .title-container{
   margin-top: 0px;
