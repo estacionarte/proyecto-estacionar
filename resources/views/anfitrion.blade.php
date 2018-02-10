@@ -54,6 +54,23 @@
       gtag('config', 'AW-817436236');
     </script>
 
+    <!-- Event snippet for Anfitriones conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-817436236/5AcaCMzEr3wQzKzkhQM',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@estacionadosweb" />
@@ -72,7 +89,7 @@
         <div class="title-anfitrion-container">
           <h3>Tu Espacio en Estacionados</h3>
           <h1>Ganá dinero como anfitrión de Estacionados</h1>
-          <a class="btn btn-danger" role="button" id="comenzar1">Comenzar</a>
+          <a class="btn btn-danger" role="button" id="comenzar1" onclick="return gtag_report_conversion('http://www.estacionados.com/anfitrion');">Comenzar</a>
 
           <div class="modalAlquilar" style="{{ !empty($registrado) && $registrado == 1 || count($errors) > 0 ? ' display: block' : '' }}">
             <div class="modalAlquilar-content">
@@ -158,7 +175,7 @@
 
       <div class="footer-anfitrion">
         <h1>Empezá a crear tu espacio</h1>
-        <a class="btn btn-danger" role="button" id="comenzar2">Comenzar</a>
+        <a class="btn btn-danger" role="button" id="comenzar2" onclick="return gtag_report_conversion('http://www.estacionados.com/anfitrion');">Comenzar</a>
       </div>
 
     </div>
