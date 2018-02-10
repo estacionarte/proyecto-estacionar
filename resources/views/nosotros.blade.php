@@ -47,6 +47,16 @@
       gtag('config', 'UA-113241679-1');
     </script>
 
+    <!-- Global site tag (gtag.js) - Google AdWords: 817436236 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-817436236"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-817436236');
+    </script>
+
     <!-- Styles -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
