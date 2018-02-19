@@ -137,7 +137,7 @@
       <div class="resumen-anfitrion-container">
         <article id="resumen1" class="resumen">
           <h1>¿Por qué alquilar mi espacio?</h1>
-          <p>Porque, sin importar qué tipo de espacio tengas para compartir, <b>Estacionados</b> hace que ganar dinero y llegar a cientos de conductores resulte simple y seguro. Podés ofrecer una cochera cuando no la uses o, simplemente, el living de tu casa para recibir bicicletas sin ninguna complicación.</p>
+          <p>Porque, sin importar qué tipo de lugar tengas para compartir, <b>Estacionados</b> hace que ganar dinero y llegar a cientos de conductores resulte simple y seguro. Podés ofrecer una cochera cuando no la uses o, simplemente, el living de tu casa para recibir bicicletas sin ninguna complicación.</p>
         </article>
         <article class="resumen">
           <h1>Vos tenés el control</h1>
@@ -154,13 +154,13 @@
         <article class="ser-anfitrion">
           <img src="images/anfitrion/paso1.jpg">
           <h2>1. Creá un espacio</h2>
-          <p>Crear un espacio en <b>Estacionados</b> es gratis y fácil. Describí tu espacio, indicá qué tipo de vehículo podés alojar, agregá fotos y describí todos los detalles que creas necesarios.</p>
+          <p>Crear un espacio en <b>Estacionados</b> es gratis y fácil. Describí tu espacio, indicá qué tipo de vehículo podés alojar, agregá fotos y detallá todas las referencias que creas necesarias.</p>
           <p>Para terminar, indicá la disponibilidad de tu espacio y el precio que desees cobrar.</p>
         </article>
         <article class="ser-anfitrion">
           <img id="anfitrion-img-2" src="images/anfitrion/paso2.jpg">
           <h2 class="anfitrion-h2-2">2. Da la bienvenida al conductor</h2>
-          <p class="anfitrion-p-2">Conocé a los conductores antes de su llegada intercambiando mensajes. Nosotros nos encargamos de proveer la información necesaria para que puedan comunicarse al concretar el alquiler.</p>
+          <p class="anfitrion-p-2">Conocé a los conductores antes de su llegada intercambiando mensajes. Nosotros nos encargamos de proveer la información necesaria para que puedan comunicarse entre sí al concretar el alquiler.</p>
           <p class="anfitrion-p-2">La mayoría de los anfitriones se ocupan de limpiar y ordenar los espacios que usarán los conductores para que estén en buenas condiciones.</p>
           <p class="anfitrion-p-2">Podés darles la bienvenida a los conductores y recibirlos en persona, o también podés enviarles los datos que necesitan para poder dejar su vehículo al llegar.</p>
         </article>
@@ -168,8 +168,8 @@
           <img src="images/anfitrion/paso3.jpg">
           <h2>3. Recibí el pago</h2>
           <p>Los pagos en <b>Estacionados</b> se realizan siempre online, lo que permite que nunca tengas que tratar directamente con dinero.</p>
-          <p>A los conductores se les cobra antes de la llegada y vos recibís el pago después de que finalice el alquiler, tras asegurarnos de que todo transcurrió bien.</p>
-          <p>El dinero se deposita directamente en tu cuenta bancaria.</p>
+          <p>A los conductores se les cobra el servicio antes de la llegada y vos recibís el pago después de que finalice el alquiler, tras asegurarnos de que todo transcurrió según lo pautado.</p>
+          <p>El dinero se acredita directamente en tu cuenta bancaria.</p>
         </article>
       </div>
 
