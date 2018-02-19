@@ -68,6 +68,6 @@ class PaymentsController extends Controller
   }
 
   public function getNotification(){
-    return response ('Gracias', 200);
+    return response('Gracias', 200);
   }
 }
