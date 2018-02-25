@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use MercadoPago;
+use MP;
 
 class PaymentsController extends Controller
 {
@@ -68,6 +69,51 @@ class PaymentsController extends Controller
   }
 
   public function getNotification(){
+
+    $topic = $request->topic;
+    $id = $request->id;
     return response('Gracias', 200);
   }
+
+  public function test2($id,  $fechallegada = null,  $fechapartida = null){
+
+    // Pongo un espacio de ejemplo
+    if (!$fechallegada && !$fechapartida) {
+      $fechallegada = new DateTime();
+      $fechapartida = new DateTime();
+      $fechapartida->modify('+6 hour');
+    }
+
+    $espacio = Espacio::findOrFail($id);
+
+    $tiempominimo = $espacio->minutosEnDiasYHoras($espacio->estadiaMinimaMinutos);
+    $tiempomaximo = $espacio->minutosEnDiasYHoras($espacio->estadiaMaximaMinutos);
+    $anticipacion = $espacio->minutosEnDiasYHoras($espacio->anticipacionMinutos);
+
+
+    // Hago las cosas de MP
+
+    $mp = new MP('1581213728114728', 'ZAnggFd5NZe6DqaqV9WNQ2MPtk27rZMe');
+
+    $preference_data = array(
+    	"items" => array(
+    		array(
+    			"title" => "Multicolor kite",
+    			"quantity" => 1,
+    			"currency_id" => "ARS", // Available currencies at: https://api.mercadopago.com/currencies
+    			"unit_price" => 10.00
+    		)
+    	)
+    );
+
+    $preference = $mp->create_preference($preference_data);
+
+    // para que vaya directo a la pagina de mercado pago
+    // return redirect()->to($preference['response']['init_point']);
+
+    // Para que muestre el botón de pago en estacionados
+    return view('testfunction2', compact('preference','espacio', 'tiempominimo', 'tiempomaximo', 'anticipacion', 'fechallegada', 'fechapartida'));
+
+  }
+
 }
