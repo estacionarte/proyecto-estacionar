@@ -27,7 +27,9 @@ class AddCommentRemovePrecioPorMinutoAlquileres extends Migration
      */
     public function down()
     {
+      Schema::table('alquileres', function (Blueprint $table) {
         $table->dropColumn('comentario');
         $table->decimal('precioPorMinutoConDesc', 6, 2);
+      });
     }
 }
