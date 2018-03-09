@@ -55,9 +55,12 @@ class AlquileresController extends Controller
     // Obtengo el precio final
     $alquiler->precioFinal = $espacio->precioFinal($fechallegada, $fechapartida);
 
+    // Indico el estado
+    $alquiler->estado = 'Pending Payment';
+
     // Guardo todo
     $alquiler->save();
 
-    return redirect()->route('profile');
+    return redirect()->route('payMP');
   }
 }

@@ -131,5 +131,8 @@ Route::post('alquilar/disponible/{id}/{horariollegada}/{horariopartida}', 'Espac
 Route::get('testfunction', 'PaymentsController@test')->name('test')->middleware(['coming.soon']);
 Route::get('testfunction2/{id}', 'PaymentsController@test2')->name('test2')->middleware(['coming.soon']);
 
+// MP Payment Preference
+Route::get('MP/payment', 'PaymentsController@payMP')->name('payMP');
+
 // MP Payment Notification
 Route::post('MP/paymentnotification', 'PaymentsController@getNotification')->name('notification');
