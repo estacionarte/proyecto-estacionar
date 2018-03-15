@@ -17,7 +17,10 @@ class Alquiler extends Model
       'fechaComienzoAlquiler',
       'fechaFinAlquiler',
       'precioFinal',
-      'rating',
-      'comentario',
+      'rating_anfitrion',
+      'rating_conductor',
+      'comentario_anfitrion',
+      'comentario_conductor',
+      'estado',
     ];
 }

@@ -43,7 +43,7 @@ Route::get('perfil', 'ProfileController@dameFecha')->name('profile')->middleware
 
 Route::get('/perfil-alquileres', function () {
     return view('profile.profile-alquileres');
-});
+})->name('profile.alquileres');
 
 Route::put('perfil', 'ProfileController@uploadProfileImage');
 
@@ -132,7 +132,20 @@ Route::get('testfunction', 'PaymentsController@test')->name('test')->middleware(
 Route::get('testfunction2/{id}', 'PaymentsController@test2')->name('test2')->middleware(['coming.soon']);
 
 // MP Payment Preference
-Route::get('MP/payment', 'PaymentsController@payMP')->name('payMP');
+Route::get('MP/payment/{id}', 'PaymentsController@payMP')->name('payMP');
 
 // MP Payment Notification
 Route::post('MP/paymentnotification', 'PaymentsController@getNotification')->name('notification');
+
+// MP Payment Success
+Route::get('MP/success', function () {
+    return view('payment.success');
+})->name('payment.success');
+
+Route::get('MP/pending', function () {
+    return view('payment.pending');
+})->name('payment.pending');
+
+Route::get('MP/failure', function () {
+    return view('payment.failure');
+})->name('payment.failure');

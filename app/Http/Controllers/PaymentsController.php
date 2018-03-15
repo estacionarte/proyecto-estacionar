@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use MercadoPago;
 use MP;
+use App\Alquiler;
+use App\Espacio;
+use Auth;
 
 class PaymentsController extends Controller
 {
@@ -91,7 +94,7 @@ class PaymentsController extends Controller
     $anticipacion = $espacio->minutosEnDiasYHoras($espacio->anticipacionMinutos);
 
 
-    // Hago las cosas de MP
+    // Creo preferencia de espacio a pagar
 
     $mp = new MP('1581213728114728', 'ZAnggFd5NZe6DqaqV9WNQ2MPtk27rZMe');
 
@@ -116,21 +119,11 @@ class PaymentsController extends Controller
 
   }
 
-  public function payMP($id,  $fechallegada = null,  $fechapartida = null){
+  public function payMP($id){
 
-    // Pongo un espacio de ejemplo
-    // if (!$fechallegada && !$fechapartida) {
-    //   $fechallegada = new DateTime();
-    //   $fechapartida = new DateTime();
-    //   $fechapartida->modify('+6 hour');
-    // }
-    //
-    // $espacio = Espacio::findOrFail($id);
-    //
-    // $tiempominimo = $espacio->minutosEnDiasYHoras($espacio->estadiaMinimaMinutos);
-    // $tiempomaximo = $espacio->minutosEnDiasYHoras($espacio->estadiaMaximaMinutos);
-    // $anticipacion = $espacio->minutosEnDiasYHoras($espacio->anticipacionMinutos);
-
+    // Obtengo el alquiler recién hecho por el Usuario y los datos relacionados que voy a usar para generar el pago
+    $alquiler = Alquiler::findOrFail($id);
+    $espacio = Espacio::findOrFail($alquiler->idEspacio);
 
     // Hago las cosas de MP
 
@@ -139,12 +132,42 @@ class PaymentsController extends Controller
     $preference_data = array(
     	"items" => array(
     		array(
-    			"title" => "Multicolor kite",
+          "id" => $espacio->id,
+    			"title" => $espacio->nombre,
+          // "picture_url" => '',
+          "description" => 'Espacio en Estacionados',
+          "category_id" => 'services',
     			"quantity" => 1,
-    			"currency_id" => "ARS", // Available currencies at: https://api.mercadopago.com/currencies
-    			"unit_price" => 10.00
+          "currency_id" => "ARS",
+    			"unit_price" => (double)$alquiler->precioFinal
     		)
-    	)
+    	),
+      "payer" => array(
+        "name" => Auth::user()->firstName,
+        "surname" => Auth::user()->lastName,
+        "email" => Auth::user()->email,
+        "date_created" => Auth::user()->created_at,
+        "phone" => array(
+            // "area_code" => '',
+            "number" => Auth::user()->phoneNumber
+        ),
+        "identification" => array(
+          "type" => "DNI",
+          "number" => Auth::user()->DNI,
+        ),
+        "address" => array(
+            "zip_code" => Auth::user()->zipcode
+        ),
+      ),
+      "back_urls" => array(
+        "success" => "http://www.estacionados.com/MP/success",
+        "pending" => "http://www.estacionados.com/MP/pending",
+        "failure" => "http://www.estacionados.com/MP/failure"
+      ),
+      // "auto_return" => "approved",
+      "payment_methods" => array(
+
+      ),
     );
 
     $preference = $mp->create_preference($preference_data);

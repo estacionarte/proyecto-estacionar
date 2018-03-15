@@ -61,6 +61,8 @@ class AlquileresController extends Controller
     // Guardo todo
     $alquiler->save();
 
-    return redirect()->route('payMP');
+    $alquiler_id = $alquiler->id;
+
+    return redirect()->route('payMP',compact('alquiler_id'));
   }
 }
