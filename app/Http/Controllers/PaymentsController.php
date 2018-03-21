@@ -178,4 +178,25 @@ class PaymentsController extends Controller
 
   }
 
+  public function paymentsuccess(){
+
+    $hola = '';
+
+    return view('payment.success', compact('hola'));
+  }
+
+  public function paymentpending(){
+
+    $hola = '';
+
+    return view('payment.pending', compact('hola'));
+  }
+
+  public function paymentfailure(){
+
+    $hola = '';
+
+    return view('payment.failure', compact('hola'));
+  }
+
 }
