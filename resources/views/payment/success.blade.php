@@ -6,6 +6,10 @@
   {{-- @if (!empty($reserva)) --}}
   {{-- @endif --}}
 
+  <div class="" style="height:500px;">
+
+  </div>
+
   <div id="modal-profile-alquiler" class="modal-fullscreen modal-prof-alq" style="display:block;">
     <div class="modal-content content-prof-alq">
       {{-- @if (!empty($reserva) && $reserva == 'alquiler') --}}
@@ -24,7 +28,7 @@
         <hr>
         <li>Se recomienda llegar 5 minutos antes del horario de partida.</li>
         <hr>
-        <li>Si no te vas a tiempo, se te seguirá cobrando con un 20% adicional de penalidad.</li>
+        <li>Si no te vas a tiempo, se te seguirá cobrando con un <b>20% adicional de penalidad</b>.</li>
         <hr>
         <li>Podés modificar la reserva si necesitás mas tiempo, siempre y cuando el espacio esté disponible.</li>
       </ul>

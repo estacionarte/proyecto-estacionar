@@ -180,7 +180,9 @@ class PaymentsController extends Controller
 
   public function paymentsuccess(){
 
-    $hola = '';
+    dd($request);
+    // Tengo que modificar el estado del alquiler y poner Payed
+    // Si es con confirmacion del dueño, tengo que crear un campo más en la tabla de alquileres que diga el estado de la reserva Accepted/Pending/Rejected
 
     return view('payment.success', compact('hola'));
   }
