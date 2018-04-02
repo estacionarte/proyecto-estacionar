@@ -34,16 +34,25 @@ a:hover{
 /****************** H E A D E R *******************/
 .main-header{
   width: 100%;
-  margin-bottom: 10px;
   background-color: #fff;
-  /* position: fixed;
-  z-index: 9999; */
+  position: fixed;
+  z-index: 9999;
+  /* border: solid 1px red; */
+}
+
+.header-logo-container{
+  position: relative;
+  float: left;
+  max-width: 50%;
+  height: 45px;
+  /* border: solid 1px pink; */
 }
 
 .logo{
-  float: left;
-  width: 55%;
-  margin: 15px 0 10px 20px;
+  position: absolute;
+  width: 200px;
+  top: 8px;
+  left: 30px;
 }
 
 .nav-bar{
@@ -51,12 +60,13 @@ a:hover{
 }
 
 #toggle {
-  display: inline-block;
+  /* display: inline-block; */
   float: right;
-  width: 28px;
+  width: 30px;
   height: 30px;
-  margin: 4% 3%;
-  padding-top: 11px;
+  margin: 8px 30px;
+  padding-top: 12px;
+  /* border: solid 1px blue; */
 }
 
 #toggle:hover{
@@ -82,7 +92,7 @@ a:hover{
 #toggle span, #toggle span:after, #toggle span:before {
   width: 100%;
   height: 5px;
-  background-color: #48A8C1;
+  background-color: #085174;
   transition: all 0.3s;
   backface-visibility: hidden;
   border-radius: 2px;
@@ -112,8 +122,12 @@ a:hover{
   font-size: 0.8em;
 }
 
-.nav-bar a:hover{
+.nav-bar .anfitrion-btn{
+  background: linear-gradient(#89C843, #2EA03E);
+}
 
+
+.nav-bar a:hover{
   text-decoration: none;
 }
 
@@ -131,13 +145,13 @@ ul li .popup-link{
 /************************** B A N N E R *************************/
 .banner-container{
   position: relative;
-  margin-top: -10px;
   background-image: url(../images/home/parking_mobile.jpg);
   background-size: 100%;
-  /*background-repeat: no-repeat;*/
   background-attachment: fixed;
+  top: 45px;
   width: 100%;
   height: 445px;
+  /* border: solid 1px blue; */
 }
 
 .shape{
@@ -176,7 +190,7 @@ ul li .popup-link{
   font-family: 'Roboto Condensed', sans-serif;
   position: relative;
   width: 90%;
-  margin: 45px auto;
+  margin: 85px auto 45px;
   padding: 15px 0;
   background-color: #fff;
   border-radius: 5px;
@@ -342,23 +356,24 @@ ul li .popup-link{
 
 /****************** F A Q s *******************/
  .bodies-main-content{
-   margin-top: 60px;
-   padding: 10px 10px;
+   padding: 60px 10px 5px;
+ }
+
+ .bodies-main-content .gral-main{
    background-color: #fff;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0;
  }
 
- .bodies-main-content h1{
-   margin: 20px auto;
+ .bodies-main-content .gral-main h1{
    font-size: 1.6em;
-   padding: 10px 0;
+   padding: 20px 0 10px 10px;
    color: #8f8f8f;
    font-weight: lighter;
    font-family: 'Roboto Condensed', sans-serif;
    text-align: left;
  }
 
-.faqs-search{
+ .bodies-main-content .gral-main .faqs-search{
   display: block;
   margin: 0px 7.5% 30px;
   text-align: center;
@@ -369,7 +384,7 @@ ul li .popup-link{
 }
 
 .faqs-form-search input[type=text]{
-  width: 82%;
+  width: 80%;
   padding: 10px;
   font-size: 1.1em;
   border: none;
@@ -400,6 +415,7 @@ ul li .popup-link{
 
 .faqs-preguntas section{
   margin: 30px auto;
+  padding-left: 10px;
 }
 
 .faqs-preguntas h2{
@@ -420,6 +436,11 @@ ul li .popup-link{
   font-size: 1em;
   margin: 7px auto 20px;
   display: none;
+}
+
+.faqs-preguntas .last{
+  padding-bottom: 24px;
+  margin-bottom: 0 !important;
 }
 
 /****************** S I G N  I N *******************/
@@ -608,13 +629,14 @@ ul li .popup-link{
 }
 
 .main-nav .avatar-container{
-  /* border: solid 1px blue; */
-  width: 120px;
-  margin: 2% 10px 0 0;
+  position: relative;
+  width: 100px;
+  margin: 4px 30px;
   float: right;
+  /* border: solid 1px blue; */
 }
 
-.main-nav .avatar-container i{
+.main-nav .avatar-container i, .main-nav .avatar-container .anfitrion-btn{
   display: none;
 }
 
@@ -728,7 +750,7 @@ span .avatar{
 }
 
 .profile-nav-container .navbar{
-  margin-top: -10px;
+  padding-top: 50px;
   background-color: rgb(13, 126, 218);
 }
 
@@ -2405,12 +2427,11 @@ article input[type='submit']:disabled{
 }
 
 .main-nav .avatar-container{
-  margin: 1% 10px 0 0;
+  margin-right: 35px;
 }
 
 .logo{
-  width: 30%;
-  margin: 15px 0 10px 20px;
+  left: 35px;
 }
 
 .nav-bar{
@@ -2419,7 +2440,7 @@ article input[type='submit']:disabled{
   width: 65%;
   overflow: hidden;
   margin: 0 0 0 35%;
-  padding: 15px;
+  padding: 5px;
 }
 
 .nav-bar a{
@@ -2439,7 +2460,7 @@ article input[type='submit']:disabled{
 
 .anfitrion-btn{
   color: #fff !important;
-  background-color: #2f1fe0 !important;
+  background: linear-gradient(#89C843, #2EA03E);
   margin: 0  10px 0 0;
   border-radius: 5%;
 }
@@ -2451,7 +2472,6 @@ article input[type='submit']:disabled{
 /****************** B A N N E R *******************/
 
 .banner-container{
-  margin-top: -15px;
   height: 550px;
 }
 
@@ -2619,7 +2639,7 @@ article input[type='submit']:disabled{
   max-width: 1100px;
 }
 
-.faqs-main-content h1{
+.gral-main h1{
   margin-left: 2.5%;
 }
 
@@ -2695,12 +2715,8 @@ article input[type='submit']:disabled{
   display: none;
 }
 .profile-nav-container {
-  margin-top: -10px;
-  height: 35px;
+  /* height: 80px; */
   overflow: hidden;
-}
-.profile-nav-container .navbar{
-  margin-top: 0;
 }
 
 .profile-nav-container .navbar .navbar-nav{
@@ -3271,12 +3287,22 @@ article input[type='submit']:disabled{
 @media (min-width: 960px) {
 
 /****************** H E A D E R *******************/
+.logo{
+  width: 300px;
+  top: 8px;
+}
+
 .main-nav .avatar-container{
   /* border: solid 1px blue; */
   width: 320px;
-  margin: 1% 10px 0 0;
+  margin-left: 5px;
 }
 
+.main-nav .avatar-container .anfitrion-btn{
+  display: inline-block;
+  padding: 4px;
+  vertical-align: middle;
+}
 .main-nav .avatar-container i{
   display: inline-block;
   float: right;
@@ -3290,6 +3316,10 @@ article input[type='submit']:disabled{
   margin: 10px;
   cursor: pointer;
   /* border: solid 1px red; */
+}
+
+.main-nav .avatar-container .welcome-user:hover{
+  color: #085174;
 }
 
 .main-nav .avatar-container .welcome-user h4{
@@ -3307,16 +3337,10 @@ article input[type='submit']:disabled{
   height: 18%;
 }
 
-.logo{
-  width: 25%;
-  margin: 18px 0 5px 30px;
-  padding-bottom: 15px;
-}
-
 .nav-bar{
   /* border: solid 1px yellow; */
-  width: 69%;
-  margin: 25px 0;
+  width: 60%;
+  margin: 12px 10px 15px 0;
   padding: 0;
   float: right;
 }
@@ -3330,10 +3354,10 @@ article input[type='submit']:disabled{
   padding: 8px 0 !important;
   width: 145px;
   letter-spacing: 2px;
-  margin: 0  0 !important;
+  margin: 0 0 !important;
 }
 
-.nav-bar a::hover{
+.nav-bar a:hover{
   border-top: solid 2px #48a8c1;
 }
 
@@ -3376,13 +3400,9 @@ article input[type='submit']:disabled{
   color: #48A8C1;
 }
 
-.nav-bar a:hover{
-  border-top: solid 2px #48a8c1;
-}
-
 .anfitrion-btn:hover{
   border-top: inherit !important;
-  background-color: #291bc5 !important;
+  background: #2EA03E !important;
 }
 
 .modal-wrapper{
@@ -3437,7 +3457,6 @@ article input[type='submit']:disabled{
 /****************** B A N N E R *******************/
 
 .banner-container{
-  margin-top: -15px;
   background-image: url(../images/home/parking_pc.jpg);
   height: 620px;
   text-align: center;
@@ -3580,6 +3599,10 @@ article input[type='submit']:disabled{
 } */
 
 /***************** NAV BAR - P R O F I L E ********************/
+/* .profile-nav-container{
+  height: 100px;
+  padding-top: 510px;
+} */
 .profile-nav-container .navbar .navbar-nav li{
   font-size: 1em;
 }

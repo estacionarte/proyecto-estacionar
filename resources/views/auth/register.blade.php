@@ -2,9 +2,9 @@
 @section('title') Signup @endsection
 @section('content')
 
-<div class="container">
+<div class="bodies-main-content">
 
-  <div class="bodies-main-content">
+  <div class="gral-main">
 
     <hr>
 

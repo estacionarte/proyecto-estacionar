@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
+    {{-- <title>{{ config('app.', 'Estacionados') }}</title> --}}
     <!-- ICONO DE LA PESTAÑA DEL NAVEGADOR -->
     <link rel="icon" href="icons/favicon1.png" type="image/png" sizes="16x16">
     <!-- FONT CABIN -->
@@ -76,21 +77,25 @@
   <body>
     <header class="main-header" id="element">
 
-        <a href="/"><img src="/images/logo_dos.png" alt="logotipo" class="logo"></a>
+        <div class="header-logo-container">
+          <a href="/"><img src="/images/logo/standard/standar-small.png" alt="logotipo" class="logo"></a>
+        </div>
+
 
       @auth
 
         <nav class="main-nav">
           {{-- <div class="clear"></div> --}}
-          {{-- NOMBRE DE USUARIO --}}
           <div class="avatar-container">
 
             {{-- FOTO DE PERFIL DE USUARIO --}}
             <i class="fas fa-caret-left" onclick="openNav()"></i>
             <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar"></span>
 
-
+            {{-- NOMBRE DE PERFIL DE USUARIO --}}
             <span class="welcome-user" onclick="openNav()"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
+
+            <a href="/anfitrion" class="anfitrion-btn"> Convertite en anfitrión</a>
 
           </div>
 
@@ -101,6 +106,7 @@
           <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="/images/close-profile-nav2.png" alt=""></a>
             <a href="{{ route('profile') }}" class="fa fa-btn fa-user"> Mi perfil</a>
+            <a href="/anfitrion" class="fa fa-info-circle"> Convertite en anfitrión</a>
             <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a>
             <a href="faqs" class="fa fa-info-circle"> Ayuda</a>
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="fa fa-btn fa-sign-out"> Salir</a>
