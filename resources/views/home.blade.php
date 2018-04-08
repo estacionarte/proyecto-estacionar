@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title') Estacionapp @endsection
+@section('title')Estacionados @endsection
 @section('content')
 
 <section class="banner-container">
   <article class="shape">
     <h2>Encontrá y reservá lugar para tu vehículo</h2>
-    <h3>Más de 10.000 usuarios ya confían en nosotros</h3>
+    <h3>//Más de 10.000 usuarios ya confían en nosotros QUE PONEMOS ACA?//</h3>
 
     <div class="form-generico">
       <form class="search-espacios-form" action="{{ route('show.search')}}" method="get" onsubmit="return validarForm();">
@@ -70,26 +70,26 @@
 
 <section class="como-funciona" id="comofunciona">
   <h2>¿Cómo funciona?</h2>
-  <p class="sub-buscas">Si necesitás alquilar una cochera, ingresá a Estacionapp, encontrá ofertas cercanas a tu destino y seleccioná tu favorita. Vas a poder comparar precios, ver imágenes, calificaciones y comentarios de otros conductores.</p>
+  <p class="sub-buscas">Si necesitás alquilar una cochera, ingresá a Estacionados, encontrá ofertas cercanas a tu destino y seleccioná tu favorita. Vas a poder comparar precios, ver imágenes, calificaciones y comentarios de otros usuarios.</p>
   <article class="pasos" id="pasos-1">
     <img src="images/home/search.jpg" alt="buscar">
     <h3 class="buscas">BUSCÁS</h3>
-    <p>Elegí entre las más de 50.000 cocheras disponibles en la ciudad de Buenos Aires en cualquier momento del día.</p>
+    <p>Elegí entre las cocheras disponibles en cualquier momento del día.</p>
   </article>
   <article class="pasos" id="pasos-2">
     <img src="images/home/credit-card.jpg" alt="tarjeta">
     <h3 class="alquilas">ALQUILÁS</h3>
-    <p>Reservá la opción que mejor se adapte a lo que necesitás y pagá a través de nuestro sistema seguro. ¡No más problemas de efectivo!</p>
+    <p>Reservá la opción que mejor se adapte a lo que necesitás y pagá a través de Mercado Pago. ¡No más problemas de efectivo!</p>
   </article>
   <article class="pasos" id="pasos-3">
     <img src="images/home/car.jpg" alt="auto">
     <h3 class="estacionas">ESTACIONÁS</h3>
-    <p>Conducí hasta la cochera y dejá tu auto. ¡Listo! Ya es tuya por el tiempo que la solicitaste.</p>
+    <p>Conducí hasta el espacio y dejá tu auto. ¡Listo! Ya es tuyo por el tiempo que lo solicitaste.</p>
   </article>
 
   <div class="clear"></div>
 
-    <div class="mejores-espacios-container">
+    {{-- <div class="mejores-espacios-container">
       <h2>Nuestros espacios con mejor reputación</h2>
         <article class="mejor-espacio-bloque">
           <a href="#"><img class="mejor-espacio" src="/storage/espacios/33-1.jpeg"></a>
@@ -127,10 +127,10 @@
           <h4>Cochera cubierta en Palermo</h4>
           <img class="stars" src="/images/home/stars.png">
         </article>
-    </div>
+    </div> --}}
 
-    <div class="container container-title-carousel">
-      <h2>Últimos usuarios registrados</h2>
+    <div class="container container-title-carousel fondo-carousel">
+      <h2>Últimos espacios registrados</h2>
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
 

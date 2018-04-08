@@ -122,11 +122,6 @@ a:hover{
   font-size: 0.8em;
 }
 
-.nav-bar .anfitrion-btn{
-  background: linear-gradient(#89C843, #2EA03E);
-}
-
-
 .nav-bar a:hover{
   text-decoration: none;
 }
@@ -300,6 +295,9 @@ ul li .popup-link{
   margin: 0px 0px 0px 15px;
 }
 
+.fondo-carousel{
+  background-color: rgba(105, 105, 105, 0.2);
+}
 /****************** F O O T E R *******************/
 .main-footer{
   margin-top: 40px;
@@ -1016,7 +1014,7 @@ span .avatar{
   max-height: 220px;
   margin: 0 15px 40px;
   overflow: hidden;
-  border-radius: 5%;
+  border-radius: 10px;
   border: dotted 1px rgba(92, 111, 110, 0.82);
 }
 
@@ -2451,6 +2449,7 @@ article input[type='submit']:disabled{
   font-weight: bold;
   text-transform: uppercase !important;
   background-color: inherit;
+  border-bottom: 0;
   /* border: solid 1px green; */
 }
 
@@ -2460,9 +2459,10 @@ article input[type='submit']:disabled{
 
 .anfitrion-btn{
   color: #fff !important;
-  background: linear-gradient(#89C843, #2EA03E);
+  /* background: linear-gradient(#89C843, #2EA03E); */
+  background-color: #2EA03E !important;
   margin: 0  10px 0 0;
-  border-radius: 5%;
+  border-radius: 10px;
 }
 
 .how-btn{
@@ -2843,7 +2843,7 @@ article input[type='submit']:disabled{
   padding: 10px 15px;
   color: #000;
   font-weight: bold;
-  border-radius: 5%;
+  border-radius: 10px;
   border: solid 2px #dbdbdb;
 }
 
@@ -3355,6 +3355,7 @@ article input[type='submit']:disabled{
   width: 145px;
   letter-spacing: 2px;
   margin: 0 0 !important;
+  border-top: solid 2px #fff;
 }
 
 .nav-bar a:hover{
@@ -3401,8 +3402,10 @@ article input[type='submit']:disabled{
 }
 
 .anfitrion-btn:hover{
-  border-top: inherit !important;
-  background: #2EA03E !important;
+  /* border-top: inherit !important; */
+  border: solid 1px #2EA03E !important;
+  background: #fff !important;
+  color: #2EA03E !important;
 }
 
 .modal-wrapper{

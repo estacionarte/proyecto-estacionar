@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
     {{-- <title>{{ config('app.', 'Estacionados') }}</title> --}}
-    <!-- ICONO DE LA PESTAÑA DEL NAVEGADOR -->
-    <link rel="icon" href="icons/favicon1.png" type="image/png" sizes="16x16">
+
+
     <!-- FONT CABIN -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     <!-- FONT BLACK -->
@@ -70,6 +70,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="hojaDeEstilo">
     @yield('css')
+{{-- <link rel="icon" href="icons/favicon1.png" type="image/png" sizes="16x16"> --}}
+    {{-- favicon --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#48A8C1">
 
     {{-- Scripts --}}
     @yield('leaflet')
@@ -190,7 +199,7 @@
         <h4>Empresa</h4>
         <ul>
           <li><a href="/nosotros">Nosotros</a></li>
-          <li><a href="mantenimiento">Contacto</a></li>
+          <li><a href="mantenimiento">info@estacionados.com</a></li>
         </ul>
       </div>
       <div class="main-footer-div-right">
