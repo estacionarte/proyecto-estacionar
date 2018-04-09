@@ -74,7 +74,7 @@ class RegisterController extends Controller
     {
       $birthdate = $data['birthDay'] . '-' . $data['birthMonth'] . '-' . $data['birthYear'];
       $email = $data['email'];
-      $nombreArchivo = 'prueba' . '_profilePic.' . $data['profilePic']->extension();
+      $nombreArchivo = $email . '_profilePic.' . $data['profilePic']->extension();
 
         return User::create([
             'firstName' => $data['firstName'],
