@@ -84,7 +84,7 @@
   <article class="pasos" id="pasos-3">
     <img src="images/home/car.jpg" alt="auto">
     <h3 class="estacionas">ESTACIONÁS</h3>
-    <p>Conducí hasta el espacio y dejá tu auto. ¡Listo! Ya es tuyo por el tiempo que lo solicitaste.</p>
+    <p>Conducí hasta el espacio y dejá tu vehiculo. ¡Listo! Ya es tuyo por el tiempo que lo solicitaste.</p>
   </article>
 
   <div class="clear"></div>
@@ -219,6 +219,7 @@
 </div>
 
 </section>
+
 
 @endsection
 

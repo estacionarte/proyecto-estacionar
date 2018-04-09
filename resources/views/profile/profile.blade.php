@@ -9,24 +9,24 @@
 
 <div class="profile-container">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#dashboard"><i class="fa fa-desktop"></i> <label id="infper">Dashboard</label></a></li>
+    <li class="active"><a data-toggle="tab" href="#dashboard"><i class="fa fa-desktop"></i> <label id="infper">Información general</label></a></li>
     <li><a data-toggle="tab" href="#profile"><i class="fa fa-info-circle"></i> <label id="infper">Información personal</label></a></li>
     <li><a data-toggle="tab" href="#img-profile"><i class="fa fa-user-circle"></i><label>Imagen de perfil</label></a></li>
     <li><a data-toggle="tab" href="#datos"><i class="fa fa-check-circle"></i><label>Datos verificados</label></a></li>
     <li><a data-toggle="tab" href="#creditos"><i class="fa fa-gift"></i><label>Obtener Créditos</label></a></li>
-    <li><a data-toggle="tab" href="#referencias"><i class="fa fa-handshake-o"></i><label>Referencias</label></a></li>
+    <li><a data-toggle="tab" href="#referencias"><i class="fa fa-handshake-o"></i><label>Calificaciones</label></a></li>
   </ul>
 
   <div class="tab-content">
-    <div id="dashboard" class="tab-pane fade in active">
+    <div id="dashboard" class="tab-pane fade in active dashboard">
       <div class="profile-welcome-tablet">
         <h4>¡Bienvenido {{Auth::user()->firstName}}!</h4>
       </div>
       <div class="img-profile-container">
         <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
       </div>
-      <div class="">
-        <h3>Texto aca</h3>
+      <div class="txt-img-profile">
+        <p>Texto aca</p>
       </div>
       {{-- <a data-toggle="tab" href="#img-profile">Subir una foto</a> --}}
 
@@ -34,7 +34,9 @@
 
     <div id="profile" class="tab-pane fade">
       <div class="titulo">
-        <h4>Campos requeridos para alquilar o reservar un espacio</h4>
+        <div class="perfil-caja-titulo">
+          <h4>Campos requeridos para alquilar o reservar un espacio</h4>
+        </div>
         <form class="form-horizontal" action="/action_page.php">
           <div class="form-group">
             <label class="control-label col-xs-2 col-sm-2" for="nombre">Nombre:</label>
@@ -97,7 +99,10 @@
           </div>
           <div class="form-group">
             <label class="control-label col-xs-2 col-sm-2" for="phone">Telefono:</label>
-            <div class="col-xs-8 col-sm-7">
+            <div class="col-xs-8 col-sm-2">
+              <input type="number" class="form-control" id="phone" value="{{Auth::user()->codeArea}}">
+            </div>
+            <div class="col-xs-8 col-sm-5">
               <input type="number" class="form-control" id="phone" value="{{Auth::user()->phoneNumber}}">
               <h5>Tu número solo se compartirá cuando tengas una reservación confirmada con otro usuario de Estacionados. Es el método que utilizamos para ponernos en contacto vos.</h5>
             </div>
@@ -111,6 +116,13 @@
             </div>
           </div>
           <div class="form-group">
+            <label class="control-label col-xs-2 col-sm-2" for="phone2">CBU o Alias:</label>
+            <div class="col-xs-8 col-sm-7">
+              <input type="text" class="form-control" id="cbu" placeholder="CBU o Alías" style="margin-top:5px" value="{{Auth::user()->cbu}}">
+              <h5>Proporcioná los datos de tu cbu o Alias para poder recibir las ganancias de tus alquileres. No compartiremos esta infomraciónl con otros usuarios de Estacionados.</h5>
+            </div>
+          </div>
+          <div class="form-group">
             <div class="col-sm-offset-2  col-sm-10">
               <button type="submit" class="btn btn-danger">Guardar</button>
             </div>
@@ -121,7 +133,9 @@
 
 
     <div id="img-profile" class="tab-pane fade">
-      <h4>Imagen de perfil</h4>
+      <div class="perfil-caja-titulo">
+        <h4>Imagen de perfil</h4>
+      </div>
       <div class="img-profile-container">
         <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
       </div>
@@ -142,7 +156,9 @@
 
 
     <div id="datos" class="tab-pane fade datos">
-      <h4>Información verificada</h4>
+      <div class="perfil-caja-titulo">
+        <h4>Información verificada</h4>
+      </div>
       <div class="">
         <h3>Direccion de correo electrónico</h3>
         <i class="fa fa-check-circle-o "></i>
@@ -171,7 +187,9 @@
 
 
     <div id="creditos" class="tab-pane fade creditos">
-      <h4>Créditos</h4>
+      <div class="perfil-caja-titulo">
+        <h4>Créditos</h4>
+      </div>
       <div class="profile-credit">
         {{-- <img src="images/creditos/credito-img.png"> --}}
         <h3>¡Invitá a tus amigos y obtené créditos para estacionar!</h3>
@@ -184,7 +202,9 @@
 
 
     <div id="referencias" class="tab-pane fade">
-      <h4>Referencias</h4>
+      <div class="perfil-caja-titulo">
+        <h4>Referencias</h4>
+      </div>
       <p>aca van comentarios de otros usuarios sobre vos. esto es visible para todos</p>
     </div>
 

@@ -7,9 +7,11 @@ use App\Alquiler;
 use App\Espacio;
 use App\Vehiculo;
 use DateTime;
+use DB;
 
 class AlquileresController extends Controller
 {
+
   public function alquilar(Request $request, $id){
 
     $this->validate($request,

@@ -66,7 +66,7 @@ class ProfileController extends Controller
         $user = Auth::user();
       if ($request->hasFile('profilePic')) {
         $profilePic =  $request->file('profilePic');
-        $fileName = $user->email . '.' . $profilePic->getClientOriginalExtension();
+        $fileName = $user->id . '.' . $profilePic->getClientOriginalExtension();
         Image::make($profilePic)
             ->resize(400, 400)
             ->save( public_path('\storage\profilePic/' . $fileName) );

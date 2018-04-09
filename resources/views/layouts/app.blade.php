@@ -116,7 +116,7 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="/images/close-profile-nav2.png" alt=""></a>
             <a href="{{ route('profile') }}" class="fa fa-btn fa-user"> Mi perfil</a>
             <a href="/anfitrion" class="fa fa-info-circle"> Convertite en anfitrión</a>
-            <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a>
+            {{-- <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a> --}}
             <a href="faqs" class="fa fa-info-circle"> Ayuda</a>
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="fa fa-btn fa-sign-out"> Salir</a>
           </div>
