@@ -3311,8 +3311,7 @@ article input[type='submit']:disabled{
 }
 
 .main-nav .avatar-container{
-  /* border: solid 1px blue; */
-  width: 420px;
+  width: 450px;
   margin-left: 5px;
 }
 
