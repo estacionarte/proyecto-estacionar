@@ -11,7 +11,7 @@
         <li><a id="perfil-nav-2" href="perfil-espacio"><label>MIS ESPACIOS</label></a></li>
         <li><a id="perfil-nav-3" href="perfil-vehiculo"><label>MIS VHICULOS</label></a></li>
         <li><a id="perfil-nav-4" href="perfil-alquileres"><label>ALQUILERES</label></a></li>
-        <li><a id="perfil-nav-5" href="#"><label>EVALUACIONES</label></a></li>
+        {{-- <li><a id="perfil-nav-5" href="#"><label>EVALUACIONES</label></a></li> --}}
       </ul>
     </div>
   </nav>

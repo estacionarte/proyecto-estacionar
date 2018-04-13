@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <!-- ICONO DE LA PESTAÑA DEL NAVEGADOR -->
-    <link rel="icon" href="icons/favicon1.png" type="image/png" sizes="16x16">
+    {{-- <title>{{ config('app.', 'Estacionados') }}</title> --}}
+
+
     <!-- FONT CABIN -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     <!-- FONT BLACK -->
@@ -69,6 +70,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="hojaDeEstilo">
     @yield('css')
+{{-- <link rel="icon" href="icons/favicon1.png" type="image/png" sizes="16x16"> --}}
+    {{-- favicon --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#48A8C1">
 
     {{-- Scripts --}}
     @yield('leaflet')
@@ -76,21 +86,25 @@
   <body>
     <header class="main-header" id="element">
 
-        <a href="/"><img src="/images/logo_dos.png" alt="logotipo" class="logo"></a>
+        <div class="header-logo-container">
+          <a href="/"><img src="/images/logo/standard/standar-small.png" alt="logotipo" class="logo"></a>
+        </div>
+
 
       @auth
 
         <nav class="main-nav">
           {{-- <div class="clear"></div> --}}
-          {{-- NOMBRE DE USUARIO --}}
           <div class="avatar-container">
 
             {{-- FOTO DE PERFIL DE USUARIO --}}
             <i class="fas fa-caret-left" onclick="openNav()"></i>
             <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar"></span>
 
-
+            {{-- NOMBRE DE PERFIL DE USUARIO --}}
             <span class="welcome-user" onclick="openNav()"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
+
+            <a href="/anfitrion" class="anfitrion-btn"> Convertite en anfitrión</a>
 
           </div>
 
@@ -101,7 +115,8 @@
           <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="/images/close-profile-nav2.png" alt=""></a>
             <a href="{{ route('profile') }}" class="fa fa-btn fa-user"> Mi perfil</a>
-            <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a>
+            <a href="/anfitrion" class="fa fa-info-circle"> Convertite en anfitrión</a>
+            {{-- <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a> --}}
             <a href="faqs" class="fa fa-info-circle"> Ayuda</a>
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="fa fa-btn fa-sign-out"> Salir</a>
           </div>
@@ -184,7 +199,7 @@
         <h4>Empresa</h4>
         <ul>
           <li><a href="/nosotros">Nosotros</a></li>
-          <li><a href="mantenimiento">Contacto</a></li>
+          <li><a href="mantenimiento">info@estacionados.com</a></li>
         </ul>
       </div>
       <div class="main-footer-div-right">
