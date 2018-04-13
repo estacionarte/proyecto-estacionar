@@ -174,13 +174,14 @@ class PaymentsController extends Controller
 
     // dd($preference);
     // Para que vaya directo a la pagina de mercado pago
-    return redirect()->to($preference['response']['init_point']);
+    return redirect()->to($preference['response']['sandbox_finit_point']);
+    // return redirect()->to($preference['response']['init_point']);
 
   }
 
   public function paymentsuccess(){
 
-    dd($request);
+    // dd($request);
     // Tengo que modificar el estado del alquiler y poner Payed
     // Si es con confirmacion del dueño, tengo que crear un campo más en la tabla de alquileres que diga el estado de la reserva Accepted/Pending/Rejected
 
