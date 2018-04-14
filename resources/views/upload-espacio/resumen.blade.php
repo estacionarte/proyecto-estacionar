@@ -23,7 +23,7 @@
               <h2>Información General</h2>
               <a href="{{ route('editar.upload.espacio.1', $espacio) }}" class="upload-a-editar">Editar</a>
             </div>
-            <p>{{ $espacio->direccion }} {{ $espacio->dpto }}</p>
+            <p>{{ $espacio->direccion }}</p>
             <p>{{ $espacio->ciudad }}, {{ $espacio->provincia }}, {{ $espacio->pais }}, {{ $espacio->zipcode }}</p>
             <ul>
               <li>{{ $espacio->tipoEspacio }}</li>

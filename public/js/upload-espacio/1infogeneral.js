@@ -64,6 +64,9 @@ var writeDireccion = function writeDireccion() {
   if (pais.value && provincia.value) {
     direccion.removeAttribute("readonly");
   }
+  if (provincia.value == 'CABA') {
+    ciudad.value = 'CABA';
+  }
 }
 
 writeDireccion();
@@ -72,7 +75,6 @@ provincia.addEventListener('change', writeDireccion);
 
 // Lo mismo si al cargar dirección ya tiene value
 function writeOtros(){
-  document.querySelector('.upload-input-numdpto').removeAttribute("readonly");
   document.querySelector('.upload-input-ciudad').removeAttribute("readonly");
   document.querySelector('.upload-input-cp').removeAttribute("readonly");
 }
@@ -83,6 +85,10 @@ if (direccion.value) {
 // Activar geocoder de Google Maps
 function initMap(){
   var geocoder = new google.maps.Geocoder();
+
+  // Función para autocompletar campo de dirección a medida que se escribe
+  var direccionAutocomplete = new google.maps.places.Autocomplete(direccion);
+  // direccionAutocomplete.bounds
 
   // Al hacer cambios en campo domicilio, hacer editables los campos restantes y ejecutar geocoding
 
@@ -110,6 +116,7 @@ function initMap(){
 // Dar funcionalidad a geocoder (buscar)
 
 function geocodeAddress(geocoder) {
+  // direccion.value = direccion.value.substr(0, direccion.value.indexOf(','));
   var address = direccion.value;
   // Busco por address y filtro por región (país) elegida por usuario para que priorice resultados dentro de ese país
   geocoder.geocode({
@@ -195,7 +202,6 @@ function completarDireccion(inputName, jsonName, resultado){
     }
   }
 }
-
 
 
 

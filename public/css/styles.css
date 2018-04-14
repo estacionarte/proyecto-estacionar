@@ -2925,11 +2925,7 @@ article input[type='submit']:disabled{
 }
 
 .uploadEspacio .form-generico .form-uploadEspacio .upload-input-direccion{
-  width: 75%;
-}
-
-.uploadEspacio .form-generico .form-uploadEspacio .upload-input-numdpto{
-  width: 24.5%;
+  
 }
 
 .form-uploadEspacio .upload-div-ciudadzipcode .upload-input-ciudad{
