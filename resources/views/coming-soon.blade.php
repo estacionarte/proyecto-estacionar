@@ -132,7 +132,7 @@
 
 <script>
 // Fecha de lanzamiento
-var countDownDate = new Date("apr 30, 2018 23:59:59").getTime();
+var countDownDate = new Date("may 22, 2018 23:59:59").getTime();
 
 // Calculo el intervalo cada 1 segundo
 var x = setInterval(function() {
