@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use MercadoPago;
 use MP;
+use App\Alquiler;
+use App\Espacio;
+use Auth;
 
 class PaymentsController extends Controller
 {
@@ -91,7 +94,7 @@ class PaymentsController extends Controller
     $anticipacion = $espacio->minutosEnDiasYHoras($espacio->anticipacionMinutos);
 
 
-    // Hago las cosas de MP
+    // Creo preferencia de espacio a pagar
 
     $mp = new MP('1581213728114728', 'ZAnggFd5NZe6DqaqV9WNQ2MPtk27rZMe');
 
@@ -114,6 +117,89 @@ class PaymentsController extends Controller
     // Para que muestre el botón de pago en estacionados
     return view('testfunction2', compact('preference','espacio', 'tiempominimo', 'tiempomaximo', 'anticipacion', 'fechallegada', 'fechapartida'));
 
+  }
+
+  public function payMP($id){
+
+    // Obtengo el alquiler recién hecho por el Usuario y los datos relacionados que voy a usar para generar el pago
+    $alquiler = Alquiler::findOrFail($id);
+    $espacio = Espacio::findOrFail($alquiler->idEspacio);
+
+    // Hago las cosas de MP
+
+    $mp = new MP('1581213728114728', 'ZAnggFd5NZe6DqaqV9WNQ2MPtk27rZMe');
+
+    $preference_data = array(
+    	"items" => array(
+    		array(
+          "id" => $espacio->id,
+    			"title" => $espacio->nombre,
+          // "picture_url" => '',
+          "description" => 'Espacio en Estacionados',
+          "category_id" => 'services',
+    			"quantity" => 1,
+          "currency_id" => "ARS",
+    			"unit_price" => (double)$alquiler->precioFinal
+    		)
+    	),
+      "payer" => array(
+        "name" => Auth::user()->firstName,
+        "surname" => Auth::user()->lastName,
+        "email" => Auth::user()->email,
+        "date_created" => Auth::user()->created_at,
+        "phone" => array(
+            // "area_code" => '',
+            "number" => Auth::user()->phoneNumber
+        ),
+        "identification" => array(
+          "type" => "DNI",
+          "number" => Auth::user()->DNI,
+        ),
+        "address" => array(
+            "zip_code" => Auth::user()->zipcode
+        ),
+      ),
+      "back_urls" => array(
+        "success" => "http://www.estacionados.com/MP/success",
+        "pending" => "http://www.estacionados.com/MP/pending",
+        "failure" => "http://www.estacionados.com/MP/failure"
+      ),
+      // "auto_return" => "approved",
+      "payment_methods" => array(
+
+      ),
+    );
+
+    $preference = $mp->create_preference($preference_data);
+
+    // dd($preference);
+    // Para que vaya directo a la pagina de mercado pago
+    return redirect()->to($preference['response']['sandbox_finit_point']);
+    // return redirect()->to($preference['response']['init_point']);
+
+  }
+
+  public function paymentsuccess(){
+
+    // dd($request);
+    // Tengo que modificar el estado del alquiler y poner Payed
+    // Si es con confirmacion del dueño, tengo que crear un campo más en la tabla de alquileres que diga el estado de la reserva Accepted/Pending/Rejected
+
+    return view('payment.success', compact('hola'));
+  }
+
+  public function paymentpending(){
+
+    $hola = '';
+
+    return view('payment.pending', compact('hola'));
+  }
+
+  public function paymentfailure(){
+
+    $hola = '';
+
+    return view('payment.failure', compact('hola'));
   }
 
 }

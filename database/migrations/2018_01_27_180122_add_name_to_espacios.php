@@ -26,7 +26,9 @@ class AddNameToEspacios extends Migration
      */
     public function down()
     {
-      $table->dropColumn('nombre');
-      $table->string('dpto', 45)->nullable();
+      Schema::table('alquileres', function (Blueprint $table) {
+        $table->dropColumn('nombre');
+        $table->string('dpto', 45)->nullable();
+      });
     }
 }

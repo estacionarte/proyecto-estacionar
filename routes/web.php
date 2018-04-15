@@ -43,7 +43,7 @@ Route::get('perfil', 'ProfileController@dameFecha')->name('profile')->middleware
 
 Route::get('/perfil-alquileres', function () {
     return view('profile.profile-alquileres');
-});
+})->name('profile.alquileres');
 
 Route::put('perfil', 'ProfileController@uploadProfileImage');
 
@@ -131,5 +131,22 @@ Route::post('alquilar/disponible/{id}/{horariollegada}/{horariopartida}', 'Espac
 Route::get('testfunction', 'PaymentsController@test')->name('test')->middleware(['coming.soon']);
 Route::get('testfunction2/{id}', 'PaymentsController@test2')->name('test2')->middleware(['coming.soon']);
 
-// MP Payment Notification
-Route::post('MP/paymentnotification', 'PaymentsController@getNotification')->name('notification');
+// ********************* M P ************************
+Route::group(['prefix' => 'MP', 'middleware' => ['auth','coming.soon']], function(){
+
+  // MP Payment Preference
+  Route::get('payment/{id}', 'PaymentsController@payMP')->name('payMP');
+
+  // MP Payment Notification
+  Route::post('paymentnotification', 'PaymentsController@getNotification')->name('notification');
+
+  // MP Payment Success
+  Route::get('success', 'PaymentsController@paymentsuccess')->name('payment.success');
+
+  // MP Payment Pending
+  Route::get('pending', 'PaymentsController@paymentpending')->name('payment.pending');
+
+  // MP Payment Failure
+  Route::get('failure', 'PaymentsController@paymentfailure')->name('payment.failure');
+
+});
