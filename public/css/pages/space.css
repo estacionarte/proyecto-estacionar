@@ -1,0 +1,65 @@
+/***************** E S P A C I O ********************/
+
+.espacio-map{
+  height: 300px;
+}
+
+#botonReLoco{
+  margin: 5px auto;
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-size: 18px;
+  padding: 9px 16px;
+  background-color: #1baa47;
+}
+
+#botonReLoco:hover{
+  background-color: #137d34;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#mapid {
+  z-index: 0;
+}
+
+/*************************************************************************************************/
+/***********************************  D  E  S  K  T  O  P **************************************  ************************************************************************************************/
+/**********************************************************************************************/
+
+@media (min-width: 960px){
+  /***************** E S P A C I O ******************/
+
+  .espacio-main-content{
+    font-family: 'Patua One', cursive;
+    position: relative;
+    margin: 10px auto;
+    max-width: 1100px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden;
+  }
+
+  .espacio-container img{
+    width: 100%;
+  }
+
+  .show-espacio{
+    display: block;
+    float: left;
+    width: 50%;
+  }
+
+  .show-espacio h2{
+    padding: 15px 5px;
+    font-size: 3em;
+  }
+
+  .show-espacio h2::first-letter{
+    text-transform: uppercase;
+  }
+
+  .espacio-map{
+    height: 400px;
+  }
+}

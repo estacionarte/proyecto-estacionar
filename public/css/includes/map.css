@@ -1,0 +1,82 @@
+/**************************************************************/
+/*********************  T  A  B  L  E  T  *********************/
+/**************************************************************/
+
+@media (min-width: 700px){
+  /***************** MAP ********************/
+
+  .searchresults-map{
+    height: 60vh;
+  }
+
+  .search-result h1{
+    padding-left: 20px;
+    font-size: 2.6em;
+  }
+
+  .search-results-espacio {
+    display: inline-block;
+    width: 48.2%;
+    margin: 10px 5px;
+  }
+
+  .search-results-espacio img {
+    height: 180px;
+  }
+
+  /* Modal Box */
+  .modalAlquilar-content {
+    padding: 20px;
+  }
+
+  .modalAlquilar-content h3{
+    padding: 0;
+  }
+
+  .modalAlquilar-content h4{
+    padding: 0;
+  }
+
+  /***************** E S P A C I O ********************/
+
+  .espacio-map{
+    height: 250px;
+  }
+}
+
+/*************************************************************************************************/
+/***********************************  D  E  S  K  T  O  P **************************************  ************************************************************************************************/
+/**********************************************************************************************/
+
+@media (min-width: 960px){
+  /***************** MAP ********************/
+
+  .searchresults-map{
+    height: 50vh;
+    margin-bottom: 15px;
+  }
+
+  .search-results-espacio {
+    width: 32%;
+  }
+
+  .search-results-espacio img {
+    height: 170px;
+  }
+
+  .mejores-espacios-container p{
+    font-size: 2em;
+  }
+
+  .search-results-espacio h3 {
+    margin-top: 8px;
+  }
+
+  .modalAlquilar-content p{
+    font-size: 0.9em;
+  }
+
+  .modalAlquilar-content h2 {
+      margin: 6px auto 18px;
+  }
+}

@@ -1,0 +1,294 @@
+/**************************************************************/
+/*********************  M  O  B  I  L  E  *********************/
+/**************************************************************/
+
+/******************* A N F I T R I O N ****************/
+.anfitrion .banner-anfitrion-container{
+  background-image: url(/images/anfitrion/banner-mobile.jpg);
+  background-repeat: no-repeat;
+  height: 400px;
+  margin-top: -20px;
+  text-align: left;
+  padding-left: 10px;
+  /* border: solid 1px yellow; */
+}
+
+.title-anfitrion-container{
+  color: #000;
+}
+
+.title-anfitrion-container h3{
+  padding-top: 45px;
+  /* border: solid 1px white; */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.title-anfitrion-container h1{
+  /* border: solid 1px white; */
+  width: 220px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.banner-anfitrion-container a{
+  font-size: 1.4em;
+}
+
+#anfitrion-modal-h3{
+  padding: 0px;
+}
+
+.modalAlquilar .modalAlquilar-content .input-group{
+  margin-top: 4px;
+  width: 100%
+}
+
+.modalAlquilar .modalAlquilar-content .input-group input{
+  margin: 0px;
+}
+
+.modalAlquilar .modalAlquilar-content .input-group textarea{
+  margin: 0px;
+  width: inherit;
+  height: 120px;
+}
+
+.anfitrion .resumen-anfitrion-container{
+  background-color: #fff;
+  padding: 10px 15px;
+  /* border: solid 1px red; */
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.resumen-anfitrion-container .resumen h1{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.resumen-anfitrion-container .resumen p{
+  font-size: 1.1em;
+}
+
+.pasos-anfitrion-container{
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: left;
+  padding: 15px 15px;
+}
+
+.pasos-anfitrion-container img{
+  width: 100%;
+}
+
+.pasos-anfitrion-container h1{
+  font-weight: bold;
+  font-size: 2.4em;
+}
+
+.ser-anfitrion{
+  margin-bottom: 40px;
+}
+
+.ser-anfitrion h2{
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.ser-anfitrion h2::first-letter{
+  color: #C22927;
+}
+
+.ser-anfitrion p{
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.anfitrion .footer-anfitrion{
+  background-image: url(../images/anfitrion/footer-mobile.jpg);
+  background-repeat: no-repeat;
+  height: 300px;
+}
+
+.anfitrion .footer-anfitrion h1{
+  color: #fff;
+  font-weight: bold;
+  /* text-align: right; */
+  width: 65%;
+  font-size: 2em;
+  padding: 120px 0 0 0;
+  margin-left: 20px;
+  /* border: solid 1px red; */
+}
+
+.anfitrion .footer-anfitrion a{
+  margin-left: 20px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/**************************************************************/
+/*********************  T  A  B  L  E  T  *********************/
+/**************************************************************/
+
+@media (min-width: 700px){
+  /******************* A N F I T R I O N ****************/
+  .anfitrion .banner-anfitrion-container{
+    background-image: url(/images/anfitrion/banner-tablet.jpg);
+    padding-left: 80px;
+  }
+
+  .anfitrion .footer-anfitrion{
+    background-image: url(../images/anfitrion/footer-tablet.jpg);
+    height: 400px;
+  }
+
+  .anfitrion .footer-anfitrion h1{
+    font-size: 2.9em;
+  }
+
+  .anfitrion .footer-anfitrion a{
+    margin-top: 15px;
+    font-size: 1.7em;
+  }
+}
+
+/*************************************************************************************************/
+/***********************************  D  E  S  K  T  O  P **************************************  ************************************************************************************************/
+/**********************************************************************************************/
+
+@media (min-width: 960px){
+  /******************* A N F I T R I O N ****************/
+  .anfitrion .banner-anfitrion-container{
+    background-image: url(/images/anfitrion/banner-pc.jpg);
+    /* background-size: 100%; */
+    height: 500px;
+    padding-left: 50px;
+  }
+
+  .title-anfitrion-container{
+    color: #fff;
+  }
+
+  .title-anfitrion-container h3{
+    padding-top: 220px;
+    font-size: 1.4em;
+  }
+
+  .title-anfitrion-container h1{
+    width: 450px;
+    font-size: 2.6em;
+    padding: 20px 0;
+  }
+
+  .banner-anfitrion-container a{
+    font-size: 1.4em;
+    background-color:rgb(86, 154, 182);
+    border-color:rgb(86, 154, 182);
+  }
+
+  .banner-anfitrion-container a:hover{
+    background-color:rgb(86, 154, 182);
+    border-color:rgb(86, 154, 182);
+  }
+
+  .banner-anfitrion-container a:active{
+    background-color:rgb(86, 154, 182);
+    border-color:rgb(86, 154, 182);
+  }
+
+  .anfitrion .resumen-anfitrion-container{
+    padding: 20px 0;
+    overflow: hidden;
+  }
+
+  #anfitrion-modal-h3, .anfitrion .modalAlquilar .modalAlquilar-content p, .anfitrion .modalAlquilar .modalAlquilar-content input[type=text], .anfitrion .modalAlquilar .modalAlquilar-content input[type=email], .anfitrion .modalAlquilar .modalAlquilar-content textarea{
+    color: black;
+  }
+
+  .resumen-anfitrion-container .resumen{
+    width: 25%;
+    float: left;
+    margin-left: 55px;
+  }
+
+  #resumen1{
+    margin-left: 80px;
+  }
+
+  .resumen-anfitrion-container .resumen h1{
+    font-size: 2em;
+  }
+
+  .resumen-anfitrion-container .resumen p{
+    font-size: 1.3em;
+  }
+
+  .pasos-anfitrion-container{
+    padding: 15px 80px 0 80px;
+  }
+
+  .pasos-anfitrion-container h1{
+    font-size: 2.9em;
+    text-align:  left;
+    margin-bottom: 45px;
+  }
+
+  .pasos-anfitrion-container img{
+    width: 48%;
+    height: 350px;
+    float: right;
+    object-fit: cover;
+  }
+
+  .ser-anfitrion{
+    overflow: hidden;
+    margin-bottom: 60px;
+  }
+
+  .ser-anfitrion h2{
+    font-size: 2em;
+    width: 45%;
+    margin-top: 5px;
+  }
+
+  .ser-anfitrion h2::first-letter{
+    color: rgb(86, 154, 182);
+  }
+
+  .ser-anfitrion p{
+    width: 45%;
+    font-size: 1.3em;
+  }
+
+  #anfitrion-img-2{
+    float: left;
+  }
+
+  .anfitrion-p-2, .anfitrion-h2-2{
+    float: right;
+    margin-right: 20px;
+  }
+
+  .anfitrion .footer-anfitrion{
+    background-image: url(../images/anfitrion/footer-pc.jpg);
+    height: 250px;
+  }
+
+  .anfitrion .footer-anfitrion h1{
+    padding: 80px 0 20px;
+    font-size: 2.6em;
+  }
+
+  .anfitrion .footer-anfitrion a{
+    margin-top: 0px;
+    font-size: 1.4em;
+    background-color:rgb(86, 154, 182);
+    border-color:rgb(86, 154, 182);
+  }
+
+  .anfitrion .footer-anfitrion a:hover{
+    background-color:rgb(86, 154, 182);
+    border-color:rgb(86, 154, 182);
+  }
+}

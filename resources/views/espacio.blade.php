@@ -8,7 +8,7 @@
 
   <div class="espacio-container">
 
-      <img src="/storage/espacios/{{ $espacio->fotoPortada() }}" style="width: 100%; height: 420px; object-fit:cover;">
+      <img src="/storage/espacios/{{ $espacio->fotoPortada() }}" style="width: 100%; height: 420px; object-fit:cover;" id="img-top-espacio">
 
     <div class="espacio-main-content">
 
@@ -54,7 +54,7 @@
       </section>
 
       <a id="btn{{ $espacio->id }}" class="mejor-espacio-boton-alquilar">Mostrar formulario alquiler</a>
-      <article id="{{ $espacio->id }}">
+      <article id="{{ $espacio->id }}" class="modal-reserva-espacio">
         @include('_modal-alquilar')
       </article>
 
@@ -101,6 +101,26 @@
             }
         }
     }, true);
+
+  window.onscroll = function() {posicionarModal()};
+
+  // function posicionarModal() {
+  //     document.getElementById("yo").style.position = "fixed";
+  //   }
+
+  var modalAlquilar = document.getElementById("yo");
+
+function posicionarModal() {
+  if (window.pageYOffset >= 360) {
+    modalAlquilar.classList.add("sticky");
+    // modalAlquilar.style.width = '45%';
+    modalAlquilar.style.top = '0';
+    // modalAlquilar.style.left = '50%';
+  } else {
+    modalAlquilar.classList.remove("sticky");
+  }
+}
+
 </script>
 
 @endsection

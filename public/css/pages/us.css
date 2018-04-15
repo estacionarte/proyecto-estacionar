@@ -1,0 +1,115 @@
+/**************************************************************/
+/*********************  M  O  B  I  L  E  *********************/
+/**************************************************************/
+
+/******************* N O S O T R O S ****************/
+.nosotros-container .nosotros-titulo{
+  margin-top: -10px;
+  background-color: #233240;
+  padding: 10px 15px 65px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.nosotros-titulo .nos-tit-container h1{
+  color: rgb(86, 154, 182);
+}
+
+.nosotros-titulo .nos-tit-container p{
+  color: #fff;
+  font-weight: lighter;
+  font-family: 'Lato', sans-serif;
+}
+
+.nosotros-foto-contanier .nosotros-foto{
+  text-align: center;
+  /* border: solid 1px red; */
+}
+
+.nosotros-foto-contanier .nosotros-foto img{
+  text-align: center;
+  border-radius: 50%;
+  margin-top: 40px;
+  border: solid 2px #d5dbdc;
+}
+
+.nosotros-foto a{
+  display: block;
+  text-decoration: none;
+  background-color: #0077B5;
+  color: #fff;
+  font-size: 1.6em;
+  width: 20%;
+  margin: 0 auto 15px;
+  border-radius: 10%;
+  font-weight: bold;
+}
+
+/**************************************************************/
+/*********************  T  A  B  L  E  T  *********************/
+/**************************************************************/
+
+@media (min-width: 700px){
+  /******************* N O S O T R O S ****************/
+  .nosotros-container .nosotros-titulo{
+    background-image: url(../images/nosotros/banner-tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 550px;
+  }
+
+  .nosotros-titulo .nos-tit-container h1{
+    padding-top: 60px;
+  }
+
+  .nosotros-titulo .nos-tit-container p{
+    width: 50%;
+    margin-top: 20px;
+  }
+
+  .nosotros-foto-contanier .nosotros-foto{
+    text-align: center;
+    width: 45%;
+    float: left;
+  }
+
+  .joaquin{
+    margin-right: 40px;
+  }
+}
+
+/*************************************************************************************************/
+/***********************************  D  E  S  K  T  O  P **************************************  ************************************************************************************************/
+/**********************************************************************************************/
+
+@media (min-width: 960px){
+  /******************* N O S O T R O S ****************/
+  .nosotros-container .nosotros-titulo{
+    background-image: url(../../images/nosotros/banner-pc.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 550px;
+  }
+
+  .nosotros-titulo .nos-tit-container h1{
+    padding-top: 40px;
+    font-size: 2.6em;
+  }
+
+  .nosotros-titulo .nos-tit-container p{
+    width: 38%;
+    font-size: 1.2em;
+  }
+
+  .nosotros-foto-contanier .nosotros-foto{
+    width: 45%;
+    float: right;
+  }
+
+  .joaquin{
+    margin-right: 80px;
+  }
+
+  .nosotros-foto a{
+    width: 10%;
+  }
+}

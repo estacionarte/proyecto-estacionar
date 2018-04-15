@@ -68,7 +68,7 @@
     <!-- Styles -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="hojaDeEstilo">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet" id="hojaDeEstilo">
     @yield('css')
 {{-- <link rel="icon" href="icons/favicon1.png" type="image/png" sizes="16x16"> --}}
     {{-- favicon --}}
@@ -199,7 +199,7 @@
         <h4>Empresa</h4>
         <ul>
           <li><a href="/nosotros">Nosotros</a></li>
-          <li><a href="mantenimiento">info@estacionados.com</a></li>
+          <li><a href="mailto:info@estacionados.com">info@estacionados.com</a></li>
         </ul>
       </div>
       <div class="main-footer-div-right">

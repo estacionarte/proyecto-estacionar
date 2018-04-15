@@ -1,0 +1,415 @@
+/**************************************************************/
+/*********************  M  O  B  I  L  E  *********************/
+/**************************************************************/
+
+/******************* C O M I N G  S O O N ****************/
+.coming-soon{
+  background-image: url(../../images/coming-soon/coming-soon-mobile.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  max-width: 699px;
+}
+
+.comingsoon-container{
+  width: 100%;
+}
+
+.comingsoon-container .logo-container{
+  width: 100%;
+  background: linear-gradient(rgba(240,240,240, 1.5), rgba(125, 125, 125, 0.05));
+  padding: 1px 0px 20px;
+}
+
+.comingsoon-container .logo-container .coming-logo{
+  display: block;
+  width: 85%;
+  margin: 15px auto;
+}
+
+/* .comingsoon-container .redes-container{
+  width: 10%;
+  display: inline-block;
+  float: left;
+  margin: 80px 0 0 10px;
+} */
+
+.comingsoon-container .redes-container{
+  width: 30px;
+  display: block;
+  margin: 5px auto 15px;
+}
+
+.comingsoon-container .redes-container p{
+  color: #fff;
+  width: 2px;
+  font-size: .8em;
+  text-align: center;
+  word-wrap: break-word;
+  letter-spacing: -3px;
+  margin-left: 12px;
+
+}
+
+.comingsoon-container .redes-container .redes img{
+  width: 30px;
+}
+
+.comingsoon-container .title-container{
+  margin: 10px auto 25px;
+  width: 90%;
+  padding: 20px 10px;
+  background-color: rgb(0, 81, 116); /* Fallback Color */
+  background-color: rgba(0, 81, 116, 0.80);
+}
+
+.comingsoon-container .title-container h1{
+  font-family: 'Lato', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
+  line-height: 1.1em;
+}
+
+.comingsoon-container .title-container h2{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: lighter;
+  line-height: 1.3em;
+}
+
+.comingsoon-container .countdown-container{
+  margin: 10px auto 20px;
+  width: 90%;
+  padding: 25px 0px;
+  background-color: rgb(86, 154, 182); /* Fallback Color */
+  background-color: rgba(86, 154, 182, 0.65);
+}
+
+.comingsoon-container .countdown-container h2{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  text-align: center;
+  padding: 0px 0 15px 0;
+  margin: 0px;
+  font-size: 1.5em;
+  letter-spacing: 0.4em;
+}
+
+.comingsoon-container .countdown-container .reloj-container{
+  width: 100%;
+  text-align: center;
+}
+
+.comingsoon-container .countdown-container .reloj-container p {
+  display: inline-block;
+  font-size: 30px;
+  width: 23%;
+  margin: 0 0 -10px 0;
+  color: white;
+  border-right: solid 1px white;
+}
+
+.comingsoon-container .countdown-container .letras-container{
+  width: 100%;
+  text-align: center;
+}
+
+.comingsoon-container .countdown-container h4{
+  display: inline-block;
+  width: 23%;
+  margin: -5px 0 0 0;
+  font-size: 0.9em;
+  color: white;
+}
+
+.comingsoon-container .countdown-container h3, .comingsoon-container .countdown-container h6{
+  color: #fff;
+  text-align: center;
+}
+
+.comingsoon-container .countdown-container h6{
+  font-size: 1em;
+}
+
+.comingsoon-container .countdown-container a{
+  display: inline-block;
+  margin: 10px auto;
+  font-size: 1.3em;
+  background-color: #fff;
+  border-color: #fff;
+  color: rgb(0, 81, 116);
+}
+
+.comingsoon-container .countdown-container a:focus{
+  background-color: #f4f4f4;
+  border-color: #f4f4f4;
+  color: rgb(0, 81, 116);
+}
+
+.comingsoon-container .contacto-container{
+  width: 100%;
+  text-align: center;
+}
+
+.comingsoon-container .contacto-container h5{
+  color: #fff;
+  width: 100%;
+  margin: 5px 0 -10px 0;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form{
+  background-color: rgb(194, 194, 194);
+  background-color: rgba(194, 194, 194, 0.18);
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form .input-group{
+  width: 80%;
+  margin: auto;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form .input-group-addon{
+  display: inline-block;
+  width: 40px;
+  margin: 0 auto 0;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form input[type=email], .comingsoon-container .contacto-container .form-generico .credits-form input[type=text]{
+  display: inline-block;
+  margin-bottom: 5px;
+  width: 80%;
+  height: 30px;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]{
+  display: inline-block;
+  width: 42%;
+  /* height: 30px; */
+  background-color: inherit;
+  border: solid 1px #fff;
+}
+
+.comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]:hover{
+  background-color: rgba(158, 206, 213, 0.29);
+}
+
+.comingsoon-container .nosotros{
+  /* border: solid 1px #fff; */
+  width: 180px;
+  margin: auto;
+  text-align: center;
+}
+
+.comingsoon-container .nosotros a{
+  color: #fff;
+  text-decoration: underline;
+}
+
+.comingsoon-container .nosotros a:hover{
+  color: #afd9e4;
+}
+
+/**************************************************************/
+/*********************  T  A  B  L  E  T  *********************/
+/**************************************************************/
+
+@media (min-width: 700px){
+  /***************** CO M I N G  S O O N ********************/
+  .coming-soon{
+    background-image: url(../../images/coming-soon/coming-soon-tablet.jpg);
+    background-repeat: no-repeat;
+    max-width: 959px;
+  }
+
+  .comingsoon-container .logo-container{
+    background: linear-gradient(rgba(240,240,240, 1.5), rgba(135, 135, 135, 0.05));
+    padding: 1px 0px 25px;
+  }
+
+  .comingsoon-container .logo-container .coming-logo{
+    width: 50%;
+    margin: 15px auto 10px;
+  }
+
+  /* .comingsoon-container .redes-container{
+    margin: 80px 0 0 20px;
+  } */
+
+  /* .comingsoon-container .redes-container .redes img{
+    margin-top: 10px;
+  } */
+
+  .comingsoon-container .redes-container{
+    width: 40px;
+  }
+
+  .comingsoon-container .redes-container .redes img{
+    width: 40px;
+  }
+
+  .comingsoon-container .title-container{
+    padding: 45px 20px;
+  }
+
+  .comingsoon-container .title-container h1{
+    font-size: 2.2em;
+  }
+
+  .comingsoon-container .title-container h2{
+    font-size: 1.2em;
+  }
+
+  .comingsoon-container .countdown-container{
+    padding: 20px 0px;
+  }
+
+  .comingsoon-container .countdown-container h2{
+    padding: 10px 0px 20px;
+    font-size: 1.9em;
+    letter-spacing: 0.6em;
+  }
+
+  .comingsoon-container .countdown-container .reloj-container p {
+    width: 15%;
+  }
+
+  .comingsoon-container .countdown-container h4{
+    width: 15%;
+  }
+}
+
+/*************************************************************************************************/
+/***********************************  D  E  S  K  T  O  P **************************************  ************************************************************************************************/
+/**********************************************************************************************/
+
+@media (min-width: 960px){
+  /******************* C O M I N G  S O O N ****************/
+  .coming-soon{
+    background-image: url(../../images/coming-soon/coming-soon-pc.jpg);
+    background-size: 100%;
+    max-width: 1920px;
+  }
+
+  .comingsoon-container .logo-container{
+    background: linear-gradient(rgba(240,240,240, 1.5), rgba(155, 155, 155, 0.01));
+    padding: 5px 0px 50px;
+  }
+
+  .comingsoon-container .logo-container .coming-logo{
+    width: 30%;
+    margin: 15px auto 0px;
+  }
+
+  /* .comingsoon-container .redes-container{
+    width: 12%;
+    display: inline-block;
+    float: right;
+    margin: -70px 65px 0 0;
+  } */
+
+  .comingsoon-container .redes-container{
+    width: 50px;
+  }
+
+  .comingsoon-container .redes-container .redes img{
+    width: 50px;
+  }
+
+  .comingsoon-container .redes-container p{
+    color: #fff;
+    display: inline-block;
+    font-size: .8em;
+    word-wrap: normal;
+    letter-spacing: normal;
+    margin-left: 0;
+    text-align: left;
+    width: 50%;
+  }
+
+  /* .comingsoon-container .redes-container .redes img{
+    width: 30px;
+    margin-right: 5px;
+    margin: -2px 0 0 -5px;
+    display: inline-block;
+  } */
+
+  .comingsoon-container .title-container{
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .comingsoon-container .title-container h1{
+    font-size: 3em;
+  }
+
+  .comingsoon-container .title-container h2{
+    font-size: 1.4em;
+  }
+
+  .comingsoon-container .countdown-container{
+    margin: 10px auto 20px;
+    padding: 40px 0px;
+    width: 100%;
+  }
+
+  .comingsoon-container .countdown-container h2{
+    font-size: 2.8em;
+    letter-spacing: 0.2em;
+    padding: 0px 0 15px 0;
+  }
+
+  .comingsoon-container .countdown-container .reloj-container{
+  }
+
+  .comingsoon-container .countdown-container .reloj-container p {
+    width: 8%;
+  }
+
+  .comingsoon-container .countdown-container h4{
+    width: 8%;
+    margin: -5px 0 0 0;
+    font-size: 0.9em;
+  }
+
+  .comingsoon-container .contacto-container .form-generico .credits-form{
+    width: 75%;
+    border-radius: 5px;
+    margin: 10px auto;
+  }
+
+  .comingsoon-container .contacto-container .form-generico .credits-form{
+    padding-top: 5px;
+  }
+
+  .comingsoon-container .contacto-container .form-generico .credits-form .input-group{
+    width: 30%;
+    display: inline-block;
+  }
+
+  .comingsoon-container .contacto-container .form-generico .credits-form .input-group-addon{
+    width: 40px;
+  }
+
+  .comingsoon-container .contacto-container .form-generico .credits-form input[type=email], .comingsoon-container .contacto-container .form-generico .credits-form input[type=text]{
+    margin: 5px 0 5px -3.5px;
+    width: 80%;
+    height: 30px;
+  }
+
+  .comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]{
+    display: inline-block;
+    width: 25%;
+    background-color: inherit;
+    border: solid 1px #fff;
+  }
+
+  .comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]:hover{
+    background-color: rgba(158, 206, 213, 0.29);
+  }
+}

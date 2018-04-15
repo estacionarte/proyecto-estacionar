@@ -1,0 +1,153 @@
+/**************************************************************/
+/*********************  M  O  B  I  L  E  *********************/
+/**************************************************************/
+
+
+/****************** F O O T E R *******************/
+.main-footer{
+  margin-top: 40px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(105, 105, 105);
+}
+
+.main-footer div h4{
+  display: none;
+}
+
+.main-footer a{
+  display: block;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  border-bottom: solid 1px #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.last{
+  border-bottom: none !important;
+}
+
+.redes-sociales{
+  background-color: #454545;
+  width: 100%;
+  position: relative;
+}
+
+.facebook img{
+  width: 30px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+.twitter img{
+  width: 30px;
+  position: absolute;
+  left: 37%;
+  top: 15%;
+}
+
+.instagram img{
+  width: 30px;
+  position: absolute;
+  right: 37%;
+  top: 15%;
+}
+
+
+/**************************************************************/
+/*********************  T  A  B  L  E  T  *********************/
+/**************************************************************/
+
+@media (min-width: 700px){
+  /****************** F O O T E R *******************/
+  .main-footer{
+    margin-top: 60px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .main-footer div{
+    width: 50%;
+    margin: 15px 0px;
+  }
+
+  .main-footer-div-left{
+    float: left;
+  }
+
+  .main-footer-div-right{
+    float: right;
+  }
+
+  .main-footer div h4{
+    display: block;
+    color: white;
+    font-weight: bold;
+    margin: 10px auto;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+
+  .main-footer ul{
+    display: inline-block;
+    width: 80%;
+    border-top: solid 1px #fff;
+  }
+
+  .main-footer a{
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    border-bottom: none;
+  }
+
+  .last{
+    border-bottom: none !important;
+  }
+
+  .redes-sociales{
+    background-color: #454545;
+    width: 100%;
+    position: relative;
+  }
+
+  .facebook img{
+    width: 30px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 5px 0;
+  }
+
+  .twitter img{
+    width: 30px;
+    position: absolute;
+    left: 43%;
+    top: 15%;
+  }
+
+  .instagram img{
+    width: 30px;
+    position: absolute;
+    right: 43%;
+    top: 15%;
+  }
+}
+
+/*************************************************************************************************/
+/***********************************  D  E  S  K  T  O  P **************************************  ************************************************************************************************/
+/**********************************************************************************************/
+
+@media (min-width: 960px){
+  /******************* R E D E S  F O O T E R ****************/
+  .twitter img{
+    left: 45%;
+  }
+
+  .instagram img{
+    right: 45%;
+  }
+}
