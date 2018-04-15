@@ -105,7 +105,7 @@
 }
 
 .anfitrion .footer-anfitrion{
-  background-image: url(../images/anfitrion/footer-mobile.jpg);
+  background-image: url(/images/anfitrion/footer-mobile.jpg);
   background-repeat: no-repeat;
   height: 300px;
 }
@@ -139,7 +139,7 @@
   }
 
   .anfitrion .footer-anfitrion{
-    background-image: url(../images/anfitrion/footer-tablet.jpg);
+    background-image: url(/images/anfitrion/footer-tablet.jpg);
     height: 400px;
   }
 
@@ -271,7 +271,7 @@
   }
 
   .anfitrion .footer-anfitrion{
-    background-image: url(../images/anfitrion/footer-pc.jpg);
+    background-image: url(/images/anfitrion/footer-pc.jpg);
     height: 250px;
   }
 
