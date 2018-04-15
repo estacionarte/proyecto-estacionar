@@ -10,7 +10,7 @@
     <li><a data-toggle="tab" href="#revision"><label>En revisión</label></a></li>
     <li><a data-toggle="tab" href="#ocultos"><label>Ocultos</label></a></li>
     <div class="">
-    <a href="{{route ('upload.espacio.1') }}"><button type="button" class="btn btn-success .cargar-vehiculo-btn" >Cargá un Espacio</button></a>
+    <a href="{{route ('upload.espacio.1') }}"><button type="button" class="btn btn-success btn-carga-espacio">Cargá un Espacio</button></a>
   </div>
   </ul>
 

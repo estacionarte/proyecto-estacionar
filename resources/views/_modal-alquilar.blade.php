@@ -1,10 +1,11 @@
 <div id="modal{{ $espacio->id }}" class="modalAlquilar">
-  <div class="modalAlquilar-content">
+  <div class="modalAlquilar-content" id="yo">
     <span class="alquilar-close" id="btn{{ $espacio->id }}">&times;</span>
     <h2>Reservar espacio</h2>
     <h3>Nombre Espacio por Usuario</h3>
 
     <hr>
+
 
     @auth
       <div class="form-generico">

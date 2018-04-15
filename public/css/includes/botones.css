@@ -1,0 +1,28 @@
+/* botones */
+.btn-success:hover{
+  color: #398439;
+  background-color: #fff;
+  border-color: #398439;
+  transition: background-color .5s;
+}
+
+.btn-warning:hover{
+  color: #f89406;
+  background-color: #fff;
+  border-color: #f89406;
+  transition: background-color .5s;
+}
+
+.btn-danger:hover{
+  color: #d9534f;
+  background-color: #fff;
+  border-color: #d9534f;
+  transition: background-color .5s;
+}
+
+.btn-default:hover{
+  color: #fff;
+  background-color: #333;
+  border-color: #fff;
+  transition: background-color .5s;
+}bo

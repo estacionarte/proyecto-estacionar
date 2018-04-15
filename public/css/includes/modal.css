@@ -1,0 +1,178 @@
+/*************************************************************************************************/
+/***********************************  D  E  S  K  T  O  P **************************************  ************************************************************************************************/
+/**********************************************************************************************/
+
+@media (min-width: 960px){
+  .mejor-espacio-boton-alquilar{
+    display: none;
+  }
+  /* El Modal (background) */
+  .modal-reserva-espacio .modalAlquilar{
+      display: block;
+      position:  absolute;
+      z-index: 1;
+      left: 50%;
+      top: 0;
+      width: 45%;
+      height: 50  %;
+      overflow: hidden;
+      background-color: inherit;
+      background-color:inherit;
+  }
+
+  .sticky {
+  position: fixed;
+  }
+  /* Modal Box */
+  .modal-reserva-espacio .modalAlquilar-content{
+      background-color: #fefefe;
+      margin: 13% auto;
+      padding: 20px 15px;
+      border: 1px solid #888;
+      width: 92%;
+      max-width: 500px;
+  }
+
+  /* Botón cerrar */
+  .modal-reserva-espacio .alquilar-close {
+      color: #aaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: -20px;
+      margin-right: -5px;
+      display: none;
+  }
+
+  .alquilar-close:hover,
+  .alquilar-close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  /* Estilos de elementos dentro del modal */
+  .modalAlquilar-content h2{
+    color: rgb(0, 0, 0);
+    padding: 0;
+    margin: 5px auto 12px;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .modalAlquilar-content h3{
+    padding: 0;
+    margin: 1px auto;
+    font-size: 1.4em;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .modalAlquilar-content h4{
+    padding: 0;
+    margin: 0px auto;
+  }
+
+  .modalAlquilar-content p{
+    padding: 0;
+    margin: 0px auto;
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  .modalAlquilar-content hr{
+    margin: 10px auto;
+    border-color: #9c9c9c;
+  }
+
+  /* Contenido del form */
+  .modalAlquilar-content .form-generico{
+    padding: 0;
+    margin: 0px auto;
+  }
+
+  /* Este div contiene cada set de elementos */
+  .modalAlquilar-content .form-generico .modalAlquilar-form-div{
+    margin: 0px auto 8px;
+    text-align: left;
+  }
+
+  .modalAlquilar-content .form-generico div label{
+    padding: 0;
+    margin: 0px 0px 0px 0px;
+    text-align: left;
+    font-size: 0.9em;
+  }
+
+  .modalAlquilar-content .form-generico div select{
+    margin: 0px auto;
+  }
+
+  /* Horarios llegada y salida */
+  .modalAlquilar-content .form-generico .modalAlquilar-form-div .modalAlquilar-form-div-div{
+    margin: 0px auto;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid #9c9c9c;
+  }
+
+  .modalAlquilar-form-div div .modalAlquilar-form-horarios {
+    width: 45%;
+    display: inline-block;
+    margin: 0px auto;
+    border: none;
+  }
+
+  .modalAlquilar-form-horarios input, .modalAlquilar-form-horarios select{
+    border: none;
+    margin: 0px auto;
+  }
+
+  .modalAlquilar-form-horarios input{
+    padding-right: 2px;
+    padding-bottom: 5px;
+  }
+
+  .modalAlquilar-form-horarios select{
+    display: inline-block;
+    width: 45%;
+    padding-top: 3px;
+  }
+
+  /* Detalle costos transacción */
+  .modalAlquilar-form-div .modalAlquilar-form-lineadetalle{
+    padding: 5px 0px;
+    border-bottom: 1px solid #9c9c9c;
+    overflow: hidden;
+  }
+
+  .modalAlquilar-form-div .modalAlquilar-form-lineadetalle .lineadetalle-motivo, .modalAlquilar-form-div .modalAlquilar-form-lineadetalle .lineadetalle-precio{
+    display: inline-block;
+    border: none;
+  }
+
+  .modalAlquilar-form-div .modalAlquilar-form-lineadetalle .lineadetalle-motivo{
+    float: left;
+  }
+
+  .modalAlquilar-form-div .modalAlquilar-form-lineadetalle .lineadetalle-precio{
+    float: right;
+  }
+
+  .lineadetalle-descuento{
+    color: rgb(27, 130, 46);
+  }
+
+  .lineadetalle-total{
+    font-weight: 900;
+    color: black;
+    border-bottom: none;
+  }
+
+  article input[type='submit']:disabled{
+    color: #FFF;
+    border-color: #787878;
+    background-color: #787878;
+  }
+}

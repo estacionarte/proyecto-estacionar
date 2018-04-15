@@ -1,0 +1,152 @@
+/**************************************************************/
+/*********************  M  O  B  I  L  E  *********************/
+/**************************************************************/
+
+/****************** S E A R C H   B A R *******************/
+
+.search-espacios-form{
+  width: 100%;
+}
+
+#dir_y_vehiculo {
+  background-color: white;
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
+
+.search-espacios-form input[name='search-espacios-input-direccion']{
+  width: 68.5%;
+  border: none;
+  vertical-align: middle;
+  margin-top: 0px;
+  text-align: left;
+}
+
+.search-espacios-form select[name='search-espacios-vehiculo']{
+  width: 30%;
+  border: none;
+  border-left: 1px solid gray;
+  border-radius: 0px;
+  vertical-align: middle;
+  margin-top: 0px;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 4px;
+}
+
+.form-generico .search-espacios-form .search-horario {
+  background-color: white;
+  width: 49%;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.form-generico .search-espacios-form .search-horario h5 {
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.form-generico .search-espacios-form .search-horario input {
+  text-align: center;
+  border: none;
+  margin-top: 0px;
+  color: gray;
+  border-bottom: solid 1px gray;
+  border-radius: 0px;
+}
+
+.search-espacios-form .search-espacios-hora, .search-espacios-form .search-espacios-minuto{
+  width: 48.5%;
+  border: none;
+  vertical-align: middle;
+  margin-top: 0px;
+  display: inline-block;
+  color: gray;
+  text-align: center;
+}
+
+.search-espacios-form .search-espacios-hora{
+
+}
+
+.search-espacios-form .search-espacios-minuto{
+  border-left: solid 1px gray;
+}
+
+.search-espacios-form button[name='search-espacios-submit']{
+  display: none;
+}
+
+.search-espacios-form input[name='BUSCAR']{
+  margin: 5px 0px 15px;
+}
+
+/**************************************************************/
+/*********************  T  A  B  L  E  T  *********************/
+/**************************************************************/
+
+@media (min-width: 700px){
+  /****************** S E A R C H   B A R *******************/
+
+  #dir_y_vehiculo {
+    overflow: hidden;
+  }
+
+  .search-espacios-form input[name='search-espacios-input-direccion']{
+    width: 35%;
+    text-align: left;
+    float: left;
+  }
+
+  .search-espacios-form select[name='search-espacios-vehiculo']{
+    width: 13%;
+    float: left;
+  }
+
+  .form-generico .search-espacios-form .search-horario {
+    background-color: white;
+    width: 49%;
+    display: inline-block;
+    border-radius: 2px;
+  }
+
+  .form-generico .search-espacios-form .search-horario h5 {
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
+
+  .form-generico .search-espacios-form .search-horario input {
+    text-align: center;
+    border: none;
+    margin-top: 0px;
+    color: gray;
+    border-bottom: solid 1px gray;
+    border-radius: 0px;
+  }
+
+  .search-espacios-form .search-espacios-hora, .search-espacios-form .search-espacios-minuto{
+    width: 48.5%;
+    border: none;
+    vertical-align: middle;
+    margin-top: 0px;
+    display: inline-block;
+    color: gray;
+    text-align: center;
+  }
+
+  .search-espacios-form .search-espacios-hora{
+
+  }
+
+  .search-espacios-form .search-espacios-minuto{
+    border-left: solid 1px gray;
+  }
+
+  .search-espacios-form button[name='search-espacios-submit']{
+    display: none;
+  }
+
+  .search-espacios-form input[name='BUSCAR']{
+    margin: 5px 0px 15px;
+  }
+}

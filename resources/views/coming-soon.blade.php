@@ -7,7 +7,7 @@
   <title>Estacionados</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto" rel="stylesheet">
-  <link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="hojaDeEstilo">
+  <link href="{{ asset('css/main.css') }}" rel="stylesheet" id="hojaDeEstilo">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113241679-1"></script>
   <script>
