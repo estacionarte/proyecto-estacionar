@@ -49,7 +49,19 @@
   <option value="Playa de Estacionamiento" {{ old('tipoEspacio', $espacio->tipoEspacio) == 'Playa de Estacionamiento' ? 'selected':'' }}>Playa de estacionamiento</option>
 </select>
 
-<label for="" class="upload-label-titulo">¿Cuántos vehículos se permiten?</label>
+<label for="" class="upload-label-titulo">¿Qué vehículos se permiten?</label>
+
+<div class="upload-div-tipovehiculo">
+  <label for="cantAutos" class="upload-label-tipovehiculo"><input type="checkbox" name="cantAutos" value=1 class="upload-checkbox-tipovehiculo" id="cantAutos" {{ old('cantAutos', $espacio->cantAutos) ? 'checked':'' }}>Autos</label>
+</div>
+
+<div class="upload-div-especiales">
+  <label for="aptoDiscapacitados" class="upload-label-especiales"><input type="checkbox" name="aptoDiscapacitados" value="Apto para Discapacitados" class="upload-checkbox-especiales" id="aptoDiscapacitados" {{ old('aptoDiscapacitados', $espacio->aptoDiscapacitados) ? 'checked':'' }}>Apto para discapacitados</label>
+</div>
+
+<div class="upload-div-especiales">
+  <label for="aptoDiscapacitados" class="upload-label-especiales"><input type="checkbox" name="aptoDiscapacitados" value="Apto para Discapacitados" class="upload-checkbox-especiales" id="aptoDiscapacitados" {{ old('aptoDiscapacitados', $espacio->aptoDiscapacitados) ? 'checked':'' }}>Apto para discapacitados</label>
+</div>
 
 <div class="upload-div-tipovehiculo">
   <label class="upload-label-tipovehiculo">Autos</label>
