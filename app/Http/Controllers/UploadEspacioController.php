@@ -37,6 +37,9 @@ class UploadEspacioController extends Controller
     $espacio->lat = $request->input('lat');
     $espacio->lng = $request->input('lng');
     $espacio->idUser = Auth::user()->id;
+    $espacio->cantAutos = $request->input('cantAutos') ? 1 : 0;
+    $espacio->cantMotos = $request->input('cantMotos') ? 1 : 0;
+    $espacio->cantBicicletas = $request->input('cantBicicletas') ? 1 : 0;
     $espacio->save();
 
     // Guardar nombre de foto en db y después archivo de foto
@@ -64,9 +67,13 @@ class UploadEspacioController extends Controller
     // Editar espacio
     $espacio = Espacio::findOrFail($id);
     $espacio->fill($request->except('espacioPic'));
+    $espacio->cantAutos = $request->input('cantAutos') ? 1 : 0;
+    $espacio->cantMotos = $request->input('cantMotos') ? 1 : 0;
+    $espacio->cantBicicletas = $request->input('cantBicicletas') ? 1 : 0;
     $espacio->lat = $request->input('lat');
     $espacio->lng = $request->input('lng');
     $espacio->save();
+
 
     $fotosespacio = DB::table('espacios_fotos')
       ->where('idEspacio',$espacio->id)

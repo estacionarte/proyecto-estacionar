@@ -166,6 +166,11 @@ function geocodeAddress(geocoder) {
       // Cambio la posición del mapa para ajustarla a las nuevas coordenadas y pongo un círculo
       mapaYCirculo(mymap,latitud.value,longitud.value);
 
+      // Muestro alerta por error en mapa si es CABA
+      // if (provincia.value == CABA) {
+        document.getElementById('addresswarning').style.display = 'block';
+      // }
+
       // Muestro el párrafo con información
       document.getElementById('mapwarning').style.display = 'block';
 
@@ -201,6 +206,9 @@ function geocodeAddressConFiltroLocality(geocoder) {
       latitud.value = resultado.geometry.location.lat();
       longitud.value = resultado.geometry.location.lng();
       mapaYCirculo(mymap,latitud.value,longitud.value);
+      // if (provincia.value == CABA) {
+        document.getElementById('addresswarning').style.display = 'block';
+      // }
       document.getElementById('mapwarning').style.display = 'block';
     } else {
       alert('Ocurrió el siguiente error: ' + status + '. Intente nuevamente con otra dirección.');
@@ -239,6 +247,13 @@ nombre.addEventListener('change',function(){
   }
 });
 
+// Escondo advertencia de foto
+
+var foto = document.querySelector('input[type="file"]');
+// console.log(foto);
+foto.onchange = function(){
+  document.getElementById('photowarning').style.display = 'none';
+}
 
 
 

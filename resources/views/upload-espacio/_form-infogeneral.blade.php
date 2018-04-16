@@ -35,6 +35,7 @@
 </div>
 
 <div class="upload-div-map">
+  <p id="addresswarning" style="display: none; margin: 5px 0px; color: #990606; font-size: 1em;">Si el mapa se centra en el obelisco y no en el lugar correcto, cambiar ciudad manualmente</p>
   <p id="mapwarning" style="display: none; margin: 5px 0px 0px; color: gray; font-size: 0.8em;">Esto es lo que verán los usuarios cuando encuentren tu espacio. La dirección exacta sólo se muestra a quienes concreten una reserva.</p>
   <div class="upload-div-div-map1" id="mapid">
 </div>
@@ -52,18 +53,27 @@
 <label for="" class="upload-label-titulo">¿Qué vehículos se permiten?</label>
 
 <div class="upload-div-tipovehiculo">
-  <label for="cantAutos" class="upload-label-tipovehiculo"><input type="checkbox" name="cantAutos" value=1 class="upload-checkbox-tipovehiculo" id="cantAutos" {{ old('cantAutos', $espacio->cantAutos) ? 'checked':'' }}>Autos</label>
-</div>
-
-<div class="upload-div-especiales">
-  <label for="aptoDiscapacitados" class="upload-label-especiales"><input type="checkbox" name="aptoDiscapacitados" value="Apto para Discapacitados" class="upload-checkbox-especiales" id="aptoDiscapacitados" {{ old('aptoDiscapacitados', $espacio->aptoDiscapacitados) ? 'checked':'' }}>Apto para discapacitados</label>
-</div>
-
-<div class="upload-div-especiales">
-  <label for="aptoDiscapacitados" class="upload-label-especiales"><input type="checkbox" name="aptoDiscapacitados" value="Apto para Discapacitados" class="upload-checkbox-especiales" id="aptoDiscapacitados" {{ old('aptoDiscapacitados', $espacio->aptoDiscapacitados) ? 'checked':'' }}>Apto para discapacitados</label>
+  <label for="cantAutos" class="upload-label-checkbox">Autos
+    <input type="checkbox" name="cantAutos" value=1 class="upload-input-checkbox" id="cantAutos" {{ old('cantAutos', $espacio->cantAutos) ? 'checked':'' }}>
+    <span class="upload-span-checkbox"></span>
+  </label>
 </div>
 
 <div class="upload-div-tipovehiculo">
+  <label for="cantMotos" class="upload-label-checkbox">Motos
+    <input type="checkbox" name="cantMotos" value=1 class="upload-input-checkbox" id="cantMotos" {{ old('cantMotos', $espacio->cantMotos) ? 'checked':'' }}>
+    <span class="upload-span-checkbox"></span>
+  </label>
+</div>
+
+<div class="upload-div-tipovehiculo">
+  <label for="cantBicicletas" class="upload-label-checkbox">Bicicletas
+    <input type="checkbox" name="cantBicicletas" value=1 class="upload-input-checkbox" id="cantBicicletas" {{ old('cantBicicletas', $espacio->cantBicicletas) ? 'checked':'' }}>
+    <span class="upload-span-checkbox"></span>
+  </label>
+</div>
+
+{{-- <div class="upload-div-tipovehiculo">
   <label class="upload-label-tipovehiculo">Autos</label>
   <div class="upload-div-div-tipovehiculo">
     <button type="button" name="boton-resta-auto" class="upload-button-sumaresta">
@@ -100,14 +110,21 @@
       <i class="fa fa-plus-circle"></i>
     </button>
   </div>
-</div>
+</div> --}}
 
 <label for="" class="upload-label-titulo">¿Tiene alguno de los siguientes servicios especiales?</label>
+
 <div class="upload-div-especiales">
-  <label for="aptoDiscapacitados" class="upload-label-especiales"><input type="checkbox" name="aptoDiscapacitados" value="Apto para Discapacitados" class="upload-checkbox-especiales" id="aptoDiscapacitados" {{ old('aptoDiscapacitados', $espacio->aptoDiscapacitados) ? 'checked':'' }}>Apto para discapacitados</label>
+  <label for="aptoDiscapacitados" class="upload-label-checkbox">Apto para discapacitados
+    <input type="checkbox" name="aptoDiscapacitados" value="Apto para Discapacitados" class="upload-input-checkbox" id="aptoDiscapacitados" {{ old('aptoDiscapacitados', $espacio->aptoDiscapacitados) ? 'checked':'' }}>
+    <span class="upload-span-checkbox"></span>
+  </label>
 </div>
 <div class="upload-div-especiales">
-  <label for="aptoElectricos" class="upload-label-especiales"><input type="checkbox" name="aptoElectricos" value="Apto para Electricos" class="upload-checkbox-especiales" id="aptoElectricos" {{ old('aptoElectricos', $espacio->aptoElectricos) ? 'checked':'' }}>Carga para motos eléctricas</label>
+  <label for="aptoElectricos" class="upload-label-checkbox">Carga para vehículos eléctricos
+    <input type="checkbox" name="aptoElectricos" value="Apto para Electricos" class="upload-input-checkbox" id="aptoElectricos" {{ old('aptoElectricos', $espacio->aptoElectricos) ? 'checked':'' }}>
+    <span class="upload-span-checkbox"></span>
+  </label>
 </div>
 
 <label for="" class="upload-label-titulo">Información extra (visible por todos)</label>
@@ -118,3 +135,4 @@
 
 <label for="" class="upload-label-titulo">Fotos de tu espacio</label>
 <input type="file" name="espacioPic[]" accept="image/*" style="" multiple>
+<p id="photowarning" style="margin: 5px 0px 0px; color: #990606; font-size: 0.9em;">Si no subís fotos, podés seguir con el proceso pero tu espacio no va a estar disponible para alquilar hasta que tenga por lo menos una foto</p>
