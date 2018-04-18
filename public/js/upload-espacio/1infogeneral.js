@@ -248,12 +248,35 @@ nombre.addEventListener('change',function(){
 });
 
 // Escondo advertencia de foto
-
 var foto = document.querySelector('input[type="file"]');
-// console.log(foto);
 foto.onchange = function(){
   document.getElementById('photowarning').style.display = 'none';
 }
+
+// Muestro información sobre qué es cada tipo de espacio
+var infoespacio = document.querySelector('.uploadEspacio .form-generico .upload-label-titulo span');
+
+infoespacio.addEventListener('click', function(){
+  // Variable para chequear si ya agregué div y para borrarlo después cuando se cumpla la condición
+  var elementExists = document.getElementById("infoespacio");
+  console.log('1');
+
+  if (!elementExists) {
+    console.log('2');
+    // Creo div y el resto
+    var infoespacio = document.createElement("div");
+    infoespacio.setAttribute("id", "infoespacio");
+    infoespacio.setAttribute("style", "display:block; font-size:0.7em; text-align:left; font-weight:normal; color: #6e6e6e");
+    infoespacio.innerHTML = "<p style='margin-top:10px;'>Cochera Privada: espacio del que el usuario es propietario o puede disponer su uso, como un garage en el hogar o una cochera en un edificio</p><p>Espacio en hogar: lugar mas reducido en tamaño en el que no siempre entra un auto, por ejemplo, el living de la casa</p><p>Playa de Estacionamiento: establecimiento cuya actividad comercial es el alquiler de cocheras</p>";
+    document.getElementById('label-tipoespacio').appendChild(infoespacio);
+  } else {
+    console.log('3');
+    // Borro alerta
+    document.getElementById('label-tipoespacio').removeChild(elementExists);
+  }
+});
+
+
 
 
 

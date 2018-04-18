@@ -35,14 +35,14 @@
 </div>
 
 <div class="upload-div-map">
-  <p id="addresswarning" style="display: none; margin: 5px 0px; color: #990606; font-size: 1em;">Si el mapa se centra en el obelisco y no en el lugar correcto, cambiar ciudad manualmente</p>
+  <p id="addresswarning" style="display: none; margin: 5px 0px; color: #990606; font-size: 1em;">Si el mapa se centra en el obelisco y no en el lugar correcto, cambiar ciudad manualmente (por ejemplo: reemplazar Buenos Aires por CABA)</p>
   <p id="mapwarning" style="display: none; margin: 5px 0px 0px; color: gray; font-size: 0.8em;">Esto es lo que verán los usuarios cuando encuentren tu espacio. La dirección exacta sólo se muestra a quienes concreten una reserva.</p>
   <div class="upload-div-div-map1" id="mapid">
 </div>
 
 </div>
 
-<label for="" class="upload-label-titulo">¿Qué tipo de espacio es?</label>
+<label for="" class="upload-label-titulo" id="label-tipoespacio">¿Qué tipo de espacio es? <span>&#9432;</span></label>
 <select name="tipoEspacio" style="" required>
   <option value="">Elige una opción</option>
   <option value="Cochera Privada" {{ old('tipoEspacio', $espacio->tipoEspacio) == 'Cochera Privada' ? 'selected':'' }}>Cochera privada</option>

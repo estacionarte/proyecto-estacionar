@@ -37,7 +37,7 @@ class UploadEspacioRequest extends FormRequest
         'cantBicicletas' => 'required_without_all:cantMotos,cantAutos|numeric|max:8',
         'aptoDiscapacitados' => 'nullable',
         'aptoElectricos' => 'nullable',
-        'infopublica' => 'nullable|string|max:250',
+        'infopublica' => 'required|string|max:250',
         'infoprivada' => 'nullable|string|max:250',
       ];
       $photos = count($this->input('espacioPic'));
