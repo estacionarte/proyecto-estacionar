@@ -30,6 +30,65 @@
 
             <label for="" class="upload-label-titulo">¿En qué días y horarios va a estar disponible tu espacio?</label>
 
+            <div class="upload-div-diasemana">
+              <label for="[object Object]" class="">Agregar Horario</label>
+              <span>&#8853;</span>
+              <span>&#10005;</span>
+            </div>
+
+            <div class="">
+              <label for="[object Object]">Día</label>
+              <select name="dia" class="upload-select-dia" style="" required>
+                <option value="" selected>Día</option>
+                <option value="Lunes">Lunes</option>
+                <option value="Martes">Martes</option>
+                <option value="Miércoles">Miércoles</option>
+                <option value="Jueves">Jueves</option>
+                <option value="Viernes">Viernes</option>
+                <option value="Sábado">Sábado</option>
+                <option value="Domingo">Domingo</option>
+              </select>
+            </div>
+
+            <div class="">
+              <label for="[object Object]">Desde</label>
+              <select name="dia" class="upload-select-dia" style="" required>
+                <option value="0" selected>00:00</option>
+                <option value="Lunes">Lunes</option>
+                <option value="Martes">Martes</option>
+                <option value="Miércoles">Miércoles</option>
+                <option value="Jueves">Jueves</option>
+                <option value="Viernes">Viernes</option>
+                <option value="Sábado">Sábado</option>
+                <option value="Domingo">Domingo</option>
+              </select>
+            </div>
+
+            <div class="">
+              <label for="[object Object]">Hasta</label>
+              <select name="dia" class="upload-select-dia" style="" required>
+                <option value="0">00:00</option>
+                <option value="Lunes">Lunes</option>
+                <option value="Martes">Martes</option>
+                <option value="Miércoles">Miércoles</option>
+                <option value="Jueves">Jueves</option>
+                <option value="Viernes">Viernes</option>
+                <option value="Sábado">Sábado</option>
+                <option value="1439">23:59</option>
+              </select>
+            </div>
+
+            <div class="">
+              <label for="[object Object]">Todo el día</label>
+            </div>
+
+            <input type="submit" name="" value="Agregar Horario">
+
+            <div class="upload-div-diasemana">
+              <label for="[object Object]" class="upload-label-diasemana">Lunes 09:00 - 18:00</label>
+              <label for="[object Object]">ELIMINAR &#8854;</label>
+            </div>
+
             @foreach ($diasSemana as $dia)
 
               <div class="upload-div-diasemana">
