@@ -258,12 +258,46 @@
 }
 
 .uploadEspacio .form-generico .upload-div-diasemana{
-  overflow: hidden;
-  /*margin-top: 5px;*/
+  /* overflow: hidden; */
+  text-align: left;
+  padding: 0px 2px;
+}
+
+.uploadEspacio .form-generico .upload-div-diasemana .upload-input-dia, .uploadEspacio .form-generico .upload-div-diasemana .upload-input-hora{
+  margin-top: 0px;
+  width: 70px;
+  display: inline-block;
+  border: none;
+  padding: 5px 0px;
+}
+
+.uploadEspacio .form-generico .upload-div-diasemana .upload-input-hora{
+  width: 45px;
+  text-align: center;
+}
+
+.uploadEspacio .form-generico .upload-label-horario-button{
+  margin: 0px;
+  padding: 0px 0px 2px;
+  font-size: 20px;
+  vertical-align: middle;
+  float: right;
+  cursor: pointer;
+}
+
+.uploadEspacio .form-generico .upload-div-agregardia{
+  /* clear: both; */
+  /* overflow: hidden; */
+}
+
+.uploadEspacio .form-generico .upload-div-agregardia .upload-h3-agregardia{
+  display: inline-block;
+  font-size: 18px;
+  width: 140px;
+  margin: 0px;
 }
 
 .uploadEspacio .form-generico .upload-label-diasemana{
-  width: 27%;
   float: left;
   color: #8f8f8f;
 }

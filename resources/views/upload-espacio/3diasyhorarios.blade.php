@@ -24,70 +24,84 @@
 
         <div class="form-generico">
 
-          <form action="{{ route('insert.upload.espacio.4', $espacio) }}" method="post" class="form-uploadEspacio">
-            {{ method_field('PUT') }}
-            {{ csrf_field() }}
-
             <label for="" class="upload-label-titulo">¿En qué días y horarios va a estar disponible tu espacio?</label>
 
-            <div class="upload-div-diasemana">
-              <label for="[object Object]" class="">Agregar Horario</label>
-              <span>&#8853;</span>
-              <span>&#10005;</span>
-            </div>
+            <select class="" name="" style="margin-bottom: 15px;">
+              <option value="100">Todos los días</option>
+            </select>
 
-            <div class="">
-              <label for="[object Object]">Día</label>
-              <select name="dia" class="upload-select-dia" style="" required>
-                <option value="" selected>Día</option>
-                <option value="Lunes">Lunes</option>
-                <option value="Martes">Martes</option>
-                <option value="Miércoles">Miércoles</option>
-                <option value="Jueves">Jueves</option>
-                <option value="Viernes">Viernes</option>
-                <option value="Sábado">Sábado</option>
-                <option value="Domingo">Domingo</option>
-              </select>
-            </div>
-
-            <div class="">
-              <label for="[object Object]">Desde</label>
-              <select name="dia" class="upload-select-dia" style="" required>
-                <option value="0" selected>00:00</option>
-                <option value="Lunes">Lunes</option>
-                <option value="Martes">Martes</option>
-                <option value="Miércoles">Miércoles</option>
-                <option value="Jueves">Jueves</option>
-                <option value="Viernes">Viernes</option>
-                <option value="Sábado">Sábado</option>
-                <option value="Domingo">Domingo</option>
-              </select>
-            </div>
-
-            <div class="">
-              <label for="[object Object]">Hasta</label>
-              <select name="dia" class="upload-select-dia" style="" required>
-                <option value="0">00:00</option>
-                <option value="Lunes">Lunes</option>
-                <option value="Martes">Martes</option>
-                <option value="Miércoles">Miércoles</option>
-                <option value="Jueves">Jueves</option>
-                <option value="Viernes">Viernes</option>
-                <option value="Sábado">Sábado</option>
-                <option value="1439">23:59</option>
-              </select>
-            </div>
-
-            <div class="">
-              <label for="[object Object]">Todo el día</label>
-            </div>
-
-            <input type="submit" name="" value="Agregar Horario">
+            <hr style="margin: 10px 0px;">
 
             <div class="upload-div-diasemana">
-              <label for="[object Object]" class="upload-label-diasemana">Lunes 09:00 - 18:00</label>
-              <label for="[object Object]">ELIMINAR &#8854;</label>
+              <input type="text" name="diasemana[]" class="upload-input-dia" value="Lunes" readonly>
+              <input type="text" name="horacomienzo[]" class="upload-input-hora" value="09:00" readonly>
+              <span style="text-align:center;"> - </span>
+              <input type="text" name="horafin[]" class="upload-input-hora" value="18:00" readonly>
+              <label for="" class="upload-label-horario-button">&#8854;</label>
             </div>
+
+            <hr style="margin: 10px 0px;">
+
+            <div class="upload-div-diasemana">
+              <input type="text" name="diasemana[]" class="upload-input-dia" value="Martes" readonly>
+              <input type="text" name="horacomienzo[]" class="upload-input-hora" value="09:00" readonly>
+              <span style="text-align:center;"> - </span>
+              <input type="text" name="horafin[]" class="upload-input-hora" value="18:00" readonly>
+              <label for="" class="upload-label-horario-button">&#8854;</label>
+            </div>
+
+            <hr style="margin: 10px 0px;">
+
+
+
+            <div class="upload-div-cargahorario">
+
+              <div class="upload-div-agregardia">
+                <h3 class="upload-h3-agregardia">Agregar Horario</h3>
+                <label for="" class="upload-label-horario-button" style="float: none; font-size:24px;">&#8853;</label>
+                <label for="" class="upload-label-horario-button" style="float: none; font-size:24px; display:none;">&#10005;</label>
+              </div>
+
+              <div class="">
+                <label for="[object Object]">Día</label>
+                <select name="dia" class="upload-select-dia" style="" required>
+                  <option value="" selected>Día</option>
+                  <option value="Lunes">Lunes</option>
+                  <option value="Martes">Martes</option>
+                  <option value="Miércoles">Miércoles</option>
+                  <option value="Jueves">Jueves</option>
+                  <option value="Viernes">Viernes</option>
+                  <option value="Sábado">Sábado</option>
+                  <option value="Domingo">Domingo</option>
+                </select>
+              </div>
+
+              <div class="">
+                <label for="[object Object]">Desde</label>
+                <select name="dia" class="upload-select-dia" style="" required>
+                  <option value="0" selected>00:00</option>
+                </select>
+              </div>
+
+              <div class="">
+                <label for="[object Object]">Hasta</label>
+                <select name="dia" class="upload-select-dia" style="" required>
+                  <option value="0">00:00</option>
+                  <option value="1439">23:59</option>
+                </select>
+              </div>
+
+              <div class="">
+                <label for="[object Object]">Todo el día</label>
+              </div>
+
+              <input type="submit" name="" value="Agregar Horario">
+
+            </div>
+
+            <form action="{{ route('insert.upload.espacio.4', $espacio) }}" method="post" class="form-uploadEspacio">
+              {{ method_field('PUT') }}
+              {{ csrf_field() }}
 
             @foreach ($diasSemana as $dia)
 
@@ -125,6 +139,5 @@
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="js/menu.js"></script>
 
 @endsection
