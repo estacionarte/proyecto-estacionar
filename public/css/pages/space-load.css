@@ -257,6 +257,11 @@
   width: 50%;
 }
 
+
+.uploadEspacio .form-generico .horarios-holder{
+  margin-top: 20px;
+}
+
 .uploadEspacio .form-generico .upload-div-diasemana{
   /* overflow: hidden; */
   text-align: left;
@@ -279,7 +284,8 @@
 .uploadEspacio .form-generico .upload-label-horario-button{
   margin: 0px;
   padding: 0px 0px 2px;
-  font-size: 20px;
+  font-size: 30px;
+  line-height: 25px;
   vertical-align: middle;
   float: right;
   cursor: pointer;
@@ -288,6 +294,7 @@
 .uploadEspacio .form-generico .upload-div-agregardia{
   /* clear: both; */
   /* overflow: hidden; */
+  margin-top: 20px;
 }
 
 .uploadEspacio .form-generico .upload-div-agregardia .upload-h3-agregardia{
@@ -296,6 +303,47 @@
   width: 140px;
   margin: 0px;
 }
+
+.uploadEspacio .form-generico .upload-div-div-horario .upload-div-div-div-horario{
+  text-align: left;
+  margin-top: 8px;
+}
+
+.uploadEspacio .form-generico .upload-div-div-horario label{
+  /* display: inline-block; */
+  /* font-size: 18px; */
+  text-align: left;
+  margin: 0px 0px 2px;
+  padding: 0px;
+}
+
+.uploadEspacio .form-generico .upload-div-div-horario select{
+  margin: 0px;
+}
+
+.uploadEspacio .form-generico .upload-div-div-horario .upload-div-div-div-horario-hora{
+  width: 49%;
+  display: inline-block;
+}
+
+.uploadEspacio .form-generico .upload-div-div-horario .upload-div-div-horario-diaentero{
+  margin-top: 8px;
+}
+
+#boton-agregar-horario{
+  display: block;
+  width: 50%;
+  padding: 10px;
+  background-color: #005174;
+  color: #ffffff;
+  border-radius: 2px;
+  margin: 8px auto 0px;
+}
+
+
+
+
+
 
 .uploadEspacio .form-generico .upload-label-diasemana{
   float: left;
