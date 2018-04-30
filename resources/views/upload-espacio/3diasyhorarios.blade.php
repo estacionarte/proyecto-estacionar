@@ -213,11 +213,10 @@
 
                 <hr style="margin: 10px 0px;">
 
-                <input type="submit" name="boton-volver" value="&#8249; Volver" class="upload-button-volver" formaction="{{ route('upload.espacio.2', $espacio) }}" formmethod="get">
-                <input type="submit" name="boton-submit" value="SIGUIENTE" class="upload-button-submit">
-
               </div>
 
+              <input type="submit" name="boton-volver" value="&#8249; Volver" class="upload-button-volver" formaction="{{ route('upload.espacio.2', $espacio) }}" formmethod="get">
+              <input type="submit" name="boton-submit" value="SIGUIENTE" class="upload-button-submit">
 
 
             </form>
