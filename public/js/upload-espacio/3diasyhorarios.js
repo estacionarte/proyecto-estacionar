@@ -12,6 +12,7 @@ var divHorarios = document.querySelector('.horarios-holder');
 var diaElegido = document.getElementById('dia-select');
 var horacomienzoElegido = document.getElementById('horacomienzo-select');
 var horafinElegido = document.getElementById('horafin-select');
+var todoeldia = document.getElementById('dia-entero');
 
 // Función para agrgar nuevo día al div contenedor con los horarios que indico en parámetros
 var newDia = function newDia(dia, horacomienzo, horafin){
@@ -29,13 +30,19 @@ var ejecutarNewDia = function(){
   var horacomienzo = horacomienzoElegido.value;
   var horafin = horafinElegido.value;
 
-  // Ejecuto función
-  newDia(dia,horacomienzo,horafin);
+  // Horario de fin tiene que ser mayor o igual a horario de llegado
 
-  // Reseteo
-  diaElegido.value = 0;
-  horacomienzoElegido.value = 0;
-  horafinElegido.value = 0;
+  // Ejecuto función si tengo valores
+  if (dia && horacomienzo && horafin) {
+    newDia(dia,horacomienzo,horafin);
+    // Reseteo
+    diaElegido.value = 0;
+    horacomienzoElegido.value = 0;
+    horafinElegido.value = 0;
+    todoeldia.checked = false;
+
+  }
+
 
 }
 
