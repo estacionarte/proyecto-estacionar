@@ -14,6 +14,35 @@ var horacomienzoElegido = document.getElementById('horacomienzo-select');
 var horafinElegido = document.getElementById('horafin-select');
 var todoeldia = document.getElementById('dia-entero');
 
+// Función para que horafin sea siempre mayor a horacomienzo
+var cambiarhorafin = function cambiarhorafin(){
+  // Reseteo todas las opciones para que sean eligible
+  for (var i = 0; i < 47; i++) {
+    horafinElegido.options[i].disabled = false;
+  }
+  // Le pongo disable a las opciones de horafin menores a horacomienzo elegida
+  for (var i = 0; i < horacomienzoElegido.selectedIndex; i++) {
+    horafinElegido.options[i].disabled = true;
+  }
+  // Me aseguro de que horafin sea mayor a horacomienzo
+  if (horacomienzoElegido.selectedIndex >= horafinElegido.selectedIndex) {
+    horafinElegido.selectedIndex = horacomienzoElegido.selectedIndex;
+  }
+}
+
+// Si horacomienzo es mayor o igual a horafin, cambio horaFin
+horacomienzoElegido.addEventListener('change',cambiarhorafin);
+horafinElegido.addEventListener('change',cambiarhorafin);
+
+// Si hago click en checkbox "todo el día", seteo valores en desde y hasta
+todoeldia.addEventListener('click', function(){
+  if (this.checked == true) {
+    // Seteo valores cuando se tiquea
+    horacomienzoElegido.selectedIndex = 0;
+    horafinElegido.selectedIndex = 47;
+  }
+});
+
 // Función para agrgar nuevo día al div contenedor con los horarios que indico en parámetros
 var newDia = function newDia(dia, horacomienzo, horafin){
   var nuevodia = document.createElement("div");
@@ -29,8 +58,6 @@ var ejecutarNewDia = function(){
   var dia = diaElegido.value;
   var horacomienzo = horacomienzoElegido.value;
   var horafin = horafinElegido.value;
-
-  // Horario de fin tiene que ser mayor o igual a horario de llegado
 
   // Ejecuto función si tengo valores
   if (dia && horacomienzo && horafin) {
