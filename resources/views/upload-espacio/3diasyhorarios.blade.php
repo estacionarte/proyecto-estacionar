@@ -62,108 +62,108 @@
                   <div class="upload-div-div-div-horario-hora">
                     <label for="">Desde</label>
                     <select name="horaComienzo" class="upload-select-dia" style="" id="horacomienzo-select" required>
-                      <option value="01" selected>00:00</option>
-                      <option value="01">00:30</option>
-                      <option value="01">01:00</option>
-                      <option value="01">01:30</option>
-                      <option value="01">02:00</option>
-                      <option value="01">02:30</option>
-                      <option value="01">03:00</option>
-                      <option value="01">03:30</option>
-                      <option value="01">04:00</option>
-                      <option value="01">04:30</option>
-                      <option value="01">05:00</option>
-                      <option value="01">05:30</option>
-                      <option value="01">06:00</option>
-                      <option value="01">06:30</option>
-                      <option value="01">07:00</option>
-                      <option value="01">07:30</option>
-                      <option value="01">08:00</option>
-                      <option value="01">08:30</option>
-                      <option value="01">09:00</option>
-                      <option value="01">09:30</option>
-                      <option value="01">10:00</option>
-                      <option value="01">10:30</option>
-                      <option value="01">11:00</option>
-                      <option value="01">11:30</option>
-                      <option value="01">12:00</option>
-                      <option value="01">12:30</option>
-                      <option value="01">13:00</option>
-                      <option value="01">13:30</option>
-                      <option value="01">14:00</option>
-                      <option value="01">14:30</option>
-                      <option value="01">15:00</option>
-                      <option value="01">15:30</option>
-                      <option value="01">16:00</option>
-                      <option value="01">16:30</option>
-                      <option value="01">17:00</option>
-                      <option value="01">17:30</option>
-                      <option value="01">18:00</option>
-                      <option value="01">18:30</option>
-                      <option value="01">19:00</option>
-                      <option value="01">19:30</option>
-                      <option value="01">20:00</option>
-                      <option value="01">20:30</option>
-                      <option value="01">21:00</option>
-                      <option value="01">21:30</option>
-                      <option value="01">22:00</option>
-                      <option value="01">22:30</option>
-                      <option value="01">23:00</option>
-                      <option value="01">23:30</option>
+                      <option value="0" selected>00:00</option>
+                      <option value="30">00:30</option>
+                      <option value="60">01:00</option>
+                      <option value="90">01:30</option>
+                      <option value="120">02:00</option>
+                      <option value="150">02:30</option>
+                      <option value="180">03:00</option>
+                      <option value="210">03:30</option>
+                      <option value="240">04:00</option>
+                      <option value="270">04:30</option>
+                      <option value="300">05:00</option>
+                      <option value="330">05:30</option>
+                      <option value="360">06:00</option>
+                      <option value="390">06:30</option>
+                      <option value="420">07:00</option>
+                      <option value="450">07:30</option>
+                      <option value="480">08:00</option>
+                      <option value="510">08:30</option>
+                      <option value="540">09:00</option>
+                      <option value="570">09:30</option>
+                      <option value="600">10:00</option>
+                      <option value="630">10:30</option>
+                      <option value="660">11:00</option>
+                      <option value="690">11:30</option>
+                      <option value="720">12:00</option>
+                      <option value="750">12:30</option>
+                      <option value="780">13:00</option>
+                      <option value="810">13:30</option>
+                      <option value="840">14:00</option>
+                      <option value="870">14:30</option>
+                      <option value="900">15:00</option>
+                      <option value="930">15:30</option>
+                      <option value="960">16:00</option>
+                      <option value="990">16:30</option>
+                      <option value="1020">17:00</option>
+                      <option value="1050">17:30</option>
+                      <option value="1080">18:00</option>
+                      <option value="1110">18:30</option>
+                      <option value="1140">19:00</option>
+                      <option value="1170">19:30</option>
+                      <option value="1200">20:00</option>
+                      <option value="1230">20:30</option>
+                      <option value="1260">21:00</option>
+                      <option value="1290">21:30</option>
+                      <option value="1320">22:00</option>
+                      <option value="1350">22:30</option>
+                      <option value="1380">23:00</option>
+                      <option value="1410">23:30</option>
                     </select>
                   </div>
 
                   <div class="upload-div-div-div-horario-hora">
                     <label for="">Hasta</label>
                     <select name="horaFin" class="upload-select-dia" style="" id="horafin-select" required>
-                      <option value="01">00:30</option>
-                      <option value="01">01:00</option>
-                      <option value="01">01:30</option>
-                      <option value="01">02:00</option>
-                      <option value="01">02:30</option>
-                      <option value="01">03:00</option>
-                      <option value="01">03:30</option>
-                      <option value="01">04:00</option>
-                      <option value="01">04:30</option>
-                      <option value="01">05:00</option>
-                      <option value="01">05:30</option>
-                      <option value="01">06:00</option>
-                      <option value="01">06:30</option>
-                      <option value="01">07:00</option>
-                      <option value="01">07:30</option>
-                      <option value="01">08:00</option>
-                      <option value="01">08:30</option>
-                      <option value="01">09:00</option>
-                      <option value="01">09:30</option>
-                      <option value="01">10:00</option>
-                      <option value="01">10:30</option>
-                      <option value="01">11:00</option>
-                      <option value="01">11:30</option>
-                      <option value="01">12:00</option>
-                      <option value="01">12:30</option>
-                      <option value="01">13:00</option>
-                      <option value="01">13:30</option>
-                      <option value="01">14:00</option>
-                      <option value="01">14:30</option>
-                      <option value="01">15:00</option>
-                      <option value="01">15:30</option>
-                      <option value="01">16:00</option>
-                      <option value="01">16:30</option>
-                      <option value="01">17:00</option>
-                      <option value="01">17:30</option>
-                      <option value="01">18:00</option>
-                      <option value="01">18:30</option>
-                      <option value="01">19:00</option>
-                      <option value="01">19:30</option>
-                      <option value="01">20:00</option>
-                      <option value="01">20:30</option>
-                      <option value="01">21:00</option>
-                      <option value="01">21:30</option>
-                      <option value="01">22:00</option>
-                      <option value="01">22:30</option>
-                      <option value="01">23:00</option>
-                      <option value="01">23:30</option>
-                      <option value="1439"d selected>23:59</option>
+                      <option value="30">00:30</option>
+                      <option value="60">01:00</option>
+                      <option value="90">01:30</option>
+                      <option value="120">02:00</option>
+                      <option value="150">02:30</option>
+                      <option value="180">03:00</option>
+                      <option value="210">03:30</option>
+                      <option value="240">04:00</option>
+                      <option value="270">04:30</option>
+                      <option value="300">05:00</option>
+                      <option value="330">05:30</option>
+                      <option value="360">06:00</option>
+                      <option value="390">06:30</option>
+                      <option value="420">07:00</option>
+                      <option value="450">07:30</option>
+                      <option value="480">08:00</option>
+                      <option value="510">08:30</option>
+                      <option value="540">09:00</option>
+                      <option value="570">09:30</option>
+                      <option value="600">10:00</option>
+                      <option value="630">10:30</option>
+                      <option value="660">11:00</option>
+                      <option value="690">11:30</option>
+                      <option value="720">12:00</option>
+                      <option value="750">12:30</option>
+                      <option value="780">13:00</option>
+                      <option value="810">13:30</option>
+                      <option value="840">14:00</option>
+                      <option value="870">14:30</option>
+                      <option value="900">15:00</option>
+                      <option value="930">15:30</option>
+                      <option value="960">16:00</option>
+                      <option value="990">16:30</option>
+                      <option value="1020">17:00</option>
+                      <option value="1050">17:30</option>
+                      <option value="1080">18:00</option>
+                      <option value="1110">18:30</option>
+                      <option value="1140">19:00</option>
+                      <option value="1170">19:30</option>
+                      <option value="1200">20:00</option>
+                      <option value="1230">20:30</option>
+                      <option value="1260">21:00</option>
+                      <option value="1290">21:30</option>
+                      <option value="1320">22:00</option>
+                      <option value="1350">22:30</option>
+                      <option value="1380">23:00</option>
+                      <option value="1410">23:30</option>
+                      <option value="1439" selected>23:59</option>
                     </select>
                   </div>
 
@@ -174,7 +174,7 @@
                     <input type="checkbox" name="dia-entero" id="dia-entero" value="1" class="upload-input-checkbox">
                     <span class="upload-span-checkbox"></span>
                   </label> --}}
-                  <input type="checkbox" name="dia-entero" id="dia-entero" value="1" style="margin-top:0px;">
+                  <input type="checkbox" name="dia-entero" id="dia-entero" value="1" style="margin-top:0px;" checked="true">
                   <label for="dia-entero" style="margin-bottom:0px;">Todo el día</label>
                 </div>
 
@@ -184,36 +184,18 @@
 
             </div>
 
-            <form action="{{ route('insert.upload.espacio.4', $espacio) }}" method="post" class="form-uploadEspacio">
+            <form action="{{ route('insert.upload.espacio.4', $espacio) }}" method="post" class="form-uploadEspacio" id="form-horarios">
               {{ method_field('PUT') }}
               {{ csrf_field() }}
 
-
+              {{-- Acá van los horarios que agrega el usuario --}}
               <div class="horarios-holder">
 
                 <hr style="margin: 10px 0px;">
 
-                <div class="upload-div-diasemana">
-                  <input type="text" name="diasemana[]" class="upload-input-dia" value="Lunes" readonly>
-                  <input type="text" name="horacomienzo[]" class="upload-input-hora" value="09:00" readonly>
-                  <span style="text-align:center;"> - </span>
-                  <input type="text" name="horafin[]" class="upload-input-hora" value="18:00" readonly>
-                  <label for="" class="upload-label-horario-button">&#8854;</label>
-                </div>
-
-                <hr style="margin: 10px 0px;">
-
-                <div class="upload-div-diasemana">
-                  <input type="text" name="diasemana[]" class="upload-input-dia" value="Martes" readonly>
-                  <input type="text" name="horacomienzo[]" class="upload-input-hora" value="09:00" readonly>
-                  <span style="text-align:center;"> - </span>
-                  <input type="text" name="horafin[]" class="upload-input-hora" value="18:00" readonly>
-                  <label for="" class="upload-label-horario-button">&#8854;</label>
-                </div>
-
-                <hr style="margin: 10px 0px;">
-
               </div>
+
+              <p style="margin: 15px 0px 0px; font-size: 0.9em;">Si el conductor no retira su vehículo dentro del tiempo acordado, se le seguirá cobrando</p>
 
               <input type="submit" name="boton-volver" value="&#8249; Volver" class="upload-button-volver" formaction="{{ route('upload.espacio.2', $espacio) }}" formmethod="get">
               <input type="submit" name="boton-submit" value="SIGUIENTE" class="upload-button-submit">
@@ -247,9 +229,6 @@
               </div>
 
             @endforeach
-
-            <input type="submit" name="boton-volver" value="&#8249; Volver" class="upload-button-volver" formaction="{{ route('upload.espacio.2', $espacio) }}" formmethod="get">
-            <input type="submit" name="boton-submit" value="SIGUIENTE" class="upload-button-submit">
 
           </form>
 
