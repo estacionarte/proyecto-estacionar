@@ -193,6 +193,10 @@
 
                 <hr style="margin: 10px 0px;">
 
+                {{-- @foreach ($iterable as $key => $value)
+
+                @endforeach --}}
+
               </div>
 
               <p style="margin: 15px 0px 0px; font-size: 0.9em;">Si el conductor no retira su vehículo dentro del tiempo acordado, se le seguirá cobrando</p>
@@ -202,35 +206,6 @@
 
 
             </form>
-
-
-            <form action="{{ route('insert.upload.espacio.4', $espacio) }}" method="post" class="form-uploadEspacio">
-              {{ method_field('PUT') }}
-              {{ csrf_field() }}
-
-            @foreach ($diasSemana as $dia)
-
-              <div class="upload-div-diasemana">
-
-                <label for="" class="upload-label-diasemana">{{ $dia }}</label>
-
-                <div class="upload-div-div-diasemana">
-
-                  <input type="number" placeholder="00" name="horaComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->comienzo($dia),0,2) : '00' }}">
-                  <input type="number" placeholder="00" name="minutoComienzo{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->comienzo($dia),3,2) : '00' }}">
-
-                  <span class="upload-span-separadorhoras">-</span>
-
-                  <input type="number" placeholder="00" name="horaFin{{ $dia }}" class="upload-input-horadia" min="0" max="23" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->fin($dia),0,2) : '00' }}">
-                  <input type="number" placeholder="00" name="minutoFin{{ $dia }}" class="upload-input-horadia" min="0" max="59" value="{{ $espacio->diasyhorarios()->where('dia',$dia)->first() ? substr($espacio->fin($dia),3,2) : '00' }}">
-
-                </div>
-
-              </div>
-
-            @endforeach
-
-          </form>
 
         </div>
 
