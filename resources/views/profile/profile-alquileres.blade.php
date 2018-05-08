@@ -10,7 +10,7 @@
   </ul>
 
   <div class="tab-content">
-    <h4 class="alq-title">Historial de Alquileres</h4>
+    <h4 class="alq-title">Mis Alquileres</h4>
     <div id="alquiler-anfitrion" class="tab-pane fade in active">
       <div class="alquileres-tipo">
 
@@ -21,8 +21,16 @@
             <img src="/storage/espacios/33-1.jpeg" alt="">
           </div>
           <h4>Cochera privada en recoleta</h4>
-          <p>Del 02/02/18 a las 16:00 hasta el 02/02/18 las 20:00 <span class="span-alquilar-editar">EDITAR</span></p>
+          <p>Del 02/02/18 a las 16:00 hasta el 02/02/18 las 20:00</p>
           <p class="valor">Valor: $105</p>
+          <a href="">
+            <button type="button" class="btn btn-default">Editar</button>
+          </a>
+          <form method="POST" action="" style="display:inline;" onsubmit="return confirm('¿Está seguro de que quiere Cancelar este alquiler?')">
+            {{ method_field('DELETE') }}
+            {{ csrf_field() }}
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+          </form>
         </div>
 
         <div class="clear"></div>
@@ -32,7 +40,7 @@
             <img src="/storage/espacios/33-1.jpeg" alt="">
           </div>
           <h4>04/02/18 - Cochera cerca del monumental</h4>
-          <p>04/02/18 08:40 - 04/02/18 18:30 <span class="span-alquilar-editar">EDITAR</span></p>
+          <p>04/02/18 08:40 - 04/02/18 18:30</p>
           <p><span class="span-underline">Precio</span>: $180</p>
         </div>
       </div>
@@ -52,6 +60,14 @@
             <p><span class="span-underline">Precio</span>: $220</p>
             <p><span class="span-underline">Calificación</span>: 4/5</p>
             <p><span class="span-underline">Usuario</span>: Mariano Álvarez Hayes</p>
+            <a href="">
+              <button type="button" class="btn btn-default">Editar</button>
+            </a>
+            <form method="POST" action="" style="display:inline;" onsubmit="return confirm('¿Está seguro de que quiere Borrar este alquiler del historial?')">
+              {{ method_field('DELETE') }}
+              {{ csrf_field() }}
+              <button type="submit" class="btn btn-danger">Borrar</button>
+            </form>
           </div>
 
           <div class="clear"></div>
@@ -80,8 +96,16 @@
             <img src="/storage/espacios/33-1.jpeg" alt="">
           </div>
           <h4>06/02/18 - Cochera de lujo</h4>
-          <p>06/02/18 15:00 - 06/02/18 20:45 <span class="span-alquilar-delete">CANCELAR</span></p>
+          <p>06/02/18 15:00 - 06/02/18 20:45</p>
           <p><span class="span-underline">Precio</span>: $115</p>
+          <a href="">
+            <button type="button" class="btn btn-default">Editar</button>
+          </a>
+          <form method="POST" action="" style="display:inline;" onsubmit="return confirm('¿Está seguro de que quiere Cancelar este alquiler?')">
+            {{ method_field('DELETE') }}
+            {{ csrf_field() }}
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+          </form>
         </div>
 
         <div class="clear"></div>
@@ -91,7 +115,7 @@
             <img src="/storage/espacios/33-1.jpeg" alt="">
           </div>
           <h4>04/02/18 - Amplia cochera en recoleta</h4>
-          <p>09/02/18 09:15 - 09/02/18 18:50 <span class="span-alquilar-delete">CANCELAR</span></p>
+          <p>09/02/18 09:15 - 09/02/18 18:50</p>
           <p><span class="span-underline">Precio</span>: $180</p>
         </div>
 
@@ -112,6 +136,14 @@
         <p><span class="span-underline">Precio</span>: $60</p>
         <p><span class="span-underline">Calificación</span>: 4/5</p>
         <p><span class="span-underline">Usuario</span>: Mariano Álvarez Hayes</p>
+        <a href="">
+          <button type="button" class="btn btn-default">Editar</button>
+        </a>
+        <form method="POST" action="" style="display:inline;" onsubmit="return confirm('¿Está seguro de que quiere Borrar este alquiler del historial?')">
+          {{ method_field('DELETE') }}
+          {{ csrf_field() }}
+          <button type="submit" class="btn btn-danger">Borrar</button>
+        </form>
       </div>
 
       <div class="clear"></div>

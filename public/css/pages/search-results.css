@@ -45,11 +45,13 @@
 }
 
 .mejor-espacio-boton-alquilar{
-  background-color: #1baa47;
+  background-color: #d9534f;
+
 }
 
 .mejor-espacio-boton-alquilar:hover{
-  background-color: #137d34;
+  background-color: #fff;
+  color: #d9534f;
   text-decoration: none;
   cursor: pointer;
 }

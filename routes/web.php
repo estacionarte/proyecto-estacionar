@@ -45,7 +45,11 @@ Route::get('/perfil-alquileres', function () {
     return view('profile.profile-alquileres');
 })->name('profile.alquileres');
 
-Route::put('perfil', 'ProfileController@uploadProfileImage');
+Route::put('perfil/{id}', 'ProfileController@uploadProfileImage');
+
+Route::post('perfil', 'ProfileController@uploadProfileData');
+
+Route::put('perfil', 'ProfileController@editProfileData');
 
 // *************************** V E H I C U L O S ******************************
 Route::group(['prefix' => 'cargar-vehiculo', 'middleware' => ['auth','coming.soon','check.vehiculo.owner']], function(){

@@ -9,7 +9,7 @@
       <ul class="nav navbar-nav">
         <li class="active first"><a id="perfil-nav-1"href="perfil"><label>PERFIL</label></a></li>
         <li><a id="perfil-nav-2" href="perfil-espacio"><label>MIS ESPACIOS</label></a></li>
-        <li><a id="perfil-nav-3" href="perfil-vehiculo"><label>MIS VHICULOS</label></a></li>
+        <li><a id="perfil-nav-3" href="perfil-vehiculo"><label>MIS VEHICULOS</label></a></li>
         <li><a id="perfil-nav-4" href="perfil-alquileres"><label>ALQUILERES</label></a></li>
         {{-- <li><a id="perfil-nav-5" href="#"><label>EVALUACIONES</label></a></li> --}}
       </ul>

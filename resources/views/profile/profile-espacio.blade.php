@@ -32,6 +32,11 @@
               <a href="{{ route('editar.upload.espacio.1', $espacio->id) }}">
                 <button type="button" class="btn btn-default">Editar</button>
               </a>
+              <form method="POST" action="" style="display:inline;" onsubmit="return confirm('Este espacio no será visible para ningun usuario')">
+                {{ method_field('DELETE') }}
+                {{ csrf_field() }}
+                <button type="submit" class="btn btn-warning">Ocultar</button>
+              </form>
               <form method="POST" action="{{ route('delete.espacio', $espacio->id) }}" style="display:inline;" onsubmit="return confirm('¿Está seguro de que quiere eliminar este espacio?')">
                 {{ method_field('DELETE') }}
                 {{ csrf_field() }}
@@ -61,6 +66,11 @@
     <div id="ocultos" class="tab-pane fade">
       <h4>ocultos</h4>
       <p>SE MUESTRAN LOS ESPACIOS QUE EL USUARIO ELIGIÓ OCULTAR</p>
+      <form method="POST" action="" style="display:inline;" onsubmit="return confirm('Este espacio no será visible para ningun usuario')">
+        {{ method_field('DELETE') }}
+        {{ csrf_field() }}
+        <button type="submit" class="btn btn-success">Mostrar</button>
+      </form>
     </div>
   </div>
 </div>

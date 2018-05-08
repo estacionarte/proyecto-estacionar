@@ -10,7 +10,7 @@
 
 body{
   font-size: 1.5em;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   min-width: 320px;
   /* background-color: rgba(189, 189, 189, 0.16); */
   background-color: #fff;
@@ -33,19 +33,36 @@ a:hover{
 .clear{
   clear: both;
 }
+
+nav{
+  background-color: inherit;
+  line-height: inherit;
+  color: inherit;
+  transition: none;
+  height: inherit;
+}
+nav ul a{
+  font-size: inherit;
+}
+
+nav ul li{
+  float: none;
+}
 /****************** H E A D E R *******************/
 .main-header{
   width: 100%;
+  height: 59px;
   background-color: #fff;
   position: fixed;
   z-index: 9999;
+  box-shadow: -2px 2px 25px #999;
 }
 
 .header-logo-container{
   position: relative;
   float: left;
   max-width: 50%;
-  height: 45px;
+  /* height: 45px; */
   /* border: solid 1px pink; */
 }
 
@@ -161,9 +178,10 @@ ul li .popup-link{
   display: none;
 }
 
-span .avatar{
-  width: 40%;
-  height: 40%;
+
+.main-nav .avatar-container .avatar{
+  width: 50px;
+  height: 50px;
   vertical-align: middle;
   border-radius: 50%;
   border: solid 2px #d5dbdc;
@@ -179,7 +197,8 @@ span .avatar{
   position: fixed;
   z-index: 99999999;
   top: 0;
-  right: 0;
+  right: -263px;
+  left: inherit;
   background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
@@ -330,14 +349,15 @@ span .avatar{
   .main-nav .avatar-container i{
     display: inline-block;
     float: right;
-    margin: 20px 0 0 5px;
+    margin: 17px 0 0 5px;
     font-size: 1.2em;
     cursor: pointer;
   }
   .main-nav .avatar-container .welcome-user{
     display: block !important;
     float: right;
-    margin: 10px;
+    /* margin: 10px; */
+    padding: 7px 9px 0 0;
     cursor: pointer;
     /* border: solid 1px red; */
   }
@@ -410,12 +430,6 @@ span .avatar{
     border-bottom: none;
   }
 
-  .popup-contenedor h2{
-    color: rgb(105, 105, 105);
-    margin-top: 5%;
-    font-size: 1.2em;
-    padding: 0;
-  }
 
   .signin-popup a{
     display: block;
@@ -446,38 +460,68 @@ span .avatar{
   #popup-iniciar:target {
      visibility: visible;
      opacity: 1;
-     top: 16%;
-     right: 0;
+     top: 70px;
+     right: 30px;
      margin: 0;
      z-index: 20;
      transition: all 0.8s;
-     /*border: solid 1px green;*/
-     width: 60%;
+     width: 300px;
   }
 
   .popup-contenedor {
      position: relative;
-     left: 57%;
-     padding: 10px 30px;
-     background-color: #ededed;
+     left: 0;
+     background-color: #fff;
+     box-shadow: -2px 2px 25px #999;
      color:#333;
      border-radius: 3px;
-     width: 40%;
+     width: 100%;
     }
 
+    .popup-contenedor .titulo-container{
+      position: relative;
+      display: block;
+      text-align: center;
+      background-color: #4B6EA9;
+    }
+
+    .popup-contenedor h2{
+      color: #fff;
+      font-size: 1.3em;
+      padding: 20px 0;
+      margin: 0;
+    }
   .popup-cerrar {
      position: absolute;
-     top: 3px;
-     right: 3px;
-     background-color: #333;
+     top: 5px;
+     right: 5px;
+     background-color: #fff;
+     border: solid 1px #4B6EA9;
+     border-radius: 50%;
      padding: 7px 10px;
-     font-size: 20px;
+     font-size: 12px;
      text-decoration: none;
      line-height: 1;
-     color:#fff;
+     color:#4B6EA9;
+     font-weight: 600;
+  }
+  .popup-cerrar:hover{
+    color: #fff;
+    background-color: #4B6EA9;
+    border: solid 1px #fff;
+  }
+  .signin-popup form .row{
+    padding: 10px 30px 0;
   }
 
-  .form-generico label{
-    font-family: 'Roboto Condensed', sans-serif;
+  .signin-popup .recordarme{
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .signin-popup .recordarme span{
+    font-size: 12px;
+  }
+  .signin-popup .pop-redes{
+    padding: 0 30px 40px;
   }
 }

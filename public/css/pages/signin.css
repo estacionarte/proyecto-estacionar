@@ -4,7 +4,7 @@
 
 
 /****************** S I G N  I N *******************/
-.form-generico{
+/* .form-generico{
   margin: 15px 0%;
   text-align: center;
 }
@@ -58,7 +58,7 @@
   color: #48A8C1;
   cursor: pointer;
   transition: background-color .5s;
-}
+}*/
 
 .signin a{
   display: block;
@@ -99,7 +99,24 @@
 .google-login-button{
   background-color: #D74D41;
 }
+.bodies-main-content .gral-main .signin .row{
+  padding: 0 50px;
+}
 
+.signin form .recordarme{
+  margin: 0;
+}
+
+.signin form .boton{
+  text-align: center;
+  margin-top: 50px;
+}
+
+#loaders{
+  text-align: center;
+  margin-top: 40px;
+  display: none;
+}
 
 /**************************************************************/
 /*********************  T  A  B  L  E  T  *********************/
@@ -112,11 +129,12 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 700px;
-    background-color: #ededed;
     padding: 20px;
   }
 
-  .login-separador span{
-    background-color: #ededed;
+
+
+  .bodies-main-content .gral-main .signin .row{
+    padding: 0 30px;
   }
 }

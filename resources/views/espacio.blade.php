@@ -8,52 +8,95 @@
 
   <div class="espacio-container">
 
-      <img src="/storage/espacios/{{ $espacio->fotoPortada() }}" style="width: 100%; height: 420px; object-fit:cover;" id="img-top-espacio">
+      <img class="espacio-img-top" src="/storage/espacios/{{ $espacio->fotoPortada() }}" id="img-top-espacio">
 
     <div class="espacio-main-content">
 
-      <section class="show-espacio" style="padding-left:15px; padding-bottom:40px;">
+      <section class="show-espacio">
 
-        <h2>{{ $espacio->direccion }}</h2>
-        <h4> {{ $espacio->pais }} , {{ $espacio->provincia }} </h4>
-
-        <hr class="estadia-linea">
-
-        <h3 style="margin-top:0px; font-size:1.1em;">{{ $espacio->tipoEspacio }}</h3>
-        <h3 style="margin-top:0px; font-size:1.1em;">Estadía con Auto $ {{ $espacio->precioAutosMinuto }}  por minuto</h3>
-        <h3 style="margin-top:0px; font-size:1.1em;">Estadía con Moto $ {{ $espacio->precioMotosMinuto }}  por minuto</h3>
-        <h3 style="margin-top:0px; font-size:1.1em;">Estadía con Bici $ {{ $espacio->precioBicicletasMinuto }}  por minuto</h3>
+        <div class="direccion">
+          <p>{{ $espacio->tipoEspacio }}</p>
+          <h2>{{ $espacio->direccion }}</h2>
+          <h4> {{ $espacio->pais }} , {{ $espacio->provincia }} </h4>
+        </div>
 
         <hr class="estadia-linea">
 
-        <ul>
+        <div class="capacidad">
+          <h4>Este espacio tiene capacidad para alojar:</h4>
+          <div class="vehiculos">
+            <i class="fas fa-car"></i><p>{{ $espacio->cantAutos }} autos</p>
+          </div>
+          <div class="vehiculos">
+            <i class="fas fa-motorcycle"></i><p> {{ $espacio->cantMotos }}  motos</p>
+          </div>
+          <div class="vehiculos">
+            <i class="fas fa-bicycle"></i><p> {{ $espacio->cantBicicletas }}  bicicletas</p>
+          </div>
+        </div>
+
+        <hr class="estadia-linea">
+
+        <div class="descripcion-visible">
+          <p>{{ $espacio->infopublica }}</p>
+        </div>
+
+        <hr class="estadia-linea">
+
+        <div class="capacidad">
+          <h4>Este espacio cuenta con los siguientes servicios especiales</h4>
           @if ($espacio->aptoDiscapacitados)
-            <li style="list-style-type: circle; list-style-position: inside;">{{ $espacio->aptoDiscapacitados }}</li>
+            <div class="vehiculos">
+              <i class="fas fa-wheelchair"></i><p>{{ $espacio->aptoDiscapacitados }}</p>
+            </div>
           @endif
           @if ($espacio->aptoElectricos)
-            <li style="list-style-type: circle; list-style-position: inside;">{{ $espacio->aptoElectricos }}</li>
+            <div class="vehiculos">
+              <i class="fas fa-plug"></i><p>{{ $espacio->aptoElectricos }}</p>
+            </div>
           @endif
-        </ul>
+        </div>
 
         <hr class="estadia-linea">
 
-        <h3 style="margin-top:0px; font-size:1.1em;">Este espacio tiene capacidad para alojar: <br> <br>{{ $espacio->cantAutos }} autos</h3>
-        <h3 style="margin-top:0px; font-size:1.1em;"> {{ $espacio->cantMotos }}  motos</h3>
-        <h3 style="margin-top:0px; font-size:1.1em;"> {{ $espacio->cantBicicletas }}  bicicletas</h3>
+        <div class="capacidad">
+          <h4>Tiempos de Estadia</h4>
+          <div class="vehiculos">
+            <i class="fas fa-clock"></i><p><span>Mínima:</span> {{ $tiempominimo }}</p>
+          </div>
+          <div class="vehiculos yyy">
+            <i class="fas fa-clock"></i><p><span>Máxima:</span> {{ $tiempomaximo }}</p>
+          </div>
+          <div class="vehiculos">
+            <i class="fas fa-clock"></i><p><span>Anticipación de reserva:</span> {{ $anticipacion }}</p>
+          </div>
+        </div>
 
-        <p>{{ $espacio->infopublica }}</p>
 
         <hr class="estadia-linea">
 
-        <p><span style="text-decoration:underline;">Tiempo mínimo de alquiler:</span> {{ $tiempominimo }}</p>
-        <p><span style="text-decoration:underline;">Tiempo máximo de alquiler:</span> {{ $tiempomaximo }}</p>
-        <p><span style="text-decoration:underline;">Anticipación necesaria para reservar espacio:</span> {{ $anticipacion }}</p>
+        <div class="capacidad">
+          <h4>Valores de Estadía</h4>
+          <div class="vehiculos y">
+            <i class="fas fa-car"></i><p>Estadía con Auto $ {{ $espacio->precioAutosMinuto }}  por minuto</p>
+          </div>
+          <div class="vehiculos yy">
+            <i class="fas fa-motorcycle"></i><p>Estadía con Moto $ {{ $espacio->precioMotosMinuto }}  por minuto</p>
+          </div>
+          <div class="vehiculos">
+            <i class="fas fa-bicycle"></i><p>Estadía con Bici $ {{ $espacio->precioBicicletasMinuto }}  por minuto</p>
+          </div>
+        </div>
 
         <hr class="estadia-linea">
 
+        <div class="btn-container">
+          <a id="btn{{ $espacio->id }}" class="mejor-espacio-boton-alquilar btn btn-danger">Alquilar este espacio</a>
+        </div>
       </section>
 
-      <a id="btn{{ $espacio->id }}" class="mejor-espacio-boton-alquilar">Mostrar formulario alquiler</a>
+      <hr class="estadia-linea">
+
       <article id="{{ $espacio->id }}" class="modal-reserva-espacio">
         @include('_modal-alquilar')
       </article>
@@ -61,7 +104,7 @@
       <div class="clear"></div>
 
       <div class="">
-        <h2 style="margin-left:15px">Ubicación</h2>
+        <h2 style="margin-left:15px">El barrio</h2>
 
         <div id="mapid" class="espacio-map"></div>
 
@@ -102,24 +145,24 @@
         }
     }, true);
 
-  window.onscroll = function() {posicionarModal()};
-
-  // function posicionarModal() {
-  //     document.getElementById("yo").style.position = "fixed";
-  //   }
-
-  var modalAlquilar = document.getElementById("yo");
-
-function posicionarModal() {
-  if (window.pageYOffset >= 360) {
-    modalAlquilar.classList.add("sticky");
-    // modalAlquilar.style.width = '45%';
-    modalAlquilar.style.top = '0';
-    // modalAlquilar.style.left = '50%';
-  } else {
-    modalAlquilar.classList.remove("sticky");
-  }
-}
+//   window.onscroll = function() {posicionarModal()};
+//
+//   // function posicionarModal() {
+//   //     document.getElementById("yo").style.position = "fixed";
+//   //   }
+//
+//   var modalAlquilar = document.getElementById("yo");
+//
+// function posicionarModal() {
+//   if (window.pageYOffset >= 360) {
+//     modalAlquilar.classList.add("sticky");
+//     // modalAlquilar.style.width = '45%';
+//     modalAlquilar.style.top = '0';
+//     // modalAlquilar.style.left = '50%';
+//   } else {
+//     modalAlquilar.classList.remove("sticky");
+//   }
+// }
 
 </script>
 

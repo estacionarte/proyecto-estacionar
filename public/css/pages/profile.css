@@ -55,7 +55,7 @@
 }
 
 .profile-nav-container .navbar{
-  padding-top: 50px;
+  padding-top: 58px;
   background-color: rgb(74, 93, 108);
 }
 
@@ -66,7 +66,6 @@
 .profile-nav-container .navbar .navbar-nav li{
   display: block;
   text-align: left;
-  font-size: 1em;
   font-family: FontAwesome;
   border-top: solid 1px white;
 }
@@ -78,6 +77,7 @@
 .profile-nav-container .navbar .navbar-nav label{
   padding-left: 5px;
   color: #fff;
+  font-size: 1em;
 }
 
 .profile-nav-container .navbar .navbar-nav a:hover{
@@ -165,8 +165,6 @@
   margin: 0;
 }
 
-/* ****************dashboard- P R O F I L E ***************/
-
 
 /* ****************perfil- P R O F I L E ***************/
 
@@ -197,6 +195,14 @@
   margin-bottom: 20px;
 }
 
+.profile-container .form-group .phonenumb{
+  padding-left: 35px;
+  padding-top: 10px;
+}
+
+.profile-container .numero-txt{
+  padding-left: 20px;
+}
 /* *******imagen- P R O F I L E *****/
 .img-profile-container {
   text-align: center;
@@ -290,317 +296,6 @@
 }
 
 
-/*********** PROFILE -- MIS ESPACIOS *************/
-.profile-espacio-container .nav-tabs{
-  font-family: 'Roboto Condensed', sans-serif;
-  /* border: solid 1px yellow; */
-}
-
-.profile-espacio-container .nav-tabs li{
-  font-size: 0.8em;
-  background-color: #F5F5F5;
-  border: solid 1px #fff;
-}
-
-.profile-espacio-container .nav-tabs label{
-  display: block;
-  color: #000;
-  font-weight: lighter;
-}
-
-.profile-espacio-container .tab-content{
-  background-color: #fff;
-  overflow: hidden;
-}
-
-.profile-espacio-container .tab-content h4{
-  background-color: #9ba69b;
-  color: #fff;
-  padding: 10px 20px;#
-  margin: 0 0 15px 0;
-}
-
- .carga-espacio-container{
-  display: block;
-  float: left;
-  text-align: center;
-  width: 200px;
-  max-height: 220px;
-  margin: 0 15px 40px;
-  overflow: hidden;
-  border-radius: 10px;
-  border: dotted 1px rgba(92, 111, 110, 0.82);
-}
-
-.carga-espacio-container .upload-espacio{
-  max-height: 220px;
-}
-
-.carga-main-espacio .espacio-dire{
-  font-size: 1.3em;
-  font-weight: bold;
-  padding: 20px 0 5px;
-}
-
-.carga-main-espacio .espacio-descripcion{
-  padding: 5px 0 10px;
-}
-
-.profile-espacio-container .btn-carga-espacio{
-  margin: 2px 0 0 0;
-  padding: 10px 12px;
-}
-
-/*********** PROFILE -- MIS VEHICULOS *************/
-.profile-vehiculo-container .table-responsive{
-  width: 92%;
-  margin: auto;
-}
-
-.profile-vehiculo-container .table-responsive tr{
-  background-color: #fff;
-}
-
-.profile-vehiculo-container .cargar-vehiculo-btn{
-  margin: 15px 4%;
-}
-
-/*********** PROFILE -- ALQUILERES *************/
-
-/* Modal si se redirige después de efectuar un alquiler */
-/* Modal global */
-.modal-fullscreen{
-  position: fixed; /* Para que se quede en el lugar */
-  z-index: 1; /* Por encima del resto */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; /* Para poder scrollear y que se mantenga */
-  background-color: rgb(0,0,0); /* Por si falla el opacity */
-  background-color: rgba(0,0,0,0.3); /* Negro con opacity */
-}
-
-.modal-prof-alq{
-  font-family: 'Roboto Condensed', sans-serif;
-  background-color: rgba(0,0,0,0.7); /* Negro con opacity */
-}
-
-/* Modal Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 13% auto;
-    padding: 20px 15px;
-    border: 1px solid #888;
-    width: 92%;
-    max-width: 500px;
-}
-
-.content-prof-alq {
-    background-color: #ffffff;
-    margin: 10% auto;
-    border-width: 2px;
-    max-width: 700px;
-}
-
-/* Botón cerrar */
-.modal-close {
-    color: #aaa;
-    float: right;
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: -20px;
-    margin-right: -5px;
-}
-
-.modal-close:hover,
-.modal-close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Estilos de elementos dentro del modal */
-.modal-content h2{
-  color: rgb(0, 0, 0);
-  padding: 0;
-  margin: 5px auto 12px;
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
-}
-
-.content-prof-alq h2{
-  color: #48A8C1;
-}
-
-.modal-content h3{
-  padding: 0;
-  margin: 1px auto;
-  font-size: 1.4em;
-  text-align: left;
-  font-weight: bold;
-}
-
-.content-prof-alq h3{
-  font-size: 1.2em;
-  font-weight: normal;
-  text-align: center;
-}
-
-.modal-content h4{
-  padding: 0;
-  margin: 0px auto;
-}
-
-.content-prof-alq h4{
-  text-align: center;
-  font-weight: bold;
-  color: #48A8C1;
-  margin-bottom: 15px;
-  font-size: 1.3em;
-}
-
-.modal-content p{
-  padding: 0;
-  margin: 0px auto;
-  font-size: 0.9em;
-  text-align: center;
-}
-
-.modal-content hr{
-  margin: 10px auto;
-  border-color: #9c9c9c;
-}
-
-.content-prof-alq ul hr{
-  width: 90%;
-}
-
-.content-prof-alq ul li{
-  line-height: 18px;
-}
-
-.content-prof-alq ul li{
-  line-height: 18px;
-}
-
-.content-prof-alq a{
-  color: #fff;
-  background-color: #48A8C1;
-  border: 1px solid #48A8C1;
-  border-radius: 4px;
-  margin: 15px auto 5px;
-  display:block;
-  width:150px;
-  padding: 6px 12px;
-  font-size: 1em;
-  font-weight: 400;
-  text-align: center;
-}
-
-.content-prof-alq a:hover{
-  background-color: #2a8ca6;
-  border-color: #2a8ca6;
-}
-
-.content-prof-alq a:active{
-  background-color: #167a95;
-  border-color: #167a95;
-  width:140px;
-  font-size: 0.95em;
-  margin-bottom: 6px;
-}
-
-.profile-alquiler-container .nav-tabs{
-  font-family: 'Roboto Condensed', sans-serif;
-  /* border: solid 1px yellow; */
-}
-
-.profile-alquiler-container .nav-tabs li{
-  font-size: 0.8em;
-  background-color: #F5F5F5;
-  border: solid 1px #fff;
-}
-
-.profile-alquiler-container .nav-tabs label{
-  display: block;
-  color: #000;
-  font-weight: lighter;
-}
-
-.profile-alquiler-container .tab-content .alq-title{
-  background-color: #EEEEEE;
-  color: #000;
-  padding: 10px 20px;
-  margin: 0 0 15px 0;
-}
-
-/* Listado de alquileres */
-
-.alquileres-content .alquileres-tipo{
-  margin: 5px auto;
-}
-
-.tab-pane .alquileres-tipo h3{
-  padding-left: 20px;
-}
-
-.alquileres-content .alquileres-tipo .alquileres-content-detalle{
-  margin-bottom: 5px;
-}
-
-.alquileres-content-detalle .img-alq-container{
-  display: block;
-  float: left;
-  text-align: center;
-  width: 200px;
-  margin: 0 15px 40px;
-  overflow: hidden;
-  border-radius: 10px;
-
-}
-.alquileres-content-detalle img{
-  max-height: 220px;
-  vertical-align: middle;
-
-}
-.alquileres-content-detalle p{
-  margin: 0px auto;
-  /* font-size: 0.9em; */
-  line-height: 1.2em;
-  padding: 5px;
-  /* display: none; */
-}
-.alquileres-content-detalle .valor{
-  font-weight: bold;
-}
-
-.alquileres-content-detalle h4{
-  margin: 0px auto 2px;
-  font-size: 1.4em;
-  font-weight:bold;
-  padding-top: 20px;
-  padding-right: 5px;
-}
-
-.span-alquilar-editar, .span-alquilar-delete {
-  font-weight: bold;
-  margin-left: 8px;
-}
-
-.span-alquilar-editar {
-  color: #48A8C1;
-}
-
-.span-alquilar-delete {
-  color: rgb(140, 32, 18);
-}
-
-#alquileres-otros-espacios{
-  display: none;
-}
-
 
 /**************************************************************/
 /*********************  T  A  B  L  E  T  *********************/
@@ -621,6 +316,7 @@
     width: 100%;
     margin: auto;
     text-align: center;
+
   }
 
   .profile-nav-container .navbar .navbar-nav li{
@@ -706,6 +402,11 @@
     margin-bottom: 20px;
   }
 
+  .profile-container .form-group .phonenumb{
+    padding-left: 0;
+    padding-top: 0;
+  }
+
   /* *******imagen- P R O F I L E *****/
   .img-profile-container {
     width: 30%;
@@ -745,23 +446,6 @@
     border: solid 2px #dbdbdb;
   }
 
-  /*********** PROFILE -- MIS VEHICULOS *************/
-  .profile-vehiculo-container .table-responsive{
-    width: 92%;
-    margin: auto;
-  }
-
-  /*********** PROFILE -- ALQUILERES *************/
-
-  .content-prof-alq ul hr{
-    width: 80%;
-  }
-
-  .content-prof-alq ul li{
-    margin: auto;
-    width: 95%;
-    line-height: 18px;
-  }
 }
 
 /*************************************************************************************************/
@@ -771,14 +455,14 @@
 @media (min-width: 960px){
   /***************** NAV BAR - P R O F I L E ********************/
   .profile-nav-container .navbar{
-    padding-top: 66px;
+    padding-top: 58px;
   }
   .profile-nav-container .navbar .navbar-nav li{
     font-size: 1em;
   }
 
   .profile-nav-container .navbar .navbar-nav .first{
-    margin-left: 10%;
+    margin-left: 3%;
   }
 
   .profile-nav-container .navbar .navbar-nav label:hover{
@@ -792,8 +476,4 @@
     margin: 40px auto 0;
   }
 
-  /*********** PROFILE -- MIS VEHICULOS *************/
-  .profile-vehiculo-container .cargar-vehiculo-btn{
-    margin: 15px 10%;
-  }
 }
