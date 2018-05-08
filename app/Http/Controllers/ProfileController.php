@@ -77,4 +77,13 @@ class ProfileController extends Controller
       return view('/home');
     }
 
+    public function uploadProfileData(Request $request){
+
+      $user = new User($request->all());
+      $user->idUser = Auth::user()->id;
+      $user->save();
+
+      return redirect(route('profile'));
+    }
+
 }

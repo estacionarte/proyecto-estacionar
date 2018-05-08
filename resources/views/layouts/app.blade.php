@@ -7,7 +7,6 @@
     <title>@yield('title')</title>
     {{-- <title>{{ config('app.', 'Estacionados') }}</title> --}}
 
-
     <!-- FONT CABIN -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     <!-- FONT BLACK -->
@@ -34,6 +33,10 @@
      {{-- CAROUSEL DE BOOSTRAP--}}
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+     {{-- Materialize framework --}}
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
       <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -68,9 +71,11 @@
     <!-- Styles -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet" id="hojaDeEstilo">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
     @yield('css')
-{{-- <link rel="icon" href="icons/favicon1.png" type="image/png" sizes="16x16"> --}}
+
     {{-- favicon --}}
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -147,33 +152,41 @@
 
         <div class="modal-wrapper" id="popup-iniciar">
           <div class="popup-contenedor">
-            <a class="popup-cerrar" href="#">X</a>
-            <h2 class="title-signin">Iniciar sesión</h2>
+            <div class="titulo-container">
+              <a class="popup-cerrar" href="#">X</a>
+              <h2 class="title-signin">Iniciar sesión</h2>
+            </div>
 
             <section class="signin-popup">
               <div class="form-generico">
                 <form action="{{ route('login') }}" method="post">
                   {{ csrf_field() }}
-                  <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    @if ($errors->has('email'))
-                      <span class="help-block">
-                        <strong>{{ $errors->first('email') }}</strong>
-                      </span>
-                    @endif
-                    <input type="email" name="email" placeholder="E-Mail" id="email" value="{{ old('email') }}"  autofocus>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" name="email" id="popup-email" value="{{ old('email') }}">
+                      <label for="email">Email</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input type="password" name="password" id="popup-pass" value="{{ old('password') }}">
+                      <label for="password">Contraseña</label>
+                    </div>
+                    <div class="input-field col s12 offset-s3 recordarme">
+                      <label>
+                        <input id="indeterminate-checkbox" type="checkbox" name="recordarme" value="recordarme" {{ old('recordarme') ? 'checked' : '' }} />
+                        <span>Recordarme</span>
+                      </label>
+                    </div>
                   </div>
-
-                  <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    @if ($errors->has('password'))
-                      <span class="help-block">
-                        <strong>{{ $errors->first('password') }}</strong>
-                      </span>
-                    @endif
-                    <input type="password" name="password" placeholder="Contraseña">
+                  <div class="row" id="loaders">
+                      <img id="spinner" src="/images/spinner.gif" width="150">
                   </div>
-                  <input type="checkbox" name="recordarme" id="recordarme"  {{ old('remember') ? 'checked' : '' }}>
-                  <label for="recordarme">Recordarme</label>
-                  <input type="submit" name="" value="INICIAR SESIÓN">
+                  <div class="row">
+                    <div class="col s12 offset-s2 boton">
+                        <button id="popup-enviar" class="btn waves-effect waves-light  pink darken-2" type="submit" name="boton-submit">INICIAR SESIÓN
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
                   <input type="checkbox" name="popup" style="display:none" checked>
                 </form>
               </div>
@@ -182,8 +195,10 @@
               <div class="login-separador">
                 <span>O</span>
               </div>
-              <a href="login/facebook" class="facebook-login-button">Iniciar sesion con Facebook</a>
-              <a href="login/google" class="google-login-button">Iniciar sesión con Google</a>
+              <div class="pop-redes">
+                <a href="login/facebook" class="facebook-login-button">Iniciar sesión con Facebook</a>
+                <a href="login/google" class="google-login-button">Iniciar sesión con Google</a>
+              </div>
             </section>
           </div>
         </div>
@@ -225,6 +240,14 @@
     </section>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="{{ URL::asset('js/jquery.min.js')}}"></script>
+  <script src="{{ URL::asset('js/owl.carousel.js')}}"></script>
+
+  {{-- Materialize --}}
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+
+  {{-- POPUP-LOGIN --}}
+  <script src="js/popup-signin.js"></script>
 
   {{-- HAMURGUESA --}}
   <script>
@@ -257,6 +280,7 @@
 // });
 
   </script>
+
 
 
   {{-- STICKY FIXED --}}

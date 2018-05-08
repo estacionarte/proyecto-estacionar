@@ -15,8 +15,11 @@
 @import "pages/space.css";
 @import "pages/signin.css";
 @import "pages/signup.css";
-@import "pages/profile.css";
 @import "pages/credits.css";
+@import "pages/profile.css";
+@import "pages/profile-spaces.css";
+@import "pages/profile-vehicles.css";
+@import "pages/profile-rents.css";
 @import "pages/space-load.css";
 @import "pages/coming-soon.css";
 @import "pages/search-results.css";

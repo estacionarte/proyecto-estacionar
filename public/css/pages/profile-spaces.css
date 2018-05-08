@@ -1,0 +1,68 @@
+/**************************************************************/
+/*********************  M  O  B  I  L  E  *********************/
+/**************************************************************/
+
+/*********** PROFILE -- MIS ESPACIOS *************/
+.profile-espacio-container .nav-tabs{
+  font-family: 'Roboto Condensed', sans-serif;
+  /* border: solid 1px yellow; */
+}
+
+.profile-espacio-container .nav-tabs li{
+  font-size: 0.8em;
+  background-color: #F5F5F5;
+  border: solid 1px #fff;
+}
+
+.profile-espacio-container .nav-tabs label{
+  display: block;
+  color: #000;
+  font-weight: lighter;
+}
+
+.profile-espacio-container .tab-content{
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.profile-espacio-container .tab-content h4{
+  background-color: #9ba69b;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 0 15px 0;
+}
+
+ .carga-espacio-container{
+  display: block;
+  float: left;
+  text-align: center;
+  width: 200px;
+  max-height: 220px;
+  margin: 0 15px 40px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: dotted 1px rgba(92, 111, 110, 0.82);
+}
+
+.carga-espacio-container .upload-espacio{
+  max-height: 220px;
+}
+
+.carga-main-espacio .espacio-dire{
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 20px 0 5px;
+}
+
+.carga-main-espacio .espacio-descripcion{
+  padding: 5px 0 10px;
+}
+
+.profile-espacio-container .btn-carga-espacio{
+  margin: 2px 0 0 0;
+  padding: 10px 12px;
+}
+
+.carga-main-espacio .btn{
+  margin-top: 10px;
+}

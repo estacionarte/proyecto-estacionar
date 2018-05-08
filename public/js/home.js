@@ -41,7 +41,7 @@ function validarForm(){
   var fechacomienzo = new Date(diacomienzo.value + " " + horacomienzo.options[horacomienzo.selectedIndex].value + ":" + minutocomienzo.options[minutocomienzo.selectedIndex].value);
   var fechafin = new Date(diafin.value + " " + horafin.options[horafin.selectedIndex].value + ":" + minutofin.options[minutofin.selectedIndex].value);
   var ahora = new Date();
-  
+
   if (fechacomienzo <= ahora) {
     alert("El horario a buscar debe ser mayor a la hora actual");
     return false;
@@ -54,3 +54,25 @@ function validarForm(){
 
   return true;
 }
+
+// slider Home
+$('#slider-home').owlCarousel({
+  loop:true,
+  margin:10,
+  nav:false,
+  autoplay:true,
+  autoplayTimeout:4000,
+  // animateOut: 'fadeOut',
+  autoHeight: false,
+  responsive:{
+        0:{
+            items:1
+        },
+        700:{
+            items:2
+        },
+        960:{
+            items:3
+        }
+    }
+})
