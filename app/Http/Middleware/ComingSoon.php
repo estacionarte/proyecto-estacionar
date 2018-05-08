@@ -28,4 +28,5 @@ class ComingSoon
       return $next($request);
 
   }
+  
 }
