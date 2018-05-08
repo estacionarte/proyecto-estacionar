@@ -64,6 +64,9 @@ var writeDireccion = function writeDireccion() {
   if (pais.value && provincia.value) {
     direccion.removeAttribute("readonly");
   }
+  if (provincia.value == 'CABA') {
+    ciudad.value = 'CABA';
+  }
 }
 
 writeDireccion();
@@ -72,7 +75,6 @@ provincia.addEventListener('change', writeDireccion);
 
 // Lo mismo si al cargar dirección ya tiene value
 function writeOtros(){
-  document.querySelector('.upload-input-numdpto').removeAttribute("readonly");
   document.querySelector('.upload-input-ciudad').removeAttribute("readonly");
   document.querySelector('.upload-input-cp').removeAttribute("readonly");
 }
@@ -84,38 +86,57 @@ if (direccion.value) {
 function initMap(){
   var geocoder = new google.maps.Geocoder();
 
+  // Función para autocompletar campo de dirección a medida que se escribe, limitado a direcciones de Argentina
+  var options = {
+    types: ['address'],
+    componentRestrictions: {country: 'ar'}
+  };
+
+  var direccionAutocomplete = new google.maps.places.Autocomplete(direccion, options);
+
+  // Al completar provincia, cambio el autocomplete para que solo me muestre direcciones de esta provincia
+  // var provinciaAutocomplete = document.querySelector('.upload-select-provincia');
+  // provinciaAutocomplete.addEventListener('change', function(){
+  //   direccionAutocomplete.setComponentRestrictions({'administrativeArea': provinciaAutocomplete.value});
+  // });
+
   // Al hacer cambios en campo domicilio, hacer editables los campos restantes y ejecutar geocoding
 
   var direcciongeocode = document.querySelector('.upload-input-direccion');
   direcciongeocode.addEventListener('change', function(){
     writeOtros();
-    if (!ciudad.value) {
-      geocodeAddress(geocoder);
-    } else {
-      geocodeAddressConFiltroLocality(geocoder);
-    }
+    geocodeAddress(geocoder);
+    // if (!ciudad.value) {
+    //   geocodeAddress(geocoder);
+    // } else {
+    //   geocodeAddressConFiltroLocality(geocoder);
+    // }
   });
 
   // Ejecuto geocoding si cambio la ciudad para hacer más precisa la búsqueda
   var ciudadgeocode = document.querySelector('.upload-input-ciudad');
   ciudadgeocode.addEventListener('change', function(){
-    if (!ciudad.value) {
-      geocodeAddress(geocoder);
-    } else {
-      geocodeAddressConFiltroLocality(geocoder);
-    }
+    geocodeAddress(geocoder);
+    // if (!ciudad.value) {
+    //   geocodeAddress(geocoder);
+    // } else {
+    //   geocodeAddressConFiltroLocality(geocoder);
+    // }
   });
 }
 
 // Dar funcionalidad a geocoder (buscar)
 
 function geocodeAddress(geocoder) {
+  // Tomo de la direccion elegida con el autocomplete solo la primera parte, hasta la coma, donde tengo calle y número
+  direccion.value = direccion.value.substr(0, direccion.value.indexOf(','));
   var address = direccion.value;
   // Busco por address y filtro por región (país) elegida por usuario para que priorice resultados dentro de ese país
   geocoder.geocode({
     'address': address,
-    'region': 'AR',
+    // 'region': 'AR',
     componentRestrictions: {
+      country: 'ar',
       // Filtro por provincia
       administrativeArea: provincia.value
     }
@@ -145,6 +166,11 @@ function geocodeAddress(geocoder) {
       // Cambio la posición del mapa para ajustarla a las nuevas coordenadas y pongo un círculo
       mapaYCirculo(mymap,latitud.value,longitud.value);
 
+      // Muestro alerta por error en mapa si es CABA
+      // if (provincia.value == CABA) {
+        document.getElementById('addresswarning').style.display = 'block';
+      // }
+
       // Muestro el párrafo con información
       document.getElementById('mapwarning').style.display = 'block';
 
@@ -156,6 +182,7 @@ function geocodeAddress(geocoder) {
 
 // Igual que el de arriba pero con un filtro más de locality (ciudad)
 function geocodeAddressConFiltroLocality(geocoder) {
+  direccion.value = direccion.value.substr(0, direccion.value.indexOf(','));
   var address = direccion.value;
   geocoder.geocode({
     'address': address,
@@ -179,6 +206,9 @@ function geocodeAddressConFiltroLocality(geocoder) {
       latitud.value = resultado.geometry.location.lat();
       longitud.value = resultado.geometry.location.lng();
       mapaYCirculo(mymap,latitud.value,longitud.value);
+      // if (provincia.value == CABA) {
+        document.getElementById('addresswarning').style.display = 'block';
+      // }
       document.getElementById('mapwarning').style.display = 'block';
     } else {
       alert('Ocurrió el siguiente error: ' + status + '. Intente nuevamente con otra dirección.');
@@ -196,53 +226,103 @@ function completarDireccion(inputName, jsonName, resultado){
   }
 }
 
+// Validación para que nombre sea por lo menos de 8 letras
+
+var nombre = document.querySelector('input[name="nombre"]');
+
+nombre.addEventListener('change',function(){
+  // Variable para chequear si ya agregué alerta y para borrarla después cuando se cumpla la condición
+  var elementExists = document.getElementById("alertanombre");
+
+  if (nombre.value.length < 10) {
+    // Creo alerta
+    var alertanombre = document.createElement("div");
+    alertanombre.setAttribute("id", "alertanombre");
+    alertanombre.style.paddingTop = "4px";
+    alertanombre.innerHTML = "<span style='font-weight:bold; font-size:13px; color:#990606;'>El nombre del espacio debe ser más largo</span>";
+    document.querySelector('.upload-div-nombre').appendChild(alertanombre);
+  } else if (elementExists) {
+    // Borro alerta
+    document.querySelector('.upload-div-nombre').removeChild(elementExists);
+  }
+});
+
+// Escondo advertencia de foto
+var foto = document.querySelector('input[type="file"]');
+foto.onchange = function(){
+  document.getElementById('photowarning').style.display = 'none';
+}
+
+// Muestro información sobre qué es cada tipo de espacio
+var infoespacio = document.querySelector('.uploadEspacio .form-generico .upload-label-titulo span');
+
+infoespacio.addEventListener('click', function(){
+  // Variable para chequear si ya agregué div y para borrarlo después cuando se cumpla la condición
+  var elementExists = document.getElementById("infoespacio");
+  console.log('1');
+
+  if (!elementExists) {
+    console.log('2');
+    // Creo div y el resto
+    var infoespacio = document.createElement("div");
+    infoespacio.setAttribute("id", "infoespacio");
+    infoespacio.setAttribute("style", "display:block; font-size:0.7em; text-align:left; font-weight:normal; color: #6e6e6e");
+    infoespacio.innerHTML = "<p style='margin-top:10px;'>Cochera Privada: espacio del que el usuario es propietario o puede disponer su uso, como un garage en el hogar o una cochera en un edificio</p><p>Espacio en hogar: lugar mas reducido en tamaño en el que no siempre entra un auto, por ejemplo, el living de la casa</p><p>Playa de Estacionamiento: establecimiento cuya actividad comercial es el alquiler de cocheras</p>";
+    document.getElementById('label-tipoespacio').appendChild(infoespacio);
+  } else {
+    console.log('3');
+    // Borro alerta
+    document.getElementById('label-tipoespacio').removeChild(elementExists);
+  }
+});
+
 
 
 
 
 // Script para dar funcionalidad a botones - y +
 
-var sumar = function sumar(){
-  var input = this.parentNode.querySelector('input');
-  if (input.value == 10) {
-    return;
-  } else {
-    if (input.value == 0) {
-      input.value = 1;
-    } else {
-      input.value = parseInt(input.value) + 1;
-    }
-  }
-}
-
-var restar = function restar(){
-  var input = this.parentNode.querySelector('input');
-  if (input.value == 0) {
-    return;
-  } else {
-    input.value = parseInt(input.value) - 1;
-  }
-}
+// var sumar = function sumar(){
+//   var input = this.parentNode.querySelector('input');
+//   if (input.value == 10) {
+//     return;
+//   } else {
+//     if (input.value == 0) {
+//       input.value = 1;
+//     } else {
+//       input.value = parseInt(input.value) + 1;
+//     }
+//   }
+// }
+//
+// var restar = function restar(){
+//   var input = this.parentNode.querySelector('input');
+//   if (input.value == 0) {
+//     return;
+//   } else {
+//     input.value = parseInt(input.value) - 1;
+//   }
+// }
 
 // Funcionalidad a botones de suma y resta en upload espacio info general
 
-var botonSumarAuto = document.querySelector('button[name="boton-suma-auto"]');
-var autos = document.querySelector('input[name="cantAutos"]');
-var botonRestarAuto = document.querySelector('button[name="boton-resta-auto"]');
-botonSumarAuto.addEventListener('click', sumar);
-botonRestarAuto.addEventListener('click', restar);
-
-var botonSumarMoto = document.querySelector('button[name="boton-suma-moto"]');
-var motos = document.querySelector('input[name="cantMotos"]');
-var botonRestarMoto = document.querySelector('button[name="boton-resta-moto"]');
-botonSumarMoto.addEventListener('click', sumar);
-botonRestarMoto.addEventListener('click', restar);
-
-var botonSumarBicicleta = document.querySelector('button[name="boton-suma-bici"]');
-var bicis = document.querySelector('input[name="cantBicicletas"]');
-var botonRestarBicicleta = document.querySelector('button[name="boton-resta-bici"]');
-botonSumarBicicleta.addEventListener('click', sumar);
-botonRestarBicicleta.addEventListener('click', restar);
+// var botonSumarAuto = document.querySelector('button[name="boton-suma-auto"]');
+// var autos = document.querySelector('input[name="cantAutos"]');
+// var botonRestarAuto = document.querySelector('button[name="boton-resta-auto"]');
+// botonSumarAuto.addEventListener('click', sumar);
+// botonRestarAuto.addEventListener('click', restar);
+//
+// var botonSumarMoto = document.querySelector('button[name="boton-suma-moto"]');
+// var motos = document.querySelector('input[name="cantMotos"]');
+// var botonRestarMoto = document.querySelector('button[name="boton-resta-moto"]');
+// botonSumarMoto.addEventListener('click', sumar);
+// botonRestarMoto.addEventListener('click', restar);
+//
+// var botonSumarBicicleta = document.querySelector('button[name="boton-suma-bici"]');
+// var bicis = document.querySelector('input[name="cantBicicletas"]');
+// var botonRestarBicicleta = document.querySelector('button[name="boton-resta-bici"]');
+// botonSumarBicicleta.addEventListener('click', sumar);
+// botonRestarBicicleta.addEventListener('click', restar);
 
 
 

@@ -147,6 +147,7 @@ for (var i = 0; i < espacios.length; i++) {
   diafin[id].addEventListener('change',actualizarValores);
   horafin[id].addEventListener('change',actualizarValores);
   minutofin[id].addEventListener('change',actualizarValores);
+  vehiculo[id].addEventListener('change',actualizarValores);
 
   // Capturo divs de no disponible y botones de submit
   divNoDisponible[id] = document.querySelectorAll(".div-nodisponible")[i];

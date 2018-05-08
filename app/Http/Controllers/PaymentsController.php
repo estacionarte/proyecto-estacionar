@@ -174,7 +174,7 @@ class PaymentsController extends Controller
 
     // dd($preference);
     // Para que vaya directo a la pagina de mercado pago
-    return redirect()->to($preference['response']['sandbox_finit_point']);
+    return redirect()->to($preference['response']['sandbox_init_point']);
     // return redirect()->to($preference['response']['init_point']);
 
   }

@@ -119,7 +119,7 @@
         </div> --}}
         <div class="tw">
           {{-- <p>Seguinos</p> --}}
-          <a href="http://twitter.com" target="_blank"><img src="/images/twitter.png" alt=""></a>
+          <a href="http://twitter.com/estacionadosweb" target="_blank"><img src="/images/twitter.png" alt=""></a>
         </div>
         {{-- <div class="ig">
           <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
@@ -132,7 +132,7 @@
 
 <script>
 // Fecha de lanzamiento
-var countDownDate = new Date("apr 30, 2018 23:59:59").getTime();
+var countDownDate = new Date("may 28, 2018 23:59:59").getTime();
 
 // Calculo el intervalo cada 1 segundo
 var x = setInterval(function() {

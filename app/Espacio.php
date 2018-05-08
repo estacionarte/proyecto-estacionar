@@ -33,6 +33,7 @@ class Espacio extends Model
     'precioAutosMinuto',
     'precioMotosMinuto',
     'precioBicicletasMinuto',
+    'nombre'
   ];
 
   public function usuario()
@@ -70,11 +71,13 @@ class Espacio extends Model
     }
   }
 
+  // Hora comienzo de disponibilidad de espacio
   public function comienzo($dia){
     $dias = $this->diasyhorarios()->where('dia',$dia)->first();
     return $this->minutosEnHoraDelDia($dias->horaComienzo);
   }
 
+  // Hora fin de la disponibilidad
   public function fin($dia){
     $dias = $this->diasyhorarios()->where('dia',$dia)->first();
     return $this->minutosEnHoraDelDia($dias->horaFin);

@@ -31,36 +31,105 @@
   font-size: 1.3em;
 }
 
+.uploadEspacio .form-generico .upload-label-titulo span{
+  margin: 5px;
+  color: #005174;
+  font-size: 1em;
+  cursor: pointer;
+}
+
 .upload-div-div-map1 {
   height: 250px;
   margin-top: 5px;
 }
 
-.uploadEspacio .form-generico .upload-div-tipovehiculo{
-  overflow: hidden;
-  margin-top: 5px;
+.uploadEspacio .form-generico .upload-div-checkbox{
+  /* overflow: hidden; */
+  /* margin-top: 5px; */
 }
 
-.uploadEspacio .form-generico .upload-div-div-tipovehiculo{
+/* .uploadEspacio .form-generico .upload-div-div-checkbox{
   float: right;
-}
+} */
 
-.uploadEspacio .form-generico .upload-label-tipovehiculo{
-  width: 59%;
-  float: left;
+/* Para personalizar checkbox */
+.uploadEspacio .form-generico .upload-label-checkbox{
+  /* width: 70%; */
+  /* float: left; */
   color: #8f8f8f;
-  /*font-size: 1.1em;*/
-  margin-top: 0px;
+  margin: 0px;
+  display: block;
+  position: relative;
+  padding-left: 38px;
+  /* margin-bottom: 12px; */
+  cursor: pointer;
+  /* font-size: 22px; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.uploadEspacio .form-generico .upload-input-tipovehiculo{
+/* Escondo el checkbox default */
+.uploadEspacio .form-generico .upload-input-checkbox{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Creo el customizado */
+.uploadEspacio .form-generico .upload-span-checkbox {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.upload-label-checkbox:hover input ~ .upload-span-checkbox {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a background */
+.upload-label-checkbox input:checked ~ .upload-span-checkbox {
+  background-color: #569ab6;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.upload-span-checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.upload-label-checkbox input:checked ~ .upload-span-checkbox:after {
+  display: block;
+}
+
+/* Style the upload-span-checkbox/indicator */
+.upload-label-checkbox .upload-span-checkbox:after {
+  left: 9px;
+  top: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* .uploadEspacio .form-generico .upload-input-tipovehiculo{
   display: inline-block;
   width: 40px;
   text-align: center;
   margin-top: 0px;
-}
+} */
 
-.uploadEspacio .form-generico .upload-button-sumaresta{
+/* .uploadEspacio .form-generico .upload-button-sumaresta{
   display: inline-block;
   text-align: center;
   margin: 0px 6px;
@@ -69,29 +138,27 @@
   font-size: 22px;
   border: none;
   vertical-align: middle;
-}
+} */
 
 .uploadEspacio .form-generico .upload-div-especiales{
   display: block;
   clear: both;
 }
 
-.uploadEspacio .form-generico .upload-div-especiales .upload-label-especiales{
+/* .uploadEspacio .form-generico .upload-div-especiales .upload-label-especiales{
   width: auto;
   float: left;
   vertical-align: middle;
   color: #8f8f8f;
-  /*font-size: 1.1em;*/
 }
 
 .uploadEspacio .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
-  /*width: 15%;*/
   float: left;
   vertical-align: middle;
   margin-right: 10px;
   position: relative;
   bottom: 1px;
-}
+} */
 
 .uploadEspacio .upload-div-sideimage{
   display: none;
@@ -152,7 +219,7 @@
 }
 
 .uploadEspacio .form-generico .upload-label-tiempoMinimoyMax{
-  width: 40%;
+  width: 35%;
   float: left;
   color: #8f8f8f;
   margin-bottom: 1px;
@@ -160,12 +227,13 @@
 
 .uploadEspacio .form-generico .upload-input-tiempoMinimoyMax{
   display: inline-block;
-  width: 20%;
+  width: 28%;
   float: right;
   text-align: center;
   border-right: none;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
+  line-height: 20px;
 }
 
 .uploadEspacio .form-generico .upload-select-tiempoMinimoyMax{
@@ -173,7 +241,7 @@
   width: 35%;
   float: right;
   text-align: right;
-  padding: 9px 10px;
+  padding: 10px;
   border-left: none;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -189,13 +257,95 @@
   width: 50%;
 }
 
-.uploadEspacio .form-generico .upload-div-diasemana{
-  overflow: hidden;
-  /*margin-top: 5px;*/
+
+.uploadEspacio .form-generico .horarios-holder{
+  margin-top: 20px;
 }
 
+.uploadEspacio .form-generico .upload-div-diasemana{
+  /* overflow: hidden; */
+  text-align: left;
+  padding: 0px 2px;
+}
+
+.uploadEspacio .form-generico .upload-div-diasemana .upload-input-dia, .uploadEspacio .form-generico .upload-div-diasemana .upload-input-hora{
+  margin-top: 0px;
+  width: 70px;
+  display: inline-block;
+  border: none;
+  padding: 5px 0px;
+}
+
+.uploadEspacio .form-generico .upload-div-diasemana .upload-input-hora{
+  width: 45px;
+  text-align: center;
+}
+
+.uploadEspacio .form-generico .upload-label-horario-button{
+  margin: 0px;
+  padding: 0px 0px 2px;
+  font-size: 30px;
+  line-height: 25px;
+  vertical-align: middle;
+  float: right;
+  cursor: pointer;
+}
+
+.uploadEspacio .form-generico .upload-div-agregardia{
+  /* clear: both; */
+  /* overflow: hidden; */
+  margin-top: 20px;
+}
+
+.uploadEspacio .form-generico .upload-div-agregardia .upload-h3-agregardia{
+  display: inline-block;
+  font-size: 18px;
+  width: 140px;
+  margin: 0px;
+}
+
+.uploadEspacio .form-generico .upload-div-div-horario .upload-div-div-div-horario{
+  text-align: left;
+  margin-top: 8px;
+}
+
+.uploadEspacio .form-generico .upload-div-div-horario label{
+  /* display: inline-block; */
+  /* font-size: 18px; */
+  text-align: left;
+  margin: 0px 0px 2px;
+  padding: 0px;
+}
+
+.uploadEspacio .form-generico .upload-div-div-horario select{
+  margin: 0px;
+}
+
+.uploadEspacio .form-generico .upload-div-div-horario .upload-div-div-div-horario-hora{
+  width: 49%;
+  display: inline-block;
+}
+
+.uploadEspacio .form-generico .upload-div-div-horario .upload-div-div-horario-diaentero{
+  margin-top: 8px;
+}
+
+#boton-agregar-horario{
+  display: block;
+  width: 50%;
+  padding: 10px;
+  background-color: #005174;
+  color: #ffffff;
+  border-radius: 2px;
+  margin: 8px auto 0px;
+}
+
+
+
+
+
+
 .uploadEspacio .form-generico .upload-label-diasemana{
-  width: 27%;
   float: left;
   color: #8f8f8f;
 }
@@ -427,11 +577,6 @@
   }
 
   .uploadEspacio .form-generico .form-uploadEspacio .upload-input-direccion{
-    width: 75%;
-  }
-
-  .uploadEspacio .form-generico .form-uploadEspacio .upload-input-numdpto{
-    width: 24.5%;
   }
 
   .form-uploadEspacio .upload-div-ciudadzipcode .upload-input-ciudad{

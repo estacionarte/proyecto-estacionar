@@ -25,18 +25,19 @@ class UploadEspacioRequest extends FormRequest
     public function rules()
     {
       $rules = [
+        'nombre' => 'required|string|min:10',
         'direccion' => 'required|string|max:45',
         'pais' => 'required|string|max:45',
         'provincia' => 'required|string|max:45',
         'ciudad' => 'required_unless:provincia,CABA|string|max:45',
         'zipcode' => 'required|string|min:4|max:8',
         'tipoEspacio' => 'required|string|max:45',
-        'cantAutos' => 'required|numeric|max:2',
-        'cantMotos' => 'required|numeric|max:8',
-        'cantBicicletas' => 'required|numeric|max:8',
+        'cantAutos' => 'required_without_all:cantMotos,cantBicicletas|numeric|max:2',
+        'cantMotos' => 'required_without_all:cantAutos,cantBicicletas|numeric|max:8',
+        'cantBicicletas' => 'required_without_all:cantMotos,cantAutos|numeric|max:8',
         'aptoDiscapacitados' => 'nullable',
         'aptoElectricos' => 'nullable',
-        'infopublica' => 'nullable|string|max:250',
+        'infopublica' => 'required|string|max:250',
         'infoprivada' => 'nullable|string|max:250',
       ];
       $photos = count($this->input('espacioPic'));
