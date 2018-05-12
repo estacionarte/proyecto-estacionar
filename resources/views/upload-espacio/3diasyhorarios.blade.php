@@ -199,7 +199,7 @@
                 @foreach ($horarios as $horario)
                   <div class="upload-div-diasemana">
 
-                    <input type='text' name='diasemana['{{$horario->dia}}']' class='upload-input-dia' value='{{$horario->dia}}' readonly>
+                    <input type='text' name='diasemana[{{$horario->dia}}]' class='upload-input-dia' value='{{$horario->dia}}' readonly>
 
                     <input type='text' class='upload-input-hora' value='{{$espacio->minutosEnHoraDelDia($horario->horaComienzo)}}' disabled>
                     <span style='text-align:center;'> - </span>
@@ -209,9 +209,9 @@
 
                     <hr style='margin: 10px 0px;'>
 
-                    <input type='text' name='horacomienzo['{{$horario->horaComienzo}}']' class='upload-input-hora' value='{{$horario->horaComienzo}}' style='display:none;'>
+                    <input type='text' name='horacomienzo[{{$horario->dia}}]' class='upload-input-hora' value='{{$horario->horaComienzo}}' style='display:none;'>
 
-                    <input type='text' name='horafin['{{$horario->horaFin}}']' class='upload-input-hora' value='{{$horario->horaFin}}' style='display:none;'>
+                    <input type='text' name='horafin[{{$horario->dia}}]' class='upload-input-hora' value='{{$horario->horaFin}}' style='display:none;'>
 
                   </div>
                 @endforeach
