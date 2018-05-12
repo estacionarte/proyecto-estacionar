@@ -211,7 +211,6 @@ class UploadEspacioController extends Controller
           $dia->save();
         } else {
           // Si no está en form, lo borro de DB
-          // POR ALGUN MOTIVO CUANDO BORRO UN REGISTRO ME BORRA TODOS. FALTA VER BIEN QUÉ PASA ACÁ
           $dia->delete();
         }
       // Si no existe en DB
