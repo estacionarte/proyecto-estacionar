@@ -42,18 +42,17 @@
               </div> --}}
 
               <div class="upload-div-div-horario">
-
                 <div class="upload-div-div-div-horario" style="margin-top:0px;">
                   <label for="">Día</label>
                   <select name="dia" class="upload-select-dia" style="" id="dia-select" required>
                     <option value="" selected>Día</option>
-                    <option value="Lunes">Lunes</option>
-                    <option value="Martes">Martes</option>
-                    <option value="Miércoles">Miércoles</option>
-                    <option value="Jueves">Jueves</option>
-                    <option value="Viernes">Viernes</option>
-                    <option value="Sábado">Sábado</option>
-                    <option value="Domingo">Domingo</option>
+                    <option value="Lunes" {{ $horarios->get('Lunes') ? 'disabled' : ''}}>Lunes</option>
+                    <option value="Martes" {{ $horarios->get('Martes') ? 'disabled' : ''}}>Martes</option>
+                    <option value="Miércoles" {{ $horarios->get('Miércoles') ? 'disabled' : ''}}>Miércoles</option>
+                    <option value="Jueves" {{ $horarios->get('Jueves') ? 'disabled' : ''}}>Jueves</option>
+                    <option value="Viernes" {{ $horarios->get('Viernes') ? 'disabled' : ''}}>Viernes</option>
+                    <option value="Sábado" {{ $horarios->get('Sábado') ? 'disabled' : ''}}>Sábado</option>
+                    <option value="Domingo" {{ $horarios->get('Domingo') ? 'disabled' : ''}}>Domingo</option>
                   </select>
                 </div>
 
@@ -196,6 +195,26 @@
                 {{-- @foreach ($iterable as $key => $value)
 
                 @endforeach --}}
+
+                @foreach ($horarios as $horario)
+                  <div class="upload-div-diasemana">
+
+                    <input type='text' name='diasemana['{{$horario->dia}}']' class='upload-input-dia' value='{{$horario->dia}}' readonly>
+
+                    <input type='text' class='upload-input-hora' value='{{$espacio->minutosEnHoraDelDia($horario->horaComienzo)}}' disabled>
+                    <span style='text-align:center;'> - </span>
+                    <input type='text' name='' class='upload-input-hora' value='{{$espacio->minutosEnHoraDelDia($horario->horaFin)}}' disabled>
+
+                    <label onclick='borrarHorario(event)' class='upload-label-horario-button'>&#8854;</label>
+
+                    <hr style='margin: 10px 0px;'>
+
+                    <input type='text' name='horacomienzo['{{$horario->horaComienzo}}']' class='upload-input-hora' value='{{$horario->horaComienzo}}' style='display:none;'>
+
+                    <input type='text' name='horafin['{{$horario->horaFin}}']' class='upload-input-hora' value='{{$horario->horaFin}}' style='display:none;'>
+
+                  </div>
+                @endforeach
 
               </div>
 

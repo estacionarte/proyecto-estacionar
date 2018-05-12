@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DiasYHorariosDeEspacio extends Model
 {
-  use SoftDeletes;
 
   protected $table = 'espacios_diasyhorarios';
 
