@@ -183,34 +183,9 @@ class UploadEspacioController extends Controller
 
     $this->validate($request,
       [
-        'horaComienzoLunes' => 'required|numeric|between:0,23',
-        'minutoComienzoLunes' => 'required|numeric|between:0,59',
-        'horaFinLunes' => 'required|numeric|between:0,23',
-        'minutoFinLunes' => 'required|numeric|between:0,59',
-        'horaComienzoMartes' => 'required|numeric|between:0,23',
-        'minutoComienzoMartes' => 'required|numeric|between:0,59',
-        'horaFinMartes' => 'required|numeric|between:0,23',
-        'minutoFinMartes' => 'required|numeric|between:0,59',
-        'horaComienzoMiércoles' => 'required|numeric|between:0,23',
-        'minutoComienzoMiércoles' => 'required|numeric|between:0,59',
-        'horaFinMiércoles' => 'required|numeric|between:0,23',
-        'minutoFinMiércoles' => 'required|numeric|between:0,59',
-        'horaComienzoJueves' => 'required|numeric|between:0,23',
-        'minutoComienzoJueves' => 'required|numeric|between:0,59',
-        'horaFinJueves' => 'required|numeric|between:0,23',
-        'minutoFinJueves' => 'required|numeric|between:0,59',
-        'horaComienzoViernes' => 'required|numeric|between:0,23',
-        'minutoComienzoViernes' => 'required|numeric|between:0,59',
-        'horaFinViernes' => 'required|numeric|between:0,23',
-        'minutoFinViernes' => 'required|numeric|between:0,59',
-        'horaComienzoSábado' => 'required|numeric|between:0,23',
-        'minutoComienzoSábado' => 'required|numeric|between:0,59',
-        'horaFinSábado' => 'required|numeric|between:0,23',
-        'minutoFinSábado' => 'required|numeric|between:0,59',
-        'horaComienzoDomingo' => 'required|numeric|between:0,23',
-        'minutoComienzoDomingo' => 'required|numeric|between:0,59',
-        'horaFinDomingo' => 'required|numeric|between:0,23',
-        'minutoFinDomingo' => 'required|numeric|between:0,59',
+        'diasemana.*' => 'required|string',
+        'horacomienzo.*' => 'required|numeric',
+        'horafin.*' => 'required|numeric',
       ]
     );
 
@@ -237,13 +212,39 @@ class UploadEspacioController extends Controller
         $diasYHorariosDeEspacio->idEspacio = $espacio->id;
       }
 
-      // Convierto la hora en minutos
-      $horacomienzo = $request->input('horaComienzo' . $value) * 60 + $request->input('minutoComienzo' . $value);
-      $horafin = $request->input('horaFin' . $value) * 60 + $request->input('minutoFin' . $value);
+      $espacio = Espacio::findOrFail($id);
+      // 
+      // //Borro los descuentos
+      // $descuentos = $espacio->descuentos()->get();
+      // foreach ($descuentos as $descuento) {
+      //   $descuento->delete();
+      // }
+      //
+      // //Borro los diasyhorarios
+      // $diasyhorarios = $espacio->diasyhorarios()->get();
+      // foreach ($diasyhorarios as $diayhorario) {
+      //   $diayhorario->delete();
+      // }
+      //
+      // //Borro las fotos
+      // $fotos = $espacio->fotos()->get();
+      // foreach ($fotos as $foto) {
+      //   $archivofoto = '/public/espacios/'. $foto->photoname;
+      //   Storage::delete($archivofoto);
+      //   $foto->delete();
+      // }
+      //
+      // //Borro el espacio
+      // $espacio->delete();
 
+      // Asigno/reemplazo valores
       $diasYHorariosDeEspacio->dia = $value;
       $diasYHorariosDeEspacio->horaComienzo = $horacomienzo;
       $diasYHorariosDeEspacio->horaFin = $horafin;
+
+      // Convierto la hora en minutos
+      $horacomienzo = $request->input('horaComienzo' . $value) * 60 + $request->input('minutoComienzo' . $value);
+      $horafin = $request->input('horaFin' . $value) * 60 + $request->input('minutoFin' . $value);
 
       $diasYHorariosDeEspacio->save();
 
