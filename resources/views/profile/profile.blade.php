@@ -11,10 +11,10 @@
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#dashboard"><i class="fa fa-desktop"></i> <label id="infper">Información general</label></a></li>
     <li><a data-toggle="tab" href="#profile"><i class="fa fa-info-circle"></i> <label id="infper">Información personal</label></a></li>
-    <li><a data-toggle="tab" href="#img-profile"><i class="fa fa-user-circle"></i><label>Imagen de perfil</label></a></li>
+    {{-- <li><a data-toggle="tab" href="#img-profile"><i class="fa fa-user-circle"></i><label>Imagen de perfil</label></a></li> --}}
     <li><a data-toggle="tab" href="#datos"><i class="fa fa-check-circle"></i><label>Datos verificados</label></a></li>
     <li><a data-toggle="tab" href="#creditos"><i class="fa fa-gift"></i><label>Obtener Créditos</label></a></li>
-    <li><a data-toggle="tab" href="#referencias"><i class="fa fa-handshake-o"></i><label>Calificaciones</label></a></li>
+    <li><a data-toggle="tab" href="#evaluaciones"><i class="fa fa-handshake-o"></i><label>Evaluaciones</label></a></li>
   </ul>
 
   <div class="tab-content">
@@ -22,14 +22,38 @@
       <div class="profile-welcome-tablet">
         <h4>¡Bienvenido {{Auth::user()->firstName}}!</h4>
       </div>
-      <div class="img-profile-container">
-        <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
+      <div class="imagen-load-container">
+        <div class="img-profile">
+          <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
+        </div>
+        <div class="load-img-profile">
+          <form method="post" enctype="multipart/form-data" action="{{ route ('profile')}}">
+            {{ csrf_field() }}
+            <div class="row">
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>ELEGIR</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+              <div class="left-align">
+                  <button class="btn waves-effect waves-light teal accent-4" type="submit">Cargar foto
+                      <i class="material-icons right">send</i>
+                  </button>
+                  <a class="tooltipped" data-position="right" data-delay="50" data-tooltip="Para que los conductores y anfitriones se conozcan, lo mejor es añadir fotos de la cara que sean nítidas y estén sacadas de frente. Asegurate de utilizar una foto en la que se te vea bien la cara y que no incluya información personal o sensible que preferirías que los conductores o anfitriones no viera."><img src="/images/icons/ask.png"></a>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="txt-img-profile">
-        <p>Texto aca</p>
+      <div class="profile-derecha">
+        <h3>lalalala</h3>
+        <h2>dsgbdhbdsgshdg</h2>
+        <p>dgdfgdfgfdgdfigndijbsdigvbsdigbdhbvdhgb</p>
       </div>
-      {{-- <a data-toggle="tab" href="#img-profile">Subir una foto</a> --}}
-
     </div>
 
     <div id="profile" class="tab-pane fade">
@@ -40,139 +64,101 @@
         <form class="form-horizontal" action="{{ route('profile') }}" method="post">
           {{-- {{ method_field('PUT') }} --}}
           {{ csrf_field() }}
-          <div class="form-group">
-            <label class="control-label col-xs-2 col-sm-2" for="nombre">Nombre:</label>
-            <div class="col-xs-8 col-sm-7">
-              <input type="text" class="form-control" id="nombre" value="{{Auth::user()->firstName}}">
+          <div class="row">
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
+                <input id="nombre" type="text" name="firstName" value="{{Auth::user()->firstName}}">
+                <label for="nombre">Nombre</label>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-xs-2 col-sm-2" for="apellido">Apellido:</label>
-            <div class="col-xs-8 col-sm-7">
-              <input type="text" class="form-control" id="apellido" value="{{Auth::user()->lastName}}">
-              <h5>Solo se mostrará tu nombre de pila en tu perfil público. Cuando hagas una solicitud de reservación, el anfitrión podrá ver tu nombre y apellido</h5>
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l5">
+                <input id="apellido" type="text" name="lastName" value="{{Auth::user()->lastName}}">
+                <label for="apellido">Apellido</label>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-xs-2 col-sm-2" for="pais">País:</label>
-          <div class="col-xs-8 col-sm-4">
-            <select class="form-control" id="pais">
-              <option selected>Seleccionar</option>
-              <option value={{Auth::user()->country}}>Argentina</option>
-            </select>
-          </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-xs-2 col-sm-2" for="genero">Soy:</label>
-          <div class="col-xs-8 col-sm-4">
-            <select class="form-control" id="genero">
-              <option selected>Género</option>
-              <option>Hombre</option>
-              <option>Mujer</option>
-              <option>Otro</option>
-            </select>
-          </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-xs-2 col-sm-2" for="dia">Fecha de nacimiento:</label>
-            <div class="col-xs-3 col-sm-2">
-              <input type="text" class="form-control" id="dia" value="{{$dia}}">
+            <div class="col s8 offset-s2 l10 offset-l1">
+              <h5>Solo se mostrará tu nombre de pila en tu perfil público. Cuando hagas una solicitud de reservación, el anfitrión podrá ver tu nombre y apellido.</h5>
             </div>
-            <div class="col-xs-3 col-sm-2 profile-mes">
-              <input type="number" class="form-control" id="mes" value="{{$mes}}">
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
+              <select class="icons">
+                <option value="" selected>País</option>
+                <option value="{{Auth::user()->country}}" data-icon="/images/icons/argentina.png">Argentina</option>
+              </select>
             </div>
-            <div class="col-xs-3 col-sm-2 profile-mes">
-              <input type="number" class="form-control" id="anio" value="{{$anio}}">
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l5">
+             <select class="icons">
+               <option value="" disabled selected>Soy</option>
+               <option value="" data-icon="/images/icons/male.png">Hombre</option>
+               <option value="" data-icon="/images/icons/female.png">Mujer</option>
+             </select>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-xs-2 col-sm-2" for="dni">DNI:</label>
-            <div class="col-xs-8 col-sm-7">
-              <input type="text" class="form-control" id="dni" value="{{Auth::user()->DNI}}">
-              <h5 style="display:inline">No compartiremos tu DNI con otros usuarios de Estacionados.</h5><a data-toggle="tab" href="#datos"> Más información</a>
+            <div class="input-field col s2 offset-s2 l1 offset-l1">
+                <input id="dia"  type="number" name="birthDay" min="1" max="31" value="{{$dia}}">
+                <label for="dia">Dia</label>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-xs-2 col-sm-2" for="email">Email:</label>
-            <div class="col-xs-8 col-sm-7">
-              <input type="email" class="form-control" id="email" value="{{Auth::user()->email}}">
-              <h5>No compartiremos tu dirección de correo electrónico personal con otros usuarios de Estacionados.</h5>
+            <div class="input-field col s2 l1 ">
+                <input id="dia"  type="number" name="birthDay" min="1" max="31" value="{{$mes}}">
+                <label for="dia">Mes</label>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-xs-2 col-sm-2" for="areaCode">Telefono:</label>
-            <div class="col-xs-4 col-sm-2">
-              <input type="number" class="form-control" id="areaCode" placeholder="Cod. área" value="{{Auth::user()->codeArea}}">
+            <div class="input-field col s3 l2">
+                <input id="dia"  type="number" name="birthDay" min="1" max="31" value="{{$anio}}">
+                <label for="dia">Año</label>
             </div>
-            <div class="col-xs-8 col-sm-5 col-xs-offset-2 col-sm-offset-0 phonenumb">
-              <input type="number" class="form-control" id="phone" placeholder="Número" value="{{Auth::user()->phoneNumber}}">
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
+                <input id="dni" type="text" value="{{Auth::user()->DNI}}">
+                <label for="">DNI</label>
+                <h5 style="display:inline">No compartiremos tu DNI con otros usuarios de Estacionados.</h5><a data-toggle="tab" href="#datos"> Más información</a>
             </div>
-            <div class="col-xs-8 col-sm-7 col-xs-offset-2 col-sm-offset-2" >
-              <h5 class="numero-txt">Tu número solo se compartirá cuando tengas una reservación confirmada con otro usuario de Estacionados. Es el método que utilizamos para ponernos en contacto vos.</h5>
-
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
+                <input id="email" type="email" value="{{Auth::user()->email}}">
+                <label for="email">Email</label>
+                <h5>No compartiremos tu dirección de correo electrónico personal con otros usuarios de Estacionados.</h5>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-xs-2 col-sm-2" for="contactNumber">Contacto:</label>
-            <div class="col-xs-8 col-sm-7">
-              <input type="text" class="form-control" id="contactName" placeholder="Nombre" value="{{Auth::user()->nombre2}}">
-              <input type="number" class="form-control" id="contactNumber" placeholder="Teléfono" style="margin-top:5px" value="{{Auth::user()->phoneNumber2}}">
-              <h5>Proporcioná los datos de contacto de una persona de confianza a la que podamos contactar en caso de emergencia.</h5>
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l5">
+                <input id="cbu" type="text" value="{{Auth::user()->cbu}}">
+                <label for="cbu">CBU o Alias</label>
+                <h5>Proporcioná los datos de tu cbu o Alias para poder recibir las ganancias de tus alquileres. No compartiremos esta infomración con otros usuarios de Estacionados.</h5>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-xs-2 col-sm-2" for="phone2">CBU o Alias:</label>
-            <div class="col-xs-8 col-sm-7">
-              <input type="text" class="form-control" id="cbu" placeholder="CBU o Alías" style="margin-top:5px" value="{{Auth::user()->cbu}}">
-              <h5>Proporcioná los datos de tu cbu o Alias para poder recibir las ganancias de tus alquileres. No compartiremos esta infomraciónl con otros usuarios de Estacionados.</h5>
+            <div class="input-field col s3 offset-s2 l1 offset-l1">
+                <input id="areaCode" type="number" value="{{Auth::user()->codeArea}}">
+                <label for="areaCode">Cod. área</label>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2  col-sm-10">
-              <button type="submit" class="btn btn-danger">Guardar</button>
+            <div class="input-field col s5 l3">
+                <input id="phone" type="number" value="{{Auth::user()->phoneNumber}}">
+                <label for="phone">Mi N° de teléfono</label>
+                <h5>Tu número solo se compartirá cuando tengas una reservación confirmada con otro usuario de Estacionados. Es el método que utilizamos para ponernos en contacto vos.</h5>
+            </div>
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
+                <input id="contactName" type="text" value="{{Auth::user()->nombre2}}">
+                <label for="contactName">Nombre de contacto</label>
+            </div>
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
+                <input id="contactNumber" type="number" value="{{Auth::user()->phoneNumber2}}">
+                <label for="contactNumber">N° teléfono de contacto</label>
+            </div>
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
+                <h5>Proporcioná los datos de contacto de una persona de confianza a la que podamos contactar en caso de emergencia.</h5>
+            </div>
+            <div class="col s10 offset-l1 right-align boton">
+                <button class="btn waves-effect waves-light  red darken-2" type="submit">Guardar
+                    <i class="material-icons right">send</i>
+                </button>
             </div>
           </div>
         </form>
       </div>
     </div>
-
-
-    <div id="img-profile" class="tab-pane fade">
-      <div class="perfil-caja-titulo">
-        <h4>Imagen de perfil</h4>
-      </div>
-      <div class="img-profile-container">
-        <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
-      </div>
-      <div class="txt-img-profile">
-        <p>Para que los conductores y anfitriones se conozcan, lo mejor es añadir fotos de la cara que sean nítidas y estén sacadas de frente. Asegurate de utilizar una foto en la que se te vea bien la cara y que no incluya información personal o sensible que preferirías que los conductores o anfitriones no viera</p>
-      </div>
-
-      <div class="btn-img-profile">
-        <form method="post" enctype="multipart/form-data" action="{{ route ('profile')}}">
-          {{ method_field('PUT') }}
-          {{ csrf_field() }}
-          <div class="box">
-          <label for="profilePic"><figure><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg></figure><span>redondo a file&hellip;</span></label>
-          <input type="file" name="profilePic" id="profilePic" accept="image/*" style="{{ $errors->has('profilePic') ? ' border: solid 2px #990606' : '' }}">
-          <input class="btn" type="submit" name="boton-submit" value="selecciona cargar">
-          {{-- <a href="" type="submit">Subir una foto</a> --}}
-        </div>
-        </form>
-      </div>
-    </div>
-
 
     <div id="datos" class="tab-pane fade datos">
       <div class="perfil-caja-titulo">
         <h4>Información verificada</h4>
       </div>
-      <div class="">
+      <div class="datos-titulo">
+        <h4>Para reservar o alqulilar un espacio es necesario tener registrado los siguientes datos</h4>
+      </div>
+      <div class="datos-caja">
         <h3>Direccion de correo electrónico</h3>
         <i class="fa fa-check-circle-o "></i>
         <p>Confirmaste tu dirección de correo electrónico: <strong>{{Auth::user()->email}}</strong> <br> Realizar este paso es importante, ya que nos permite comunicarnos con vos de forma segura.</p>
       </div>
-      <div class="">
+      <div class="datos-caja">
         <h3>Número telefónico</h3>
         @if (!Auth::user()->phoneNumber)
           <i class="fa fa-exclamation-circle"></i>
@@ -181,18 +167,26 @@
         @endif
         <p>Tu número solo se comparte con otros miembros de Estacionados cuando tenés una reservación confirmada con ellos.</p>
       </div>
-      <div class="">
+      <div class="datos-caja">
         <h3>Documento</h3>
         @if (!Auth::user()->DNI)
           <i class="fa fa-exclamation-circle"></i>
           @else
             <i class="fa fa-check-circle-o"></i>
         @endif
-        <p class="last">No compartiremos tu DNI con otros usuarios de Estacionados. Trabajamos constantemente para que nuestra comunidad sea lo más segura posible para todo el mundo. Por ello, antes de reservar o publicar un espacio, todos los conductores y anfitriones deben añadir una identifiación</p>
+        <p class="">No compartiremos tu DNI con otros usuarios de Estacionados. Trabajamos constantemente para que nuestra comunidad sea lo más segura posible para todo el mundo. Por ello, antes de reservar o publicar un espacio, todos los conductores y anfitriones deben añadir una identifiación</p>
+      </div>
+      <div class="datos-caja">
+        <h3>CBU o Alias</h3>
+        @if (!Auth::user()->cbu)
+          <i class="fa fa-exclamation-circle"></i>
+          @else
+            <i class="fa fa-check-circle-o"></i>
+        @endif
+        <p class="last">Proporcioná los datos de tu cbu o Alias para poder recibir las ganancias de tus alquileres. No compartiremos esta infomración con otros usuarios de Estacionados.</p>
       </div>
 
     </div>
-
 
     <div id="creditos" class="tab-pane fade creditos">
       <div class="perfil-caja-titulo">
@@ -200,20 +194,59 @@
       </div>
       <div class="profile-credit">
         {{-- <img src="images/creditos/credito-img.png"> --}}
-        <h3>¡Invitá a tus amigos y obtené créditos para estacionar!</h3>
+        <h4>¡Invitá a tus amigos y obtené créditos para estacionar!</h4>
         <p>Conseguí hasta 50% de descuento en tu próximo alquiler.</p>
-        <div class="btn btn-warning">
-          <a href="credits.php">CONSEGUIR CRÉDITO</a>
-        </div>
+          <a href="creditos" class="btn btn-warning">CONSEGUIR CRÉDITO</a>
       </div>
     </div>
 
-
-    <div id="referencias" class="tab-pane fade">
+    <div id="evaluaciones" class="tab-pane fade evaluaciones">
       <div class="perfil-caja-titulo">
-        <h4>Referencias</h4>
+        <h4>Evaluaciones</h4>
       </div>
-      <p>aca van comentarios de otros usuarios sobre vos. esto es visible para todos</p>
+      <div class="evaluacion-titulo">
+        <h4>Las evaluaciones se envían al finalizar una reservación a través de Estacionados. Todas las que recibas estarán disponibles tanto en esta sección como en tu perfil público.</h4>
+      </div>
+      <div class="evaluacion-caja">
+        <div class="usuario-caja">
+          <a href="#">
+            <div class="chip">
+              <img src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="Contact Person">
+              <label for="">{{Auth::user()->firstName}}</label>
+            </div>
+          </a>
+        </div>
+        <div class="descripcion-caja">
+          <p>Fue un placer recibirlos, gracias por su buena predisposicion!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+      <div class="evaluacion-caja">
+        <div class="usuario-caja">
+          <a href="#">
+            <div class="chip">
+              <img src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="Contact Person">
+              <label for="">{{Auth::user()->firstName}}</label>
+            </div>
+          </a>
+        </div>
+        <div class="descripcion-caja">
+          <p>El auto perdia aceite, me ensució toda la cochera. Y era un maleducado</p>
+        </div>
+      </div>
+      <div class="evaluacion-caja">
+        <div class="usuario-caja">
+          <a href="#">
+            <div class="chip">
+              <img src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="Contact Person">
+              <label for="">{{Auth::user()->firstName}}</label>
+            </div>
+          </a>
+        </div>
+        <div class="descripcion-caja">
+          <p>Todo bien</p>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -226,6 +259,17 @@
   <script src="{{ URL::asset('js/dropzone.js')}}"></script>
 
   <script>
+      // SELECT DE FORMULARIO
+        $(document).ready(function() {
+          $('select').material_select();
+        });
+  </script>
+
+  <script>
+
+
+
+        // -----------------------
         Dropzone.options.myDropzone = {
             autoProcessQueue: false,
             uploadMultiple: true,
@@ -255,4 +299,5 @@
             }
         };
     </script>
+
 @endsection

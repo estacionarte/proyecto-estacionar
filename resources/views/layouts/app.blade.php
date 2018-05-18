@@ -81,9 +81,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#085174">
     <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="theme-color" content="#48A8C1">
+    <meta name="theme-color" content="#085174">
 
     {{-- Scripts --}}
     @yield('leaflet')
@@ -107,7 +107,7 @@
             <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="avatar" src="/storage/profilePic/{{Auth::user()->profilePic}}" alt="avatar"></span>
 
             {{-- NOMBRE DE PERFIL DE USUARIO --}}
-            <span class="welcome-user" onclick="openNav()"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span>
+            {{-- <span class="welcome-user" onclick="openNav()"><h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4></span> --}}
 
             <a href="/anfitrion" class="anfitrion-btn"> Convertite en anfitrión</a>
 
@@ -118,12 +118,18 @@
 
           {{-- MENÚ LATERAL --}}
           <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="/images/close-profile-nav2.png" alt=""></a>
-            <a href="{{ route('profile') }}" class="fa fa-btn fa-user"> Mi perfil</a>
-            <a href="/anfitrion" class="fa fa-info-circle"> Convertite en anfitrión</a>
-            {{-- <a href="#" class="fa fa-address-card-o"> Configuración de mi cuenta</a> --}}
-            <a href="faqs" class="fa fa-info-circle"> Ayuda</a>
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="fa fa-btn fa-sign-out"> Salir</a>
+            <div class="sidenav-img">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="/images/icons/sidenav-close.png" alt=""></a>
+              <h4>{{Auth::user()->firstName}} {{Auth::user()->lastName}}</h4>
+              <h5>{{Auth::user()->email}}</h5>
+              {{-- <img src="/images/sidenav-top.png" alt=""> --}}
+            </div>
+            <div class="sidenav-listado">
+              <a href="{{ route('profile') }}" class=""><img src="/images/icons/sidenav-perfil.png" alt=""> Mi perfil</a>
+              <a href="/anfitrion" class=""><img src="/images/icons/sidenav-anfitrion.png" alt=""> Convertite en anfitrión</a>
+              <a href="faqs" class=""><img src="/images/icons/sidenav-ayuda.png" alt=""> Ayuda</a>
+              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class=""><img src="/images/icons/sidenav-salir.png" alt=""> Salir</a>
+            </div>
           </div>
 
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -170,11 +176,12 @@
                       <input type="password" name="password" id="popup-pass" value="{{ old('password') }}">
                       <label for="password">Contraseña</label>
                     </div>
-                    <div class="input-field col s12 offset-s3 recordarme">
-                      <label>
-                        <input id="indeterminate-checkbox" type="checkbox" name="recordarme" value="recordarme" {{ old('recordarme') ? 'checked' : '' }} />
-                        <span>Recordarme</span>
-                      </label>
+                    <div class="switch">
+                       <label>
+                         <input type="checkbox"  name="recordarme" value="recordarme" {{ old('recordarme') ? 'checked' : '' }}>
+                         <span class="lever"></span>
+                         Recordarme
+                       </label>
                     </div>
                   </div>
                   <div class="row" id="loaders">
@@ -239,18 +246,24 @@
       </div>
     </section>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="{{ URL::asset('js/jquery.min.js')}}"></script>
-  <script src="{{ URL::asset('js/owl.carousel.js')}}"></script>
 
-  {{-- Materialize --}}
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="{{ URL::asset('js/jquery.min.js')}}"></script>
+
+    <script src="{{ URL::asset('js/owl.carousel.js')}}"></script>
+
+    <script src="js/materialize.min.js"></script>
+
 
   {{-- POPUP-LOGIN --}}
   <script src="js/popup-signin.js"></script>
 
   {{-- HAMURGUESA --}}
   <script>
+
+  // $(document).ready(function(){
+  //   $('.sidenav').sidenav();
+  // });
+
 
     $('#toggle').click(function (){
       $(this).toggleClass("on");
@@ -262,12 +275,16 @@
   {{-- ABRIR POPUP --}}
   <script>
     function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";}
+        document.getElementById("mySidenav").style.width = "250px";
+        // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      }
 
     function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";}
+      document.getElementById("mySidenav").style.width = "0";
+      // document.body.style.backgroundColor = "white";
+    }
 
-      var elementPosition = $('#element').offset();
+      // var elementPosition = $('#element').offset();
 
 // $(window).scroll(function(){
 //    if($(window).scrollTop() > 500){

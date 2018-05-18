@@ -28,6 +28,17 @@ class ContactController extends Controller
 
       $registrado = 1;
 
+      // ENVÍO DE EMAIL MEDIANTE EL FORM
+      $data = array(
+        'name' => $request->input('name'),
+        'email' => $request->input('email'),
+      );
+
+      Mail::send('emails.comming-soon', $data, function($message){
+        $message->to('info@estacionados.com')->subject('LANDING-Suscripción');
+        $message->from('no-reply@estacionados.com', 'LandingPage');
+      });
+
       return view('coming-soon', compact('registrado'));
     }
 

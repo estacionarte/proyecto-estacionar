@@ -1,6 +1,12 @@
   // variables
+  const nombre = document.getElementById('nombre');
+  const apellido = document.getElementById('apellido');
+  const dia = document.getElementById('dia');
+  const mes = document.getElementById('mes');
+  const anio = document.getElementById('anio');
   const email = document.getElementById('email');
   const password = document.getElementById('password');
+  const password2 = document.getElementById('password2');
   const btnEnviar = document.getElementById('enviar');
 
   // event listener
@@ -11,8 +17,14 @@
     document.addEventListener('DOMContentLoaded', inicioApp);
 
     // campos del form
+    nombre.addEventListener('blur', validarCampo);
+    apellido.addEventListener('blur', validarCampo);
+    dia.addEventListener('blur', validarCampo);
+    mes.addEventListener('blur', validarCampo);
+    anio.addEventListener('blur', validarCampo);
     email.addEventListener('blur', validarCampo);
     password.addEventListener('blur', validarCampo);
+    password2.addEventListener('blur', validarCampo);
     btnEnviar.addEventListener('click', registrarse);
   }
 
@@ -34,7 +46,7 @@
 
     let errores = document.querySelectorAll('.error');
 
-    if (email.value !== '' && password.value !== '') {
+    if (nombre.value !== '' && apellido.value !== '' && dia.value !== '' && mes.value !== '' && anio.value !== '' && password2.value !== '' && email.value !== '' && password.value !== '') {
         if (errores.value !== 0) {
           btnEnviar.disabled = false;
         }
@@ -44,7 +56,7 @@
   // efecto spinner
   function registrarse(){
     // spinner al presionar el boton-submit
-    const spinnerGif = document.querySelector('#loaders');
+    let spinnerGif = document.querySelector('#signupLoader');
     spinnerGif.style.display = 'block';
 
     // e.preventDefault();

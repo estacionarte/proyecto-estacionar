@@ -59,7 +59,9 @@
   cursor: pointer;
   transition: background-color .5s;
 }*/
-
+.signin form .row{
+  margin-right: 0;
+}
 .signin a{
   display: block;
   text-align: center;
@@ -103,16 +105,20 @@
   padding: 0 50px;
 }
 
-.signin form .recordarme{
-  margin: 0;
+.signin form .switch{
+  text-align: center;
+}
+
+.signin form .switch label{
+  padding-top: 15px;
 }
 
 .signin form .boton{
   text-align: center;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
-#loaders{
+#signinLoader{
   text-align: center;
   margin-top: 40px;
   display: none;

@@ -24,14 +24,15 @@
                 <input id="login-pass" type="password" name="password" value="{{ old('password') }}">
                 <label for="password">Contraseña</label>
               </div>
-              <div class="input-field col s12 offset-s4 offset-m5 recordarme">
-                <label>
-                  <input id="indeterminate-checkbox" type="checkbox" name="recordarme" value="recordarme" {{ old('recordarme') ? 'checked' : '' }} />
-                  <span>Recordarme</span>
-                </label>
+              <div class="switch">
+                 <label>
+                   <input type="checkbox"  name="recordarme" value="recordarme" {{ old('recordarme') ? 'checked' : '' }}>
+                   <span class="lever"></span>
+                   Recordarme
+                 </label>
               </div>
             </div>
-            <div class="row" id="loaders">
+            <div class="row" id="signinLoader">
                 <img id="spinner" src="/images/spinner.gif" width="150">
             </div>
             <div class="col s12 boton">
@@ -59,5 +60,5 @@
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
+  <script src="js/signin.js"></script>
 @endsection

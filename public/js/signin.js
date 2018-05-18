@@ -1,7 +1,7 @@
   // variables
-  const email = document.getElementById('login-email');
-  const password = document.getElementById('login-pass');
-  const btnEnviar = document.getElementById('login-enviar');
+  const loginEmail = document.getElementById('login-email');
+  const loginPassword = document.getElementById('login-pass');
+  const loginBtnEnviar = document.getElementById('login-enviar');
 
   // event listener
   eventListeners();
@@ -11,15 +11,15 @@
     document.addEventListener('DOMContentLoaded', inicioApp);
 
     // campos del form
-    email.addEventListener('blur', validarCampo);
-    password.addEventListener('blur', validarCampo);
-    btnEnviar.addEventListener('click', loguearse);
+    loginEmail.addEventListener('blur', validarCampo);
+    loginPassword.addEventListener('blur', validarCampo);
+    loginBtnEnviar.addEventListener('click', loguearse);
   }
 
   // funciones
   function inicioApp(){
     // deshabilitar el envio
-    btnEnviar.disabled = true;
+    loginBtnEnviar.disabled = true;
   }
 
   function validarCampo(){
@@ -34,9 +34,9 @@
 
     let errores = document.querySelectorAll('.error');
 
-    if (email.value !== '' && password.value !== '') {
+    if (loginEmail.value !== '' && loginPassword.value !== '') {
         if (errores.value !== 0) {
-          btnEnviar.disabled = false;
+          loginBtnEnviar.disabled = false;
         }
     }
   }
@@ -44,7 +44,7 @@
   // efecto spinner
   function loguearse(){
     // spinner al presionar el boton-submit
-    const spinnerGif = document.querySelector('#loaders');
+    let spinnerGif = document.querySelector('#signinLoader');
     spinnerGif.style.display = 'block';
 
     // e.preventDefault();

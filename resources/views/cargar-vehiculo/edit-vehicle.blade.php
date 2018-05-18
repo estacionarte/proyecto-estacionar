@@ -27,6 +27,12 @@
   </div>
 
   <script>
+    // SELECT DE FORMULARIO
+      $(document).ready(function() {
+        $('select').material_select();
+      });
+  </script>
+  <script>
   function confirmar(e) {
     if (confirm('¿Cancelar cambios y volver al perfil?')) {
       window.location.replace("{{ route('profile')}}");

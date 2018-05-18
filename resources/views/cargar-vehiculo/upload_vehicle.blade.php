@@ -22,7 +22,13 @@
     </div>
   </div>
 
-
+  <script>
+      // SELECT DE FORMULARIO
+        $(document).ready(function() {
+          $('select').material_select();
+        });
+  </script>
+  
       <script type="text/javascript">
         function mostrarMarca() {
           var mostrar = document.getElementById("vehiculo").value;

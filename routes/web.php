@@ -97,7 +97,6 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => ['auth','coming.soon
 });
 // ******************************************************************************
 
-// ************************ QUIENES SOMOS  *********************
 Route::get('/nosotros', function () {
     return view('nosotros');
 });
@@ -110,13 +109,15 @@ Route::get('/politica-y-privacidad', function () {
     return view('politica-y-privacidad');
 })->middleware('coming.soon');
 
-Route::get('/creditos', function () {
-    return view('credits');
-})->middleware('coming.soon');
+Route::get('/creditos', 'CreditsController@mostrarCreditsForm')->name('showCreditsForm')->middleware('coming.soon');
+Route::post('/creditos', 'CreditsController@enviarCredits')->name('sendCreditsForm');
 
 Route::get('/mantenimiento', function () {
     return view('underconstruction');
 })->middleware('coming.soon');
+Route::get('/pruebaform', function () {
+    return view('cargar-vehiculo.pruebaform');
+});
 
 Route::get('resultados', 'EspaciosController@search')->name('show.search')->middleware('coming.soon');
 

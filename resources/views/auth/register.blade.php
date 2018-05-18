@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="row" id="loaders">
+            <div class="row" id="signupLoader">
                 <img id="spinner" src="/images/spinner.gif" width="150">
             </div>
             <div class="row">
@@ -92,6 +92,7 @@
   </div>
 
 </div>
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/signup.js"></script>

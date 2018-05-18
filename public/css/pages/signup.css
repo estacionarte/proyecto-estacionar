@@ -47,6 +47,11 @@
   padding: 0 60px 40px;
 }
 
+#signupLoader{
+  display: none;
+  text-align: center;
+}
+
 /****************** RECUPERO CONTRASEÑA *******************/
 .recuperar-password p{
   font-family: 'Roboto Condensed', sans-serif;

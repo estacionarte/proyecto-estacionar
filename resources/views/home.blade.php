@@ -2,11 +2,12 @@
 @section('title')Estacionados @endsection
 @section('content')
 
-<section class="banner-container">
-  
+<section class="banner-container" id="yoo">
+
   <article class="shape">
     <h2>Encontrá y reservá lugar para tu vehículo</h2>
-    <h3>//Más de 10.000 usuarios ya confían en nosotros QUE PONEMOS ACA?//</h3>
+    {{-- <h2>Estacionar nunca fué tan fácil</h2> --}}
+    <h3>Olvidate de dar vueltas buscando donde estacionar. Elegí entre los de espacios <br>disponibles y reservalo en minutos.</h3>
 
     <div class="form-generico">
       <form class="search-espacios-form" action="{{ route('show.search')}}" method="get" onsubmit="return validarForm();">
@@ -102,15 +103,15 @@
       <img class="celular" src="/images/home/celular.png" alt="celular">
       <p>Ese espacio de tu hogar que tenés sin aprovechar, podés convertirlo en dinero cuando no lo estes usando. Cargá tu espacio de estacionamiento con Estacionados y sé recompensado por ayudar a los conductores de tu ciudad.<br>Vos tenés el control:</p>
       <div class="anfitrion-pasos">
-        <img class="icono" src="icons/reloj.png" alt="reloj">
+        <img class="icono" src="/images/icons/reloj.png" alt="reloj">
         <p>Cargás tu espacio en minutos</p>
       </div>
       <div class="anfitrion-pasos">
-        <img class="icono" src="icons/ajustes.png" alt="tarifa">
+        <img class="icono" src="/images/icons/ajustes.png" alt="tarifa">
         <p>Gestioná la tarifa mas apropiada a tus necesidades, disponibilidad y detalles que creas necesarios</p>
       </div>
       <div class="anfitrion-pasos">
-        <img class="icono" src="icons/dinero.png" alt="dinero">
+        <img class="icono" src="/images/icons/dinero.png" alt="dinero">
         <p>Ganá dinero sin trabajo adicional</p>
       </div>
       <p><a href="/anfitrion" class="btn btn-default">Conocer más sobre ser <strong>Anfitrión</strong></a></p>
@@ -131,15 +132,15 @@
       <img class="celular" src="/images/home/celular.png" alt="celular">
       <p>No mas tiempo perdido dando vueltas buscando donde estacionar.<br> Simplemente elegis, reservas y estacionás.<br>Estacionados te facilita la comparación de precios, disponibilidad y reputación de usuarios en tiempo real.</p>
       <div class="anfitrion-pasos">
-        <img class="icono" src="icons/calendario.png" alt="reloj">
+        <img class="icono" src="/images/icons/calendario.png" alt="reloj">
         <p>Reservá ese estacionamiento donde vos lo necesitas por adelantado</p>
       </div>
       <div class="anfitrion-pasos">
-        <img class="icono" src="icons/comparar.png" alt="tarifa">
+        <img class="icono" src="/images/icons/comparar.png" alt="tarifa">
         <p>Compará los precios y disponibilidad en tiempo real</p>
       </div>
       <div class="anfitrion-pasos">
-        <img class="icono" src="icons/dinero.png" alt="dinero">
+        <img class="icono" src="/images/icons/dinero.png" alt="dinero">
         <p>Extendé tu reserva en caso de que lo necesites</p>
       </div>
       <p><a href="/anfitrion" class="btn btn-default">Conocer más sobre cómo <strong>Estacionar</strong></a></p>
