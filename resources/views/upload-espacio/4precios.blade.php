@@ -32,30 +32,62 @@
 
             <div class="upload-div-precio">
               <label for="" class="upload-label-precioPorMinutoSigno">$</label>
-              <input type="text" placeholder="0,75" name="precioPorMinuto" class="upload-input-precioPorMinuto" value="{{ old('precioPorMinuto', $espacio->precioAutosMinuto) }}">
-              <label for="" class="upload-label-precioPorMinuto">por minuto</label>
+              {{-- <input type="text" placeholder="0,75" name="precioPorMinuto" class="upload-input-precioPorMinuto" value="{{ old('precioPorMinuto', $espacio->precioAutosMinuto) }}"> --}}
+              <select name="precioPorMinuto" class="upload-input-precioPorMinuto" required>
+                <option value="" selected>Precio</option>
+                <option value=10>10</option>
+                <option value=20>20</option>
+                <option value=40>40</option>
+                <option value=60>60</option>
+              </select>
+              <label for="" class="upload-label-precioPorMinuto">por hora</label>
             </div>
 
             <label for="" class="upload-label-titulo">¿Cuál va a ser el descuento para alquileres prolongados?</label>
 
             <div class="upload-div-precio">
-              <input type="number" placeholder="20" name="descuentoPorMinutoHora" class="upload-input-descuentoPorMinuto" value="{{ old('descuentoPorMinutoHora', $espacio->descuentos()->where('hora',1)->first() ? $espacio->getDescuento(1)*100 : '') }}">
+              {{-- <input type="number" placeholder="20" name="descuentoPorMinutoHora" class="upload-input-descuentoPorMinuto" value="{{ old('descuentoPorMinutoHora', $espacio->descuentos()->where('hora',1)->first() ? $espacio->getDescuento(1)*100 : '') }}"> --}}
+              <select name="descuentoPorMinutoHora" class="upload-input-descuentoPorMinuto" required>
+                <option value="" selected>Descuento</option>
+                <option value="0">0</option>
+                <option value=0.2>20</option>
+                <option value=0.3>30</option>
+                <option value=0.4>40</option>
+                <option value=0.5>50</option>
+              </select>
               <label for="" class="upload-label-descuentoPorMinutoPorcentaje">%</label>
-              <label for="" class="upload-label-descuentoPorMinuto">por minuto a partir de la hora</label>
+              <label for="" class="upload-label-descuentoPorMinuto">a partir de la hora</label>
             </div>
             <p class="upload-p-descuentoPorMinuto">Precio por hora con descuento: $<b id="precioHora">36</b></p>
 
             <div class="upload-div-precio">
-              <input type="number" placeholder="35" name="descuentoPorMinutoSeisHoras" class="upload-input-descuentoPorMinuto" value="{{ old('descuentoPorMinutoSeisHoras', $espacio->descuentos()->where('hora',6)->first() ? $espacio->getDescuento(6)*100 : '') }}">
+              {{-- <input type="number" placeholder="35" name="descuentoPorMinutoSeisHoras" class="upload-input-descuentoPorMinuto" value="{{ old('descuentoPorMinutoSeisHoras', $espacio->descuentos()->where('hora',6)->first() ? $espacio->getDescuento(6)*100 : '') }}"> --}}
+              <select name="descuentoPorMinutoSeisHorasHora" class="upload-input-descuentoPorMinuto" required>
+                <option value="" selected>Descuento</option>
+                <option value=0.2>20</option>
+                <option value=0.3>30</option>
+                <option value=0.4>40</option>
+                <option value=0.5>50</option>
+                <option value=0.6>60</option>
+              </select>
               <label for="" class="upload-label-descuentoPorMinutoPorcentaje">%</label>
-              <label for="" class="upload-label-descuentoPorMinuto">por minuto a partir de 6 horas</label>
+              <label for="" class="upload-label-descuentoPorMinuto">a partir de 6 horas</label>
             </div>
             <p class="upload-p-descuentoPorMinuto">Precio cada 6 horas con descuento: $<b id="precioSeisHoras">175,60</b></p>
 
             <div class="upload-div-precio">
-              <input type="number" placeholder="70" name="descuentoPorMinutoDia" class="upload-input-descuentoPorMinuto" value="{{ old('descuentoPorMinutoDia', $espacio->descuentos()->where('hora',24)->first() ? $espacio->getDescuento(24)*100 : '') }}">
+              {{-- <input type="number" placeholder="70" name="descuentoPorMinutoDia" class="upload-input-descuentoPorMinuto" value="{{ old('descuentoPorMinutoDia', $espacio->descuentos()->where('hora',24)->first() ? $espacio->getDescuento(24)*100 : '') }}"> --}}
+              <select name="descuentoPorMinutoDia" class="upload-input-descuentoPorMinuto" required>
+                <option value="" selected>Descuento</option>
+                <option value=0.3>30</option>
+                <option value=0.4>40</option>
+                <option value=0.5>50</option>
+                <option value=0.6>60</option>
+                <option value=0.7>70</option>
+                <option value=0.8>80</option>
+              </select>
               <label for="" class="upload-label-descuentoPorMinutoPorcentaje">%</label>
-              <label for="" class="upload-label-descuentoPorMinuto">por minuto a partir del día</label>
+              <label for="" class="upload-label-descuentoPorMinuto">a partir del día</label>
             </div>
             <p class="upload-p-descuentoPorMinuto">Precio por día con descuento: $ <b id="precioDia">324</b></p>
 
