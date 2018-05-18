@@ -166,51 +166,21 @@ class UploadEspacioController extends Controller
 
   public function showUploadEspacio3(Espacio $espacio){
 
-    $diasSemana = [
-      1 => 'Lunes',
-      2 => 'Martes',
-      3 => 'Miércoles',
-      4 => 'Jueves',
-      5 => 'Viernes',
-      6 => 'Sábado',
-      7 => 'Domingo',
-    ];
+    $horarios = $espacio->diasyhorarios()->get();
 
-    return view('upload-espacio.3diasyhorarios', compact('diasSemana', 'espacio'));
+    // Hago que la key sea el nombre del día, para después buscarlo fácilmente en el select
+    $horarios = $horarios->keyBy('dia');
+
+    return view('upload-espacio.3diasyhorarios', compact('horarios', 'espacio'));
   }
 
   public function insertAndShowUploadEspacio4(Request $request, $id){
 
     $this->validate($request,
       [
-        'horaComienzoLunes' => 'required|numeric|between:0,23',
-        'minutoComienzoLunes' => 'required|numeric|between:0,59',
-        'horaFinLunes' => 'required|numeric|between:0,23',
-        'minutoFinLunes' => 'required|numeric|between:0,59',
-        'horaComienzoMartes' => 'required|numeric|between:0,23',
-        'minutoComienzoMartes' => 'required|numeric|between:0,59',
-        'horaFinMartes' => 'required|numeric|between:0,23',
-        'minutoFinMartes' => 'required|numeric|between:0,59',
-        'horaComienzoMiércoles' => 'required|numeric|between:0,23',
-        'minutoComienzoMiércoles' => 'required|numeric|between:0,59',
-        'horaFinMiércoles' => 'required|numeric|between:0,23',
-        'minutoFinMiércoles' => 'required|numeric|between:0,59',
-        'horaComienzoJueves' => 'required|numeric|between:0,23',
-        'minutoComienzoJueves' => 'required|numeric|between:0,59',
-        'horaFinJueves' => 'required|numeric|between:0,23',
-        'minutoFinJueves' => 'required|numeric|between:0,59',
-        'horaComienzoViernes' => 'required|numeric|between:0,23',
-        'minutoComienzoViernes' => 'required|numeric|between:0,59',
-        'horaFinViernes' => 'required|numeric|between:0,23',
-        'minutoFinViernes' => 'required|numeric|between:0,59',
-        'horaComienzoSábado' => 'required|numeric|between:0,23',
-        'minutoComienzoSábado' => 'required|numeric|between:0,59',
-        'horaFinSábado' => 'required|numeric|between:0,23',
-        'minutoFinSábado' => 'required|numeric|between:0,59',
-        'horaComienzoDomingo' => 'required|numeric|between:0,23',
-        'minutoComienzoDomingo' => 'required|numeric|between:0,59',
-        'horaFinDomingo' => 'required|numeric|between:0,23',
-        'minutoFinDomingo' => 'required|numeric|between:0,59',
+        'diasemana.*' => 'required|string',
+        'horacomienzo.*' => 'required|numeric',
+        'horafin.*' => 'required|numeric',
       ]
     );
 
@@ -224,28 +194,39 @@ class UploadEspacioController extends Controller
       7 => 'Domingo',
     ];
 
+    $espacio = Espacio::findOrFail($id);
+
     foreach ($diasSemana as $key => $value) {
 
-      $espacio = Espacio::findOrFail($id);
       $dia = $espacio->diasyhorarios()->where('dia',$value)->first();
 
-      // Me fijo si tengo un horario para ese día ya guardado en la db y si no lo creo
+      // Me fijo si tengo un horario para ese día ya guardado en la DB y si no lo creo
+      // Chequeo si existe en DB
       if ($dia) {
-        $diasYHorariosDeEspacio = $espacio->diasyhorarios()->where('dia',$value)->first();
+        // Chequeo si en form está ingresado el día
+        if ($request->input('diasemana.' . $value)) {
+          // Actualizo valores
+          $dia->horaComienzo = $request->input('horacomienzo.' . $value);
+          $dia->horaFin =  $request->input('horafin.' . $value);
+          $dia->save();
+        } else {
+          // Si no está en form, lo borro de DB
+          $dia->delete();
+        }
+      // Si no existe en DB
       } else {
-        $diasYHorariosDeEspacio = new DiasYHorariosDeEspacio();
-        $diasYHorariosDeEspacio->idEspacio = $espacio->id;
+        // Chequeo si en form está ingresado el día
+        if ($request->input('diasemana.' . $value)) {
+          // Lo creo en DB y le asigno valores
+          $dia = new DiasYHorariosDeEspacio();
+          $dia->idEspacio = $espacio->id;
+          $dia->dia = $value;
+          $dia->horaComienzo = $request->input('horacomienzo.' . $value);
+          $dia->horaFin =  $request->input('horafin.' . $value);
+          $dia->save();
+        }
+        // Si no está en form no hago nada
       }
-
-      // Convierto la hora en minutos
-      $horacomienzo = $request->input('horaComienzo' . $value) * 60 + $request->input('minutoComienzo' . $value);
-      $horafin = $request->input('horaFin' . $value) * 60 + $request->input('minutoFin' . $value);
-
-      $diasYHorariosDeEspacio->dia = $value;
-      $diasYHorariosDeEspacio->horaComienzo = $horacomienzo;
-      $diasYHorariosDeEspacio->horaFin = $horafin;
-
-      $diasYHorariosDeEspacio->save();
 
     }
 
