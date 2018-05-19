@@ -296,7 +296,7 @@
   /******************* C O M I N G  S O O N ****************/
   .coming-soon{
     background-image: url(../../images/coming-soon/coming-soon-pc.jpg);
-    background-size: 100%;
+    /* background-size: 100%; */
     max-width: 1920px;
   }
 
@@ -398,6 +398,7 @@
 
   .comingsoon-container .contacto-container .form-generico .credits-form .input-group-addon{
     width: 40px;
+    vertical-align: middle;
   }
 
   .comingsoon-container .contacto-container .form-generico .credits-form input[type=email], .comingsoon-container .contacto-container .form-generico .credits-form input[type=text]{
