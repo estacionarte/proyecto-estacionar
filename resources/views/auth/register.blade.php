@@ -55,9 +55,9 @@
                       <input id="password2"  type="password" name="password_confirmation" style="{{ $errors->has('password_confirmation') ? ' border-bottom: solid 1px red' : '' }}">
                       <label for="password2">Confirmar Contraseña</label>
                 </div>
-                <div class="input-field col s12">
+                {{-- <div class="input-field col s12">
                       <input type="file" name="profilePic" accept="image/*">
-                </div>
+                </div> --}}
             </div>
 
             <div class="row" id="signupLoader">

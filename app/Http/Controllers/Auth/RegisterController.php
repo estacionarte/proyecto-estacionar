@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'birthYear' => 'required|numeric|between:1930,2010',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'profilePic' => 'required|image|max:10000',
+            // 'profilePic' => 'required|image|max:10000',
         ],
         [
           'email.unique' => 'Ya existe un usuario registrado con este e-mail.',
@@ -74,7 +74,7 @@ class RegisterController extends Controller
     {
       $birthdate = $data['birthDay'] . '-' . $data['birthMonth'] . '-' . $data['birthYear'];
       $email = $data['email'];
-      $nombreArchivo = $email . '_profilePic.' . $data['profilePic']->extension();
+      // $nombreArchivo = $email . '_profilePic.' . $data['profilePic']->extension();
 
         return User::create([
             'firstName' => $data['firstName'],
@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'birthDate' => $birthdate,
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'profilePic' => $nombreArchivo,
+            // 'profilePic' => $nombreArchivo,
         ]);
     }
 

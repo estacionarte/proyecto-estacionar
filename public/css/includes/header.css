@@ -150,7 +150,7 @@ nav ul li{
   font-size: 0.8em;
 }
 
-.nav-bar a:hover{
+.nav-bar a:hover, .nav-bar a:active{
   text-decoration: none;
 }
 
@@ -261,6 +261,7 @@ margin-right: 0;
 
 .sidenav .sidenav-listado img{
   width: 20px;
+  margin-right: 5px;
 }
 .sidenav .closebtn{
   margin-left: 170px;

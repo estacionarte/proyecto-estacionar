@@ -1,0 +1,44 @@
+.perfil-publico .gral-main{
+  max-width: 750px;
+}
+
+.perfil-publico .img-profile{
+  display: inline-block;
+}
+.perfil-publico .img-profile .image{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5%;
+  -webkit-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+}
+
+.perfil-publico .info-derecha, .perfil-publico .info-izq{
+  display: inline-block;
+  vertical-align: top;
+}
+.perfil-publico .info-derecha{
+  width: 65%;
+}
+.perfil-publico .flag{
+  width: 20px;
+}
+.perfil-publico .info-verificada{
+  width: 195px;
+  margin-left: 15px;
+}
+.perfil-publico .info-verificada .perfil-caja-titulo{
+  background-color: #EEEEEE;
+  color: #000;
+}
+
+.perfil-publico .datos-caja {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

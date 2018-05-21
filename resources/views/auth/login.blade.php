@@ -26,7 +26,7 @@
               </div>
               <div class="switch">
                  <label>
-                   <input type="checkbox"  name="recordarme" value="recordarme" {{ old('recordarme') ? 'checked' : '' }}>
+                   <input type="checkbox"  name="recordarme" value="{{ old('recordarme') ? 'checked' : '' }}">
                    <span class="lever"></span>
                    Recordarme
                  </label>

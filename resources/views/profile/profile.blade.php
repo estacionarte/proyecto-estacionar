@@ -23,27 +23,28 @@
         <h4>¡Bienvenido {{Auth::user()->firstName}}!</h4>
       </div>
       <div class="imagen-load-container">
-        <div class="img-profile">
-          <img src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
-        </div>
         <div class="load-img-profile">
           <form method="post" enctype="multipart/form-data" action="{{ route ('profile')}}">
             {{ csrf_field() }}
             <div class="row">
               <div class="file-field input-field">
+                <div class="img-profile">
+                  <img class="image" for="file-path" src="storage/profilePic/{{Auth::user()->profilePic}}" alt="profile image">
+                  <img class="add" src="/images/icons/add.png">
+                </div>
                 <div class="btn">
                   <span>ELEGIR</span>
-                  <input type="file">
+                  <input id="profilePic" type="file" name="profilePic" accept="image/*">
                 </div>
                 <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
+                  <input class="file-path validate" name="file-path"  type="text">
                 </div>
               </div>
-              <div class="left-align">
-                  <button class="btn waves-effect waves-light teal accent-4" type="submit">Cargar foto
+              <div class="left-align btn-container">
+                  <button id="cargar-foto-perfil" class="btn waves-effect waves-light teal accent-4" type="submit">Cargar foto
                       <i class="material-icons right">send</i>
                   </button>
-                  <a class="tooltipped" data-position="right" data-delay="50" data-tooltip="Para que los conductores y anfitriones se conozcan, lo mejor es añadir fotos de la cara que sean nítidas y estén sacadas de frente. Asegurate de utilizar una foto en la que se te vea bien la cara y que no incluya información personal o sensible que preferirías que los conductores o anfitriones no viera."><img src="/images/icons/ask.png"></a>
+                  <a class="tooltipped" data-position="right" data-delay="50" data-tooltip="Para que los conductores y anfitriones se conozcan, lo mejor es añadir fotos de la cara que sean nítidas y estén sacadas de frente. No incluyas información personal o sensible que preferirías que un usuario no viera."><img src="/images/icons/ask.png"></a>
               </div>
             </div>
           </form>
@@ -54,6 +55,11 @@
         <h2>dsgbdhbdsgshdg</h2>
         <p>dgdfgdfgfdgdfigndijbsdigvbsdigbdhbvdhgb</p>
       </div>
+      <div class="">
+        <a href="/perfilpublico">
+          <button style="width: 100%;" type="button" class="btn btn-default">Ver perfil</button>
+        </a>
+      </div>
     </div>
 
     <div id="profile" class="tab-pane fade">
@@ -61,8 +67,8 @@
         <div class="perfil-caja-titulo">
           <h4>Campos requeridos para alquilar o reservar un espacio</h4>
         </div>
-        <form class="form-horizontal" action="{{ route('profile') }}" method="post">
-          {{-- {{ method_field('PUT') }} --}}
+        <form class="form-horizontal" method="post" action="{{ route ('profile')}}">
+          {{ method_field('PUT') }}
           {{ csrf_field() }}
           <div class="row">
             <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
@@ -98,11 +104,11 @@
                 <label for="dia">Mes</label>
             </div>
             <div class="input-field col s3 l2">
-                <input id="dia"  type="number" name="birthDay" min="1" max="31" value="{{$anio}}">
+                <input id="dia"  type="number" name="birthDay" value="{{$anio}}">
                 <label for="dia">Año</label>
             </div>
             <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
-                <input id="dni" type="text" value="{{Auth::user()->DNI}}">
+                <input id="dni" type="text" name="dni" value="{{Auth::user()->dni}}">
                 <label for="">DNI</label>
                 <h5 style="display:inline">No compartiremos tu DNI con otros usuarios de Estacionados.</h5><a data-toggle="tab" href="#datos"> Más información</a>
             </div>
@@ -112,25 +118,25 @@
                 <h5>No compartiremos tu dirección de correo electrónico personal con otros usuarios de Estacionados.</h5>
             </div>
             <div class="input-field col s8 offset-s2 m8 offset-m2 l5">
-                <input id="cbu" type="text" value="{{Auth::user()->cbu}}">
+                <input id="cbu" type="text" name="cbu" value="{{Auth::user()->cbu}}">
                 <label for="cbu">CBU o Alias</label>
                 <h5>Proporcioná los datos de tu cbu o Alias para poder recibir las ganancias de tus alquileres. No compartiremos esta infomración con otros usuarios de Estacionados.</h5>
             </div>
             <div class="input-field col s3 offset-s2 l1 offset-l1">
-                <input id="areaCode" type="number" value="{{Auth::user()->codeArea}}">
+                <input id="areaCode" type="number" name="areaCode" value="{{Auth::user()->areaCode}}">
                 <label for="areaCode">Cod. área</label>
             </div>
             <div class="input-field col s5 l3">
-                <input id="phone" type="number" value="{{Auth::user()->phoneNumber}}">
+                <input id="phone" type="number" name="phoneNumber" value="{{Auth::user()->phoneNumber}}">
                 <label for="phone">Mi N° de teléfono</label>
                 <h5>Tu número solo se compartirá cuando tengas una reservación confirmada con otro usuario de Estacionados. Es el método que utilizamos para ponernos en contacto vos.</h5>
             </div>
             <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
-                <input id="contactName" type="text" value="{{Auth::user()->nombre2}}">
+                <input id="contactName" type="text" name="contactName" value="{{Auth::user()->contactName}}">
                 <label for="contactName">Nombre de contacto</label>
             </div>
             <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
-                <input id="contactNumber" type="number" value="{{Auth::user()->phoneNumber2}}">
+                <input id="contactNumber" type="number" name="contactNumber" value="{{Auth::user()->contactNumber}}">
                 <label for="contactNumber">N° teléfono de contacto</label>
             </div>
             <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
@@ -220,7 +226,7 @@
           <p>Fue un placer recibirlos, gracias por su buena predisposicion!</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-    </div>
+      </div>
       <div class="evaluacion-caja">
         <div class="usuario-caja">
           <a href="#">
@@ -259,6 +265,32 @@
   <script src="{{ URL::asset('js/dropzone.js')}}"></script>
 
   <script>
+
+    const foto = document.getElementById('profilePic');
+    const cargarFotoBtn = document.getElementById('cargar-foto-perfil');
+
+    eventListeners();
+
+    function eventListeners(){
+      document.addEventListener('DOMContentLoaded', inicioApp);
+      foto.addEventListener('blur', validarCampo);
+    }
+
+    function inicioApp(){
+      // deshabilitar boton
+      cargarFotoBtn.disabled = true;
+    }
+
+    // Habilitar boton si se selecciona una foto
+    function validarCampo(){
+      if (this.file != '') {
+        cargarFotoBtn.disabled = false;
+      }
+    }
+
+  </script>
+
+  <script>
       // SELECT DE FORMULARIO
         $(document).ready(function() {
           $('select').material_select();
@@ -266,9 +298,6 @@
   </script>
 
   <script>
-
-
-
         // -----------------------
         Dropzone.options.myDropzone = {
             autoProcessQueue: false,

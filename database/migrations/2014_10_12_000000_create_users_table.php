@@ -26,10 +26,11 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->string('phoneNumber',25)->nullable();
             $table->string('areaCode',25)->nullable();
+            $table->string('contactName')->nullable();
             $table->string('contactNumber',25)->nullable();
-            $table->integer('zipcode')->nullable();
+            $table->integer('zipCode')->nullable();
             $table->string('country')->nullable();
-            $table->integer('DNI')->nullable()->unsigned();
+            $table->integer('dni')->nullable()->unsigned();
             $table->string('cbu')->nullable();
             $table->string('profilePic')->default('avatar.jpg');
 

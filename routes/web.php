@@ -35,21 +35,24 @@ Route::get('login/{provider}/callback', 'Auth\SocialAuthController@handleProvide
 
 // ***************************** P E R F I L *******************
 
+Route::get('perfil', 'ProfileController@userProfile')->name('profile')->middleware('auth');
+
+Route::post('perfil', 'ProfileController@userProfile')->name('profile')->middleware('auth');
+
+Route::put('perfil/{id}', 'ProfileController@uploadProfileData');
+
 Route::get('perfil-espacio', 'ProfileController@mostrarEspacios')->name('profile-espacio')->middleware('auth');
 
 Route::get('perfil-vehiculo', 'ProfileController@mostrarVehiculos')->name('profile-vehiculo')->middleware('auth');
 
-Route::get('perfil', 'ProfileController@dameFecha')->name('profile')->middleware('auth');
-
 Route::get('/perfil-alquileres', function () {
-    return view('profile.profile-alquileres');
+  return view('profile.profile-alquileres');
 })->name('profile.alquileres');
 
-Route::put('perfil/{id}', 'ProfileController@uploadProfileImage');
+Route::get('perfilpublico', function () {
+  return view('public-profile');
+});
 
-Route::post('perfil', 'ProfileController@uploadProfileData');
-
-Route::put('perfil', 'ProfileController@editProfileData');
 
 // *************************** V E H I C U L O S ******************************
 Route::group(['prefix' => 'cargar-vehiculo', 'middleware' => ['auth','coming.soon','check.vehiculo.owner']], function(){

@@ -193,7 +193,7 @@
   display: inline-block;
 }
 
-.imagen-load-container .img-profile img{
+.imagen-load-container .img-profile .image{
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -205,9 +205,29 @@
   box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
 }
 
+.imagen-load-container .img-profile .add{
+  width: 50px;
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  display: none;
+}
+
+.imagen-load-container .input-field:hover .add{
+  display: block;
+}
+.imagen-load-container .input-field:hover .image{
+  opacity: 0.6;
+}
+
 .load-img-profile .file-field .btn{
-  padding: 1px 20px;
-  background-color: #085174;
+  opacity: 0;
+  margin-top: -25px;
+  margin-left: 45px;
+  width: 1px;
+  height: 1px;
+  color: #fff;
+  background-color: #fff;
 }
 
 .load-img-profile{
@@ -215,16 +235,32 @@
 }
 
 .load-img-profile .file-path-wrapper{
-  width: 100px;
+  width: 180px;
+  margin: -20px 0 0 20px;
+  overflow: inherit;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.load-img-profile .file-path-wrapper .file-path{
+    border-bottom: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .load-img-profile form{
   padding-top: 0;
 }
 
+.load-img-profile form .btn-container{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
 .tooltipped img{
   width: 20px;
-  margin-left: 10px
+  margin-left: 10px;
+  margin-top: -0;
 }
 .backdrop{
   background-color: #00bfa5;
@@ -259,12 +295,12 @@
   margin: 10px 20px 20px;
 }
 
-.datos .fa-check-circle-o{
+.fa-check-circle-o{
   color: green;
   font-size: 1.5em;
 }
 
-.datos .fa-exclamation-circle{
+.fa-exclamation-circle{
   color: red;
   font-size: 1.5em;
 }
@@ -459,10 +495,14 @@
   }
 
   /***************** P R O F I L E ********************/
-  .profile-container, .profile-espacio-container, .profile-alquiler-container, .profile-vehiculo-container .table-responsive{
+  .profile-container, .profile-espacio-container, .profile-alquiler-container, .profile-vehiculo-container{
     overflow: hidden;
     width: 80%;
     margin: 40px auto 0;
+  }
+
+  .profile-vehiculo-container .table-responsive{
+    margin: 0 !important;
   }
 
 }
