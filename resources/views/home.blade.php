@@ -153,7 +153,7 @@
       <article class="item-contenedor">
         <a href="faqs"><img class="ultimo-espacio-img" src="/storage/espacios/33-1.jpeg"></a>
         <h3><strong>$ 220.00 ARS</strong> x día</h3>
-        <h4>Cochera a metros del hipodromo</h4>
+        <h4>Cochera a metros del hipodromo1</h4>
         <img class="stars" src="/images/home/stars.png">
       </article>
     </div>
@@ -161,7 +161,7 @@
       <article class="item-contenedor">
         <a href="faqs"><img class="ultimo-espacio-img" src="/storage/espacios/1-1.jpeg"></a>
         <h3><strong>$ 220.00 ARS</strong> x día</h3>
-        <h4>Cochera a metros del hipodromo</h4>
+        <h4>Cochera a metros del hipodromo2</h4>
         <img class="stars" src="/images/home/stars.png">
       </article>
     </div>
@@ -169,7 +169,7 @@
       <article class="item-contenedor">
         <a href="faqs"><img class="ultimo-espacio-img" src="/storage/espacios/3-1.jpeg"></a>
         <h3><strong>$ 220.00 ARS</strong> x día</h3>
-        <h4>Cochera a metros del hipodromo</h4>
+        <h4>Cochera a metros del hipodromo3</h4>
         <img class="stars" src="/images/home/stars.png">
       </article>
     </div>
@@ -177,7 +177,7 @@
       <article class="item-contenedor">
         <a href="faqs"><img class="ultimo-espacio-img" src="/storage/espacios/33-1.jpeg"></a>
         <h3><strong>$ 220.00 ARS</strong> x día</h3>
-        <h4>Cochera a metros del hipodromo</h4>
+        <h4>Cochera a metros del hipodromo4</h4>
         <img class="stars" src="/images/home/stars.png">
       </article>
     </div>
@@ -185,7 +185,7 @@
       <article class="item-contenedor">
         <a href="faqs"><img class="ultimo-espacio-img" src="/storage/espacios/33-1.jpeg"></a>
         <h3><strong>$ 220.00 ARS</strong> x día</h3>
-        <h4>Cochera a metros del hipodromo</h4>
+        <h4>Cochera a metros del hipodromo5</h4>
         <img class="stars" src="/images/home/stars.png">
       </article>
     </div>

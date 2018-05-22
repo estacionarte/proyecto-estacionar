@@ -57,7 +57,7 @@
       </div>
       <div class="">
         <a href="/perfilpublico">
-          <button style="width: 100%;" type="button" class="btn btn-default">Ver perfil</button>
+          <button style="width: 100%;" type="button" class="btn btn-default">Ver mi perfil público</button>
         </a>
       </div>
     </div>

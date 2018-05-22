@@ -21,6 +21,10 @@ Route::post('/lanzamiento', 'ContactController@suscribe')->name('suscribir');
 
 Route::post('/anfitrion', 'ContactController@seranfitrion')->name('datos.anfitrion');
 
+Route::get('/reportar-usuario', function () {
+    return view('report-user');
+});
+
 // ************************ HOME LOGIN REGISTER *********************
 Route::get('/home', 'HomeController@index')->name('home')->middleware('coming.soon');
 

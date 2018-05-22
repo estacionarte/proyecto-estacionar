@@ -58,7 +58,7 @@
       </div>
 
         <div class="info-derecha">
-          <h4>Vive en el barrio de .... agregar columna barrio</h4>
+          <h4 class="barrio">Vive en el barrio de .... agregar columna barrio</h4>
           <h3>Se registró en @php
           switch ($mes) {
               case "01":
@@ -101,9 +101,11 @@
                   echo "";
           }
           @endphp de {{$anio}}</h3>
-          <a href="#"><img class="flag" src="images/icons/flag.png" alt="denunciar usuario">Denunciar usuario</a>
+          <a href="/reportar-usuario"><img class="flag" src="images/icons/flag.png" alt="denunciar usuario">Reportar usuario</a>
           <div class="evaluaciones">
-            <h3>Evauaciones sobre {{Auth::user()->firstName}}</h3>
+            <div class="titulo">
+              <h4>Evauaciones sobre {{Auth::user()->firstName}}</h4>
+            </div>
             <div class="evaluacion-caja">
               <div class="usuario-caja">
                 <a href="#">

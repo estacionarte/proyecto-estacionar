@@ -24,6 +24,20 @@
 .perfil-publico .info-derecha{
   width: 65%;
 }
+
+.perfil-publico .info-derecha .barrio{
+  margin-top: 25px;
+}
+
+.perfil-publico .info-derecha .evaluaciones .titulo{
+  background-color: #EEEEEE;
+}
+
+.evaluaciones .titulo h4{
+  padding: 12px;
+  margin-top: 99px;
+}
+
 .perfil-publico .flag{
   width: 20px;
 }
@@ -41,4 +55,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.perfil-publico .datos-caja h5{
+  padding-left: 10px;
+}
+.perfil-publico .datos-caja i{
+  padding-right: 10px;
 }
