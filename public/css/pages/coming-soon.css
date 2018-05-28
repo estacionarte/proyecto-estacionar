@@ -358,7 +358,7 @@
   }
 
   .comingsoon-container .title-container h1{
-    font-size: 2em;
+    font-size: 1.9em;
   }
 
   .comingsoon-container .title-container h2{
@@ -422,6 +422,8 @@
     width: 25%;
     background-color: inherit;
     border: solid 1px #fff;
+    margin-top: 15px;
+    margin-bottom: 0;
   }
 
   .comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]:hover{
