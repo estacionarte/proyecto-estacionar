@@ -26,13 +26,13 @@
 }
 
 .shape h2{
-  font-size: 1.8em;
+  font-size: 1.2em;
   color: white;
   margin-bottom: 5px;
 }
 
 .shape h3{
-  font-size: 1em;
+  font-size: 0.8em;
   color: white;
   margin-bottom: 15px;
 }
@@ -72,13 +72,13 @@
 .como-funciona h2{
   padding-top: 45px;
   text-align: center;
-  font-size: 2.3em;
+  font-size: 1.6em;
   color: rgb(105, 105, 105);
 }
 
 .buscas, .alquilas, .estacionas{
   text-align: center;
-  font-size: 1.9em;
+  font-size: 1.3em;
   font-weight: bold;
   color: rgb(105, 105, 105);
 }
@@ -100,7 +100,7 @@
 .como-funciona p{
   margin: 15px 35px 60px;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 0.8em;
 }
 
 
@@ -157,9 +157,6 @@
   text-align: left;
 }
 
-.ser-anfitrion-home a, .ser-conductor-home a{
-  padding: 10px 15px;
-}
 
 /****************** COMUNIDAD *******************/
 .comunidad-home h2{
@@ -167,7 +164,7 @@
   padding: 5px 10px;
 }
 .comunidad-home p{
-  font-size: 1.1em;
+  font-size: 0.8em;
 }
 
 /****************** SLIDER HOME *******************/
@@ -191,14 +188,12 @@
 }
 
 .como-funciona .owl-carousel .item-contenedor h3{
-  font-size: 1.3em;
   text-align: left;
   padding: 15px 0 0 30px;
   font-weight: bold;
 }
 
 .como-funciona .owl-carousel .item-contenedor h4{
-  font-size: 1.1em;
   text-align: left;
   padding-left: 30px;
   margin: 2px 0px;
@@ -226,11 +221,11 @@
   }
 
   .shape h2{
-    font-size: 2.5em;
+    font-size: 1.7em;
   }
 
   .shape h3{
-    font-size: 1.3em;
+    font-size: 1em;
     margin-bottom: 35px;
   }
 
@@ -249,7 +244,7 @@
   }
 
   .como-funciona h2{
-    font-size: 2.7em;
+    font-size: 2em;
   }
 
   .como-funciona .pasos{
@@ -317,11 +312,11 @@
   }
 
   .shape h2{
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .shape h3{
-    font-size: 1.3em;
+    font-size: 1.1em;
     margin-bottom: 35px;
   }
 
@@ -365,7 +360,7 @@
 
   /**************** C O M O  F U N C I O N A ****************/
   .como-funciona{
-    margin-top: 5%;
+    margin-top: 10%;
   }
 
   .sub-buscas{
@@ -448,11 +443,11 @@
 
   /****************** COMUNIDAD *******************/
   .comunidad-home h2{
-    font-size: 2em;
+    font-size: 1.4em;
     padding-top: 40px;
   }
   .comunidad-home p{
-    font-size: 1.2em;
+    font-size: 0.8em;
     padding: 0 20px;
   }
 

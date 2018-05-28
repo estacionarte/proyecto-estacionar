@@ -4,7 +4,7 @@
 
 <section class="banner-container" id="yoo">
 
-  <article class="shape">
+  <article class="shape animated fadeInUp">
     <h2>Encontrá y reservá lugar para tu vehículo</h2>
     {{-- <h2>Estacionar nunca fué tan fácil</h2> --}}
     <h3>Olvidate de dar vueltas buscando donde estacionar. Elegí entre los de espacios <br>disponibles y reservalo en minutos.</h3>
@@ -79,17 +79,17 @@
 <section class="como-funciona" id="comofunciona">
   <h2>¿Cómo funciona?</h2>
   <p class="sub-buscas">Si necesitás alquilar una cochera, ingresá a Estacionados, encontrá ofertas cercanas a tu destino y seleccioná tu favorita. Vas a poder comparar precios, ver imágenes, calificaciones y comentarios de otros usuarios.</p>
-  <article class="pasos" id="pasos-1">
+  <article class="pasos wow fadeInLeft data-wow-duration="2s"" id="pasos-1">
     <img class="paso-img" src="images/home/busqueda.png" alt="buscar">
     <h3 class="buscas">BUSCÁS</h3>
     <p>Elegí entre las cocheras disponibles en cualquier momento del día.</p>
   </article>
-  <article class="pasos" id="pasos-2">
+  <article class="pasos wow fadeInUp data-wow-duration="2s" data-wow-delay="1s"" id="pasos-2">
     <img class="paso-img" src="images/home/credit-card.png" alt="tarjeta">
     <h3 class="alquilas">ALQUILÁS</h3>
     <p>Reservá la opción que mejor se adapte a lo que necesitás y pagá a través de Mercado Pago. ¡No más problemas de efectivo!</p>
   </article>
-  <article class="pasos" id="pasos-3">
+  <article class="pasos wow fadeInRight data-wow-duration="2s" data-wow-delay="1.4s"" id="pasos-3">
     <img class="paso-img" src="images/home/car.png" alt="auto">
     <h3 class="estacionas">ESTACIONÁS</h3>
     <p>Conducí hasta el espacio y dejá tu vehiculo. ¡Listo! Ya es tuyo por el tiempo que lo solicitaste.</p>
@@ -352,4 +352,5 @@
   					minuteStep: 15
   			    });
   			</script>
+
 @endsection

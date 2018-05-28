@@ -102,7 +102,7 @@
   background-color: #D74D41;
 }
 .bodies-main-content .gral-main .signin .row{
-  padding: 0 50px;
+  padding: 0;
 }
 
 .signin form .switch{
@@ -136,6 +136,7 @@
     margin-right: auto;
     max-width: 700px;
     padding: 20px;
+    padding-top: 0;
   }
 
 

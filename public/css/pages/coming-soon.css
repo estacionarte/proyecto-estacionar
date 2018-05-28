@@ -66,7 +66,7 @@
   font-family: 'Lato', sans-serif;
   color: white;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.6em;
   text-transform: uppercase;
   font-weight: bold;
   margin-top: 10px;
@@ -139,16 +139,16 @@
 .comingsoon-container .countdown-container a{
   display: inline-block;
   margin: 10px auto;
-  font-size: 1.3em;
+  font-size: 1em;
   background-color: #fff;
   border-color: #fff;
   color: rgb(0, 81, 116);
 }
 
-.comingsoon-container .countdown-container a:focus{
-  background-color: #f4f4f4;
-  border-color: #f4f4f4;
-  color: rgb(0, 81, 116);
+.comingsoon-container .countdown-container a:hover{
+  background-color: rgb(0, 81, 116);
+  border-color: rgb(0, 81, 116);
+  color: #f4f4f4;
 }
 
 .comingsoon-container .contacto-container{
@@ -182,10 +182,16 @@
 }
 
 .comingsoon-container .contacto-container .form-generico .credits-form input[type=email], .comingsoon-container .contacto-container .form-generico .credits-form input[type=text]{
-  display: inline-block;
+  /* display: inline-block;
   margin-bottom: 5px;
   width: 80%;
-  height: 30px;
+  height: 30px; */
+  color: #fff;
+}
+
+.comingsoon-container .input-field>label{
+  font-size: 14px;
+  color: #fff;
 }
 
 .comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]{
@@ -197,6 +203,8 @@
   color: #fff;
   font-weight: bold;
   padding: 8px;
+  margin-bottom: 15px;
+  font-size: 18px;
 }
 
 .comingsoon-container .contacto-container .form-generico .credits-form input[type=submit]:hover{
@@ -213,6 +221,7 @@
 .comingsoon-container .nosotros a{
   color: #fff;
   text-decoration: underline;
+  font-size: 18px;
 }
 
 .comingsoon-container .nosotros a:hover{
@@ -262,7 +271,7 @@
   }
 
   .comingsoon-container .title-container h1{
-    font-size: 2.2em;
+    font-size: 1.8em;
   }
 
   .comingsoon-container .title-container h2{
@@ -349,7 +358,7 @@
   }
 
   .comingsoon-container .title-container h1{
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .comingsoon-container .title-container h2{

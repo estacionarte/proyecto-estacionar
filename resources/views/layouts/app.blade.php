@@ -31,11 +31,10 @@
      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
      {{-- CAROUSEL DE BOOSTRAP--}}
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
 
      {{-- Materialize framework --}}
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    {{-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> --}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
       <!-- CSRF Token -->
@@ -70,10 +69,12 @@
 
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
     @yield('css')
 
     {{-- favicon --}}
@@ -251,7 +252,13 @@
 
     <script src="{{ URL::asset('js/owl.carousel.js')}}"></script>
 
-    <script src="js/materialize.min.js"></script>
+    <script src="{{ URL::asset('js/materialize.min.js')}}"></script>
+
+    <script src="{{ URL::asset('js/wow.min.js')}}"></script>
+
+    <script>
+      new WOW().init();
+    </script>
 
 
   {{-- POPUP-LOGIN --}}
@@ -297,7 +304,6 @@
 // });
 
   </script>
-
 
 
   {{-- STICKY FIXED --}}

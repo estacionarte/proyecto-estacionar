@@ -84,7 +84,7 @@
 /* Modal Box */
 .modalAlquilar-content {
     background-color: #fefefe;
-    margin: 13% auto;
+    margin: 4% auto;
     padding: 20px 15px;
     border: 1px solid #888;
     width: 92%;
@@ -113,15 +113,15 @@
   color: rgb(0, 0, 0);
   padding: 0;
   margin: 5px auto 12px;
-  font-size: 2em;
+  font-size: 1.4em;
   font-weight: bold;
   text-align: center;
 }
 
 .modalAlquilar-content h3{
-  padding: 0;
-  margin: 1px auto;
-  font-size: 1.4em;
+  padding: 0 50px !important;
+  margin: 0 auto;
+  font-size: 1em;
   text-align: left;
   font-weight: bold;
 }

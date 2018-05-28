@@ -44,7 +44,7 @@ class UploadVehicleController extends Controller
         $vehiculo->idUser = Auth::user()->id;
         $vehiculo->save();
 
-        return redirect(route('profile'));
+        return redirect(route('profile-vehiculo'));
     }
 
     public function showEditVehicle($id){
@@ -79,7 +79,7 @@ class UploadVehicleController extends Controller
         $vehiculo->fill($request->all());
         $vehiculo->save();
 
-        return redirect(route('profile'));
+        return redirect(route('profile-vehiculo'));
     }
 
     public function deleteVehicle($id){
@@ -87,7 +87,7 @@ class UploadVehicleController extends Controller
         $vehiculo = Vehiculo::findOrFail($id);
         $vehiculo->delete();
 
-        return redirect(route('profile'));
+        return redirect(route('profile-vehiculo'));
     }
 
 }

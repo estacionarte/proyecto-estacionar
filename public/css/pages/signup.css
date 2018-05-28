@@ -8,6 +8,7 @@
   background-color: #085174;
   margin-top: 20px;
   margin-left: 0;
+  margin-bottom: 0;
   padding: 20px 40px;
   color: #fff;
 }
@@ -16,7 +17,7 @@
 }
 
 .input-field>label{
-  font-size: 1em;
+  font-size: 0.6em;
 }
 
 .signup form .boton{

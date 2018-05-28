@@ -110,7 +110,7 @@
             <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
                 <input id="dni" type="text" name="dni" value="{{Auth::user()->dni}}">
                 <label for="">DNI</label>
-                <h5 style="display:inline">No compartiremos tu DNI con otros usuarios de Estacionados.</h5><a data-toggle="tab" href="#datos"> Más información</a>
+                <h5 style="display:inline">No compartiremos tu DNI con otros usuarios de Estacionados.</h5><a style="font-size: 14px !important;" data-toggle="tab" href="#datos"> Más información</a>
             </div>
             <div class="input-field col s8 offset-s2 m8 offset-m2 l5 offset-l1">
                 <input id="email" type="email" value="{{Auth::user()->email}}">
@@ -202,7 +202,7 @@
         {{-- <img src="images/creditos/credito-img.png"> --}}
         <h4>¡Invitá a tus amigos y obtené créditos para estacionar!</h4>
         <p>Conseguí hasta 50% de descuento en tu próximo alquiler.</p>
-          <a href="creditos" class="btn btn-warning">CONSEGUIR CRÉDITO</a>
+          <a href="creditos" class="btn amber">CONSEGUIR CRÉDITO</a>
       </div>
     </div>
 

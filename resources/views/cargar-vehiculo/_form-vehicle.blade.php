@@ -1,13 +1,15 @@
-<div class="form-group col-xs-5 col-sm-4 col-md-5">
+<div class="row">
+  <div class="input-field col s10 offset-s1 m10 offset-m1 l5 offset-l1">
+    <select id="vehiculo" class="icons" name="tipoVehiculo" onchange="mostrarMarca()">
+      <option value="-1" {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == '-1' ? 'selected':'' }}>Tipo de vehiculo</option>
+      <option value="Automóvil"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Automovil' ? 'selected':'' }}>AUTOMÓVIL</option>
+      <option value="Motocicleta"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Motocicleta' ? 'selected':'' }}>MOTOCICLETA</option>
+      <option value="Bicicleta"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Bicicleta' ? 'selected':'' }}>BICICLETA</option>
+    </select>
+  </div>
 
-  <select id="vehiculo" class="form-control" name="tipoVehiculo" onchange="mostrarMarca()">
-    <option value="-1" {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == '-1' ? 'selected':'' }}>Tipo de vehiculo</option>
-    <option value="Automóvil"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Automovil' ? 'selected':'' }}>AUTOMÓVIL</option>
-    <option value="Motocicleta"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Motocicleta' ? 'selected':'' }}>MOTOCICLETA</option>
-    <option value="Bicicleta"  {{ old('tipoVehiculo', $vehiculo->tipoVehiculo) == 'Bicicleta' ? 'selected':'' }}>BICICLETA</option>
-  </select><br>
-
-  <select id="vehiculo-marca" class="form-control" name="marca">
+  <div class="input-field col s10 offset-s1 m10 offset-m1 l5 offset-l1">
+    <select id="vehiculo-marca" class="" name="marca">
     <option value="" {{ old('marca', $vehiculo->marca) == '' ? 'selected':'' }}selected>Marca</option>
     <option value="ABARTH" {{ old('marca', $vehiculo->marca) == 'ABARTH' ? 'selected':'' }}>ABARTH</option>
     <option value="ALFA ROMEO" {{ old('marca', $vehiculo->marca) == 'ALFA ROMEO' ? 'selected':'' }}>ALFA ROMEO</option>
@@ -51,26 +53,19 @@
     <option value="TESLA" {{ old('marca', $vehiculo->marca) == 'TESLA' ? 'selected':'' }}>TESLA</option>
     <option value="TOYOTA" {{ old('marca', $vehiculo->marca) == 'TOYOTA' ? 'selected':'' }}>TOYOTA</option>
     <option value="VOLKSWAGEN" {{ old('marca', $vehiculo->marca) == 'VOLKSWAGEN' ? 'selected':'' }}>VOLKSWAGEN</option>
-    <option value="VOLVO" {{ old('marca', $vehiculo->marca) == 'VOLVO' ? 'selected':'' }}>VOLVO</option></select>
-</div>
-<div class="clear"></div>
+    <option value="VOLVO" {{ old('marca', $vehiculo->marca) == 'VOLVO' ? 'selected':'' }}>VOLVO</option>
+  </select>
+  </div>
 
-<div class="input-group col-xs-5 col-sm-3 col-md-4" style="margin-left:15px;">
-<span class="input-group-addon" style="width:80px;">Modelo</span>
-<input type="text" class="form-control" name="modelo" placeholder="Ingrese el modelo de su vehiculo" value="{{ old('modelo', $vehiculo->modelo) }}" style="{{ $errors->has('modelo') ? ' border: solid 2px #990606' : '' }}">
-</div><br>
-
-<div class="input-group col-xs-5 col-sm-3 col-md-4" style="margin-left:15px;">
-<span class="input-group-addon" style="width:80px;">Color</span>
-<input type="text" class="form-control" name="color" placeholder="Ingrese el color de su vehiculo" value="{{ old('color', $vehiculo->color) }}" style="{{ $errors->has('color') ? ' border: solid 2px #990606' : '' }}">
-</div><br>
-
-<div class="input-group col-xs-5 col-sm-3 col-md-4" style="margin-left:15px;">
-<span class="input-group-addon" style="width:80px;">Patente</span>
-<input type="text" class="form-control" name="patente" placeholder="Ingrese el numero de patente" value="{{ old('patente', $vehiculo->patente) }}" style="{{ $errors->has('patente') ? ' border: solid 2px #990606' : '' }}">
-</div><br>
-
-{{-- <div class="input-group col-xs-5 col-sm-3 col-md-3">
-<span class="input-group-addon">Datos adicionales</span>
-<input id="msg" type="text" class="form-control" name="msg" placeholder="Info adicional optativa">
-</div><br> --}}
+  <div class="input-field col s10 offset-s1 m10 offset-m1 l4">
+      <input type="text" name="modelo" value="{{ old('modelo', $vehiculo->modelo) }}" style="{{ $errors->has('modelo') ? ' border: solid 2px #990606' : '' }}">
+      <label for="modelo">Modelo de su vehículo</label>
+  </div>
+  <div class="input-field col s10 offset-s1 m10 offset-m1 l4">
+      <input type="text" name="color" value="{{ old('color', $vehiculo->color) }}" style="{{ $errors->has('color') ? ' border: solid 2px #990606' : '' }}">
+      <label for="color">Color de su vehiculo</label>
+  </div>
+  <div class="input-field col s10 offset-s1 m10 offset-m1 l4">
+      <input type="text" name="patente" value="{{ old('patente', $vehiculo->patente) }}" style="{{ $errors->has('patente') ? ' border: solid 2px #990606' : '' }}">
+      <label for="color">Número de patente</label>
+  </div>

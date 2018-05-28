@@ -7,11 +7,17 @@
 }
 
 .profile-vehiculo-container .table-responsive tr{
+  font-size: 16px;
   background-color: #fff;
 }
 
 .profile-vehiculo-container .cargar-vehiculo-btn{
   margin: 15px 4%;
+}
+
+/* upload */
+.upload form .btn{
+  margin-bottom: 30px;
 }
 
 /**************************************************************/
@@ -67,5 +73,10 @@
 
   .profile-vehiculo-container .cargar-vehiculo-btn{
     margin: 15px 0;
+  }
+
+  /* upload */
+  .upload form .btn{
+    margin-bottom: 0;
   }
 }

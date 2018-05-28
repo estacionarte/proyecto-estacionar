@@ -20,7 +20,7 @@
   display: block;
   color: #fff;
   padding: 10px 20px;
-  font-size: 0.9em;
+  font-size: 0.7em;
   border-bottom: solid 1px #fff;
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -98,9 +98,7 @@
   }
 
   .main-footer a{
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 0.9em;
+    padding: 5px 20px;
     border-bottom: none;
   }
 

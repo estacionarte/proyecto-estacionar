@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto" rel="stylesheet">
   <link href="{{ asset('css/main.css') }}" rel="stylesheet" id="hojaDeEstilo">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113241679-1"></script>
   <script>
@@ -45,7 +46,7 @@
     </div>
 
     <div class="title-container">
-      <h1>¡La plataforma online para estacionar que estabas esperando!</h1>
+      <h1>¡La plataforma online para estacionar<br> que estabas esperando!</h1>
       <h2><b>ESTACIONADOS</b> conecta dueños de espacios con conductores para que estos dejen su vehículo en manos confiables de modo rápido, seguro y a buen precio.</h2>
     </div>
 
@@ -71,7 +72,7 @@
       <h3>Ya podés subir tu espacio</h3>
       <h6>Convertite en anfitrión y empezá a ganar dinero. ¿Cómo hago?</h6>
       <div style="text-align:center;">
-        <a href="/anfitrion" class="btn btn-warning">Clickeá y enterate</a>
+        <a href="/anfitrion" class="btn btn-warning">Enterate Acá</a>
       </div>
     </div>
 
@@ -91,18 +92,19 @@
       <article class="form-generico form-group">
           <form class="credits-form" action="{{ route('suscribir') }}" method="post">
             {{ csrf_field() }}
-
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input type="text" name="name" placeholder="Nombre y Apellido" value="">
+            <div class="row">
+              <div class="input-field col s4 offset-s2 m4 offset-m2 l4 offset-l2">
+                  <input type="text" name="name" value="">
+                  <label for="name">Nombre y Apellido</label>
+              </div>
+              <div class="input-field col s4 offset-s2 m4 offset-m1 l4 offset-l1">
+                  <input id="lalala" type="email" name="email" value="" id="credit-email">
+                  <label for="lalala">E-mail</label>
+              </div>
+            <div class="col s10 offset-s1 m10 offset-m1 offset-m1 l10 offset-l1">
+              <input type="submit" name="" value="SUSCRIBITE">
             </div>
-
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-              <input type="email" name="email" placeholder="E-Mail" id="credit-email">
-            </div>
-
-            <input type="submit" name="" value="SUSCRIBITE">
+          </div>
           </form>
       </article>
     </div>
@@ -129,10 +131,11 @@
 
   </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
 <script>
 // Fecha de lanzamiento
-var countDownDate = new Date("may 28, 2018 23:59:59").getTime();
+var countDownDate = new Date("july 17, 2018 23:59:59").getTime();
 
 // Calculo el intervalo cada 1 segundo
 var x = setInterval(function() {

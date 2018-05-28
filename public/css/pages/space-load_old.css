@@ -8,26 +8,154 @@
 }
 .uploadEspacio-progressBar{
   width: 80%;
-  height: 6px;
   margin: 15px auto 0;
 }
-  @media(min-width: 700px){
-    .uploadEspacio-progressBar{
-      width: 73%;
-    }
-  }
 
 .uploadEspacio-progressBar div{
   width: 20%;
 }
 
 
-.upload-div-div-map1 {
-  height: 250px;
-  width: 80%;
-  margin: 5px auto 0;
+.uploadEspacio .form-generico{
+  margin: 0;
 }
 
+.uploadEspacio .form-generico .upload-label-titulo{
+  text-align: left;
+  width: 100%;
+  padding: 20px 0 5px 0;
+  color: #000000;
+  font-size: 1.3em;
+}
+
+.uploadEspacio .form-generico .upload-label-titulo span{
+  margin: 5px;
+  color: #005174;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.upload-div-div-map1 {
+  height: 250px;
+  margin-top: 5px;
+}
+
+.uploadEspacio .form-generico .upload-div-checkbox{
+  /* overflow: hidden; */
+  /* margin-top: 5px; */
+}
+
+/* .uploadEspacio .form-generico .upload-div-div-checkbox{
+  float: right;
+} */
+
+/* Para personalizar checkbox */
+.uploadEspacio .form-generico .upload-label-checkbox{
+  /* width: 70%; */
+  /* float: left; */
+  color: #8f8f8f;
+  margin: 0px;
+  display: block;
+  position: relative;
+  padding-left: 38px;
+  /* margin-bottom: 12px; */
+  cursor: pointer;
+  /* font-size: 22px; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Escondo el checkbox default */
+.uploadEspacio .form-generico .upload-input-checkbox{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Creo el customizado */
+.uploadEspacio .form-generico .upload-span-checkbox {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.upload-label-checkbox:hover input ~ .upload-span-checkbox {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a background */
+.upload-label-checkbox input:checked ~ .upload-span-checkbox {
+  background-color: #569ab6;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.upload-span-checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.upload-label-checkbox input:checked ~ .upload-span-checkbox:after {
+  display: block;
+}
+
+/* Style the upload-span-checkbox/indicator */
+.upload-label-checkbox .upload-span-checkbox:after {
+  left: 9px;
+  top: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* .uploadEspacio .form-generico .upload-input-tipovehiculo{
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  margin-top: 0px;
+} */
+
+/* .uploadEspacio .form-generico .upload-button-sumaresta{
+  display: inline-block;
+  text-align: center;
+  margin: 0px 6px;
+  background-color: #ffffff;
+  color: #444444;
+  font-size: 22px;
+  border: none;
+  vertical-align: middle;
+} */
+
+.uploadEspacio .form-generico .upload-div-especiales{
+  display: block;
+  clear: both;
+}
+
+/* .uploadEspacio .form-generico .upload-div-especiales .upload-label-especiales{
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  color: #8f8f8f;
+}
+
+.uploadEspacio .form-generico .upload-div-especiales .upload-label-especiales .upload-checkbox-especiales{
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+  position: relative;
+  bottom: 1px;
+} */
 
 .uploadEspacio .upload-div-sideimage{
   display: none;

@@ -18,7 +18,7 @@
   width: 68.5%;
   border: none;
   vertical-align: middle;
-  margin-top: 0px;
+  margin: 0;
   text-align: left;
 }
 
@@ -28,7 +28,8 @@
   border-left: 1px solid gray;
   border-radius: 0px;
   vertical-align: middle;
-  margin-top: 0px;
+  margin: 0;
+  padding: 0;
   text-align: center;
   display: inline-block;
   /* padding: 10px 4px; */
@@ -49,7 +50,7 @@
 .form-generico .search-espacios-form .search-horario input {
   text-align: center;
   border: none;
-  margin-top: 0px;
+  margin: 0;
   color: gray;
   border-bottom: solid 1px gray;
   border-radius: 0px;
@@ -63,6 +64,7 @@
   display: inline-block;
   color: gray;
   text-align: center;
+  padding: 0;
 }
 
 .search-espacios-form .search-espacios-hora{

@@ -1,5 +1,28 @@
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea{
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+}
+
+nav{
+  background: #fff;
+}
+h1{
+  font-size: 24px;
+}
+h2{
+  font-size: 22px;
+}
+h3{
+  font-size: 20px;
+}
+h4{
+  font-size: 18px;
+}
+h5{
+  font-size: 14px;
+  margin: 0;
+}
+p{
+  font-size: 16px;
 }
 
 .select-dropdown li img{
@@ -10,8 +33,4 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 
 .select-wrapper span.caret{
   display: none;
-}
-
-label{
-  font-size: 1.4rem;
 }

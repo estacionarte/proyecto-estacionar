@@ -4,7 +4,7 @@
 
 <div class="bodies-main-content">
   <div class="gral-main">
-    <h1>Preguntas Frecuentes</h1>
+    <h1 class="">Preguntas Frecuentes</h1>
 
     <div class="faqs-search">
       <form class="faqs-form-search" action="" method="get">

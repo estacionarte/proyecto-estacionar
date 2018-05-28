@@ -92,7 +92,7 @@ nav ul li{
   float: right;
   width: 30px;
   height: 30px;
-  margin: 8px 30px;
+  margin: 15px 30px;
   padding-top: 12px;
   /* border: solid 1px blue; */
 }
@@ -142,7 +142,7 @@ nav ul li{
   display: block;
   background-color: #48A8C1;
   color: white;
-  font-size: 1.3em;
+  font-size: 14px;
   text-align: center;
   text-transform: uppercase;
   padding: 15px 0;
@@ -238,7 +238,7 @@ margin-right: 0;
 .sidenav a {
   padding: 15px 30px;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 0.6em;
   color: #818181;
   display: block;
   transition: 0.3s;
@@ -249,7 +249,7 @@ margin-right: 0;
 
 .sidenav h4{
   color: #085174;
-  padding: 30px 0 0 30px;
+  padding: 15px 0 0 30px;
 }
 .sidenav h5{
   padding-left: 30px;
@@ -301,15 +301,15 @@ margin-right: 0;
     /* border: solid 1px yellow; */
     width: 65%;
     overflow: hidden;
-    margin: 0 0 0 35%;
-    padding: 5px;
+    margin: 0 0 0 30%;
+    padding: 14px 5px;
   }
 
   .nav-bar a{
     color: rgb(25, 37, 40);
     float: right;
     padding: 8px 5px;
-    font-size: .8em;
+    font-size: 0.6em;
     font-weight: bold;
     text-transform: uppercase !important;
     background-color: inherit;
@@ -385,6 +385,7 @@ margin-right: 0;
     display: inline-block;
     padding: 6px 15px;
     vertical-align: middle;
+    font-size: 0.8em;
   }
   .main-nav .avatar-container i{
     display: inline-block;
@@ -433,7 +434,7 @@ margin-right: 0;
   }
 
   .nav-bar a{
-    font-size: .9em;
+    font-size: .6em;
     padding: 8px 0 !important;
     width: 145px;
     letter-spacing: 2px;

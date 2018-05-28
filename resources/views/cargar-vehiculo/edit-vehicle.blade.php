@@ -2,16 +2,17 @@
 @section('title') Editar Vehiculo @endsection
 @section('content')
 
-  @if (count($errors) > 0)
-          @foreach ($errors->all() as $error)
-            <p style="color: #990606;"> {{ $error }} </p>
-          @endforeach
-        @endif
-  <div class="content">
-    <div class="bodies-main-content">
-      <hr>
+  <div class="bodies-main-content">
+    <div class="gral-main">
+
       <h1>Editá los datos de tu Vehiculo</h1>
-      <div class="clear"></div>
+
+      <section class="signin upload">
+        @if (count($errors) > 0)
+              @foreach ($errors->all() as $error)
+                <p style="color: #990606;"> {{ $error }} </p>
+              @endforeach
+        @endif
 
       <form class="" action="{{ route('edit.vehicle', $vehiculo) }}" method="post" style="display:inline">
         {{ method_field('PUT') }}
@@ -19,10 +20,20 @@
 
         @include('cargar-vehiculo._form-vehicle')
 
-        <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success" style="margin-left:15px;" onsubmit="confirm('¿Eliminar Vehiculo?')">
+          <div class="col s5 m5 offset-m1 center-align boton">
+              <button class="btn waves-effect waves-light" type="submit">Cargar vehículo
+                  <i class="material-icons right">send</i>
+              </button>
+          </div>
+
+          <div class="col s5 m5 center-align boton">
+            <button class="btn waves-effect waves-light" type="submit" onclick="confirmar()">Cancelar cambios
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
       </form>
-        <input type="submit" name="" value="Cancelar cambios" class="btn btn-warning" onclick="confirmar()">
-      </a>
+    </section>
+    </div>
     </div>
   </div>
 
@@ -35,7 +46,7 @@
   <script>
   function confirmar(e) {
     if (confirm('¿Cancelar cambios y volver al perfil?')) {
-      window.location.replace("{{ route('profile')}}");
+      window.location.replace("{{ route('profile-vehiculo')}}");
     } else {
         e.preventDefault();
       }

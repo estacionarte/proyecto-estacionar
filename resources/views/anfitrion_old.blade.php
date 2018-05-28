@@ -34,7 +34,6 @@
      {{-- Materialize framework --}}
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
 
       <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -92,16 +91,16 @@
     <div class="anfitrion">
       <div class="banner-anfitrion-container">
         <div class="title-anfitrion-container">
-          <h3 class="wow fadeInLeft">Tu Espacio en Estacionados</h3>
-          <h1 class="wow fadeInLeft">Ganá dinero como anfitrión de Estacionados</h1>
-          <a class="btn  red accent-4 wow fadeInUp" data-wow-delay="1s" role="button" id="comenzar1" onclick="return gtag_report_conversion('http://www.estacionados.com/anfitrion');">Comenzar</a>
+          <h3>Tu Espacio en Estacionados</h3>
+          <h1>Ganá dinero como anfitrión de Estacionados</h1>
+          <a class="btn btn-danger" role="button" id="comenzar1" onclick="return gtag_report_conversion('http://www.estacionados.com/anfitrion');">Comenzar</a>
 
           <div class="modalAlquilar" style="{{ !empty($registrado) && $registrado == 1 || count($errors) > 0 ? ' display: block' : '' }}">
             <div class="modalAlquilar-content">
               <span class="alquilar-close">&times;</span>
               <h2>Enviar datos</h2>
-              <h3 id="anfitrion-modal-h3" style="padding: 0 35px">Dejanos tus datos y nos contactamos con vos para cargar tu espacio</h3>
-
+              <h3 id="anfitrion-modal-h3">Dejanos tus datos y nos contactamos con vos para cargar tu espacio</h3>
+              <hr>
               @if (count($errors) > 0)
                 @foreach ($errors->all() as $error)
                   <p style="color: #990606;"> {{ $error }} </p>
@@ -110,51 +109,51 @@
               @if (!empty($registrado) && $registrado == 1)
                 <h5 style="color:rgb(255, 89, 89); font-weight:bold; font-size:1em; text-align:center">¡Gracias por dejarnos tus datos!</h5>
               @endif
-
+              <div class="form-generico">
                 <form action="{{ route('datos.anfitrion') }}" method="post">
                   {{ csrf_field() }}
                   <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                        <input type="text" name="name" maxlength="50">
+                    <div class="input-field col s12 m6">
+                        <input id="nombre" type="text" name="name" maxlength="50">
                         <label for="nombre">Nombre y Apellido</label>
                     </div>
-                    <div class="input-field col s10 offset-s1">
-                          <input type="text" name="email" maxlength="100">
-                          <label for="email">Email</label>
-                    </div>
-                    <div class="input-field col s10 offset-s1">
-                        <input type="text" name="location" maxlength="50" maxlength="100">
-                        <label for="location">Ciudad y Barriio</label>
-                    </div>
-                  <div class="input-field col s10 offset-s1">
-                    <textarea name="informacion" maxlength="250" class="materialize-textarea"></textarea>
-                    <label style="font-size: 12px" for="informacion">Consultas y datos que consideres importantes. Ejemplo: n˚ de tel., disponibilidad horaria del espacio a ofertar, info sobre el mismo (casa, techado, altura)...</label>
                   </div>
-                  <div class="col s10 offset-s1">
-                      <button class="btn waves-effect waves-light  red accent-4" type="submit" name="enviar">Enviar
-                          <i class="material-icons right">send</i>
-                      </button>
-                  </div>
-                </div>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input type="text" name="name" placeholder="Nombre y Apellido" maxlength="50">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                      <input type="email" name="email" placeholder="E-Mail" maxlength="100">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input type="text" name="location" placeholder="Ciudad y Barrio" maxlength="100">
+                    </div>
+                    <div class="input-group">
+                      <textarea name="informacion" maxlength="250" placeholder="Consultas y otros datos que consideres importantes para nosotros. Por ejemplo: n˚ de teléfono, disponibilidad horaria del espacio a ofertar, información sobre el mismo (casa, techado, altura), etc."></textarea>
+                    </div>
+                    <input type="submit" name="enviar" value="ENVIAR">
                 </form>
-                <p>Te vamos a contactar en menos de 48 horas.</p>
-                <h6 style="color:black; text-align:center;">info@estacionados.com</h6>
+              </div>
+              <p>Te vamos a contactar en menos de 48 horas.</p>
+              <h6 style="color:black; text-align:center;">info@estacionados.com</h6>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
 
       <div class="resumen-anfitrion-container">
-        <article id="resumen1" class="resumen wow slideInUp">
+        <article id="resumen1" class="resumen">
           <h1>¿Por qué alquilar mi espacio?</h1>
           <p>Porque, sin importar qué tipo de lugar tengas para compartir, <b>Estacionados</b> hace que ganar dinero y llegar a cientos de conductores resulte simple y seguro. Podés ofrecer una cochera cuando no la uses o, simplemente, el living de tu casa para recibir bicicletas sin ninguna complicación.</p>
         </article>
-        <article class="resumen wow slideInUp">
+        <article class="resumen">
           <h1>Vos tenés el control</h1>
           <p>Con <b>Estacionados</b>, tenés completo control de la disponibilidad, precios y reglas de tu espacio. Al recibir un pedido de reserva, disponibilizamos los datos del solicitante para que seas vos quien decida aceptar o rechazar el alquiler.</p>
         </article>
-        <article class="resumen wow slideInUp">
+        <article class="resumen">
           <h1>Estamos ahí para ayudarte en todo el proceso</h1>
           <p><b>Estacionados</b> ofrece herramientas, consejos de seguridad y servicios de atención al cliente los 7 días de la semana.</p>
         </article>
@@ -162,20 +161,20 @@
 
       <div class="pasos-anfitrion-container">
         <h1>¿Cómo ser anfitrión de Estacionados?</h1>
-        <article class="ser-anfitrion wow fadeInRight">
+        <article class="ser-anfitrion">
           <img src="images/anfitrion/paso1.jpg">
           <h2>1. Creá un espacio</h2>
           <p>Crear un espacio en <b>Estacionados</b> es gratis y fácil. Describí tu espacio, indicá qué tipo de vehículo podés alojar, agregá fotos y detallá todas las referencias que creas necesarias.</p>
           <p>Para terminar, indicá la disponibilidad de tu espacio y el precio que desees cobrar.</p>
         </article>
-        <article class="ser-anfitrion wow fadeInLeft">
+        <article class="ser-anfitrion">
           <img id="anfitrion-img-2" src="images/anfitrion/paso2.jpg">
           <h2 class="anfitrion-h2-2">2. Da la bienvenida al conductor</h2>
           <p class="anfitrion-p-2">Conocé a los conductores antes de su llegada intercambiando mensajes. Nosotros nos encargamos de proveer la información necesaria para que puedan comunicarse entre sí al concretar el alquiler.</p>
           <p class="anfitrion-p-2">La mayoría de los anfitriones se ocupan de limpiar y ordenar los espacios que usarán los conductores para que estén en buenas condiciones.</p>
           <p class="anfitrion-p-2">Podés darles la bienvenida a los conductores y recibirlos en persona, o también podés enviarles los datos que necesitan para poder dejar su vehículo al llegar.</p>
         </article>
-        <article class="ser-anfitrion wow fadeInRight">
+        <article class="ser-anfitrion">
           <img src="images/anfitrion/paso3.jpg">
           <h2>3. Recibí el pago</h2>
           <p>Los pagos en <b>Estacionados</b> se realizan siempre online, lo que permite que nunca tengas que tratar directamente con dinero.</p>
@@ -185,13 +184,11 @@
       </div>
 
       <div class="footer-anfitrion">
-        <h1 class="wow slideInUp">Empezá a crear tu espacio</h1>
-        <a class="btn red accent-4 wow slideInUp" role="button" id="comenzar2" onclick="return gtag_report_conversion('http://www.estacionados.com/anfitrion');">Comenzar</a>
+        <h1>Empezá a crear tu espacio</h1>
+        <a class="btn btn-danger" role="button" id="comenzar2" onclick="return gtag_report_conversion('http://www.estacionados.com/anfitrion');">Comenzar</a>
       </div>
+
     </div>
-
-
-
 
     <script>
       modal = document.getElementsByClassName("modalAlquilar")[0];
@@ -219,11 +216,4 @@
   <script src="{{ URL::asset('js/jquery.min.js')}}"></script>
 
   <script src="js/materialize.min.js"></script>
-
-  <script src="{{ URL::asset('js/wow.min.js')}}"></script>
-
-  <script>
-    new WOW().init();
-  </script>
-
 </html>

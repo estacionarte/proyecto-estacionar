@@ -2,33 +2,41 @@
 @section('title') Cargar Vehiculo @endsection
 @section('content')
 
-  <div class="container">
-    <div class="bodies-main-content">
-      <hr>
-      <h1>Cargá los datos de tu Vehiculo</h1><br>
+  <div class="bodies-main-content">
+    <div class="gral-main">
 
-      @if (count($errors) > 0)
-              @foreach ($errors->all() as $error)
-                <p style="color: #990606;"> {{ $error }} </p>
-              @endforeach
-            @endif
-      <form class="" action="{{ route('create.upload.vehicle') }}" method="post">
-        {{ csrf_field() }}
+      <h1>Cargá los datos de tu Vehiculo</h1>
 
-        @include('cargar-vehiculo._form-vehicle')
+      <section class="signin upload">
+        @if (count($errors) > 0)
+          @foreach ($errors->all() as $error)
+            <p style="color: #990606;"> {{ $error }} </p>
+          @endforeach
+        @endif
 
-        <input type="submit" name="" value="Cargar vehiculo" class="btn btn-success" style="margin-left:15px;">
-    </form>
+        <form class="" action="{{ route('create.upload.vehicle') }}" method="post">
+          {{ csrf_field() }}
+
+          @include('cargar-vehiculo._form-vehicle')
+
+            <div class="col s12  center-align boton">
+                <button class="btn waves-effect waves-light" type="submit">Cargar vehículo
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+          </div>
+        </form>
+      </section>
     </div>
   </div>
 
-  <script>
-      // SELECT DE FORMULARIO
-        $(document).ready(function() {
-          $('select').material_select();
-        });
-  </script>
-  
+{{-- <script src="{{ URL::asset('js/materialize.min.js')}}"></script> --}}
+<script>
+    // SELECT DE FORMULARIO
+      $(document).ready(function() {
+        $('select').material_select();
+      });
+</script>
       <script type="text/javascript">
         function mostrarMarca() {
           var mostrar = document.getElementById("vehiculo").value;
