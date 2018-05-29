@@ -7,6 +7,13 @@
   <title>Estacionados</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto" rel="stylesheet">
+
+  {{-- jquery --}}
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <link href="{{ asset('css/main.css') }}" rel="stylesheet" id="hojaDeEstilo">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -133,8 +140,8 @@
   </div>
 
 
-<script src="{{ URL::asset('js/jquery.min.js')}}"></script>
-<script src="{{ URL::asset('js/materialize.min.js')}}"></script>
+  <script src="{{ URL::asset('js/jquery.min.js')}}"></script>
+  <script src="js/materialize.min.js"></script>
 
 <script>
 // Fecha de lanzamiento
