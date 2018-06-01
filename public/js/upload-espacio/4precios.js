@@ -115,7 +115,11 @@ var rangominutos = function(){
 // Función para actualizar ganancia de calculadora
 var actualizarCalculadora = function(){
 
-  var estadia_calcu_enhoras = dias_calculadora.value * 24 + horas_calculadora.value + minutos_calculadora.value / 60;
+  var estadia_calcu_enhoras = parseInt(dias_calculadora.value) * 24 + parseInt(horas_calculadora.value) + parseInt(minutos_calculadora.value) / 60;
+  console.log(dias_calculadora.value);
+  console.log(horas_calculadora.value);
+  console.log(minutos_calculadora.value);
+  console.log(estadia_calcu_enhoras);
 
   if (estadia_calcu_enhoras < 1) {
     ganancia_resultado.textContent = Math.round(estadia_calcu_enhoras * precioPorHora.value);
