@@ -31,10 +31,10 @@
      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
      {{-- CAROUSEL DE BOOSTRAP--}}
-     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
      {{-- Materialize framework --}}
-    {{-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> --}}
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
       <!-- CSRF Token -->
@@ -235,17 +235,17 @@
         </ul>
       </div>
     </footer>
-    <section class="redes-sociales">
+    {{-- <section class="redes-sociales">
       <div class="facebook">
         <a href="https://www.facebook.com/Estacionarte-352116461897716/" target="_blank"><img src="/icons/facebook.png" alt=""></a>
       </div>
-      {{-- <div class="twitter">
+      <div class="twitter">
         <a href="http://twitter.com" target="_blank"><img src="/icons/twitter.png" alt=""></a>
-      </div> --}}
+      </div>
       <div class="instagram">
         <a href="http://instagram.com" target="_blank"><img src="/icons/instagram.png" alt=""></a>
       </div>
-    </section>
+    </section> --}}
 
 
     <script src="{{ URL::asset('js/jquery.min.js')}}"></script>
