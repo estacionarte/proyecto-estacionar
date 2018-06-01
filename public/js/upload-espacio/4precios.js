@@ -20,8 +20,9 @@ var precioHora = document.getElementById('precioHora');
 descuentoPorHoraHora.onchange = function(){actualizarDescuentoHora();}
 
 var actualizarDescuentoHora = function(){
+  console.log(descuentoPorHoraHora.value);
   if (descuentoPorHoraHora.value) {
-    descuento = parseInt(descuentoPorHoraHora.value);
+    descuento = descuentoPorHoraHora.value;
   } else {
     descuento = 0;
   }
@@ -36,7 +37,7 @@ descuentoPorHoraSeisHoras.onchange = function(){actualizarDescuentoSeisHoras();}
 
 var actualizarDescuentoSeisHoras = function(){
   if (descuentoPorHoraSeisHoras.value) {
-    descuento = parseInt(descuentoPorHoraSeisHoras.value);
+    descuento = descuentoPorHoraSeisHoras.value;
   } else {
     descuento = 0;
   }
@@ -51,7 +52,7 @@ descuentoPorHoraDia.onchange = function(){actualizarDescuentoDia();}
 
 var actualizarDescuentoDia = function(){
   if (descuentoPorHoraDia.value) {
-    descuento = parseInt(descuentoPorHoraDia.value);
+    descuento = descuentoPorHoraDia.value;
   } else {
     descuento = 0;
   }
@@ -116,10 +117,6 @@ var rangominutos = function(){
 var actualizarCalculadora = function(){
 
   var estadia_calcu_enhoras = parseInt(dias_calculadora.value) * 24 + parseInt(horas_calculadora.value) + parseInt(minutos_calculadora.value) / 60;
-  console.log(dias_calculadora.value);
-  console.log(horas_calculadora.value);
-  console.log(minutos_calculadora.value);
-  console.log(estadia_calcu_enhoras);
 
   if (estadia_calcu_enhoras < 1) {
     ganancia_resultado.textContent = Math.round(estadia_calcu_enhoras * precioPorHora.value);
