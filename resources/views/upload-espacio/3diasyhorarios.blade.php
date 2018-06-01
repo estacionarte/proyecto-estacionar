@@ -2,19 +2,13 @@
 @section('title') Cargar Espacio @endsection
 @section('content')
 
-  <div class="container">
-
-    <div class="bodies-main-content">
-
-      <hr>
-
-      <div class="uploadEspacio-progressBar">
-        <div class="uploadEspacio-progressBar-progress3"></div>
-      </div>
-
-      <h1>Cargar Espacio - Días y Horarios (Paso 3 de 4)</h1>
-
-      <section class="uploadEspacio">
+  <div class="bodies-main-content upload-espacio">
+    <div class="gral-main">
+      <h1>Cargar Espacio - Días y Horarios <small>Paso 3 de 4</small></h1>
+      <section class="signin upload">
+        <div class="progress uploadEspacio-progressBar">
+            <div class="determinate" style="width: 60%"></div>
+        </div>
 
         @if (count($errors) > 0)
           @foreach ($errors->all() as $error)
@@ -22,11 +16,12 @@
           @endforeach
         @endif
 
-        <div class="form-generico">
+        <div class="row">
+            <div class="col s10 offset-s1">
+            <label for="" class="upload-label-titulo">¿En qué días y horarios va a estar disponible tu espacio?</label>
+          </div>
 
-          <label for="" class="upload-label-titulo">¿En qué días y horarios va a estar disponible tu espacio?</label>
-
-          {{-- <select class="" name="" style="margin-bottom: 15px;" id="predeterminados">
+            {{-- <select class="" name="" style="margin-bottom: 15px;" id="predeterminados">
             <option value="personalizar">Personalizar</option>
             <option value="todos">Todos los días</option>
             <option value="findes">Fines de semana</option>
@@ -41,26 +36,24 @@
                 <label for="" class="upload-label-horario-button" style="float: none; line-height: 20px; display:none;">&#10005;</label>
               </div> --}}
 
-              <div class="upload-div-div-horario">
-                <div class="upload-div-div-div-horario" style="margin-top:0px;">
-                  <label for="">Día</label>
-                  <select name="dia" class="upload-select-dia" style="" id="dia-select" required>
-                    <option value="" selected>Día</option>
-                    <option value="Lunes" {{ $horarios->get('Lunes') ? 'disabled' : ''}}>Lunes</option>
-                    <option value="Martes" {{ $horarios->get('Martes') ? 'disabled' : ''}}>Martes</option>
-                    <option value="Miércoles" {{ $horarios->get('Miércoles') ? 'disabled' : ''}}>Miércoles</option>
-                    <option value="Jueves" {{ $horarios->get('Jueves') ? 'disabled' : ''}}>Jueves</option>
-                    <option value="Viernes" {{ $horarios->get('Viernes') ? 'disabled' : ''}}>Viernes</option>
-                    <option value="Sábado" {{ $horarios->get('Sábado') ? 'disabled' : ''}}>Sábado</option>
-                    <option value="Domingo" {{ $horarios->get('Domingo') ? 'disabled' : ''}}>Domingo</option>
-                  </select>
+                <div class="col s10 offset-s1 l3 offset-l1 upload-div-div-horario">
+                  <div class="upload-div-div-div-horario">
+                    <select class="upload-select-dia" name="dia" id="dia-select">
+                      <option value="">Día</option>
+                      <option value="Lunes" {{ $horarios->get('Lunes') ? 'disabled' : ''}}>Lunes</option>
+                      <option value="Martes" {{ $horarios->get('Martes') ? 'disabled' : ''}}>Martes</option>
+                      <option value="Miércoles" {{ $horarios->get('Miércoles') ? 'disabled' : ''}}>Miércoles</option>
+                      <option value="Jueves" {{ $horarios->get('Jueves') ? 'disabled' : ''}}>Jueves</option>
+                      <option value="Viernes" {{ $horarios->get('Viernes') ? 'disabled' : ''}}>Viernes</option>
+                      <option value="Sábado" {{ $horarios->get('Sábado') ? 'disabled' : ''}}>Sábado</option>
+                      <option value="Domingo" {{ $horarios->get('Domingo') ? 'disabled' : ''}}>Domingo</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div class="upload-div-div-div-horario">
-
-                  <div class="upload-div-div-div-horario-hora">
-                    <label for="">Desde</label>
-                    <select name="horaComienzo" class="upload-select-dia" style="" id="horacomienzo-select" required>
+                  <div class="col s5 offset-s1 l3 offset-l1 upload-div-div-div-horario-hora">
+                    <select name="horaComienzo" class="upload-select-dia" style="" id="horacomienzo-select">
                       <option value="0" selected>00:00</option>
                       <option value="30">00:30</option>
                       <option value="60">01:00</option>
@@ -112,8 +105,7 @@
                     </select>
                   </div>
 
-                  <div class="upload-div-div-div-horario-hora">
-                    <label for="">Hasta</label>
+                  <div class="col s5 l3 upload-div-div-div-horario-hora">
                     <select name="horaFin" class="upload-select-dia" style="" id="horafin-select" required>
                       <option value="30">00:30</option>
                       <option value="60">01:00</option>
@@ -173,13 +165,17 @@
                     <input type="checkbox" name="dia-entero" id="dia-entero" value="1" class="upload-input-checkbox">
                     <span class="upload-span-checkbox"></span>
                   </label> --}}
-                  <input type="checkbox" name="dia-entero" id="dia-entero" value="1" style="margin-top:0px;" checked="true">
-                  <label for="dia-entero" style="margin-bottom:0px;">Todo el día</label>
+                  <p class="col s12 center-align ">
+                    <input type="checkbox" name="dia-entero" id="dia-entero" value="1"  checked="true">
+                    <label for="dia-entero">Todo el día</label>
+                  </p>
                 </div>
 
-              </div>
-
-              <button type="button" name="" id="boton-agregar-horario">Agregar Horario</button>
+                <div class="col s12  center-align boton">
+                    <button class="btn waves-effect waves-light  teal darken-2" type="button" name="" id="boton-agregar-horario">Agregar Horario
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
 
             </div>
 
@@ -190,46 +186,54 @@
               {{-- Acá van los horarios que agrega el usuario --}}
               <div class="horarios-holder">
 
-                <hr style="margin: 10px 0px;">
-
                 {{-- @foreach ($iterable as $key => $value)
 
                 @endforeach --}}
 
-                @foreach ($horarios as $horario)
-                  <div class="upload-div-diasemana">
+                  @foreach ($horarios as $horario)
+                    <div class="upload-div-diasemana">
 
-                    <input type='text' name='diasemana[{{$horario->dia}}]' class='upload-input-dia' value='{{$horario->dia}}' readonly>
+                        {{-- <input type='text' name='diasemana[{{$horario->dia}}]' class='upload-input-dia' value='{{$horario->dia}}' readonly>
 
-                    <input type='text' class='upload-input-hora' value='{{$espacio->minutosEnHoraDelDia($horario->horaComienzo)}}' disabled>
-                    <span style='text-align:center;'> - </span>
-                    <input type='text' name='' class='upload-input-hora' value='{{$espacio->minutosEnHoraDelDia($horario->horaFin)}}' disabled>
+                        <input type='text' class='upload-input-hora' value='{{$espacio->minutosEnHoraDelDia($horario->horaComienzo)}}' disabled>
 
-                    <label onclick='borrarHorario(event)' class='upload-label-horario-button'>&#8854;</label>
+                      <span style='text-align:center;'> - </span>
+                      <input type='text' name='' class='upload-input-hora' value='{{$espacio->minutosEnHoraDelDia($horario->horaFin)}}' disabled>
 
-                    <hr style='margin: 10px 0px;'>
+                      <label onclick='borrarHorario(event)' class='upload-label-horario-button'>&#8854;</label>
 
-                    <input type='text' name='horacomienzo[{{$horario->dia}}]' class='upload-input-hora' value='{{$horario->horaComienzo}}' style='display:none;'>
+                      <hr style='margin: 10px 0px;'>
 
-                    <input type='text' name='horafin[{{$horario->dia}}]' class='upload-input-hora' value='{{$horario->horaFin}}' style='display:none;'>
+                      <input type='text' name='horacomienzo[{{$horario->dia}}]' class='upload-input-hora' value='{{$horario->horaComienzo}}' style='display:none;'>
 
-                  </div>
-                @endforeach
+                      <input type='text' name='horafin[{{$horario->dia}}]' class='upload-input-hora' value='{{$horario->horaFin}}' style='display:none;'> --}}
+
+                    </div>
+                  @endforeach
+
 
               </div>
 
-              <p style="margin: 15px 0px 0px; font-size: 0.9em;">Si el conductor no retira su vehículo dentro del tiempo acordado, se le seguirá cobrando</p>
+              <div class="col s10 offset-l1">
+                  <p>Si el conductor no retira su vehículo dentro del tiempo acordado, se le seguirá cobrando</p>
+                </div>
 
-              <input type="submit" name="boton-volver" value="&#8249; Volver" class="upload-button-volver" formaction="{{ route('upload.espacio.2', $espacio) }}" formmethod="get">
-              <input type="submit" name="boton-submit" value="SIGUIENTE" class="upload-button-submit">
-
+              <div class="col s5 left-align boton">
+                  <button class="btn waves-effect waves-light  teal lighten-3" type="submit" name="boton-volver" formaction="{{ route('upload.espacio.2', $espacio) }}" formmethod="get">Volver
+                      <i class="material-icons left">arrow_back</i>
+                  </button>
+              </div>
+              <div class="col s5 offset-s1 right-align boton">
+                  <button class="btn waves-effect waves-light  red darken-2" type="submit" name="boton-submit">SIGUIENTE
+                      <i class="material-icons right">send</i>
+                  </button>
+              </div>
 
             </form>
 
+            <div class="upload-div-sideimage3"></div>
+
         </div>
-
-        <div class="upload-div-sideimage3"></div>
-
       </section>
       <div class="clear"></div>
     </div>
@@ -238,5 +242,11 @@
 @endsection
 
 @section('scripts')
+  <script>
+      // SELECT DE FORMULARIO
+        $(document).ready(function() {
+          $('select').material_select();
+        });
+  </script>
   <script src="{{ URL::asset('js/upload-espacio/3diasyhorarios.js')}}"></script>
 @endsection
