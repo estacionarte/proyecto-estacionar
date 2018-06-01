@@ -99,7 +99,7 @@
               <label for="">Horas:</label><input type="number" min=0 max=23 value=3 id="horas-calculadora">
               <label for="">Minutos:</label><input type="number" min=0 max=59 value=30 id="minutos-calculadora">
 
-              <p>Por dejar el auto <span id="dias-resultado">0</span> dias, <span id="horas-resultado">3</span> horas y <span id="minutos-resultado">30</span> minutos recibirás $<span id="ganancia-resultado"></span></p>
+              <p>Por dejar el auto <span id="dias-resultado">0</span> dias, <span id="horas-resultado">3</span> horas y <span id="minutos-resultado">30</span> minutos recibirás $<span id="ganancia-resultado"></span>.</p>
 
             </div>
 
