@@ -21,16 +21,32 @@
   width: 20%;
 }
 
-
 .upload-div-div-map1 {
   height: 250px;
   width: 80%;
   margin: 5px auto 0;
 }
 
-
 .uploadEspacio .upload-div-sideimage{
   display: none;
+}
+
+.upload-espacio  form .tipo-de-espacio{
+  display: inline-block;
+}
+.upload-espacio  form .tooltipped {
+  display: inline-block;
+}
+.upload-espacio  form .tooltipped img{
+  width: 15px;
+}
+.upload-espacio .backdrop{
+  background-color: #00bfa5;
+}
+
+.upload-espacio .material-tooltip{
+  width: 200px;
+  font-size: 14px;
 }
 
 .upload-div-foto{
@@ -39,6 +55,11 @@
   display: inline-block;
   margin-top: 5px;
 }
+  @media(min-width: 600px){
+    .upload-div-foto{
+      width: 100%
+    }
+  }
 
 .upload-img-foto{
   opacity: 1;
@@ -66,6 +87,7 @@
 .upload-div-foto:hover .upload-img-foto{
   opacity: 0.3;
   box-shadow: 0 0 2px 1px rgba(72, 168, 193, 0.5);
+  cursor: pointer;
 }
 
 .upload-div-foto:hover .upload-div-div-foto{
@@ -80,12 +102,12 @@
   margin-top: 0px;
   margin: auto;
 }
+.upload-div-foto:hover .upload-label-deletefoto{
+  cursor: pointer;
+}
 
 /****************** C A R G A   C O C H E R A (Paso 2 - Estadías) *******************/
 
-.uploadEspacio-progressBar-progress2{
-  width: 25%;
-}
 
 .uploadEspacio .form-generico .upload-label-tiempoMinimoyMax{
   width: 35%;
@@ -122,7 +144,7 @@
 
 /****************** C A R G A   C O C H E R A (Paso 3 - Días y Horarios) - TEMPORAL *******************/
 
-.uploadEspacio-progressBar-progress3{
+/* .uploadEspacio-progressBar-progress3{
   width: 50%;
 }
 
@@ -131,11 +153,6 @@
   margin-top: 20px;
 }
 
-.uploadEspacio .form-generico .upload-div-diasemana{
-  /* overflow: hidden; */
-  text-align: left;
-  padding: 0px 2px;
-}
 
 .uploadEspacio .form-generico .upload-div-diasemana .upload-input-dia, .uploadEspacio .form-generico .upload-div-diasemana .upload-input-hora{
   margin-top: 0px;
@@ -161,8 +178,6 @@
 }
 
 .uploadEspacio .form-generico .upload-div-agregardia{
-  /* clear: both; */
-  /* overflow: hidden; */
   margin-top: 20px;
 }
 
@@ -179,8 +194,6 @@
 }
 
 .uploadEspacio .form-generico .upload-div-div-horario label{
-  /* display: inline-block; */
-  /* font-size: 18px; */
   text-align: left;
   margin: 0px 0px 2px;
   padding: 0px;
@@ -197,9 +210,9 @@
 
 .uploadEspacio .form-generico .upload-div-div-horario .upload-div-div-horario-diaentero{
   margin-top: 8px;
-}
+} */
 
-#boton-agregar-horario{
+/* #boton-agregar-horario{
   display: block;
   width: 50%;
   padding: 10px;
@@ -207,14 +220,14 @@
   color: #ffffff;
   border-radius: 2px;
   margin: 8px auto 0px;
-}
+} */
 
 
 
 
 
 
-.uploadEspacio .form-generico .upload-label-diasemana{
+/* .uploadEspacio .form-generico .upload-label-diasemana{
   float: left;
   color: #8f8f8f;
 }
@@ -259,7 +272,7 @@
   display: inline-block;
   width: 70%;
   float: right;
-}
+} */
 
 .uploadEspacio .upload-div-sideimage3 {
   display: none;
@@ -507,7 +520,7 @@
   .upload-div-foto{
     margin: 0 auto;
     text-align: left;
-    width: 19.8%;
+    /* width: 19.8%; */
   }
 
   .upload-img-foto{

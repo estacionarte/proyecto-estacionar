@@ -53,7 +53,7 @@
               </div>
               <div class="input-field col s4 offset-s1">
                 <input type="number" name="tiempoAnticipacion" min="0" max="10000" value="{{ old('tiempoAnticipacion', $espacio->tiempoAnticipacion) }}">
-                <label for="tiempoMinimo">ej:  15 min</label>
+                <label for="tiempoAnticipacion">ej:  15 min</label>
               </div>
               <div class="input-field col s4 offset-s1">
                 <select name="medidaDeTiempoAnt">
@@ -62,12 +62,12 @@
                   <option value="Dias" {{ old('medidaDeTiempoAnt') == 'Dias' ? 'selected':'' }}>Dias</option>
                 </select>
               </div>
-              <div class="col s10 offset-l1 right-align boton">
-                  <button class="btn waves-effect waves-light  red darken-2" type="submit" name="boton-volver" formaction="{{ route('editar.upload.espacio.1', $espacio) }}">Volver
+              <div class="col s5 left-align boton">
+                  <button class="btn waves-effect waves-light  teal lighten-3" type="submit" name="boton-volver" formaction="{{ route('editar.upload.espacio.1', $espacio) }}">Volver
                       <i class="material-icons left">arrow_back</i>
                   </button>
               </div>
-              <div class="col s10 offset-l1 right-align boton">
+              <div class="col s5 offset-s1 right-align boton">
                   <button class="btn waves-effect waves-light  red darken-2" type="submit" name="boton-submit">SIGUIENTE
                       <i class="material-icons right">send</i>
                   </button>

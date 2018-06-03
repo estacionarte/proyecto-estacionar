@@ -44,7 +44,8 @@
       <div class="upload-div-div-map1" id="mapid"></div>
   </div>
   <div class="input-field col s10 offset-s1 m10 offset-m1 l5 offset-l1">
-    <h3>¿Qué tipo de espacio es?</h3>
+    <h3 class="tipo-de-espacio">¿Qué tipo de espacio es?</h3>
+    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Cochera Privada: espacio del que el usuario es propietario o puede disponer su uso, como un garage en el hogar o una cochera en un edificio. Espacio en hogar: lugar mas reducido en tamaño en el que no siempre entra un auto, por ejemplo, el living de la casa. Playa de Estacionamiento: establecimiento cuya actividad comercial es el alquiler de cocheras."><img src="/images/icons/ask.png"></a>
     <select name="tipoEspacio">
       <option value="" >Elige una opción</option>
       <option value="Cochera Privada" {{ old('tipoEspacio', $espacio->tipoEspacio) == 'Cochera Privada' ? 'selected':'' }}>Cochera Privada</option>
