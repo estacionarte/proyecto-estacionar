@@ -240,21 +240,21 @@ class UploadEspacioController extends Controller
   public function insertAndShowUploadEspacioResumen(Request $request, $id){
 
     // Reemplazo coma por punto
-    $newInput = str_replace(',','.',$request->input('precioPorMinuto'));
-    $request->merge(['precioPorMinuto' => $newInput]);
+    $newInput = str_replace(',','.',$request->input('precioPorHora'));
+    $request->merge(['precioPorHora' => $newInput]);
     $this->validate($request,
     [
-      'precioPorMinuto' => 'required|numeric|between:0,100',
-      'descuentoPorMinutoHora' => 'required|numeric|between:0,99',
-      'descuentoPorMinutoSeisHoras' => 'required|numeric|between:0,99',
-      'descuentoPorMinutoDia' => 'required|numeric|between:0,99',
+      'precioPorHora' => 'required|numeric|between:0,100',
+      'descuentoPorHoraHora' => 'required|numeric|between:0,99',
+      'descuentoPorHoraSeisHoras' => 'required|numeric|between:0,99',
+      'descuentoPorHoraDia' => 'required|numeric|between:0,99',
     ]);
 
     $espacio = Espacio::findOrFail($id);
     // Hasta que tengamos distintos precios para los distintos vehículos, le asigno a todos el mismo
-    $espacio->precioAutosMinuto = $request->input('precioPorMinuto');
-    $espacio->precioMotosMinuto = $request->input('precioPorMinuto');
-    $espacio->precioBicicletasMinuto = $request->input('precioPorMinuto');
+    $espacio->precioAutosMinuto = $request->input('precioPorHora')/60;
+    $espacio->precioMotosMinuto = $request->input('precioPorHora')/60;
+    $espacio->precioBicicletasMinuto = $request->input('precioPorHora')/60;
 
     $espacio->save();
 
@@ -273,14 +273,14 @@ class UploadEspacioController extends Controller
       // Hasta que tengamos distintos precios para los distintos vehículos, le asigno a todos el mismo
       $descuentosDeEspacio->tipoVehiculo = 'Todos';
       $descuentosDeEspacio->hora = $hora;
-      $descuentosDeEspacio->descuento = $request->input($input) / 100;
+      $descuentosDeEspacio->descuento = $request->input($input);
 
       $descuentosDeEspacio->save();
     }
 
-    guardar(1, 'descuentoPorMinutoHora', $espacio, $request);
-    guardar(6, 'descuentoPorMinutoSeisHoras', $espacio, $request);
-    guardar(24, 'descuentoPorMinutoDia', $espacio, $request);
+    guardar(1, 'descuentoPorHoraHora', $espacio, $request);
+    guardar(6, 'descuentoPorHoraSeisHoras', $espacio, $request);
+    guardar(24, 'descuentoPorHoraDia', $espacio, $request);
 
     return redirect()->route('upload.espacio.resumen',compact('espacio'));
   }
