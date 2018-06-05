@@ -19,26 +19,46 @@
         <section class="upload-seccion-resumen">
 
           <div class="div-section">
+
             <div>
               <h2>Información General</h2>
               <a href="{{ route('editar.upload.espacio.1', $espacio) }}" class="upload-a-editar">Editar</a>
             </div>
+
+            <h3>{{ $espacio->nombre }}</h3>
+
             <p>{{ $espacio->direccion }}</p>
+
             <p>{{ $espacio->ciudad }}, {{ $espacio->provincia }}, {{ $espacio->pais }}, {{ $espacio->zipcode }}</p>
+
             <ul>
               <li>{{ $espacio->tipoEspacio }}</li>
-              <li>Autos: {{ $espacio->cantAutos }}</li>
+              @if ($espacio->cantAutos > 0)
+                <li>Vehículo a recibir: auto</li>
+              @elseif ($espacio->cantMotos > 0)
+                <li>Vehículo a recibir: moto</li>
+              @else
+                <li>Vehículo a recibir: bicileta</li>
+              @endif
+              {{-- <li>Autos: {{ $espacio->cantAutos }}</li>
               <li>Motos: {{ $espacio->cantMotos }}</li>
-              <li>Bicicletas: {{ $espacio->cantBicicletas }}</li>
+              <li>Bicicletas: {{ $espacio->cantBicicletas }}</li> --}}
               <li>{{ $espacio->aptoDiscapacitados ? 'Apto para discapacitados' : 'NO apto para discapacitados' }}</li>
               <li>{{ $espacio->aptoElectricos ? 'Carga autos eléctricos' : 'NO carga autos eléctricos' }}</li>
             </ul>
+
+            <p>Descripción del espacio: {{ $espacio->infopublica }}</p>
+
+            <p>Información para quienes reservan: {{ $espacio->infoprivada }}</p>
+
             <p>Fotos del espacio:</p>
-            @foreach ($fotos as $foto)
+            @forelse ($fotos as $foto)
               <div class="upload-div-foto">
                 <img src="/storage/espacios/{{ $foto->photoname }}" alt="" class="upload-img-foto">
               </div>
-            @endforeach
+            @empty
+              <p>No cargaste ninguna foto. Recordá que necesitás por lo menos una para disponibilizar tu espacio.</p>
+            @endforelse
           </div>
 
           <br> <hr> <br>
@@ -48,6 +68,7 @@
               <h2>Estadías</h2>
               <a href="{{ route('upload.espacio.2', $espacio) }}" class="upload-a-editar">Editar</a>
             </div>
+
             <ul>
               <li>Tiempo mínimo: {{ $tiempominimo }}</li>
               <li>Tiempo máximo: {{ $tiempomaximo }}</li>
@@ -62,6 +83,7 @@
               <h2>Días y Horarios</h2>
               <a href="{{ route('upload.espacio.3', $espacio) }}" class="upload-a-editar">Editar</a>
             </div>
+            <p>Tu espacio estará disponible en los siguientes días y horarios:</p>
             <ul>
               @foreach ($horarios as $horario)
                 <li>{{ $horario }}</li>
@@ -76,7 +98,7 @@
               <h2>Precios</h2>
               <a href="{{ route('upload.espacio.4', $espacio) }}" class="upload-a-editar">Editar</a>
             </div>
-            <p>Precio por minuto: ${{ $espacio->precioAutosMinuto }}</p>
+            <p>Precio por hora: ${{ round($espacio->precioAutosMinuto * 60) }}</p>
             <ul>
               @foreach ($descuentos as $descuento)
                 <li>Descuento a partir de {{ $descuento->hora }} horas: {{ $descuento->descuento * 100 }}%</li>
@@ -84,6 +106,16 @@
             </ul>
           </div>
         </section>
+
+        <br> <hr> <br>
+
+        <div class="div-section">
+          <p class="col s12 center-align ">
+            <input type="checkbox" name="necesita_confirmacion" id="necesita_confirmacion" checked="false">
+            <label for="dia-entero">Requiere aprobación previa</label>
+          </p>
+          <p>Si tildás esta caja, tendrás que aprobar manualmente todas las solicitudes de alquiler que te hagan.</p>
+        </div>
 
         <a href="{{ route('show.espacio', $espacio->id) }}" id="confirmar-espacio">CONFIRMAR ESPACIO</a>
 

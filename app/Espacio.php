@@ -33,7 +33,10 @@ class Espacio extends Model
     'precioAutosMinuto',
     'precioMotosMinuto',
     'precioBicicletasMinuto',
-    'nombre'
+    'nombre',
+    'necesita_confirmacion',
+    'aprobado',
+    'disponible'
   ];
 
   public function usuario()
