@@ -277,14 +277,18 @@
 .uploadEspacio .upload-div-sideimage3 {
   display: none;
 }
+.upload-div-diasemana .borrar-dia{
+  margin-top: 30px;
+  color: #bf360c;
+}
 
 /****************** C A R G A   C O C H E R A (Paso 4 - Precios) *******************/
 
-.uploadEspacio-progressBar-progress4{
+/* .uploadEspacio-progressBar-progress4{
   width: 75%;
 }
 
-.uploadEspacio .form-generico .upload-div-precio{
+.upload-div-precio{
   border: solid 1px #9c9c9c;
   border-radius: 2px;
   background-color: #fff;
@@ -292,7 +296,7 @@
   margin-top: 10px;
 }
 
-.uploadEspacio .form-generico .upload-label-precioPorMinutoSigno{
+.upload-label-precioPorMinutoSigno{
   width: auto;
   float: left;
   vertical-align: middle;
@@ -301,7 +305,7 @@
   padding-right: 3px;
 }
 
-.uploadEspacio .form-generico .upload-input-precioPorMinuto{
+.upload-input-precioPorMinuto{
   display: inline-block;
   width: 17%;
   float: left;
@@ -313,7 +317,7 @@
   padding: 10px 0px;
 }
 
-.uploadEspacio .form-generico .upload-label-precioPorMinuto{
+.upload-label-precioPorMinuto{
   width: 73%;
   float: right;
   vertical-align: middle;
@@ -322,7 +326,7 @@
   padding-left: 5px;
 }
 
-.uploadEspacio .form-generico .upload-label-descuentoPorMinutoPorcentaje{
+.upload-label-descuentoPorMinutoPorcentaje{
   width: auto;
   float: left;
   vertical-align: middle;
@@ -331,7 +335,7 @@
   padding-left: 3px;
 }
 
-.uploadEspacio .form-generico .upload-input-descuentoPorMinuto{
+.upload-input-descuentoPorMinuto{
   display: inline-block;
   width: 19%;
   float: left;
@@ -343,7 +347,7 @@
   padding-right: 0px;
 }
 
-.uploadEspacio .form-generico .upload-label-descuentoPorMinuto{
+.upload-label-descuentoPorMinuto{
   width: 73%;
   float: right;
   vertical-align: middle;
@@ -352,19 +356,39 @@
   padding-left: 5px;
 }
 
-.uploadEspacio .form-generico .upload-p-descuentoPorMinuto{
-  width: auto;
-  text-align: left;
-  margin-top: 5px;
-  color: #8f8f8f;
-  font-family: 'Roboto Condensed', sans-serif;
+.upload-espacio .mostrar-valor{
+  height: 94px;
 }
 
-.uploadEspacio .form-generico .upload-section-help{
-  display: none;
+.upload-espacio .select-wrapper input.select-dropdown{
+  margin: 0;
+}
+.upload-espacio .form-generico .upload-p-descuentoPorMinuto{
+    width: auto;
+    text-align: left;
+    margin-top: 5px;
+    color: #8f8f8f;
+    padding-top: 20px;
+} */
+.upload-espacio .marginb input{
+  margin-bottom: 0;
+}
+.upload-espacio .separador{
+  margin-bottom: 20px;
 }
 
-.uploadEspacio .upload-div-sideimage4 {
+.upload-espacio .mostrar-valor{
+  margin-top: 20px;
+}
+.upload-espacio .form-generico .upload-section-help{
+  display: block;
+}
+.upload-espacio .upload-section-div-help p{
+  font-size: 12px !important;
+  margin-top: 15px;
+}
+
+.upload-espacio .upload-div-sideimage4 {
   display: none;
 }
 

@@ -10,7 +10,7 @@
     <div class="gral-main">
       <h1>Cargar Espacio - Información General</h1>
       <section class="signin upload">
-        
+
         <div class="progress uploadEspacio-progressBar">
             <div class="determinate"></div>
         </div>
