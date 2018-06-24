@@ -317,6 +317,38 @@ class UploadEspacioController extends Controller
     return view('upload-espacio.resumen', compact('espacio', 'fotos', 'tiempominimo', 'tiempomaximo', 'anticipacion', 'horarios', 'descuentos'));
   }
 
+  // Confirmar espacio en el resumen e ir al perfil del espacio
+  public function confirmEspacio(Request $request, $id){
+
+    $this->validate($request,
+      [
+        'necesita_confirmacion' => 'nullable',
+      ]
+    );
+
+    // Guardo datos en registro existente
+    $espacio = Espacio::findOrFail($id);
+    $espacio->necesita_confirmacion = $request->input('necesita_confirmacion') ? 1 : 0;
+
+    // Lo pongo como no aprobado hasta que lo revisemos
+    $espacio->aprobado = 0;
+
+    // Si no tiene foto lo pongo como no disponible
+    $fotos = $espacio->hayfoto();
+    if (!$fotos) {
+      // 0 es no disponible
+      $espacio->disponible = 0;
+    } else {
+      // 1 es disponible
+      $espacio->disponible = 1;
+    }
+
+    $espacio->save();
+
+    // Lo llevo al espacio
+    return redirect()->route('show.espacio',compact('espacio'));
+  }
+
   public function deleteEspacio($id){
     $espacio = Espacio::findOrFail($id);
 

@@ -109,15 +109,27 @@
 
         <br> <hr> <br>
 
-        <div class="div-section">
-          <p class="col s12 center-align ">
-            <input type="checkbox" name="necesita_confirmacion" id="necesita_confirmacion" checked="false">
-            <label for="dia-entero">Requiere aprobación previa</label>
-          </p>
-          <p>Si tildás esta caja, tendrás que aprobar manualmente todas las solicitudes de alquiler que te hagan.</p>
-        </div>
+        <form action="{{ route('confirm.espacio', $espacio) }}" method="post" id="form-submit">
+          {{ method_field('PUT') }}
+          {{ csrf_field() }}
 
-        <a href="{{ route('show.espacio', $espacio->id) }}" id="confirmar-espacio">CONFIRMAR ESPACIO</a>
+          <div class="div-section">
+            <p class="col s12 center-align ">
+              <input type="checkbox" name="necesita_confirmacion" id="necesita_confirmacion" checked="false">
+              <label for="dia-entero">Requiere aprobación previa</label>
+            </p>
+            <p>Si tildás esta caja, tendrás que aprobar manualmente todas las solicitudes de alquiler que te hagan.</p>
+          </div>
+
+          <div class="col s5 offset-s1 right-align boton">
+              <button class="btn waves-effect waves-light  red darken-2" type="submit" name="boton-submit">CONFIRMAR ESPACIO
+                  <i class="material-icons right">send</i>
+              </button>
+          </div>
+
+          {{-- <a href="{{ route('show.espacio', $espacio->id) }}" id="confirmar-espacio">CONFIRMAR ESPACIO</a> --}}
+
+        </form>
 
         <div class="upload-div-sideimage4"></div>
 

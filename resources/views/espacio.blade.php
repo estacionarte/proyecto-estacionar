@@ -8,7 +8,12 @@
 
   <div class="espacio-container">
 
+    @if ($espacio->hayfoto())
       <img class="espacio-img-top" src="/storage/espacios/{{ $espacio->fotoPortada() }}" id="img-top-espacio">
+    @else
+      <img class="espacio-img-top" src="/storage/espacios/noespacio.jpg" id="img-top-espacio">
+    @endif
+
 
     <div class="espacio-main-content">
 

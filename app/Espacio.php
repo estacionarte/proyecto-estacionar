@@ -91,6 +91,17 @@ class Espacio extends Model
     return $descuento->descuento;
   }
 
+  // Función para chequear si espacio tiene foto cargada (devuelve true) si no devuelve false
+  public function hayfoto(){
+    $fotos = $this->fotos()->first();
+    if (!$fotos) {
+      $hayfoto = false;
+    } else {
+      $hayfoto = true;
+    }
+    return $hayfoto;
+  }
+
   public function fotoPortada(){
     $foto = $this->fotos()->first();
     return $foto->photoname;

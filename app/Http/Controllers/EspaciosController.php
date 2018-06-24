@@ -48,7 +48,7 @@ class EspaciosController extends Controller
       $tiempomaximo = $espacio->minutosEnDiasYHoras($espacio->estadiaMaximaMinutos);
       $anticipacion = $espacio->minutosEnDiasYHoras($espacio->anticipacionMinutos);
 
-      return view('espacio', compact('espacio', 'tiempominimo', 'tiempomaximo', 'anticipacion','fechallegada','fechapartida'));
+      return view('espacio', compact('espacio', 'tiempominimo', 'tiempomaximo', 'anticipacion','fechallegada','fechapartida', 'hayfoto'));
     }
 
 

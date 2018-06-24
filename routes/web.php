@@ -99,6 +99,8 @@ Route::group(['prefix' => 'upload-espacio', 'middleware' => ['auth','coming.soon
 
   Route::get('resumen/{espacio}', 'UploadEspacioController@showUploadEspacioResumen')->name('upload.espacio.resumen');
 
+  Route::put('confirm-espacio/{id}', 'UploadEspacioController@confirmespacio')->name('confirm.espacio');
+
   Route::delete('espacio/{id}', 'UploadEspacioController@deleteEspacio')->name('delete.espacio');
 
 });
