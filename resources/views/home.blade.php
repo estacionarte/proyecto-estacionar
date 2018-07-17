@@ -121,9 +121,9 @@
   <article class="comunidad-home">
     <h2>Estacionados es más que una aplicación para estacionar. <br> Es una comunidad </h2>
     <p>Estacionados conecta a las personas que buscan estacionamiento con personas que tienen un espacio para compartir. ¿Vas a un recital, vas la cancha? Ganale a la multitud reservando tu espacio de estacionamiento por adelantado. ¿Tenés un espacio extra en tu entrada? ¡Compartilo en Estacionados y comienzá a ganar dinero extra hoy! Con nuestra plataforma podés enumerar un espacio en minutos y reservar uno aún más rápido.</p>
-    <div class="embed-responsive embed-responsive-16by9">
+    <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 60px">
         {{-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vE82h15Yhl0" allowfullscreen></iframe> --}}
-        <iframe frameborder="no" width="768" height="432" src="https://wideo.co/embed/23380361527810929511?width=768&height=432&repeat=false&autoplay=false"></iframe>
+        <iframe frameborder="no" width="560" height="315" src="https://wideo.co/embed/23380361527810929511?width=560&height=315&repeat=false&autoplay=false"></iframe>
     </div>
   </article>
 

@@ -189,7 +189,7 @@
                       <img id="spinner" src="/images/spinner.gif" width="150">
                   </div>
                   <div class="row">
-                    <div class="col s12 offset-s2 boton">
+                    <div class="col s12 offset-s1 boton">
                         <button id="popup-enviar" class="btn waves-effect waves-light  pink darken-2" type="submit" name="boton-submit">INICIAR SESIÓN
                             <i class="material-icons right">send</i>
                         </button>
