@@ -277,9 +277,10 @@
 .uploadEspacio .upload-div-sideimage3 {
   display: none;
 }
-.upload-div-diasemana .borrar-dia{
+.upload-div-diasemana .material-icons{
   margin-top: 30px;
   color: #bf360c;
+  cursor: pointer;
 }
 
 /****************** C A R G A   C O C H E R A (Paso 4 - Precios) *******************/

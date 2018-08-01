@@ -145,7 +145,7 @@
 
 <script>
 // Fecha de lanzamiento
-var countDownDate = new Date("july 17, 2018 23:59:59").getTime();
+var countDownDate = new Date("january 01, 2019 23:59:59").getTime();
 
 // Calculo el intervalo cada 1 segundo
 var x = setInterval(function() {
@@ -178,19 +178,19 @@ var x = setInterval(function() {
 
 //***************WHATSAPP
 
-(function () {
-        var options = {
-            whatsapp: "+54 911 6800 5122", // WhatsApp number
-            company_logo_url: "//static.whatshelp.io/img/flag.png", // URL of company logo (png, jpg, gif)
-            // greeting_message: "Hola en que puedo ayudarte?", // Text of greeting message
-            call_to_action: "Lun a Vier 9.30 a 18hs", // Call to action
-            position: "left", // Position may be 'right' or 'left'
-        };
-        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-    })();
+// (function () {
+//         var options = {
+//             whatsapp: "+54 911 6800 5122", // WhatsApp number
+//             company_logo_url: "//static.whatshelp.io/img/flag.png", // URL of company logo (png, jpg, gif)
+//             // greeting_message: "Hola en que puedo ayudarte?", // Text of greeting message
+//             call_to_action: "Lun a Vier 9.30 a 18hs", // Call to action
+//             position: "left", // Position may be 'right' or 'left'
+//         };
+//         var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+//         var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+//         s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+//         var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+//     })();
 
 </script>
 
