@@ -123,7 +123,7 @@
               </button>
           </div>
 
-          {{-- <a href="{{ route('show.espacio', $espacio->id) }}" id="confirmar-espacio">CONFIRMAR ESPACIO</a> --}}
+          <a href="{{ route('show.espacio', $espacio->id) }}" id="confirmar-espacio">CONFIRMAR ESPACIO</a>
 
         </form>
 
