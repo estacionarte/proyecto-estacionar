@@ -61,6 +61,7 @@
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" id="hojaDeEstilo">
+    {{-- <link href="{{ asset('css/nosotros.css') }}" rel="stylesheet" id="hojaDeEstilo"> --}}
   </head>
   <body>
 
