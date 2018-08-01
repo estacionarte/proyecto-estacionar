@@ -2,23 +2,18 @@
 @section('title') Cargar Espacio @endsection
 @section('content')
 
-  <div class="container">
-
-    <div class="bodies-main-content">
-
-      <hr>
-
-      <div class="uploadEspacio-progressBar">
-        <div class="uploadEspacio-progressBar-progress5"></div>
-      </div>
-
+  <div class="bodies-main-content upload-espacio">
+    <div class="gral-main">
       <h1>Confirmar Datos</h1>
+      <section class="signin upload">
+        <div class="progress uploadEspacio-progressBar">
+            <div class="determinate" style="width: 100%"></div>
+        </div>
 
-      <section class="uploadEspacio">
+        <div class="row">
+          <section class="upload-seccion-resumen">
 
-        <section class="upload-seccion-resumen">
-
-          <div class="div-section">
+          <div class="col s10 offset-s1 div-section">
 
             <div>
               <h2>Información General</h2>
@@ -59,11 +54,11 @@
             @empty
               <p>No cargaste ninguna foto. Recordá que necesitás por lo menos una para disponibilizar tu espacio.</p>
             @endforelse
+            <br> <hr> <br>
           </div>
 
-          <br> <hr> <br>
 
-          <div class="div-section">
+          <div class="col s10 offset-s1 div-section">
             <div>
               <h2>Estadías</h2>
               <a href="{{ route('upload.espacio.2', $espacio) }}" class="upload-a-editar">Editar</a>
@@ -74,11 +69,11 @@
               <li>Tiempo máximo: {{ $tiempomaximo }}</li>
               <li>Anticipación para reservar: {{ $anticipacion }}</li>
             </ul>
+            <br> <hr> <br>
           </div>
 
-          <br> <hr> <br>
 
-          <div class="div-section">
+          <div class="col s10 offset-s1 div-section">
             <div>
               <h2>Días y Horarios</h2>
               <a href="{{ route('upload.espacio.3', $espacio) }}" class="upload-a-editar">Editar</a>
@@ -89,11 +84,11 @@
                 <li>{{ $horario }}</li>
               @endforeach
             </ul>
+            <br> <hr> <br>
           </div>
 
-          <br> <hr> <br>
 
-          <div class="div-section">
+          <div class="col s10 offset-s1 div-section">
             <div>
               <h2>Precios</h2>
               <a href="{{ route('upload.espacio.4', $espacio) }}" class="upload-a-editar">Editar</a>
@@ -106,6 +101,7 @@
             </ul>
           </div>
         </section>
+        </div>
 
         <br> <hr> <br>
 

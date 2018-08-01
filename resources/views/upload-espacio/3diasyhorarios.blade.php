@@ -192,18 +192,19 @@
 
                   @foreach ($horarios as $horario)
                     <div class="upload-div-diasemana">
-
+                      <div class='input-field col s3 offset-s1'>
                         <input type='text' name='diasemana[{{$horario->dia}}]' class='upload-input-dia' value='{{$horario->dia}}' readonly>
-
+                      </div>
+                      <div class='input-field col s3'>
                         <input type='text' class='upload-input-hora' value='{{$espacio->minutosEnHoraDelDia($horario->horaComienzo)}}' disabled>
+                      </div>
+                      <div class='input-field col s3'>
+                        <input type='text' name='' class='upload-input-hora' value='{{$espacio->minutosEnHoraDelDia($horario->horaFin)}}' disabled>
+                      </div>
 
-                      <span style='text-align:center;'> - </span>
-                      <input type='text' name='' class='upload-input-hora' value='{{$espacio->minutosEnHoraDelDia($horario->horaFin)}}' disabled>
+                      <label onclick='borrarHorario(event)' class='col s1 upload-label-horario-button small material-icons'>backspace</label>
 
-                      <label onclick='borrarHorario(event)' class='upload-label-horario-button'>&#8854;</label>
-
-                      <hr style='margin: 10px 0px;'>
-
+                      
                       <input type='text' name='horacomienzo[{{$horario->dia}}]' class='upload-input-hora' value='{{$horario->horaComienzo}}' style='display:none;'>
 
                       <input type='text' name='horafin[{{$horario->dia}}]' class='upload-input-hora' value='{{$horario->horaFin}}' style='display:none;'>
